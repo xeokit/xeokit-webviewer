@@ -113,7 +113,7 @@ export class SceneMesh {
     }) {
         this.id = meshParams.id;
         this.#matrix = meshParams.matrix ? createMat4(meshParams.matrix) : identityMat4();
-        this.#rtcMatrix = meshParams.rtcMatrix ? createMat4(meshParams.rtcMatrix) : identityMat4();
+        this.#rtcMatrix = meshParams.rtcMatrix ? createMat4(meshParams.rtcMatrix) : this.#matrix.slice();
         this.#aabb = createAABB3();
         this.#aabbDirty = true;
         this.geometry = meshParams.geometry;

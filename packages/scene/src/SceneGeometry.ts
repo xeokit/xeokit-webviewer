@@ -7,9 +7,10 @@ import {IntArrayParam} from "@xeokit/math";
 /**
  * A geometry in a {@link @xeokit/scene!SceneModel | SceneModel}.
  *
+ * * Contains triangles, lines or points
  * * Stored in {@link @xeokit/scene!SceneModel.geometries | SceneModel.geometries}
  * * Created with {@link @xeokit/scene!SceneModel.createGeometry | SceneModel.createGeometry}
- * and {@link @xeokit/scene!SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}
+ * or {@link @xeokit/scene!SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}
  * * Referenced by {@link @xeokit/scene!SceneMesh.geometry | SceneMesh.geometry}
  *
  * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.

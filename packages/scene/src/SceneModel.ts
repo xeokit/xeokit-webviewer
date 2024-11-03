@@ -21,11 +21,11 @@ import type {SceneModelParams} from "./SceneModelParams";
 import type {Scene} from "./Scene";
 import type {SceneModelStats} from "./SceneModelStats";
 import {
-    composeMat4,
+    composeMat4, createMat4,
     createVec3,
     eulerToQuat,
     identityMat4,
-    identityQuat
+    identityQuat, mulMat4, mulVec3Scalar, translateMat4v
 } from "@xeokit/matrix";
 import {SceneModelStreamParams} from "./SceneModelStreamParams";
 import {SceneQuantizationRange} from "./SceneQuantizationRange";
@@ -33,6 +33,7 @@ import {SceneQuantizationRangeParams} from "./SceneQuantizationRangeParams";
 import {SceneTile} from "./SceneTile";
 import {createRTCModelMat} from "@xeokit/rtc";
 import {FloatArrayParam} from "@xeokit/math";
+import {hasBeenLoadedMultipleTimes} from "typedoc/dist/lib/utils/general";
 
 
 // XGF texture types
@@ -85,14 +86,13 @@ TEXTURE_ENCODING_OPTIONS[OCCLUSION_TEXTURE] = {
 };
 
 /**
- * xeokit SceneGeometry and Materials Model.
+ * Model geometry and materials.
  *
  * * A representation of a model's geometry and materials within a {@link @xeokit/scene!Scene | Scene}.
  * * Contains {@link @xeokit/scene!SceneObject | SceneObjects}, {@link @xeokit/scene!SceneMesh | SceneMeshes}, {@link @xeokit/scene!SceneGeometry | Geometries} and {@link @xeokit/scene!SceneTexture | Textures}.
- * * Compresses textures using [Basis](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#basis)
- * * Viewable in the Browser with {@link @xeokit/viewer!Viewer | Viewer}
- * * Import and export to/from a variety of file formats
- * * Programmatically buildable using builder methods
+ * * View with a {@link @xeokit/viewer!Viewer | Viewer}
+ * * Import and export various file formats
+ * * Build programmatically
  *
  * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
  */
@@ -804,10 +804,10 @@ export class SceneModel extends Component {
                 matrix = identityMat4();
             }
         } else {
-         //   matrix = matrix.slice();
+            matrix = matrix.slice();
         }
         let origin;
-        let rtcMatrix = matrix;
+        let rtcMatrix;
         if (meshParams.origin) {
             origin = meshParams.origin;
             rtcMatrix = matrix;

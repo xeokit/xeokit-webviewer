@@ -18,7 +18,13 @@ const rtcCenter = createVec3();
  * @returns Compressed geometry params.
  */
 export function compressGeometryParams(geometryParams: SceneGeometryParams): SceneGeometryCompressedParams {
-    const rtcNeeded = worldToRTCPositions(geometryParams.positions, geometryParams.positions, rtcCenter);
+
+
+    // RTC disabled because there's no way to add a translation
+    // to compensate for this offset in the mdeh modlng matrix.
+    // const rtcNeeded = worldToRTCPositions(geometryParams.positions, geometryParams.positions, rtcCenter);
+    const rtcNeeded = false;
+
     const aabb = collapseAABB3();
     expandAABB3Points3(aabb, geometryParams.positions);
     const positionsCompressed = quantizePositions3(geometryParams.positions, aabb);

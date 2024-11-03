@@ -8,9 +8,13 @@ import {createAABB3} from "@xeokit/boundaries";
 import {SceneTile} from "./SceneTile";
 
 /**
- * A scene representation.
+ * A container for model geometry and materials.
  *
- * A Scene is a container of {@link @xeokit/scene!SceneModel | SceneModels} and {@link @xeokit/scene!SceneObject | SceneObjects}.
+ * A Scene is a container of {@link @xeokit/scene!SceneModel | SceneModels}, {@link @xeokit/scene!SceneObject | SceneObjects},
+ *  {@link @xeokit/scene!SceneMesh | SceneMeshes}, {@link @xeokit/scene!SceneGeometry | SceneGeometries},
+ *  {@link @xeokit/scene!SceneTextureSet | SceneTextureSets} and {@link @xeokit/scene!SceneTexture | SceneTextures}.
+ *
+ * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
  */
 export class Scene extends Component {
 
@@ -67,8 +71,6 @@ export class Scene extends Component {
 
     /**
      * Creates a new Scene.
-     *
-     * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
      */
     constructor() {
 
