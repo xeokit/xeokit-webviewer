@@ -5,7 +5,7 @@ const {peerDependencies} = require('./package.json');
 
 const sharedConfig = {
     entryPoints: [
-        "./src/cityjson2dtx.ts"
+        "./src/cityjson2xgf.ts"
     ],
     bundle: true,
     minify: false,
@@ -17,5 +17,5 @@ build({
     platform: 'node',
     format: 'cjs',
     target: "node10.4",
-    outfile: "dist/cityjson2dtx.cjs.js",
+    outfile: "dist/cityjson2xgf.cjs.js",
 });
