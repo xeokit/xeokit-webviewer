@@ -8,7 +8,7 @@
     "module": "dist/index.js",
     "scripts": {
         "test": "jest --passWithNoTests",
-        "dist": "tsc",
+        "dist": "node build.js & tsc",
         "lint": "eslint . --fix",
         "docs": "typedoc --json ../../docs/json/metamodel.json --options typedoc.json --validation.invalidLink false",
         "publish": "npm publish --access public"
@@ -35,6 +35,9 @@
         "@xeokit/core": "^0.1.0",
         "@xeokit/data": "^0.1.0",
         "@xeokit/ifctypes": "^0.1.0"
+    },
+    "peerDependencies": {
+        "commander": "^11.0.0"
     },
     "devDependencies": {
         "@jest/globals": "^29.5.0",

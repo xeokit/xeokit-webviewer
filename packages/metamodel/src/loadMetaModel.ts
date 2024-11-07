@@ -1,16 +1,16 @@
 import {SDKError} from "@xeokit/core";
 import type {DataModel} from "@xeokit/data";
 import {IfcRelAggregates, ifcTypeCodes} from "@xeokit/ifctypes";
+import {MetaModelParams} from "./MetaModelParams";
 
 
 /**
- * Imports [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) metadata
- * into a {@link @xeokit/scene!DataModel | DataModel}.
+ * Loads a legacy xeokit meta model into a {@link @xeokit/data!DataModel | DataModel}.
  *
- * * Expects {@link @xeokit/scene!DataModel.built | DataModel.built} and
- * {@link @xeokit/scene!DataModel.destroyed | DataModel.destroyed} to be ````false````
+ * Expects {@link @xeokit/data!DataModel.built | DataModel.built} and
+ * {@link @xeokit/data!DataModel.destroyed | DataModel.destroyed} to be ````false````
  *
- * See {@link "@xeokit/xkt" | @xeokit/xkt} for usage.
+ * See {@link "@xeokit/metamodel" | @xeokit/model} for usage.
  *
  * @param params - Loading parameters.
  * @param params.fileData - [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) file data
@@ -20,8 +20,8 @@ import {IfcRelAggregates, ifcTypeCodes} from "@xeokit/ifctypes";
  * * If the DataModel has already been destroyed.
  * * If the DataModel has already been built.
  */
-export function loadMetamodel(params: {
-    fileData: any;
+export function loadMetaModel(params: {
+    fileData: MetaModelParams;
     dataModel: DataModel;
 }): Promise<void> {
     if (!params) {
@@ -29,7 +29,7 @@ export function loadMetamodel(params: {
     }
     const {fileData, dataModel} = params;
     if (!fileData) {
-        return Promise.reject("Parameter expected: fileData");
+        return Promise.reject("Argument expected: fileData");
     }
     if (!dataModel) {
         return Promise.reject("Parameter expected: params.dataModel");
@@ -69,7 +69,6 @@ export function loadMetamodel(params: {
         for (let i = 0, len = fileData.metaObjects.length; i < len; i++) {
             const metaObjectData = fileData.metaObjects[i];
             const id = metaObjectData.id;
-
             let dataObject = dataModel.objects[id];
             if (!dataObject) {
                 const originalSystemId = metaObjectData.originalSystemId;
