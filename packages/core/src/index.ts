@@ -24,3 +24,4 @@ export * from "./EventEmitter";
 export * from "./Capabilities";
 export * from "./TextureTranscoder";
 export * from "./TextureCompressedParams";
+export * from "./ModelChunksManifestParams";
