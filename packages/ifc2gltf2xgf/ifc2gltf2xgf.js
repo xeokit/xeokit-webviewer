@@ -198,6 +198,7 @@ try {
             const outputFileNameJSON = `${outputFileName}.json`;
             const outputDataModelJSONPath = path.join(outputDir, outputFileNameJSON)
             const metaModelParams = JSON.parse(fs.readFileSync(metaModelPath));
+
             const dataModelParams = _convertMetaModel(metaModelParams);
 
             fs.writeFileSync(outputDataModelJSONPath, JSON.stringify(dataModelParams));

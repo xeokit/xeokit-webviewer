@@ -126,6 +126,9 @@
         },
         {
             "path": "packages/contextmenu"
+        },
+        {
+            "path": "packages/cityjson2xgf"
         }
     ]
 }

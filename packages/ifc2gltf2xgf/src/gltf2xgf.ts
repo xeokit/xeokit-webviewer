@@ -40,8 +40,8 @@ function gltf2xgf(params: {
                         return reject(err);
                     });
                 }).catch(err => {
-                return reject(err);
-            });
+                    return reject(err);
+                });
         }
     });
 }

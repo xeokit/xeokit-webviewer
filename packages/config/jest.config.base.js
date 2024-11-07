@@ -44,6 +44,7 @@ module.exports = {
         '@xeokit/webgpurenderer(.*)$': path.join(__dirname, '../webgpurenderer/src/$1'),
         '@xeokit/webifc(.*)$': path.join(__dirname, '../webifc/src/$1'),
         '@xeokit/ifcviewer(.*)$': path.join(__dirname, '../ifcviewer/src/$1'),
+        '@xeokit/cityjson2xgf(.*)$': path.join(__dirname, '../cityjson2xgf/src/$1')
     },
     moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx', 'json', 'node'],
     resolver: undefined,
