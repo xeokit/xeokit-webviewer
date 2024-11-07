@@ -329,10 +329,6 @@ export function loadBCFViewpoint(params: LoadBCFViewpointParams): void {
             camera.look = look;
             camera.up = up;
             camera.projectionType = projection;
-        } else {
-            view.cameraFlight.flyTo({eye, look, up, duration: params.duration, projection}, () => {
-                // TODO
-            });
         }
     }
 }

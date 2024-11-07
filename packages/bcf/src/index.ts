@@ -98,7 +98,7 @@
  * That call will also trigger {@link @xeokit/scene!SceneModel.onBuilt | SceneModel.onBuilt} and
  * {@link @xeokit/data!DataModel.onBuilt | DataModel.onBuilt} events.
  *
- * On the SceneModel.onBuilt event, we'll customize the View by arranging the {@link @xeokit/viewer!Camera} and applying
+ * On the SceneModel.onBuilt event, we'll customize the View by arranging the {@link @xeokit/viewer!Camera | Camera} and applying
  * an X-ray effect tp a couple of objects, then we'll use {@link @xeokit/bcf!saveBCFViewpoint | saveBCFViewpoint} to save the state of the View to
  * a BCF viewpoint.
  *
