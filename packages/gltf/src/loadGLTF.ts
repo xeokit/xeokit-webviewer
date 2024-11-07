@@ -15,20 +15,26 @@ import {
     RepeatWrapping,
     TrianglesPrimitive
 } from "@xeokit/constants";
-import {isString} from "@xeokit/utils";
+import {createUUID, isString} from "@xeokit/utils";
 import {createMat4, identityMat4, mulMat4, quatToMat4, scalingMat4v, translationMat4v} from "@xeokit/matrix";
 import type {FloatArrayParam} from "@xeokit/math";
 import {SceneGeometryParams, SceneMeshParams, SceneModel, SceneTextureSetParams} from "@xeokit/scene";
 import {DataModel} from "@xeokit/data";
 
 interface ParsingContext {
+    nodesHaveNames: boolean,
+    baseId: string,
     gltfData: any;
     nextId: number;
     log: any;
     error: (msg: any) => void;
     dataModel?: DataModel;
     sceneModel?: SceneModel;
-    objectCreated: { [key: string]: boolean }
+    objectCreated: { [key: string]: boolean },
+    geometryCreated: { [key: string]: boolean },
+    meshIds: any;
+    meshIdsStack: string[];
+    objectIdStack: string[];
 }
 
 /**
@@ -94,6 +100,11 @@ export function loadGLTF(params: {
         parse(fileData, GLTFLoader, {}).then((gltfData) => {
             const processedGLTF = postProcessGLTF(gltfData);
             const ctx: ParsingContext = {
+                nodesHaveNames: false, // determined in testIfNodesHaveNames()
+                meshIds: [],
+                meshIdsStack: [],
+                objectIdStack: [],
+                baseId: createUUID(),
                 gltfData: processedGLTF,
                 nextId: 0,
                 log: (params.log || function (msg: string) {
@@ -103,7 +114,8 @@ export function loadGLTF(params: {
                 },
                 dataModel,
                 sceneModel,
-                objectCreated: {}
+                objectCreated: {},
+                geometryCreated: {}
             };
             parseTextures(ctx);
             parseMaterials(ctx);
@@ -382,18 +394,163 @@ function parseScene(ctx: ParsingContext, scene: any) {
     if (!nodes) {
         return;
     }
-    for (let i = 0, len = nodes.length; i < len; i++) {
+    for (let i = 0, len = nodes.length; i < len && !ctx.nodesHaveNames; i++) {
         const node = nodes[i];
-        parseNode(ctx, node, 0, null);
+        if (testIfNodesHaveNames(node)) {
+            ctx.nodesHaveNames = true;
+        }
+    }
+    if (!ctx.nodesHaveNames) {
+        ctx.log(`Warning: No "name" attributes found on glTF scene nodes - objects in XKT may not be what you expect`);
+        for (let i = 0, len = nodes.length; i < len; i++) {
+            const node = nodes[i];
+            parseNodesWithoutNames(ctx, node, 0, null);
+        }
+    } else {
+        for (let i = 0, len = nodes.length; i < len; i++) {
+            const node = nodes[i];
+            parseNodesWithNames(ctx, node, 0, null);
+        }
     }
 }
 
-const deferredMeshIds: string[] = [];
+function createPrimitiveHash(ctx, primitive) {
+    const hash = [ctx.baseId];
+    const attributes = primitive.attributes;
+    if (attributes) {
+        for (let key in attributes) {
+            hash.push(attributes[key].id);
+            hash.push(attributes[key].count);
+        }
+    }
+    hash.push(primitive.mode);
+    if (primitive.indices) {
+        hash.push(primitive.indices.id);
+        hash.push(primitive.indices.count);
+    }
+    return hash.join(".");
+}
 
-function parseNode(ctx: ParsingContext, node: any, depth: number, matrix: null | FloatArrayParam) {
+function testIfNodesHaveNames(node, level = 0) {
+    if (!node) {
+        return;
+    }
+    if (node.name) {
+        return true;
+    }
+    if (node.children) {
+        const children = node.children;
+        for (let i = 0, len = children.length; i < len; i++) {
+            const childNode = children[i];
+            if (testIfNodesHaveNames(childNode, level + 1)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
 
-    // Pre-order visit scene node
+/**
+ * Parses a glTF node hierarchy that is known to NOT contain "name" attributes on the nodes.
+ * Create a XKTMesh for each mesh primitive, and a single XKTEntity.
+ */
+const parseNodesWithoutNames = (function () {
 
+    const meshIds = [];
+
+    return function (ctx, node, depth, matrix) {
+        if (!node) {
+            return;
+        }
+        matrix = parseNodeMatrix(node, matrix);
+        if (node.mesh) {
+            parseMesh(node, ctx, matrix, meshIds);
+        }
+        if (node.children) {
+            const children = node.children;
+            for (let i = 0, len = children.length; i < len; i++) {
+                const childNode = children[i];
+                parseNodesWithoutNames(ctx, childNode, depth + 1, matrix);
+            }
+        }
+        if (depth === 0) {
+            let objectId = "entity-" + ctx.nextId++;
+            if (meshIds && meshIds.length > 0) {
+                ctx.log("Creating SceneObject with default ID: " + objectId);
+                ctx.sceneModel.createObject({
+                    id: objectId,
+                    meshIds
+                });
+                meshIds.length = 0;
+            }
+        }
+    }
+})();
+
+
+/**
+ * Parses a glTF node hierarchy that is known to contain "name" attributes on the nodes.
+ *
+ * Create a XKTMesh for each mesh primitive, and XKTEntity for each named node.
+ *
+ * Following a depth-first traversal, each XKTEntity is created on post-visit of each named node,
+ * and gets all the XKTMeshes created since the last XKTEntity created.
+ */
+const parseNodesWithNames = (function () {
+
+    const objectIdStack = [];
+    const meshIdsStack = [];
+    let meshIds = null;
+
+    return function (ctx, node, depth, matrix) {
+        if (!node) {
+            return;
+        }
+        matrix = parseNodeMatrix(node, matrix);
+        if (node.name) {
+            meshIds = [];
+            let objectId = node.name;
+            if (!!objectId && ctx.sceneModel.objects[objectId]) {
+                ctx.log(`Warning: Two or more glTF nodes found with same 'name' attribute: '${objectId} - will randomly-generating an object ID in XKT`);
+            }
+            while (!objectId || ctx.sceneModel.objects[objectId]) {
+                objectId = "entity-" + ctx.nextId++;
+            }
+            objectIdStack.push(objectId);
+            meshIdsStack.push(meshIds);
+        }
+        if (meshIds && node.mesh) {
+            parseMesh(node, ctx, matrix, meshIds);
+        }
+        if (node.children) {
+            const children = node.children;
+            for (let i = 0, len = children.length; i < len; i++) {
+                const childNode = children[i];
+                parseNodesWithNames(ctx, childNode, depth + 1, matrix);
+            }
+        }
+        const nodeName = node.name;
+        if ((nodeName !== undefined && nodeName !== null) || depth === 0) {
+            let objectId = objectIdStack.pop();
+            if (!objectId) { // For when there are no nodes with names
+                objectId = "entity-" + ctx.nextId++;
+            }
+            let entityMeshIds = meshIdsStack.pop();
+            if (meshIds && meshIds.length > 0) {
+                ctx.sceneModel.createObject({
+                    id: objectId,
+                    meshIds: entityMeshIds
+                });
+            }
+            meshIds = meshIdsStack.length > 0 ? meshIdsStack[meshIdsStack.length - 1] : null;
+        }
+    }
+})();
+
+function parseNodeMatrix(node, matrix) {
+    if (!node) {
+        return;
+    }
     let localMatrix;
     if (node.matrix) {
         localMatrix = node.matrix;
@@ -427,126 +584,99 @@ function parseNode(ctx: ParsingContext, node: any, depth: number, matrix: null |
             matrix = localMatrix;
         }
     }
+    return matrix;
+}
+
+function parseMesh(node: any, ctx: ParsingContext, matrix: FloatArrayParam, meshIds: string[]) {
 
     if (node.mesh) {
 
         const mesh = node.mesh;
         const numPrimitives = mesh.primitives.length;
 
-        if (numPrimitives > 0) {
-            for (let i = 0; i < numPrimitives; i++) {
-                const primitive = mesh.primitives[i];
-                if (!primitive._geometryId) {
-                    const geometryId = "geometry-" + ctx.nextId++;
+        for (let i = 0; i < numPrimitives; i++) {
+            const primitive = mesh.primitives[i];
 
-                    const geometryParams: SceneGeometryParams = {
-                        id: geometryId,
-                        primitive: 0,
-                        // @ts-ignore
-                        positions: undefined
-                    };
-                    switch (primitive.mode) {
-                        case 0: // POINTS
-                            geometryParams.primitive = PointsPrimitive;
-                            break;
-                        case 1: // LINES
-                            geometryParams.primitive = LinesPrimitive;
-                            break;
-                        case 2: // LINE_LOOP
-                            geometryParams.primitive = LinesPrimitive;
-                            break;
-                        case 3: // LINE_STRIP
-                            geometryParams.primitive = LinesPrimitive;
-                            break;
-                        case 4: // TRIANGLES
-                            geometryParams.primitive = TrianglesPrimitive;
-                            break;
-                        case 5: // TRIANGLE_STRIP
-                            geometryParams.primitive = TrianglesPrimitive;
-                            break;
-                        case 6: // TRIANGLE_FAN
-                            geometryParams.primitive = TrianglesPrimitive;
-                            break;
-                        default:
-                            geometryParams.primitive = TrianglesPrimitive;
-                    }
-                    const POSITION = primitive.attributes.POSITION;
-                    if (!POSITION) {
-                        continue;
-                    }
-                    geometryParams.positions = primitive.attributes.POSITION.value;
-                    if (primitive.attributes.COLOR_0) {
-                        geometryParams.colors = primitive.attributes.COLOR_0.value;
-                    }
-                    if (primitive.attributes.TEXCOORD_0) {
-                        geometryParams.uvs = primitive.attributes.TEXCOORD_0.value;
-                    }
-                    if (primitive.indices) {
-                        geometryParams.indices = primitive.indices.value;
-                    }
-                    // @ts-ignore
-                    ctx.sceneModel.createGeometry(geometryParams);
-                    primitive._geometryId = geometryId;
+            // FIXME: Too many clashes happening on createPrimitiveHash?
+            // FIXME: geometryIds are not globally unique across multiple glTF chunks
+
+           let geometryId = createPrimitiveHash(ctx, primitive);
+
+          //  geometryId = createUUID();
+            if (!ctx.geometryCreated[geometryId]) {
+                const POSITION = primitive.attributes.POSITION;
+                if (!POSITION) {
+                    continue;
                 }
-
-                const meshId = `${ctx.nextId++}`;
-                const meshParams: SceneMeshParams = {
-                    id: meshId,
-                    geometryId: primitive._geometryId,
-                    matrix: matrix ? matrix.slice() : identityMat4(),
-                    textureSetId: undefined
+                const geometryParams: SceneGeometryParams = {
+                    id: geometryId,
+                    primitive: 0,
+                    // @ts-ignore
+                    positions: undefined
                 };
-                const material = primitive.material;
-                if (material) {
-                    //     meshParams.textureSetId = material._textureSetId;
-                    meshParams.color = material._attributes.color;
-                    meshParams.opacity = material._attributes.opacity;
-                    // meshParams.metallic = material._attributes.metallic;
-                    // meshParams.roughness = material._attributes.roughness;
-                } else {
-                    meshParams.color = [1.0, 1.0, 1.0];
-                    meshParams.opacity = 1.0;
+                switch (primitive.mode) {
+                    case 0: // POINTS
+                        geometryParams.primitive = PointsPrimitive;
+                        break;
+                    case 1: // LINES
+                        geometryParams.primitive = LinesPrimitive;
+                        break;
+                    case 2: // LINE_LOOP
+                        geometryParams.primitive = LinesPrimitive;
+                        break;
+                    case 3: // LINE_STRIP
+                        geometryParams.primitive = LinesPrimitive;
+                        break;
+                    case 4: // TRIANGLES
+                        geometryParams.primitive = TrianglesPrimitive;
+                        break;
+                    case 5: // TRIANGLE_STRIP
+                        geometryParams.primitive = TrianglesPrimitive;
+                        break;
+                    case 6: // TRIANGLE_FAN
+                        geometryParams.primitive = TrianglesPrimitive;
+                        break;
+                    default:
+                        geometryParams.primitive = TrianglesPrimitive;
+                }
+                geometryParams.positions = primitive.attributes.POSITION.value;
+                if (primitive.attributes.COLOR_0) {
+                    geometryParams.colors = primitive.attributes.COLOR_0.value;
+                }
+                if (primitive.attributes.TEXCOORD_0) {
+                    geometryParams.uvs = primitive.attributes.TEXCOORD_0.value;
+                }
+                if (primitive.indices) {
+                    geometryParams.indices = primitive.indices.value;
                 }
                 // @ts-ignore
-                ctx.sceneModel.createMesh(meshParams);
-                deferredMeshIds.push(meshId);
+                ctx.sceneModel.createGeometry(geometryParams);
+                ctx.geometryCreated[geometryId] = true;
+            } else {
+                console.log("geometry reused");
             }
-        }
-    }
 
-    // Visit child scene nodes
-
-    if (node.children) {
-        const children = node.children;
-        for (let i = 0, len = children.length; i < len; i++) {
-            const childNode = children[i];
-            parseNode(ctx, childNode, depth + 1, matrix);
+            const meshId = `${ctx.nextId++}`;
+            const meshParams: SceneMeshParams = {
+                id: meshId,
+                geometryId,
+                matrix: matrix ? matrix.slice() : identityMat4(),
+                textureSetId: undefined
+            };
+            const material = primitive.material;
+            if (material) {
+                //     meshParams.textureSetId = material._textureSetId;
+                meshParams.color = material._attributes.color;
+                meshParams.opacity = material._attributes.opacity;
+                // meshParams.metallic = material._attributes.metallic;
+                // meshParams.roughness = material._attributes.roughness;
+            } else {
+                meshParams.color = [1.0, 1.0, 1.0];
+                meshParams.opacity = 1.0;
+            }
+            // @ts-ignore
+            ctx.sceneModel.createMesh(meshParams);
+            meshIds.push(meshId);
         }
-    }
-
-    // Post-order visit scene node
-
-    const nodeName = node.name;
-    if (((nodeName !== undefined && nodeName !== null) || depth === 0) && deferredMeshIds.length > 0) {
-        if (nodeName === undefined || nodeName === null) {
-            ctx.log(`Warning: 'name' properties not found on glTF scene nodes - will randomly-generate object IDs in DTX`);
-        }
-        let objectId = nodeName; // Fall back on generated ID when `name` not found on glTF scene node(s)
-        if (!!objectId && ctx.objectCreated[objectId]) {
-            ctx.log(`Warning: Two or more glTF nodes found with same 'name' attribute: '${nodeName} - will randomly-generating an object ID in DTX`);
-        }
-        while (!objectId || ctx.objectCreated[objectId]) {
-            objectId = "object-" + ctx.nextId++;
-        }
-        // @ts-ignore
-        ctx.sceneModel.createObject({
-            id: objectId,
-            meshIds: deferredMeshIds
-        });
-        ctx.objectCreated[objectId] = true;
-        deferredMeshIds.length = 0;
-
     }
 }
-
-

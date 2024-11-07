@@ -53,12 +53,14 @@
  * ````javascript
  * import {SDKError} from "@xeokit/core";
  * import {Scene} from "@xeokit/scene";
+ * import {Data} from "@xeokit/data";
  * import  {WebGLRenderer} from "@xeokit/webglrenderer";
  * import {Viewer} from "@xeokit/viewer";
  * import {CameraControl} from "@xeokit/cameracontrol";
  * import {loadGLTF} from "@xeokit/gltf";
  *
  * const scene = new Scene();
+ * const data = new Data();
  *
  * const renderer = new WebGLRenderer({});
  *
@@ -83,19 +85,25 @@
  *     id: "myModel"
  * });
  *
+ * const dataModel = data.createModel({
+ *     id: "myModel"
+ * });
+ *
  * fetch("model.glb").then(response => {
  *
  *     response.arrayBuffer().then(fileData => {
  *
  *        loadGLTF({
  *            fileData,
- *            sceneModel
+ *            sceneModel,
+ *            dataModel
  *        }).then(() => {
  *
  *            sceneModel.build();
  *
  *        }).catch(err => {
  *            sceneModel.destroy();
+ *            dataModel.destroy();
  *            console.error(`Error loading glTF data: ${err}`);
  *        });
  *
@@ -111,4 +119,3 @@
  * @module @xeokit/gltf
  */
 export * from "./loadGLTF";
-export * from "./loadGLTFManifest";
