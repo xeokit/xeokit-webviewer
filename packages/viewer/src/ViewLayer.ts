@@ -9,64 +9,33 @@ import type {Scene, SceneModel} from "@xeokit/scene";
 
 
 /**
- * A layer of {@link @xeokit/viewer!ViewObject | ViewObjects} in a {@link @xeokit/viewer!View}.
+ * Manages and organizes {@link @xeokit/viewer!ViewObject | ViewObjects} in a {@link @xeokit/viewer!View}.
  *
- * See {@link "@xeokit/viewer"} for usage.
+ * ViewLayers allow users to group and segregate ViewObjects based on their roles or aspects in a scene, simplifying interaction and focusing operations
+ * on specific object groups.
  *
- * ## Summary
+ * ViewLayers group ViewObjects based on the {@link @xeokit/scene!SceneObject.layerId | layerId} of the
+ * corresponding {@link @xeokit/scene!SceneObject | SceneObject}.
  *
- * * Automatically stores a {@link @xeokit/viewer!ViewObject} for each existing {@link RendererObject} that has a matching {@link RendererObject.layerId | ViewerObject.layerId}
- * * Useful for segreggating {@link @xeokit/viewer!ViewObject | ViewObjects} into layers
- * * Created automatically or manually (see {@link View.createLayer | View.createLayer})
- * * Stored in {@link View.layers | View.layers}
+ * See {@link "@xeokit/viewer" | @xeokit/viewer}  for more info.
  *
- * ## Overview
+ * <br>
  *
- * ViewLayers organize a {@link View |View's} {@link @xeokit/viewer!ViewObject | ViewObjects} into layers, according to which aspects of
- * the view they represent. They make it easier for us to focus our interactions on the ViewObjects that are relevant
- * to the particular aspects we're interested in.
+ * # Automatic vs. Manual ViewLayers
  *
- * ### Typical use case: segregating model objects from environment objects
+ * * **Automatic ViewLayers** - Created automatically on-the-fly as SceneObjects with {@link @xeokit/scene!SceneObject.layerId | layerIds}
+ * are created and destroyed. Ensures a dynamic and self-managing system where layers appear and disappear based on the existence of relevant objects.
  *
- * A typical use case for this feature is to group environmental {@link @xeokit/viewer!ViewObject | ViewObjects} (e.g. ground, skybox) in an "environment" ViewLayer,
- * and group model ViewObjects in a "model" ViewLayer. Then we can focus our model interactions (show, hide, highlight,
- * save/load BCF viewpoints, etc.) on the ViewObjects in the "model" ViewLayer, without involving the "environment"
- * ViewObjects at all, which are effectively in the background. We can basically ignore the environment objects as we
- * do various batch operations on our model objects, i.e. "X-ray all", "X-ray everything except for walls" and so on.
+ * * **Manual ViewLayers** - Requires user's manual creation and destruction of {@link @xeokit/viewer!ViewLayer | ViewLayers}.
+ * ViewLayers persist even after objects are destroyed.
  *
- * ### Automatic ViewLayers
+ * <br>
  *
- * By default, each {@link @xeokit/viewer!View} automatically lazy-creates ViewLayers within itself as required. As {@link RendererObject | ViewerObjects} appear in the
- * {@link @xeokit/viewer!Viewer | Viewer}, {@link @xeokit/viewer!ViewObject | ViewObjects} and Viewlayers magically appear in each existing View.
+ * # Automatic ViewLayers
  *
- * Recall that, whenever a {@link RendererObject} is created, each existing {@link @xeokit/viewer!View} will automatically create a
- * corresponding {@link @xeokit/viewer!ViewObject} to represent and control that ViewerObject's appearance within the View's canvas.
- *
- * If the {@link RendererObject} also happens to have a value set on its {@link RendererObject.layerId} ID property, then the View
- * will also automatically ensure that it contains a matching {@link @xeokit/viewer!ViewLayer}, and will register the new ViewObject
- * in that ViewLayer. Note that each ViewObject can belong to a maximum of one ViewLayer.
- *
- * When a {@link @xeokit/viewer!View} automatically creates Viewlayers, it will also automatically destroy them again whenever
- * their {@link RendererObject | ViewerObjects} have all been destroyed.
- *
- * ### Manual ViewLayers
- *
- * We can configure a {@link @xeokit/viewer!View} to **not** automatically create ViewLayers, and instead rely on us to manually create them.
- *
- * When we do that, the View will only create the {@link @xeokit/viewer!ViewObject | ViewObjects} within itself for the ViewLayers that we created. The
- * View will ignore all ViewerObjects that don't have {@link RendererObject.layerId} values that match the IDs of our
- * manually-created ViewLayers.
- *
- * This feature is useful for ensuring that aspect-focused Views don't contain huge numbers of unused ViewObjects for
- * ViewerObjects that they never need to show.
- *
- * When we manually create ViewLayers like this, then the View will not automatically destroy them whenever
- * their {@link RendererObject | ViewerObjects} have all been destroyed. This keeps the ViewLayers around, in case
- * we create matching ViewerObjects again in future.
- *
- * ## Examples
- *
- * ### Exampe 1: Automatic ViewLayers
+ * ViewLayers are useful for separating different types of objects, such as models and environment objects. A common use case is to
+ * create separate layers for models and environment objects like the ground or skybox. This allows focusing on model objects for
+ * operations like highlighting, hiding, or interacting, without affecting background objects.
  *
  * Create a {@link @xeokit/viewer!Viewer | Viewer}:
  *
@@ -78,7 +47,7 @@ import type {Scene, SceneModel} from "@xeokit/scene";
  * });
  *````
  *
- * Create a {@link @xeokit/viewer!View}, with the default setting of ````false```` for {@link ViewParams.autoLayers}:
+ * Create a {@link @xeokit/viewer!View | View}, with {@link ViewParams.autoLayers | autoLayers} set true:
  *
  * ````javascript
  * const view1 = myViewer.createView({
@@ -92,11 +61,11 @@ import type {Scene, SceneModel} from "@xeokit/scene";
  * view1.camera.up = [-0.018, 0.999, 0.039];
  * ````
  *
- * Next, we'll create a {@link @xeokit/scene!SceneModel | SceneModel} containing two model {@link RendererObject | ViewerObjects} that represent a building
- * foundation and walls, along with two environmental ViewerObjects that represent a skybox and ground plane.
+ * Next, create a SceneModel with four SceneObjects. The first two SceneObjects will represent a skybox and a ground
+ * plane, while the other two will represent a building foundation and walls.
  *
- * The ground and skybox ViewerObjects specify that their {@link @xeokit/viewer!ViewObject | ViewObjects} belong
- * to "environment" ViewLayers, while the model ViewerObjects specify that their ViewObjects belong to "model" ViewLayers.
+ * The skybox and ground plane SceneObjects will assign their ViewObjects to the "environment" ViewLayer, and the building
+ * foundation and walls will assign theirs to the "model" ViewLayer.
  *
  * ````javascript
  * const sceneModel = myViewer.scene.createModel({
@@ -133,27 +102,23 @@ import type {Scene, SceneModel} from "@xeokit/scene";
  * sceneModel.build();
  * ````
  *
- * Our {@link @xeokit/viewer!View} has now automatically created an "environment" {@link @xeokit/viewer!ViewLayer}, which contains {@link @xeokit/viewer!ViewObject | ViewObjects} for the skybox and
- * ground plane ViewerObjects, and a "model" ViewLayer, which contains ViewObjects for the house foundation and walls.
+ * Our {@link @xeokit/viewer!View | View} now has an "environment" {@link @xeokit/viewer!ViewLayer | ViewLayer}, which
+ * contains {@link @xeokit/viewer!ViewObject | ViewObjects} for the skybox and ground plane, and a "model" ViewLayer, which
+ * contains ViewObjects for the house foundation and walls.
  *
- * We can now batch-update the ViewObjects in each ViewLayer independently. As mentioned, this is useful when we need to ignore things
- * like UI or environmental objects in batch-updates, BCF viewpoints etc.
+ * We can now focus our updates on the ViewObjects in each ViewLayer.
  *
  * ````javascript
- * // viewer.objects contains four ViewerObjects with IDs "ground", "skyBox", "houseFoundation" and "houseWalls"
- *
- * // viewer.views.view1.objects contains four ViewObjects with IDs "ground", "skyBox", "houseFoundation" and "houseWalls"
- *
- * // viewer.views.view1.layers contains two ViewLayers with IDs "environment" and "model"
- *
  * const environmentLayer = view1.layers["environment"];
  * environmentLayer.setObjectsVisible(environmentLayer.objectIds, true);
 
  * const modelLayer = view1.layers["model"];
- * modelLayer.setObjectsVisible(modelLayer.objectIds, true);
+ * modelLayer.setObjectsSelected(modelLayer.objectIds, true);
  * ````
  *
- * ### Example 2: Manual ViewLayers
+ * <br>
+ *
+ * # Manual ViewLayers
  *
  * Create a {@link @xeokit/viewer!Viewer | Viewer}:
  *
@@ -165,8 +130,9 @@ import type {Scene, SceneModel} from "@xeokit/scene";
  * });
  * ````
  *
- * Create a {@link @xeokit/viewer!View}, this time with ````false```` for {@link ViewParams.autoLayers}, in order to **not**
- * automatically create ViewLayers on demand:
+ * Create a {@link @xeokit/viewer!View | View} with {@link ViewParams.autoLayers | autoLayers} set false.
+ *
+ * This will prevent the View from creating ViewLayers automatically.
  *
  * ````javascript
  * const view1 = myViewer.createView({
@@ -180,7 +146,7 @@ import type {Scene, SceneModel} from "@xeokit/scene";
  * view1.camera.up = [-0.018, 0.999, 0.039];
  * ````
  *
- * We'll manually create the "model" ViewLayer, and won't create an "environment" ViewLayer:
+ * Create a "model" ViewLayer, but this time don't create an "environment" ViewLayer:
  *
  * ````javascript
  * const modelViewLayer = view1.createLayer({
@@ -189,12 +155,8 @@ import type {Scene, SceneModel} from "@xeokit/scene";
  * });
  * ````
  *
- * As we did in the previous example, we'll now create a {@link @xeokit/scene!SceneModel | SceneModel} containing two model
- * {@link RendererObject | ViewerObjects} that represent a building foundation and walls, along with two environmental
- * ViewerObjects that represent a skybox and ground plane.
- *
- * As before, the ground and skybox ViewerObjects specify that their {@link @xeokit/viewer!ViewObject | ViewObjects} belong to "environment" ViewLayers,
- * while the model ViewerObjects specify that their ViewObjects belong to "model" ViewLayers.
+ * As in the previous example, we'll now create a SceneModel containing two model SceneObjects representing a building foundation and
+ * walls, along with two environmental ViewerObjects representing a skybox and ground plane.
  *
  * ````javascript
  * const sceneModel = myViewer.scene.createModel({
@@ -231,20 +193,110 @@ import type {Scene, SceneModel} from "@xeokit/scene";
  * sceneModel.build();
  * ````
  *
- * This time, however, our {@link @xeokit/viewer!View} has now created {@link @xeokit/viewer!ViewObject | ViewObjects} for the "model" ViewerObjects, while
- * ignoring the "environment" ViewerObjects.
+ * This time, however, our View has created ViewObjects only for the "model" SceneObjects, while ignoring the "environment" SceneObjects.
  *
- * As far as this View is concerned, the "environment" ViewerObjects do not exist.
+ * From this View's perspective, the "environment" SceneObjects don't exist because no "environmnet" ViewLayer exists.
  *
  * ````javascript
- * // viewer.scene.objects contains four SceneObjects with IDs "ground", "skyBox", "houseFoundation" and "houseWalls"
- *
- * // viewer.views.view1.objects contains two ViewObjects with IDs "houseFoundation" and "houseWalls"
- *
- * // viewer.views.view1.layers contains one ViewLayer with ID "model"
- *
  * const modelLayer = view1.layers["model"];
  * modelLayer.setObjectsVisible(modelLayer.objectIds, true);
+ * ````
+ *
+ * <br>
+ *
+ * # Loading a model into a ViewLayer
+ *
+ * Create a Viewer:
+ *
+ * ````javascript
+ * import {Viewer} from "@xeokit/viewer";
+ * import {loadDotBIM} from "@xeokit/dotbim";
+ *
+ * const myViewer = new Viewer({
+ *      id: "myViewer"
+ * });
+ * ````
+ *
+ * Create a View, with autoLayers set true:
+ *
+ * ````javascript
+ *
+ * const view1 = myViewer.createView({
+ *      id: "myView",
+ *      elementId: "myView1",
+ *      autoLayers: true // <<----------- Default
+ * });
+ *
+ * view1.camera.eye = [-3.933, 2.855, 27.018];
+ * view1.camera.look = [4.400, 3.724, 8.899];
+ * view1.camera.up = [-0.018, 0.999, 0.039];
+ * ````
+ *
+ * Create a SceneModel, with layerId "environmental", and create some environmental objects in it.
+ *
+ * ````javascript
+ * const environentSceneModel = myViewer.scene.createModel({
+ *      id: "myModel",
+ *      layerId: "environment"
+ * });
+ *
+ * //...
+ *
+ * environentSceneModel.createObject({
+ *      id: "ground",
+ *      meshIds: ["groundMesh}]
+ * });
+ *
+ * environentSceneModel.createObject({
+ *      id: "skyBox",
+ *      meshIds: ["skyBoxMesh}]
+ * });
+ *
+ * environentSceneModel.build();
+ *
+ * ````
+ *
+ * Create a second SceneModel, with layerId "model", and load a BIM model into it.
+ *
+ * ````javascript
+ * const modelSceneModel = myViewer.scene.createModel({
+ *      id: "myModel2",
+ *      layerId: "model",
+ * });
+ *
+ * fetch(`model.bim`)
+ *     .then(response => {
+ *         response
+ *             .json()
+ *             .then(fileData => {
+ *                 loadDotBIM({
+ *                     fileData,
+ *                     modelSceneModel
+ *                 })
+ *                 .then(()=>{
+ *                     modelSceneModel.build();
+ *                 })
+ *                 .catch(err => {
+ *                     console.error(err);
+ *                 });
+ *              }).catch(err => {
+ *                  console.error(err);
+ *              });
+ *     }).catch(err => {
+ *         console.error(err);
+ *     });
+ * ````
+ *
+ * All our model objects are now in the "model" ViewLayer, and all our environmental objects are in the "environment" ViewLayer.
+ *
+ * Let's show all the model objects, and hide all the environmental objects:
+ *
+ * ````javascript
+ * const modelLayer = view1.layers["model"];
+ * modelLayer.setObjectsVisible(modelLayer.objectIds, true);
+ *
+ * const environmentLayer = view1.layers["environmentLayer"];
+ * environmentLayer.setObjectsVisible(environmentLayer.objectIds, false);
  * ````
  */
 class ViewLayer extends Component {

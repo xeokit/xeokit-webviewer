@@ -33,7 +33,6 @@ class WebGLRendererView {
     canvasTransparent: boolean;
     saoEnabled: boolean;
     edgesEnabled: boolean;
-    backgroundColor: FloatArrayParam;
     transparentEnabled: boolean;
     pbrEnabled: boolean;
     saveCanvasBoundary: DOMRect;
@@ -53,7 +52,6 @@ class WebGLRendererView {
         this.saoEnabled = false;
         this.edgesEnabled = true;
         this.transparentEnabled = true;
-        this.backgroundColor = createVec3();
         this.saveCanvasBoundary = view.htmlElement.getBoundingClientRect();
         this.renderBufferManager = new WebGLRenderBufferManager(gl, webglCanvasElement);
         this.pickIDs = new Map({});
@@ -534,18 +532,6 @@ export class WebGLRenderer implements Renderer {
         }
     }
 
-    /**
-     * Sets the WebGLRenderer's background color.
-     * @internal
-     */
-    setBackgroundColor(viewIndex: number, color: FloatArrayParam): void { // @ts-ignore
-        const rendererView = this.#rendererViewsList[viewIndex];
-        if (rendererView) {
-            // @ts-ignore
-            rendererView.backgroundColor.set(color);
-            rendererView.imageDirty = true;
-        }
-    }
 
     /**
      * Sets whether the WebGLRenderer draws edges.
@@ -636,7 +622,7 @@ export class WebGLRenderer implements Renderer {
         if (rendererView.canvasTransparent) {
             gl.clearColor(1, 1, 1, 1);
         } else {
-            gl.clearColor(rendererView.backgroundColor[0], rendererView.backgroundColor[1], rendererView.backgroundColor[2], 1.0);
+            gl.clearColor(rendererView.view.backgroundColor[0], rendererView.view.backgroundColor[1], rendererView.view.backgroundColor[2], 1.0);
         }
         gl.clear(gl.COLOR_BUFFER_BIT | gl.DEPTH_BUFFER_BIT);
     };
@@ -963,7 +949,7 @@ export class WebGLRenderer implements Renderer {
         if (rendererView.canvasTransparent) {
             gl.clearColor(0, 0, 0, 0);
         } else {
-            gl.clearColor(rendererView.backgroundColor[0], rendererView.backgroundColor[1], rendererView.backgroundColor[2], 1.0);
+            gl.clearColor(rendererView.view.backgroundColor[0], rendererView.view.backgroundColor[1], rendererView.view.backgroundColor[2], 1.0);
         }
 
         gl.enable(gl.DEPTH_TEST);

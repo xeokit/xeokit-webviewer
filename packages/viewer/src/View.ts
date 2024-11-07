@@ -54,8 +54,9 @@ export interface SnapshotFinishedEvent {
  *
  * ## Overview
  *
- * A View is an independently-configurable view of the {@link RendererObject | ViewerObjects} existing within a Viewer, with
- * its own HTML canvas. A View automatically contains a {@link @xeokit/viewer!ViewObject} for each existing ViewerObject. ViewObjects
+ * A View is an independently-configurable view of the objects in a Viewer, with
+ * its own HTML canvas, camera, light sources, object states, slicing planes etc.
+ * A View automatically contains a {@link @xeokit/viewer!ViewObject} for each existing ViewerObject. ViewObjects
  * function as a kind of proxy for the ViewerObjects, through which we control their appearance
  * (show/hide/highlight etc.) within that particular View's canvas.
  *
@@ -74,7 +75,7 @@ export interface SnapshotFinishedEvent {
  * * Control the visibility of ViewObjects with {@link View.setObjectsVisible}
  * * Emphasise ViewObjects with {@link View.setObjectsHighlighted}, {@link View.setObjectsSelected}, {@link View.setObjectsXRayed} and {@link View.setObjectsColorized}
  *
- * ## Examples
+ * # Examples
  *
  * Create a view in a given canvas, with three objects visible and a couple of object X-rayed (rendered translucent):
  *

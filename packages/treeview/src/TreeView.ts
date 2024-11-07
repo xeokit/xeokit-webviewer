@@ -552,6 +552,7 @@ export class TreeView extends Component {
             this.view.onObjectXRayed.unsubscribe(this.#onViewObjectXRayed);
             this.#destroyed = true;
         }
+        // TODO: Unsubscribe from Scene events
         super.destroy();
     }
 

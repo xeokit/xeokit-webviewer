@@ -39,13 +39,14 @@
  */
 import type {FloatArrayParam} from "@xeokit/math";
 import {
+    createMat4,
     createVec3, createVec4,
-    dotVec3,
+    dotVec3, identityMat4, mulMat4,
     mulVec3Scalar,
     normalizeVec3,
     setMat4Translation,
     transformVec4,
-    translateMat4v
+    translateMat4v, translationMat4v
 } from "@xeokit/matrix";
 import {getPositions3Center} from "@xeokit/boundaries";
 
@@ -83,7 +84,7 @@ export function createRTCViewMat(viewMat: FloatArrayParam, rtcCenter: FloatArray
  */
 export const createRTCModelMat = (() => {
 
-    const zeroVec4 = createVec4([0,0,0,1]);
+    const zeroVec4 = createVec4([0, 0, 0, 1]);
     const tempVec4a = createVec4();
 
     return (matrix: FloatArrayParam, rtcCenter: FloatArrayParam): FloatArrayParam => {
@@ -91,8 +92,16 @@ export const createRTCModelMat = (() => {
         rtcCenter[0] = Math.round(tempVec4[0] / RTC_CELL_SIZE) * RTC_CELL_SIZE;
         rtcCenter[1] = Math.round(tempVec4[1] / RTC_CELL_SIZE) * RTC_CELL_SIZE;
         rtcCenter[2] = Math.round(tempVec4[2] / RTC_CELL_SIZE) * RTC_CELL_SIZE;
+
         const rtcModelMatrix = matrix.slice();
         translateMat4v(mulVec3Scalar(rtcCenter, -1, tempVec3a), rtcModelMatrix);
+
+        /////////////////////////////////////////////////
+        // Try a full matrix post- multiplication
+        ///////////////////////////////////////////////////
+        // const offsetMatrix = translationMat4v(mulVec3Scalar(rtcCenter, -1, tempVec3a), identityMat4());
+        // const rtcModelMatrix = mulMat4(offsetMatrix, matrix, createMat4());
+
         return rtcModelMatrix;
     };
 })();
@@ -206,7 +215,7 @@ export function rtcToWorldPos(rtcCenter: FloatArrayParam, rtcPos: FloatArrayPara
  * @param rtcPlanePos
  * @returns {*}
  */
-export function getPlaneRTCPos(dist: number, dir: FloatArrayParam, rtcCenter: FloatArrayParam, rtcPlanePos: FloatArrayParam) : FloatArrayParam{
+export function getPlaneRTCPos(dist: number, dir: FloatArrayParam, rtcCenter: FloatArrayParam, rtcPlanePos: FloatArrayParam): FloatArrayParam {
     const rtcCenterToPlaneDist = dotVec3(dir, rtcCenter) + dist;
     const dirNormalized = normalizeVec3(dir, tempVec3a);
     mulVec3Scalar(dirNormalized, -rtcCenterToPlaneDist, rtcPlanePos);

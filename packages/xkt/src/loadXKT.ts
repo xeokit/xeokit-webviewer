@@ -30,11 +30,17 @@ export function loadXKT(params: {
     sceneModel: SceneModel;
 }): Promise<void> {
     const {fileData, sceneModel} = params;
+    if (!fileData) {
+        return Promise.reject("Argument expected: fileData");
+    }
+    if (!sceneModel) {
+        return Promise.reject("Parameter expected: sceneModel");
+    }
     if (sceneModel.destroyed) {
-        return Promise.reject(new SDKError("SceneModel already destroyed"));
+        return Promise.reject("SceneModel already destroyed");
     }
     if (sceneModel.built) {
-        return Promise.reject(new SDKError("SceneModel already built"));
+        return Promise.reject("SceneModel already built");
     }
     return parseXKTv10(params);
 }

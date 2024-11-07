@@ -57,9 +57,9 @@ class Edges extends Component {
     /**
      * Sets which rendering modes in which to render edges.
      *
-     * Accepted modes are {@link @xeokit/constants!QualityRender} and {@link @xeokit/constants!FastRender}.
+     * Accepted modes are {@link @xeokit/constants!QualityRender | QualityRender} and {@link @xeokit/constants!FastRender | FastRender}.
      *
-     * Default value is [{@link @xeokit/constants!QualityRender}].
+     * Default value is [{@link @xeokit/constants!QualityRender | QualityRender}].
      */
     set renderModes(value: number[]) {
         this.#state.renderModes = value;
@@ -69,9 +69,9 @@ class Edges extends Component {
     /**
      * Gets which rendering modes in which to render edges.
      *
-     * Accepted modes are {@link @xeokit/constants!QualityRender} and {@link @xeokit/constants!FastRender}.
+     * Accepted modes are {@link @xeokit/constants!QualityRender | QualityRender} and {@link @xeokit/constants!FastRender | FastRender}.
      *
-     * Default value is [{@link @xeokit/constants!QualityRender}].
+     * Default value is [{@link @xeokit/constants!QualityRender | QualityRender}].
      */
     get renderModes(): number[] {
         return this.#state.renderModes;

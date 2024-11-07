@@ -34,7 +34,7 @@ describe('saveAndLoadWebIFC', () => {
 
         expect(ifcAPI).toBeDefined();
 
-        const fileData = fs.readFileSync("./tests/assets/IfcOpenHouse4.ifc");
+        const fileData = fs.readFileSync("./tests/assets/model.ifc");
 
         expect(fileData).toBeInstanceOf(Buffer);
         expect(fileData.length).toBe(113264);

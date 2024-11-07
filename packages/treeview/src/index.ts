@@ -30,7 +30,7 @@
  * import {Data} from "@xeokit/data";
  * import * as ifcTypes from "@xeokit/ifctypes";
  * import {TreeView} from "@xeokit/treeview!TreeView";
- * import {loadDTX} from "@xeokit/dtx";
+ * import {loadXGF} from "@xeokit/xgf";
  * ````
  *
  * Create a {@link @xeokit/viewer!Viewer | Viewer}, configured with a {@link @xeokit/webglrenderer!WebGLRenderer | WebGLRenderer}:
@@ -42,7 +42,7 @@
  * });
  * ````
  *
- * Create a {@link @xeokit/viewer!View} and position the {@link @xeokit/viewer!Camera}:
+ * Create a {@link @xeokit/viewer!View} and position the {@link @xeokit/viewer!Camera | Camera}:
  *
  * ````javascript
  * const view1 = myViewer.createView({
@@ -78,11 +78,11 @@
  *     id: "myModel"
  * });
  *
- * fetch("myModel.dtx").then(response => {
+ * fetch("myModel.xgf").then(response => {
  *
  *     response.arrayBuffer().then(data => {
  *
- *          loadDTX({ data, sceneModel, dataModel });
+ *          loadXGF({ data, sceneModel, dataModel });
  *
  *          sceneModel.build();
  *          dataModel.build();

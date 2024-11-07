@@ -4,7 +4,7 @@
  *
  * <img  style="padding:0px; padding-top:30px; padding-bottom:10px; height:130px;" src="media://images/xeokit_logo_mesh.png"/>
  *
- * # xeokit [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) Format Importer and Exporter
+ * # XGF - xeokit Graphics Format
  *
  * ---
  *
@@ -55,6 +55,8 @@
  *
  * const scene = new Scene();
  *
+ * const data = new Data();
+ *
  * const renderer = new WebGLRenderer({});
  *
  * const viewer = new Viewer({
@@ -78,22 +80,29 @@
  *     id: "myModel"
  * });
  *
+ * const dataModel = data.createModel({
+ *     id: "myModel"
+ * });
+ *
  * fetch("model.xgf").then(response => {
  *
  *     response.arrayBuffer().then(fileData => {
  *
  *         loadXGF({
  *             fileData,
- *             sceneModel
+ *             sceneModel,
+ *             dataModel
  *         }).then(() => {
  *
- *             sceneModel.build();
+ *              sceneModel.build();
+ *              dataMode.build();
  *
  *         }).catch(err => {
  *
- *             sceneModel.destroy();
+ *              sceneModel.destroy();
+ *              dataModel.destroy();
  *
- *             console.error(`Error loading XGF: ${err}`);
+ *              console.error(`Error loading XGF: ${err}`);
  *         });
  *
  *     }).catch(err => {

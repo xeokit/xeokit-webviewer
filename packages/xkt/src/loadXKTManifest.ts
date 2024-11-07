@@ -1,8 +1,7 @@
 import {SceneModel} from "@xeokit/scene";
 import {DataModel} from "@xeokit/data";
-import {SDKError} from "@xeokit/core";
 import {loadXKT} from "./loadXKT";
-import {loadMetamodel} from "@xeokit/metamodel";
+import {loadMetaModel} from "@xeokit/metamodel";
 
 /**
  *
@@ -25,17 +24,17 @@ export function loadXKTManifest(params: {
     return new Promise<void>((resolve, reject) => {
 
         if (!params) {
-            return reject(new SDKError("[loadXKTChunks] Argument expected: params"));
+            return reject("Argument expected: params");
         }
 
         const sceneModel = params.sceneModel;
         if (!sceneModel) {
-            return reject(new SDKError("[loadXKTChunks] Parameter expected: sceneModel"));
+            return reject("Parameter expected: sceneModel");
         }
 
         const dataModel = params.dataModel;
         if (!params.manifest && !params.src) {
-            return reject(new SDKError("[loadXKTChunks] Parameter expected: manifest or src"));
+            return reject("Parameter expected: manifest or src");
         }
 
         if (params.src) {
@@ -64,7 +63,7 @@ export function loadXKTManifest(params: {
                                             i++;
                                             loadNextXKT();
                                         }).catch((error) => {
-                                            reject(`[loadXKTChunks] Error loading XKT file: ${error}`);
+                                            reject(`Error loading XKT file: ${error}`);
                                         })
                                     });
                                 });
@@ -83,14 +82,14 @@ export function loadXKTManifest(params: {
                             } else {
                                 fetch(`${baseDir}${metaModelFiles[i]}`).then(response => {
                                     response.json().then(fileData => {
-                                        loadMetamodel({
+                                        loadMetaModel({
                                             fileData,
                                             dataModel
                                         }).then(() => {
                                             i++;
                                             loadNextMetaModelFile();
                                         }).catch((error) => {
-                                            reject(`[loadXKTChunks] Error loading XKT metadata file: ${error}`);
+                                            reject(`Error loading XKT metadata file: ${error}`);
                                         })
                                     });
                                 });

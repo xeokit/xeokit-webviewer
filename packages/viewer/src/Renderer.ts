@@ -223,20 +223,6 @@ export interface Renderer {
     setPBREnabled(viewIndex: number, enabled: boolean): void | SDKError;
 
     /**
-     * Set background color for the given View.
-     *
-     * @param viewIndex Handle to the View, returned earlier by {@link @xeokit/viewer!Renderer.attachView | Renderer.attachView}.
-     * @param color RGB background color.
-     * @internal
-     * @returns *void*
-     * * Success.
-     * @returns *{@link @xeokit/core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * Can't find a View attached to this Renderer with the given handle.
-     */
-    setBackgroundColor(viewIndex: number, color: FloatArrayParam): void | SDKError;
-
-    /**
      * Indicates that the renderers needs to render a new frame for the given View.
      *
      * @internal
@@ -250,7 +236,7 @@ export interface Renderer {
     setImageDirty(viewIndex?: number): void | SDKError;
 
     /**
-     * Clears this renderers for the given view.
+     * Clears the renderer for the given view.
      *
      * @internal
      * @param viewIndex Handle to the View, returned earlier by {@link @xeokit/viewer!Renderer.attachView | Renderer.attachView}.

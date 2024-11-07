@@ -234,6 +234,7 @@ export function xktToModel(params: {
 
         // Iterate over each tile's entities
 
+        let i = 0;
         for (let tileEntityIndex = firstTileEntityIndex; tileEntityIndex <= lastTileEntityIndex; tileEntityIndex++) {
 
             const xktEntityId = eachEntityId[tileEntityIndex];
@@ -364,7 +365,7 @@ export function xktToModel(params: {
                             ///////////////////////////////////
                             // Adjust matrix?
                             /////////////////////////////////////
-                         //   origin: tileCenter
+                            origin: [tileCenter[0], tileCenter[1]+i++ *10, tileCenter[2]]
                         });
 
                         meshIds.push(meshId);
@@ -447,7 +448,8 @@ export function xktToModel(params: {
                             id: meshId,
                             geometryId,
                             textureSetId,
-                            origin: tileCenter,
+                         //   origin: tileCenter,
+                            origin: [tileCenter[0], tileCenter[1]+i++ *10, tileCenter[2]],
                             color: meshColor,
                             opacity: meshOpacity
                         });

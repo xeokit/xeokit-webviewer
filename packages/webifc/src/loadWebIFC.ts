@@ -1,7 +1,7 @@
 import {
     createMat4,
     createVec3,
-    createVec4,
+    createVec4, identityMat4, isIdentityMat4,
     transformPoint4,
 } from "@xeokit/matrix";
 import {SceneModel} from "@xeokit/scene";
@@ -250,8 +250,8 @@ function parseSceneModel(ctx: ParsingContext) {
         const meshIds = [];
         const properties = ctx.ifcAPI.GetLine(ctx.modelId, flatMeshExpressID);
         const objectId = properties.GlobalId.value;
-        const matrix = createMat4();
         const origin = createVec3();
+
         for (let j = 0, lenj = placedGeometries.size(); j < lenj; j++) {
             const placedGeometry = placedGeometries.get(j);
             const geometry = ctx.ifcAPI.GetGeometry(ctx.modelId, placedGeometry.geometryExpressID);
@@ -259,14 +259,12 @@ function parseSceneModel(ctx: ParsingContext) {
             const indices = ctx.ifcAPI.GetIndexArray(geometry.GetIndexData(), geometry.GetIndexDataSize());
             // De-interleave vertex arrays
             const positions = new Float64Array(vertexData.length / 2);
+            const matrix = identityMat4();
             (<Float64Array>matrix).set(placedGeometry.flatTransformation);
             for (let k = 0, l = 0, lenk = vertexData.length / 6; k < lenk; k++, l += 3) {
-                tempVec4a[0] = vertexData[k * 6 + 0];
-                tempVec4a[1] = vertexData[k * 6 + 1];
-                tempVec4a[2] = vertexData[k * 6 + 2];
-                positions[l + 0] = tempVec4a[0];
-                positions[l + 1] = tempVec4a[1];
-                positions[l + 2] = tempVec4a[2];
+                positions[l + 0] = vertexData[k * 6 + 0];
+                positions[l + 1] = vertexData[k * 6 + 1];
+                positions[l + 2] = vertexData[k * 6 + 2];
             }
             const geometryId = "" + ctx.nextId++;
             ctx.sceneModel.createGeometry({
@@ -289,9 +287,11 @@ function parseSceneModel(ctx: ParsingContext) {
             });
             meshIds.push(meshId);
         }
-        ctx.sceneModel.createObject({
-            id: objectId,
-            meshIds: meshIds
-        });
+        if (meshIds.length > 0) {
+            ctx.sceneModel.createObject({
+                id: objectId,
+                meshIds: meshIds
+            });
+        }
     });
 }

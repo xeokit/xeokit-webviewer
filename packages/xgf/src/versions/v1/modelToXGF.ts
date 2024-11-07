@@ -154,7 +154,7 @@ export function modelToXGF(params: {
             xgfData.eachMeshGeometriesBase [meshesBase] = geometryIndices[mesh.geometry.id];
             if (isIdentityMat4(mesh.matrix)) {
                 if (!identityMatrixAdded) {
-                    matrices.push(...mesh.rtcMatrix);
+                    matrices.push(...mesh.matrix);
                     xgfData.eachMeshMatricesBase [meshesBase] = matricesBase;
                     identityMatrixBase = matricesBase;
                     matricesBase += 16;
