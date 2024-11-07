@@ -1,5 +1,5 @@
-import type {SceneModel} from "@xeokit/scene";
-import type {DataModel} from "@xeokit/data";
+import {SceneModel} from "@xeokit/scene";
+import {DataModel} from "@xeokit/data";
 import {SDKError} from "@xeokit/core";
 import {createMat4, createVec3, transformPoint3} from "@xeokit/matrix";
 import {BasicAggregation, BasicEntity} from "@xeokit/basictypes";
@@ -48,169 +48,147 @@ export function loadLAS(params: {
                             skip?: number;
                             fp64?: boolean;
                             colorDepth?: string | number,
-                        } = {}): Promise<any> {
+                        } = {}): Promise<void> {
 
-    return new Promise<void>(function (resolve, reject) {
-
-        const {dataModel, sceneModel, fileData} = params;
-
+    return new Promise(function (resolve, reject) {
+        const {sceneModel, dataModel, fileData} = params;
         if (!fileData) {
-            return Promise.reject("Parameter expected: fileData");
+            return reject("Argument expected: fileData");
         }
-
-        if (!sceneModel) {
-            return Promise.reject("Parameter expected: sceneModel");
+        // if (!(fileData instanceof ArrayBuffer)) {
+        //     return reject("Argument type mismatch: params.fileData should be an ArrayBuffer");
+        // }
+        if (sceneModel) {
+            if (!(sceneModel instanceof SceneModel)) {
+                return reject("Argument type mismatch: params.sceneModel should be a SceneModel");
+            }
+            if (sceneModel.destroyed) {
+                return reject("SceneModel already destroyed");
+            }
+            if (sceneModel.built) {
+                return reject("SceneModel already built");
+            }
         }
-
-        if (sceneModel?.destroyed) {
-            return Promise.reject("SceneModel already destroyed");
+        if (dataModel) {
+            if (!(dataModel instanceof DataModel)) {
+                return reject("Argument type mismatch: params.dataModel should be a DataModel");
+            }
+            if (dataModel.destroyed) {
+                return reject("DataModel already destroyed");
+            }
+            if (dataModel.built) {
+                return reject("DataModel already built");
+            }
         }
-
-        if (sceneModel?.built) {
-            return Promise.reject("SceneModel already built");
+        if (!sceneModel && !dataModel) {
+            return resolve();
         }
-
-        if (dataModel?.destroyed) {
-            return Promise.reject("DataModel already destroyed");
-        }
-
-        if (dataModel?.built) {
-            return Promise.reject("DataModel already built");
-        }
-
         const skip = options.skip || 1;
-
         const log = (msg) => {
             if (params.log) {
                 params.log(msg);
             }
         }
-
         parse(params.fileData, LASLoader, {
             las: {
                 colorDepth: options.colorDepth || "auto",
                 fp64: options.fp64 !== undefined ? options.fp64 : false
             }
-
         }).then((parsedData) => {
-
-            const attributes = parsedData.attributes;
-
-            const loaderData = parsedData.loaderData;
-            const pointsFormatId = loaderData.pointsFormatId !== undefined ? loaderData.pointsFormatId : -1;
-
-            if (!attributes.POSITION) {
-                log("No positions found in file (expected for all LAS point formats)");
-                return;
-            }
-
-            let readAttributes: any = {};
-
-            switch (pointsFormatId) {
-                case 0:
-                    if (!attributes.intensity) {
-                        log("No intensities found in file (expected for LAS point format 0)");
-                        return;
-                    }
-
-                    readAttributes = readIntensities(attributes.POSITION, attributes.intensity);
-                    break;
-                case 1:
-                    if (!attributes.intensity) {
-                        log("No intensities found in file (expected for LAS point format 1)");
-                        return;
-                    }
-                    readAttributes = readIntensities(attributes.POSITION, attributes.intensity);
-                    break;
-                case 2:
-                    if (!attributes.intensity) {
-                        log("No intensities found in file (expected for LAS point format 2)");
-                        return;
-                    }
-
-                    readAttributes = readColorsAndIntensities(attributes.POSITION, attributes.COLOR_0, attributes.intensity);
-                    break;
-                case 3:
-                    if (!attributes.intensity) {
-                        log("No intensities found in file (expected for LAS point format 3)");
-                        return;
-                    }
-                    readAttributes = readColorsAndIntensities(attributes.POSITION, attributes.COLOR_0, attributes.intensity);
-                    break;
-            }
-
-            const pointsChunks = chunkArray(readPositions(readAttributes.positions), MAX_VERTICES * 3);
-            const colorsChunks = chunkArray(readAttributes.colors, MAX_VERTICES * 4);
-
-            const meshIds = [];
-
-            for (let j = 0, lenj = pointsChunks.length; j < lenj; j++) {
-
-                const geometryId = `geometry-${j}`;
-
-                const geometry = sceneModel.createGeometry({
-                    id: geometryId,
-                    primitive: PointsPrimitive,
-                    positions: pointsChunks[j],
-                    colors: colorsChunks[j]
-                });
-
-                if (geometry instanceof SDKError) {
-                    log(`[ERROR] Failed to load point cloud: ${geometry.message}`);
-                } else {
-
-                    const meshId = `mesh-${j}`;
-                    meshIds.push(meshId);
-
-                    const mesh = sceneModel.createMesh({
-                        id: meshId,
-                        geometryId
+            const entityId = createUUID();
+            if (sceneModel) {
+                const meshIds = [];
+                const attributes = parsedData.attributes;
+                const loaderData = parsedData.loaderData;
+                const pointsFormatId = loaderData.pointsFormatId !== undefined ? loaderData.pointsFormatId : -1;
+                if (!attributes.POSITION) {
+                    log("No positions found in file (expected for all LAS point formats)");
+                    return;
+                }
+                let readAttributes: any = {};
+                switch (pointsFormatId) {
+                    case 0:
+                        if (!attributes.intensity) {
+                            log("No intensities found in file (expected for LAS point format 0)");
+                            return;
+                        }
+                        readAttributes = readIntensities(attributes.POSITION, attributes.intensity);
+                        break;
+                    case 1:
+                        if (!attributes.intensity) {
+                            log("No intensities found in file (expected for LAS point format 1)");
+                            return;
+                        }
+                        readAttributes = readIntensities(attributes.POSITION, attributes.intensity);
+                        break;
+                    case 2:
+                        if (!attributes.intensity) {
+                            log("No intensities found in file (expected for LAS point format 2)");
+                            return;
+                        }
+                        readAttributes = readColorsAndIntensities(attributes.POSITION, attributes.COLOR_0, attributes.intensity);
+                        break;
+                    case 3:
+                        if (!attributes.intensity) {
+                            log("No intensities found in file (expected for LAS point format 3)");
+                            return;
+                        }
+                        readAttributes = readColorsAndIntensities(attributes.POSITION, attributes.COLOR_0, attributes.intensity);
+                        break;
+                }
+                const pointsChunks = chunkArray(readPositions(readAttributes.positions), MAX_VERTICES * 3);
+                const colorsChunks = chunkArray(readAttributes.colors, MAX_VERTICES * 4);
+                for (let j = 0, lenj = pointsChunks.length; j < lenj; j++) {
+                    const geometryId = `geometry-${j}`;
+                    const geometry = sceneModel.createGeometry({
+                        id: geometryId,
+                        primitive: PointsPrimitive,
+                        positions: pointsChunks[j],
+                        colors: colorsChunks[j]
                     });
-
-                    if (mesh instanceof SDKError) {
-                        log(`[ERROR] Failed to load point cloud: ${mesh.message}`);
+                    if (geometry instanceof SDKError) {
+                        log(`[ERROR] Failed to load point cloud: ${geometry.message}`);
+                    } else {
+                        const meshId = `mesh-${j}`;
+                        meshIds.push(meshId);
+                        const mesh = sceneModel.createMesh({
+                            id: meshId,
+                            geometryId
+                        });
+                        if (mesh instanceof SDKError) {
+                            log(`[ERROR] Failed to load point cloud: ${mesh.message}`);
+                        }
                     }
                 }
+                sceneModel.createObject({
+                    id: entityId,
+                    meshIds
+                });
             }
-
-            const entityId = createUUID();
-
-            sceneModel.createObject({
-                id: entityId,
-                meshIds
-            });
-
             if (dataModel) {
-
                 const rootMetaObjectId = createUUID();
-
                 dataModel.createObject({
                     id: rootMetaObjectId,
                     type: BasicEntity,
                     name: "Model",
                 });
-
                 dataModel.createObject({
                     id: entityId,
                     type: BasicEntity,
                     name: "PointCloud (LAZ)",
                 });
-
                 dataModel.createRelationship({
                     type: BasicAggregation,
                     relatingObjectId: rootMetaObjectId,
                     relatedObjectId: entityId
                 });
             }
-
             resolve();
-
         }, (errMsg) => {
-            reject(errMsg);
+            return reject(`Error parsing LAS/LAZ data: ${errMsg}`);
         });
 
         function readPositions(positionsValue) {
-
             if (positionsValue) {
                 if (options.center) {
                     const centerPos = createVec3();

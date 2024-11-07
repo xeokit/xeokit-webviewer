@@ -49,22 +49,21 @@
  *
  * Within the Scene, we will create a {@link @xeokit/scene!SceneModel | SceneModel} to hold model geometry and materials.
  *
- * We will then use
- * {@link @xeokit/las!loadLAS | loadLAS} to load an LAS/LAZ file into our SceneModel.
- *
- * The {@link @xeokit/core!SDKError | SDKError} class will be used to handle any errors that may occur during this process.
+ * We will then use {@link @xeokit/las!loadLAS | loadLAS} to load an LAS/LAZ file into our SceneModel.
  *
  * * [Run this example]()
  *
  * ````javascript
  * import {SDKError} from "@xeokit/core";
  * import {Scene} from "@xeokit/scene";
+ * import {Data} from "@xeokit/data";
  * import {WebGLRenderer} from "@xeokit/webglrenderer";
  * import {Viewer} from "@xeokit/viewer";
  * import {CameraControl} from "@xeokit/cameracontrol";
  * import {loadLAS} from "@xeokit/las";
  *
  * const scene = new Scene();
+ * const data = new Data();
  *
  * const renderer = new WebGLRenderer({});
  *
@@ -79,63 +78,57 @@
  *     elementId: "myCanvas" // << Ensure that this HTMLElement exists in the page
  * });
  *
- * if (view instanceof SDKError) {
- *     console.error(`Error creating View: ${view.message}`);
+ * view.camera.eye = [1841982.93, 10.03, -5173286.74];
+ * view.camera.look = [1842009.49, 9.68, -5173295.85];
+ * view.camera.up = [0.0, 1.0, 0.0];
  *
- * } else {
+ * new CameraControl(view, {});
  *
- *     view.camera.eye = [1841982.93, 10.03, -5173286.74];
- *     view.camera.look = [1842009.49, 9.68, -5173295.85];
- *     view.camera.up = [0.0, 1.0, 0.0];
+ * const sceneModel = scene.createModel({
+ *     id: "myModel"
+ * });
  *
- *     new CameraControl(view, {});
+ * const dataModel = data.createModel({
+ *     id: "myModel"
+ * });
  *
- *     const sceneModel = scene.createModel({
- *         id: "myModel"
+ * fetch("model.las").then(response => {
+ *
+ *     response.arrayBuffer().then(fileData => {
+ *
+ *          loadLAS({
+ *                  fileData,
+ *                  sceneModel,
+ *                  dataModel,          // Optional DataModel
+ *              },
+ *              {,
+ *                  fp64: false,        // Expect points as 64-bit floats? (optional, default is true)
+ *                  colorDepth: "auto", // 8, 16 or "auto" (optional, default is "auto)
+ *                  skip: 1,            // Load every nth point (optional, default is 1)
+ *                  center: false,      // Whether to center the points (optional, default is false)
+ *                  transform: [        // Transform the points (optional)
+ *                      1,0,0,0,
+ *                      0,1,0,0,
+ *                      0,0,1,0,
+ *                      0,0,0,1
+ *                  ],
+ *              }).then(() => {
+ *                  sceneModel.build();
+ *                  dataModel.build();
+ *
+ *              }).catch(err => {
+ *
+ *                  sceneModel.destroy();
+ *                  dataModel.destroy();
+ *
+ *                  console.error(`Error loading LAS/LAZ file: ${err}`);
+ *              });
+ *         }).catch(err => {
+ *              console.error(`Error creating ArrayBuffer: ${err}`);
+ *         });
+ *     }).catch(err => {
+ *          console.error(`Error fetching model: ${err}`);
  *     });
- *
- *     if (sceneModel instanceof SDKError) {
- *         console.error(`Error creating SceneModel: ${sceneModel.message}`);
- *
- *     } else {
- *         fetch("model.las").then(response => {
- *
- *             response.arrayBuffer().then(fileData => {
- *
- *                  loadLAS({
- *                      fileData,
- *                      sceneModel
- *                  },
- *                  {,
- *                      fp64: false,        // Expect points as 64-bit floats? (optional, default is true)
- *                      colorDepth: "auto", // 8, 16 or "auto" (optional, default is "auto)
- *                      skip: 1,            // Load every nth point (optional, default is 1)
- *                      center: false,      // Whether to center the points (optional, default is false)
- *                      transform: [        // Transform the points (optional)
- *                          1,0,0,0,
- *                          0,1,0,0,
- *                          0,0,1,0,
- *                          0,0,0,1
- *                      ],
- *                  }).then(() => {
- *                      sceneModel.build();
- *
- *                  }).catch(sdkError => {
- *                      sceneModel.destroy();
- *                      console.error(`Error loading LAS/LAZ file: ${sdkError.message}`);
- *                  });
- *
- *             }).catch(message => {
- *                  console.error(`Error creating ArrayBuffer: ${message}`);
- *             });
- *
- *          }).catch(message => {
- *              console.error(`Error fetching model: ${message}`);
- *          });
- *      }).catch(message => {
- *          console.error(`Error initializing WebIFC.IfcAPI: ${message}`);
- *      });
- * }
  * ````
  *
  * @module @xeokit/las
