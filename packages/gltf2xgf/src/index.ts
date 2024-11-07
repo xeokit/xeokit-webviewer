@@ -4,7 +4,7 @@
  *
  * <img  style="padding:0px; padding-top:30px; padding-bottom:10px; height:130px;" src="media://images/xeokit_logo_mesh.png"/>
  *
- * # xeokit glTF -> XGF Conversion Tools
+ * # xeokit glTF -> XGF Conversion Tool
  *
  * ---
  *
@@ -25,7 +25,7 @@
  *
  * # Usage
  *
- * ## Converting a single glTF file
+ * ## Converting a glTF file
  *
  * Use the `gltf2xgf` CLI tool to convert a single glTF file into a single XGF file, plus an optional JSON file containing
  * a simple DataModel derived from the glTF `scene` `node` hierarchy.
@@ -37,12 +37,12 @@
  * CLI to convert glTF files into xeokit's compact XGF format
  *
  * Options:
- *   -v, --version          output the version number
- *   -i, --source [file]    path to source glTF file
- *   -s, --scenemodel [file]    path to target XGF file
- *   -d, --datamodel [file]    path to target JSON data model file, extracted from glTF scene hierarchy (optional)
- *   -f, --format [number]  target XGF version - supported XGF version is 1, default is 1
- *   -h, --help             display help for command
+ *   -v, --version            output the version number
+ *   -i, --source [file]      path to source glTF file
+ *   -s, --scenemodel [file]  path to target XGF file
+ *   -d, --datamodel [file]   path to target JSON data model file, extracted from glTF scene hierarchy (optional)
+ *   -f, --format [number]    target XGF version - supported XGF version is 1, default is 1
+ *   -h, --help               display help for command
  * ````
  *
  * The example below converts a binary glTF file to XGF. The XGF objects will have geometries and material colors
@@ -72,72 +72,6 @@
  *
  * ````bash
  * gltf2xgf -i duplex.glb -s duplex.xgf -f 1
- * ````
- *
- * ## Converting a batch of glTF files
- *
- * Use the `splitgltf2xgf` tool to convert a batch of glTF files into a batch of XGF files.
- *
- * ````bash
- * node splitgltf2xgf.js -h
- * Usage: splitgltf2xgf [options]
- *
- * CLI to convert a manifest of glTF/GLB files into XGF SceneModel files and/or JSON DataModel files
- *
- * Options:
- *   -v, --version          output the version number
- *   -i, --input [file]     path to input manifest of glTF files (required)
- *   -o, --output [file]    path to target manifest of XGF files (required)
- *   -f, --format [number]  target XGF version (optional) - supported XGF version is 1, default is 1
- *   -l, --log              enable logging (optional)
- *   -h, --help             display help for command
- * ````
- *
- * To convert a batch of glTF files, we invoke `splitgltf2xgf` with a JSON manifest that lists them. Then
- * `splitgltf2xgf` will output the XGF files, along with another JSON manifest that lists those XGF files.
- *
- * ````bash
- * node splitgltf2xgf -i glbManifest.json -o xgfManifest.json
- * ````
- *
- * The `glbManifest.json` and `xgfManifest.json` arguments both have the
- * format of {@link @xeokit/modelchunksloader!ModelChunksManifestParams | ModelChunksManifestParams}.
- *
- * The `glbManifest.json` looks like this:
- *
- * ````json
- * {
- *     sceneModelFiles: [
- *         "myModel1.glb",
- *         "myModel2.glb"
- *         "myModel3.glb"
- *     ],
- *     dataModelFiles: [
- *         "myModel1.json",
- *         "myModel2.json"
- *         "myModel3.json"
- *     ]
- * }
- * ````
- *
- * Each file referenced in `dataModelFiles` has the schema defined in {@link @xeokit/data!DataModelParams | DataModelParams}.
- *
- * The `xgfManifest.json` looks like below.
- *
- * ````json
- * {
- *     sceneModelMIMEType: "arraybuffer",
- *     sceneModelFiles: [
- *         "myModel1.xgf",
- *         "myModel2.xgf"
- *         "myModel3.xgf"
- *     ],
- *     dataModelFiles: [
- *         "myModel1.json",
- *         "myModel2.json"
- *         "myModel3.json"
- *     ]
- * }
  * ````
  *
  * @module @xeokit/gltf2xgf

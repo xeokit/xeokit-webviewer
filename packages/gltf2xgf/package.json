@@ -1,6 +1,6 @@
 {
     "name": "@xeokit/gltf2xgf",
-    "private": true,
+    "private": false,
     "version": "0.1.0",
     "description": "NodeJS CLI tool to convert glTF files to XGF.",
     "source": "src/gltf2xgf.ts",
