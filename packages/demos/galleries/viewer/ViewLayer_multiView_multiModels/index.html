@@ -16,7 +16,7 @@
             user-drag: none;
         }
 
-        #myCanvas1 {
+        #demoCanvas1 {
             user-select: none;
             -webkit-user-drag: none;
             -moz-user-drag: none;
@@ -32,7 +32,7 @@
             /*background: red;*/
         }
 
-        #myCanvas2 {
+        #demoCanvas2 {
             user-select: none;
             -webkit-user-drag: none;
             -moz-user-drag: none;
@@ -48,7 +48,7 @@
             padding: 0px;
         }
 
-        #myCanvas3 {
+        #demoCanvas3 {
             user-select: none;
             -webkit-user-drag: none;
             -moz-user-drag: none;
@@ -70,9 +70,9 @@
 
 <!-- Virtual canvases -->
 
-<img id="myCanvas1">
-<img id="myCanvas2"/>
-<img id="myCanvas3"/>
+<img id="demoCanvas1">
+<img id="demoCanvas2"/>
+<img id="demoCanvas3"/>
 
 </body>
 
@@ -93,7 +93,7 @@
     const renderer = new xeokit.webglrenderer.WebGLRenderer({});
 
     const viewer = new xeokit.viewer.Viewer({
-        id: "myViewer",
+        id: "demoViewer",
         scene,
         renderer
     });
@@ -106,8 +106,8 @@
 
     {
         const view = viewer.createView({
-            id: "myView1",
-            elementId: "myCanvas1",
+            id: "demoView1",
+            elementId: "demoCanvas1",
             autoLayers: false // <<--------- Don't automatically create ViewLayers on-demand
         });
 
@@ -132,8 +132,8 @@
 
     {
         const view = viewer.createView({
-            id: "myView2",
-            elementId: "myCanvas2",
+            id: "demoView2",
+            elementId: "demoCanvas2",
             autoLayers: false
         });
 
@@ -159,8 +159,8 @@
 
     {
         const view = viewer.createView({
-            id: "myView3",
-            elementId: "myCanvas3",
+            id: "demoView3",
+            elementId: "demoCanvas3",
             autoLayers: false
         });
 
@@ -185,7 +185,7 @@
     fetch("../../../data/xgf/MAP.xgf").then(response => {
         response.arrayBuffer().then(fileData => {
             const sceneModel = scene.createModel({
-                id: "myModel",
+                id: "demoModel",
                 layerId: "viewLayer1"
             });
             xeokit.xgf.loadXGF({
@@ -205,7 +205,7 @@
     fetch("../../../data/gltf/HousePlan.glb").then(response => {
         response.arrayBuffer().then(fileData => {
             const sceneModel = scene.createModel({
-                id: "myModel2",
+                id: "demoModel2",
                 layerId: "viewLayer2"
             });
             xeokit.gltf.loadGLTF({

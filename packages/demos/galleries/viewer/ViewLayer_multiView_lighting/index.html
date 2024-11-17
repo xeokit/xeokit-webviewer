@@ -16,7 +16,7 @@
             user-drag: none;
         }
 
-        #myCanvas1 {
+        #demoCanvas1 {
             user-select: none;
             -webkit-user-drag: none;
             -moz-user-drag: none;
@@ -32,7 +32,7 @@
             /*background: red;*/
         }
 
-        #myCanvas2 {
+        #demoCanvas2 {
             user-select: none;
             -webkit-user-drag: none;
             -moz-user-drag: none;
@@ -48,7 +48,7 @@
             padding: 0px;
         }
 
-        #myCanvas3 {
+        #demoCanvas3 {
             user-select: none;
             -webkit-user-drag: none;
             -moz-user-drag: none;
@@ -71,9 +71,9 @@
 
 <!-- Virtual canvases -->
 
-<img id="myCanvas1">
-<img id="myCanvas2"/>
-<img id="myCanvas3"/>
+<img id="demoCanvas1">
+<img id="demoCanvas2"/>
+<img id="demoCanvas3"/>
 
 </body>
 
@@ -94,7 +94,7 @@
     const renderer = new xeokit.webglrenderer.WebGLRenderer({});
 
     const viewer = new xeokit.viewer.Viewer({
-        id: "myViewer",
+        id: "demoViewer",
         scene,
         renderer
     });
@@ -107,8 +107,8 @@
 
     {
         const view = viewer.createView({
-            id: "myView1",
-            elementId: "myCanvas1"
+            id: "demoView1",
+            elementId: "demoCanvas1"
         });
 
         view.camera.projectionType = xeokit.constants.PerspectiveProjectionType;
@@ -142,8 +142,8 @@
 
     {
         const view = viewer.createView({
-            id: "myView2",
-            elementId: "myCanvas2"
+            id: "demoView2",
+            elementId: "demoCanvas2"
         });
 
         view.camera.projectionType = xeokit.constants.PerspectiveProjectionType;
@@ -177,8 +177,8 @@
 
     {
         const view = viewer.createView({
-            id: "myView3",
-            elementId: "myCanvas3"
+            id: "demoView3",
+            elementId: "demoCanvas3"
         });
 
         view.camera.projectionType = xeokit.constants.PerspectiveProjectionType;

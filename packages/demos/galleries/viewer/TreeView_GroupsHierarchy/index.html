@@ -102,7 +102,7 @@
     </style>
 </head>
 <body>
-<canvas id="myCanvas"></canvas>
+<canvas id="demoCanvas"></canvas>
 <div id="treeViewContainer"></div>
 
 </body>
@@ -120,14 +120,14 @@
     const renderer = new xeokit.webglrenderer.WebGLRenderer({});
 
     const viewer = new xeokit.viewer.Viewer({
-        id: "myViewer",
+        id: "demoViewer",
         scene,
         renderer
     });
 
     const view = viewer.createView({
-        id: "myView",
-        elementId: "myCanvas"
+        id: "demoView",
+        elementId: "demoCanvas"
     });
 
     view.camera.orbitYaw(20);
@@ -153,11 +153,11 @@
     ifcAPI.SetWasmPath("https://cdn.jsdelivr.net/npm/web-ifc@0.0.51/");
 
     const sceneModel = scene.createModel({
-        id: "myModel"
+        id: "demoModel"
     });
 
     const dataModel = data.createModel({
-        id: "myModel"
+        id: "demoModel"
     });
 
     ifcAPI.Init().then(() => {

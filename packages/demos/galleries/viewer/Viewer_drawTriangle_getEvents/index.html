@@ -6,149 +6,160 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>xeokit Example</title>
     <link href="../../../css/pageStyle.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
 <body>
-<canvas id="myCanvas"></canvas>
+<input type="checkbox" id="info-button" checked/>
+<label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
+<canvas id="demoCanvas"></canvas>
+
+<div class="slideout-sidebar">
+    <div id="info-container" class="info-container"></div>
+</div>
 </body>
 
 <script type="module">
 
+    //-----------------------------------------------------------------------------------------
+    // Import xeokit SDK via the JavaScript bundle that we've built for these examples
+    //-----------------------------------------------------------------------------------------
+
     import * as xeokit from "./../../../js/xeokit-demo-bundle.js";
-    import {StatusLog} from "../../../js/StatusLog.js";
+    import {DemoHelper} from "../../../js/DemoHelper.js";
 
-    const statusLog = new StatusLog();
-
-    statusLog.logCreate(["Scene", "WebGLRenderer", "Viewer", "View", "CameraControl"]);
+    //-----------------------------------------------------------------------------------------
+    // Create a Viewer with a Scene, WebGLRenderer and one View
+    //-----------------------------------------------------------------------------------------
 
     const scene = new xeokit.scene.Scene();
-
-    const renderer = new xeokit.webglrenderer.WebGLRenderer({});
+    const data = new xeokit.data.Data();
 
     const viewer = new xeokit.viewer.Viewer({
-        id: "myViewer",
+        id: "demoViewer",
         scene,
-        renderer
+        renderer: new xeokit.webglrenderer.WebGLRenderer({})
     });
 
-    statusLog.log(`Viewer instantiated.`);
-
-    viewer.onDestroyed.subscribe((viewer) => {
-        statusLog.log(`Viewer.onDestroyed( viewer.id="${viewer.id}" )`);
+    const demoHelper = new DemoHelper({
+        elementId: "info-container",
+        viewer
     });
 
-    viewer.onViewCreated.subscribe((viewer, view) => {
-        statusLog.log(`Viewer.onViewCreated( viewer.id="${viewer.id}", view.id="${view.id}" )`);
-    });
+    demoHelper.init()
+        .then(() => {
 
-    viewer.onViewDestroyed.subscribe((viewer, view) => {
-        statusLog.log(`Viewer.onViewDestroyed( viewer.id="${viewer.id}", view.id="${view.id}" )`);
-    });
+            viewer.onDestroyed.subscribe((viewer) => {
+                demoHelper.log(`Viewer.onDestroyed( viewer.id="${viewer.id}" )`);
+            });
 
-    const view = viewer.createView({
-        id: "myView",
-        elementId: "myCanvas"
-    });
+            viewer.onViewCreated.subscribe((viewer, view) => {
+                demoHelper.log(`Viewer.onViewCreated( viewer.id="${viewer.id}", view.id="${view.id}" )`);
+            });
 
-    view.onDestroyed.subscribe((view) => {
-        statusLog.log(`View.onDestroyed( view.id="${view.id}" )`);
-    });
+            viewer.onViewDestroyed.subscribe((viewer, view) => {
+                demoHelper.log(`Viewer.onViewDestroyed( viewer.id="${viewer.id}", view.id="${view.id}" )`);
+            });
 
-    view.onBoundary.subscribe((view, boundary) => {
-        statusLog.log(`View.onBoundary( view.id="${view.id}", boundary=[${boundary}] )`);
-    });
+            const view = viewer.createView({
+                id: "demoView",
+                elementId: "demoCanvas"
+            });
 
-    view.onLayerCreated.subscribe((view, viewLayer) => {
+            view.onDestroyed.subscribe((view) => {
+                demoHelper.log(`View.onDestroyed( view.id="${view.id}" )`);
+            });
 
-        statusLog.log(`ViewLayer.onLayerCreated( view.id="${view.id}", viewLayer.id="${viewLayer.id}" )`);
+            view.onBoundary.subscribe((view, boundary) => {
+                demoHelper.log(`View.onBoundary( view.id="${view.id}", boundary=[${boundary}] )`);
+            });
 
-        viewLayer.onObjectCreated.subscribe((viewLayer, viewObject) => {
-            statusLog.log(`ViewLayer.onObjectCreated( viewLayer.id="${viewLayer.id}, viewObject.id="${viewObject.id}" )`);
+            view.onLayerCreated.subscribe((view, viewLayer) => {
+
+                demoHelper.log(`ViewLayer.onLayerCreated( view.id="${view.id}", viewLayer.id="${viewLayer.id}" )`);
+
+                viewLayer.onObjectCreated.subscribe((viewLayer, viewObject) => {
+                    demoHelper.log(`ViewLayer.onObjectCreated( viewLayer.id="${viewLayer.id}, viewObject.id="${viewObject.id}" )`);
+                });
+
+                viewLayer.onObjectDestroyed.subscribe((viewLayer, viewObject) => {
+                    demoHelper.log(`ViewLayer.onObjectDestroyed( viewLayer.id="${viewLayer.id}, viewObject.id="${viewObject.id}" )`);
+                });
+
+                viewLayer.onObjectVisibility.subscribe((viewLayer, viewObject) => {
+                    demoHelper.log(`ViewLayer.onObjectVisibility( viewLayer.id="${viewLayer.id}", viewObject.id="${viewObject.id}", visible=${viewObject.visible ? "true" : false}`);
+                });
+
+                // viewLayer.onObjectXRayed.subscribe((viewLayer, viewObject) => {
+                //     demoHelper.log(`ViewObject ${viewObject.id} set xrayed = ${viewObject.xrayed ? "true" : "false"} in ViewLayer ${viewLayer.id}`);
+                // });
+            });
+
+            view.onLayerDestroyed.subscribe((view, viewLayer) => {
+                demoHelper.log(`View.onLayerDestroyed( view.id="${view.id}", viewLayer.id="${viewLayer.id}" )`);
+            });
+
+            view.onObjectCreated.subscribe((view, viewObject) => {
+                demoHelper.log(`View.onObjectCreated( view.id="${view.id}", viewObject.id="${viewObject.id}" )`);
+            });
+
+            view.onObjectDestroyed.subscribe((view, viewObject) => {
+                demoHelper.log(`View.onObjectDestroyed( view.id="${view.id}", viewObject.id="${viewObject.id}" )`);
+            });
+
+            view.onObjectVisibility.subscribe((view, viewObject) => {
+                demoHelper.log(`View.onObjectVisibility( view.id="${view.id}", viewObject.id="${viewObject.id}", visible=${viewObject.visible ? "true" : false}`);
+            });
+
+            view.onObjectXRayed.subscribe((view, viewObject) => {
+                demoHelper.log(`View.onObjectXRayed( view.id="${view.id}", viewObject.id="${viewObject.id}", xrayed=${viewObject.xrayed ? "true" : false}`);
+            });
+
+            const sceneModel = scene.createModel({
+                id: "demoModel"
+            });
+
+            view.camera.eye = [0, 0, 10]; // Default
+            view.camera.look = [0, 0, 0]; // Default
+            view.camera.up = [0, 1, 0]; // Default
+
+            new xeokit.cameracontrol.CameraControl(view);
+
+            sceneModel.createGeometry({
+                id: "triangleGeometry",
+                primitive: xeokit.constants.TrianglesPrimitive,
+                positions: [
+                    0.0, 1.5, 0.0,
+                    -1.5, -1.5, 0.0,
+                    1.5, -1.5, 0.0,
+                ],
+                indices: [
+                    0, 1, 2
+                ]
+            });
+
+            sceneModel.createMesh({
+                id: "triangleMesh",
+                geometryId: "triangleGeometry",
+                position: [0, 0, 0], // Default
+                scale: [1, 1, 1], // Default
+                rotation: [0, 0, 0], // Default
+                color: [1, 1.0, 1.0] // Default
+            });
+
+            sceneModel.createObject({
+                id: "triangleObject",
+                meshIds: ["triangleMesh"]
+            });
+
+            sceneModel.build().then(() => {
+
+                demoHelper.finished();
+
+            }).catch((e) => {
+                demoHelper.log(`Error building SceneModel: ${e}`);
+                throw e;
+            });
         });
-
-        viewLayer.onObjectDestroyed.subscribe((viewLayer, viewObject) => {
-            statusLog.log(`ViewLayer.onObjectDestroyed( viewLayer.id="${viewLayer.id}, viewObject.id="${viewObject.id}" )`);
-        });
-
-        viewLayer.onObjectVisibility.subscribe((viewLayer, viewObject) => {
-            statusLog.log(`ViewLayer.onObjectVisibility( viewLayer.id="${viewLayer.id}", viewObject.id="${viewObject.id}", visible=${viewObject.visible ? "true" : false}`);
-        });
-
-        // viewLayer.onObjectXRayed.subscribe((viewLayer, viewObject) => {
-        //     statusLog.log(`ViewObject ${viewObject.id} set xrayed = ${viewObject.xrayed ? "true" : "false"} in ViewLayer ${viewLayer.id}`);
-        // });
-    });
-
-    view.onLayerDestroyed.subscribe((view, viewLayer) => {
-        statusLog.log(`View.onLayerDestroyed( view.id="${view.id}", viewLayer.id="${viewLayer.id}" )`);
-    });
-
-    view.onObjectCreated.subscribe((view, viewObject) => {
-        statusLog.log(`View.onObjectCreated( view.id="${view.id}", viewObject.id="${viewObject.id}" )`);
-    });
-
-    view.onObjectDestroyed.subscribe((view, viewObject) => {
-        statusLog.log(`View.onObjectDestroyed( view.id="${view.id}", viewObject.id="${viewObject.id}" )`);
-    });
-
-    view.onObjectVisibility.subscribe((view, viewObject) => {
-        statusLog.log(`View.onObjectVisibility( view.id="${view.id}", viewObject.id="${viewObject.id}", visible=${viewObject.visible ? "true" : false}`);
-    });
-
-    view.onObjectXRayed.subscribe((view, viewObject) => {
-        statusLog.log(`View.onObjectXRayed( view.id="${view.id}", viewObject.id="${viewObject.id}", xrayed=${viewObject.xrayed ? "true" : false}`);
-    });
-
-    const sceneModel = scene.createModel({
-        id: "myModel"
-    });
-
-    view.camera.eye = [0, 0, 10]; // Default
-    view.camera.look = [0, 0, 0]; // Default
-    view.camera.up = [0, 1, 0]; // Default
-
-    new xeokit.cameracontrol.CameraControl(view);
-
-    sceneModel.createGeometry({
-        id: "triangleGeometry",
-        primitive: xeokit.constants.TrianglesPrimitive,
-        positions: [
-            0.0, 1.5, 0.0,
-            -1.5, -1.5, 0.0,
-            1.5, -1.5, 0.0,
-        ],
-        indices: [
-            0, 1, 2
-        ]
-    });
-
-    sceneModel.createMesh({
-        id: "triangleMesh",
-        geometryId: "triangleGeometry",
-        position: [0, 0, 0], // Default
-        scale: [1, 1, 1], // Default
-        rotation: [0, 0, 0], // Default
-        color: [1, 1.0, 1.0] // Default
-    });
-
-    sceneModel.createObject({
-        id: "triangleObject",
-        meshIds: ["triangleMesh"]
-    });
-
-    statusLog.logBuildSceneModel();
-
-    sceneModel.build().then(() => {
-
-        setTimeout(()=>{
-            viewer.destroy();
-        }, 2000)
-
-
-    }).catch((e) => {
-        statusLog.log(`Error building SceneModel: ${e}`);
-        throw e;
-    });
-
 </script>
 
 </html>

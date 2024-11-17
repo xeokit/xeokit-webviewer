@@ -1,0 +1,16 @@
+{
+    "description": "Using a TreeView configured with GroupsHierarchy",
+    "summary": "",
+    "components": [
+        "Scene",
+        "WebGLRenderer",
+        "Viewer",
+        "View",
+        "CameraControl",
+        "SceneModel",
+        "SceneGeometry",
+        "SceneMesh",
+        "SceneObject",
+        "TreeView"
+    ]
+}

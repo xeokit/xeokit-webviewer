@@ -19,7 +19,7 @@ body {
     user-select: none;
 }
 
-#myCanvas {
+#demoCanvas {
     width: 100%;
     height: 100%;
     position: absolute;
@@ -27,56 +27,78 @@ body {
     border: 0;
 }
 
-.status-container {
-    position: absolute;
-    width: 450px;
+.info-container {
+    background-color: whitesmoke;
+
     height: 100%;
-    bottom: 10px;
+    top: 10px;
     right: 10px;
     border: 0 solid #333;
-    overflow: hidden;
-    display: flex;
+
+    /*display: flex;*/
     flex-direction: column;
     justify-content: flex-end;
     z-index: 300000;
     pointer-events: all;
+    padding-left: 20px;
+
+}
+
+.info-container ul {
+
 }
 
 .status-log {
     color: #131314;
     background-color: #ffffff;
-    border: 1px solid #131314;
-    padding: 8px;
+    /*border: 1px solid #131314;*/
+    /*padding: 8px;*/
     margin: 4px;
     border-radius: 5px;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0.75;
+    /*transition: opacity 0.5s ease-in-out;*/
+    opacity: 1.0;
 }
 
 .status-message {
     color: #131314;
-    background-color: #9dff80;
-    border: 1px solid #131314;
-    padding: 8px;
+    /*background-color: #9dff80;*/
+    /*border: 1px solid #131314;*/
+    /*padding: 8px;*/
     margin: 4px;
     border-radius: 5px;
-    transition: opacity 0.5s ease-in-out;
-    opacity: 0.75;
+    /*transition: opacity 0.5s ease-in-out;*/
+    opacity: 1;
+}
+
+.status-description {
+    color: #131314;
+    /*background-color: #9dff80;*/
+    /*border: 1px solid #131314;*/
+    padding: 0px;
+    padding-top: 20px;
+    margin: 4px;
+    margin-left: 0;
+    border-radius: 5px;
+    /*transition: opacity 0.5s ease-in-out;*/
+    opacity: 1;
+    font-size: x-large;
+    /*font-weight: bold;*/
+    padding-bottom: 20px;
 }
 
 .slideout-sidebar {
     background: white;
     position: fixed;
     top: 0;
-    right: -380px;
+    right: -450px;
     z-index: 100000000;
-    width: 350px;
+    width: 430px;
     height: 100%;
     overflow-y: scroll;
     transition: all 300ms ease-in-out;
     border-left: 2px solid #212529;
     margin-top: 0;
-    padding: 0px 10px 10px 20px;
+    padding: 0;
 }
 
 .info-icon {
@@ -87,6 +109,7 @@ body {
 
 #info-button {
     display: none;
+    z-index: 100000001;
 }
 
 #info-button:hover {
@@ -97,8 +120,9 @@ body {
     position: absolute;
     right: 15px;
     top: 12px;
-    z-index: 1;
+    z-index: 100000001;
     transition: all 300ms ease-in-out;
+    color: #304530;
 }
 
 .info-button:hover {
@@ -111,10 +135,10 @@ body {
 }
 
 #info-button:checked + .info-button {
-    right: 400px;
+    right: 445px;
 }
 
-#myDatGuiContainer {
+#demoDatGuiContainer {
     margin-top: 20px;
     margin-bottom: 25px;
 }

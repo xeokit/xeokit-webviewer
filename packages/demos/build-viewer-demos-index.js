@@ -18,7 +18,11 @@ function readIndexFilesFromSubdirs(baseDir) {
                     try {
                         const data = fs.readFileSync(indexPath, 'utf8');
                         const jsonData = JSON.parse(data);
-                        index.pages[subDirPath] = jsonData;
+                        index.pages[file] = jsonData;
+                        if (jsonData.template) {
+                            console.log(`Using template: ./templates/${jsonData.template}`);
+                            fs.cpSync(`./templates/${jsonData.template}.html`, `${subDirPath}/index.html`);
+                        }
                     } catch (err) {
                         console.error(`Error reading or parsing JSON in file: ${indexPath}`, err);
                     }
@@ -30,12 +34,13 @@ function readIndexFilesFromSubdirs(baseDir) {
     } catch (err) {
         console.error(`Error reading directory: ${err}`);
     }
+
     return index;
 }
 
-const baseDirectory = './';
+const baseDirectory = './galleries/viewer';
 const index = readIndexFilesFromSubdirs(baseDirectory);
 
-console.log(`Contents of index:`, index);
+//console.log(`Contents of index:`, index);
 
-fs.writeFileSync("./index.json", JSON.stringify(index, null, 2), 'utf8');
+fs.writeFileSync("./galleries/viewer/index.json", JSON.stringify(index, null, 2), 'utf8');

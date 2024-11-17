@@ -1,6 +1,6 @@
 {
-    "description": "Create a box-shaped triangle mesh in a Viewer, from JSON",
-    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a simple box-shaped triangle mesh, loaded from JSON. The Viewer then draws the box in the View's canvas.",
+    "description": "Building and viewing a box-shaped SceneModel, from JSON",
+    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromJSON method to load JSON-encoded model geometry and materials into the SceneModel. The Viewer then draws the model in the View's canvas.",
     "components": [
         "Scene",
         "WebGLRenderer",

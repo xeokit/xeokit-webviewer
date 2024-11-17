@@ -1,0 +1,18 @@
+{
+    "description": "Loading an IFC model from JSON into a SceneModel and a DataModel",
+    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use SceneModel's fromJSON method to load JSON-encoded model geometry and materials into the SceneModel. Likewise, use DataModel's fromJSON method to load a JSON-encoded entity-relationship model into the DataModel. The Viewer then draws the IFC model in the View's canvas.",
+    "components": [
+        "Scene",
+        "WebGLRenderer",
+        "Viewer",
+        "View",
+        "CameraControl",
+        "SceneModel",
+        "SceneGeometry",
+        "SceneMesh",
+        "SceneObject",
+        "Data",
+        "DataModel",
+        "DataObject"
+    ]
+}

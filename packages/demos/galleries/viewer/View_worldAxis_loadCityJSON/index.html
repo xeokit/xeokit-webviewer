@@ -6,12 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>xeokit Example</title>
     <link href="../../../css/pageStyle.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
 <body>
-<input type="checkbox" id="info-button"/>
-<label for="info-button" class="info-button"><i class="far fa-3x fa-question-circle"></i></label>
-<canvas id="myCanvas"></canvas>
+<input type="checkbox" id="info-button" checked/>
+<label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
+<canvas id="demoCanvas"></canvas>
 
+<div class="slideout-sidebar">
+    <div id="info-container" class="info-container"></div>
+</div>
 </body>
 
 <script type="module">
@@ -22,6 +26,9 @@
 
     import * as xeokit from "./../../../js/xeokit-demo-bundle.js";
 
+    import {DemoHelper} from "../../../js/DemoHelper.js";
+
+
     //-----------------------------------------------------------------------------------------
     // Create a Viewer with a Scene, WebGLRenderer and one View
     //-----------------------------------------------------------------------------------------
@@ -30,75 +37,86 @@
     const data = new xeokit.data.Data();
 
     const viewer = new xeokit.viewer.Viewer({
-        id: "myViewer",
+        id: "demoViewer",
         scene,
         renderer: new xeokit.webglrenderer.WebGLRenderer({})
     });
 
-    const view = viewer.createView({
-        id: "myView",
-        elementId: "myCanvas"
+    const demoHelper = new DemoHelper({
+        elementId: "info-container",
+        viewer
     });
 
-    //-----------------------------------------------------------------------------------------
-    // Set the View's World-space coordinate axis to make +Z "up"
-    //-----------------------------------------------------------------------------------------
+    demoHelper.init()
+        .then(() => {
 
-    view.camera.worldAxis = [
-        1, 0, 0, // Right +X
-        0, 0, 1, // Up +Z
-        0, -1, 0  // Forward -Y
-    ];
+            const view = viewer.createView({
+                id: "demoView",
+                elementId: "demoCanvas"
+            });
 
-    //-----------------------------------------------------------------------------------------
-    // Arrange camera within our +Z "up" coordinate system
-    //-----------------------------------------------------------------------------------------
+            //-----------------------------------------------------------------------------------------
+            // Set the View's World-space coordinate axis to make +Z "up"
+            //-----------------------------------------------------------------------------------------
 
-    view.camera.eye = [15, 10, 0];
-    view.camera.look = [0, 0, 0];
-    view.camera.up = [0, 0, 1];
+            view.camera.worldAxis = [
+                1, 0, 0, // Right +X
+                0, 0, 1, // Up +Z
+                0, -1, 0  // Forward -Y
+            ];
 
-    view.camera.orbitPitch(20);
+            //-----------------------------------------------------------------------------------------
+            // Arrange camera within our +Z "up" coordinate system
+            //-----------------------------------------------------------------------------------------
 
-    new xeokit.cameracontrol.CameraControl(view);
+            view.camera.eye = [15, 10, 0];
+            view.camera.look = [0, 0, 0];
+            view.camera.up = [0, 0, 1];
 
-    const cameraFlight = new xeokit.cameraflight.CameraFlightAnimation(view);
+            view.camera.orbitPitch(20);
 
-    scene.onModelCreated.subscribe(() => {
-        cameraFlight.jumpTo({aabb: scene.aabb});
-        console.log(sceneModel.getJSON())
-    });
+            new xeokit.cameracontrol.CameraControl(view);
 
-    //-----------------------------------------------------------------------------------------
-    // Load CityJSON into a SceneModel
-    //-----------------------------------------------------------------------------------------
+            const cameraFlight = new xeokit.cameraflight.CameraFlightAnimation(view);
 
-    const sceneModel = scene.createModel({
-        id: "myModel"
-    });
+            scene.onModelCreated.subscribe(() => {
+                cameraFlight.jumpTo({aabb: scene.aabb});
+                console.log(sceneModel.getJSON())
+            });
 
-    fetch("../../../data/models/LoD3_Railway/cityjson/model.json")
-        .then(response => {
-            response
-                .json()
-                .then(fileData => {
-                    xeokit.cityjson.loadCityJSON({
-                        fileData,
-                        sceneModel
-                    })
-                        .then(() => {
-                            sceneModel.build();
-                        })
-                        .catch((err) => {
-                            console.error(err);
-                        });
+            //-----------------------------------------------------------------------------------------
+            // Load CityJSON into a SceneModel
+            //-----------------------------------------------------------------------------------------
+
+            const sceneModel = scene.createModel({
+                id: "demoModel"
+            });
+
+            fetch("../../../data/models/LoD3_Railway/cityjson/model.json")
+                .then(response => {
+                    response
+                        .json()
+                        .then(fileData => {
+                            xeokit.cityjson.loadCityJSON({
+                                fileData,
+                                sceneModel
+                            })
+                                .then(() => {
+                                    sceneModel.build();
+
+                                    demoHelper.finished();
+                                })
+                                .catch((err) => {
+                                    console.error(err);
+                                });
+                        }).catch((err) => {
+                        console.error(err);
+                    });
                 }).catch((err) => {
                 console.error(err);
             });
-        }).catch((err) => {
-        console.error(err);
-    });
 
+        });
 
 </script>
 

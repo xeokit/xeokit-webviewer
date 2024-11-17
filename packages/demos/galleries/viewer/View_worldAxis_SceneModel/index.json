@@ -1,0 +1,15 @@
+{
+    "description": "Viewing a SceneModel with +Z configured as up",
+    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene and a View. Configure the View's 3D coordinate system to use +Z as the direction of 'up'. In the Scene, build a SceneModel that represents a simple kitchen table. The Viewer then draws the SceneModel in the View.",
+    "components": [
+        "Scene",
+        "WebGLRenderer",
+        "Viewer",
+        "View",
+        "CameraControl",
+        "SceneModel",
+        "SceneGeometry",
+        "SceneMesh",
+        "SceneObject"
+    ]
+}

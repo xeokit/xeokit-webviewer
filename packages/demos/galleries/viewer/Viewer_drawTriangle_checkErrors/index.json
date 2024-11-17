@@ -1,6 +1,6 @@
 {
-    "description": "Drawing a triangle with a Viewer configured with a WebGLRenderer, checking for errors",
-    "summary": "In this example, we're creating a Viewer configured with a WebGLRenderer and a Scene. Then we build a SceneModel with a simple triangle geometry. In this example, we're also checking at each step for the occurrance of an error.",
+    "description": "Building and viewing a SceneModel containing a 3D triangle, while checking for errors",
+    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that describes a single triangle. Check for errors after each step.",
     "components": [
         "Scene",
         "WebGLRenderer",

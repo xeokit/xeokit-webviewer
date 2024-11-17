@@ -6,16 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>xeokit Example</title>
     <link href="../../../css/pageStyle.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
 <body>
-<canvas id="myCanvas"></canvas>
+<input type="checkbox" id="info-button" checked/>
+<label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
+<canvas id="demoCanvas"></canvas>
+
+<div class="slideout-sidebar">
+    <div id="info-container" class="info-container"></div>
+</div>
 </body>
 
 <script type="module">
 
     import {log} from "../../../js/logger.js";
 
-    import * as xeokit from "./../../js/xeokit-demo-bundle.js";
+    import * as xeokit from "./../../../js/xeokit-demo-bundle.js";
+
+    import {DemoHelper} from "../../../js/DemoHelper.js";
 
     const scene = new xeokit.scene.Scene();
     const data = new xeokit.data.Data();
@@ -23,14 +32,14 @@
     const renderer = new xeokit.webglrenderer.WebGLRenderer({});
 
     const viewer = new xeokit.viewer.Viewer({
-        id: "myViewer",
+        id: "demoViewer",
         scene,
         renderer
     });
 
     const view = viewer.createView({
-        id: "myView",
-        elementId: "myCanvas"
+        id: "demoView",
+        elementId: "demoCanvas"
     });
 
     view.camera.eye = [-3.933, 2.855, 27.018];
@@ -43,36 +52,52 @@
     new xeokit.cameracontrol.CameraControl(view, {});
 
     const sceneModel = scene.createModel({
-        id: "myModel"
+        id: "demoModel"
     });
 
-    const dataModel = data.createModel({
-        id: "myModel"
+    const demoHelper = new DemoHelper({
+        viewer,
+        data
     });
 
-    if (sceneModel instanceof xeokit.core.SDKError) {
-        log(`Error creating SceneModel: ${sceneModel.message}`);
+    demoHelper.init()
+        .then(() => {
 
-    } else {
+            const dataModel = data.createModel({
+                id: "demoModel"
+            });
 
-        fetch("../../../data/models/IfcOpenHouse4/json/scenemodel.json").then(response => {
+            if (sceneModel instanceof xeokit.core.SDKError) {
+                log(`Error creating SceneModel: ${sceneModel.message}`);
 
-            response.json().then(sceneModelJSON => {
+            } else {
 
-                fetch("../../../data/models/IfcOpenHouse4/json/datamodel.json").then(response => {
+                demoHelper.logAsset("../../../data/models/Duplex/json/scenemodel.json");
 
-                    response.json().then(dataModelJSON => {
+                fetch("../../../data/models/Duplex/json/scenemodel.json").then(response => {
 
-                        dataModel.fromJSON(dataModelJSON);
-                        sceneModel.fromJSON(sceneModelJSON);
+                    response.json().then(sceneModelJSON => {
 
-                        dataModel.build();
-                        sceneModel.build();
+                        demoHelper.logAsset("../../../data/models/Duplex/json/datamodel.json");
+
+                        fetch("../../../data/models/Duplex/json/datamodel.json").then(response => {
+
+                            response.json().then(dataModelJSON => {
+
+                                dataModel.fromJSON(dataModelJSON);
+                                sceneModel.fromJSON(sceneModelJSON);
+
+                                dataModel.build();
+                                sceneModel.build();
+
+                                demoHelper.finished();
+                            });
+                        });
                     });
                 });
-            });
+            }
+
         });
-    }
 
 </script>
 

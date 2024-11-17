@@ -6,70 +6,90 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>xeokit Example</title>
     <link href="../../../css/pageStyle.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
 <body>
+<input type="checkbox" id="info-button" checked/>
+<label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
+<canvas id="demoCanvas"></canvas>
 
-<canvas id="myCanvas"></canvas>
+<div class="slideout-sidebar">
+    <div id="info-container" class="info-container"></div>
+</div>
 </body>
 
 <script type="module">
 
     import * as xeokit from "./../../../js/xeokit-demo-bundle.js";
 
+    import {DemoHelper} from "../../../js/DemoHelper.js";
+
     const scene = new xeokit.scene.Scene();
 
     const renderer = new xeokit.webglrenderer.WebGLRenderer({});
 
     const viewer = new xeokit.viewer.Viewer({
-        id: "myViewer",
+        id: "demoViewer",
         scene,
         renderer
     });
 
-    const view = viewer.createView({
-        id: "myView",
-        elementId: "myCanvas"
+    const demoHelper = new DemoHelper({
+        elementId: "info-container",
+        viewer
     });
 
-    view.camera.eye = [3, 3, 3];
-    view.camera.look = [0, 0, 0];
-    view.camera.up = [0, 1, 0];
+    demoHelper.init()
+        .then(() => {
 
-    new xeokit.cameracontrol.CameraControl(view);
+            const view = viewer.createView({
+                id: "demoView",
+                elementId: "demoCanvas"
+            });
 
-    const sceneModel = scene.createModel({
-        id: "myModel",
-        geometries: [
-            {
-                id: "triangleGeometry",
-                primitive: 20002, // TrianglesPrimitive (defined in @xeokit/constants)
-                positions: [
-                    0.0, 1.5, 0.0,
-                    -1.5, -1.5, 0.0,
-                    1.5, -1.5, 0.0,
+            view.camera.eye = [3, 3, 3];
+            view.camera.look = [0, 0, 0];
+            view.camera.up = [0, 1, 0];
+
+            new xeokit.cameracontrol.CameraControl(view);
+
+            const sceneModel = scene.createModel({
+                id: "demoModel",
+                geometries: [
+                    {
+                        id: "triangleGeometry",
+                        primitive: 20002, // TrianglesPrimitive (defined in @xeokit/constants)
+                        positions: [
+                            0.0, 1.5, 0.0,
+                            -1.5, -1.5, 0.0,
+                            1.5, -1.5, 0.0,
+                        ],
+                        indices: [
+                            0, 1, 2
+                        ]
+                    }
                 ],
-                indices: [
-                    0, 1, 2
+                meshes: [
+                    {
+                        id: "triangleMesh",
+                        geometryId: "triangleGeometry",
+                        color: [1, 1, 1, 1],
+                        opacity: 1
+                    }
+                ],
+                objects: [
+                    {
+                        id: "triangleObject",
+                        meshIds: ["triangleMesh"]
+                    }
                 ]
-            }
-        ],
-        meshes: [
-            {
-                id: "triangleMesh",
-                geometryId: "triangleGeometry",
-                color: [1, 1, 1, 1],
-                opacity: 1
-            }
-        ],
-        objects: [
-            {
-                id: "triangleObject",
-                meshIds: ["triangleMesh"]
-            }
-        ]
-    });
+            });
 
-    sceneModel.build();
+            sceneModel.build();
+
+            demoHelper.finished();
+
+        });
 
 </script>
 

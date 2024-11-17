@@ -16,7 +16,7 @@
             user-drag: none;
         }
 
-        #myCanvas1 {
+        #demoCanvas1 {
             user-select: none;
             -webkit-user-drag: none;
             -moz-user-drag: none;
@@ -27,12 +27,12 @@
             left: 10px;
             top: 60px;
             position: absolute;
-            /*border: 1px solid white;*/
+            border: 1px solid black;
             padding: 0px;
             /*background: red;*/
         }
 
-        #myCanvas2 {
+        #demoCanvas2 {
             user-select: none;
             -webkit-user-drag: none;
             -moz-user-drag: none;
@@ -43,12 +43,12 @@
             left: 1020px;
             top: 60px;
             position: absolute;
-            /*border: 1px solid white;*/
+            border: 1px solid black;
             /*background: yellow;*/
             padding: 0px;
         }
 
-        #myCanvas3 {
+        #demoCanvas3 {
             user-select: none;
             -webkit-user-drag: none;
             -moz-user-drag: none;
@@ -59,144 +59,151 @@
             left: 1020px;
             top: 460px;
             position: absolute;
-            /*border: 1px solid white;*/
+            border: 1px solid black;
             padding: 0px;
             /*background: green;*/
         }
+
     </style>
 </head>
 <body>
-<!-- Virtual canvases -->
+<input type="checkbox" id="info-button" checked/>
+<label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
 
-<img id="myCanvas1">
-<img id="myCanvas2"/>
-<img id="myCanvas3"/>
+<img id="demoCanvas1">
+<img id="demoCanvas2"/>
+<img id="demoCanvas3"/>
 
+<div class="slideout-sidebar">
+    <div id="info-container" class="info-container"></div>
+</div>
 </body>
 
 <script type="module">
 
-    //-----------------------------------------------------------------------------------------
-    // Import xeokit SDK from the JavaScript bundle that we've built for these examples
-    //-----------------------------------------------------------------------------------------
-
     import * as xeokit from "./../../../js/xeokit-demo-bundle.js";
-
-    //-----------------------------------------------------------------------------------------
-    // Create a Viewer with a Scene and a WebGLRenderer
-    //-----------------------------------------------------------------------------------------
+    import {DemoHelper} from "../../../js/DemoHelper.js";
 
     const scene = new xeokit.scene.Scene();
+    const data = new xeokit.data.Data();
 
     const renderer = new xeokit.webglrenderer.WebGLRenderer({});
 
     const viewer = new xeokit.viewer.Viewer({
-        id: "myViewer",
+        id: "demoViewer",
         scene,
         renderer
     });
 
-    //-----------------------------------------------------------------------------------------
-    // Create View 1
-    //
-    // Perspective projection, looking at the model from the side
-    // Renders in QualityRender mode
-    //-----------------------------------------------------------------------------------------
-
-    const view1 = viewer.createView({
-        id: "myView1",
-        elementId: "myCanvas1",
-        renderMode: xeokit.constants.QualityRender
+    const demoHelper = new DemoHelper({
+        viewer,
+        data
     });
 
-    view1.camera.projectionType = xeokit.constants.PerspectiveProjectionType;
-    view1.camera.eye = [0, -10, -20];
-    view1.camera.look = [0, -10, 0];
-    view1.camera.up = [0, 1, 0];
-    view1.edges.enabled = true;
+    demoHelper.init()
+        .then(() => {
 
-    new xeokit.cameracontrol.CameraControl(view1, {});
+            //-----------------------------------------------------------------------------------------
+            // Create View 1
+            //
+            // Perspective projection, looking at the model from the side
+            // Renders in QualityRender mode
+            //-----------------------------------------------------------------------------------------
 
-    // Configure this View's edge enhancement and ambient shadows effects
-    // to apply in QualityRender mode
+            const view1 = viewer.createView({
+                id: "demoView1",
+                elementId: "demoCanvas1",
+                renderMode: xeokit.constants.QualityRender
+            });
 
-    view1.edges.renderModes = [xeokit.constants.QualityRender];
-    view1.sao.renderModes = [xeokit.constants.QualityRender];
+            view1.camera.projectionType = xeokit.constants.PerspectiveProjectionType;
+            view1.camera.eye = [0, -10, -20];
+            view1.camera.look = [0, -10, 0];
+            view1.camera.up = [0, 1, 0];
+            view1.edges.enabled = true;
 
-    //-----------------------------------------------------------------------------------------
-    // Create View 2
-    //
-    // Orthographic, looking at the model from above
-    // Renders in QualityRender mode
-    //-----------------------------------------------------------------------------------------
+            new xeokit.cameracontrol.CameraControl(view1, {});
 
-    const view2 = viewer.createView({
-        id: "myView2",
-        elementId: "myCanvas2",
-        renderMode: xeokit.constants.FastRender
-    });
+            // Configure this View's edge enhancement and ambient shadows effects
+            // to apply in QualityRender mode
 
-    view2.camera.projectionType = xeokit.constants.OrthoProjectionType;
-    view2.camera.eye = [0, -5, 20];
-    view2.camera.look = [0, -5, 0];
-    view2.camera.up = [0, 1, 0];
-    view2.camera.orthoProjection.scale = 20;
-    view2.camera.orbitPitch(90);
+            view1.edges.renderModes = [xeokit.constants.QualityRender];
+            view1.sao.renderModes = [xeokit.constants.QualityRender];
 
-    new xeokit.cameracontrol.CameraControl(view2, {});
+            //-----------------------------------------------------------------------------------------
+            // Create View 2
+            //
+            // Orthographic, looking at the model from above
+            // Renders in QualityRender mode
+            //-----------------------------------------------------------------------------------------
 
-    // Configure this View's edge enhancement and ambient shadows effects
-    // to apply in QualityRender mode
+            const view2 = viewer.createView({
+                id: "demoView2",
+                elementId: "demoCanvas2",
+                renderMode: xeokit.constants.FastRender
+            });
 
-    view2.edges.renderModes = [xeokit.constants.QualityRender];
-    view2.sao.renderModes = [xeokit.constants.QualityRender];
+            view2.camera.projectionType = xeokit.constants.OrthoProjectionType;
+            view2.camera.eye = [0, -5, 20];
+            view2.camera.look = [0, -5, 0];
+            view2.camera.up = [0, 1, 0];
+            view2.camera.orthoProjection.scale = 20;
+            view2.camera.orbitPitch(90);
 
-    //-----------------------------------------------------------------------------------------
-    // Create View 3
-    //
-    // Perspective projection, looking at the model from the side
-    // Renders in FastRender mode
-    //-----------------------------------------------------------------------------------------
+            new xeokit.cameracontrol.CameraControl(view2, {});
 
-    const view3 = viewer.createView({
-        id: "myView3",
-        elementId: "myCanvas3",
-        renderMode: xeokit.constants.FastRender
-    });
+            // Configure this View's edge enhancement and ambient shadows effects
+            // to apply in QualityRender mode
 
-    view3.camera.projectionType = xeokit.constants.PerspectiveProjectionType;
-    view3.camera.eye = [0, -5, 20];
-    view3.camera.look = [0, -5, 0];
-    view3.camera.up = [0, 1, 0];
-    view3.camera.zoom(2);
-    view3.camera.orbitYaw(-50);
-    view3.camera.orbitPitch(20);
+            view2.edges.renderModes = [xeokit.constants.QualityRender];
+            view2.sao.renderModes = [xeokit.constants.QualityRender];
 
-    new xeokit.cameracontrol.CameraControl(view3, {});
+            //-----------------------------------------------------------------------------------------
+            // Create View 3
+            //
+            // Perspective projection, looking at the model from the side
+            // Renders in FastRender mode
+            //-----------------------------------------------------------------------------------------
 
-    // Configure this View's edge enhancement and ambient shadows effects
-    // to apply in QualityRender mode; they will not apply as long as this
-    // View remains in FastRender mode
+            const view3 = viewer.createView({
+                id: "demoView3",
+                elementId: "demoCanvas3",
+                renderMode: xeokit.constants.FastRender
+            });
 
-    view3.edges.renderModes = [xeokit.constants.QualityRender];
-    view3.sao.renderModes = [xeokit.constants.QualityRender];
+            view3.camera.projectionType = xeokit.constants.PerspectiveProjectionType;
+            view3.camera.eye = [0, -5, 20];
+            view3.camera.look = [0, -5, 0];
+            view3.camera.up = [0, 1, 0];
+            view3.camera.zoom(2);
+            view3.camera.orbitYaw(-50);
+            view3.camera.orbitPitch(20);
 
-    //-----------------------------------------------------------------------------------------
-    // Build a SceneModel
-    //
-    // Creates ViewObjects in our three Views
-    //-----------------------------------------------------------------------------------------
+            new xeokit.cameracontrol.CameraControl(view3, {});
 
-    const sceneModel = scene.createModel({
-        id: "myModel"
-    });
+            // Configure this View's edge enhancement and ambient shadows effects
+            // to apply in QualityRender mode; they will not apply as long as this
+            // View remains in FastRender mode
 
-    fetch("../../../data/models/Duplex/json/scenemodel.json").then(response => {
-        response.json().then(fileData => {
-            sceneModel.fromJSON(fileData);
-            sceneModel.build();
-        });
-    });
+            view3.edges.renderModes = [xeokit.constants.QualityRender];
+            view3.sao.renderModes = [xeokit.constants.QualityRender];
+
+            //-----------------------------------------------------------------------------------------
+            // Build a SceneModel
+            //
+            // Creates ViewObjects in our three Views
+            //-----------------------------------------------------------------------------------------
+
+            const sceneModel = scene.createModel({
+                id: "demoModel"
+            });
+
+            fetch("../../../data/models/Duplex/json/scenemodel.json").then(response => {
+                response.json().then(fileData => {
+                    sceneModel.fromJSON(fileData);
+                    sceneModel.build();
+                });
+            });
 
 </script>
 

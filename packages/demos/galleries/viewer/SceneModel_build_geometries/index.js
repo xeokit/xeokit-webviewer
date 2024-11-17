@@ -2,264 +2,276 @@ import {log} from "../../../js/logger.js";
 
 import * as xeokit from "./../../../js/xeokit-demo-bundle.js";
 
+import {DemoHelper} from "../../../js/DemoHelper.js";
+
 const scene = new xeokit.scene.Scene();
 
 const viewer = new xeokit.viewer.Viewer({
-    id: "myViewer",
+    id: "demoViewer",
     scene,
     renderer: new xeokit.webglrenderer.WebGLRenderer({})
 });
 
-const view = viewer.createView({
-    id: "myView",
-    elementId: "myCanvas"
+const demoHelper = new DemoHelper({
+    viewer
 });
 
-view.camera.eye = [10, 0, 35];
-view.camera.look = [10, 0, 0];
-view.camera.up = [0, 1, 0];
+demoHelper.init()
+    .then(() => {
 
-view.camera.orbitPitch(20);
+        const view = viewer.createView({
+            id: "demoView",
+            elementId: "demoCanvas"
+        });
 
-new xeokit.cameracontrol.CameraControl(view);
+        view.camera.eye = [10, 0, 35];
+        view.camera.look = [10, 0, 0];
+        view.camera.up = [0, 1, 0];
 
-const sceneModel = scene.createModel({
-    id: "myModel"
-});
+        view.camera.orbitPitch(20);
 
-if (sceneModel instanceof xeokit.core.SDKError) {
-    log(`Error creating SceneModel: ${sceneModel.message}`);
-} else {
+        new xeokit.cameracontrol.CameraControl(view);
 
-    // Box triangles
+        const sceneModel = scene.createModel({
+            id: "demoModel"
+        });
 
-    const box = xeokit.procgen.buildBoxGeometry({
-        xSize: 1,
-        ySize: 1,
-        zSize: 1
-    });
+        if (sceneModel instanceof xeokit.core.SDKError) {
+            log(`Error creating SceneModel: ${sceneModel.message}`);
+        } else {
 
-    sceneModel.createGeometry({
-        id: "boxGeometry",
-        primitive: xeokit.constants.TrianglesPrimitive,
-        positions: box.positions,
-        indices: box.indices
-    });
+            // Box triangles
 
-    sceneModel.createMesh({
-        id: "boxMesh",
-        geometryId: "boxGeometry",
-        matrix: xeokit.scene.buildMat4({
-            position: [0, 0, 0],
-            color: [1, 0, 0]
-        })
-    });
+            const box = xeokit.procgen.buildBoxGeometry({
+                xSize: 1,
+                ySize: 1,
+                zSize: 1
+            });
 
-    // Box lines
+            sceneModel.createGeometry({
+                id: "boxGeometry",
+                primitive: xeokit.constants.TrianglesPrimitive,
+                positions: box.positions,
+                indices: box.indices
+            });
 
-    const boxLines = xeokit.procgen.buildBoxLinesGeometry({
-        xSize: 1,
-        ySize: 1,
-        zSize: 1
-    });
+            sceneModel.createMesh({
+                id: "boxMesh",
+                geometryId: "boxGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [0, 0, 0],
+                    color: [1, 0, 0]
+                })
+            });
 
-    sceneModel.createGeometry({
-        id: "boxLinesGeometry",
-        primitive: xeokit.constants.LinesPrimitive,
-        positions: boxLines.positions,
-        indices: boxLines.indices
-    });
+            // Box lines
 
-    sceneModel.createMesh({
-        id: "boxLinesMesh",
-        geometryId: "boxLinesGeometry",
-        matrix: xeokit.scene.buildMat4({
-            position: [3, 0, 0]
-        }),
-        color: [0, 0, 1]
-    });
+            const boxLines = xeokit.procgen.buildBoxLinesGeometry({
+                xSize: 1,
+                ySize: 1,
+                zSize: 1
+            });
 
-    // Sphere triangles
+            sceneModel.createGeometry({
+                id: "boxLinesGeometry",
+                primitive: xeokit.constants.LinesPrimitive,
+                positions: boxLines.positions,
+                indices: boxLines.indices
+            });
 
-    const sphere = xeokit.procgen.buildSphereGeometry({
-        center: [0, 0, 0],
-        radius: 1.5,
-        heightSegments: 60,
-        widthSegments: 60
-    });
+            sceneModel.createMesh({
+                id: "boxLinesMesh",
+                geometryId: "boxLinesGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [3, 0, 0]
+                }),
+                color: [0, 0, 1]
+            });
 
-    sceneModel.createGeometry({
-        id: "sphereGeometry",
-        primitive: xeokit.constants.TrianglesPrimitive,
-        positions: sphere.positions,
-        normals: sphere.normals,
-        indices: sphere.indices
-    });
+            // Sphere triangles
 
-    sceneModel.createMesh({
-        id: "sphereMesh",
-        geometryId: "sphereGeometry",
-        matrix: xeokit.scene.buildMat4({
-            position: [7, 0, 0]
-        }),
-        color: [0, 0.5, 1]
-    });
+            const sphere = xeokit.procgen.buildSphereGeometry({
+                center: [0, 0, 0],
+                radius: 1.5,
+                heightSegments: 60,
+                widthSegments: 60
+            });
 
-    // Torus triangles
+            sceneModel.createGeometry({
+                id: "sphereGeometry",
+                primitive: xeokit.constants.TrianglesPrimitive,
+                positions: sphere.positions,
+                normals: sphere.normals,
+                indices: sphere.indices
+            });
 
-    const torus = xeokit.procgen.buildTorusGeometry({
-        center: [0, 0, 0],
-        radius: 1.5,
-        tube: 0.5,
-        radialSegments: 32,
-        tubeSegments: 24,
-        arc: Math.PI * 2.0
-    });
+            sceneModel.createMesh({
+                id: "sphereMesh",
+                geometryId: "sphereGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [7, 0, 0]
+                }),
+                color: [0, 0.5, 1]
+            });
 
-    sceneModel.createGeometry({
-        id: "torusGeometry",
-        primitive: xeokit.constants.TrianglesPrimitive,
-        positions: torus.positions,
-        normals: torus.normals,
-        indices: torus.indices
-    });
+            // Torus triangles
 
-    sceneModel.createMesh({
-        id: "torusMesh",
-        geometryId: "torusGeometry",
-        matrix: xeokit.scene.buildMat4({
-            position: [11, 0, 0]
-        }),
-        color: [0.7, 0, 1]
-    });
+            const torus = xeokit.procgen.buildTorusGeometry({
+                center: [0, 0, 0],
+                radius: 1.5,
+                tube: 0.5,
+                radialSegments: 32,
+                tubeSegments: 24,
+                arc: Math.PI * 2.0
+            });
 
-    // Cylinder triangles
+            sceneModel.createGeometry({
+                id: "torusGeometry",
+                primitive: xeokit.constants.TrianglesPrimitive,
+                positions: torus.positions,
+                normals: torus.normals,
+                indices: torus.indices
+            });
 
-    const cylinder = xeokit.procgen.buildCylinderGeometry({
-        center: [0, 0, 0],
-        radiusTop: 1.0,
-        radiusBottom: 2.0,
-        height: 2.5,
-        radialSegments: 20,
-        heightSegments: 1,
-        openEnded: false
-    });
+            sceneModel.createMesh({
+                id: "torusMesh",
+                geometryId: "torusGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [11, 0, 0]
+                }),
+                color: [0.7, 0, 1]
+            });
 
-    sceneModel.createGeometry({
-        id: "cylinderGeometry",
-        primitive: xeokit.constants.TrianglesPrimitive,
-        positions: cylinder.positions,
-        normals: cylinder.normals,
-        indices: cylinder.indices
-    });
+            // Cylinder triangles
 
-    sceneModel.createMesh({
-        id: "cylinderMesh",
-        geometryId: "cylinderGeometry",
-        matrix: xeokit.scene.buildMat4({
-            position: [16, 0, 0]
-        }),
-        color: [1, .6, 0]
-    });
+            const cylinder = xeokit.procgen.buildCylinderGeometry({
+                center: [0, 0, 0],
+                radiusTop: 1.0,
+                radiusBottom: 2.0,
+                height: 2.5,
+                radialSegments: 20,
+                heightSegments: 1,
+                openEnded: false
+            });
 
-    // Grid lines
+            sceneModel.createGeometry({
+                id: "cylinderGeometry",
+                primitive: xeokit.constants.TrianglesPrimitive,
+                positions: cylinder.positions,
+                normals: cylinder.normals,
+                indices: cylinder.indices
+            });
 
-    const grid = xeokit.procgen.buildGridGeometry({
-        size: 10,
-        divisions: 10
-    });
+            sceneModel.createMesh({
+                id: "cylinderMesh",
+                geometryId: "cylinderGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [16, 0, 0]
+                }),
+                color: [1, .6, 0]
+            });
 
-    sceneModel.createGeometry({
-        id: "gridGeometry",
-        primitive: xeokit.constants.LinesPrimitive,
-        positions: grid.positions,
-        indices: grid.indices
-    });
+            // Grid lines
 
-    sceneModel.createMesh({
-        id: "gridMesh",
-        geometryId: "gridGeometry",
-        matrix: xeokit.scene.buildMat4({
-            position: [25, 0, 0]
-        }),
-        color: [0, 1, 0]
-    });
+            const grid = xeokit.procgen.buildGridGeometry({
+                size: 10,
+                divisions: 10
+            });
 
-    // Text
+            sceneModel.createGeometry({
+                id: "gridGeometry",
+                primitive: xeokit.constants.LinesPrimitive,
+                positions: grid.positions,
+                indices: grid.indices
+            });
 
-    const text = xeokit.procgen.buildVectorTextGeometry({
-        text: "An assortment of geometry\nprogrammatically generated\nwithin a SceneModel\nusing instanced geometry",
-    });
+            sceneModel.createMesh({
+                id: "gridMesh",
+                geometryId: "gridGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [25, 0, 0]
+                }),
+                color: [0, 1, 0]
+            });
 
-    sceneModel.createGeometry({
-        id: "textGeometry",
-        primitive: xeokit.constants.LinesPrimitive,
-        positions: text.positions,
-        indices: text.indices
-    });
+            // Text
 
-    sceneModel.createMesh({
-        id: "textMesh",
-        geometryId: "textGeometry",
-        matrix: xeokit.scene.buildMat4({
-            position: [0, 7.5, 0]
-        }),
-        color: [0, 1, 0]
-    });
+            const text = xeokit.procgen.buildVectorTextGeometry({
+                text: "An assortment of geometry\nprogrammatically generated\nwithin a SceneModel\nusing instanced geometry",
+            });
 
-    // Points
+            sceneModel.createGeometry({
+                id: "textGeometry",
+                primitive: xeokit.constants.LinesPrimitive,
+                positions: text.positions,
+                indices: text.indices
+            });
 
-    const positions = [];
-    const colors = [];
+            sceneModel.createMesh({
+                id: "textMesh",
+                geometryId: "textGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [0, 7.5, 0]
+                }),
+                color: [0, 1, 0]
+            });
 
-    const map = {};
+            // Points
 
-    for (let i = 0; i < 2000;) {
+            const positions = [];
+            const colors = [];
 
-        const x = Math.random();
-        const y = Math.random();
-        const z = Math.random();
+            const map = {};
 
-        const hash = "" + x + "." + y + "." + z;
-        if (map[hash]) {
-            continue;
+            for (let i = 0; i < 2000;) {
+
+                const x = Math.random();
+                const y = Math.random();
+                const z = Math.random();
+
+                const hash = "" + x + "." + y + "." + z;
+                if (map[hash]) {
+                    continue;
+                }
+
+                map[hash] = true;
+
+                positions.push(x);
+                positions.push(y);
+                positions.push(z);
+
+                colors.push(Math.random());
+                colors.push(Math.random());
+                colors.push(Math.random());
+                colors.push(Math.random());
+
+                i++;
+            }
+
+            sceneModel.createGeometry({
+                id: "pointsGeometry",
+                primitive: xeokit.constants.PointsPrimitive,
+                positions,
+                colors
+            });
+
+            sceneModel.createMesh({
+                id: "pointsMesh",
+                geometryId: "pointsGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [-7, 0, 0],
+                    scale: [4, 4, 4],
+                    rotation: [0, 0, 0]
+                }),
+            });
+
+            sceneModel.createObject({
+                id: "geometries",
+                meshIds: ["boxMesh", "boxLinesMesh", "sphereMesh", "torusMesh", "cylinderMesh", "gridMesh", "textMesh", "pointsMesh"]
+            });
         }
 
-        map[hash] = true;
+        sceneModel.build();
 
-        positions.push(x);
-        positions.push(y);
-        positions.push(z);
-
-        colors.push(Math.random());
-        colors.push(Math.random());
-        colors.push(Math.random());
-        colors.push(Math.random());
-
-        i++;
-    }
-
-    sceneModel.createGeometry({
-        id: "pointsGeometry",
-        primitive: xeokit.constants.PointsPrimitive,
-        positions,
-        colors
+        demoHelper.finished();
     });
-
-    sceneModel.createMesh({
-        id: "pointsMesh",
-        geometryId: "pointsGeometry",
-        matrix: xeokit.scene.buildMat4({
-            position: [-7, 0, 0],
-            scale: [4, 4, 4],
-            rotation: [0, 0, 0]
-        }),
-    });
-
-    sceneModel.createObject({
-        id: "geometries",
-        meshIds: ["boxMesh", "boxLinesMesh", "sphereMesh", "torusMesh", "cylinderMesh", "gridMesh", "textMesh", "pointsMesh"]
-    });
-}
-
-sceneModel.build();

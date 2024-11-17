@@ -16,6 +16,11 @@ body {
     height: 100%;
 }
 
+iframe {
+    border: 0;
+    padding: 0;
+}
+
 #index {
     position: absolute;
     height: 100%;
@@ -115,7 +120,7 @@ body {
     opacity: 1.0;
     pointer-events: all;
     transition: all 300ms ease-in-out;
-    background: lightblue;
+    /*background: lightblue;*/
 }
 
 .content-overlay {
@@ -129,6 +134,7 @@ body {
     opacity: 1.0;
     pointer-events: none;
     transition: all 300ms ease-in-out;
+
 }
 
 .slideout-sidebar {
@@ -153,7 +159,7 @@ body {
     opacity: 1.0;
     pointer-events: all;
     background: lightblue;
-    border:0;
+    border: 0;
 }
 
 .content-overlay-static {
@@ -240,17 +246,17 @@ body {
 }
 
 #index_toggle:checked + .index-button {
-    left: 585px;
+    left: 470px;
     color: white;
 }
 
 #index_toggle:checked ~ .page-title {
-    left: 530px;
+    left: 470px;
     color: white;
 }
 
 #index_toggle:checked ~ .viewSourceButton {
-    left: 570px;
+    left: 470px;
 }
 
 #index_toggle:checked ~ .content-container {

@@ -1,0 +1,16 @@
+{
+    "description": "Using a TreeView configured with AggregationHierarchy",
+    "summary": "",
+    "components": [
+        "Scene",
+        "WebGLRenderer",
+        "Viewer",
+        "View",
+        "CameraControl",
+        "SceneModel",
+        "SceneGeometry",
+        "SceneMesh",
+        "SceneObject",
+        "TreeView"
+    ]
+}

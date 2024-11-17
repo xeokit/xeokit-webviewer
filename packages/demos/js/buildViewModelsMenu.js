@@ -35,7 +35,7 @@ export function buildViewModelsMenu(params) {
 // Index
 
     let div = document.createElement('h2');
-    div.textContent = "Import Pipelines";
+    div.textContent = "Pipelines";
 
     container.appendChild(div);
     container.appendChild(document.createElement('hr'));
@@ -162,10 +162,10 @@ export function buildViewModelsMenu(params) {
 
     window.setInterval(function () {
         if (window.location.hash !== hash || viewer.src === "") {
-            setTimeout(() => {
+            // setTimeout(() => {
                 load(window.location.hash.substring(1));
                 hash = window.location.hash;
-            }, 300)
+            // }, 30)
 
             indexToggle.checked = false;
         }
@@ -181,7 +181,7 @@ export function buildViewModelsMenu(params) {
 
     function load(file) {
 
-        pageTitle.innerHTML = fileDescriptions[file] || "Example not found - perhaps renamed?";
+       // pageTitle.innerHTML = fileDescriptions[file] || "Example not found - perhaps renamed?";
 
         if (file.indexOf(".html", file.length - 5) !== -1) {
             window.location = "./" + file + ".html";

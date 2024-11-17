@@ -8,9 +8,9 @@
     <link href="../../../css/pageStyle.css" rel="stylesheet"/>
 </head>
 <body>
-<input type="checkbox" id="info-button"/>
-<label for="info-button" class="info-button"><i class="far fa-3x fa-question-circle"></i></label>
-<canvas id="myCanvas"></canvas>
+<input type="checkbox" id="info-button" checked/>
+<label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
+<canvas id="demoCanvas"></canvas>
 
 </body>
 
@@ -25,14 +25,14 @@
     const renderer = new xeokit.webglrenderer.WebGLRenderer({});
 
     const viewer = new xeokit.viewer.Viewer({
-        id: "myViewer",
+        id: "demoViewer",
         scene,
         renderer
     });
 
     const view = viewer.createView({
-        id: "myView",
-        elementId: "myCanvas"
+        id: "demoView",
+        elementId: "demoCanvas"
     });
 
     view.camera.eye = [0, -5, 20];
@@ -42,7 +42,7 @@
     const cameraControl = new xeokit.cameracontrol.CameraControl(view, {});
 
     const sceneModel = scene.createModel({
-        id: "myModel"
+        id: "demoModel"
     });
 
     if (sceneModel instanceof xeokit.core.SDKError) {
@@ -50,7 +50,7 @@
     } else {
 
         sceneModel.createGeometry({
-            id: "myBoxGeometry",
+            id: "demoBoxGeometry",
             primitive: xeokit.constants.TrianglesPrimitive,
             positions: [
                 1, 1, 1, -1, 1, 1, -1, -1, 1, 1, -1, 1, 1, 1, 1, 1, -1, 1, 1, -1, -1, 1, 1, -1, 1, 1, 1, 1, 1, -1, -1, 1,
@@ -69,7 +69,7 @@
 
         sceneModel.createMesh({
             id: "redLegMesh",
-            geometryId: "myBoxGeometry",
+            geometryId: "demoBoxGeometry",
             position: [-4, -6, -4],
             scale: [1, 3, 1],
             rotation: [0, 0, 0],
@@ -83,7 +83,7 @@
 
         sceneModel.createMesh({
             id: "greenLegMesh",
-            geometryId: "myBoxGeometry",
+            geometryId: "demoBoxGeometry",
             position: [4, -6, -4],
             scale: [1, 3, 1],
             rotation: [0, 0, 0],
@@ -97,7 +97,7 @@
 
         sceneModel.createMesh({
             id: "blueLegMesh",
-            geometryId: "myBoxGeometry",
+            geometryId: "demoBoxGeometry",
             position: [4, -6, 4],
             scale: [1, 3, 1],
             rotation: [0, 0, 0],
@@ -111,7 +111,7 @@
 
         sceneModel.createMesh({
             id: "yellowLegMesh",
-            geometryId: "myBoxGeometry",
+            geometryId: "demoBoxGeometry",
             position: [-4, -6, 4],
             scale: [1, 3, 1],
             rotation: [0, 0, 0],
@@ -125,7 +125,7 @@
 
         sceneModel.createMesh({
             id: "purpleTableTopMesh",
-            geometryId: "myBoxGeometry",
+            geometryId: "demoBoxGeometry",
             position: [0, -3, 0],
             scale: [6, 0.5, 6],
             rotation: [0, 0, 0],

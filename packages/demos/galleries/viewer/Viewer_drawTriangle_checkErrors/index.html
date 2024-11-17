@@ -6,102 +6,118 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>xeokit Example</title>
     <link href="../../../css/pageStyle.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
 <body>
-<canvas id="myCanvas"></canvas>
+<input type="checkbox" id="info-button" checked/>
+<label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
+<canvas id="demoCanvas"></canvas>
+
+<div class="slideout-sidebar">
+    <div id="info-container" class="info-container"></div>
+</div>
 </body>
 
 <script type="module">
 
+    //-----------------------------------------------------------------------------------------
+    // Import xeokit SDK via the JavaScript bundle that we've built for these examples
+    //-----------------------------------------------------------------------------------------
+
     import * as xeokit from "./../../../js/xeokit-demo-bundle.js";
-    import {StatusLog} from "../../../js/StatusLog.js";
+    import {DemoHelper} from "../../../js/DemoHelper.js";
 
-    const statusLog = new StatusLog();
-
-    statusLog.logCreate(["Scene", "WebGLRenderer", "Viewer", "View", "CameraControl"]);
+    //-----------------------------------------------------------------------------------------
+    // Create a Viewer with a Scene, WebGLRenderer and one View
+    //-----------------------------------------------------------------------------------------
 
     const scene = new xeokit.scene.Scene();
-
-    const renderer = new xeokit.webglrenderer.WebGLRenderer({});
+    const data = new xeokit.data.Data();
 
     const viewer = new xeokit.viewer.Viewer({
-        id: "myViewer",
+        id: "demoViewer",
         scene,
-        renderer
+        renderer: new xeokit.webglrenderer.WebGLRenderer({})
     });
 
-    const view = viewer.createView({
-        id: "myView",
-        elementId: "myCanvas"
+    const demoHelper = new DemoHelper({
+        elementId: "info-container",
+        viewer
     });
 
-    if (view instanceof xeokit.core.SDKError) {
-        console.error(`[viewer.createView] Error: ${view.message}`);
-    }
+    demoHelper.init()
+        .then(() => {
 
-    view.camera.eye = [0, 0, 10]; // Default
-    view.camera.look = [0, 0, 0]; // Default
-    view.camera.up = [0, 1, 0]; // Default
+            const view = viewer.createView({
+                id: "demoView",
+                elementId: "demoCanvas"
+            });
 
-    new xeokit.cameracontrol.CameraControl(view);
+            if (view instanceof xeokit.core.SDKError) {
+                console.error(`[viewer.createView] Error: ${view.message}`);
+            }
 
-    statusLog.logCreate(["SceneModel", "SceneGeometry", "SceneMesh", "SceneObject"]);
+            view.camera.eye = [0, 0, 10]; // Default
+            view.camera.look = [0, 0, 0]; // Default
+            view.camera.up = [0, 1, 0]; // Default
 
-    const sceneModel = scene.createModel({
-        id: "myModel"
-    });
+            new xeokit.cameracontrol.CameraControl(view);
 
-    if (sceneModel instanceof xeokit.core.SDKError) {
-        console.error(`[scene.createModel] Error: ${sceneModel.message}`);
-    }
+            const sceneModel = scene.createModel({
+                id: "demoModel"
+            });
 
-    const sceneGeometry = sceneModel.createGeometry({
-        id: "triangleGeometry",
-        primitive: xeokit.constants.TrianglesPrimitive,
-        positions: [
-            0.0, 1.5, 0.0,
-            -1.5, -1.5, 0.0,
-            1.5, -1.5, 0.0,
-        ],
-        indices: [
-            0, 1, 2
-        ]
-    });
+            if (sceneModel instanceof xeokit.core.SDKError) {
+                console.error(`[scene.createModel] Error: ${sceneModel.message}`);
+            }
 
-    if (sceneGeometry instanceof xeokit.core.SDKError) {
-        console.error(`[sceneModel.createGeometry] Error: ${sceneGeometry.message}`);
-    }
+            const sceneGeometry = sceneModel.createGeometry({
+                id: "triangleGeometry",
+                primitive: xeokit.constants.TrianglesPrimitive,
+                positions: [
+                    0.0, 1.5, 0.0,
+                    -1.5, -1.5, 0.0,
+                    1.5, -1.5, 0.0,
+                ],
+                indices: [
+                    0, 1, 2
+                ]
+            });
 
-    const sceneMesh = sceneModel.createMesh({
-        id: "triangleMesh",
-        geometryId: "triangleGeometry",
-        position: [0, 0, 0], // Default
-        scale: [1, 1, 1], // Default
-        rotation: [0, 0, 0], // Default
-        color: [1, 1.0, 1.0] // Default
-    });
+            if (sceneGeometry instanceof xeokit.core.SDKError) {
+                console.error(`[sceneModel.createGeometry] Error: ${sceneGeometry.message}`);
+            }
 
-    if (sceneMesh instanceof xeokit.core.SDKError) {
-        console.error(`[sceneModel.createMesh] Error: ${sceneMesh.message}`);
-    }
+            const sceneMesh = sceneModel.createMesh({
+                id: "triangleMesh",
+                geometryId: "triangleGeometry",
+                position: [0, 0, 0], // Default
+                scale: [1, 1, 1], // Default
+                rotation: [0, 0, 0], // Default
+                color: [1, 1.0, 1.0] // Default
+            });
 
-    const sceneObject = sceneModel.createObject({
-        id: "triangleObject",
-        meshIds: ["triangleMesh"]
-    });
+            if (sceneMesh instanceof xeokit.core.SDKError) {
+                console.error(`[sceneModel.createMesh] Error: ${sceneMesh.message}`);
+            }
 
-    if (sceneObject instanceof xeokit.core.SDKError) {
-        console.error(`[sceneModel.createObject] Error: ${sceneObject.message}`);
-    }
+            const sceneObject = sceneModel.createObject({
+                id: "triangleObject",
+                meshIds: ["triangleMesh"]
+            });
 
-    statusLog.logBuildSceneModel();
+            if (sceneObject instanceof xeokit.core.SDKError) {
+                console.error(`[sceneModel.createObject] Error: ${sceneObject.message}`);
+            }
 
-    const buildResult = sceneModel.build();
+            const buildResult = sceneModel.build();
 
-    if (buildResult instanceof xeokit.core.SDKError) {
-        console.error(`[sceneModel.build(] Error: ${buildResult.message}`);
-    }
+            if (buildResult instanceof xeokit.core.SDKError) {
+                console.error(`[sceneModel.build(] Error: ${buildResult.message}`);
+            }
 
+            demoHelper.finished();
+        });
 </script>
 
 </html>

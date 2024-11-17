@@ -8,9 +8,9 @@
     <link href="../../../css/pageStyle.css" rel="stylesheet"/>
 </head>
 <body>
-<input type="checkbox" id="info-button"/>
-<label for="info-button" class="info-button"><i class="far fa-3x fa-question-circle"></i></label>
-<canvas id="myCanvas"></canvas>
+<input type="checkbox" id="info-button" checked/>
+<label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
+<canvas id="demoCanvas"></canvas>
 </body>
 
 <script type="module">
@@ -26,7 +26,7 @@
     const renderer = new xeokit.webglrenderer.WebGLRenderer({});
 
     const viewer = new xeokit.viewer.Viewer({
-        id: "myViewer",
+        id: "demoViewer",
         scene,
         renderer
     });
@@ -41,8 +41,8 @@
     //-----------------------------------------------------------------------------------------
 
     const view = viewer.createView({
-        id: "myView",
-        elementId: "myCanvas",
+        id: "demoView",
+        elementId: "demoCanvas",
         autoLayers: true // <<------------- Default
     });
 
@@ -65,7 +65,7 @@
     //-----------------------------------------------------------------------------------------
 
     const sceneModel = scene.createModel({
-        id: "myModel",
+        id: "demoModel",
         layerId: "modelLayer"
     });
 
@@ -88,7 +88,7 @@
     //-----------------------------------------------------------------------------------------
 
     const gridSceneModel = scene.createModel({
-        id: "myHelperSceneModel",
+        id: "demoHelperSceneModel",
         layerId: "gridLayer"
     });
 
