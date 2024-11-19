@@ -1,4 +1,4 @@
-import {DOC_LINKS} from "./docLinks.js";
+let DOC_LINKS;
 
 export class DemoHelper {
 
@@ -38,29 +38,34 @@ export class DemoHelper {
                 descElement.innerHTML = this.index.description;
                 this.statusContainer.appendChild(descElement);
             }
-            if (cfg.index) {
-                const index = cfg.index;
-                this.index = index;
-                logDescription();
-                if (index.summary) {
-                    this.logTitle("Steps");
-                    this.logItems(index.summary.split('.').filter(Boolean));
-                }
-                this.startTime = performance.now();
-                resolve();
-            } else {
-                fetch("./index.json").then(response => {
-                    response.json().then(index => {
+            fetch("./../../../docsLookup.json").then(response => {
+                response.json().then(docsLookup => {
+                    DOC_LINKS = docsLookup;
+                    if (cfg.index) {
+                        const index = cfg.index;
                         this.index = index;
                         logDescription();
-                        this.logTitle("Steps");
-                        //    this.log(index.summary);
-                        this.logItems(index.summary.split('.').filter(Boolean));
+                        if (index.summary) {
+                            this.logTitle("Steps");
+                            this.logItems(index.summary.split('.').filter(Boolean));
+                        }
                         this.startTime = performance.now();
                         resolve();
-                    });
+                    } else {
+                        fetch("./index.json").then(response => {
+                            response.json().then(index => {
+                                this.index = index;
+                                logDescription();
+                                this.logTitle("Steps");
+                                //    this.log(index.summary);
+                                this.logItems(index.summary.split('.').filter(Boolean));
+                                this.startTime = performance.now();
+                                resolve();
+                            });
+                        });
+                    }
                 });
-            }
+            });
         });
     }
 
@@ -177,7 +182,7 @@ export class DemoHelper {
             this.logTitle("Assets Loaded");
             const assets = [];
             for (let asset of this.assets) {
-                assets.push(`<a target="_parent" href="${this.gitHubDataDir}/${truncateUntilSubstring(asset.src, "models")}">${truncateUntilSubstring(asset.src, "models")}</a>`);
+                assets.push(`<a target="_parent" href="${this.gitHubDataDir}/${truncateUntilSubstring(asset.src, "models")}"><pre>${truncateUntilSubstring(asset.src, "models")}</pre></a>`);
             }
             this.logUnorderedItems(assets);
         }
@@ -186,11 +191,12 @@ export class DemoHelper {
 
 function trunc(vec) {
     const vec2 = [];
-    for (let i =0, len = vec.length; i < len; i++) {
+    for (let i = 0, len = vec.length; i < len; i++) {
         vec2[i] = Math.trunc(vec[i] * 100) / 100;
     }
     return vec2;
 }
+
 function truncateUntilSubstring(str, substring) {
     const index = str.indexOf(substring);
     if (index !== -1) {
@@ -203,23 +209,13 @@ function wrapWordsWithLinks(text, wordMap) {
     Object.keys(wordMap).forEach(function (key) {
         const regex = new RegExp(`\\b${key}s?\\b`, 'gi');
         text = text.replace(regex, (match) => {
+            const entry = wordMap[key];
+            const path = entry.path || "";
+            const kind = entry.kind || "";
             return /s$/i.test(match)
-                ? `<a href="${wordMap[key]}" target="_blank">${key}</a>s`
-                : `<a href="${wordMap[key]}" target="_blank">${key}</a>`;
+                ? `<a href="${path}" class="${kind}" target="_blank"><span>${key}s</span></a>`
+                : `<a href="${path}" class="${kind}" target="_blank"><span>${key}</span></a>`;
         });
     });
     return text;
-}
-
-function replaceWithPlural(inputString, targetWord, replacementWord) {
-
-
-    // Create a regex to match singular and plural forms of the target word
-    const regex = new RegExp(`\\b${escapedWord}s?\\b`, 'gi');
-
-    // Replace with the appropriate singular or plural form
-    return inputString.replace(regex, (match) => {
-        // If the matched word is plural, return the plural form of the replacement
-        return /s$/i.test(match) ? `${replacementWord}s` : replacementWord;
-    });
 }
