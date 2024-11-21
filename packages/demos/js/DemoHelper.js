@@ -1,4 +1,3 @@
-
 let DOCS_LOOKUP;
 
 export class DemoHelper {
@@ -33,40 +32,45 @@ export class DemoHelper {
     init(cfg = {}) {
         return new Promise((resolve, reject) => {
             this.statusContainer.innerHTML = '';
-            const logDescription = () => {
+            const logTitle = () => {
                 const descElement = document.createElement('div');
-                descElement.className = 'status-description';
-                descElement.innerHTML = this.index.description;
+                descElement.className = 'status-title';
+                descElement.innerHTML = this.index.title;
                 this.statusContainer.appendChild(descElement);
             }
-            fetch("../../../../../../../packages/demos/docsLinks.json").then(response => {
-                response.json().then(docsLinks => {
-                    fetch("../../../../../../../packages/demos/docsLookup.json").then(response => {
-                        response.json().then(docsLookup => {
-                            DOCS_LOOKUP = {...docsLookup, ...docsLinks};
-                            if (cfg.index) {
-                                const index = cfg.index;
-                                this.index = index;
-                                logDescription();
-                                if (index.summary) {
-                                    this.logTitle("Steps");
-                                    this.logItems(index.summary.split('.').filter(Boolean));
-                                }
-                                this.startTime = performance.now();
-                                resolve();
-                            } else {
-                                fetch("./index.json").then(response => {
-                                    response.json().then(index => {
+            fetch("../../../../../../../packages/demos/data/tutorials/index.json").then(response => {
+                response.json().then(tutorialsIndex => {
+                    this.tutorialsIndex = tutorialsIndex;
+                    fetch("../../../../../../../packages/demos/docsLinks.json").then(response => {
+                        response.json().then(docsLinks => {
+                            fetch("../../../../../../../packages/demos/docsLookup.json").then(response => {
+                                response.json().then(docsLookup => {
+                                    DOCS_LOOKUP = {...docsLookup, ...docsLinks};
+                                    if (cfg.index) {
+                                        const index = cfg.index;
                                         this.index = index;
-                                        logDescription();
-                                        this.logTitle("Steps");
-                                        //    this.log(index.summary);
-                                        this.logItems(index.summary.split('.').filter(Boolean));
+                                        logTitle();
+                                        if (index.summary) {
+                                            this.logTitle("Steps");
+                                            this.logItems(index.summary.split('.').filter(Boolean));
+                                        }
                                         this.startTime = performance.now();
                                         resolve();
-                                    });
+                                    } else {
+                                        fetch("./index.json").then(response => {
+                                            response.json().then(index => {
+                                                this.index = index;
+                                                logTitle();
+                                                this.logTitle("Steps");
+                                                //    this.log(index.summary);
+                                                this.logItems(index.summary.split('.').filter(Boolean));
+                                                this.startTime = performance.now();
+                                                resolve();
+                                            });
+                                        });
+                                    }
                                 });
-                            }
+                            });
                         });
                     });
                 });
@@ -91,7 +95,7 @@ export class DemoHelper {
         for (let item of items) {
             const li = document.createElement('li');
             li.className = 'status-message';
-            li.innerHTML = wrapWordsWithLinks(item.trim(), DOCS_LOOKUP) + ".";
+            li.innerHTML = item;//wrapWordsWithLinks(item.trim(), DOCS_LOOKUP) + ".";
             ul.appendChild(li);
         }
     }
@@ -114,12 +118,13 @@ export class DemoHelper {
     logViewSource() {
         const viewSourceElement = document.createElement('div');
         viewSourceElement.className = 'status-message';
-        viewSourceElement.innerHTML = `<ul><li><a href="">Source code</a></li></ul>`;
+        const selected = "";
+        viewSourceElement.innerHTML = `<ul><li><a target="_parent" href='https://github.com/xeokit/sdk/tree/develop/packages/demos/galleries/viewer/${selected}'>Source code</a></li></ul>`;
         this.statusContainer.appendChild(viewSourceElement);
     }
 
-    logViewingModel(modelId) {
-        this.logInfo(`Model: <a href="${this.gitHubDataDir}models/${modelId}" target="_parent">${modelId}</a>`);
+    logViewingModel(modelId, pipelineId) {
+        this.logInfo(`Model: <a href="${this.gitHubDataDir}models/${modelId}/${pipelineId}" target="_parent">${modelId}</a>`);
     }
 
     logImportPipeline(pipelineId) {
@@ -177,32 +182,48 @@ export class DemoHelper {
             }
         }
         this.logInfo(`Demo completed in ${elapsedTime.toFixed(2)} ms`);
+        this.logTitle("Resources");
+        this.logViewSource();
+
+        if (this.tutorialsIndex && this.tutorialsIndex.tutorials && Object.keys(this.tutorialsIndex.tutorials).length > 0) {
+            this.logTitle("Tutorials");
+            const items = [];
+            for (let tutorialId in this.tutorialsIndex.tutorials) {
+                const tutorial = this.tutorialsIndex.tutorials[tutorialId];
+                items.push(`<a target="_parent" href="${this.gitHubDataDir}/tutorials/${tutorialId}">${tutorial.title}</a>`);
+            }
+            this.logUnorderedItems(items);
+        }
+
+        if (this.index && this.index.models && this.index.models.length > 0) {
+            this.logTitle("Models");
+            const items = [];
+            for (let asset of this.index.models) {
+                items.push(`<a target="_parent" href="${this.gitHubDataDir}/models/${asset}"><pre>${asset}</pre></a>`);
+            }
+            this.logUnorderedItems(items);
+        }
         if (this.info.length > 0) {
             this.logTitle("Stats");
             this.logUnorderedItems(this.info);
         }
-        this.logTitle("Resources");
-        this.logViewSource();
-        if (this.assets.length > 0) {
-            this.logTitle("Assets Loaded");
-            const assets = [];
-            for (let asset of this.assets) {
-                assets.push(`<a target="_parent" href="${this.gitHubDataDir}/${truncateUntilSubstring(asset.src, "models")}"><pre>${truncateUntilSubstring(asset.src, "models")}</pre></a>`);
-            }
-            this.logUnorderedItems(assets);
-        }
     }
 }
 
-function trunc(vec) {
+
+function
+
+trunc(vec) {
     const vec2 = [];
-    for (let i =0, len = vec.length; i < len; i++) {
+    for (let i = 0, len = vec.length; i < len; i++) {
         vec2[i] = Math.trunc(vec[i] * 100) / 100;
     }
     return vec2;
 }
 
-function truncateUntilSubstring(str, substring) {
+function
+
+truncateUntilSubstring(str, substring) {
     const index = str.indexOf(substring);
     if (index !== -1) {
         return str.slice(index);
@@ -210,7 +231,9 @@ function truncateUntilSubstring(str, substring) {
     return str;
 }
 
-function wrapWordsWithLinks(text, wordMap) {
+function
+
+wrapWordsWithLinks(text, wordMap) {
     Object.keys(wordMap).forEach(function (key) {
         const regex = new RegExp(`\\b${key}s?\\b`, 'gi');
         text = text.replace(regex, (match) => {

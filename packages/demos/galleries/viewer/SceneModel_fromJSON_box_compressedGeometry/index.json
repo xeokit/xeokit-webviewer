@@ -1,4 +1,4 @@
 {
-    "description": "Building and viewing a box-shaped SceneModel, from JSON, using compressed geometry",
+    "title": "Building and viewing a box-shaped SceneModel, from JSON, using compressed geometry",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromJSON method to load JSON-encoded model containing compressed geometry into the SceneModel. The Viewer then draws the model in the View's canvas."
 }

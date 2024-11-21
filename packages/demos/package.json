@@ -11,7 +11,7 @@
     "main": "src/index.ts",
     "scripts": {
         "dist": "node scripts/build-xeokit-demo-bundle.js",
-        "demos": "node scripts/build-docs-lookup.js; node scripts/build-viewer-demos-index.js;",
+        "demos": "node scripts/build-docs-lookup.js; node scripts/build-viewer-demos-index.js; node scripts/build-tutorials-index.js;",
         "models": "node scripts/build-convert-models.js; sh scripts/convert-models.sh",
 
         "lint": "eslint . --fix"

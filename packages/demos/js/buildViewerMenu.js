@@ -11,7 +11,7 @@ function buildViewerMenu(params) {
 
     const viewSourceButton = document.getElementById('viewSourceButton');
     viewSourceButton.addEventListener('click', function (event) {
-        window.open('https://github.com/xeokit/xeokit-sdk/blob/master/examples/scenegraph/' + selected + '.html');
+        window.open('https://github.com/xeokit/sdk/blob/develop/packages/demos/galleries/viewer/' + selected );
     }, false);
 
     const indexToggle = document.getElementById("index_toggle");

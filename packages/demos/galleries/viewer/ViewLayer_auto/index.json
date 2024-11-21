@@ -1,4 +1,4 @@
 {
-    "description": "Creating a Viewer with automatic ViewLayers",
+    "title": "Creating a Viewer with automatic ViewLayers",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. For the View, configure autoLayers=true. In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, also create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. The View then contains two ViewsLayers, \"modelLayer\" containing the model, and \"gridLayer\" containing the grid."
 }

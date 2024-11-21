@@ -1,4 +1,4 @@
 {
-    "description": "Building and viewing a table-shaped SceneModel, from JSON",
+    "title": "Building and viewing a table-shaped SceneModel, from JSON",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that represents a simple kitchen table, from JSON. The SceneModel has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives."
 }

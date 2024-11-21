@@ -1,4 +1,7 @@
 {
-    "description": "Viewing a CityJSON model with +Z configured as up direction",
-    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene and a View. Create a Data. Within the View, configure its Camera's worldAxis to effectively make +Z the direction of 'up' within the View's 3D World coordinate system. In the Scene, create a SceneModel, and in the Data create a DataModel. Then use loadCityJSON to load a CityJSON file into the SceneModel and DataModel. The Viewer then draws the CityJSON model in the View."
+    "title": "Viewing a CityJSON model with +Z configured as up direction",
+    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene and a View. Create a Data. Within the View, configure its Camera's worldAxis to effectively make +Z the direction of 'up' within the View's 3D World coordinate system. In the Scene, create a SceneModel, and in the Data create a DataModel. Then use loadCityJSON to load a CityJSON file into the SceneModel and DataModel. The Viewer then draws the CityJSON model in the View.",
+    "models": [
+        "LoD3_Railway/cityjson"
+    ]
 }

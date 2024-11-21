@@ -1,137 +1,146 @@
 {
   "pages": {
     "SceneModel_DataModel_build_table": {
-      "description": "Building and viewing a SceneModel and a DataModel",
+      "title": "Building and viewing a SceneModel and a DataModel",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View, along with a Data object. In the Scene, build a simple kitchen table SceneModel containing five SceneObjects, to represent the table top and four legs. In the Data object, build a DataModel that contains five DataObjects, which attach semantic information to the SceneModel and its SceneObjects."
     },
     "SceneModel_DataModel_fromJSON_IfcOpenHouse4": {
-      "description": "Loading an IFC model from JSON into a SceneModel and a DataModel",
+      "title": "Loading an IFC model from JSON into a SceneModel and a DataModel",
       "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use SceneModel's fromJSON method to load JSON-encoded model geometry and materials into the SceneModel. Likewise, use DataModel's fromJSON method to load a JSON-encoded entity-relationship model into the DataModel. The Viewer then draws the IFC model in the View's canvas."
     },
     "SceneModel_build_box": {
-      "description": "Build and view a box-shaped SceneModel",
-      "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that contains a SceneObject, a SceneMesh, and a SceneGeometry that defines the shape of the box."
+      "title": "Build and view a box-shaped SceneModel",
+      "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that contains a SceneObject, a SceneMesh, and a SceneGeometry that defines the shape of the box.",
+      "tutorials": [
+        "sceneModelBuildBox"
+      ]
     },
     "SceneModel_build_box_compressedGeometry": {
-      "description": "Build and view a box-shaped SceneModel, created with compressed geometry",
+      "title": "Build and view a box-shaped SceneModel, created with compressed geometry",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, create a SceneModel. In the SceneModel, create a a box-shaped SceneGeometry from SceneGeometryCompressedParams. In the SceneModel, create a SceneMesh that references the SceneGeometry, and a SceneObject that references the SceneMesh. Build the SceneModel. The Viewer then draws the box in the View.",
       "template": "basicPage"
     },
     "SceneModel_build_geometries": {
-      "description": "Build and view a SceneModel containing various geometry types",
+      "title": "Build and view a SceneModel containing various geometry types",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a set of SceneMeshs that each have a SceneGeometry. Each SceneGeometry represents a different type of geometric primitive supported by xeokit."
     },
     "SceneModel_build_lines": {
-      "description": "Build and view a SceneModel containing line geometry",
+      "title": "Build and view a SceneModel containing line geometry",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with five SceneObjects and five SceneMeshs, which share a single SceneGeometry that contains lines primitives.",
       "template": "basicPage"
     },
     "SceneModel_build_points": {
-      "description": "Build and view a SceneModel containing points geometry",
+      "title": "Build and view a SceneModel containing points geometry",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry with points primitives."
     },
     "SceneModel_build_table": {
-      "description": "Building and viewing a table-shaped SceneModel",
+      "title": "Building and viewing a table-shaped SceneModel",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that represents a simple kitchen table. The SceneModel then has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives."
     },
     "SceneModel_build_triangle": {
-      "description": "Building and viewing a SceneModel containing a single 3D triangle",
+      "title": "Building and viewing a SceneModel containing a single 3D triangle",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that contains a single triangle."
     },
     "SceneModel_build_triangle_checkErrors": {
-      "description": "Building and viewing a SceneModel containing a 3D triangle, while checking for errors",
+      "title": "Building and viewing a SceneModel containing a 3D triangle, while checking for errors",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that contains a single triangle. Check for errors after each step."
     },
     "SceneModel_fromJSON_box": {
-      "description": "Building and viewing a box-shaped SceneModel, from JSON",
+      "title": "Building and viewing a box-shaped SceneModel, from JSON",
       "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromJSON method to load JSON-encoded model geometry and materials into the SceneModel. The Viewer then draws the model in the View's canvas."
     },
     "SceneModel_fromJSON_box_compressedGeometry": {
-      "description": "Building and viewing a box-shaped SceneModel, from JSON, using compressed geometry",
+      "title": "Building and viewing a box-shaped SceneModel, from JSON, using compressed geometry",
       "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromJSON method to load JSON-encoded model containing compressed geometry into the SceneModel. The Viewer then draws the model in the View's canvas."
     },
     "SceneModel_fromJSON_geometries": {
-      "description": "Building and viewing a SceneModel containing various geometry types, from JSON",
+      "title": "Building and viewing a SceneModel containing various geometry types, from JSON",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from JSON, containing a set of SceneMeshs that represent various geometric primitives."
     },
     "SceneModel_fromJSON_table": {
-      "description": "Building and viewing a table-shaped SceneModel, from JSON",
+      "title": "Building and viewing a table-shaped SceneModel, from JSON",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that represents a simple kitchen table, from JSON. The SceneModel has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives."
     },
     "SceneModel_fromJSON_triangle": {
-      "description": "Building and viewing a simple SceneModel, from JSON",
+      "title": "Building and viewing a simple SceneModel, from JSON",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that contains a single triangle, from JSON. The SceneModel has one SceneObject, one SceneMesh, and one SceneGeometry, which contains the triangle geometry."
     },
     "SceneModel_retainedFalse": {
-      "description": "Building and viewing a SceneModel, without retaining geometry in Browser memory",
+      "title": "Building and viewing a SceneModel, without retaining geometry in Browser memory",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a table-shaped model. Configure the SceneModel with retained: false, which causes it to not retain SceneObject, SceneMesh and SceneGeometrys in browser memory, which results in a smaller memory footprint. The Viewer then draws the model in the View's canvas, while the model's geometry and materials reside entirely in GPU memory."
     },
     "TreeView_AggregationHierarchy": {
-      "description": "Using a TreeView configured with AggregationHierarchy",
+      "title": "Using a TreeView configured with AggregationHierarchy",
       "summary": ""
     },
     "TreeView_GroupsHierarchy": {
-      "description": "Using a TreeView configured with GroupsHierarchy",
+      "title": "Using a TreeView configured with GroupsHierarchy",
       "summary": ""
     },
     "TreeView_TypesHierarchy": {
-      "description": "Using a TreeView configured with TypesHierarchy",
+      "title": "Using a TreeView configured with TypesHierarchy",
       "summary": ""
     },
     "ViewLayer_auto": {
-      "description": "Creating a Viewer with automatic ViewLayers",
+      "title": "Creating a Viewer with automatic ViewLayers",
       "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. For the View, configure autoLayers=true. In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, also create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. The View then contains two ViewsLayers, \"modelLayer\" containing the model, and \"gridLayer\" containing the grid."
     },
     "ViewLayer_manual": {
-      "description": "Creating a Viewer with manual ViewLayers",
+      "title": "Creating a Viewer with manual ViewLayers",
       "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. For the View, configure autoLayers=false. In the View, create two ViewLayers; \"modelLayer\" and \"gridLayer\". In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, also create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. The View then contains two ViewsLayers, \"modelLayer\" containing the model, and \"gridLayer\" containing the grid."
     },
     "ViewLayer_multiView": {
-      "description": "Creating a Viewer with multiple Views and ViewLayers",
+      "title": "Creating a Viewer with multiple Views and ViewLayers",
       "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. For each View, configure autoLayers=false. In the first and second Views, create two ViewLayers; \"modelLayer\" and \"gridLayer\". In the third View, create just a \"modelLayer\" ViewLayer. In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. Thanks to the masking effect of the ViewLayers, the Viewer then draws the model in all three Views, but only draws the grid in the first and second Views."
     },
     "ViewLayer_multiView_multiModels": {
-      "description": "Creating a Viewer with multiple Views and ViewLayers",
+      "title": "Creating a Viewer with multiple Views and ViewLayers",
       "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. For each View, configure autoLayers=false. In the first and second Views, create a ViewLayer with ID \"viewlayer1\". In the third View, create a ViewLayer with ID \"viewLayer2\". In the Scene, create a SceneModel assigned to \"viewLayer1\" and use loadXGF to load an XGF model into it. In the Scene, create another SceneModel assigned to \"viewLayer2\" and use loadGLTF to load a glTF model into it. Thanks to the masking effect of the ViewLayers, the Viewer then draws the XGF model in the first two Views, and the glTF model in the third View."
     },
     "View_multiView_SceneModel_build_table": {
-      "description": "Building a table-shaped SceneModel in multiple Views",
+      "title": "Building a table-shaped SceneModel in multiple Views",
       "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple table-shaped model. The Viewer then draws the model in each View's canvas. Meanwhile, orbit the primary View's Camera."
     },
     "View_multiView_drawBox": {
-      "description": "Building a box-shaped SceneModel in multiple Views",
+      "title": "Building a box-shaped SceneModel in multiple Views",
       "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple box-shaped triangle mesh. The Viewer then draws the box in each View's canvas. While this is happening, orbit each View's Camera and animate the colors of the object in the main View."
     },
     "View_multiView_loadWebIFC": {
-      "description": "Viewing an IFC model in multiple Views",
-      "summary": "In this example, we create a Viewer configured with a WebGLRenderer, a Scene, and three Views, along with a Data. In the Scene, we create a SceneModel, and in the Data we create a DataModel. Then we use loadWebIFC to load an IFC file into the SceneModel and DataModel. The Viewer then draws the IFC model in each View's canvas."
+      "title": "Viewing an IFC model in multiple Views",
+      "summary": "In this example, we create a Viewer configured with a WebGLRenderer, a Scene, and three Views, along with a Data. In the Scene, we create a SceneModel, and in the Data we create a DataModel. Then we use loadWebIFC to load an IFC file into the SceneModel and DataModel. The Viewer then draws the IFC model in each View's canvas.",
+      "models": [
+        "IfcOpenHouse4/ifc"
+      ]
     },
     "View_multiView_renderModes": {
-      "description": "Viewing an IFC model in multiple Views, with different render modes",
+      "title": "Viewing an IFC model in multiple Views, with different render modes",
       "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views, along with a Data. In the Scene, we create a SceneModel, and in the Data we create a DataModel. Then we load JSON into the SceneModel and DataModel. The Viewer then draws the model in each View's canvas. We also set the renderMode of the first View to QualityRender and the other two Views to FastRender."
     },
     "View_worldAxis_SceneModel": {
-      "description": "Viewing a SceneModel with +Z configured as up",
+      "title": "Viewing a SceneModel with +Z configured as up",
       "summary": "Create a Viewer configured with a WebGLRenderer, a Scene and a View. Configure the View's 3D coordinate system to use +Z as the direction of 'up'. In the Scene, build a SceneModel that represents a simple kitchen table. The Viewer then draws the SceneModel in the View."
     },
     "View_worldAxis_loadCityJSON": {
-      "description": "Viewing a CityJSON model with +Z configured as up direction",
-      "summary": "Create a Viewer configured with a WebGLRenderer, a Scene and a View. Create a Data. Within the View, configure its Camera's worldAxis to effectively make +Z the direction of 'up' within the View's 3D World coordinate system. In the Scene, create a SceneModel, and in the Data create a DataModel. Then use loadCityJSON to load a CityJSON file into the SceneModel and DataModel. The Viewer then draws the CityJSON model in the View."
+      "title": "Viewing a CityJSON model with +Z configured as up direction",
+      "summary": "Create a Viewer configured with a WebGLRenderer, a Scene and a View. Create a Data. Within the View, configure its Camera's worldAxis to effectively make +Z the direction of 'up' within the View's 3D World coordinate system. In the Scene, create a SceneModel, and in the Data create a DataModel. Then use loadCityJSON to load a CityJSON file into the SceneModel and DataModel. The Viewer then draws the CityJSON model in the View.",
+      "models": [
+        "LoD3_Railway/cityjson"
+      ]
     },
     "Viewer_drawTriangle": {
-      "description": "Building and viewing a SceneModel containing a single 3D triangle",
+      "title": "Building and viewing a SceneModel containing a single 3D triangle",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that describes a single triangle."
     },
     "Viewer_drawTriangle_checkErrors": {
-      "description": "Building and viewing a SceneModel containing a 3D triangle, while checking for errors",
+      "title": "Building and viewing a SceneModel containing a 3D triangle, while checking for errors",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that describes a single triangle. Check for errors after each step."
     },
     "Viewer_drawTriangle_getEvents": {
-      "description": "Drawing a triangle, logging all events",
+      "title": "Drawing a triangle, logging all events",
       "summary": "Create a Viewer configured with a WebGLRenderer and a Scene. Then build a SceneModel with a simple triangle geometry, while logging all events fired by the Viewer."
     },
     "Viewer_getCapabilities": {
-      "description": "Querying Viewer capabilities",
+      "title": "Querying Viewer capabilities",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Query the Capabilities of the Viewer."
     }
   }

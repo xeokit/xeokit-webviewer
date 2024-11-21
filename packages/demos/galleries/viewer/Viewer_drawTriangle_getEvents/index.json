@@ -1,4 +1,4 @@
 {
-    "description": "Drawing a triangle, logging all events",
+    "title": "Drawing a triangle, logging all events",
     "summary": "Create a Viewer configured with a WebGLRenderer and a Scene. Then build a SceneModel with a simple triangle geometry, while logging all events fired by the Viewer."
 }
