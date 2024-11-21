@@ -1,13 +1,4 @@
 {
     "description": "Querying Viewer capabilities",
-    "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Draw a triangle, then query the Capabilities of the Viewer.",
-    "components": [
-        "Scene",
-        "WebGLRenderer",
-        "Viewer",
-        "View",
-        "SceneModel",
-        "SceneObject",
-        "Capabilities"
-    ]
+    "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Query the Capabilities of the Viewer."
 }

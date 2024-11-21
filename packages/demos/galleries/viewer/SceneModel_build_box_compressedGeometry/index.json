@@ -1,17 +1,5 @@
 {
-    "description": "Building and viewing a box-shaped SceneModel, defined using compressed geometry",
-    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a SceneObject, a SceneMesh, and a box-shaped SceneGeometry containing triangle primitives, which we'll create from SceneGeometryCompressedParams.",
-    "components": [
-        "Scene",
-        "WebGLRenderer",
-        "Viewer",
-        "View",
-        "CameraControl",
-        "SceneModel",
-        "SceneGeometry",
-        "SceneMesh",
-        "SceneObject",
-        "SceneGeometryCompressedParams"
-    ],
+    "description": "Build and view a box-shaped SceneModel, created with compressed geometry",
+    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, create a SceneModel. In the SceneModel, create a a box-shaped SceneGeometry from SceneGeometryCompressedParams. In the SceneModel, create a SceneMesh that references the SceneGeometry, and a SceneObject that references the SceneMesh. Build the SceneModel. The Viewer then draws the box in the View.",
     "template": "basicPage"
 }

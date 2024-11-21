@@ -15,7 +15,8 @@ const demoHelper = new DemoHelper({
     viewer
 });
 
-demoHelper.init()
+demoHelper
+    .init()
     .then(() => {
 
         const view = viewer.createView({
@@ -137,8 +138,6 @@ demoHelper.init()
             });
 
             sceneModel.build().then(() => {
-
-                // Model built
 
                 demoHelper.finished();
 

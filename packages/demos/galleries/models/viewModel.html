@@ -2,26 +2,24 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
     <title>xeokit Example</title>
     <link href="../../css/pageStyle.css" rel="stylesheet"/>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
 <body>
-<input type="checkbox" id="info-button" checked/>
-<label for="info-button" class="info-button"><i class="far fa-3x fa-question-circle"></i></label>
+<input checked id="info-button" type="checkbox"/>
+<label class="info-button" for="info-button"><i class="far fa-3x fa-question-circle"></i></label>
 <canvas id="demoCanvas"></canvas>
 <!--<div id="treeViewContainer"></div>-->
 
 <div class="slideout-sidebar">
-    <div id="info-container" class="info-container"></div>
+    <div class="info-container" id="info-container"></div>
 </div>
 </body>
 
 <script type="module">
-
-    import {log} from "../../js/logger.js";
 
     import * as xeokit from "./../../js/xeokit-demo-bundle.js";
     import * as WebIFC from "https://cdn.jsdelivr.net/npm/web-ifc@0.0.51/web-ifc-api.js";
@@ -34,27 +32,27 @@
 
     const info = {
         "xgf": {
-            description: `View ${modelId} model from XGF`,
+            description: `View '${modelId}' model from XGF`,
             summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadXGF to load the XGF file into the SceneModel and DataModel."
         },
         "gltf": {
-            description: `View ${modelId} model from glTF`,
+            description: `View '${modelId}' model from glTF`,
             summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadGLTF to load the glTF file into the SceneModel and DataModel."
         },
         "ifc": {
-            description: `View ${modelId} model from IFC`,
+            description: `View '${modelId}' model from IFC`,
             summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadWebIFC to load the IFC file into the SceneModel and DataModel."
         },
         "dotbim": {
-            description: `View ${modelId} model from .BIM`,
-            summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadDotBIM to load the .BIM file into the SceneModel and DataModel."
+            description: `View '${modelId}' model from .BIM`,
+            summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadDotBIM to load the DotBIM file into the SceneModel and DataModel."
         },
         "gltf2xgf": {
-            description: "View XGF+JSON files created by gltf2xgf",
+            description: `View '${modelId}' model from XGF+JSON created by gltf2xgf`,
             summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadXGF to load the XGF file into the SceneModel. Use SceneModel.fromJSON to load the JSON into the DataModel."
         },
         "ifc2gltf": {
-            description: "View glTF+JSON files created by ifc2gltf",
+            description: `View '${modelId}' model from glTF+JSON created by ifc2gltf`,
             summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
             Create a Data.
             In the Scene, create a SceneModel.
@@ -66,7 +64,7 @@
             Model then appears in the View.`
         },
         "ifc2gltf2xgf": {
-            description: "View XGF+JSON files created by ifc2gltf2xgf",
+            description: `View '${modelId}' model from XGF+JSON created by ifc2gltf2xgf`,
             summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
             Create a Data.
             In the Scene, create a SceneModel.
@@ -77,7 +75,7 @@
             Model then appears in the View.`
         },
         "dotbim2xgf": {
-        description: "View XGF+JSON files created by dotbim2xgf",
+            description: `View '${modelId}' model from XGF+JSON created by dotbim2xgf`,
             summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
             Create a Data.
             In the Scene, create a SceneModel.
@@ -86,7 +84,7 @@
             Load the XGF and JSON files into the SceneModel and DataModel, using loadXKT and DataModel.fromJSON.
             Build the SceneModel and DataModel.
             Model then appears in the View.`
-    }
+        }
     }
     fetch("../../models.json").then(response => {
         response.json().then(models => {
@@ -268,7 +266,7 @@
                                                     .then(onSuccess)
                                                     .catch(onError);
                                             }).catch(err => {
-                                            log(err);
+                                            demoHelper.logError(err);
                                         });
                                     }).catch(onError);
                                 break;

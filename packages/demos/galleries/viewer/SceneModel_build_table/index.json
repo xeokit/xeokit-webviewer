@@ -1,15 +1,4 @@
 {
     "description": "Building and viewing a table-shaped SceneModel",
-    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that represents a simple kitchen table. The SceneModel then has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives.",
-    "components": [
-        "Scene",
-        "WebGLRenderer",
-        "Viewer",
-        "View",
-        "CameraControl",
-        "SceneModel",
-        "SceneGeometry",
-        "SceneMesh",
-        "SceneObject"
-    ]
+    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that represents a simple kitchen table. The SceneModel then has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives."
 }

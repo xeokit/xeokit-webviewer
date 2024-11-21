@@ -1,4 +1,3 @@
-import {log} from "../../../js/logger.js";
 
 import * as xeokit from "./../../../js/xeokit-demo-bundle.js";
 
@@ -16,7 +15,8 @@ const demoHelper = new DemoHelper({
     viewer
 });
 
-demoHelper.init()
+demoHelper
+    .init()
     .then(() => {
 
         const view = viewer.createView({
@@ -37,7 +37,7 @@ demoHelper.init()
         });
 
         if (sceneModel instanceof xeokit.core.SDKError) {
-            log(`Error creating SceneModel: ${sceneModel.message}`);
+            demoHelper.logError(`Error creating SceneModel: ${sceneModel.message}`);
         } else {
 
             // Box triangles

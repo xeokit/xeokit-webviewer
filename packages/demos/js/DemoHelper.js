@@ -1,4 +1,5 @@
-let DOC_LINKS;
+
+let DOCS_LOOKUP;
 
 export class DemoHelper {
 
@@ -38,32 +39,36 @@ export class DemoHelper {
                 descElement.innerHTML = this.index.description;
                 this.statusContainer.appendChild(descElement);
             }
-            fetch("./../../../docsLookup.json").then(response => {
-                response.json().then(docsLookup => {
-                    DOC_LINKS = docsLookup;
-                    if (cfg.index) {
-                        const index = cfg.index;
-                        this.index = index;
-                        logDescription();
-                        if (index.summary) {
-                            this.logTitle("Steps");
-                            this.logItems(index.summary.split('.').filter(Boolean));
-                        }
-                        this.startTime = performance.now();
-                        resolve();
-                    } else {
-                        fetch("./index.json").then(response => {
-                            response.json().then(index => {
+            fetch("../../../../../../../packages/demos/docsLinks.json").then(response => {
+                response.json().then(docsLinks => {
+                    fetch("../../../../../../../packages/demos/docsLookup.json").then(response => {
+                        response.json().then(docsLookup => {
+                            DOCS_LOOKUP = {...docsLookup, ...docsLinks};
+                            if (cfg.index) {
+                                const index = cfg.index;
                                 this.index = index;
                                 logDescription();
-                                this.logTitle("Steps");
-                                //    this.log(index.summary);
-                                this.logItems(index.summary.split('.').filter(Boolean));
+                                if (index.summary) {
+                                    this.logTitle("Steps");
+                                    this.logItems(index.summary.split('.').filter(Boolean));
+                                }
                                 this.startTime = performance.now();
                                 resolve();
-                            });
+                            } else {
+                                fetch("./index.json").then(response => {
+                                    response.json().then(index => {
+                                        this.index = index;
+                                        logDescription();
+                                        this.logTitle("Steps");
+                                        //    this.log(index.summary);
+                                        this.logItems(index.summary.split('.').filter(Boolean));
+                                        this.startTime = performance.now();
+                                        resolve();
+                                    });
+                                });
+                            }
                         });
-                    }
+                    });
                 });
             });
         });
@@ -75,7 +80,7 @@ export class DemoHelper {
         for (let item of items) {
             const li = document.createElement('li');
             li.className = 'status-message';
-            li.innerHTML = wrapWordsWithLinks(item.trim(), DOC_LINKS) + ".";
+            li.innerHTML = wrapWordsWithLinks(item.trim(), DOCS_LOOKUP) + ".";
             ol.appendChild(li);
         }
     }
@@ -86,13 +91,13 @@ export class DemoHelper {
         for (let item of items) {
             const li = document.createElement('li');
             li.className = 'status-message';
-            li.innerHTML = wrapWordsWithLinks(item.trim(), DOC_LINKS) + ".";
+            li.innerHTML = wrapWordsWithLinks(item.trim(), DOCS_LOOKUP) + ".";
             ul.appendChild(li);
         }
     }
 
     log(msg, nolinks = false) {
-        msg = nolinks ? msg : wrapWordsWithLinks(msg, DOC_LINKS);
+        msg = nolinks ? msg : wrapWordsWithLinks(msg, DOCS_LOOKUP);
         const statusElement = document.createElement('div');
         statusElement.className = 'status-message';
         statusElement.innerHTML = `<ul><li>${msg}</li></ul>`;
@@ -191,7 +196,7 @@ export class DemoHelper {
 
 function trunc(vec) {
     const vec2 = [];
-    for (let i = 0, len = vec.length; i < len; i++) {
+    for (let i =0, len = vec.length; i < len; i++) {
         vec2[i] = Math.trunc(vec[i] * 100) / 100;
     }
     return vec2;
@@ -213,8 +218,8 @@ function wrapWordsWithLinks(text, wordMap) {
             const path = entry.path || "";
             const kind = entry.kind || "";
             return /s$/i.test(match)
-                ? `<a href="${path}" class="${kind}" target="_blank"><span>${key}s</span></a>`
-                : `<a href="${path}" class="${kind}" target="_blank"><span>${key}</span></a>`;
+                ? `<a href="${wordMap[key]}" target="_blank">${key}</a>s`
+                : `<a href="${wordMap[key]}" target="_blank">${key}</a>`;
         });
     });
     return text;

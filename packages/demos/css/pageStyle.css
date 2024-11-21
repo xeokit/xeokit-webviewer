@@ -90,9 +90,9 @@ body {
     background: white;
     position: fixed;
     top: 0;
-    right: -450px;
+    right: -550px;
     z-index: 100000000;
-    width: 430px;
+    width: 530px;
     height: 100%;
     overflow-y: scroll;
     transition: all 300ms ease-in-out;
@@ -135,7 +135,7 @@ body {
 }
 
 #info-button:checked + .info-button {
-    right: 445px;
+    right: 545px;
 }
 
 #demoDatGuiContainer {

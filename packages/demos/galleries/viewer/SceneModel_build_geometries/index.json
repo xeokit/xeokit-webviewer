@@ -1,15 +1,4 @@
 {
-    "description": "Building and viewing a SceneModel containing various geometry types",
-    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a set of SceneMeshs that each have a SceneGeometry. Each SceneGeometry represents a different type of geometric primitive supported by xeokit.",
-    "components": [
-        "Scene",
-        "WebGLRenderer",
-        "Viewer",
-        "View",
-        "CameraControl",
-        "SceneModel",
-        "SceneGeometry",
-        "SceneMesh",
-        "SceneObject"
-    ]
+    "description": "Build and view a SceneModel containing various geometry types",
+    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a set of SceneMeshs that each have a SceneGeometry. Each SceneGeometry represents a different type of geometric primitive supported by xeokit."
 }

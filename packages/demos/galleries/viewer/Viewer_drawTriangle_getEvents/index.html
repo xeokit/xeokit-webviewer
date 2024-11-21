@@ -20,16 +20,8 @@
 
 <script type="module">
 
-    //-----------------------------------------------------------------------------------------
-    // Import xeokit SDK via the JavaScript bundle that we've built for these examples
-    //-----------------------------------------------------------------------------------------
-
     import * as xeokit from "./../../../js/xeokit-demo-bundle.js";
     import {DemoHelper} from "../../../js/DemoHelper.js";
-
-    //-----------------------------------------------------------------------------------------
-    // Create a Viewer with a Scene, WebGLRenderer and one View
-    //-----------------------------------------------------------------------------------------
 
     const scene = new xeokit.scene.Scene();
     const data = new xeokit.data.Data();
@@ -157,7 +149,6 @@
 
             }).catch((e) => {
                 demoHelper.log(`Error building SceneModel: ${e}`);
-                throw e;
             });
         });
 </script>

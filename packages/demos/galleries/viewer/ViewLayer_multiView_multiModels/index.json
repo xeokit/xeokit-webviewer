@@ -1,0 +1,4 @@
+{
+    "description": "Creating a Viewer with multiple Views and ViewLayers",
+    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. For each View, configure autoLayers=false. In the first and second Views, create a ViewLayer with ID \"viewlayer1\". In the third View, create a ViewLayer with ID \"viewLayer2\". In the Scene, create a SceneModel assigned to \"viewLayer1\" and use loadXGF to load an XGF model into it. In the Scene, create another SceneModel assigned to \"viewLayer2\" and use loadGLTF to load a glTF model into it. Thanks to the masking effect of the ViewLayers, the Viewer then draws the XGF model in the first two Views, and the glTF model in the third View."
+}
