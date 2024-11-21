@@ -4,6 +4,143 @@
 	"variant": "project",
 	"kind": 1,
 	"flags": {},
+	"comment": {
+		"summary": [
+			{
+				"kind": "text",
+				"text": "[![npm version](https://badge.fury.io/js/%40xeokit%2Fcityjson.svg)](https://badge.fury.io/js/%40xeokit%2Fcityjson)\n[![](https://data.jsdelivr.com/v1/package/npm/@xeokit/cityjson/badge)](https://www.jsdelivr.com/package/npm/@xeokit/cityjson)\n\n<img style=\"padding:0px; padding-top:20px; padding-bottom:30px;\" src=\"media://images/example_cityJSON.png\"/>\n\n# Mouse and touch controller for a xeokit Viewer's Camera\n\n---\n\n### *Import 3D urban models from CityJSON format*\n\n---\n\nThe xeokit SDK allows us to import 3D urban models from [CityJSON](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#cityjson), a JSON-based\nfile format specifically designed for lightweight, user-friendly, and human-readable\nstorage and sharing of 3D models. CityJSON can represent both basic geometric shapes and intricate objects such as\nbuildings and trees, offering a simple alternative to other formats like CityGML.\n\nTo import a CityJSON model into xeokit, simply use the "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/cityjson!loadCityJSON | loadCityJSON"
+			},
+			{
+				"kind": "text",
+				"text": " function, which will load\nthe file into both a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/scene!SceneModel | SceneModel"
+			},
+			{
+				"kind": "text",
+				"text": " and a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/data!DataModel | DataModel"
+			},
+			{
+				"kind": "text",
+				"text": ".\n\n<br>\n\n[![](https://mermaid.ink/img/pako:eNqNUsFuwjAM_ZXKp00CabtWqIeN0wQD0WsupnFHpjSpnORQIf59SUMHCImtl9TPznvPjo_QWElQQqPRuaXCL8ZOGGGkYmq8sqZY7VI85ou6IUPreEMXR2GK-CmZT7v_jvUuBw0TetqM0NNzxvZBaTkFkpxnO6TwlNgn_iV6HOkfsfdse2I_1PRIL2M70pi6cAfV32a2F5Z_WcwGVxblu_LDR7353GKclZsGsVj0KSZPXFUZQmYc3kLbEmfA_Y7vrDG1e6OhrzQu7G0w43sk8rH43oqAFwHzeSXgVUB9pfVH6fJi41p7St_fhhl0xB0qGTdndCjAH6gjAWX8ldRi0F5AdBpLMXhbD6aB0nOgGYQ-9k3nXYOyRe0iSlJ5y-vzNqbj9AOT7uJt?type=png)](https://mermaid.live/edit#pako:eNqNUsFuwjAM_ZXKp00CabtWqIeN0wQD0WsupnFHpjSpnORQIf59SUMHCImtl9TPznvPjo_QWElQQqPRuaXCL8ZOGGGkYmq8sqZY7VI85ou6IUPreEMXR2GK-CmZT7v_jvUuBw0TetqM0NNzxvZBaTkFkpxnO6TwlNgn_iV6HOkfsfdse2I_1PRIL2M70pi6cAfV32a2F5Z_WcwGVxblu_LDR7353GKclZsGsVj0KSZPXFUZQmYc3kLbEmfA_Y7vrDG1e6OhrzQu7G0w43sk8rH43oqAFwHzeSXgVUB9pfVH6fJi41p7St_fhhl0xB0qGTdndCjAH6gjAWX8ldRi0F5AdBpLMXhbD6aB0nOgGYQ-9k3nXYOyRe0iSlJ5y-vzNqbj9AOT7uJt)\n\n<br>\n\n## Installation\n\n"
+			},
+			{
+				"kind": "code",
+				"text": "````bash\nnpm install @xeokit/cameracontrol\n````"
+			},
+			{
+				"kind": "text",
+				"text": "\n\n## Usage\n\nIn the example below, we will create a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/viewer!Viewer | Viewer"
+			},
+			{
+				"kind": "text",
+				"text": " with\na "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/webglrenderer!WebGLRenderer | WebGLRenderer"
+			},
+			{
+				"kind": "text",
+				"text": "  and a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/scene!Scene | Scene"
+			},
+			{
+				"kind": "text",
+				"text": ", which holds model geometry and materials.\n\nWe'll also create a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/data!Data | Data"
+			},
+			{
+				"kind": "text",
+				"text": ", which will hold semantic data for our model.\n\nOn our Viewer, we will create a single "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/viewer!View | View"
+			},
+			{
+				"kind": "text",
+				"text": " to render it to a canvas element on the page. We will\nalso attach a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/cameracontrol!CameraControl | CameraControl"
+			},
+			{
+				"kind": "text",
+				"text": " to our View, allowing us to control its camera with mouse and touch input.\n\nWithin the Scene, we will create a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/scene!SceneModel | SceneModel"
+			},
+			{
+				"kind": "text",
+				"text": " to hold model geometry and materials. Within Data, we will\ncreate a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/data!DataModel | DataModel"
+			},
+			{
+				"kind": "text",
+				"text": " to hold semantic IFC data, which includes IFC elements and property sets.\n\nWe will then use\n"
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/cityjson!loadCityJSON | loadCityJSON"
+			},
+			{
+				"kind": "text",
+				"text": " to load a CityJSON file into our SceneModel and DataModel.\n\nThe "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/core!SDKError | SDKError"
+			},
+			{
+				"kind": "text",
+				"text": " class will be used to handle any errors that may occur during this process.\n\n* [Run this example]()\n\n"
+			},
+			{
+				"kind": "code",
+				"text": "````javascript\nimport {SDKError} from \"@xeokit/core\";\nimport {Scene} from \"@xeokit/scene\";\nimport {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {Viewer} from \"@xeokit/viewer\";\nimport {CameraControl} from \"@xeokit/cameracontrol\";\nimport {loadCityJSON} from \"@xeokit/cityjson\";\n\nconst scene = new Scene();\nconst data = new Data();\n\nconst renderer = new WebGLRenderer({});\n\nconst viewer = new Viewer({\n    id: \"myViewer\",\n    scene,\n    renderer\n});\n\nconst view = viewer.createView({\n    id: \"myView\",\n    elementId: \"myCanvas\" // << Ensure that this HTMLElement exists in the page\n});\n\nview.camera.eye = [1841982.93, 10.03, -5173286.74];\nview.camera.look = [1842009.49, 9.68, -5173295.85];\nview.camera.up = [0.0, 1.0, 0.0];\n\nconst cameraControl = new CameraControl(view, {\n\n});\n\nconst sceneModel = scene.createModel({\n    id: \"myModel\"\n});\n\nconst dataModel = data.createModel({\n    id: \"myModel\"\n});\n\nfetch(\"model.json\").then(response => {\n\n    response.json().then(fileData => {\n\n        loadCityJSON({\n            fileData,\n            sceneModel,\n            dataModel\n        }).then(() => {\n\n            sceneModel.build();\n            dataModel.build();\n\n        }).catch(err => {\n\n            sceneModel.destroy();\n            dataModel.destroy();\n\n            console.error(`Error loading CityJSON: ${err}`);\n        });\n\n    }).catch(err => {\n        console.error(`Error creating JSON from fetch response: ${err}`);\n    });\n\n}).catch(err => {\n    console.error(`Error fetching CityJSON file: ${err}`);\n});\n````"
+			}
+		]
+	},
 	"children": [
 		{
 			"id": 24,
@@ -33,11 +170,11 @@
 							{
 								"kind": "inline-tag",
 								"tag": "@link",
-								"text": "Entity"
+								"text": "@xeokit/viewer!ViewObject | ViewObjects"
 							},
 							{
 								"kind": "text",
-								"text": "s.\n\n# Contents\n\n* [Overview](#overview)\n* [Examples](#examples)\n* [Orbit Mode](#orbit-mode)\n     + [Following the Pointer in Orbit Mode](#--following-the-pointer-in-orbit-mode--)\n     + [Showing the Pivot Position](#--showing-the-pivot-position--)\n     + [Axis-Aligned Views in Orbit Mode](#--axis-aligned-views-in-orbit-mode--)\n     + [View-Fitting Entitys in Orbit Mode](#--view-fitting-entitys-in-orbit-mode--)\n* [First-Person Mode](#first-person-mode)\n     + [Following the Pointer in First-Person Mode](#--following-the-pointer-in-first-person-mode--)\n     + [Constraining Vertical Position in First-Person Mode](#--constraining-vertical-position-in-first-person-mode--)\n     + [Axis-Aligned Views in First-Person Mode](#--axis-aligned-views-in-first-person-mode--)\n     + [View-Fitting Entitys in First-Person Mode](#--view-fitting-entitys-in-first-person-mode--)\n* [Plan-View Mode](#plan-view-mode)\n     + [Following the Pointer in Plan-View Mode](#--following-the-pointer-in-plan-view-mode--)\n     + [Axis-Aligned Views in Plan-View Mode](#--axis-aligned-views-in-plan-view-mode--)\n* [CameraControl Events](#cameracontrol-events)\n     + [\"hover\"](#---hover---)\n     + [\"hoverOff\"](#---hoveroff---)\n     + [\"hoverEnter\"](#---hoverenter---)\n     + [\"hoverOut\"](#---hoverout---)\n     + [\"picked\"](#---picked---)\n     + [\"pickedSurface\"](#---pickedsurface---)\n     + [\"pickedNothing\"](#---pickednothing---)\n     + [\"doublePicked\"](#---doublepicked---)\n     + [\"doublePickedSurface\"](#---doublepickedsurface---)\n     + [\"doublePickedNothing\"](#---doublepickednothing---)\n     + [\"rightClick\"](#---rightclick---)\n* [Custom Keyboard Mappings](#custom-keyboard-mappings)\n\n<br><br>\n\n# Overview\n\n* Each "
+								"text": ".\n\n# Overview\n\n* Each "
 							},
 							{
 								"kind": "inline-tag",
@@ -932,11 +1069,11 @@
 							{
 								"kind": "inline-tag",
 								"tag": "@link",
-								"text": "Entity"
+								"text": "@xeokit/viewer!ViewObject | ViewObjects"
 							},
 							{
 								"kind": "text",
-								"text": "s using mouse or touch input.\n\nThe following examples demonstrate how to subscribe to those events.\n\nThe first example shows how to save a handle to a subscription, which we can later use to unsubscribe.\n\n## \"hover\"\n\nEvent fired when the pointer moves while hovering over an Entity.\n\n"
+								"text": " using mouse or touch input.\n\nThe following examples demonstrate how to subscribe to those events.\n\nThe first example shows how to save a handle to a subscription, which we can later use to unsubscribe.\n\n## \"hover\"\n\nEvent fired when the pointer moves while hovering over an Entity.\n\n"
 							},
 							{
 								"kind": "code",
@@ -1106,7 +1243,7 @@
 			},
 			"children": [
 				{
-					"id": 280,
+					"id": 279,
 					"name": "destroyed",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1145,7 +1282,7 @@
 					}
 				},
 				{
-					"id": 281,
+					"id": 280,
 					"name": "dirty",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1170,7 +1307,7 @@
 					}
 				},
 				{
-					"id": 279,
+					"id": 278,
 					"name": "id",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1201,7 +1338,7 @@
 					}
 				},
 				{
-					"id": 282,
+					"id": 281,
 					"name": "onDestroyed",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1215,7 +1352,7 @@
 							{
 								"kind": "inline-tag",
 								"tag": "@link",
-								"text": "@xeokit/core!Component"
+								"text": "@xeokit/core!Component | Component"
 							},
 							{
 								"kind": "text",
@@ -1279,9 +1416,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 740,
+							"line": 709,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L740"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L709"
 						}
 					],
 					"type": {
@@ -1330,9 +1467,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 754,
+							"line": 723,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L754"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L723"
 						}
 					],
 					"type": {
@@ -1381,9 +1518,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 747,
+							"line": 716,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L747"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L716"
 						}
 					],
 					"type": {
@@ -1441,9 +1578,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 684,
+							"line": 653,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L684"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L653"
 						}
 					],
 					"type": {
@@ -1501,9 +1638,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 705,
+							"line": 674,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L705"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L674"
 						}
 					],
 					"type": {
@@ -1552,9 +1689,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 698,
+							"line": 667,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L698"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L667"
 						}
 					],
 					"type": {
@@ -1612,9 +1749,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 712,
+							"line": 681,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L712"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L681"
 						}
 					],
 					"type": {
@@ -1663,9 +1800,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 768,
+							"line": 737,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L768"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L737"
 						}
 					],
 					"type": {
@@ -1709,9 +1846,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 761,
+							"line": 730,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L761"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L730"
 						}
 					],
 					"type": {
@@ -1764,9 +1901,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 691,
+							"line": 660,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L691"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L660"
 						}
 					],
 					"type": {
@@ -1824,9 +1961,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 719,
+							"line": 688,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L719"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L688"
 						}
 					],
 					"type": {
@@ -1875,9 +2012,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 733,
+							"line": 702,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L733"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L702"
 						}
 					],
 					"type": {
@@ -1921,9 +2058,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 726,
+							"line": 695,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L726"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L695"
 						}
 					],
 					"type": {
@@ -1972,9 +2109,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 775,
+							"line": 744,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L775"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L744"
 						}
 					],
 					"type": {
@@ -2018,9 +2155,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 677,
+							"line": 646,
 							"character": 13,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L677"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L646"
 						}
 					],
 					"type": {
@@ -2054,9 +2191,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 669,
+							"line": 638,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L669"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L638"
 						}
 					],
 					"type": {
@@ -2094,9 +2231,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 639,
+							"line": 608,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L639"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L608"
 						}
 					],
 					"type": {
@@ -2130,9 +2267,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 667,
+							"line": 636,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L667"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L636"
 						}
 					],
 					"type": {
@@ -2166,9 +2303,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 653,
+							"line": 622,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L653"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L622"
 						}
 					],
 					"type": {
@@ -2202,9 +2339,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 646,
+							"line": 615,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L646"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L615"
 						}
 					],
 					"type": {
@@ -2238,9 +2375,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 632,
+							"line": 601,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L632"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L601"
 						}
 					],
 					"type": {
@@ -2274,9 +2411,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 660,
+							"line": 629,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L660"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L629"
 						}
 					],
 					"type": {
@@ -2310,9 +2447,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 625,
+							"line": 594,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L625"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L594"
 						}
 					],
 					"type": {
@@ -2346,9 +2483,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 618,
+							"line": 587,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L618"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L587"
 						}
 					],
 					"type": {
@@ -2382,9 +2519,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 583,
+							"line": 552,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L583"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L552"
 						}
 					],
 					"type": {
@@ -2418,9 +2555,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 569,
+							"line": 538,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L569"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L538"
 						}
 					],
 					"type": {
@@ -2454,9 +2591,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 576,
+							"line": 545,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L576"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L545"
 						}
 					],
 					"type": {
@@ -2490,9 +2627,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 548,
+							"line": 517,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L548"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L517"
 						}
 					],
 					"type": {
@@ -2526,9 +2663,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 555,
+							"line": 524,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L555"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L524"
 						}
 					],
 					"type": {
@@ -2562,9 +2699,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 562,
+							"line": 531,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L562"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L531"
 						}
 					],
 					"type": {
@@ -2598,9 +2735,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 597,
+							"line": 566,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L597"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L566"
 						}
 					],
 					"type": {
@@ -2634,9 +2771,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 590,
+							"line": 559,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L590"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L559"
 						}
 					],
 					"type": {
@@ -2670,9 +2807,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 611,
+							"line": 580,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L611"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L580"
 						}
 					],
 					"type": {
@@ -2706,9 +2843,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 604,
+							"line": 573,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L604"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L573"
 						}
 					],
 					"type": {
@@ -2726,15 +2863,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1145,
+							"line": 1114,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1145"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1114"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1161,
+							"line": 1130,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1161"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1130"
 						}
 					],
 					"getSignature": {
@@ -2805,9 +2942,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1161,
+								"line": 1130,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1161"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1130"
 							}
 						],
 						"type": {
@@ -2856,9 +2993,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1145,
+								"line": 1114,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1145"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1114"
 							}
 						],
 						"parameters": [
@@ -2913,15 +3050,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1512,
+							"line": 1481,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1512"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1481"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1527,
+							"line": 1496,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1527"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1496"
 						}
 					],
 					"getSignature": {
@@ -3009,9 +3146,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1527,
+								"line": 1496,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1527"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1496"
 							}
 						],
 						"type": {
@@ -3089,9 +3226,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1512,
+								"line": 1481,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1512"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1481"
 							}
 						],
 						"parameters": [
@@ -3138,15 +3275,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1799,
+							"line": 1768,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1799"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1768"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1810,
+							"line": 1779,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1810"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1779"
 						}
 					],
 					"getSignature": {
@@ -3185,9 +3322,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1810,
+								"line": 1779,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1810"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1779"
 							}
 						],
 						"type": {
@@ -3269,9 +3406,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1799,
+								"line": 1768,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1799"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1768"
 							}
 						],
 						"parameters": [
@@ -3310,15 +3447,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1843,
+							"line": 1812,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1843"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1812"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1854,
+							"line": 1823,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1854"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1823"
 						}
 					],
 					"getSignature": {
@@ -3357,9 +3494,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1854,
+								"line": 1823,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1854"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1823"
 							}
 						],
 						"type": {
@@ -3392,9 +3529,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1843,
+								"line": 1812,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1843"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1812"
 							}
 						],
 						"parameters": [
@@ -3433,15 +3570,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1821,
+							"line": 1790,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1821"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1790"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1832,
+							"line": 1801,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1832"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1801"
 						}
 					],
 					"getSignature": {
@@ -3480,9 +3617,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1832,
+								"line": 1801,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1832"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1801"
 							}
 						],
 						"type": {
@@ -3515,9 +3652,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1821,
+								"line": 1790,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1821"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1790"
 							}
 						],
 						"parameters": [
@@ -3556,15 +3693,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1392,
+							"line": 1361,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1392"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1361"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1401,
+							"line": 1370,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1401"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1370"
 						}
 					],
 					"getSignature": {
@@ -3602,9 +3739,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1401,
+								"line": 1370,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1401"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1370"
 							}
 						],
 						"type": {
@@ -3630,9 +3767,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1392,
+								"line": 1361,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1392"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1361"
 							}
 						],
 						"parameters": [
@@ -3679,15 +3816,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1987,
+							"line": 1956,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1987"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1956"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1998,
+							"line": 1967,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1998"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1967"
 						}
 					],
 					"getSignature": {
@@ -3711,9 +3848,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1998,
+								"line": 1967,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1998"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1967"
 							}
 						],
 						"type": {
@@ -3742,9 +3879,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1987,
+								"line": 1956,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1987"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1956"
 							}
 						],
 						"parameters": [
@@ -3783,15 +3920,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1538,
+							"line": 1507,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1538"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1507"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1549,
+							"line": 1518,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1549"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1518"
 						}
 					],
 					"getSignature": {
@@ -3856,9 +3993,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1549,
+								"line": 1518,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1549"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1518"
 							}
 						],
 						"type": {
@@ -3909,9 +4046,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1538,
+								"line": 1507,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1538"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1507"
 							}
 						],
 						"parameters": [
@@ -3958,15 +4095,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1699,
+							"line": 1668,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1699"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1668"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1710,
+							"line": 1679,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1710"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1679"
 						}
 					],
 					"getSignature": {
@@ -4005,9 +4142,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1710,
+								"line": 1679,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1710"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1679"
 							}
 						],
 						"type": {
@@ -4105,9 +4242,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1699,
+								"line": 1668,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1699"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1668"
 							}
 						],
 						"parameters": [
@@ -4146,15 +4283,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1474,
+							"line": 1443,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1474"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1443"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1496,
+							"line": 1465,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1496"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1465"
 						}
 					],
 					"getSignature": {
@@ -4242,9 +4379,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1496,
+								"line": 1465,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1496"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1465"
 							}
 						],
 						"type": {
@@ -4320,9 +4457,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1474,
+								"line": 1443,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1474"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1443"
 							}
 						],
 						"parameters": [
@@ -4369,15 +4506,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1343,
+							"line": 1312,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1343"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1312"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1362,
+							"line": 1331,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1362"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1331"
 						}
 					],
 					"getSignature": {
@@ -4433,9 +4570,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1362,
+								"line": 1331,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1362"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1331"
 							}
 						],
 						"type": {
@@ -4477,9 +4614,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1343,
+								"line": 1312,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1343"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1312"
 							}
 						],
 						"parameters": [
@@ -4526,15 +4663,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1033,
+							"line": 1002,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1033"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1002"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1098,
+							"line": 1067,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1098"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1067"
 						}
 					],
 					"getSignature": {
@@ -4576,9 +4713,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1098,
+								"line": 1067,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1098"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1067"
 							}
 						],
 						"type": {
@@ -4611,9 +4748,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1033,
+								"line": 1002,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1033"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1002"
 							}
 						],
 						"parameters": [
@@ -4660,15 +4797,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1722,
+							"line": 1691,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1722"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1691"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1733,
+							"line": 1702,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1733"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1702"
 						}
 					],
 					"getSignature": {
@@ -4716,9 +4853,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1733,
+								"line": 1702,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1733"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1702"
 							}
 						],
 						"type": {
@@ -4793,9 +4930,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1722,
+								"line": 1691,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1722"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1691"
 							}
 						],
 						"parameters": [
@@ -4834,15 +4971,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1228,
+							"line": 1197,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1228"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1197"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1237,
+							"line": 1206,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1237"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1206"
 						}
 					],
 					"getSignature": {
@@ -4868,9 +5005,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1237,
+								"line": 1206,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1237"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1206"
 							}
 						],
 						"type": {
@@ -4903,9 +5040,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1228,
+								"line": 1197,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1228"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1197"
 							}
 						],
 						"parameters": [
@@ -4936,15 +5073,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1901,
+							"line": 1870,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1901"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1870"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1923,
+							"line": 1892,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1923"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1892"
 						}
 					],
 					"getSignature": {
@@ -4991,9 +5128,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1923,
+								"line": 1892,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1923"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1892"
 							}
 						],
 						"type": {
@@ -5036,9 +5173,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1901,
+								"line": 1870,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1901"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1870"
 							}
 						],
 						"parameters": [
@@ -5077,15 +5214,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1623,
+							"line": 1592,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1623"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1592"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1655,
+							"line": 1624,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1655"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1624"
 						}
 					],
 					"getSignature": {
@@ -5133,9 +5270,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1655,
+								"line": 1624,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1655"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1624"
 							}
 						],
 						"type": {
@@ -5212,9 +5349,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1623,
+								"line": 1592,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1623"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1592"
 							}
 						],
 						"parameters": [
@@ -5253,15 +5390,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1668,
+							"line": 1637,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1668"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1637"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1679,
+							"line": 1648,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1679"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1648"
 						}
 					],
 					"getSignature": {
@@ -5309,9 +5446,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1679,
+								"line": 1648,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1679"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1648"
 							}
 						],
 						"type": {
@@ -5369,9 +5506,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1668,
+								"line": 1637,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1668"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1637"
 							}
 						],
 						"parameters": [
@@ -5410,15 +5547,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1767,
+							"line": 1736,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1767"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1736"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1778,
+							"line": 1747,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1778"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1747"
 						}
 					],
 					"getSignature": {
@@ -5466,9 +5603,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1778,
+								"line": 1747,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1778"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1747"
 							}
 						],
 						"type": {
@@ -5527,9 +5664,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1767,
+								"line": 1736,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1767"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1736"
 							}
 						],
 						"parameters": [
@@ -5568,15 +5705,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1252,
+							"line": 1221,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1252"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1221"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1269,
+							"line": 1238,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1269"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1238"
 						}
 					],
 					"getSignature": {
@@ -5634,9 +5771,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1252,
+								"line": 1221,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1252"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1221"
 							}
 						],
 						"type": {
@@ -5688,9 +5825,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1269,
+								"line": 1238,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1269"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1238"
 							}
 						],
 						"parameters": [
@@ -5729,15 +5866,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1875,
+							"line": 1844,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1875"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1844"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1886,
+							"line": 1855,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1886"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1855"
 						}
 					],
 					"getSignature": {
@@ -5776,9 +5913,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1886,
+								"line": 1855,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1886"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1855"
 							}
 						],
 						"type": {
@@ -5860,9 +5997,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1875,
+								"line": 1844,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1875"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1844"
 							}
 						],
 						"parameters": [
@@ -5901,15 +6038,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1560,
+							"line": 1529,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1560"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1529"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1571,
+							"line": 1540,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1571"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1540"
 						}
 					],
 					"getSignature": {
@@ -5965,9 +6102,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1571,
+								"line": 1540,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1571"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1540"
 							}
 						],
 						"type": {
@@ -6009,9 +6146,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1560,
+								"line": 1529,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1560"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1529"
 							}
 						],
 						"parameters": [
@@ -6058,15 +6195,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1410,
+							"line": 1379,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1410"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1379"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1418,
+							"line": 1387,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1418"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1387"
 						}
 					],
 					"getSignature": {
@@ -6104,9 +6241,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1418,
+								"line": 1387,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1418"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1387"
 							}
 						],
 						"type": {
@@ -6132,9 +6269,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1410,
+								"line": 1379,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1410"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1379"
 							}
 						],
 						"parameters": [
@@ -6181,9 +6318,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1132,
+							"line": 1101,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1132"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1101"
 						}
 					],
 					"setSignature": {
@@ -6214,9 +6351,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1132,
+								"line": 1101,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1132"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1101"
 							}
 						],
 						"parameters": [
@@ -6260,15 +6397,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1373,
+							"line": 1342,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1373"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1342"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1384,
+							"line": 1353,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1384"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1353"
 						}
 					],
 					"getSignature": {
@@ -6318,9 +6455,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1384,
+								"line": 1353,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1384"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1353"
 							}
 						],
 						"type": {
@@ -6364,9 +6501,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1373,
+								"line": 1342,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1373"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1342"
 							}
 						],
 						"parameters": [
@@ -6405,15 +6542,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1435,
+							"line": 1404,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1435"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1404"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1457,
+							"line": 1426,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1457"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1426"
 						}
 					],
 					"getSignature": {
@@ -6483,9 +6620,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1457,
+								"line": 1426,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1457"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1426"
 							}
 						],
 						"type": {
@@ -6543,9 +6680,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1435,
+								"line": 1404,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1435"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1404"
 							}
 						],
 						"parameters": [
@@ -6592,15 +6729,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1294,
+							"line": 1263,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1294"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1263"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1324,
+							"line": 1293,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1324"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1293"
 						}
 					],
 					"getSignature": {
@@ -6664,9 +6801,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1324,
+								"line": 1293,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1324"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1293"
 							}
 						],
 						"type": {
@@ -6716,9 +6853,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1294,
+								"line": 1263,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1294"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1263"
 							}
 						],
 						"parameters": [
@@ -6765,15 +6902,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1591,
+							"line": 1560,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1591"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1560"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1604,
+							"line": 1573,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1604"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1573"
 						}
 					],
 					"getSignature": {
@@ -6831,9 +6968,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1604,
+								"line": 1573,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1604"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1573"
 							}
 						],
 						"type": {
@@ -6926,9 +7063,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1591,
+								"line": 1560,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1591"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1560"
 							}
 						],
 						"parameters": [
@@ -6967,15 +7104,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1958,
+							"line": 1927,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1958"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1927"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1974,
+							"line": 1943,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1974"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1943"
 						}
 					],
 					"getSignature": {
@@ -7082,9 +7219,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1974,
+								"line": 1943,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1974"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1943"
 							}
 						],
 						"type": {
@@ -7160,9 +7297,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1958,
+								"line": 1927,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1958"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1927"
 							}
 						],
 						"parameters": [
@@ -7226,15 +7363,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1209,
+							"line": 1178,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1209"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1178"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1219,
+							"line": 1188,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1219"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1188"
 						}
 					],
 					"getSignature": {
@@ -7265,9 +7402,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1219,
+								"line": 1188,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1219"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1188"
 							}
 						],
 						"type": {
@@ -7292,9 +7429,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1209,
+								"line": 1178,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1209"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1178"
 							}
 						],
 						"parameters": [
@@ -7333,15 +7470,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1188,
+							"line": 1157,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1188"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1157"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1197,
+							"line": 1166,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1197"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1166"
 						}
 					],
 					"getSignature": {
@@ -7367,9 +7504,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1197,
+								"line": 1166,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1197"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1166"
 							}
 						],
 						"type": {
@@ -7394,9 +7531,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1188,
+								"line": 1157,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1188"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1157"
 							}
 						],
 						"parameters": [
@@ -7427,15 +7564,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1170,
+							"line": 1139,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1170"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1139"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1179,
+							"line": 1148,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1179"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1148"
 						}
 					],
 					"getSignature": {
@@ -7461,9 +7598,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1179,
+								"line": 1148,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1179"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1148"
 							}
 						],
 						"type": {
@@ -7488,9 +7625,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1170,
+								"line": 1139,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1170"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1139"
 							}
 						],
 						"parameters": [
@@ -7521,15 +7658,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1744,
+							"line": 1713,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1744"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1713"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1755,
+							"line": 1724,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1755"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1724"
 						}
 					],
 					"getSignature": {
@@ -7577,9 +7714,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1755,
+								"line": 1724,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1755"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1724"
 							}
 						],
 						"type": {
@@ -7617,9 +7754,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1744,
+								"line": 1713,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1744"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1713"
 							}
 						],
 						"parameters": [
@@ -7658,15 +7795,15 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1633,
+							"line": 1602,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1633"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1602"
 						},
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1644,
+							"line": 1613,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1644"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1613"
 						}
 					],
 					"getSignature": {
@@ -7714,9 +7851,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1644,
+								"line": 1613,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1644"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1613"
 							}
 						],
 						"type": {
@@ -7741,9 +7878,9 @@
 						"sources": [
 							{
 								"fileName": "cameracontrol/src/CameraControl.ts",
-								"line": 1633,
+								"line": 1602,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1633"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1602"
 							}
 						],
 						"parameters": [
@@ -7782,9 +7919,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 2022,
+							"line": 1991,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L2022"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1991"
 						}
 					],
 					"signatures": [
@@ -7797,9 +7934,9 @@
 							"sources": [
 								{
 									"fileName": "cameracontrol/src/CameraControl.ts",
-									"line": 2022,
+									"line": 1991,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L2022"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1991"
 								}
 							],
 							"type": {
@@ -7818,9 +7955,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 2013,
+							"line": 1982,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L2013"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1982"
 						}
 					],
 					"signatures": [
@@ -7833,9 +7970,9 @@
 							"sources": [
 								{
 									"fileName": "cameracontrol/src/CameraControl.ts",
-									"line": 2013,
+									"line": 1982,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L2013"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1982"
 								}
 							],
 							"type": {
@@ -7854,9 +7991,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1299,
+							"line": 1268,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1299"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1268"
 						}
 					],
 					"signatures": [
@@ -7869,9 +8006,9 @@
 							"sources": [
 								{
 									"fileName": "cameracontrol/src/CameraControl.ts",
-									"line": 1299,
+									"line": 1268,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1299"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1268"
 								}
 							],
 							"type": {
@@ -7882,7 +8019,7 @@
 					]
 				},
 				{
-					"id": 296,
+					"id": 295,
 					"name": "clean",
 					"variant": "declaration",
 					"kind": 2048,
@@ -7898,7 +8035,7 @@
 					],
 					"signatures": [
 						{
-							"id": 297,
+							"id": 296,
 							"name": "clean",
 							"variant": "signature",
 							"kind": 4096,
@@ -7936,7 +8073,7 @@
 					}
 				},
 				{
-					"id": 294,
+					"id": 293,
 					"name": "cleanIfDirty",
 					"variant": "declaration",
 					"kind": 2048,
@@ -7952,7 +8089,7 @@
 					],
 					"signatures": [
 						{
-							"id": 295,
+							"id": 294,
 							"name": "cleanIfDirty",
 							"variant": "signature",
 							"kind": 4096,
@@ -7998,9 +8135,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1942,
+							"line": 1911,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1942"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1911"
 						}
 					],
 					"signatures": [
@@ -8021,9 +8158,9 @@
 							"sources": [
 								{
 									"fileName": "cameracontrol/src/CameraControl.ts",
-									"line": 1942,
+									"line": 1911,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1942"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1911"
 								}
 							],
 							"type": {
@@ -8042,9 +8179,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 1934,
+							"line": 1903,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1934"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1903"
 						}
 					],
 					"signatures": [
@@ -8065,9 +8202,9 @@
 							"sources": [
 								{
 									"fileName": "cameracontrol/src/CameraControl.ts",
-									"line": 1934,
+									"line": 1903,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1934"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1903"
 								}
 							],
 							"parameters": [
@@ -8098,9 +8235,9 @@
 											"sources": [
 												{
 													"fileName": "cameracontrol/src/CameraControl.ts",
-													"line": 1934,
+													"line": 1903,
 													"character": 28,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L1934"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L1903"
 												}
 											]
 										}
@@ -8116,7 +8253,7 @@
 					]
 				},
 				{
-					"id": 289,
+					"id": 288,
 					"name": "error",
 					"variant": "declaration",
 					"kind": 2048,
@@ -8132,7 +8269,7 @@
 					],
 					"signatures": [
 						{
-							"id": 290,
+							"id": 289,
 							"name": "error",
 							"variant": "signature",
 							"kind": 4096,
@@ -8164,7 +8301,7 @@
 							],
 							"parameters": [
 								{
-									"id": 291,
+									"id": 290,
 									"name": "message",
 									"variant": "param",
 									"kind": 32768,
@@ -8201,7 +8338,7 @@
 					}
 				},
 				{
-					"id": 283,
+					"id": 282,
 					"name": "log",
 					"variant": "declaration",
 					"kind": 2048,
@@ -8217,7 +8354,7 @@
 					],
 					"signatures": [
 						{
-							"id": 284,
+							"id": 283,
 							"name": "log",
 							"variant": "signature",
 							"kind": 4096,
@@ -8249,7 +8386,7 @@
 							],
 							"parameters": [
 								{
-									"id": 285,
+									"id": 284,
 									"name": "message",
 									"variant": "param",
 									"kind": 32768,
@@ -8286,7 +8423,7 @@
 					}
 				},
 				{
-					"id": 292,
+					"id": 291,
 					"name": "setDirty",
 					"variant": "declaration",
 					"kind": 2048,
@@ -8302,7 +8439,7 @@
 					],
 					"signatures": [
 						{
-							"id": 293,
+							"id": 292,
 							"name": "setDirty",
 							"variant": "signature",
 							"kind": 4096,
@@ -8340,7 +8477,7 @@
 					}
 				},
 				{
-					"id": 286,
+					"id": 285,
 					"name": "warn",
 					"variant": "declaration",
 					"kind": 2048,
@@ -8356,7 +8493,7 @@
 					],
 					"signatures": [
 						{
-							"id": 287,
+							"id": 286,
 							"name": "warn",
 							"variant": "signature",
 							"kind": 4096,
@@ -8388,7 +8525,7 @@
 							],
 							"parameters": [
 								{
-									"id": 288,
+									"id": 287,
 									"name": "message",
 									"variant": "param",
 									"kind": 32768,
@@ -8429,9 +8566,9 @@
 				{
 					"title": "Properties",
 					"children": [
-						280,
-						281,
 						279,
+						280,
+						278,
 						47,
 						38,
 						42,
@@ -8497,20 +8634,20 @@
 						276,
 						274,
 						168,
-						296,
-						294,
+						295,
+						293,
 						262,
 						258,
-						289,
-						283,
-						292,
-						286
+						288,
+						282,
+						291,
+						285
 					]
 				},
 				{
 					"title": "Events",
 					"children": [
-						282,
+						281,
 						57,
 						59,
 						58,
@@ -8532,9 +8669,9 @@
 			"sources": [
 				{
 					"fileName": "cameracontrol/src/CameraControl.ts",
-					"line": 541,
+					"line": 510,
 					"character": 13,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L541"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L510"
 				}
 			],
 			"extendedTypes": [
@@ -8567,9 +8704,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 71,
+							"line": 73,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L71"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L73"
 						}
 					],
 					"type": {
@@ -8588,9 +8725,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 75,
+							"line": 77,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L75"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L77"
 						}
 					],
 					"type": {
@@ -8609,9 +8746,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 63,
+							"line": 65,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L63"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L65"
 						}
 					],
 					"type": {
@@ -8630,9 +8767,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 61,
+							"line": 63,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L61"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L63"
 						}
 					],
 					"type": {
@@ -8651,9 +8788,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 62,
+							"line": 64,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L62"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L64"
 						}
 					],
 					"type": {
@@ -8672,9 +8809,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 78,
+							"line": 80,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L78"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L80"
 						}
 					],
 					"type": {
@@ -8693,9 +8830,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 65,
+							"line": 67,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L65"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L67"
 						}
 					],
 					"type": {
@@ -8714,9 +8851,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 70,
+							"line": 72,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L70"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L72"
 						}
 					],
 					"type": {
@@ -8735,9 +8872,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 73,
+							"line": 75,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L73"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L75"
 						}
 					],
 					"type": {
@@ -8756,9 +8893,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 59,
+							"line": 61,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L59"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L61"
 						}
 					],
 					"type": {
@@ -8777,9 +8914,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 79,
+							"line": 81,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L79"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L81"
 						}
 					],
 					"type": {
@@ -8798,9 +8935,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 74,
+							"line": 76,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L74"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L76"
 						}
 					],
 					"type": {
@@ -8819,9 +8956,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 68,
+							"line": 70,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L68"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L70"
 						}
 					],
 					"type": {
@@ -8840,9 +8977,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 66,
+							"line": 68,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L66"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L68"
 						}
 					],
 					"type": {
@@ -8861,9 +8998,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 58,
+							"line": 60,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L58"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L60"
 						}
 					],
 					"type": {
@@ -8882,9 +9019,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 77,
+							"line": 79,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L77"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L79"
 						}
 					],
 					"type": {
@@ -8903,9 +9040,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 60,
+							"line": 62,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L60"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L62"
 						}
 					],
 					"type": {
@@ -8924,9 +9061,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 72,
+							"line": 74,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L72"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L74"
 						}
 					],
 					"type": {
@@ -8945,9 +9082,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 76,
+							"line": 78,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L76"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L78"
 						}
 					],
 					"type": {
@@ -8966,9 +9103,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 69,
+							"line": 71,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L69"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L71"
 						}
 					],
 					"type": {
@@ -8987,9 +9124,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 64,
+							"line": 66,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L64"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L66"
 						}
 					],
 					"type": {
@@ -9008,9 +9145,9 @@
 					"sources": [
 						{
 							"fileName": "cameracontrol/src/CameraControl.ts",
-							"line": 67,
+							"line": 69,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L67"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L69"
 						}
 					],
 					"type": {
@@ -9051,9 +9188,9 @@
 			"sources": [
 				{
 					"fileName": "cameracontrol/src/CameraControl.ts",
-					"line": 57,
+					"line": 59,
 					"character": 17,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cameracontrol/src/CameraControl.ts#L57"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cameracontrol/src/CameraControl.ts#L59"
 				}
 			]
 		}
@@ -9889,21 +10026,25 @@
 			"sourceFileName": "src/CameraControl.ts",
 			"qualifiedName": "CameraControl._destroyControllers"
 		},
-		"279": {
+		"278": {
 			"sourceFileName": "../core/src/Component.ts",
 			"qualifiedName": "Component.id"
 		},
-		"280": {
+		"279": {
 			"sourceFileName": "../core/src/Component.ts",
 			"qualifiedName": "Component.destroyed"
 		},
-		"281": {
+		"280": {
 			"sourceFileName": "../core/src/Component.ts",
 			"qualifiedName": "Component.dirty"
 		},
-		"282": {
+		"281": {
 			"sourceFileName": "../core/src/Component.ts",
 			"qualifiedName": "Component.onDestroyed"
+		},
+		"282": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.log"
 		},
 		"283": {
 			"sourceFileName": "../core/src/Component.ts",
@@ -9911,11 +10052,11 @@
 		},
 		"284": {
 			"sourceFileName": "../core/src/Component.ts",
-			"qualifiedName": "Component.log"
+			"qualifiedName": "message"
 		},
 		"285": {
 			"sourceFileName": "../core/src/Component.ts",
-			"qualifiedName": "message"
+			"qualifiedName": "Component.warn"
 		},
 		"286": {
 			"sourceFileName": "../core/src/Component.ts",
@@ -9923,11 +10064,11 @@
 		},
 		"287": {
 			"sourceFileName": "../core/src/Component.ts",
-			"qualifiedName": "Component.warn"
+			"qualifiedName": "message"
 		},
 		"288": {
 			"sourceFileName": "../core/src/Component.ts",
-			"qualifiedName": "message"
+			"qualifiedName": "Component.error"
 		},
 		"289": {
 			"sourceFileName": "../core/src/Component.ts",
@@ -9935,11 +10076,11 @@
 		},
 		"290": {
 			"sourceFileName": "../core/src/Component.ts",
-			"qualifiedName": "Component.error"
+			"qualifiedName": "message"
 		},
 		"291": {
 			"sourceFileName": "../core/src/Component.ts",
-			"qualifiedName": "message"
+			"qualifiedName": "Component.setDirty"
 		},
 		"292": {
 			"sourceFileName": "../core/src/Component.ts",
@@ -9947,7 +10088,7 @@
 		},
 		"293": {
 			"sourceFileName": "../core/src/Component.ts",
-			"qualifiedName": "Component.setDirty"
+			"qualifiedName": "Component.cleanIfDirty"
 		},
 		"294": {
 			"sourceFileName": "../core/src/Component.ts",
@@ -9955,13 +10096,9 @@
 		},
 		"295": {
 			"sourceFileName": "../core/src/Component.ts",
-			"qualifiedName": "Component.cleanIfDirty"
-		},
-		"296": {
-			"sourceFileName": "../core/src/Component.ts",
 			"qualifiedName": "Component.clean"
 		},
-		"297": {
+		"296": {
 			"sourceFileName": "../core/src/Component.ts",
 			"qualifiedName": "Component.clean"
 		}

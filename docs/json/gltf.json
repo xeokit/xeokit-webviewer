@@ -111,7 +111,7 @@
 			},
 			{
 				"kind": "code",
-				"text": "````javascript\nimport {SDKError} from \"@xeokit/core\";\nimport {Scene} from \"@xeokit/scene\";\nimport  {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {Viewer} from \"@xeokit/viewer\";\nimport {CameraControl} from \"@xeokit/cameracontrol\";\nimport {loadGLTF} from \"@xeokit/gltf\";\n\nconst scene = new Scene();\n\nconst renderer = new WebGLRenderer({});\n\nconst viewer = new Viewer({\n    id: \"myViewer\",\n    scene,\n    renderer\n});\n\nconst view = viewer.createView({\n    id: \"myView\",\n    elementId: \"myCanvas\" // << Ensure that this HTMLElement exists in the page\n});\n\nif (view instanceof SDKError) {\n    console.error(`Error creating View: ${view.message}`);\n\n} else {\n\n    view.camera.eye = [1841982.93, 10.03, -5173286.74];\n    view.camera.look = [1842009.49, 9.68, -5173295.85];\n    view.camera.up = [0.0, 1.0, 0.0];\n\n    new CameraControl(view, {});\n\n    const sceneModel = scene.createModel({\n        id: \"myModel\"\n    });\n\n    if (sceneModel instanceof SDKError) {\n        console.error(`Error creating SceneModel: ${sceneModel.message}`);\n\n    } else {\n\n        fetch(\"model.glb\").then(response => {\n\n            response.arrayBuffer().then(fileData => {\n\n                loadGLTF({\n                    fileData,\n                    sceneModel\n                }).then(() => {\n\n                    sceneModel.build();\n\n                }).catch(sdkError => {\n                    sceneModel.destroy();\n                    console.error(`Error loading glTF: ${sdkError.message}`);\n                });\n\n            }).catch(message => {\n                console.error(`Error creating ArrayBuffer: ${message}`);\n            });\n\n        }).catch(message => {\n            console.error(`Error fetching model: ${message}`);\n        });\n    }\n}\n````"
+				"text": "````javascript\nimport {SDKError} from \"@xeokit/core\";\nimport {Scene} from \"@xeokit/scene\";\nimport {Data} from \"@xeokit/data\";\nimport  {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {Viewer} from \"@xeokit/viewer\";\nimport {CameraControl} from \"@xeokit/cameracontrol\";\nimport {loadGLTF} from \"@xeokit/gltf\";\n\nconst scene = new Scene();\nconst data = new Data();\n\nconst renderer = new WebGLRenderer({});\n\nconst viewer = new Viewer({\n    id: \"myViewer\",\n    scene,\n    renderer\n});\n\nconst view = viewer.createView({\n    id: \"myView\",\n    elementId: \"myCanvas\" // << Ensure that this HTMLElement exists in the page\n});\n\nview.camera.eye = [1841982.93, 10.03, -5173286.74];\nview.camera.look = [1842009.49, 9.68, -5173295.85];\nview.camera.up = [0.0, 1.0, 0.0];\n\nnew CameraControl(view, {});\n\nconst sceneModel = scene.createModel({\n    id: \"myModel\"\n});\n\nconst dataModel = data.createModel({\n    id: \"myModel\"\n});\n\nfetch(\"model.glb\").then(response => {\n\n    response.arrayBuffer().then(fileData => {\n\n       loadGLTF({\n           fileData,\n           sceneModel,\n           dataModel\n       }).then(() => {\n\n           sceneModel.build();\n\n       }).catch(err => {\n           sceneModel.destroy();\n           dataModel.destroy();\n           console.error(`Error loading glTF data: ${err}`);\n       });\n\n   }).catch(err => {\n       console.error(`Error creating ArrayBuffer from fetch response: ${err}`);\n   });\n\n}).catch(err => {\n   console.error(`Error fetching glTF file: ${err}`);\n});\n````"
 			}
 		]
 	},
@@ -125,9 +125,9 @@
 			"sources": [
 				{
 					"fileName": "loadGLTF.ts",
-					"line": 57,
+					"line": 61,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/gltf/src/loadGLTF.ts#L57"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/gltf/src/loadGLTF.ts#L61"
 				}
 			],
 			"signatures": [
@@ -141,7 +141,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "Loads glTF file data from an ArrayBuffer into a "
+								"text": "Loads glTF file data into a "
 							},
 							{
 								"kind": "inline-tag",
@@ -248,9 +248,9 @@
 					"sources": [
 						{
 							"fileName": "loadGLTF.ts",
-							"line": 57,
+							"line": 61,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/gltf/src/loadGLTF.ts#L57"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/gltf/src/loadGLTF.ts#L61"
 						}
 					],
 					"parameters": [
@@ -289,7 +289,7 @@
 												"summary": [
 													{
 														"kind": "text",
-														"text": "DataModel to load into. For glTF, this will create a basic aggregation hierarchy (see "
+														"text": "DataModel to load basic semantic data into. For glTF, this will create a basic aggregation hierarchy (see "
 													},
 													{
 														"kind": "inline-tag",
@@ -305,9 +305,9 @@
 											"sources": [
 												{
 													"fileName": "loadGLTF.ts",
-													"line": 60,
+													"line": 64,
 													"character": 4,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/gltf/src/loadGLTF.ts#L60"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/gltf/src/loadGLTF.ts#L64"
 												}
 											],
 											"type": {
@@ -337,19 +337,14 @@
 											"sources": [
 												{
 													"fileName": "loadGLTF.ts",
-													"line": 58,
+													"line": 62,
 													"character": 4,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/gltf/src/loadGLTF.ts#L58"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/gltf/src/loadGLTF.ts#L62"
 												}
 											],
 											"type": {
-												"type": "reference",
-												"target": {
-													"sourceFileName": "../../node_modules/.pnpm/typescript@4.9.4/node_modules/typescript/lib/lib.es5.d.ts",
-													"qualifiedName": "ArrayBuffer"
-												},
-												"name": "ArrayBuffer",
-												"package": "typescript"
+												"type": "intrinsic",
+												"name": "any"
 											}
 										},
 										{
@@ -363,9 +358,9 @@
 											"sources": [
 												{
 													"fileName": "loadGLTF.ts",
-													"line": 61,
+													"line": 65,
 													"character": 4,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/gltf/src/loadGLTF.ts#L61"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/gltf/src/loadGLTF.ts#L65"
 												}
 											],
 											"type": {
@@ -383,21 +378,23 @@
 											"name": "sceneModel",
 											"variant": "declaration",
 											"kind": 1024,
-											"flags": {},
+											"flags": {
+												"isOptional": true
+											},
 											"comment": {
 												"summary": [
 													{
 														"kind": "text",
-														"text": "SceneModel to load into."
+														"text": "SceneModel to load geometry and material colors into."
 													}
 												]
 											},
 											"sources": [
 												{
 													"fileName": "loadGLTF.ts",
-													"line": 59,
+													"line": 63,
 													"character": 4,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/gltf/src/loadGLTF.ts#L59"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/gltf/src/loadGLTF.ts#L63"
 												}
 											],
 											"type": {
@@ -425,9 +422,9 @@
 									"sources": [
 										{
 											"fileName": "loadGLTF.ts",
-											"line": 57,
+											"line": 61,
 											"character": 33,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/gltf/src/loadGLTF.ts#L57"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/gltf/src/loadGLTF.ts#L61"
 										}
 									]
 								}

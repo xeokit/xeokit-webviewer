@@ -8,17 +8,52 @@
 		"summary": [
 			{
 				"kind": "text",
-				"text": "[![npm version](https://badge.fury.io/js/%40xeokit%2Fmetamodel.svg)](https://badge.fury.io/js/%40xeokit%2Fmetamodel)\n[![](https://data.jsdelivr.com/v1/package/npm/@xeokit/metamodel/badge)](https://www.jsdelivr.com/package/npm/@xeokit/metamodel)\n\n<img  style=\"padding:0px; padding-top:30px; padding-bottom:10px; height:130px;\" src=\"media://images/xeokit_logo_mesh.png\"/>\n\n# xeokit [Legacy Metamodel](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#metamodel) Importer and Exporter\n\n---\n\n### *Import data models from xeokit's [legacy metamodel](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#metamodel) format*\n\n---\n\nTo import a [legacy metamodel](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#metamodel) model into xeokit, use the "
+				"text": "[![npm version](https://badge.fury.io/js/%40xeokit%2Fmetamodel.svg)](https://badge.fury.io/js/%40xeokit%2Fmetamodel)\n[![](https://data.jsdelivr.com/v1/package/npm/@xeokit/metamodel/badge)](https://www.jsdelivr.com/package/npm/@xeokit/metamodel)\n\n<img  style=\"padding:0px; padding-top:30px; padding-bottom:10px; height:130px;\" src=\"media://images/xeokit_logo_mesh.png\"/>\n\n# xeokit [Legacy MetaModel](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#metamodel) Utilities\n\n---\n\n### *Import data models from xeokit's [legacy metamodel](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#metamodel) format*\n\n---\n\n<br>\n\n[![](https://mermaid.ink/img/pako:eNqNU01rwzAM_StBpw1a2K6h9DB6W8tKs8EOvqixsro4dvDHIJT-99lx0iaMlubi6El6T0_GJyg1J8ihlGjtSuCPwZopprgwVDqhVbbexbjLZ0VJijahQ2YnprLwCZ5OvT-GepuC0hA6-uigp-eE7b2QfAg4WWd0G8NzZB_4V-iwo7_H3hjdkHFtQff0ErYjidGFPYhmmtleWR4aMQ241si_3z-3GNZkhx0sFk2MyZFZLhOExmD75quKTALsZXM9_eB0Qi8T_ZW48qq7hcg7qivwlx4Z4zFVm9juqE5sM3hhMJ8vGbwyKEYKt6tWV93e4pCZ9OTZlyWbXWzYqD3xelP7dtVIuzd66R_3_NOGGdRkahQ8PI9uNQzcgWpikIdfThV66RiEFYVS9E4XrSohd8bTDHwTdk39g4K8QmkDSlw4bTb9k4vH-Q8aQzAW?type=png)](https://mermaid.live/edit#pako:eNqNU01rwzAM_StBpw1a2K6h9DB6W8tKs8EOvqixsro4dvDHIJT-99lx0iaMlubi6El6T0_GJyg1J8ihlGjtSuCPwZopprgwVDqhVbbexbjLZ0VJijahQ2YnprLwCZ5OvT-GepuC0hA6-uigp-eE7b2QfAg4WWd0G8NzZB_4V-iwo7_H3hjdkHFtQff0ErYjidGFPYhmmtleWR4aMQ241si_3z-3GNZkhx0sFk2MyZFZLhOExmD75quKTALsZXM9_eB0Qi8T_ZW48qq7hcg7qivwlx4Z4zFVm9juqE5sM3hhMJ8vGbwyKEYKt6tWV93e4pCZ9OTZlyWbXWzYqD3xelP7dtVIuzd66R_3_NOGGdRkahQ8PI9uNQzcgWpikIdfThV66RiEFYVS9E4XrSohd8bTDHwTdk39g4K8QmkDSlw4bTb9k4vH-Q8aQzAW)\n\n<br>\n\n# Overview\n\n* "
 			},
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "loadMetamodel",
-				"target": 1
+				"text": "@xeokit/metamodel!convertMetaModel | convertMetaModel"
 			},
 			{
 				"kind": "text",
-				"text": " function, which will load the file into\na "
+				"text": " migrates a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/metamodel!MetaModelParams | MetaModelParams"
+			},
+			{
+				"kind": "text",
+				"text": " into a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/data!DataModelParams | DataModelParams"
+			},
+			{
+				"kind": "text",
+				"text": ".\n* "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/metamodel!loadMetaModel | loadMetaModel"
+			},
+			{
+				"kind": "text",
+				"text": " loads a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/metamodel!MetaModelParams | MetaModelParams"
+			},
+			{
+				"kind": "text",
+				"text": " directly into a "
 			},
 			{
 				"kind": "inline-tag",
@@ -27,7 +62,34 @@
 			},
 			{
 				"kind": "text",
-				"text": ".\n\n<br>\n\n[![](https://mermaid.ink/img/pako:eNqNU01rwzAM_StBpw1a2K6h9DB6W8tKs8EOvqixsro4dvDHIJT-99lx0iaMlubi6El6T0_GJyg1J8ihlGjtSuCPwZopprgwVDqhVbbexbjLZ0VJijahQ2YnprLwCZ5OvT-GepuC0hA6-uigp-eE7b2QfAg4WWd0G8NzZB_4V-iwo7_H3hjdkHFtQff0ErYjidGFPYhmmtleWR4aMQ241si_3z-3GNZkhx0sFk2MyZFZLhOExmD75quKTALsZXM9_eB0Qi8T_ZW48qq7hcg7qivwlx4Z4zFVm9juqE5sM3hhMJ8vGbwyKEYKt6tWV93e4pCZ9OTZlyWbXWzYqD3xelP7dtVIuzd66R_3_NOGGdRkahQ8PI9uNQzcgWpikIdfThV66RiEFYVS9E4XrSohd8bTDHwTdk39g4K8QmkDSlw4bTb9k4vH-Q8aQzAW?type=png)](https://mermaid.live/edit#pako:eNqNU01rwzAM_StBpw1a2K6h9DB6W8tKs8EOvqixsro4dvDHIJT-99lx0iaMlubi6El6T0_GJyg1J8ihlGjtSuCPwZopprgwVDqhVbbexbjLZ0VJijahQ2YnprLwCZ5OvT-GepuC0hA6-uigp-eE7b2QfAg4WWd0G8NzZB_4V-iwo7_H3hjdkHFtQff0ErYjidGFPYhmmtleWR4aMQ241si_3z-3GNZkhx0sFk2MyZFZLhOExmD75quKTALsZXM9_eB0Qi8T_ZW48qq7hcg7qivwlx4Z4zFVm9juqE5sM3hhMJ8vGbwyKEYKt6tWV93e4pCZ9OTZlyWbXWzYqD3xelP7dtVIuzd66R_3_NOGGdRkahQ8PI9uNQzcgWpikIdfThV66RiEFYVS9E4XrSohd8bTDHwTdk39g4K8QmkDSlw4bTb9k4vH-Q8aQzAW)\n\n<br>\n\n## Installation\n\n"
+				"text": ".\n* "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/data!DataModel | DataModel"
+			},
+			{
+				"kind": "text",
+				"text": " is xeokit's newer semantic data model, an entity-relationship graph with property sets.\n* "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/data!DataModelParams | DataModelParams"
+			},
+			{
+				"kind": "text",
+				"text": " is a JSON data format that can be loaded into a DataModel.\n* "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/metamodel!MetaModelParams | MetaModelParams"
+			},
+			{
+				"kind": "text",
+				"text": " is xeokit's older JSON data model format, a simple entity hierarchy with property sets.\n\n# Installation\n\n"
 			},
 			{
 				"kind": "code",
@@ -35,17 +97,26 @@
 			},
 			{
 				"kind": "text",
-				"text": "\n\n## Usage\n\nIn the example below, we'll use "
+				"text": "\n\n# Usage\n\n## Loading MetaModel data into a DataModel\n\nIn the example below, we'll use "
 			},
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "loadMetamodel",
+				"text": "loadMetaModel",
 				"target": 1
 			},
 			{
 				"kind": "text",
-				"text": " to import an [METAMODEL](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#metamodel) file into a\na "
+				"text": " to load a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/metamodel!MetaModelParams | MetaModelParams"
+			},
+			{
+				"kind": "text",
+				"text": " file directly into a\na "
 			},
 			{
 				"kind": "inline-tag",
@@ -54,42 +125,902 @@
 			},
 			{
 				"kind": "text",
-				"text": ". The "
+				"text": ".\n\n"
+			},
+			{
+				"kind": "code",
+				"text": "````javascript\nimport {Data} from \"@xeokit/data\";\nimport {loadMetaModel} from \"@xeokit/metamodel\";\n\nconst data = new Data();\n\nconst dataModel = data.createModel({\n    id: \"myModel\n});\n\nfetch(\"myMetaModel.json\").then(response => {\n\n    response.json().then(metaModelParams => {\n\n        // Load MetaModelParams Directly into our DataModel\n\n       loadMetaModel({\n           fileData: metaModelParams,\n           dataModel\n       });\n\n       dataModel.build();\n    });\n});\n````"
+			},
+			{
+				"kind": "text",
+				"text": "\n\n## Converting MetaModel data into DataModel data\n\nIn the next example, we'll use "
 			},
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "@xeokit/core!SDKError | SDKError"
+				"text": "@xeokit/metamodel!convertMetaModel | convertMetaModel"
 			},
 			{
 				"kind": "text",
-				"text": " class\nis used to handle errors that may occur during the process:\n\n"
+				"text": " to convert a\n"
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/metamodel!MetaModelParams | MetaModelParams"
+			},
+			{
+				"kind": "text",
+				"text": " file into a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/data!DataModelParams | DataModelParams"
+			},
+			{
+				"kind": "text",
+				"text": ",\nand then load that into a "
+			},
+			{
+				"kind": "inline-tag",
+				"tag": "@link",
+				"text": "@xeokit/data!DataModel | DataModel"
+			},
+			{
+				"kind": "text",
+				"text": ".\n\n"
 			},
 			{
 				"kind": "code",
-				"text": "````javascript\nimport {Data} from \"@xeokit/data\";\nimport {loadMetamodel} from \"@xeokit/metamodel\";\n\nconst data = new Data();\n\nconst dataModel = data.createModel({\n    id: \"myModel\n});\n\nif (dataModel instanceof SDKError) {\n     console.error(dataModel.message);\n} else {\n     fetch(\"myModel.metamodel\").then(response => {\n\n        response.json().then(data => {\n\n             loadMetamodel({ data, dataModel });\n\n             dataModel.build();\n         });\n     });\n});\n````"
+				"text": "````javascript\nimport {Data} from \"@xeokit/data\";\nimport {loadMetaModel} from \"@xeokit/metamodel\";\n\nconst data = new Data();\n\nconst dataModel = data.createModel({\n    id: \"myModel\n});\n\nfetch(\"myMetaModel.json\").then(response => {\n\n    response.json().then(metaModelParams => {\n\n         // Convert MetaModelParams -> DataModelParams\n\n        const dataModelParams = convertMetaModel(metaModelParams)\n\n         // Then we could load the DataModelParams into our DataModel\n\n        dataModel.fromJSON(dataModelParams);\n\n        dataModel.build();\n    });\n});\n````"
 			}
 		]
 	},
 	"children": [
 		{
-			"id": 1,
-			"name": "loadMetamodel",
+			"id": 10,
+			"name": "MetaModelParams",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Legacy metadata model parameters."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 12,
+					"name": "author",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Author of the model."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaModelParams.ts",
+							"line": 17,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaModelParams.ts#L17"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 13,
+					"name": "createdAt",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Date the model was created."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaModelParams.ts",
+							"line": 22,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaModelParams.ts#L22"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 15,
+					"name": "creatingApplication",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Identifies the application that created the metadata model."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaModelParams.ts",
+							"line": 32,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaModelParams.ts#L32"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 16,
+					"name": "metaObjects",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Metaobject parameters."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaModelParams.ts",
+							"line": 37,
+							"character": 3,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaModelParams.ts#L37"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"target": 18,
+							"name": "MetaObjectParams",
+							"package": "@xeokit/metamodel"
+						}
+					}
+				},
+				{
+					"id": 11,
+					"name": "projectId",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "ID of the project the model belongs to."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaModelParams.ts",
+							"line": 12,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaModelParams.ts#L12"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 17,
+					"name": "propertySets",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Property set parameters."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaModelParams.ts",
+							"line": 42,
+							"character": 3,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaModelParams.ts#L42"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"target": 26,
+							"name": "MetaPropertySetParams",
+							"package": "@xeokit/metamodel"
+						}
+					}
+				},
+				{
+					"id": 14,
+					"name": "schema",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Identifies the model schema."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaModelParams.ts",
+							"line": 27,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaModelParams.ts#L27"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						12,
+						13,
+						15,
+						16,
+						11,
+						17,
+						14
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "MetaModelParams.ts",
+					"line": 7,
+					"character": 17,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaModelParams.ts#L7"
+				}
+			]
+		},
+		{
+			"id": 18,
+			"name": "MetaObjectParams",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Legacy metadata object parameters."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 22,
+					"name": "id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The ID of the metadata object."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaObjectParams.ts",
+							"line": 24,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaObjectParams.ts#L24"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 23,
+					"name": "name",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The name of the metadata object."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaObjectParams.ts",
+							"line": 29,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaObjectParams.ts#L29"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 21,
+					"name": "originalSystemId",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The original system ID of the metadata object."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaObjectParams.ts",
+							"line": 19,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaObjectParams.ts#L19"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 25,
+					"name": "parent",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "ID of the parent metadata object."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaObjectParams.ts",
+							"line": 39,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaObjectParams.ts#L39"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 19,
+					"name": "propertySetIds",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "IDs of propery sets linked to the metadata object."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaObjectParams.ts",
+							"line": 9,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaObjectParams.ts#L9"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					}
+				},
+				{
+					"id": 20,
+					"name": "propertySets",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isOptional": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Property sets belonging to the metadata object."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaObjectParams.ts",
+							"line": 14,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaObjectParams.ts#L14"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "intrinsic",
+							"name": "string"
+						}
+					}
+				},
+				{
+					"id": 24,
+					"name": "type",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The type of the metadata object."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaObjectParams.ts",
+							"line": 34,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaObjectParams.ts#L34"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						22,
+						23,
+						21,
+						25,
+						19,
+						20,
+						24
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "MetaObjectParams.ts",
+					"line": 4,
+					"character": 17,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaObjectParams.ts#L4"
+				}
+			]
+		},
+		{
+			"id": 32,
+			"name": "MetaPropertyParams",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Legacy metadata property parameters."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 37,
+					"name": "description",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Informative text to explain the property."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaPropertyParams.ts",
+							"line": 44,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertyParams.ts#L44"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 33,
+					"name": "name",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The name of the property."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaPropertyParams.ts",
+							"line": 12,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertyParams.ts#L12"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 34,
+					"name": "type",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The type of the property."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaPropertyParams.ts",
+							"line": 20,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertyParams.ts#L20"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 35,
+					"name": "value",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The value of the property."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaPropertyParams.ts",
+							"line": 28,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertyParams.ts#L28"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 36,
+					"name": "valueType",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The type of the property's value."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaPropertyParams.ts",
+							"line": 36,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertyParams.ts#L36"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						37,
+						33,
+						34,
+						35,
+						36
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "MetaPropertyParams.ts",
+					"line": 4,
+					"character": 17,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertyParams.ts#L4"
+				}
+			]
+		},
+		{
+			"id": 26,
+			"name": "MetaPropertySetParams",
+			"variant": "declaration",
+			"kind": 256,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Legacy metadata property set parameters."
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 27,
+					"name": "id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Globally-unique ID for the metadata property set."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaPropertySetParams.ts",
+							"line": 12,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertySetParams.ts#L12"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 29,
+					"name": "name",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Human-readable name of the metadata property set."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaPropertySetParams.ts",
+							"line": 22,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertySetParams.ts#L22"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 28,
+					"name": "originalSystemId",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "ID of the corresponding object within the originating system, if any."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaPropertySetParams.ts",
+							"line": 17,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertySetParams.ts#L17"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 31,
+					"name": "properties",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Properties within the metadata property set."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaPropertySetParams.ts",
+							"line": 32,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertySetParams.ts#L32"
+						}
+					],
+					"type": {
+						"type": "array",
+						"elementType": {
+							"type": "reference",
+							"target": 32,
+							"name": "MetaPropertyParams",
+							"package": "@xeokit/metamodel"
+						}
+					}
+				},
+				{
+					"id": 30,
+					"name": "type",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Type of the metadata property set."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "MetaPropertySetParams.ts",
+							"line": 27,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertySetParams.ts#L27"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Properties",
+					"children": [
+						27,
+						29,
+						28,
+						31,
+						30
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "MetaPropertySetParams.ts",
+					"line": 7,
+					"character": 17,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/MetaPropertySetParams.ts#L7"
+				}
+			]
+		},
+		{
+			"id": 7,
+			"name": "convertMetaModel",
 			"variant": "declaration",
 			"kind": 64,
 			"flags": {},
 			"sources": [
 				{
-					"fileName": "loadMetamodel.ts",
-					"line": 23,
+					"fileName": "convertMetaModel.ts",
+					"line": 8,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/metamodel/src/loadMetamodel.ts#L23"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/convertMetaModel.ts#L8"
 				}
 			],
 			"signatures": [
 				{
-					"id": 2,
-					"name": "loadMetamodel",
+					"id": 8,
+					"name": "convertMetaModel",
 					"variant": "signature",
 					"kind": 4096,
 					"flags": {},
@@ -97,21 +1028,103 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "Imports [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) metadata\ninto a "
+								"text": "Converts a "
 							},
 							{
 								"kind": "inline-tag",
 								"tag": "@link",
-								"text": "@xeokit/scene!DataModel | DataModel"
+								"text": "@xeokit/metamodel!MetaModelParams | MetaModelParams"
 							},
 							{
 								"kind": "text",
-								"text": ".\n\n* Expects "
+								"text": " to a "
 							},
 							{
 								"kind": "inline-tag",
 								"tag": "@link",
-								"text": "@xeokit/scene!DataModel.built | DataModel.built"
+								"text": "@xeokit/data!DataModelParams | DataModelParams"
+							},
+							{
+								"kind": "text",
+								"text": "."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "convertMetaModel.ts",
+							"line": 8,
+							"character": 16,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/convertMetaModel.ts#L8"
+						}
+					],
+					"parameters": [
+						{
+							"id": 9,
+							"name": "metaModelParams",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "reference",
+								"target": 10,
+								"name": "MetaModelParams",
+								"package": "@xeokit/metamodel"
+							}
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"sourceFileName": "../data/src/DataModelParams.ts",
+							"qualifiedName": "DataModelParams"
+						},
+						"name": "DataModelParams",
+						"package": "@xeokit/data"
+					}
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "loadMetaModel",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "loadMetaModel.ts",
+					"line": 23,
+					"character": 16,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/loadMetaModel.ts#L23"
+				}
+			],
+			"signatures": [
+				{
+					"id": 2,
+					"name": "loadMetaModel",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Loads a legacy xeokit meta model into a "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "@xeokit/data!DataModel | DataModel"
+							},
+							{
+								"kind": "text",
+								"text": ".\n\nExpects "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "@xeokit/data!DataModel.built | DataModel.built"
 							},
 							{
 								"kind": "text",
@@ -120,7 +1133,7 @@
 							{
 								"kind": "inline-tag",
 								"tag": "@link",
-								"text": "@xeokit/scene!DataModel.destroyed | DataModel.destroyed"
+								"text": "@xeokit/data!DataModel.destroyed | DataModel.destroyed"
 							},
 							{
 								"kind": "text",
@@ -137,7 +1150,7 @@
 							{
 								"kind": "inline-tag",
 								"tag": "@link",
-								"text": "\"@xeokit/xkt\" | @xeokit/xkt"
+								"text": "\"@xeokit/metamodel\" | @xeokit/model"
 							},
 							{
 								"kind": "text",
@@ -176,10 +1189,10 @@
 					},
 					"sources": [
 						{
-							"fileName": "loadMetamodel.ts",
+							"fileName": "loadMetaModel.ts",
 							"line": 23,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/metamodel/src/loadMetamodel.ts#L23"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/loadMetaModel.ts#L23"
 						}
 					],
 					"parameters": [
@@ -222,10 +1235,10 @@
 											},
 											"sources": [
 												{
-													"fileName": "loadMetamodel.ts",
+													"fileName": "loadMetaModel.ts",
 													"line": 25,
 													"character": 4,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/metamodel/src/loadMetamodel.ts#L25"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/loadMetaModel.ts#L25"
 												}
 											],
 											"type": {
@@ -254,15 +1267,17 @@
 											},
 											"sources": [
 												{
-													"fileName": "loadMetamodel.ts",
+													"fileName": "loadMetaModel.ts",
 													"line": 24,
 													"character": 4,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/metamodel/src/loadMetamodel.ts#L24"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/loadMetaModel.ts#L24"
 												}
 											],
 											"type": {
-												"type": "intrinsic",
-												"name": "any"
+												"type": "reference",
+												"target": 10,
+												"name": "MetaModelParams",
+												"package": "@xeokit/metamodel"
 											}
 										}
 									],
@@ -277,10 +1292,10 @@
 									],
 									"sources": [
 										{
-											"fileName": "loadMetamodel.ts",
+											"fileName": "loadMetaModel.ts",
 											"line": 23,
 											"character": 38,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/metamodel/src/loadMetamodel.ts#L23"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/metamodel/src/loadMetaModel.ts#L23"
 										}
 									]
 								}
@@ -308,8 +1323,18 @@
 	],
 	"groups": [
 		{
+			"title": "Interfaces",
+			"children": [
+				10,
+				18,
+				32,
+				26
+			]
+		},
+		{
 			"title": "Functions",
 			"children": [
+				7,
 				1
 			]
 		}
@@ -328,28 +1353,152 @@
 			"qualifiedName": ""
 		},
 		"1": {
-			"sourceFileName": "src/loadMetamodel.ts",
-			"qualifiedName": "loadMetamodel"
+			"sourceFileName": "src/loadMetaModel.ts",
+			"qualifiedName": "loadMetaModel"
 		},
 		"2": {
-			"sourceFileName": "src/loadMetamodel.ts",
-			"qualifiedName": "loadMetamodel"
+			"sourceFileName": "src/loadMetaModel.ts",
+			"qualifiedName": "loadMetaModel"
 		},
 		"3": {
-			"sourceFileName": "src/loadMetamodel.ts",
+			"sourceFileName": "src/loadMetaModel.ts",
 			"qualifiedName": "params"
 		},
 		"4": {
-			"sourceFileName": "src/loadMetamodel.ts",
+			"sourceFileName": "src/loadMetaModel.ts",
 			"qualifiedName": "__type"
 		},
 		"5": {
-			"sourceFileName": "src/loadMetamodel.ts",
+			"sourceFileName": "src/loadMetaModel.ts",
 			"qualifiedName": "__type.fileData"
 		},
 		"6": {
-			"sourceFileName": "src/loadMetamodel.ts",
+			"sourceFileName": "src/loadMetaModel.ts",
 			"qualifiedName": "__type.dataModel"
+		},
+		"7": {
+			"sourceFileName": "src/convertMetaModel.ts",
+			"qualifiedName": "convertMetaModel"
+		},
+		"8": {
+			"sourceFileName": "src/convertMetaModel.ts",
+			"qualifiedName": "convertMetaModel"
+		},
+		"9": {
+			"sourceFileName": "src/convertMetaModel.ts",
+			"qualifiedName": "metaModelParams"
+		},
+		"10": {
+			"sourceFileName": "src/MetaModelParams.ts",
+			"qualifiedName": "MetaModelParams"
+		},
+		"11": {
+			"sourceFileName": "src/MetaModelParams.ts",
+			"qualifiedName": "MetaModelParams.projectId"
+		},
+		"12": {
+			"sourceFileName": "src/MetaModelParams.ts",
+			"qualifiedName": "MetaModelParams.author"
+		},
+		"13": {
+			"sourceFileName": "src/MetaModelParams.ts",
+			"qualifiedName": "MetaModelParams.createdAt"
+		},
+		"14": {
+			"sourceFileName": "src/MetaModelParams.ts",
+			"qualifiedName": "MetaModelParams.schema"
+		},
+		"15": {
+			"sourceFileName": "src/MetaModelParams.ts",
+			"qualifiedName": "MetaModelParams.creatingApplication"
+		},
+		"16": {
+			"sourceFileName": "src/MetaModelParams.ts",
+			"qualifiedName": "MetaModelParams.metaObjects"
+		},
+		"17": {
+			"sourceFileName": "src/MetaModelParams.ts",
+			"qualifiedName": "MetaModelParams.propertySets"
+		},
+		"18": {
+			"sourceFileName": "src/MetaObjectParams.ts",
+			"qualifiedName": "MetaObjectParams"
+		},
+		"19": {
+			"sourceFileName": "src/MetaObjectParams.ts",
+			"qualifiedName": "MetaObjectParams.propertySetIds"
+		},
+		"20": {
+			"sourceFileName": "src/MetaObjectParams.ts",
+			"qualifiedName": "MetaObjectParams.propertySets"
+		},
+		"21": {
+			"sourceFileName": "src/MetaObjectParams.ts",
+			"qualifiedName": "MetaObjectParams.originalSystemId"
+		},
+		"22": {
+			"sourceFileName": "src/MetaObjectParams.ts",
+			"qualifiedName": "MetaObjectParams.id"
+		},
+		"23": {
+			"sourceFileName": "src/MetaObjectParams.ts",
+			"qualifiedName": "MetaObjectParams.name"
+		},
+		"24": {
+			"sourceFileName": "src/MetaObjectParams.ts",
+			"qualifiedName": "MetaObjectParams.type"
+		},
+		"25": {
+			"sourceFileName": "src/MetaObjectParams.ts",
+			"qualifiedName": "MetaObjectParams.parent"
+		},
+		"26": {
+			"sourceFileName": "src/MetaPropertySetParams.ts",
+			"qualifiedName": "MetaPropertySetParams"
+		},
+		"27": {
+			"sourceFileName": "src/MetaPropertySetParams.ts",
+			"qualifiedName": "MetaPropertySetParams.id"
+		},
+		"28": {
+			"sourceFileName": "src/MetaPropertySetParams.ts",
+			"qualifiedName": "MetaPropertySetParams.originalSystemId"
+		},
+		"29": {
+			"sourceFileName": "src/MetaPropertySetParams.ts",
+			"qualifiedName": "MetaPropertySetParams.name"
+		},
+		"30": {
+			"sourceFileName": "src/MetaPropertySetParams.ts",
+			"qualifiedName": "MetaPropertySetParams.type"
+		},
+		"31": {
+			"sourceFileName": "src/MetaPropertySetParams.ts",
+			"qualifiedName": "MetaPropertySetParams.properties"
+		},
+		"32": {
+			"sourceFileName": "src/MetaPropertyParams.ts",
+			"qualifiedName": "MetaPropertyParams"
+		},
+		"33": {
+			"sourceFileName": "src/MetaPropertyParams.ts",
+			"qualifiedName": "MetaPropertyParams.name"
+		},
+		"34": {
+			"sourceFileName": "src/MetaPropertyParams.ts",
+			"qualifiedName": "MetaPropertyParams.type"
+		},
+		"35": {
+			"sourceFileName": "src/MetaPropertyParams.ts",
+			"qualifiedName": "MetaPropertyParams.value"
+		},
+		"36": {
+			"sourceFileName": "src/MetaPropertyParams.ts",
+			"qualifiedName": "MetaPropertyParams.valueType"
+		},
+		"37": {
+			"sourceFileName": "src/MetaPropertyParams.ts",
+			"qualifiedName": "MetaPropertyParams.description"
 		}
 	}
 }

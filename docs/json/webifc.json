@@ -146,7 +146,7 @@
 			},
 			{
 				"kind": "code",
-				"text": "````javascript\nimport {SDKError} from \"@xeokit/core\";\nimport {Scene} from \"@xeokit/scene\";\nimport {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {Viewer} from \"@xeokit/viewer\";\nimport {CameraControl} from \"@xeokit/cameracontrol\";\nimport {loadWebIFC} from \"@xeokit/webifc\";\nimport * as WebIFC from \"https://cdn.jsdelivr.net/npm/web-ifc@0.0.51/web-ifc-api.js\";\n\nconst scene = new Scene();\nconst data = new Data();\n\nconst renderer = new WebGLRenderer({});\n\nconst viewer = new Viewer({\n    id: \"myViewer\",\n    scene,\n    renderer\n});\n\nconst view = viewer.createView({\n    id: \"myView\",\n    elementId: \"myCanvas\" // << Ensure that this HTMLElement exists in the page\n});\n\nif (view instanceof SDKError) {\n    console.error(`Error creating View: ${view.message}`);\n\n} else {\n\n    view.camera.eye = [1841982.93, 10.03, -5173286.74];\n    view.camera.look = [1842009.49, 9.68, -5173295.85];\n    view.camera.up = [0.0, 1.0, 0.0];\n\n    new CameraControl(view, {});\n\n    const ifcAPI = new WebIFC.IfcAPI();\n\n    ifcAPI.SetWasmPath(\"https://cdn.jsdelivr.net/npm/web-ifc@0.0.51/\");\n\n    ifcAPI.Init().then(() => {\n\n         const sceneModel = scene.createModel({\n             id: \"myModel\"\n         });\n\n         const dataModel = data.createModel({\n             id: \"myModel\"\n         });\n\n         if (sceneModel instanceof SDKError) {\n             console.error(`Error creating SceneModel: ${sceneModel.message}`);\n\n         } else if (dataModel instanceof SDKError) {\n             console.error(`Error creating DataModel: ${dataModel.message}`);\n\n         } else {\n\n             fetch(\"model.ifc\").then(response => {\n\n                 response.arrayBuffer().then(fileData => {\n\n                     loadWebIFC({\n                         fileData,\n                         sceneModel,\n                         dataModel\n                     }).then(() => {\n\n                         sceneModel.build();\n                         dataModel.build();\n\n                     }).catch(sdkError => {\n                         sceneModel.destroy();\n                         dataModel.destroy();\n                         console.error(`Error loading IFC file: ${sdkError.message}`);\n                     });\n\n                 }).catch(message => {\n                     console.error(`Error creating ArrayBuffer: ${message}`);\n                 });\n\n             }).catch(message => {\n                 console.error(`Error fetching model: ${message}`);\n             });\n         }\n     }).catch(message => {\n         console.error(`Error initializing WebIFC.IfcAPI: ${message}`);\n     });\n}\n````"
+				"text": "````javascript\nimport {SDKError} from \"@xeokit/core\";\nimport {Scene} from \"@xeokit/scene\";\nimport {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {Viewer} from \"@xeokit/viewer\";\nimport {CameraControl} from \"@xeokit/cameracontrol\";\nimport {loadWebIFC} from \"@xeokit/webifc\";\nimport * as WebIFC from \"https://cdn.jsdelivr.net/npm/web-ifc@0.0.51/web-ifc-api.js\";\n\nconst scene = new Scene();\nconst data = new Data();\n\nconst renderer = new WebGLRenderer({});\n\nconst viewer = new Viewer({\n    id: \"myViewer\",\n    scene,\n    renderer\n});\n\nconst view = viewer.createView({\n    id: \"myView\",\n    elementId: \"myCanvas\" // << Ensure that this HTMLElement exists in the page\n});\n\nview.camera.eye = [1841982.93, 10.03, -5173286.74];\nview.camera.look = [1842009.49, 9.68, -5173295.85];\nview.camera.up = [0.0, 1.0, 0.0];\n\nnew CameraControl(view, {});\n\nconst ifcAPI = new WebIFC.IfcAPI();\n\nifcAPI.SetWasmPath(\"https://cdn.jsdelivr.net/npm/web-ifc@0.0.51/\");\n\nifcAPI.Init().then(() => {\n\n    const sceneModel = scene.createModel({\n        id: \"myModel\"\n    });\n\n    const dataModel = data.createModel({\n        id: \"myModel\"\n    });\n\n    fetch(\"model.ifc\").then(response => {\n\n        response.arrayBuffer().then(fileData => {\n\n            loadWebIFC({\n                ifcAPI,\n                fileData,\n                sceneModel,\n                dataModel\n            }).then(() => {\n\n                sceneModel.build();\n                dataModel.build();\n\n            }).catch(err => {\n\n                sceneModel.destroy();\n                dataModel.destroy();\n\n                console.error(`Error loading IFC file with WebIFC: ${err}`);\n            });\n\n        }).catch(err => {\n             console.error(`Error creating ArrayBuffer from fetch response: ${err}`);\n        });\n\n     }).catch(err => {\n         console.error(`Error fetching IFC file: ${err}`);\n     });\n\n }).catch(err => {\n     console.error(`Error initializing WebIFC.IfcAPI: ${err}`);\n });\n````"
 			}
 		]
 	},
@@ -160,9 +160,9 @@
 			"sources": [
 				{
 					"fileName": "loadWebIFC.ts",
-					"line": 55,
+					"line": 52,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/webifc/src/loadWebIFC.ts#L55"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/webifc/src/loadWebIFC.ts#L52"
 				}
 			],
 			"signatures": [
@@ -176,7 +176,7 @@
 						"summary": [
 							{
 								"kind": "text",
-								"text": "Loads IFC into a "
+								"text": "Uses WebIFc to load an IFC file into a "
 							},
 							{
 								"kind": "inline-tag",
@@ -194,7 +194,7 @@
 							},
 							{
 								"kind": "text",
-								"text": ".\n\n* Expects "
+								"text": ".\n\n* Experimental  - expect some glitches.\n* Expects "
 							},
 							{
 								"kind": "inline-tag",
@@ -274,9 +274,9 @@
 					"sources": [
 						{
 							"fileName": "loadWebIFC.ts",
-							"line": 55,
+							"line": 52,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/webifc/src/loadWebIFC.ts#L55"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/webifc/src/loadWebIFC.ts#L52"
 						}
 					],
 					"parameters": [
@@ -322,9 +322,9 @@
 											"sources": [
 												{
 													"fileName": "loadWebIFC.ts",
-													"line": 59,
+													"line": 56,
 													"character": 4,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/webifc/src/loadWebIFC.ts#L59"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/webifc/src/loadWebIFC.ts#L56"
 												}
 											],
 											"type": {
@@ -354,19 +354,14 @@
 											"sources": [
 												{
 													"fileName": "loadWebIFC.ts",
-													"line": 56,
+													"line": 53,
 													"character": 4,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/webifc/src/loadWebIFC.ts#L56"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/webifc/src/loadWebIFC.ts#L53"
 												}
 											],
 											"type": {
-												"type": "reference",
-												"target": {
-													"sourceFileName": "../../node_modules/.pnpm/typescript@4.9.4/node_modules/typescript/lib/lib.es5.d.ts",
-													"qualifiedName": "ArrayBuffer"
-												},
-												"name": "ArrayBuffer",
-												"package": "typescript"
+												"type": "intrinsic",
+												"name": "any"
 											}
 										},
 										{
@@ -386,9 +381,9 @@
 											"sources": [
 												{
 													"fileName": "loadWebIFC.ts",
-													"line": 57,
+													"line": 54,
 													"character": 4,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/webifc/src/loadWebIFC.ts#L57"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/webifc/src/loadWebIFC.ts#L54"
 												}
 											],
 											"type": {
@@ -406,7 +401,9 @@
 											"name": "sceneModel",
 											"variant": "declaration",
 											"kind": 1024,
-											"flags": {},
+											"flags": {
+												"isOptional": true
+											},
 											"comment": {
 												"summary": [
 													{
@@ -418,9 +415,9 @@
 											"sources": [
 												{
 													"fileName": "loadWebIFC.ts",
-													"line": 58,
+													"line": 55,
 													"character": 4,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/webifc/src/loadWebIFC.ts#L58"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/webifc/src/loadWebIFC.ts#L55"
 												}
 											],
 											"type": {
@@ -448,9 +445,9 @@
 									"sources": [
 										{
 											"fileName": "loadWebIFC.ts",
-											"line": 55,
+											"line": 52,
 											"character": 35,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/webifc/src/loadWebIFC.ts#L55"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/webifc/src/loadWebIFC.ts#L52"
 										}
 									]
 								}

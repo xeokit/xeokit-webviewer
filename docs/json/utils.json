@@ -18,14 +18,14 @@
 	},
 	"children": [
 		{
-			"id": 273,
+			"id": 276,
 			"name": "FileLoader",
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
 			"children": [
 				{
-					"id": 274,
+					"id": 277,
 					"name": "constructor",
 					"variant": "declaration",
 					"kind": 512,
@@ -35,12 +35,12 @@
 							"fileName": "FileLoader.ts",
 							"line": 12,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/FileLoader.ts#L12"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/FileLoader.ts#L12"
 						}
 					],
 					"signatures": [
 						{
-							"id": 275,
+							"id": 278,
 							"name": "new FileLoader",
 							"variant": "signature",
 							"kind": 16384,
@@ -50,12 +50,12 @@
 									"fileName": "FileLoader.ts",
 									"line": 12,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/FileLoader.ts#L12"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/FileLoader.ts#L12"
 								}
 							],
 							"parameters": [
 								{
-									"id": 276,
+									"id": 279,
 									"name": "manager",
 									"variant": "param",
 									"kind": 32768,
@@ -64,7 +64,7 @@
 									},
 									"type": {
 										"type": "reference",
-										"target": 181,
+										"target": 184,
 										"name": "LoadingManager",
 										"package": "@xeokit/utils"
 									}
@@ -72,25 +72,25 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 273,
+								"target": 276,
 								"name": "FileLoader",
 								"package": "@xeokit/utils"
 							},
 							"overwrites": {
 								"type": "reference",
-								"target": 143,
+								"target": 146,
 								"name": "Loader.constructor"
 							}
 						}
 					],
 					"overwrites": {
 						"type": "reference",
-						"target": 142,
+						"target": 145,
 						"name": "Loader.constructor"
 					}
 				},
 				{
-					"id": 292,
+					"id": 295,
 					"name": "crossOrigin",
 					"variant": "declaration",
 					"kind": 1024,
@@ -100,130 +100,7 @@
 							"fileName": "Loader.ts",
 							"line": 5,
 							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L5"
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 146,
-						"name": "Loader.crossOrigin"
-					}
-				},
-				{
-					"id": 291,
-					"name": "manager",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "Loader.ts",
-							"line": 4,
-							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L4"
-						}
-					],
-					"type": {
-						"type": "reference",
-						"target": 181,
-						"name": "LoadingManager",
-						"package": "@xeokit/utils"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 145,
-						"name": "Loader.manager"
-					}
-				},
-				{
-					"id": 277,
-					"name": "mimeType",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "FileLoader.ts",
-							"line": 9,
-							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/FileLoader.ts#L9"
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					}
-				},
-				{
-					"id": 294,
-					"name": "path",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "Loader.ts",
-							"line": 7,
-							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L7"
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "string"
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 148,
-						"name": "Loader.path"
-					}
-				},
-				{
-					"id": 296,
-					"name": "requestHeader",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "Loader.ts",
-							"line": 9,
-							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L9"
-						}
-					],
-					"type": {
-						"type": "reflection",
-						"declaration": {
-							"id": 297,
-							"name": "__type",
-							"variant": "declaration",
-							"kind": 65536,
-							"flags": {}
-						}
-					},
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 150,
-						"name": "Loader.requestHeader"
-					}
-				},
-				{
-					"id": 295,
-					"name": "resourcePath",
-					"variant": "declaration",
-					"kind": 1024,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "Loader.ts",
-							"line": 8,
-							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L8"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L5"
 						}
 					],
 					"type": {
@@ -233,11 +110,134 @@
 					"inheritedFrom": {
 						"type": "reference",
 						"target": 149,
+						"name": "Loader.crossOrigin"
+					}
+				},
+				{
+					"id": 294,
+					"name": "manager",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Loader.ts",
+							"line": 4,
+							"character": 5,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L4"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": 184,
+						"name": "LoadingManager",
+						"package": "@xeokit/utils"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 148,
+						"name": "Loader.manager"
+					}
+				},
+				{
+					"id": 280,
+					"name": "mimeType",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "FileLoader.ts",
+							"line": 9,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/FileLoader.ts#L9"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					}
+				},
+				{
+					"id": 297,
+					"name": "path",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Loader.ts",
+							"line": 7,
+							"character": 5,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L7"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 151,
+						"name": "Loader.path"
+					}
+				},
+				{
+					"id": 299,
+					"name": "requestHeader",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Loader.ts",
+							"line": 9,
+							"character": 5,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L9"
+						}
+					],
+					"type": {
+						"type": "reflection",
+						"declaration": {
+							"id": 300,
+							"name": "__type",
+							"variant": "declaration",
+							"kind": 65536,
+							"flags": {}
+						}
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 153,
+						"name": "Loader.requestHeader"
+					}
+				},
+				{
+					"id": 298,
+					"name": "resourcePath",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Loader.ts",
+							"line": 8,
+							"character": 5,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L8"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 152,
 						"name": "Loader.resourcePath"
 					}
 				},
 				{
-					"id": 278,
+					"id": 281,
 					"name": "responseType",
 					"variant": "declaration",
 					"kind": 1024,
@@ -247,7 +247,7 @@
 							"fileName": "FileLoader.ts",
 							"line": 10,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/FileLoader.ts#L10"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/FileLoader.ts#L10"
 						}
 					],
 					"type": {
@@ -256,7 +256,7 @@
 					}
 				},
 				{
-					"id": 293,
+					"id": 296,
 					"name": "withCredentials",
 					"variant": "declaration",
 					"kind": 1024,
@@ -266,7 +266,7 @@
 							"fileName": "Loader.ts",
 							"line": 6,
 							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L6"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L6"
 						}
 					],
 					"type": {
@@ -275,12 +275,12 @@
 					},
 					"inheritedFrom": {
 						"type": "reference",
-						"target": 147,
+						"target": 150,
 						"name": "Loader.withCredentials"
 					}
 				},
 				{
-					"id": 279,
+					"id": 282,
 					"name": "load",
 					"variant": "declaration",
 					"kind": 2048,
@@ -290,12 +290,12 @@
 							"fileName": "FileLoader.ts",
 							"line": 16,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/FileLoader.ts#L16"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/FileLoader.ts#L16"
 						}
 					],
 					"signatures": [
 						{
-							"id": 280,
+							"id": 283,
 							"name": "load",
 							"variant": "signature",
 							"kind": 4096,
@@ -305,12 +305,12 @@
 									"fileName": "FileLoader.ts",
 									"line": 16,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/FileLoader.ts#L16"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/FileLoader.ts#L16"
 								}
 							],
 							"parameters": [
 								{
-									"id": 281,
+									"id": 284,
 									"name": "url",
 									"variant": "param",
 									"kind": 32768,
@@ -321,7 +321,7 @@
 									}
 								},
 								{
-									"id": 282,
+									"id": 285,
 									"name": "onLoad",
 									"variant": "param",
 									"kind": 32768,
@@ -337,7 +337,7 @@
 									}
 								},
 								{
-									"id": 283,
+									"id": 286,
 									"name": "onProgress",
 									"variant": "param",
 									"kind": 32768,
@@ -353,7 +353,7 @@
 									}
 								},
 								{
-									"id": 284,
+									"id": 287,
 									"name": "onError",
 									"variant": "param",
 									"kind": 32768,
@@ -375,19 +375,19 @@
 							},
 							"overwrites": {
 								"type": "reference",
-								"target": 153,
+								"target": 156,
 								"name": "Loader.load"
 							}
 						}
 					],
 					"overwrites": {
 						"type": "reference",
-						"target": 152,
+						"target": 155,
 						"name": "Loader.load"
 					}
 				},
 				{
-					"id": 298,
+					"id": 301,
 					"name": "loadAsync",
 					"variant": "declaration",
 					"kind": 2048,
@@ -397,12 +397,12 @@
 							"fileName": "Loader.ts",
 							"line": 25,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L25"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L25"
 						}
 					],
 					"signatures": [
 						{
-							"id": 299,
+							"id": 302,
 							"name": "loadAsync",
 							"variant": "signature",
 							"kind": 4096,
@@ -412,12 +412,12 @@
 									"fileName": "Loader.ts",
 									"line": 25,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L25"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L25"
 								}
 							],
 							"parameters": [
 								{
-									"id": 300,
+									"id": 303,
 									"name": "url",
 									"variant": "param",
 									"kind": 32768,
@@ -428,7 +428,7 @@
 									}
 								},
 								{
-									"id": 301,
+									"id": 304,
 									"name": "onProgress",
 									"variant": "param",
 									"kind": 32768,
@@ -461,19 +461,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"target": 159,
+								"target": 162,
 								"name": "Loader.loadAsync"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"target": 158,
+						"target": 161,
 						"name": "Loader.loadAsync"
 					}
 				},
 				{
-					"id": 302,
+					"id": 305,
 					"name": "parse",
 					"variant": "declaration",
 					"kind": 2048,
@@ -483,12 +483,12 @@
 							"fileName": "Loader.ts",
 							"line": 33,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L33"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L33"
 						}
 					],
 					"signatures": [
 						{
-							"id": 303,
+							"id": 306,
 							"name": "parse",
 							"variant": "signature",
 							"kind": 4096,
@@ -498,7 +498,7 @@
 									"fileName": "Loader.ts",
 									"line": 33,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L33"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L33"
 								}
 							],
 							"type": {
@@ -507,19 +507,19 @@
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"target": 163,
+								"target": 166,
 								"name": "Loader.parse"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"target": 162,
+						"target": 165,
 						"name": "Loader.parse"
 					}
 				},
 				{
-					"id": 304,
+					"id": 307,
 					"name": "setCrossOrigin",
 					"variant": "declaration",
 					"kind": 2048,
@@ -529,12 +529,12 @@
 							"fileName": "Loader.ts",
 							"line": 36,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L36"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L36"
 						}
 					],
 					"signatures": [
 						{
-							"id": 305,
+							"id": 308,
 							"name": "setCrossOrigin",
 							"variant": "signature",
 							"kind": 4096,
@@ -544,12 +544,12 @@
 									"fileName": "Loader.ts",
 									"line": 36,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L36"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L36"
 								}
 							],
 							"parameters": [
 								{
-									"id": 306,
+									"id": 309,
 									"name": "crossOrigin",
 									"variant": "param",
 									"kind": 32768,
@@ -562,25 +562,25 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 273,
+								"target": 276,
 								"name": "FileLoader",
 								"package": "@xeokit/utils"
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"target": 165,
+								"target": 168,
 								"name": "Loader.setCrossOrigin"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"target": 164,
+						"target": 167,
 						"name": "Loader.setCrossOrigin"
 					}
 				},
 				{
-					"id": 288,
+					"id": 291,
 					"name": "setMimeType",
 					"variant": "declaration",
 					"kind": 2048,
@@ -590,12 +590,12 @@
 							"fileName": "FileLoader.ts",
 							"line": 161,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/FileLoader.ts#L161"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/FileLoader.ts#L161"
 						}
 					],
 					"signatures": [
 						{
-							"id": 289,
+							"id": 292,
 							"name": "setMimeType",
 							"variant": "signature",
 							"kind": 4096,
@@ -605,7 +605,247 @@
 									"fileName": "FileLoader.ts",
 									"line": 161,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/FileLoader.ts#L161"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/FileLoader.ts#L161"
+								}
+							],
+							"parameters": [
+								{
+									"id": 293,
+									"name": "value",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 276,
+								"name": "FileLoader",
+								"package": "@xeokit/utils"
+							}
+						}
+					]
+				},
+				{
+					"id": 313,
+					"name": "setPath",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Loader.ts",
+							"line": 46,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L46"
+						}
+					],
+					"signatures": [
+						{
+							"id": 314,
+							"name": "setPath",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Loader.ts",
+									"line": 46,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L46"
+								}
+							],
+							"parameters": [
+								{
+									"id": 315,
+									"name": "path",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 276,
+								"name": "FileLoader",
+								"package": "@xeokit/utils"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 174,
+								"name": "Loader.setPath"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 173,
+						"name": "Loader.setPath"
+					}
+				},
+				{
+					"id": 319,
+					"name": "setRequestHeader",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Loader.ts",
+							"line": 56,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L56"
+						}
+					],
+					"signatures": [
+						{
+							"id": 320,
+							"name": "setRequestHeader",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Loader.ts",
+									"line": 56,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L56"
+								}
+							],
+							"parameters": [
+								{
+									"id": 321,
+									"name": "requestHeader",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 322,
+											"name": "__type",
+											"variant": "declaration",
+											"kind": 65536,
+											"flags": {}
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 276,
+								"name": "FileLoader",
+								"package": "@xeokit/utils"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 180,
+								"name": "Loader.setRequestHeader"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 179,
+						"name": "Loader.setRequestHeader"
+					}
+				},
+				{
+					"id": 316,
+					"name": "setResourcePath",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Loader.ts",
+							"line": 51,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L51"
+						}
+					],
+					"signatures": [
+						{
+							"id": 317,
+							"name": "setResourcePath",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Loader.ts",
+									"line": 51,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L51"
+								}
+							],
+							"parameters": [
+								{
+									"id": 318,
+									"name": "resourcePath",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 276,
+								"name": "FileLoader",
+								"package": "@xeokit/utils"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": 177,
+								"name": "Loader.setResourcePath"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"target": 176,
+						"name": "Loader.setResourcePath"
+					}
+				},
+				{
+					"id": 288,
+					"name": "setResponseType",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "FileLoader.ts",
+							"line": 156,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/FileLoader.ts#L156"
+						}
+					],
+					"signatures": [
+						{
+							"id": 289,
+							"name": "setResponseType",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "FileLoader.ts",
+									"line": 156,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/FileLoader.ts#L156"
 								}
 							],
 							"parameters": [
@@ -623,7 +863,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 273,
+								"target": 276,
 								"name": "FileLoader",
 								"package": "@xeokit/utils"
 							}
@@ -632,246 +872,6 @@
 				},
 				{
 					"id": 310,
-					"name": "setPath",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "Loader.ts",
-							"line": 46,
-							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L46"
-						}
-					],
-					"signatures": [
-						{
-							"id": 311,
-							"name": "setPath",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "Loader.ts",
-									"line": 46,
-									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L46"
-								}
-							],
-							"parameters": [
-								{
-									"id": 312,
-									"name": "path",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": 273,
-								"name": "FileLoader",
-								"package": "@xeokit/utils"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"target": 171,
-								"name": "Loader.setPath"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 170,
-						"name": "Loader.setPath"
-					}
-				},
-				{
-					"id": 316,
-					"name": "setRequestHeader",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "Loader.ts",
-							"line": 56,
-							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L56"
-						}
-					],
-					"signatures": [
-						{
-							"id": 317,
-							"name": "setRequestHeader",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "Loader.ts",
-									"line": 56,
-									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L56"
-								}
-							],
-							"parameters": [
-								{
-									"id": 318,
-									"name": "requestHeader",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "reflection",
-										"declaration": {
-											"id": 319,
-											"name": "__type",
-											"variant": "declaration",
-											"kind": 65536,
-											"flags": {}
-										}
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": 273,
-								"name": "FileLoader",
-								"package": "@xeokit/utils"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"target": 177,
-								"name": "Loader.setRequestHeader"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 176,
-						"name": "Loader.setRequestHeader"
-					}
-				},
-				{
-					"id": 313,
-					"name": "setResourcePath",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "Loader.ts",
-							"line": 51,
-							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L51"
-						}
-					],
-					"signatures": [
-						{
-							"id": 314,
-							"name": "setResourcePath",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "Loader.ts",
-									"line": 51,
-									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L51"
-								}
-							],
-							"parameters": [
-								{
-									"id": 315,
-									"name": "resourcePath",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": 273,
-								"name": "FileLoader",
-								"package": "@xeokit/utils"
-							},
-							"inheritedFrom": {
-								"type": "reference",
-								"target": 174,
-								"name": "Loader.setResourcePath"
-							}
-						}
-					],
-					"inheritedFrom": {
-						"type": "reference",
-						"target": 173,
-						"name": "Loader.setResourcePath"
-					}
-				},
-				{
-					"id": 285,
-					"name": "setResponseType",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "FileLoader.ts",
-							"line": 156,
-							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/FileLoader.ts#L156"
-						}
-					],
-					"signatures": [
-						{
-							"id": 286,
-							"name": "setResponseType",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "FileLoader.ts",
-									"line": 156,
-									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/FileLoader.ts#L156"
-								}
-							],
-							"parameters": [
-								{
-									"id": 287,
-									"name": "value",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "string"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": 273,
-								"name": "FileLoader",
-								"package": "@xeokit/utils"
-							}
-						}
-					]
-				},
-				{
-					"id": 307,
 					"name": "setWithCredentials",
 					"variant": "declaration",
 					"kind": 2048,
@@ -881,12 +881,12 @@
 							"fileName": "Loader.ts",
 							"line": 41,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L41"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L41"
 						}
 					],
 					"signatures": [
 						{
-							"id": 308,
+							"id": 311,
 							"name": "setWithCredentials",
 							"variant": "signature",
 							"kind": 4096,
@@ -896,12 +896,12 @@
 									"fileName": "Loader.ts",
 									"line": 41,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L41"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L41"
 								}
 							],
 							"parameters": [
 								{
-									"id": 309,
+									"id": 312,
 									"name": "value",
 									"variant": "param",
 									"kind": 32768,
@@ -914,20 +914,20 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 273,
+								"target": 276,
 								"name": "FileLoader",
 								"package": "@xeokit/utils"
 							},
 							"inheritedFrom": {
 								"type": "reference",
-								"target": 168,
+								"target": 171,
 								"name": "Loader.setWithCredentials"
 							}
 						}
 					],
 					"inheritedFrom": {
 						"type": "reference",
-						"target": 167,
+						"target": 170,
 						"name": "Loader.setWithCredentials"
 					}
 				}
@@ -936,35 +936,35 @@
 				{
 					"title": "Constructors",
 					"children": [
-						274
+						277
 					]
 				},
 				{
 					"title": "Properties",
 					"children": [
-						292,
-						291,
-						277,
-						294,
-						296,
 						295,
-						278,
-						293
+						294,
+						280,
+						297,
+						299,
+						298,
+						281,
+						296
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						279,
-						298,
-						302,
-						304,
-						288,
-						310,
-						316,
+						282,
+						301,
+						305,
+						307,
+						291,
 						313,
-						285,
-						307
+						319,
+						316,
+						288,
+						310
 					]
 				}
 			],
@@ -973,27 +973,27 @@
 					"fileName": "FileLoader.ts",
 					"line": 7,
 					"character": 6,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/FileLoader.ts#L7"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/FileLoader.ts#L7"
 				}
 			],
 			"extendedTypes": [
 				{
 					"type": "reference",
-					"target": 141,
+					"target": 144,
 					"name": "Loader",
 					"package": "@xeokit/utils"
 				}
 			]
 		},
 		{
-			"id": 141,
+			"id": 144,
 			"name": "Loader",
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
 			"children": [
 				{
-					"id": 142,
+					"id": 145,
 					"name": "constructor",
 					"variant": "declaration",
 					"kind": 512,
@@ -1003,12 +1003,12 @@
 							"fileName": "Loader.ts",
 							"line": 11,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L11"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L11"
 						}
 					],
 					"signatures": [
 						{
-							"id": 143,
+							"id": 146,
 							"name": "new Loader",
 							"variant": "signature",
 							"kind": 16384,
@@ -1018,19 +1018,19 @@
 									"fileName": "Loader.ts",
 									"line": 11,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L11"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L11"
 								}
 							],
 							"parameters": [
 								{
-									"id": 144,
+									"id": 147,
 									"name": "manager",
 									"variant": "param",
 									"kind": 32768,
 									"flags": {},
 									"type": {
 										"type": "reference",
-										"target": 181,
+										"target": 184,
 										"name": "LoadingManager",
 										"package": "@xeokit/utils"
 									}
@@ -1038,7 +1038,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 141,
+								"target": 144,
 								"name": "Loader",
 								"package": "@xeokit/utils"
 							}
@@ -1046,7 +1046,7 @@
 					]
 				},
 				{
-					"id": 146,
+					"id": 149,
 					"name": "crossOrigin",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1056,7 +1056,7 @@
 							"fileName": "Loader.ts",
 							"line": 5,
 							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L5"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L5"
 						}
 					],
 					"type": {
@@ -1065,7 +1065,7 @@
 					}
 				},
 				{
-					"id": 145,
+					"id": 148,
 					"name": "manager",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1075,18 +1075,18 @@
 							"fileName": "Loader.ts",
 							"line": 4,
 							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L4"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L4"
 						}
 					],
 					"type": {
 						"type": "reference",
-						"target": 181,
+						"target": 184,
 						"name": "LoadingManager",
 						"package": "@xeokit/utils"
 					}
 				},
 				{
-					"id": 148,
+					"id": 151,
 					"name": "path",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1096,7 +1096,7 @@
 							"fileName": "Loader.ts",
 							"line": 7,
 							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L7"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L7"
 						}
 					],
 					"type": {
@@ -1105,7 +1105,7 @@
 					}
 				},
 				{
-					"id": 150,
+					"id": 153,
 					"name": "requestHeader",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1115,13 +1115,13 @@
 							"fileName": "Loader.ts",
 							"line": 9,
 							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L9"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L9"
 						}
 					],
 					"type": {
 						"type": "reflection",
 						"declaration": {
-							"id": 151,
+							"id": 154,
 							"name": "__type",
 							"variant": "declaration",
 							"kind": 65536,
@@ -1130,7 +1130,7 @@
 					}
 				},
 				{
-					"id": 149,
+					"id": 152,
 					"name": "resourcePath",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1140,7 +1140,7 @@
 							"fileName": "Loader.ts",
 							"line": 8,
 							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L8"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L8"
 						}
 					],
 					"type": {
@@ -1149,7 +1149,7 @@
 					}
 				},
 				{
-					"id": 147,
+					"id": 150,
 					"name": "withCredentials",
 					"variant": "declaration",
 					"kind": 1024,
@@ -1159,7 +1159,7 @@
 							"fileName": "Loader.ts",
 							"line": 6,
 							"character": 5,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L6"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L6"
 						}
 					],
 					"type": {
@@ -1168,7 +1168,7 @@
 					}
 				},
 				{
-					"id": 152,
+					"id": 155,
 					"name": "load",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1178,12 +1178,12 @@
 							"fileName": "Loader.ts",
 							"line": 22,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L22"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L22"
 						}
 					],
 					"signatures": [
 						{
-							"id": 153,
+							"id": 156,
 							"name": "load",
 							"variant": "signature",
 							"kind": 4096,
@@ -1193,12 +1193,12 @@
 									"fileName": "Loader.ts",
 									"line": 22,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L22"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L22"
 								}
 							],
 							"parameters": [
 								{
-									"id": 154,
+									"id": 157,
 									"name": "url",
 									"variant": "param",
 									"kind": 32768,
@@ -1209,7 +1209,7 @@
 									}
 								},
 								{
-									"id": 155,
+									"id": 158,
 									"name": "onLoad",
 									"variant": "param",
 									"kind": 32768,
@@ -1225,7 +1225,7 @@
 									}
 								},
 								{
-									"id": 156,
+									"id": 159,
 									"name": "onProgress",
 									"variant": "param",
 									"kind": 32768,
@@ -1241,7 +1241,7 @@
 									}
 								},
 								{
-									"id": 157,
+									"id": 160,
 									"name": "onError",
 									"variant": "param",
 									"kind": 32768,
@@ -1265,7 +1265,7 @@
 					]
 				},
 				{
-					"id": 158,
+					"id": 161,
 					"name": "loadAsync",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1275,12 +1275,12 @@
 							"fileName": "Loader.ts",
 							"line": 25,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L25"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L25"
 						}
 					],
 					"signatures": [
 						{
-							"id": 159,
+							"id": 162,
 							"name": "loadAsync",
 							"variant": "signature",
 							"kind": 4096,
@@ -1290,12 +1290,12 @@
 									"fileName": "Loader.ts",
 									"line": 25,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L25"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L25"
 								}
 							],
 							"parameters": [
 								{
-									"id": 160,
+									"id": 163,
 									"name": "url",
 									"variant": "param",
 									"kind": 32768,
@@ -1306,7 +1306,7 @@
 									}
 								},
 								{
-									"id": 161,
+									"id": 164,
 									"name": "onProgress",
 									"variant": "param",
 									"kind": 32768,
@@ -1341,7 +1341,7 @@
 					]
 				},
 				{
-					"id": 162,
+					"id": 165,
 					"name": "parse",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1351,12 +1351,12 @@
 							"fileName": "Loader.ts",
 							"line": 33,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L33"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L33"
 						}
 					],
 					"signatures": [
 						{
-							"id": 163,
+							"id": 166,
 							"name": "parse",
 							"variant": "signature",
 							"kind": 4096,
@@ -1366,7 +1366,7 @@
 									"fileName": "Loader.ts",
 									"line": 33,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L33"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L33"
 								}
 							],
 							"type": {
@@ -1377,7 +1377,7 @@
 					]
 				},
 				{
-					"id": 164,
+					"id": 167,
 					"name": "setCrossOrigin",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1387,12 +1387,12 @@
 							"fileName": "Loader.ts",
 							"line": 36,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L36"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L36"
 						}
 					],
 					"signatures": [
 						{
-							"id": 165,
+							"id": 168,
 							"name": "setCrossOrigin",
 							"variant": "signature",
 							"kind": 4096,
@@ -1402,12 +1402,12 @@
 									"fileName": "Loader.ts",
 									"line": 36,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L36"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L36"
 								}
 							],
 							"parameters": [
 								{
-									"id": 166,
+									"id": 169,
 									"name": "crossOrigin",
 									"variant": "param",
 									"kind": 32768,
@@ -1420,7 +1420,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 141,
+								"target": 144,
 								"name": "Loader",
 								"package": "@xeokit/utils"
 							}
@@ -1428,7 +1428,7 @@
 					]
 				},
 				{
-					"id": 170,
+					"id": 173,
 					"name": "setPath",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1438,12 +1438,12 @@
 							"fileName": "Loader.ts",
 							"line": 46,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L46"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L46"
 						}
 					],
 					"signatures": [
 						{
-							"id": 171,
+							"id": 174,
 							"name": "setPath",
 							"variant": "signature",
 							"kind": 4096,
@@ -1453,12 +1453,12 @@
 									"fileName": "Loader.ts",
 									"line": 46,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L46"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L46"
 								}
 							],
 							"parameters": [
 								{
-									"id": 172,
+									"id": 175,
 									"name": "path",
 									"variant": "param",
 									"kind": 32768,
@@ -1471,7 +1471,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 141,
+								"target": 144,
 								"name": "Loader",
 								"package": "@xeokit/utils"
 							}
@@ -1479,7 +1479,7 @@
 					]
 				},
 				{
-					"id": 176,
+					"id": 179,
 					"name": "setRequestHeader",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1489,12 +1489,12 @@
 							"fileName": "Loader.ts",
 							"line": 56,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L56"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L56"
 						}
 					],
 					"signatures": [
 						{
-							"id": 177,
+							"id": 180,
 							"name": "setRequestHeader",
 							"variant": "signature",
 							"kind": 4096,
@@ -1504,12 +1504,12 @@
 									"fileName": "Loader.ts",
 									"line": 56,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L56"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L56"
 								}
 							],
 							"parameters": [
 								{
-									"id": 178,
+									"id": 181,
 									"name": "requestHeader",
 									"variant": "param",
 									"kind": 32768,
@@ -1517,7 +1517,7 @@
 									"type": {
 										"type": "reflection",
 										"declaration": {
-											"id": 179,
+											"id": 182,
 											"name": "__type",
 											"variant": "declaration",
 											"kind": 65536,
@@ -1528,7 +1528,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 141,
+								"target": 144,
 								"name": "Loader",
 								"package": "@xeokit/utils"
 							}
@@ -1536,7 +1536,7 @@
 					]
 				},
 				{
-					"id": 173,
+					"id": 176,
 					"name": "setResourcePath",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1546,12 +1546,12 @@
 							"fileName": "Loader.ts",
 							"line": 51,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L51"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L51"
 						}
 					],
 					"signatures": [
 						{
-							"id": 174,
+							"id": 177,
 							"name": "setResourcePath",
 							"variant": "signature",
 							"kind": 4096,
@@ -1561,12 +1561,12 @@
 									"fileName": "Loader.ts",
 									"line": 51,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L51"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L51"
 								}
 							],
 							"parameters": [
 								{
-									"id": 175,
+									"id": 178,
 									"name": "resourcePath",
 									"variant": "param",
 									"kind": 32768,
@@ -1579,7 +1579,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 141,
+								"target": 144,
 								"name": "Loader",
 								"package": "@xeokit/utils"
 							}
@@ -1587,7 +1587,7 @@
 					]
 				},
 				{
-					"id": 167,
+					"id": 170,
 					"name": "setWithCredentials",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1597,12 +1597,12 @@
 							"fileName": "Loader.ts",
 							"line": 41,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L41"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L41"
 						}
 					],
 					"signatures": [
 						{
-							"id": 168,
+							"id": 171,
 							"name": "setWithCredentials",
 							"variant": "signature",
 							"kind": 4096,
@@ -1612,12 +1612,12 @@
 									"fileName": "Loader.ts",
 									"line": 41,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L41"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L41"
 								}
 							],
 							"parameters": [
 								{
-									"id": 169,
+									"id": 172,
 									"name": "value",
 									"variant": "param",
 									"kind": 32768,
@@ -1630,7 +1630,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 141,
+								"target": 144,
 								"name": "Loader",
 								"package": "@xeokit/utils"
 							}
@@ -1642,31 +1642,31 @@
 				{
 					"title": "Constructors",
 					"children": [
-						142
+						145
 					]
 				},
 				{
 					"title": "Properties",
 					"children": [
-						146,
-						145,
-						148,
-						150,
 						149,
-						147
+						148,
+						151,
+						153,
+						152,
+						150
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						152,
-						158,
-						162,
-						164,
-						170,
-						176,
+						155,
+						161,
+						165,
+						167,
 						173,
-						167
+						179,
+						176,
+						170
 					]
 				}
 			],
@@ -1675,26 +1675,26 @@
 					"fileName": "Loader.ts",
 					"line": 3,
 					"character": 6,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Loader.ts#L3"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Loader.ts#L3"
 				}
 			],
 			"extendedBy": [
 				{
 					"type": "reference",
-					"target": 273,
+					"target": 276,
 					"name": "FileLoader"
 				}
 			]
 		},
 		{
-			"id": 181,
+			"id": 184,
 			"name": "LoadingManager",
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
 			"children": [
 				{
-					"id": 182,
+					"id": 185,
 					"name": "constructor",
 					"variant": "declaration",
 					"kind": 512,
@@ -1704,12 +1704,12 @@
 							"fileName": "LoadingManager.ts",
 							"line": 12,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L12"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L12"
 						}
 					],
 					"signatures": [
 						{
-							"id": 183,
+							"id": 186,
 							"name": "new LoadingManager",
 							"variant": "signature",
 							"kind": 16384,
@@ -1719,12 +1719,12 @@
 									"fileName": "LoadingManager.ts",
 									"line": 12,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L12"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L12"
 								}
 							],
 							"parameters": [
 								{
-									"id": 184,
+									"id": 187,
 									"name": "onLoad",
 									"variant": "param",
 									"kind": 32768,
@@ -1740,7 +1740,7 @@
 									}
 								},
 								{
-									"id": 185,
+									"id": 188,
 									"name": "onProgress",
 									"variant": "param",
 									"kind": 32768,
@@ -1756,7 +1756,7 @@
 									}
 								},
 								{
-									"id": 186,
+									"id": 189,
 									"name": "onError",
 									"variant": "param",
 									"kind": 32768,
@@ -1774,7 +1774,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 181,
+								"target": 184,
 								"name": "LoadingManager",
 								"package": "@xeokit/utils"
 							}
@@ -1782,7 +1782,7 @@
 					]
 				},
 				{
-					"id": 211,
+					"id": 214,
 					"name": "addHandler",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1792,12 +1792,12 @@
 							"fileName": "LoadingManager.ts",
 							"line": 68,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L68"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L68"
 						}
 					],
 					"signatures": [
 						{
-							"id": 212,
+							"id": 215,
 							"name": "addHandler",
 							"variant": "signature",
 							"kind": 4096,
@@ -1807,12 +1807,12 @@
 									"fileName": "LoadingManager.ts",
 									"line": 68,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L68"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L68"
 								}
 							],
 							"parameters": [
 								{
-									"id": 213,
+									"id": 216,
 									"name": "regex",
 									"variant": "param",
 									"kind": 32768,
@@ -1823,7 +1823,7 @@
 									}
 								},
 								{
-									"id": 214,
+									"id": 217,
 									"name": "loader",
 									"variant": "param",
 									"kind": 32768,
@@ -1836,7 +1836,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 181,
+								"target": 184,
 								"name": "LoadingManager",
 								"package": "@xeokit/utils"
 							}
@@ -1844,7 +1844,7 @@
 					]
 				},
 				{
-					"id": 218,
+					"id": 221,
 					"name": "getHandler",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1854,12 +1854,12 @@
 							"fileName": "LoadingManager.ts",
 							"line": 81,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L81"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L81"
 						}
 					],
 					"signatures": [
 						{
-							"id": 219,
+							"id": 222,
 							"name": "getHandler",
 							"variant": "signature",
 							"kind": 4096,
@@ -1869,12 +1869,12 @@
 									"fileName": "LoadingManager.ts",
 									"line": 81,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L81"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L81"
 								}
 							],
 							"parameters": [
 								{
-									"id": 220,
+									"id": 223,
 									"name": "file",
 									"variant": "param",
 									"kind": 32768,
@@ -1893,7 +1893,7 @@
 					]
 				},
 				{
-					"id": 199,
+					"id": 202,
 					"name": "itemEnd",
 					"variant": "declaration",
 					"kind": 2048,
@@ -1903,12 +1903,12 @@
 							"fileName": "LoadingManager.ts",
 							"line": 36,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L36"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L36"
 						}
 					],
 					"signatures": [
 						{
-							"id": 200,
+							"id": 203,
 							"name": "itemEnd",
 							"variant": "signature",
 							"kind": 4096,
@@ -1918,56 +1918,7 @@
 									"fileName": "LoadingManager.ts",
 									"line": 36,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L36"
-								}
-							],
-							"parameters": [
-								{
-									"id": 201,
-									"name": "url",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "void"
-							}
-						}
-					]
-				},
-				{
-					"id": 202,
-					"name": "itemError",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "LoadingManager.ts",
-							"line": 49,
-							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L49"
-						}
-					],
-					"signatures": [
-						{
-							"id": 203,
-							"name": "itemError",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "LoadingManager.ts",
-									"line": 49,
-									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L49"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L36"
 								}
 							],
 							"parameters": [
@@ -1991,132 +1942,32 @@
 					]
 				},
 				{
-					"id": 196,
-					"name": "itemStart",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "LoadingManager.ts",
-							"line": 26,
-							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L26"
-						}
-					],
-					"signatures": [
-						{
-							"id": 197,
-							"name": "itemStart",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "LoadingManager.ts",
-									"line": 26,
-									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L26"
-								}
-							],
-							"parameters": [
-								{
-									"id": 198,
-									"name": "url",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "void"
-							}
-						}
-					]
-				},
-				{
-					"id": 215,
-					"name": "removeHandler",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "LoadingManager.ts",
-							"line": 73,
-							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L73"
-						}
-					],
-					"signatures": [
-						{
-							"id": 216,
-							"name": "removeHandler",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "LoadingManager.ts",
-									"line": 73,
-									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L73"
-								}
-							],
-							"parameters": [
-								{
-									"id": 217,
-									"name": "regex",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": 181,
-								"name": "LoadingManager",
-								"package": "@xeokit/utils"
-							}
-						}
-					]
-				},
-				{
 					"id": 205,
-					"name": "resolveURL",
+					"name": "itemError",
 					"variant": "declaration",
 					"kind": 2048,
 					"flags": {},
 					"sources": [
 						{
 							"fileName": "LoadingManager.ts",
-							"line": 55,
+							"line": 49,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L55"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L49"
 						}
 					],
 					"signatures": [
 						{
 							"id": 206,
-							"name": "resolveURL",
+							"name": "itemError",
 							"variant": "signature",
 							"kind": 4096,
 							"flags": {},
 							"sources": [
 								{
 									"fileName": "LoadingManager.ts",
-									"line": 55,
+									"line": 49,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L55"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L49"
 								}
 							],
 							"parameters": [
@@ -2134,13 +1985,162 @@
 							],
 							"type": {
 								"type": "intrinsic",
-								"name": "any"
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 199,
+					"name": "itemStart",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "LoadingManager.ts",
+							"line": 26,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L26"
+						}
+					],
+					"signatures": [
+						{
+							"id": 200,
+							"name": "itemStart",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "LoadingManager.ts",
+									"line": 26,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L26"
+								}
+							],
+							"parameters": [
+								{
+									"id": 201,
+									"name": "url",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 218,
+					"name": "removeHandler",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "LoadingManager.ts",
+							"line": 73,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L73"
+						}
+					],
+					"signatures": [
+						{
+							"id": 219,
+							"name": "removeHandler",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "LoadingManager.ts",
+									"line": 73,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L73"
+								}
+							],
+							"parameters": [
+								{
+									"id": 220,
+									"name": "regex",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 184,
+								"name": "LoadingManager",
+								"package": "@xeokit/utils"
 							}
 						}
 					]
 				},
 				{
 					"id": 208,
+					"name": "resolveURL",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "LoadingManager.ts",
+							"line": 55,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L55"
+						}
+					],
+					"signatures": [
+						{
+							"id": 209,
+							"name": "resolveURL",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "LoadingManager.ts",
+									"line": 55,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L55"
+								}
+							],
+							"parameters": [
+								{
+									"id": 210,
+									"name": "url",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					]
+				},
+				{
+					"id": 211,
 					"name": "setURLModifier",
 					"variant": "declaration",
 					"kind": 2048,
@@ -2150,12 +2150,12 @@
 							"fileName": "LoadingManager.ts",
 							"line": 63,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L63"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L63"
 						}
 					],
 					"signatures": [
 						{
-							"id": 209,
+							"id": 212,
 							"name": "setURLModifier",
 							"variant": "signature",
 							"kind": 4096,
@@ -2165,12 +2165,12 @@
 									"fileName": "LoadingManager.ts",
 									"line": 63,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L63"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L63"
 								}
 							],
 							"parameters": [
 								{
-									"id": 210,
+									"id": 213,
 									"name": "transform",
 									"variant": "param",
 									"kind": 32768,
@@ -2183,7 +2183,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 181,
+								"target": 184,
 								"name": "LoadingManager",
 								"package": "@xeokit/utils"
 							}
@@ -2195,20 +2195,20 @@
 				{
 					"title": "Constructors",
 					"children": [
-						182
+						185
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						211,
-						218,
-						199,
+						214,
+						221,
 						202,
-						196,
-						215,
 						205,
-						208
+						199,
+						218,
+						208,
+						211
 					]
 				}
 			],
@@ -2217,19 +2217,19 @@
 					"fileName": "LoadingManager.ts",
 					"line": 1,
 					"character": 6,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L1"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 121,
+			"id": 124,
 			"name": "Queue",
 			"variant": "declaration",
 			"kind": 128,
 			"flags": {},
 			"children": [
 				{
-					"id": 122,
+					"id": 125,
 					"name": "constructor",
 					"variant": "declaration",
 					"kind": 512,
@@ -2239,12 +2239,12 @@
 							"fileName": "Queue.ts",
 							"line": 8,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L8"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L8"
 						}
 					],
 					"signatures": [
 						{
-							"id": 123,
+							"id": 126,
 							"name": "new Queue",
 							"variant": "signature",
 							"kind": 16384,
@@ -2254,12 +2254,12 @@
 									"fileName": "Queue.ts",
 									"line": 8,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L8"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L8"
 								}
 							],
 							"type": {
 								"type": "reference",
-								"target": 121,
+								"target": 124,
 								"name": "Queue",
 								"package": "@xeokit/utils"
 							}
@@ -2267,7 +2267,7 @@
 					]
 				},
 				{
-					"id": 129,
+					"id": 132,
 					"name": "length",
 					"variant": "declaration",
 					"kind": 262144,
@@ -2277,11 +2277,11 @@
 							"fileName": "Queue.ts",
 							"line": 17,
 							"character": 8,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L17"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L17"
 						}
 					],
 					"getSignature": {
-						"id": 130,
+						"id": 133,
 						"name": "length",
 						"variant": "signature",
 						"kind": 524288,
@@ -2291,7 +2291,7 @@
 								"fileName": "Queue.ts",
 								"line": 17,
 								"character": 8,
-								"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L17"
+								"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L17"
 							}
 						],
 						"type": {
@@ -2301,7 +2301,7 @@
 					}
 				},
 				{
-					"id": 139,
+					"id": 142,
 					"name": "clear",
 					"variant": "declaration",
 					"kind": 2048,
@@ -2311,12 +2311,12 @@
 							"fileName": "Queue.ts",
 							"line": 56,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L56"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L56"
 						}
 					],
 					"signatures": [
 						{
-							"id": 140,
+							"id": 143,
 							"name": "clear",
 							"variant": "signature",
 							"kind": 4096,
@@ -2326,7 +2326,7 @@
 									"fileName": "Queue.ts",
 									"line": 56,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L56"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L56"
 								}
 							],
 							"type": {
@@ -2337,7 +2337,7 @@
 					]
 				},
 				{
-					"id": 133,
+					"id": 136,
 					"name": "push",
 					"variant": "declaration",
 					"kind": 2048,
@@ -2347,12 +2347,12 @@
 							"fileName": "Queue.ts",
 							"line": 44,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L44"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L44"
 						}
 					],
 					"signatures": [
 						{
-							"id": 134,
+							"id": 137,
 							"name": "push",
 							"variant": "signature",
 							"kind": 4096,
@@ -2362,94 +2362,7 @@
 									"fileName": "Queue.ts",
 									"line": 44,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L44"
-								}
-							],
-							"parameters": [
-								{
-									"id": 135,
-									"name": "item",
-									"variant": "param",
-									"kind": 32768,
-									"flags": {},
-									"type": {
-										"type": "intrinsic",
-										"name": "any"
-									}
-								}
-							],
-							"type": {
-								"type": "reference",
-								"target": 121,
-								"name": "Queue",
-								"package": "@xeokit/utils"
-							}
-						}
-					]
-				},
-				{
-					"id": 131,
-					"name": "shift",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "Queue.ts",
-							"line": 21,
-							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L21"
-						}
-					],
-					"signatures": [
-						{
-							"id": 132,
-							"name": "shift",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "Queue.ts",
-									"line": 21,
-									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L21"
-								}
-							],
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							}
-						}
-					]
-				},
-				{
-					"id": 136,
-					"name": "unshift",
-					"variant": "declaration",
-					"kind": 2048,
-					"flags": {},
-					"sources": [
-						{
-							"fileName": "Queue.ts",
-							"line": 50,
-							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L50"
-						}
-					],
-					"signatures": [
-						{
-							"id": 137,
-							"name": "unshift",
-							"variant": "signature",
-							"kind": 4096,
-							"flags": {},
-							"sources": [
-								{
-									"fileName": "Queue.ts",
-									"line": 50,
-									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L50"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L44"
 								}
 							],
 							"parameters": [
@@ -2467,7 +2380,94 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 121,
+								"target": 124,
+								"name": "Queue",
+								"package": "@xeokit/utils"
+							}
+						}
+					]
+				},
+				{
+					"id": 134,
+					"name": "shift",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Queue.ts",
+							"line": 21,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L21"
+						}
+					],
+					"signatures": [
+						{
+							"id": 135,
+							"name": "shift",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Queue.ts",
+									"line": 21,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L21"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					]
+				},
+				{
+					"id": 139,
+					"name": "unshift",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "Queue.ts",
+							"line": 50,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L50"
+						}
+					],
+					"signatures": [
+						{
+							"id": 140,
+							"name": "unshift",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"sources": [
+								{
+									"fileName": "Queue.ts",
+									"line": 50,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L50"
+								}
+							],
+							"parameters": [
+								{
+									"id": 141,
+									"name": "item",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 124,
 								"name": "Queue",
 								"package": "@xeokit/utils"
 							}
@@ -2479,22 +2479,22 @@
 				{
 					"title": "Constructors",
 					"children": [
-						122
+						125
 					]
 				},
 				{
 					"title": "Accessors",
 					"children": [
-						129
+						132
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
-						139,
-						133,
-						131,
-						136
+						142,
+						136,
+						134,
+						139
 					]
 				}
 			],
@@ -2503,12 +2503,12 @@
 					"fileName": "Queue.ts",
 					"line": 1,
 					"character": 13,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Queue.ts#L1"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Queue.ts#L1"
 				}
 			]
 		},
 		{
-			"id": 221,
+			"id": 224,
 			"name": "WorkerPool",
 			"variant": "declaration",
 			"kind": 128,
@@ -2529,7 +2529,7 @@
 			},
 			"children": [
 				{
-					"id": 222,
+					"id": 225,
 					"name": "constructor",
 					"variant": "declaration",
 					"kind": 512,
@@ -2539,12 +2539,12 @@
 							"fileName": "WorkerPool.ts",
 							"line": 12,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L12"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L12"
 						}
 					],
 					"signatures": [
 						{
-							"id": 223,
+							"id": 226,
 							"name": "new WorkerPool",
 							"variant": "signature",
 							"kind": 16384,
@@ -2554,12 +2554,12 @@
 									"fileName": "WorkerPool.ts",
 									"line": 12,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L12"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L12"
 								}
 							],
 							"parameters": [
 								{
-									"id": 224,
+									"id": 227,
 									"name": "pool",
 									"variant": "param",
 									"kind": 32768,
@@ -2573,7 +2573,7 @@
 							],
 							"type": {
 								"type": "reference",
-								"target": 221,
+								"target": 224,
 								"name": "WorkerPool",
 								"package": "@xeokit/utils"
 							}
@@ -2581,7 +2581,7 @@
 					]
 				},
 				{
-					"id": 234,
+					"id": 237,
 					"name": "_getIdleWorker",
 					"variant": "declaration",
 					"kind": 2048,
@@ -2591,12 +2591,12 @@
 							"fileName": "WorkerPool.ts",
 							"line": 28,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L28"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L28"
 						}
 					],
 					"signatures": [
 						{
-							"id": 235,
+							"id": 238,
 							"name": "_getIdleWorker",
 							"variant": "signature",
 							"kind": 4096,
@@ -2606,7 +2606,7 @@
 									"fileName": "WorkerPool.ts",
 									"line": 28,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L28"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L28"
 								}
 							],
 							"type": {
@@ -2617,7 +2617,7 @@
 					]
 				},
 				{
-					"id": 231,
+					"id": 234,
 					"name": "_initWorker",
 					"variant": "declaration",
 					"kind": 2048,
@@ -2627,12 +2627,12 @@
 							"fileName": "WorkerPool.ts",
 							"line": 20,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L20"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L20"
 						}
 					],
 					"signatures": [
 						{
-							"id": 232,
+							"id": 235,
 							"name": "_initWorker",
 							"variant": "signature",
 							"kind": 4096,
@@ -2642,12 +2642,12 @@
 									"fileName": "WorkerPool.ts",
 									"line": 20,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L20"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L20"
 								}
 							],
 							"parameters": [
 								{
-									"id": 233,
+									"id": 236,
 									"name": "workerId",
 									"variant": "param",
 									"kind": 32768,
@@ -2666,7 +2666,7 @@
 					]
 				},
 				{
-					"id": 236,
+					"id": 239,
 					"name": "_onMessage",
 					"variant": "declaration",
 					"kind": 2048,
@@ -2676,12 +2676,12 @@
 							"fileName": "WorkerPool.ts",
 							"line": 34,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L34"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L34"
 						}
 					],
 					"signatures": [
 						{
-							"id": 237,
+							"id": 240,
 							"name": "_onMessage",
 							"variant": "signature",
 							"kind": 4096,
@@ -2691,12 +2691,12 @@
 									"fileName": "WorkerPool.ts",
 									"line": 34,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L34"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L34"
 								}
 							],
 							"parameters": [
 								{
-									"id": 238,
+									"id": 241,
 									"name": "workerId",
 									"variant": "param",
 									"kind": 32768,
@@ -2707,7 +2707,7 @@
 									}
 								},
 								{
-									"id": 239,
+									"id": 242,
 									"name": "msg",
 									"variant": "param",
 									"kind": 32768,
@@ -2726,7 +2726,7 @@
 					]
 				},
 				{
-					"id": 250,
+					"id": 253,
 					"name": "destroy",
 					"variant": "declaration",
 					"kind": 2048,
@@ -2736,12 +2736,12 @@
 							"fileName": "WorkerPool.ts",
 							"line": 68,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L68"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L68"
 						}
 					],
 					"signatures": [
 						{
-							"id": 251,
+							"id": 254,
 							"name": "destroy",
 							"variant": "signature",
 							"kind": 4096,
@@ -2751,7 +2751,7 @@
 									"fileName": "WorkerPool.ts",
 									"line": 68,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L68"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L68"
 								}
 							],
 							"type": {
@@ -2762,7 +2762,7 @@
 					]
 				},
 				{
-					"id": 246,
+					"id": 249,
 					"name": "postMessage",
 					"variant": "declaration",
 					"kind": 2048,
@@ -2772,12 +2772,12 @@
 							"fileName": "WorkerPool.ts",
 							"line": 54,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L54"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L54"
 						}
 					],
 					"signatures": [
 						{
-							"id": 247,
+							"id": 250,
 							"name": "postMessage",
 							"variant": "signature",
 							"kind": 4096,
@@ -2787,12 +2787,12 @@
 									"fileName": "WorkerPool.ts",
 									"line": 54,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L54"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L54"
 								}
 							],
 							"parameters": [
 								{
-									"id": 248,
+									"id": 251,
 									"name": "msg",
 									"variant": "param",
 									"kind": 32768,
@@ -2803,7 +2803,7 @@
 									}
 								},
 								{
-									"id": 249,
+									"id": 252,
 									"name": "transfer",
 									"variant": "param",
 									"kind": 32768,
@@ -2833,7 +2833,7 @@
 					]
 				},
 				{
-					"id": 240,
+					"id": 243,
 					"name": "setWorkerCreator",
 					"variant": "declaration",
 					"kind": 2048,
@@ -2843,12 +2843,12 @@
 							"fileName": "WorkerPool.ts",
 							"line": 46,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L46"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L46"
 						}
 					],
 					"signatures": [
 						{
-							"id": 241,
+							"id": 244,
 							"name": "setWorkerCreator",
 							"variant": "signature",
 							"kind": 4096,
@@ -2858,12 +2858,12 @@
 									"fileName": "WorkerPool.ts",
 									"line": 46,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L46"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L46"
 								}
 							],
 							"parameters": [
 								{
-									"id": 242,
+									"id": 245,
 									"name": "workerCreator",
 									"variant": "param",
 									"kind": 32768,
@@ -2882,7 +2882,7 @@
 					]
 				},
 				{
-					"id": 243,
+					"id": 246,
 					"name": "setWorkerLimit",
 					"variant": "declaration",
 					"kind": 2048,
@@ -2892,12 +2892,12 @@
 							"fileName": "WorkerPool.ts",
 							"line": 50,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L50"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L50"
 						}
 					],
 					"signatures": [
 						{
-							"id": 244,
+							"id": 247,
 							"name": "setWorkerLimit",
 							"variant": "signature",
 							"kind": 4096,
@@ -2907,12 +2907,12 @@
 									"fileName": "WorkerPool.ts",
 									"line": 50,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L50"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L50"
 								}
 							],
 							"parameters": [
 								{
-									"id": 245,
+									"id": 248,
 									"name": "pool",
 									"variant": "param",
 									"kind": 32768,
@@ -2935,19 +2935,19 @@
 				{
 					"title": "Constructors",
 					"children": [
-						222
+						225
 					]
 				},
 				{
 					"title": "Methods",
 					"children": [
+						237,
 						234,
-						231,
-						236,
-						250,
-						246,
-						240,
-						243
+						239,
+						253,
+						249,
+						243,
+						246
 					]
 				}
 			],
@@ -2956,12 +2956,12 @@
 					"fileName": "WorkerPool.ts",
 					"line": 4,
 					"character": 13,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/WorkerPool.ts#L4"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/WorkerPool.ts#L4"
 				}
 			]
 		},
 		{
-			"id": 252,
+			"id": 255,
 			"name": "Cache",
 			"variant": "declaration",
 			"kind": 32,
@@ -2973,20 +2973,20 @@
 					"fileName": "Cache.ts",
 					"line": 4,
 					"character": 6,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L4"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L4"
 				}
 			],
 			"type": {
 				"type": "reflection",
 				"declaration": {
-					"id": 253,
+					"id": 256,
 					"name": "__type",
 					"variant": "declaration",
 					"kind": 65536,
 					"flags": {},
 					"children": [
 						{
-							"id": 257,
+							"id": 260,
 							"name": "add",
 							"variant": "declaration",
 							"kind": 1024,
@@ -2996,13 +2996,13 @@
 									"fileName": "Cache.ts",
 									"line": 9,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L9"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L9"
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 258,
+									"id": 261,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
@@ -3012,12 +3012,12 @@
 											"fileName": "Cache.ts",
 											"line": 9,
 											"character": 9,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L9"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L9"
 										}
 									],
 									"signatures": [
 										{
-											"id": 259,
+											"id": 262,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -3027,12 +3027,12 @@
 													"fileName": "Cache.ts",
 													"line": 9,
 													"character": 9,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L9"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L9"
 												}
 											],
 											"parameters": [
 												{
-													"id": 260,
+													"id": 263,
 													"name": "key",
 													"variant": "param",
 													"kind": 32768,
@@ -3052,7 +3052,7 @@
 													}
 												},
 												{
-													"id": 261,
+													"id": 264,
 													"name": "file",
 													"variant": "param",
 													"kind": 32768,
@@ -3074,7 +3074,7 @@
 							"defaultValue": "..."
 						},
 						{
-							"id": 270,
+							"id": 273,
 							"name": "clear",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3084,13 +3084,13 @@
 									"fileName": "Cache.ts",
 									"line": 27,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L27"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L27"
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 271,
+									"id": 274,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
@@ -3100,12 +3100,12 @@
 											"fileName": "Cache.ts",
 											"line": 27,
 											"character": 11,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L27"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L27"
 										}
 									],
 									"signatures": [
 										{
-											"id": 272,
+											"id": 275,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -3115,7 +3115,7 @@
 													"fileName": "Cache.ts",
 													"line": 27,
 													"character": 11,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L27"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L27"
 												}
 											],
 											"type": {
@@ -3129,7 +3129,7 @@
 							"defaultValue": "..."
 						},
 						{
-							"id": 254,
+							"id": 257,
 							"name": "enabled",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3139,7 +3139,7 @@
 									"fileName": "Cache.ts",
 									"line": 6,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L6"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L6"
 								}
 							],
 							"type": {
@@ -3149,7 +3149,7 @@
 							"defaultValue": "false"
 						},
 						{
-							"id": 255,
+							"id": 258,
 							"name": "files",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3159,13 +3159,13 @@
 									"fileName": "Cache.ts",
 									"line": 7,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L7"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L7"
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 256,
+									"id": 259,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
@@ -3175,7 +3175,7 @@
 											"fileName": "Cache.ts",
 											"line": 7,
 											"character": 11,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L7"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L7"
 										}
 									]
 								}
@@ -3183,7 +3183,7 @@
 							"defaultValue": "{}"
 						},
 						{
-							"id": 262,
+							"id": 265,
 							"name": "get",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3193,13 +3193,13 @@
 									"fileName": "Cache.ts",
 									"line": 16,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L16"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L16"
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 263,
+									"id": 266,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
@@ -3209,12 +3209,12 @@
 											"fileName": "Cache.ts",
 											"line": 16,
 											"character": 9,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L16"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L16"
 										}
 									],
 									"signatures": [
 										{
-											"id": 264,
+											"id": 267,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -3224,12 +3224,12 @@
 													"fileName": "Cache.ts",
 													"line": 16,
 													"character": 9,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L16"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L16"
 												}
 											],
 											"parameters": [
 												{
-													"id": 265,
+													"id": 268,
 													"name": "key",
 													"variant": "param",
 													"kind": 32768,
@@ -3260,7 +3260,7 @@
 							"defaultValue": "..."
 						},
 						{
-							"id": 266,
+							"id": 269,
 							"name": "remove",
 							"variant": "declaration",
 							"kind": 1024,
@@ -3270,13 +3270,13 @@
 									"fileName": "Cache.ts",
 									"line": 23,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L23"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L23"
 								}
 							],
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 267,
+									"id": 270,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
@@ -3286,12 +3286,12 @@
 											"fileName": "Cache.ts",
 											"line": 23,
 											"character": 12,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L23"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L23"
 										}
 									],
 									"signatures": [
 										{
-											"id": 268,
+											"id": 271,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -3301,12 +3301,12 @@
 													"fileName": "Cache.ts",
 													"line": 23,
 													"character": 12,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L23"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L23"
 												}
 											],
 											"parameters": [
 												{
-													"id": 269,
+													"id": 272,
 													"name": "key",
 													"variant": "param",
 													"kind": 32768,
@@ -3341,12 +3341,12 @@
 						{
 							"title": "Properties",
 							"children": [
+								260,
+								273,
 								257,
-								270,
-								254,
-								255,
-								262,
-								266
+								258,
+								265,
+								269
 							]
 						}
 					],
@@ -3355,7 +3355,7 @@
 							"fileName": "Cache.ts",
 							"line": 4,
 							"character": 14,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/Cache.ts#L4"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/Cache.ts#L4"
 						}
 					]
 				}
@@ -3363,7 +3363,7 @@
 			"defaultValue": "..."
 		},
 		{
-			"id": 180,
+			"id": 183,
 			"name": "DefaultLoadingManager",
 			"variant": "declaration",
 			"kind": 32,
@@ -3375,19 +3375,19 @@
 					"fileName": "LoadingManager.ts",
 					"line": 95,
 					"character": 6,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/LoadingManager.ts#L95"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/LoadingManager.ts#L95"
 				}
 			],
 			"type": {
 				"type": "reference",
-				"target": 181,
+				"target": 184,
 				"name": "LoadingManager",
 				"package": "@xeokit/utils"
 			},
 			"defaultValue": "..."
 		},
 		{
-			"id": 85,
+			"id": 88,
 			"name": "apply",
 			"variant": "declaration",
 			"kind": 64,
@@ -3395,14 +3395,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 313,
+					"line": 320,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L313"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L320"
 				}
 			],
 			"signatures": [
 				{
-					"id": 86,
+					"id": 89,
 					"name": "apply",
 					"variant": "signature",
 					"kind": 4096,
@@ -3418,14 +3418,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 313,
+							"line": 320,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L313"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L320"
 						}
 					],
 					"parameters": [
 						{
-							"id": 87,
+							"id": 90,
 							"name": "o",
 							"variant": "param",
 							"kind": 32768,
@@ -3436,7 +3436,7 @@
 							}
 						},
 						{
-							"id": 88,
+							"id": 91,
 							"name": "o2",
 							"variant": "param",
 							"kind": 32768,
@@ -3455,7 +3455,7 @@
 			]
 		},
 		{
-			"id": 89,
+			"id": 92,
 			"name": "apply2",
 			"variant": "declaration",
 			"kind": 64,
@@ -3463,14 +3463,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 325,
+					"line": 332,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L325"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L332"
 				}
 			],
 			"signatures": [
 				{
-					"id": 90,
+					"id": 93,
 					"name": "apply2",
 					"variant": "signature",
 					"kind": 4096,
@@ -3486,14 +3486,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 325,
+							"line": 332,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L325"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L332"
 						}
 					],
 					"parameters": [
 						{
-							"id": 91,
+							"id": 94,
 							"name": "o",
 							"variant": "param",
 							"kind": 32768,
@@ -3504,7 +3504,7 @@
 							}
 						},
 						{
-							"id": 92,
+							"id": 95,
 							"name": "o2",
 							"variant": "param",
 							"kind": 32768,
@@ -3523,7 +3523,7 @@
 			]
 		},
 		{
-			"id": 93,
+			"id": 96,
 			"name": "applyIf",
 			"variant": "declaration",
 			"kind": 64,
@@ -3531,14 +3531,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 339,
+					"line": 346,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L339"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L346"
 				}
 			],
 			"signatures": [
 				{
-					"id": 94,
+					"id": 97,
 					"name": "applyIf",
 					"variant": "signature",
 					"kind": 4096,
@@ -3554,14 +3554,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 339,
+							"line": 346,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L339"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L346"
 						}
 					],
 					"parameters": [
 						{
-							"id": 95,
+							"id": 98,
 							"name": "o",
 							"variant": "param",
 							"kind": 32768,
@@ -3572,7 +3572,7 @@
 							}
 						},
 						{
-							"id": 96,
+							"id": 99,
 							"name": "o2",
 							"variant": "param",
 							"kind": 32768,
@@ -3591,7 +3591,7 @@
 			]
 		},
 		{
-			"id": 4,
+			"id": 7,
 			"name": "b64",
 			"variant": "declaration",
 			"kind": 64,
@@ -3599,14 +3599,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 45,
+					"line": 52,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L45"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L52"
 				}
 			],
 			"signatures": [
 				{
-					"id": 5,
+					"id": 8,
 					"name": "b64",
 					"variant": "signature",
 					"kind": 4096,
@@ -3614,14 +3614,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 45,
+							"line": 52,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L45"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L52"
 						}
 					],
 					"parameters": [
 						{
-							"id": 6,
+							"id": 9,
 							"name": "v",
 							"variant": "param",
 							"kind": 32768,
@@ -3632,7 +3632,7 @@
 							}
 						},
 						{
-							"id": 7,
+							"id": 10,
 							"name": "len",
 							"variant": "param",
 							"kind": 32768,
@@ -3651,7 +3651,7 @@
 			]
 		},
 		{
-			"id": 1,
+			"id": 4,
 			"name": "clone",
 			"variant": "declaration",
 			"kind": 64,
@@ -3659,14 +3659,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 25,
+					"line": 32,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L25"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L32"
 				}
 			],
 			"signatures": [
 				{
-					"id": 2,
+					"id": 5,
 					"name": "clone",
 					"variant": "signature",
 					"kind": 4096,
@@ -3674,14 +3674,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 25,
+							"line": 32,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L25"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L32"
 						}
 					],
 					"parameters": [
 						{
-							"id": 3,
+							"id": 6,
 							"name": "ob",
 							"variant": "param",
 							"kind": 32768,
@@ -3700,7 +3700,7 @@
 			]
 		},
 		{
-			"id": 8,
+			"id": 11,
 			"name": "compressGuid",
 			"variant": "declaration",
 			"kind": 64,
@@ -3708,14 +3708,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 57,
+					"line": 64,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L57"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L64"
 				}
 			],
 			"signatures": [
 				{
-					"id": 9,
+					"id": 12,
 					"name": "compressGuid",
 					"variant": "signature",
 					"kind": 4096,
@@ -3723,14 +3723,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 57,
+							"line": 64,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L57"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L64"
 						}
 					],
 					"parameters": [
 						{
-							"id": 10,
+							"id": 13,
 							"name": "g",
 							"variant": "param",
 							"kind": 32768,
@@ -3749,7 +3749,7 @@
 			]
 		},
 		{
-			"id": 103,
+			"id": 106,
 			"name": "concat",
 			"variant": "declaration",
 			"kind": 64,
@@ -3757,14 +3757,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 373,
+					"line": 380,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L373"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L380"
 				}
 			],
 			"signatures": [
 				{
-					"id": 104,
+					"id": 107,
 					"name": "concat",
 					"variant": "signature",
 					"kind": 4096,
@@ -3780,14 +3780,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 373,
+							"line": 380,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L373"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L380"
 						}
 					],
 					"parameters": [
 						{
-							"id": 105,
+							"id": 108,
 							"name": "a",
 							"variant": "param",
 							"kind": 32768,
@@ -3798,7 +3798,7 @@
 							}
 						},
 						{
-							"id": 106,
+							"id": 109,
 							"name": "b",
 							"variant": "param",
 							"kind": 32768,
@@ -3817,7 +3817,7 @@
 			]
 		},
 		{
-			"id": 82,
+			"id": 85,
 			"name": "copy",
 			"variant": "declaration",
 			"kind": 64,
@@ -3825,14 +3825,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 307,
+					"line": 314,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L307"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L314"
 				}
 			],
 			"signatures": [
 				{
-					"id": 83,
+					"id": 86,
 					"name": "copy",
 					"variant": "signature",
 					"kind": 4096,
@@ -3848,14 +3848,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 307,
+							"line": 314,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L307"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L314"
 						}
 					],
 					"parameters": [
 						{
-							"id": 84,
+							"id": 87,
 							"name": "o",
 							"variant": "param",
 							"kind": 32768,
@@ -3874,7 +3874,7 @@
 			]
 		},
 		{
-			"id": 107,
+			"id": 110,
 			"name": "createUUID",
 			"variant": "declaration",
 			"kind": 64,
@@ -3882,14 +3882,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 383,
+					"line": 390,
 					"character": 13,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L383"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L390"
 				}
 			],
 			"signatures": [
 				{
-					"id": 108,
+					"id": 111,
 					"name": "createUUID",
 					"variant": "signature",
 					"kind": 4096,
@@ -3905,9 +3905,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 388,
+							"line": 395,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L388"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L395"
 						}
 					],
 					"type": {
@@ -3918,7 +3918,7 @@
 			]
 		},
 		{
-			"id": 11,
+			"id": 14,
 			"name": "findNodeOfType",
 			"variant": "declaration",
 			"kind": 64,
@@ -3926,14 +3926,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 71,
+					"line": 78,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L71"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L78"
 				}
 			],
 			"signatures": [
 				{
-					"id": 12,
+					"id": 15,
 					"name": "findNodeOfType",
 					"variant": "signature",
 					"kind": 4096,
@@ -3941,14 +3941,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 71,
+							"line": 78,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L71"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L78"
 						}
 					],
 					"parameters": [
 						{
-							"id": 13,
+							"id": 16,
 							"name": "m",
 							"variant": "param",
 							"kind": 32768,
@@ -3959,7 +3959,7 @@
 							}
 						},
 						{
-							"id": 14,
+							"id": 17,
 							"name": "t",
 							"variant": "param",
 							"kind": 32768,
@@ -3981,7 +3981,7 @@
 			]
 		},
 		{
-			"id": 18,
+			"id": 21,
 			"name": "httpRequest",
 			"variant": "declaration",
 			"kind": 64,
@@ -3989,14 +3989,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 91,
+					"line": 98,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L91"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L98"
 				}
 			],
 			"signatures": [
 				{
-					"id": 19,
+					"id": 22,
 					"name": "httpRequest",
 					"variant": "signature",
 					"kind": 4096,
@@ -4004,14 +4004,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 91,
+							"line": 98,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L91"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L98"
 						}
 					],
 					"parameters": [
 						{
-							"id": 20,
+							"id": 23,
 							"name": "args",
 							"variant": "param",
 							"kind": 32768,
@@ -4019,14 +4019,14 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 21,
+									"id": 24,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
 									"flags": {},
 									"children": [
 										{
-											"id": 22,
+											"id": 25,
 											"name": "method",
 											"variant": "declaration",
 											"kind": 1024,
@@ -4034,9 +4034,9 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 91,
+													"line": 98,
 													"character": 36,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L91"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L98"
 												}
 											],
 											"type": {
@@ -4045,7 +4045,7 @@
 											}
 										},
 										{
-											"id": 23,
+											"id": 26,
 											"name": "url",
 											"variant": "declaration",
 											"kind": 1024,
@@ -4053,9 +4053,9 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 91,
+													"line": 98,
 													"character": 52,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L91"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L98"
 												}
 											],
 											"type": {
@@ -4068,17 +4068,17 @@
 										{
 											"title": "Properties",
 											"children": [
-												22,
-												23
+												25,
+												26
 											]
 										}
 									],
 									"sources": [
 										{
 											"fileName": "index.ts",
-											"line": 91,
+											"line": 98,
 											"character": 34,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L91"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L98"
 										}
 									]
 								}
@@ -4104,7 +4104,7 @@
 			]
 		},
 		{
-			"id": 100,
+			"id": 103,
 			"name": "inQuotes",
 			"variant": "declaration",
 			"kind": 64,
@@ -4112,14 +4112,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 366,
+					"line": 373,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L366"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L373"
 				}
 			],
 			"signatures": [
 				{
-					"id": 101,
+					"id": 104,
 					"name": "inQuotes",
 					"variant": "signature",
 					"kind": 4096,
@@ -4135,14 +4135,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 366,
+							"line": 373,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L366"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L373"
 						}
 					],
 					"parameters": [
 						{
-							"id": 102,
+							"id": 105,
 							"name": "id",
 							"variant": "param",
 							"kind": 32768,
@@ -4161,7 +4161,7 @@
 			]
 		},
 		{
-			"id": 62,
+			"id": 65,
 			"name": "isArray",
 			"variant": "declaration",
 			"kind": 64,
@@ -4169,14 +4169,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 265,
+					"line": 272,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L265"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L272"
 				}
 			],
 			"signatures": [
 				{
-					"id": 63,
+					"id": 66,
 					"name": "isArray",
 					"variant": "signature",
 					"kind": 4096,
@@ -4192,407 +4192,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 265,
-							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L265"
-						}
-					],
-					"parameters": [
-						{
-							"id": 64,
-							"name": "value",
-							"variant": "param",
-							"kind": 32768,
-							"flags": {},
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							}
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					}
-				}
-			]
-		},
-		{
-			"id": 97,
-			"name": "isEmptyObject",
-			"variant": "declaration",
-			"kind": 64,
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "index.ts",
-					"line": 353,
-					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L353"
-				}
-			],
-			"signatures": [
-				{
-					"id": 98,
-					"name": "isEmptyObject",
-					"variant": "signature",
-					"kind": 4096,
-					"flags": {},
-					"comment": {
-						"summary": [
-							{
-								"kind": "text",
-								"text": "Returns true if the given map is empty."
-							}
-						]
-					},
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 353,
-							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L353"
-						}
-					],
-					"parameters": [
-						{
-							"id": 99,
-							"name": "obj",
-							"variant": "param",
-							"kind": 32768,
-							"flags": {},
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							}
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					}
-				}
-			]
-		},
-		{
-			"id": 74,
-			"name": "isFunction",
-			"variant": "declaration",
-			"kind": 64,
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "index.ts",
-					"line": 293,
-					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L293"
-				}
-			],
-			"signatures": [
-				{
-					"id": 75,
-					"name": "isFunction",
-					"variant": "signature",
-					"kind": 4096,
-					"flags": {},
-					"comment": {
-						"summary": [
-							{
-								"kind": "text",
-								"text": "Tests if the given value is a function"
-							}
-						]
-					},
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 293,
-							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L293"
-						}
-					],
-					"parameters": [
-						{
-							"id": 76,
-							"name": "value",
-							"variant": "param",
-							"kind": 32768,
-							"flags": {},
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							}
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					}
-				}
-			]
-		},
-		{
-			"id": 71,
-			"name": "isID",
-			"variant": "declaration",
-			"kind": 64,
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "index.ts",
-					"line": 286,
-					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L286"
-				}
-			],
-			"signatures": [
-				{
-					"id": 72,
-					"name": "isID",
-					"variant": "signature",
-					"kind": 4096,
-					"flags": {},
-					"comment": {
-						"summary": [
-							{
-								"kind": "text",
-								"text": "Tests if the given value is an ID"
-							}
-						]
-					},
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 286,
-							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L286"
-						}
-					],
-					"parameters": [
-						{
-							"id": 73,
-							"name": "value",
-							"variant": "param",
-							"kind": 32768,
-							"flags": {},
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							}
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					}
-				}
-			]
-		},
-		{
-			"id": 68,
-			"name": "isNumeric",
-			"variant": "declaration",
-			"kind": 64,
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "index.ts",
-					"line": 279,
-					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L279"
-				}
-			],
-			"signatures": [
-				{
-					"id": 69,
-					"name": "isNumeric",
-					"variant": "signature",
-					"kind": 4096,
-					"flags": {},
-					"comment": {
-						"summary": [
-							{
-								"kind": "text",
-								"text": "Tests if the given value is a number"
-							}
-						]
-					},
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 279,
-							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L279"
-						}
-					],
-					"parameters": [
-						{
-							"id": 70,
-							"name": "value",
-							"variant": "param",
-							"kind": 32768,
-							"flags": {},
-							"type": {
-								"type": "intrinsic",
-								"name": "any"
-							}
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					}
-				}
-			]
-		},
-		{
-			"id": 77,
-			"name": "isObject",
-			"variant": "declaration",
-			"kind": 64,
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "index.ts",
-					"line": 300,
-					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L300"
-				}
-			],
-			"signatures": [
-				{
-					"id": 78,
-					"name": "isObject",
-					"variant": "signature",
-					"kind": 4096,
-					"flags": {},
-					"comment": {
-						"summary": [
-							{
-								"kind": "text",
-								"text": "Tests if the given value is a JavaScript JSON object, eg, "
-							},
-							{
-								"kind": "code",
-								"text": "````{ foo: \"bar\" }````"
-							},
-							{
-								"kind": "text",
-								"text": "."
-							}
-						]
-					},
-					"sources": [
-						{
-							"fileName": "index.ts",
-							"line": 300,
-							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L300"
-						}
-					],
-					"parameters": [
-						{
-							"id": 79,
-							"name": "value",
-							"variant": "param",
-							"kind": 32768,
-							"flags": {},
-							"type": {
-								"type": "reflection",
-								"declaration": {
-									"id": 80,
-									"name": "__type",
-									"variant": "declaration",
-									"kind": 65536,
-									"flags": {},
-									"children": [
-										{
-											"id": 81,
-											"name": "constructor",
-											"variant": "declaration",
-											"kind": 1024,
-											"flags": {},
-											"sources": [
-												{
-													"fileName": "index.ts",
-													"line": 300,
-													"character": 34,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L300"
-												}
-											],
-											"type": {
-												"type": "reference",
-												"target": {
-													"sourceFileName": "../../node_modules/.pnpm/typescript@4.9.4/node_modules/typescript/lib/lib.es5.d.ts",
-													"qualifiedName": "Function"
-												},
-												"name": "Function",
-												"package": "typescript"
-											}
-										}
-									],
-									"groups": [
-										{
-											"title": "Properties",
-											"children": [
-												81
-											]
-										}
-									],
-									"sources": [
-										{
-											"fileName": "index.ts",
-											"line": 300,
-											"character": 32,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L300"
-										}
-									]
-								}
-							}
-						}
-					],
-					"type": {
-						"type": "intrinsic",
-						"name": "boolean"
-					}
-				}
-			]
-		},
-		{
-			"id": 65,
-			"name": "isString",
-			"variant": "declaration",
-			"kind": 64,
-			"flags": {},
-			"sources": [
-				{
-					"fileName": "index.ts",
-					"line": 272,
-					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L272"
-				}
-			],
-			"signatures": [
-				{
-					"id": 66,
-					"name": "isString",
-					"variant": "signature",
-					"kind": 4096,
-					"flags": {},
-					"comment": {
-						"summary": [
-							{
-								"kind": "text",
-								"text": "Tests if the given value is a string"
-							}
-						]
-					},
-					"sources": [
-						{
-							"fileName": "index.ts",
 							"line": 272,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L272"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L272"
 						}
 					],
 					"parameters": [
@@ -4616,7 +4218,454 @@
 			]
 		},
 		{
-			"id": 39,
+			"id": 100,
+			"name": "isEmptyObject",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 360,
+					"character": 16,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L360"
+				}
+			],
+			"signatures": [
+				{
+					"id": 101,
+					"name": "isEmptyObject",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Returns true if the given map is empty."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 360,
+							"character": 16,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L360"
+						}
+					],
+					"parameters": [
+						{
+							"id": 102,
+							"name": "obj",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			]
+		},
+		{
+			"id": 77,
+			"name": "isFunction",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 300,
+					"character": 16,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L300"
+				}
+			],
+			"signatures": [
+				{
+					"id": 78,
+					"name": "isFunction",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Tests if the given value is a function"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 300,
+							"character": 16,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L300"
+						}
+					],
+					"parameters": [
+						{
+							"id": 79,
+							"name": "value",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			]
+		},
+		{
+			"id": 74,
+			"name": "isID",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 293,
+					"character": 16,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L293"
+				}
+			],
+			"signatures": [
+				{
+					"id": 75,
+					"name": "isID",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Tests if the given value is an ID"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 293,
+							"character": 16,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L293"
+						}
+					],
+					"parameters": [
+						{
+							"id": 76,
+							"name": "value",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			]
+		},
+		{
+			"id": 1,
+			"name": "isJSONObject",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 25,
+					"character": 16,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L25"
+				}
+			],
+			"signatures": [
+				{
+					"id": 2,
+					"name": "isJSONObject",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 25,
+							"character": 16,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L25"
+						}
+					],
+					"parameters": [
+						{
+							"id": 3,
+							"name": "arg",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			]
+		},
+		{
+			"id": 71,
+			"name": "isNumeric",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 286,
+					"character": 16,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L286"
+				}
+			],
+			"signatures": [
+				{
+					"id": 72,
+					"name": "isNumeric",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Tests if the given value is a number"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 286,
+							"character": 16,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L286"
+						}
+					],
+					"parameters": [
+						{
+							"id": 73,
+							"name": "value",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			]
+		},
+		{
+			"id": 80,
+			"name": "isObject",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 307,
+					"character": 16,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L307"
+				}
+			],
+			"signatures": [
+				{
+					"id": 81,
+					"name": "isObject",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Tests if the given value is a JavaScript JSON object, eg, "
+							},
+							{
+								"kind": "code",
+								"text": "````{ foo: \"bar\" }````"
+							},
+							{
+								"kind": "text",
+								"text": "."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 307,
+							"character": 16,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L307"
+						}
+					],
+					"parameters": [
+						{
+							"id": 82,
+							"name": "value",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "reflection",
+								"declaration": {
+									"id": 83,
+									"name": "__type",
+									"variant": "declaration",
+									"kind": 65536,
+									"flags": {},
+									"children": [
+										{
+											"id": 84,
+											"name": "constructor",
+											"variant": "declaration",
+											"kind": 1024,
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "index.ts",
+													"line": 307,
+													"character": 34,
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L307"
+												}
+											],
+											"type": {
+												"type": "reference",
+												"target": {
+													"sourceFileName": "../../node_modules/.pnpm/typescript@4.9.4/node_modules/typescript/lib/lib.es5.d.ts",
+													"qualifiedName": "Function"
+												},
+												"name": "Function",
+												"package": "typescript"
+											}
+										}
+									],
+									"groups": [
+										{
+											"title": "Properties",
+											"children": [
+												84
+											]
+										}
+									],
+									"sources": [
+										{
+											"fileName": "index.ts",
+											"line": 307,
+											"character": 32,
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L307"
+										}
+									]
+								}
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			]
+		},
+		{
+			"id": 68,
+			"name": "isString",
+			"variant": "declaration",
+			"kind": 64,
+			"flags": {},
+			"sources": [
+				{
+					"fileName": "index.ts",
+					"line": 279,
+					"character": 16,
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L279"
+				}
+			],
+			"signatures": [
+				{
+					"id": 69,
+					"name": "isString",
+					"variant": "signature",
+					"kind": 4096,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Tests if the given value is a string"
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "index.ts",
+							"line": 279,
+							"character": 16,
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L279"
+						}
+					],
+					"parameters": [
+						{
+							"id": 70,
+							"name": "value",
+							"variant": "param",
+							"kind": 32768,
+							"flags": {},
+							"type": {
+								"type": "intrinsic",
+								"name": "any"
+							}
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				}
+			]
+		},
+		{
+			"id": 42,
 			"name": "loadArraybuffer",
 			"variant": "declaration",
 			"kind": 64,
@@ -4624,14 +4673,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 186,
+					"line": 193,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L186"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L193"
 				}
 			],
 			"signatures": [
 				{
-					"id": 40,
+					"id": 43,
 					"name": "loadArraybuffer",
 					"variant": "signature",
 					"kind": 4096,
@@ -4639,14 +4688,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 186,
+							"line": 193,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L186"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L193"
 						}
 					],
 					"parameters": [
 						{
-							"id": 41,
+							"id": 44,
 							"name": "url",
 							"variant": "param",
 							"kind": 32768,
@@ -4657,7 +4706,7 @@
 							}
 						},
 						{
-							"id": 42,
+							"id": 45,
 							"name": "ok",
 							"variant": "param",
 							"kind": 32768,
@@ -4665,7 +4714,7 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 43,
+									"id": 46,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
@@ -4673,14 +4722,14 @@
 									"sources": [
 										{
 											"fileName": "index.ts",
-											"line": 186,
+											"line": 193,
 											"character": 49,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L186"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L193"
 										}
 									],
 									"signatures": [
 										{
-											"id": 44,
+											"id": 47,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -4688,14 +4737,14 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 186,
+													"line": 193,
 													"character": 51,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L186"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L193"
 												}
 											],
 											"parameters": [
 												{
-													"id": 45,
+													"id": 48,
 													"name": "arg0",
 													"variant": "param",
 													"kind": 32768,
@@ -4717,7 +4766,7 @@
 											}
 										},
 										{
-											"id": 46,
+											"id": 49,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -4725,14 +4774,14 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 186,
+													"line": 193,
 													"character": 78,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L186"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L193"
 												}
 											],
 											"parameters": [
 												{
-													"id": 47,
+													"id": 50,
 													"name": "_value",
 													"variant": "param",
 													"kind": 32768,
@@ -4753,7 +4802,7 @@
 							}
 						},
 						{
-							"id": 48,
+							"id": 51,
 							"name": "err",
 							"variant": "param",
 							"kind": 32768,
@@ -4761,7 +4810,7 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 49,
+									"id": 52,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
@@ -4769,14 +4818,14 @@
 									"sources": [
 										{
 											"fileName": "index.ts",
-											"line": 186,
+											"line": 193,
 											"character": 106,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L186"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L193"
 										}
 									],
 									"signatures": [
 										{
-											"id": 50,
+											"id": 53,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -4784,14 +4833,14 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 186,
+													"line": 193,
 													"character": 108,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L186"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L193"
 												}
 											],
 											"parameters": [
 												{
-													"id": 51,
+													"id": 54,
 													"name": "arg0",
 													"variant": "param",
 													"kind": 32768,
@@ -4808,7 +4857,7 @@
 											}
 										},
 										{
-											"id": 52,
+											"id": 55,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -4816,14 +4865,14 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 186,
+													"line": 193,
 													"character": 130,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L186"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L193"
 												}
 											],
 											"parameters": [
 												{
-													"id": 53,
+													"id": 56,
 													"name": "_value",
 													"variant": "param",
 													"kind": 32768,
@@ -4852,7 +4901,7 @@
 			]
 		},
 		{
-			"id": 24,
+			"id": 27,
 			"name": "loadJSON",
 			"variant": "declaration",
 			"kind": 64,
@@ -4860,14 +4909,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 137,
+					"line": 144,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L137"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L144"
 				}
 			],
 			"signatures": [
 				{
-					"id": 25,
+					"id": 28,
 					"name": "loadJSON",
 					"variant": "signature",
 					"kind": 4096,
@@ -4875,14 +4924,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 137,
+							"line": 144,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L137"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L144"
 						}
 					],
 					"parameters": [
 						{
-							"id": 26,
+							"id": 29,
 							"name": "url",
 							"variant": "param",
 							"kind": 32768,
@@ -4893,7 +4942,7 @@
 							}
 						},
 						{
-							"id": 27,
+							"id": 30,
 							"name": "ok",
 							"variant": "param",
 							"kind": 32768,
@@ -4901,7 +4950,7 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 28,
+									"id": 31,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
@@ -4909,14 +4958,14 @@
 									"sources": [
 										{
 											"fileName": "index.ts",
-											"line": 138,
+											"line": 145,
 											"character": 29,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L138"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L145"
 										}
 									],
 									"signatures": [
 										{
-											"id": 29,
+											"id": 32,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -4924,14 +4973,14 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 139,
+													"line": 146,
 													"character": 29,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L139"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L146"
 												}
 											],
 											"parameters": [
 												{
-													"id": 30,
+													"id": 33,
 													"name": "arg0",
 													"variant": "param",
 													"kind": 32768,
@@ -4948,7 +4997,7 @@
 											}
 										},
 										{
-											"id": 31,
+											"id": 34,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -4956,14 +5005,14 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 140,
+													"line": 147,
 													"character": 29,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L140"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L147"
 												}
 											],
 											"parameters": [
 												{
-													"id": 32,
+													"id": 35,
 													"name": "_value",
 													"variant": "param",
 													"kind": 32768,
@@ -4984,7 +5033,7 @@
 							}
 						},
 						{
-							"id": 33,
+							"id": 36,
 							"name": "err",
 							"variant": "param",
 							"kind": 32768,
@@ -4992,7 +5041,7 @@
 							"type": {
 								"type": "reflection",
 								"declaration": {
-									"id": 34,
+									"id": 37,
 									"name": "__type",
 									"variant": "declaration",
 									"kind": 65536,
@@ -5000,14 +5049,14 @@
 									"sources": [
 										{
 											"fileName": "index.ts",
-											"line": 142,
+											"line": 149,
 											"character": 30,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L142"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L149"
 										}
 									],
 									"signatures": [
 										{
-											"id": 35,
+											"id": 38,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -5015,14 +5064,14 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 143,
+													"line": 150,
 													"character": 29,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L143"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L150"
 												}
 											],
 											"parameters": [
 												{
-													"id": 36,
+													"id": 39,
 													"name": "arg0",
 													"variant": "param",
 													"kind": 32768,
@@ -5064,7 +5113,7 @@
 											}
 										},
 										{
-											"id": 37,
+											"id": 40,
 											"name": "__type",
 											"variant": "signature",
 											"kind": 4096,
@@ -5072,14 +5121,14 @@
 											"sources": [
 												{
 													"fileName": "index.ts",
-													"line": 144,
+													"line": 151,
 													"character": 29,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L144"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L151"
 												}
 											],
 											"parameters": [
 												{
-													"id": 38,
+													"id": 41,
 													"name": "_value",
 													"variant": "param",
 													"kind": 32768,
@@ -5108,7 +5157,7 @@
 			]
 		},
 		{
-			"id": 54,
+			"id": 57,
 			"name": "saveArrayBuffer",
 			"variant": "declaration",
 			"kind": 64,
@@ -5116,14 +5165,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 237,
+					"line": 244,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L237"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L244"
 				}
 			],
 			"signatures": [
 				{
-					"id": 55,
+					"id": 58,
 					"name": "saveArrayBuffer",
 					"variant": "signature",
 					"kind": 4096,
@@ -5139,14 +5188,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 237,
+							"line": 244,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L237"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L244"
 						}
 					],
 					"parameters": [
 						{
-							"id": 56,
+							"id": 59,
 							"name": "arrayBuffer",
 							"variant": "param",
 							"kind": 32768,
@@ -5162,7 +5211,7 @@
 							}
 						},
 						{
-							"id": 57,
+							"id": 60,
 							"name": "filename",
 							"variant": "param",
 							"kind": 32768,
@@ -5181,7 +5230,7 @@
 			]
 		},
 		{
-			"id": 58,
+			"id": 61,
 			"name": "saveJSON",
 			"variant": "declaration",
 			"kind": 64,
@@ -5189,14 +5238,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 252,
+					"line": 259,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L252"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L259"
 				}
 			],
 			"signatures": [
 				{
-					"id": 59,
+					"id": 62,
 					"name": "saveJSON",
 					"variant": "signature",
 					"kind": 4096,
@@ -5212,14 +5261,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 252,
+							"line": 259,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L252"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L259"
 						}
 					],
 					"parameters": [
 						{
-							"id": 60,
+							"id": 63,
 							"name": "data",
 							"variant": "param",
 							"kind": 32768,
@@ -5230,7 +5279,7 @@
 							}
 						},
 						{
-							"id": 61,
+							"id": 64,
 							"name": "filename",
 							"variant": "param",
 							"kind": 32768,
@@ -5249,7 +5298,7 @@
 			]
 		},
 		{
-			"id": 15,
+			"id": 18,
 			"name": "timeout",
 			"variant": "declaration",
 			"kind": 64,
@@ -5257,14 +5306,14 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 85,
+					"line": 92,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L85"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L92"
 				}
 			],
 			"signatures": [
 				{
-					"id": 16,
+					"id": 19,
 					"name": "timeout",
 					"variant": "signature",
 					"kind": 4096,
@@ -5272,14 +5321,14 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 85,
+							"line": 92,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/utils/src/index.ts#L85"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/utils/src/index.ts#L92"
 						}
 					],
 					"parameters": [
 						{
-							"id": 17,
+							"id": 20,
 							"name": "dt",
 							"variant": "param",
 							"kind": 32768,
@@ -5313,47 +5362,48 @@
 		{
 			"title": "Classes",
 			"children": [
-				273,
-				141,
-				181,
-				121,
-				221
+				276,
+				144,
+				184,
+				124,
+				224
 			]
 		},
 		{
 			"title": "Variables",
 			"children": [
-				252,
-				180
+				255,
+				183
 			]
 		},
 		{
 			"title": "Functions",
 			"children": [
-				85,
-				89,
-				93,
+				88,
+				92,
+				96,
+				7,
 				4,
-				1,
-				8,
-				103,
-				82,
-				107,
 				11,
-				18,
-				100,
-				62,
-				97,
-				74,
-				71,
-				68,
-				77,
+				106,
+				85,
+				110,
+				14,
+				21,
+				103,
 				65,
-				39,
-				24,
-				54,
-				58,
-				15
+				100,
+				77,
+				74,
+				1,
+				71,
+				80,
+				68,
+				42,
+				27,
+				57,
+				61,
+				18
 			]
 		}
 	],
@@ -5372,123 +5422,123 @@
 		},
 		"1": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "clone"
+			"qualifiedName": "isJSONObject"
 		},
 		"2": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "clone"
+			"qualifiedName": "isJSONObject"
 		},
 		"3": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "ob"
+			"qualifiedName": "arg"
 		},
 		"4": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "b64"
+			"qualifiedName": "clone"
 		},
 		"5": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "b64"
+			"qualifiedName": "clone"
 		},
 		"6": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "v"
+			"qualifiedName": "ob"
 		},
 		"7": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "len"
+			"qualifiedName": "b64"
 		},
 		"8": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "compressGuid"
+			"qualifiedName": "b64"
 		},
 		"9": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "compressGuid"
+			"qualifiedName": "v"
 		},
 		"10": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "g"
+			"qualifiedName": "len"
 		},
 		"11": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "findNodeOfType"
+			"qualifiedName": "compressGuid"
 		},
 		"12": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "findNodeOfType"
+			"qualifiedName": "compressGuid"
 		},
 		"13": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "m"
+			"qualifiedName": "g"
 		},
 		"14": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "t"
+			"qualifiedName": "findNodeOfType"
 		},
 		"15": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "timeout"
+			"qualifiedName": "findNodeOfType"
 		},
 		"16": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "timeout"
+			"qualifiedName": "m"
 		},
 		"17": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "dt"
+			"qualifiedName": "t"
 		},
 		"18": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "httpRequest"
+			"qualifiedName": "timeout"
 		},
 		"19": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "httpRequest"
+			"qualifiedName": "timeout"
 		},
 		"20": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "args"
+			"qualifiedName": "dt"
 		},
 		"21": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "__type"
+			"qualifiedName": "httpRequest"
 		},
 		"22": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "__type.method"
+			"qualifiedName": "httpRequest"
 		},
 		"23": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "__type.url"
+			"qualifiedName": "args"
 		},
 		"24": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "loadJSON"
+			"qualifiedName": "__type"
 		},
 		"25": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "loadJSON"
+			"qualifiedName": "__type.method"
 		},
 		"26": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "url"
+			"qualifiedName": "__type.url"
 		},
 		"27": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "ok"
+			"qualifiedName": "loadJSON"
 		},
 		"28": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "__type"
+			"qualifiedName": "loadJSON"
 		},
 		"29": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "__type"
+			"qualifiedName": "url"
 		},
 		"30": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "arg0"
+			"qualifiedName": "ok"
 		},
 		"31": {
 			"sourceFileName": "src/index.ts",
@@ -5496,11 +5546,11 @@
 		},
 		"32": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "_value"
+			"qualifiedName": "__type"
 		},
 		"33": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "err"
+			"qualifiedName": "arg0"
 		},
 		"34": {
 			"sourceFileName": "src/index.ts",
@@ -5508,11 +5558,11 @@
 		},
 		"35": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "__type"
+			"qualifiedName": "_value"
 		},
 		"36": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "arg0"
+			"qualifiedName": "err"
 		},
 		"37": {
 			"sourceFileName": "src/index.ts",
@@ -5520,35 +5570,35 @@
 		},
 		"38": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "_value"
+			"qualifiedName": "__type"
 		},
 		"39": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "loadArraybuffer"
+			"qualifiedName": "arg0"
 		},
 		"40": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "loadArraybuffer"
+			"qualifiedName": "__type"
 		},
 		"41": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "url"
+			"qualifiedName": "_value"
 		},
 		"42": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "ok"
+			"qualifiedName": "loadArraybuffer"
 		},
 		"43": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "__type"
+			"qualifiedName": "loadArraybuffer"
 		},
 		"44": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "__type"
+			"qualifiedName": "url"
 		},
 		"45": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "arg0"
+			"qualifiedName": "ok"
 		},
 		"46": {
 			"sourceFileName": "src/index.ts",
@@ -5556,11 +5606,11 @@
 		},
 		"47": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "_value"
+			"qualifiedName": "__type"
 		},
 		"48": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "err"
+			"qualifiedName": "arg0"
 		},
 		"49": {
 			"sourceFileName": "src/index.ts",
@@ -5568,11 +5618,11 @@
 		},
 		"50": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "__type"
+			"qualifiedName": "_value"
 		},
 		"51": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "arg0"
+			"qualifiedName": "err"
 		},
 		"52": {
 			"sourceFileName": "src/index.ts",
@@ -5580,59 +5630,59 @@
 		},
 		"53": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "_value"
+			"qualifiedName": "__type"
 		},
 		"54": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "saveArrayBuffer"
+			"qualifiedName": "arg0"
 		},
 		"55": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "saveArrayBuffer"
+			"qualifiedName": "__type"
 		},
 		"56": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "arrayBuffer"
+			"qualifiedName": "_value"
 		},
 		"57": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "filename"
+			"qualifiedName": "saveArrayBuffer"
 		},
 		"58": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "saveJSON"
+			"qualifiedName": "saveArrayBuffer"
 		},
 		"59": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "saveJSON"
+			"qualifiedName": "arrayBuffer"
 		},
 		"60": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "data"
+			"qualifiedName": "filename"
 		},
 		"61": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "filename"
+			"qualifiedName": "saveJSON"
 		},
 		"62": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isArray"
+			"qualifiedName": "saveJSON"
 		},
 		"63": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isArray"
+			"qualifiedName": "data"
 		},
 		"64": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "value"
+			"qualifiedName": "filename"
 		},
 		"65": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isString"
+			"qualifiedName": "isArray"
 		},
 		"66": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isString"
+			"qualifiedName": "isArray"
 		},
 		"67": {
 			"sourceFileName": "src/index.ts",
@@ -5640,11 +5690,11 @@
 		},
 		"68": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isNumeric"
+			"qualifiedName": "isString"
 		},
 		"69": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isNumeric"
+			"qualifiedName": "isString"
 		},
 		"70": {
 			"sourceFileName": "src/index.ts",
@@ -5652,11 +5702,11 @@
 		},
 		"71": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isID"
+			"qualifiedName": "isNumeric"
 		},
 		"72": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isID"
+			"qualifiedName": "isNumeric"
 		},
 		"73": {
 			"sourceFileName": "src/index.ts",
@@ -5664,11 +5714,11 @@
 		},
 		"74": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isFunction"
+			"qualifiedName": "isID"
 		},
 		"75": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isFunction"
+			"qualifiedName": "isID"
 		},
 		"76": {
 			"sourceFileName": "src/index.ts",
@@ -5676,11 +5726,11 @@
 		},
 		"77": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isObject"
+			"qualifiedName": "isFunction"
 		},
 		"78": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isObject"
+			"qualifiedName": "isFunction"
 		},
 		"79": {
 			"sourceFileName": "src/index.ts",
@@ -5688,31 +5738,31 @@
 		},
 		"80": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "__type"
+			"qualifiedName": "isObject"
 		},
 		"81": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "__type.constructor"
+			"qualifiedName": "isObject"
 		},
 		"82": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "copy"
+			"qualifiedName": "value"
 		},
 		"83": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "copy"
+			"qualifiedName": "__type"
 		},
 		"84": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "o"
+			"qualifiedName": "__type.constructor"
 		},
 		"85": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "apply"
+			"qualifiedName": "copy"
 		},
 		"86": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "apply"
+			"qualifiedName": "copy"
 		},
 		"87": {
 			"sourceFileName": "src/index.ts",
@@ -5720,135 +5770,135 @@
 		},
 		"88": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "o2"
+			"qualifiedName": "apply"
 		},
 		"89": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "apply2"
+			"qualifiedName": "apply"
 		},
 		"90": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "apply2"
+			"qualifiedName": "o"
 		},
 		"91": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "o"
+			"qualifiedName": "o2"
 		},
 		"92": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "o2"
+			"qualifiedName": "apply2"
 		},
 		"93": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "applyIf"
+			"qualifiedName": "apply2"
 		},
 		"94": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "applyIf"
+			"qualifiedName": "o"
 		},
 		"95": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "o"
+			"qualifiedName": "o2"
 		},
 		"96": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "o2"
+			"qualifiedName": "applyIf"
 		},
 		"97": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isEmptyObject"
+			"qualifiedName": "applyIf"
 		},
 		"98": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "isEmptyObject"
+			"qualifiedName": "o"
 		},
 		"99": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "obj"
+			"qualifiedName": "o2"
 		},
 		"100": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "inQuotes"
+			"qualifiedName": "isEmptyObject"
 		},
 		"101": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "inQuotes"
+			"qualifiedName": "isEmptyObject"
 		},
 		"102": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "id"
+			"qualifiedName": "obj"
 		},
 		"103": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "concat"
+			"qualifiedName": "inQuotes"
 		},
 		"104": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "concat"
+			"qualifiedName": "inQuotes"
 		},
 		"105": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "a"
+			"qualifiedName": "id"
 		},
 		"106": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "b"
+			"qualifiedName": "concat"
 		},
 		"107": {
 			"sourceFileName": "src/index.ts",
-			"qualifiedName": "createUUID"
+			"qualifiedName": "concat"
 		},
 		"108": {
 			"sourceFileName": "src/index.ts",
+			"qualifiedName": "a"
+		},
+		"109": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "b"
+		},
+		"110": {
+			"sourceFileName": "src/index.ts",
 			"qualifiedName": "createUUID"
 		},
-		"121": {
+		"111": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": "createUUID"
+		},
+		"124": {
 			"sourceFileName": "src/Queue.ts",
 			"qualifiedName": "Queue"
 		},
-		"122": {
+		"125": {
 			"sourceFileName": "src/Queue.ts",
 			"qualifiedName": "Queue.__constructor"
 		},
-		"123": {
+		"126": {
 			"sourceFileName": "src/Queue.ts",
 			"qualifiedName": "Queue"
 		},
-		"129": {
-			"sourceFileName": "src/Queue.ts",
-			"qualifiedName": "Queue.length"
-		},
-		"130": {
-			"sourceFileName": "src/Queue.ts",
-			"qualifiedName": "Queue.length"
-		},
-		"131": {
-			"sourceFileName": "src/Queue.ts",
-			"qualifiedName": "Queue.shift"
-		},
 		"132": {
 			"sourceFileName": "src/Queue.ts",
-			"qualifiedName": "Queue.shift"
+			"qualifiedName": "Queue.length"
 		},
 		"133": {
 			"sourceFileName": "src/Queue.ts",
-			"qualifiedName": "Queue.push"
+			"qualifiedName": "Queue.length"
 		},
 		"134": {
 			"sourceFileName": "src/Queue.ts",
-			"qualifiedName": "Queue.push"
+			"qualifiedName": "Queue.shift"
 		},
 		"135": {
 			"sourceFileName": "src/Queue.ts",
-			"qualifiedName": "item"
+			"qualifiedName": "Queue.shift"
 		},
 		"136": {
 			"sourceFileName": "src/Queue.ts",
-			"qualifiedName": "Queue.unshift"
+			"qualifiedName": "Queue.push"
 		},
 		"137": {
 			"sourceFileName": "src/Queue.ts",
-			"qualifiedName": "Queue.unshift"
+			"qualifiedName": "Queue.push"
 		},
 		"138": {
 			"sourceFileName": "src/Queue.ts",
@@ -5856,215 +5906,215 @@
 		},
 		"139": {
 			"sourceFileName": "src/Queue.ts",
-			"qualifiedName": "Queue.clear"
+			"qualifiedName": "Queue.unshift"
 		},
 		"140": {
 			"sourceFileName": "src/Queue.ts",
-			"qualifiedName": "Queue.clear"
+			"qualifiedName": "Queue.unshift"
 		},
 		"141": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader"
+			"sourceFileName": "src/Queue.ts",
+			"qualifiedName": "item"
 		},
 		"142": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.__constructor"
+			"sourceFileName": "src/Queue.ts",
+			"qualifiedName": "Queue.clear"
 		},
 		"143": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader"
+			"sourceFileName": "src/Queue.ts",
+			"qualifiedName": "Queue.clear"
 		},
 		"144": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "manager"
+			"qualifiedName": "Loader"
 		},
 		"145": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.manager"
+			"qualifiedName": "Loader.__constructor"
 		},
 		"146": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.crossOrigin"
+			"qualifiedName": "Loader"
 		},
 		"147": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.withCredentials"
+			"qualifiedName": "manager"
 		},
 		"148": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.path"
+			"qualifiedName": "Loader.manager"
 		},
 		"149": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.resourcePath"
+			"qualifiedName": "Loader.crossOrigin"
 		},
 		"150": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.requestHeader"
+			"qualifiedName": "Loader.withCredentials"
 		},
 		"151": {
-			"sourceFileName": "",
-			"qualifiedName": "__type"
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.path"
 		},
 		"152": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.load"
+			"qualifiedName": "Loader.resourcePath"
 		},
 		"153": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.load"
+			"qualifiedName": "Loader.requestHeader"
 		},
 		"154": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "url"
-		},
-		"155": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "onLoad"
-		},
-		"156": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "onProgress"
-		},
-		"157": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "onError"
-		},
-		"158": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.loadAsync"
-		},
-		"159": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.loadAsync"
-		},
-		"160": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "url"
-		},
-		"161": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "onProgress"
-		},
-		"162": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.parse"
-		},
-		"163": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.parse"
-		},
-		"164": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setCrossOrigin"
-		},
-		"165": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setCrossOrigin"
-		},
-		"166": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "crossOrigin"
-		},
-		"167": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setWithCredentials"
-		},
-		"168": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setWithCredentials"
-		},
-		"169": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "value"
-		},
-		"170": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setPath"
-		},
-		"171": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setPath"
-		},
-		"172": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "path"
-		},
-		"173": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setResourcePath"
-		},
-		"174": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setResourcePath"
-		},
-		"175": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "resourcePath"
-		},
-		"176": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setRequestHeader"
-		},
-		"177": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setRequestHeader"
-		},
-		"178": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "requestHeader"
-		},
-		"179": {
 			"sourceFileName": "",
 			"qualifiedName": "__type"
 		},
+		"155": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.load"
+		},
+		"156": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.load"
+		},
+		"157": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "url"
+		},
+		"158": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "onLoad"
+		},
+		"159": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "onProgress"
+		},
+		"160": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "onError"
+		},
+		"161": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.loadAsync"
+		},
+		"162": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.loadAsync"
+		},
+		"163": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "url"
+		},
+		"164": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "onProgress"
+		},
+		"165": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.parse"
+		},
+		"166": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.parse"
+		},
+		"167": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setCrossOrigin"
+		},
+		"168": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setCrossOrigin"
+		},
+		"169": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "crossOrigin"
+		},
+		"170": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setWithCredentials"
+		},
+		"171": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setWithCredentials"
+		},
+		"172": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "value"
+		},
+		"173": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setPath"
+		},
+		"174": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setPath"
+		},
+		"175": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "path"
+		},
+		"176": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setResourcePath"
+		},
+		"177": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setResourcePath"
+		},
+		"178": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "resourcePath"
+		},
+		"179": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setRequestHeader"
+		},
 		"180": {
-			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "DefaultLoadingManager"
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setRequestHeader"
 		},
 		"181": {
-			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager"
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "requestHeader"
 		},
 		"182": {
-			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.__constructor"
+			"sourceFileName": "",
+			"qualifiedName": "__type"
 		},
 		"183": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager"
+			"qualifiedName": "DefaultLoadingManager"
 		},
 		"184": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "onLoad"
+			"qualifiedName": "LoadingManager"
 		},
 		"185": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "onProgress"
+			"qualifiedName": "LoadingManager.__constructor"
 		},
 		"186": {
 			"sourceFileName": "src/LoadingManager.ts",
+			"qualifiedName": "LoadingManager"
+		},
+		"187": {
+			"sourceFileName": "src/LoadingManager.ts",
+			"qualifiedName": "onLoad"
+		},
+		"188": {
+			"sourceFileName": "src/LoadingManager.ts",
+			"qualifiedName": "onProgress"
+		},
+		"189": {
+			"sourceFileName": "src/LoadingManager.ts",
 			"qualifiedName": "onError"
-		},
-		"196": {
-			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.itemStart"
-		},
-		"197": {
-			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.itemStart"
-		},
-		"198": {
-			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "url"
 		},
 		"199": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.itemEnd"
+			"qualifiedName": "LoadingManager.itemStart"
 		},
 		"200": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.itemEnd"
+			"qualifiedName": "LoadingManager.itemStart"
 		},
 		"201": {
 			"sourceFileName": "src/LoadingManager.ts",
@@ -6072,11 +6122,11 @@
 		},
 		"202": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.itemError"
+			"qualifiedName": "LoadingManager.itemEnd"
 		},
 		"203": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.itemError"
+			"qualifiedName": "LoadingManager.itemEnd"
 		},
 		"204": {
 			"sourceFileName": "src/LoadingManager.ts",
@@ -6084,11 +6134,11 @@
 		},
 		"205": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.resolveURL"
+			"qualifiedName": "LoadingManager.itemError"
 		},
 		"206": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.resolveURL"
+			"qualifiedName": "LoadingManager.itemError"
 		},
 		"207": {
 			"sourceFileName": "src/LoadingManager.ts",
@@ -6096,171 +6146,171 @@
 		},
 		"208": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.setURLModifier"
+			"qualifiedName": "LoadingManager.resolveURL"
 		},
 		"209": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.setURLModifier"
+			"qualifiedName": "LoadingManager.resolveURL"
 		},
 		"210": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "transform"
+			"qualifiedName": "url"
 		},
 		"211": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.addHandler"
+			"qualifiedName": "LoadingManager.setURLModifier"
 		},
 		"212": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.addHandler"
+			"qualifiedName": "LoadingManager.setURLModifier"
 		},
 		"213": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "regex"
+			"qualifiedName": "transform"
 		},
 		"214": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "loader"
+			"qualifiedName": "LoadingManager.addHandler"
 		},
 		"215": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.removeHandler"
+			"qualifiedName": "LoadingManager.addHandler"
 		},
 		"216": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.removeHandler"
+			"qualifiedName": "regex"
 		},
 		"217": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "regex"
+			"qualifiedName": "loader"
 		},
 		"218": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.getHandler"
+			"qualifiedName": "LoadingManager.removeHandler"
 		},
 		"219": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "LoadingManager.getHandler"
+			"qualifiedName": "LoadingManager.removeHandler"
 		},
 		"220": {
 			"sourceFileName": "src/LoadingManager.ts",
-			"qualifiedName": "file"
+			"qualifiedName": "regex"
 		},
 		"221": {
-			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool"
+			"sourceFileName": "src/LoadingManager.ts",
+			"qualifiedName": "LoadingManager.getHandler"
 		},
 		"222": {
-			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool.__constructor"
+			"sourceFileName": "src/LoadingManager.ts",
+			"qualifiedName": "LoadingManager.getHandler"
 		},
 		"223": {
-			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool"
+			"sourceFileName": "src/LoadingManager.ts",
+			"qualifiedName": "file"
 		},
 		"224": {
 			"sourceFileName": "src/WorkerPool.ts",
+			"qualifiedName": "WorkerPool"
+		},
+		"225": {
+			"sourceFileName": "src/WorkerPool.ts",
+			"qualifiedName": "WorkerPool.__constructor"
+		},
+		"226": {
+			"sourceFileName": "src/WorkerPool.ts",
+			"qualifiedName": "WorkerPool"
+		},
+		"227": {
+			"sourceFileName": "src/WorkerPool.ts",
 			"qualifiedName": "pool"
-		},
-		"231": {
-			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool._initWorker"
-		},
-		"232": {
-			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool._initWorker"
-		},
-		"233": {
-			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "workerId"
 		},
 		"234": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool._getIdleWorker"
+			"qualifiedName": "WorkerPool._initWorker"
 		},
 		"235": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool._getIdleWorker"
+			"qualifiedName": "WorkerPool._initWorker"
 		},
 		"236": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool._onMessage"
+			"qualifiedName": "workerId"
 		},
 		"237": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool._onMessage"
+			"qualifiedName": "WorkerPool._getIdleWorker"
 		},
 		"238": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "workerId"
+			"qualifiedName": "WorkerPool._getIdleWorker"
 		},
 		"239": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "msg"
+			"qualifiedName": "WorkerPool._onMessage"
 		},
 		"240": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool.setWorkerCreator"
+			"qualifiedName": "WorkerPool._onMessage"
 		},
 		"241": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool.setWorkerCreator"
+			"qualifiedName": "workerId"
 		},
 		"242": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "workerCreator"
+			"qualifiedName": "msg"
 		},
 		"243": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool.setWorkerLimit"
+			"qualifiedName": "WorkerPool.setWorkerCreator"
 		},
 		"244": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool.setWorkerLimit"
+			"qualifiedName": "WorkerPool.setWorkerCreator"
 		},
 		"245": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "pool"
+			"qualifiedName": "workerCreator"
 		},
 		"246": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool.postMessage"
+			"qualifiedName": "WorkerPool.setWorkerLimit"
 		},
 		"247": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool.postMessage"
+			"qualifiedName": "WorkerPool.setWorkerLimit"
 		},
 		"248": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "msg"
+			"qualifiedName": "pool"
 		},
 		"249": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "transfer"
+			"qualifiedName": "WorkerPool.postMessage"
 		},
 		"250": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool.destroy"
+			"qualifiedName": "WorkerPool.postMessage"
 		},
 		"251": {
 			"sourceFileName": "src/WorkerPool.ts",
-			"qualifiedName": "WorkerPool.destroy"
+			"qualifiedName": "msg"
 		},
 		"252": {
-			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "Cache"
+			"sourceFileName": "src/WorkerPool.ts",
+			"qualifiedName": "transfer"
 		},
 		"253": {
-			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__object"
+			"sourceFileName": "src/WorkerPool.ts",
+			"qualifiedName": "WorkerPool.destroy"
 		},
 		"254": {
-			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__object.enabled"
+			"sourceFileName": "src/WorkerPool.ts",
+			"qualifiedName": "WorkerPool.destroy"
 		},
 		"255": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__object.files"
+			"qualifiedName": "Cache"
 		},
 		"256": {
 			"sourceFileName": "src/Cache.ts",
@@ -6268,43 +6318,43 @@
 		},
 		"257": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__object.add"
+			"qualifiedName": "__object.enabled"
 		},
 		"258": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__function"
+			"qualifiedName": "__object.files"
 		},
 		"259": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__function"
+			"qualifiedName": "__object"
 		},
 		"260": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "key"
+			"qualifiedName": "__object.add"
 		},
 		"261": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "file"
+			"qualifiedName": "__function"
 		},
 		"262": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__object.get"
+			"qualifiedName": "__function"
 		},
 		"263": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__function"
+			"qualifiedName": "key"
 		},
 		"264": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__function"
+			"qualifiedName": "file"
 		},
 		"265": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "key"
+			"qualifiedName": "__object.get"
 		},
 		"266": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__object.remove"
+			"qualifiedName": "__function"
 		},
 		"267": {
 			"sourceFileName": "src/Cache.ts",
@@ -6312,15 +6362,15 @@
 		},
 		"268": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__function"
+			"qualifiedName": "key"
 		},
 		"269": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "key"
+			"qualifiedName": "__object.remove"
 		},
 		"270": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__object.clear"
+			"qualifiedName": "__function"
 		},
 		"271": {
 			"sourceFileName": "src/Cache.ts",
@@ -6328,193 +6378,205 @@
 		},
 		"272": {
 			"sourceFileName": "src/Cache.ts",
-			"qualifiedName": "__function"
+			"qualifiedName": "key"
 		},
 		"273": {
-			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "FileLoader"
+			"sourceFileName": "src/Cache.ts",
+			"qualifiedName": "__object.clear"
 		},
 		"274": {
-			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "FileLoader.__constructor"
+			"sourceFileName": "src/Cache.ts",
+			"qualifiedName": "__function"
 		},
 		"275": {
-			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "FileLoader"
+			"sourceFileName": "src/Cache.ts",
+			"qualifiedName": "__function"
 		},
 		"276": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "manager"
+			"qualifiedName": "FileLoader"
 		},
 		"277": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "FileLoader.mimeType"
+			"qualifiedName": "FileLoader.__constructor"
 		},
 		"278": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "FileLoader.responseType"
+			"qualifiedName": "FileLoader"
 		},
 		"279": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "FileLoader.load"
+			"qualifiedName": "manager"
 		},
 		"280": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "FileLoader.load"
+			"qualifiedName": "FileLoader.mimeType"
 		},
 		"281": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "url"
+			"qualifiedName": "FileLoader.responseType"
 		},
 		"282": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "onLoad"
+			"qualifiedName": "FileLoader.load"
 		},
 		"283": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "onProgress"
+			"qualifiedName": "FileLoader.load"
 		},
 		"284": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "onError"
+			"qualifiedName": "url"
 		},
 		"285": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "FileLoader.setResponseType"
+			"qualifiedName": "onLoad"
 		},
 		"286": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "FileLoader.setResponseType"
+			"qualifiedName": "onProgress"
 		},
 		"287": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "value"
+			"qualifiedName": "onError"
 		},
 		"288": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "FileLoader.setMimeType"
+			"qualifiedName": "FileLoader.setResponseType"
 		},
 		"289": {
 			"sourceFileName": "src/FileLoader.ts",
-			"qualifiedName": "FileLoader.setMimeType"
+			"qualifiedName": "FileLoader.setResponseType"
 		},
 		"290": {
 			"sourceFileName": "src/FileLoader.ts",
 			"qualifiedName": "value"
 		},
 		"291": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.manager"
+			"sourceFileName": "src/FileLoader.ts",
+			"qualifiedName": "FileLoader.setMimeType"
 		},
 		"292": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.crossOrigin"
+			"sourceFileName": "src/FileLoader.ts",
+			"qualifiedName": "FileLoader.setMimeType"
 		},
 		"293": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.withCredentials"
+			"sourceFileName": "src/FileLoader.ts",
+			"qualifiedName": "value"
 		},
 		"294": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.path"
+			"qualifiedName": "Loader.manager"
 		},
 		"295": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.resourcePath"
+			"qualifiedName": "Loader.crossOrigin"
 		},
 		"296": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.requestHeader"
+			"qualifiedName": "Loader.withCredentials"
 		},
 		"297": {
-			"sourceFileName": "",
-			"qualifiedName": "__type"
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.path"
 		},
 		"298": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.loadAsync"
+			"qualifiedName": "Loader.resourcePath"
 		},
 		"299": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.loadAsync"
+			"qualifiedName": "Loader.requestHeader"
 		},
 		"300": {
-			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "url"
+			"sourceFileName": "",
+			"qualifiedName": "__type"
 		},
 		"301": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "onProgress"
+			"qualifiedName": "Loader.loadAsync"
 		},
 		"302": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.parse"
+			"qualifiedName": "Loader.loadAsync"
 		},
 		"303": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.parse"
+			"qualifiedName": "url"
 		},
 		"304": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setCrossOrigin"
+			"qualifiedName": "onProgress"
 		},
 		"305": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setCrossOrigin"
+			"qualifiedName": "Loader.parse"
 		},
 		"306": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "crossOrigin"
+			"qualifiedName": "Loader.parse"
 		},
 		"307": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setWithCredentials"
+			"qualifiedName": "Loader.setCrossOrigin"
 		},
 		"308": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setWithCredentials"
+			"qualifiedName": "Loader.setCrossOrigin"
 		},
 		"309": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "value"
+			"qualifiedName": "crossOrigin"
 		},
 		"310": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setPath"
+			"qualifiedName": "Loader.setWithCredentials"
 		},
 		"311": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setPath"
+			"qualifiedName": "Loader.setWithCredentials"
 		},
 		"312": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "path"
+			"qualifiedName": "value"
 		},
 		"313": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setResourcePath"
+			"qualifiedName": "Loader.setPath"
 		},
 		"314": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setResourcePath"
+			"qualifiedName": "Loader.setPath"
 		},
 		"315": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "resourcePath"
+			"qualifiedName": "path"
 		},
 		"316": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setRequestHeader"
+			"qualifiedName": "Loader.setResourcePath"
 		},
 		"317": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "Loader.setRequestHeader"
+			"qualifiedName": "Loader.setResourcePath"
 		},
 		"318": {
 			"sourceFileName": "src/Loader.ts",
-			"qualifiedName": "requestHeader"
+			"qualifiedName": "resourcePath"
 		},
 		"319": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setRequestHeader"
+		},
+		"320": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "Loader.setRequestHeader"
+		},
+		"321": {
+			"sourceFileName": "src/Loader.ts",
+			"qualifiedName": "requestHeader"
+		},
+		"322": {
 			"sourceFileName": "",
 			"qualifiedName": "__type"
 		}

@@ -53,9 +53,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 61,
+					"line": 62,
 					"character": 13,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L61"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L62"
 				}
 			],
 			"type": {
@@ -73,9 +73,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 84,
+					"line": 85,
 					"character": 13,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L84"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L85"
 				}
 			],
 			"signatures": [
@@ -107,9 +107,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 89,
+							"line": 90,
 							"character": 11,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L89"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L90"
 						}
 					],
 					"parameters": [
@@ -183,9 +183,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 67,
+					"line": 68,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L67"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L68"
 				}
 			],
 			"signatures": [
@@ -206,9 +206,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 67,
+							"line": 68,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L67"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L68"
 						}
 					],
 					"parameters": [
@@ -283,9 +283,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 209,
+					"line": 218,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L209"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L218"
 				}
 			],
 			"signatures": [
@@ -312,9 +312,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 209,
+							"line": 218,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L209"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L218"
 						}
 					],
 					"parameters": [
@@ -399,9 +399,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 192,
+					"line": 201,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L192"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L201"
 				}
 			],
 			"signatures": [
@@ -422,9 +422,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 192,
+							"line": 201,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L192"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L201"
 						}
 					],
 					"parameters": [
@@ -522,9 +522,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 139,
+					"line": 148,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L139"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L148"
 				}
 			],
 			"signatures": [
@@ -545,9 +545,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 139,
+							"line": 148,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L139"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L148"
 						}
 					],
 					"parameters": [
@@ -643,9 +643,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 110,
+					"line": 119,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L110"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L119"
 				}
 			],
 			"signatures": [
@@ -666,9 +666,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 110,
+							"line": 119,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L110"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L119"
 						}
 					],
 					"parameters": [
@@ -761,9 +761,9 @@
 			"sources": [
 				{
 					"fileName": "index.ts",
-					"line": 162,
+					"line": 171,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L162"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L171"
 				}
 			],
 			"signatures": [
@@ -863,9 +863,9 @@
 					"sources": [
 						{
 							"fileName": "index.ts",
-							"line": 162,
+							"line": 171,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/rtc/src/index.ts#L162"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/rtc/src/index.ts#L171"
 						}
 					],
 					"parameters": [

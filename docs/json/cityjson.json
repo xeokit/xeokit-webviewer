@@ -137,7 +137,7 @@
 			},
 			{
 				"kind": "code",
-				"text": "````javascript\nimport {SDKError} from \"@xeokit/core\";\nimport {Scene} from \"@xeokit/scene\";\nimport {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {Viewer} from \"@xeokit/viewer\";\nimport {CameraControl} from \"@xeokit/cameracontrol\";\nimport {loadCityJSON} from \"@xeokit/cityjson\";\n\nconst scene = new Scene();\nconst data = new Data();\n\nconst renderer = new WebGLRenderer({});\n\nconst viewer = new Viewer({\n    id: \"myViewer\",\n    scene,\n    renderer\n});\n\nconst view = viewer.createView({\n    id: \"myView\",\n    elementId: \"myCanvas\" // << Ensure that this HTMLElement exists in the page\n});\n\nif (view instanceof SDKError) {\n    console.error(`Error creating View: ${view.message}`);\n\n} else {\n\n    view.camera.eye = [1841982.93, 10.03, -5173286.74];\n    view.camera.look = [1842009.49, 9.68, -5173295.85];\n    view.camera.up = [0.0, 1.0, 0.0];\n\n    new CameraControl(view, {});\n\n    const sceneModel = scene.createModel({\n        id: \"myModel\"\n    });\n\n    const dataModel = data.createModel({\n        id: \"myModel\"\n    });\n\n    if (sceneModel instanceof SDKError) {\n        console.error(`Error creating SceneModel: ${sceneModel.message}`);\n\n    } else if (dataModel instanceof SDKError) {\n        console.error(`Error creating DataModel: ${dataModel.message}`);\n\n    } else {\n\n        fetch(\"model.bim\").then(response => {\n\n            response.json().then(fileData => {\n\n                loadCityJSON({\n                    fileData,\n                    sceneModel,\n                    dataModel\n                }).then(() => {\n\n                    sceneModel.build();\n                    dataModel.build();\n\n                }).catch(sdkError => {\n                    sceneModel.destroy();\n                    dataModel.destroy();\n                    console.error(`Error loading CityJSON: ${sdkError.message}`);\n                });\n\n            }).catch(message => {\n                console.error(`Error creating ArrayBuffer: ${message}`);\n            });\n\n        }).catch(message => {\n            console.error(`Error fetching model: ${message}`);\n        });\n    }\n}\n````"
+				"text": "````javascript\nimport {SDKError} from \"@xeokit/core\";\nimport {Scene} from \"@xeokit/scene\";\nimport {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {Viewer} from \"@xeokit/viewer\";\nimport {CameraControl} from \"@xeokit/cameracontrol\";\nimport {loadCityJSON} from \"@xeokit/cityjson\";\n\nconst scene = new Scene();\nconst data = new Data();\n\nconst renderer = new WebGLRenderer({});\n\nconst viewer = new Viewer({\n    id: \"myViewer\",\n    scene,\n    renderer\n});\n\nconst view = viewer.createView({\n    id: \"myView\",\n    elementId: \"myCanvas\" // << Ensure that this HTMLElement exists in the page\n});\n\nview.camera.eye = [1841982.93, 10.03, -5173286.74];\nview.camera.look = [1842009.49, 9.68, -5173295.85];\nview.camera.up = [0.0, 1.0, 0.0];\n\nnew CameraControl(view, {});\n\nconst sceneModel = scene.createModel({\n    id: \"myModel\"\n});\n\nconst dataModel = data.createModel({\n    id: \"myModel\"\n});\n\nfetch(\"model.json\").then(response => {\n\n    response.json().then(fileData => {\n\n        loadCityJSON({\n            fileData,\n            sceneModel,\n            dataModel\n        }).then(() => {\n\n            sceneModel.build();\n            dataModel.build();\n\n        }).catch(err => {\n\n            sceneModel.destroy();\n            dataModel.destroy();\n\n            console.error(`Error loading CityJSON: ${err}`);\n        });\n\n    }).catch(err => {\n        console.error(`Error creating JSON from fetch response: ${err}`);\n    });\n\n}).catch(err => {\n    console.error(`Error fetching CityJSON file: ${err}`);\n});\n````"
 			}
 		]
 	},
@@ -153,7 +153,7 @@
 					"fileName": "loadCityJSON.ts",
 					"line": 46,
 					"character": 16,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cityjson/src/loadCityJSON.ts#L46"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cityjson/src/loadCityJSON.ts#L46"
 				}
 			],
 			"signatures": [
@@ -267,7 +267,7 @@
 							"fileName": "loadCityJSON.ts",
 							"line": 46,
 							"character": 16,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cityjson/src/loadCityJSON.ts#L46"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cityjson/src/loadCityJSON.ts#L46"
 						}
 					],
 					"parameters": [
@@ -315,7 +315,7 @@
 													"fileName": "loadCityJSON.ts",
 													"line": 49,
 													"character": 33,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cityjson/src/loadCityJSON.ts#L49"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cityjson/src/loadCityJSON.ts#L49"
 												}
 											],
 											"type": {
@@ -347,7 +347,7 @@
 													"fileName": "loadCityJSON.ts",
 													"line": 47,
 													"character": 33,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cityjson/src/loadCityJSON.ts#L47"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cityjson/src/loadCityJSON.ts#L47"
 												}
 											],
 											"type": {
@@ -360,7 +360,9 @@
 											"name": "sceneModel",
 											"variant": "declaration",
 											"kind": 1024,
-											"flags": {},
+											"flags": {
+												"isOptional": true
+											},
 											"comment": {
 												"summary": [
 													{
@@ -374,7 +376,7 @@
 													"fileName": "loadCityJSON.ts",
 													"line": 48,
 													"character": 33,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cityjson/src/loadCityJSON.ts#L48"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cityjson/src/loadCityJSON.ts#L48"
 												}
 											],
 											"type": {
@@ -403,7 +405,7 @@
 											"fileName": "loadCityJSON.ts",
 											"line": 46,
 											"character": 37,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cityjson/src/loadCityJSON.ts#L46"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cityjson/src/loadCityJSON.ts#L46"
 										}
 									]
 								}
@@ -453,7 +455,7 @@
 													"fileName": "loadCityJSON.ts",
 													"line": 52,
 													"character": 33,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cityjson/src/loadCityJSON.ts#L52"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cityjson/src/loadCityJSON.ts#L52"
 												}
 											],
 											"type": {
@@ -475,7 +477,7 @@
 											"fileName": "loadCityJSON.ts",
 											"line": 51,
 											"character": 38,
-											"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/cityjson/src/loadCityJSON.ts#L51"
+											"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/cityjson/src/loadCityJSON.ts#L51"
 										}
 									]
 								}

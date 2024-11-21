@@ -13,8 +13,7 @@
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "KTX2TextureTranscoder",
-				"target": 1
+				"text": "@xeokit/ktx2!KTX2TextureTranscoder | KTX2TextureTranscoder"
 			},
 			{
 				"kind": "text",
@@ -32,7 +31,7 @@
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "@xeokit/webglrenderer!WebGLRenderer"
+				"text": "@xeokit/webglrenderer!WebGLRenderer | WebGLRenderer"
 			},
 			{
 				"kind": "text",
@@ -41,8 +40,7 @@
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "KTX2TextureTranscoder",
-				"target": 1
+				"text": "@xeokit/ktx2!KTX2TextureTranscoder | KTX2TextureTranscoder"
 			},
 			{
 				"kind": "text",
@@ -63,7 +61,7 @@
 			},
 			{
 				"kind": "text",
-				"text": "\n\n## Usage\n\n### Loading an DTX file containing [KTX2](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ktx2) textures into a Viewer\n\nCreate a "
+				"text": "\n\n## Usage\n\n### Loading an XGF file containing [KTX2](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ktx2) textures into a Viewer\n\nCreate a "
 			},
 			{
 				"kind": "inline-tag",
@@ -77,7 +75,7 @@
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "@xeokit/webglrenderer!WebGLRenderer"
+				"text": "@xeokit/webglrenderer!WebGLRenderer | WebGLRenderer"
 			},
 			{
 				"kind": "text",
@@ -104,15 +102,15 @@
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "loadDTX"
+				"text": "loadXGF"
 			},
 			{
 				"kind": "text",
-				"text": " to\nload a [DTX](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#dtx) file with KTX2-compressed textures into the SceneModel. For each [KTX2](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ktx2) texture in the file, the\nKTX2TextureTranscoder will transparently transcode the [KTX2](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ktx2) data for us.\n\n"
+				"text": " to\nload a [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) file with KTX2-compressed textures into the SceneModel. For each [KTX2](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ktx2) texture in the file, the\nKTX2TextureTranscoder will transparently transcode the [KTX2](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ktx2) data for us.\n\n"
 			},
 			{
 				"kind": "code",
-				"text": "````javascript\nimport {Viewer} from \"@xeokit/viewer\";\nimport {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {KTX2TextureTranscoder} from \"@xeokit/ktx2\";\nimport {loadDTX} from \"@xeokit/dtx\";\n\nconst myViewer = new Viewer({\n    id: \"myViewer\",\n    renderers: new WebGLRenderer({ // Optional\n         textureTranscoder: new KTX2TextureTranscoder({\n             transcoderPath: \"./../dist/basis/\" // Optional, path to BasisU transcoder module\n         })\n    })\n});\n\nconst view1 = myViewer.createView({\n    id: \"myView\",\n    canvasId: \"myCanvas1\"\n});\n\nview1.camera.eye = [-3.933, 2.855, 27.018];\nview1.camera.look = [4.400, 3.724, 8.899];\nview1.camera.up = [-0.018, 0.999, 0.039];\n\nconst sceneModel= myViewer.scene.createModel({\n    id: \"myModel\"\n});\n\nfetch(\"myModelWithTextures.dtx\") // <<-- [DTX](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#dtx) file with KTX2 textures\n    .then(response => {\n         if (response.ok) {\n             loadDTX(response.arrayBuffer(), sceneModel);\n             sceneModel.build();\n         }\n    });\n````"
+				"text": "````javascript\nimport {Viewer} from \"@xeokit/viewer\";\nimport {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {KTX2TextureTranscoder} from \"@xeokit/ktx2\";\nimport {loadXGF} from \"@xeokit/xgf\";\n\nconst myViewer = new Viewer({\n    id: \"myViewer\",\n    renderers: new WebGLRenderer({ // Optional\n         textureTranscoder: new KTX2TextureTranscoder({\n             transcoderPath: \"./../dist/basis/\" // Optional, path to BasisU transcoder module\n         })\n    })\n});\n\nconst view1 = myViewer.createView({\n    id: \"myView\",\n    canvasId: \"myCanvas1\"\n});\n\nview1.camera.eye = [-3.933, 2.855, 27.018];\nview1.camera.look = [4.400, 3.724, 8.899];\nview1.camera.up = [-0.018, 0.999, 0.039];\n\nconst sceneModel= myViewer.scene.createModel({\n    id: \"myModel\"\n});\n\nfetch(\"myModelWithTextures.xgf\") // <<-- [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) file with KTX2 textures\n    .then(response => {\n         if (response.ok) {\n             loadXGF(response.arrayBuffer(), sceneModel);\n             sceneModel.build();\n         }\n    });\n````"
 			},
 			{
 				"kind": "text",
@@ -130,7 +128,7 @@
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "@xeokit/webglrenderer!WebGLRenderer"
+				"text": "@xeokit/webglrenderer!WebGLRenderer | WebGLRenderer"
 			},
 			{
 				"kind": "text",
@@ -139,7 +137,7 @@
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "@xeokit/ktx2!KTX2TextureTranscoder"
+				"text": "@xeokit/ktx2!KTX2TextureTranscoder | KTX2TextureTranscoder"
 			},
 			{
 				"kind": "text",
@@ -165,7 +163,7 @@
 			},
 			{
 				"kind": "code",
-				"text": "````javascript\nimport {Viewer} from \"@xeokit/viewer\";\nimport {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {KTX2TextureTranscoder} from \"@xeokit/ktx2\";\nimport {loadDTX} from \"@xeokit/dtx\";\n\nconst myViewer = new Viewer({\n    id: \"myViewer\",\n    renderers: new WebGLRenderer({ // Optional\n         textureTranscoder: new KTX2TextureTranscoder({ // Optional\n             transcoderPath: \"./../dist/basis/\" // Optional, path to BasisU transcoder module\n         })\n    })\n});\n\nconst view1 = myViewer.createView({\n    id: \"myView\",\n    canvasId: \"myView1\"\n});\n\nview1.camera.eye = [-3.933, 2.855, 27.018];\nview1.camera.look = [4.400, 3.724, 8.899];\nview1.camera.up = [-0.018, 0.999, 0.039];\n\nconst viewerModel = myViewer.scene.createModel({\n     id: \"myModel\"\n });\n\nviewerModel.createTexture({\n     id: \"myColorTexture\",\n     src: \"sample_uastc_zstd.ktx2\" // <<----- KTX2 texture asset\n});\n\nviewerModel.createTexture({\n     id: \"myMetallicRoughnessTexture\",\n     src: \"crosshatchAlphaMap.jpg\" // <<----- JPEG texture asset\n});\n\nviewerModel.createTextureSet({\n     id: \"myTextureSet\",\n     colorTextureId: \"myColorTexture\",\n     metallicRoughnessTextureId: \"myMetallicRoughnessTexture\"\n });\n\nviewerModel.createGeometry({\n    id: \"myGeometry\",\n    primitive: TrianglesPrimitive,\n    positions: [1, 1, 1, ...],\n    normals: [0, 0, 1, 0, ...],\n    uv: [1, 0, 0, ...],\n    indices: [0, 1, 2, ...],\n});\n\nviewerModel.createLayerMesh({\n     id: \"myMesh\",\n     textureSetId: \"myTextureSet\",\n     geometryId: \"myGeometry\"\n });\n\nviewerModel.createObject({\n     id: \"myObject\",\n     meshIds: [\"myMesh\"]\n });\n\nviewerModel.build();\n````"
+				"text": "````javascript\nimport {Viewer} from \"@xeokit/viewer\";\nimport {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {KTX2TextureTranscoder} from \"@xeokit/ktx2\";\nimport {loadXGF} from \"@xeokit/xgf\";\n\nconst myViewer = new Viewer({\n    id: \"myViewer\",\n    renderers: new WebGLRenderer({ // Optional\n         textureTranscoder: new KTX2TextureTranscoder({ // Optional\n             transcoderPath: \"./../dist/basis/\" // Optional, path to BasisU transcoder module\n         })\n    })\n});\n\nconst view1 = myViewer.createView({\n    id: \"myView\",\n    canvasId: \"myView1\"\n});\n\nview1.camera.eye = [-3.933, 2.855, 27.018];\nview1.camera.look = [4.400, 3.724, 8.899];\nview1.camera.up = [-0.018, 0.999, 0.039];\n\nconst sceneModel = myViewer.scene.createModel({\n     id: \"myModel\"\n });\n\nsceneModel.createTexture({\n     id: \"myColorTexture\",\n     src: \"sample_uastc_zstd.ktx2\" // <<----- KTX2 texture asset\n});\n\nsceneModel.createTexture({\n     id: \"myMetallicRoughnessTexture\",\n     src: \"crosshatchAlphaMap.jpg\" // <<----- JPEG texture asset\n});\n\nsceneModel.createTextureSet({\n     id: \"myTextureSet\",\n     colorTextureId: \"myColorTexture\",\n     metallicRoughnessTextureId: \"myMetallicRoughnessTexture\"\n });\n\nsceneModel.createGeometry({\n    id: \"myGeometry\",\n    primitive: TrianglesPrimitive,\n    positions: [1, 1, 1, ...],\n    normals: [0, 0, 1, 0, ...],\n    uv: [1, 0, 0, ...],\n    indices: [0, 1, 2, ...],\n});\n\nsceneModel.createLayerMesh({\n     id: \"myMesh\",\n     textureSetId: \"myTextureSet\",\n     geometryId: \"myGeometry\"\n });\n\nsceneModel.createObject({\n     id: \"myObject\",\n     meshIds: [\"myMesh\"]\n });\n\nsceneModel.build();\n````"
 			},
 			{
 				"kind": "text",
@@ -183,7 +181,7 @@
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "@xeokit/webglrenderer!WebGLRenderer"
+				"text": "@xeokit/webglrenderer!WebGLRenderer | WebGLRenderer"
 			},
 			{
 				"kind": "text",
@@ -192,7 +190,7 @@
 			{
 				"kind": "inline-tag",
 				"tag": "@link",
-				"text": "@xeokit/ktx2!KTX2TextureTranscoder"
+				"text": "@xeokit/ktx2!KTX2TextureTranscoder | KTX2TextureTranscoder"
 			},
 			{
 				"kind": "text",
@@ -218,7 +216,7 @@
 			},
 			{
 				"kind": "code",
-				"text": "````javascript\nimport {Viewer} from \"@xeokit/viewer\";\nimport {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {KTX2TextureTranscoder} from \"@xeokit/ktx2\";\nimport {loadDTX} from \"@xeokit/dtx\";\n\nconst myViewer = new Viewer({\n    id: \"myViewer\",\n    renderers: new WebGLRenderer({ // Optional\n         textureTranscoder: new KTX2TextureTranscoder({ // Optional\n             transcoderPath: \"./../dist/basis/\" // Optional, path to BasisU transcoder module\n         })\n    })\n});\n\nconst view1 = myViewer.createView({\n    id: \"myView\",\n    canvasId: \"myView1\"\n});\n\nview1.camera.eye = [-3.933, 2.855, 27.018];\nview1.camera.look = [4.400, 3.724, 8.899];\nview1.camera.up = [-0.018, 0.999, 0.039];\n\nconst viewerModel = myViewer.scene.createModel({\n     id: \"myModel\"\n});\n\nfetch(\"sample_uastc_zstd.ktx2\") // // <<----- KTX2 texture asset\n    .then(response => {\n         if (response.ok) {\n\n             viewerModel.createTexture({\n                 id: \"myColorTexture\",\n                 buffers: [arrayBuffer] // <<----- KTX2 texture asset\n             });\n\n             viewerModel.createTexture({\n                 id: \"myMetallicRoughnessTexture\",\n                 src: \"../assets/textures/alpha/crosshatchAlphaMap.jpg\" // <<----- JPEG texture asset\n             });\n\n             viewerModel.createTextureSet({\n                 id: \"myTextureSet\",\n                 colorTextureId: \"myColorTexture\",\n                 metallicRoughnessTextureId: \"myMetallicRoughnessTexture\"\n             });\n\n             viewerModel.createGeometry({\n                 id: \"myGeometry\",\n                 primitive: TrianglesPrimitive,\n                 positions: [1, 1, 1, ...],\n                 normals: [0, 0, 1, 0, ...],\n                 uv: [1, 0, 0, ...],\n                 indices: [0, 1, 2, ...],\n             });\n\n             viewerModel.createLayerMesh({\n                 id: \"myMesh\",\n                 textureSetId: \"myTextureSet\",\n                 geometryId: \"myGeometry\"\n             });\n\n             viewerModel.createObject({\n                 id: \"myObject\",\n                 meshIds: [\"myMesh\"]\n             });\n\n             viewerModel.build();\n         }\n    });\n````"
+				"text": "````javascript\nimport {Viewer} from \"@xeokit/viewer\";\nimport {WebGLRenderer} from \"@xeokit/webglrenderer\";\nimport {KTX2TextureTranscoder} from \"@xeokit/ktx2\";\nimport {loadXGF} from \"@xeokit/xgf\";\n\nconst myViewer = new Viewer({\n    id: \"myViewer\",\n    renderers: new WebGLRenderer({ // Optional\n         textureTranscoder: new KTX2TextureTranscoder({ // Optional\n             transcoderPath: \"./../dist/basis/\" // Optional, path to BasisU transcoder module\n         })\n    })\n});\n\nconst view1 = myViewer.createView({\n    id: \"myView\",\n    canvasId: \"myView1\"\n});\n\nview1.camera.eye = [-3.933, 2.855, 27.018];\nview1.camera.look = [4.400, 3.724, 8.899];\nview1.camera.up = [-0.018, 0.999, 0.039];\n\nconst sceneModel = myViewer.scene.createModel({\n     id: \"myModel\"\n});\n\nfetch(\"sample_uastc_zstd.ktx2\") // // <<----- KTX2 texture asset\n    .then(response => {\n         if (response.ok) {\n\n             sceneModel.createTexture({\n                 id: \"myColorTexture\",\n                 buffers: [arrayBuffer] // <<----- KTX2 texture asset\n             });\n\n             sceneModel.createTexture({\n                 id: \"myMetallicRoughnessTexture\",\n                 src: \"../assets/textures/alpha/crosshatchAlphaMap.jpg\" // <<----- JPEG texture asset\n             });\n\n             sceneModel.createTextureSet({\n                 id: \"myTextureSet\",\n                 colorTextureId: \"myColorTexture\",\n                 metallicRoughnessTextureId: \"myMetallicRoughnessTexture\"\n             });\n\n             sceneModel.createGeometry({\n                 id: \"myGeometry\",\n                 primitive: TrianglesPrimitive,\n                 positions: [1, 1, 1, ...],\n                 normals: [0, 0, 1, 0, ...],\n                 uv: [1, 0, 0, ...],\n                 indices: [0, 1, 2, ...],\n             });\n\n             sceneModel.createLayerMesh({\n                 id: \"myMesh\",\n                 textureSetId: \"myTextureSet\",\n                 geometryId: \"myGeometry\"\n             });\n\n             sceneModel.createObject({\n                 id: \"myObject\",\n                 meshIds: [\"myMesh\"]\n             });\n\n             sceneModel.build();\n         }\n    });\n````"
 			}
 		]
 	},
@@ -258,7 +256,7 @@
 							"fileName": "KTX2TextureTranscoder.ts",
 							"line": 88,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L88"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L88"
 						}
 					],
 					"signatures": [
@@ -281,7 +279,7 @@
 									"fileName": "KTX2TextureTranscoder.ts",
 									"line": 88,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L88"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L88"
 								}
 							],
 							"parameters": [
@@ -329,7 +327,7 @@
 															"fileName": "KTX2TextureTranscoder.ts",
 															"line": 88,
 															"character": 26,
-															"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L88"
+															"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L88"
 														}
 													],
 													"type": {
@@ -358,7 +356,7 @@
 															"fileName": "KTX2TextureTranscoder.ts",
 															"line": 88,
 															"character": 51,
-															"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L88"
+															"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L88"
 														}
 													],
 													"type": {
@@ -381,7 +379,7 @@
 													"fileName": "KTX2TextureTranscoder.ts",
 													"line": 88,
 													"character": 24,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L88"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L88"
 												}
 											]
 										}
@@ -408,7 +406,7 @@
 							"fileName": "KTX2TextureTranscoder.ts",
 							"line": 161,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L161"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L161"
 						}
 					],
 					"signatures": [
@@ -431,7 +429,7 @@
 									"fileName": "KTX2TextureTranscoder.ts",
 									"line": 161,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L161"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L161"
 								}
 							],
 							"type": {
@@ -462,7 +460,7 @@
 							"fileName": "KTX2TextureTranscoder.ts",
 							"line": 110,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L110"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L110"
 						}
 					],
 					"signatures": [
@@ -485,7 +483,7 @@
 									"fileName": "KTX2TextureTranscoder.ts",
 									"line": 110,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L110"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L110"
 								}
 							],
 							"parameters": [
@@ -542,7 +540,7 @@
 							"fileName": "KTX2TextureTranscoder.ts",
 							"line": 128,
 							"character": 4,
-							"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L128"
+							"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L128"
 						}
 					],
 					"signatures": [
@@ -576,7 +574,7 @@
 									"fileName": "KTX2TextureTranscoder.ts",
 									"line": 128,
 									"character": 4,
-									"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L128"
+									"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L128"
 								}
 							],
 							"parameters": [
@@ -634,7 +632,7 @@
 													"fileName": "KTX2TextureTranscoder.ts",
 													"line": 128,
 													"character": 47,
-													"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L128"
+													"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L128"
 												}
 											]
 										}
@@ -697,7 +695,7 @@
 					"fileName": "KTX2TextureTranscoder.ts",
 					"line": 68,
 					"character": 13,
-					"url": "https://github.com/xeokit/sdk/blob/948624c02d78840c0c3502134ba500274101d35c/packages/ktx2/src/KTX2TextureTranscoder.ts#L68"
+					"url": "https://github.com/xeokit/sdk/blob/94e984ea5d918c1c891a810c4d9ada15e09f6cf0/packages/ktx2/src/KTX2TextureTranscoder.ts#L68"
 				}
 			],
 			"implementedTypes": [
