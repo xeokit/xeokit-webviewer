@@ -200,12 +200,16 @@ h3 {
 }
 
 a {
-    /*text-decoration: none;*/
-    /*color: #212529;*/
+    text-decoration: none;
+    box-sizing: border-box;
 }
 
 a:hover {
     text-decoration: underline;
+}
+
+code{
+    /*background: #e8e8e8;*/
 }
 
 #log {
