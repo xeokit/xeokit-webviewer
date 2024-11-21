@@ -186,11 +186,11 @@ export class DemoHelper {
         this.logViewSource();
 
         if (this.tutorialsIndex && this.tutorialsIndex.tutorials && Object.keys(this.tutorialsIndex.tutorials).length > 0) {
-            this.logTitle("Tutorials");
+            this.logTitle("Related Tutorials");
             const items = [];
             for (let tutorialId in this.tutorialsIndex.tutorials) {
                 const tutorial = this.tutorialsIndex.tutorials[tutorialId];
-                items.push(`<a target="_parent" href="${this.gitHubDataDir}/tutorials/${tutorialId}">${tutorial.title}</a>`);
+                items.push(`<a target="_parent" style="font-style: italic" href="${this.gitHubDataDir}/tutorials/${tutorialId}/index.md">${tutorial.title}</a>`);
             }
             this.logUnorderedItems(items);
         }

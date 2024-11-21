@@ -1,7 +1,7 @@
 {
   "tutorials": {
     "sceneModelBuildBox": {
-      "title": "Build and view a box-shaped SceneModel"
+      "title": "View a Spinning 3D Box in a Web Page"
     }
   }
 }
