@@ -6,14 +6,14 @@ import type {RendererObject} from "@xeokit/scene/src/RendererObject";
 import {SDKError} from "@xeokit/core";
 
 /**
- * Represents and controls the visual state of a {@link @xeokit/scene!SceneModel | SceneObject} in
- * a {@link @xeokit/viewer!View |View's} canvas.
+ * An object within a {@link @xeokit/viewer!View | View}.
  *
  * ## Summary
  *
- * * Stored in {@link View.objects | View.objects} and {@link @xeokit/viewer!ViewLayer.objects | ViewLayer.objects}
- * * Viewer automatically creates one of these in each existing {@link @xeokit/viewer!View} for each {@link @xeokit/scene!SceneModel | SceneObject} created
- * * {@link @xeokit/scene!SceneObject.layerId | SceneObject.layerId} determines which of the View's {@link @xeokit/viewer!ViewLayer | ViewLayers} to put the ViewObject in
+ * * Proxies a {@link @xeokit/scene!SceneObject | SceneObject} and controls its visual state in the View.
+ * * Stored in {@link View.objects | View.objects} and {@link @xeokit/viewer!ViewLayer.objects | ViewLayer.objects}.
+ * * Viewer automatically creates one of these in each {@link @xeokit/viewer!View | View} whenever a {@link @xeokit/scene!SceneModel | SceneObject} is created.
+ * * {@link @xeokit/scene!SceneObject.layerId | SceneObject.layerId} optionally specifies a {@link @xeokit/viewer!ViewLayer | ViewLayers} to put the ViewObject in.
  *
  * ## Overview
  *

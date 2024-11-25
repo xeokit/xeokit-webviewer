@@ -11,9 +11,8 @@
     "main": "src/index.ts",
     "scripts": {
         "dist": "node scripts/build-xeokit-demo-bundle.js",
-        "demos": "node scripts/build-docs-lookup.js; node scripts/build-viewer-demos-index.js; node scripts/build-tutorials-index.js;",
+        "demos": "node scripts/build-docs-lookup.js; node scripts/build-viewer-demos-index.js; node scripts/build-articles.js;",
         "models": "node scripts/build-convert-models.js; sh scripts/convert-models.sh",
-
         "lint": "eslint . --fix"
     },
     "author": "Lindsay Kay",
@@ -69,11 +68,17 @@
         "@xeokit/cameraflight": "^0.1.0",
         "@xeokit/ifc2gltf2xgf": "^0.1.0",
         "web-ifc": "^0.0.35",
-        "earcut-typescript": "^2.2.3"
+        "earcut-typescript": "^2.2.3",
+        "markdown-it": "14.1.0",
+        "highlight.js": "11.2.0",
+        "ejs": "3.1.10"
     },
     "devDependencies": {
-    "gulp-file-include": "^2.1.1",
-    "gulp-js-escape": "^1.0.1",
-    "gulp4-run-sequence": "^1.0.1"
-}
+        "gulp": "^4.0.2",
+        "gulp-file-include": "^2.1.1",
+        "gulp-js-escape": "^1.0.1",
+        "gulp4-run-sequence": "^1.0.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-replace-task": "^2.0.1"
+    }
 }

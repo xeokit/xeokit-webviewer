@@ -34,7 +34,7 @@ describe('load3DXML', () => {
 
             } else {
 
-                fs.readFile("./tests/assets/LoD3_Railway.json", 'utf8', (err, dat) => {
+                fs.readFile("./tests/assets/model.json", 'utf8', (err, dat) => {
 
                     if (err) {
                         console.error(err);

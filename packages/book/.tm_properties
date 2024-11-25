@@ -1,0 +1,5 @@
+excludeInFileChooser  = "{$excludeInFileChooser,_book,node_modules}"
+excludeInFolderSearch = "{$excludeInFolderSearch,_book,node_modules}"
+
+fileBrowserGlob  = "{$fileBrowserGlob,.bookignore}"
+include = "{$include,.bookignore}"

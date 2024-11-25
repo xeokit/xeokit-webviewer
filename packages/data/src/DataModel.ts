@@ -12,7 +12,7 @@ import type {PropertyParams} from "./PropertyParams";
 import {DataModelContentParams} from "./DataModelContentParams";
 
 /**
- * xeokit Semantic Data Model.
+ * A model within a {@link @xeokit/data!Data | Data}
  *
  * See {@link "@xeokit/data" | @xeokit/data}  for usage.
  */
@@ -167,7 +167,7 @@ export class DataModel extends Component {
     }
 
     /**
-     * Adds the given components to this DataModel.
+     * Creates components in this DataModel from JSON.
      *
      * See {@link "@xeokit/data" | @xeokit/data}  for usage.
      *

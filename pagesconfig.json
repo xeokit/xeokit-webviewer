@@ -1,0 +1,13 @@
+{
+    "groups": [
+        {
+            "title": "Documentation",
+            "pages": [
+                {
+                    "title": "Glossary",
+                    "source": "./documentation/sample/sample-page.md"
+                }
+            ]
+        }
+    ]
+}

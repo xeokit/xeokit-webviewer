@@ -17,8 +17,14 @@
             "persistent": true
         },
         "dist": {
+            "cache": false,
             "dependsOn": [
                 "^dist"
+            ]
+        },
+        "convert-demo-models": {
+            "cache": false,
+            "dependsOn": [
             ]
         }
     }

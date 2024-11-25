@@ -84,39 +84,6 @@ export interface CameraControlParams {
 /**
  * @desc Controls the {@link Camera} with user input, and fires events when the user interacts with pickable {@link @xeokit/viewer!ViewObject | ViewObjects}.
  *
- * # Contents
- *
- * * [Overview](#overview)
- * * [Examples](#examples)
- * * [Orbit Mode](#orbit-mode)
- *      + [Following the Pointer in Orbit Mode](#--following-the-pointer-in-orbit-mode--)
- *      + [Showing the Pivot Position](#--showing-the-pivot-position--)
- *      + [Axis-Aligned Views in Orbit Mode](#--axis-aligned-views-in-orbit-mode--)
- *      + [View-Fitting Entitys in Orbit Mode](#--view-fitting-entitys-in-orbit-mode--)
- * * [First-Person Mode](#first-person-mode)
- *      + [Following the Pointer in First-Person Mode](#--following-the-pointer-in-first-person-mode--)
- *      + [Constraining Vertical Position in First-Person Mode](#--constraining-vertical-position-in-first-person-mode--)
- *      + [Axis-Aligned Views in First-Person Mode](#--axis-aligned-views-in-first-person-mode--)
- *      + [View-Fitting Entitys in First-Person Mode](#--view-fitting-entitys-in-first-person-mode--)
- * * [Plan-View Mode](#plan-view-mode)
- *      + [Following the Pointer in Plan-View Mode](#--following-the-pointer-in-plan-view-mode--)
- *      + [Axis-Aligned Views in Plan-View Mode](#--axis-aligned-views-in-plan-view-mode--)
- * * [CameraControl Events](#cameracontrol-events)
- *      + ["hover"](#---hover---)
- *      + ["hoverOff"](#---hoveroff---)
- *      + ["hoverEnter"](#---hoverenter---)
- *      + ["hoverOut"](#---hoverout---)
- *      + ["picked"](#---picked---)
- *      + ["pickedSurface"](#---pickedsurface---)
- *      + ["pickedNothing"](#---pickednothing---)
- *      + ["doublePicked"](#---doublepicked---)
- *      + ["doublePickedSurface"](#---doublepickedsurface---)
- *      + ["doublePickedNothing"](#---doublepickednothing---)
- *      + ["rightClick"](#---rightclick---)
- * * [Custom Keyboard Mappings](#custom-keyboard-mappings)
- *
- * <br><br>
- *
  * # Overview
  *
  * * Each {@link Viewer} has a ````CameraControl````, located at {@link Viewer#cameraControl}.

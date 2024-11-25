@@ -1,0 +1,77 @@
+{
+  "articles": {
+    "foo": {
+      "title": "View a Spinning 3D Box in a Web Page"
+    },
+    "sceneModelBuildBox": {
+      "title": "View a Spinning 3D Box in a Web Page",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneObject",
+        "Viewer",
+        "Geometry"
+      ]
+    },
+    "sceneModelBuildGeometries": {
+      "title": "Build and View 3G Geometries in a Web Page",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneTransform",
+        "SceneObject",
+        "SceneGeometry",
+        "Viewer",
+        "Geometry"
+      ]
+    },
+    "sceneModelBuildTable": {
+      "title": "Build and View a 3D Model in a Web Page",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneTransform",
+        "SceneObject",
+        "Viewer",
+        "Geometry"
+      ]
+    }
+  },
+  "tagToArticlesMap": {
+    "Beginner": [
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable"
+    ],
+    "SceneModel": [
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable"
+    ],
+    "SceneObject": [
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable"
+    ],
+    "Viewer": [
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable"
+    ],
+    "Geometry": [
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable"
+    ],
+    "SceneTransform": [
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable"
+    ],
+    "SceneGeometry": [
+      "sceneModelBuildGeometries"
+    ]
+  }
+}

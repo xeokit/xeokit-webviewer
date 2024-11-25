@@ -128,7 +128,7 @@ that generates the final texture or terrain.
 
 <br>
 
-## DTX
+## XGF
 
 The SDK's native binary model file format. TODO
 
@@ -364,7 +364,7 @@ The xeokit {@link Viewer} uses a *metallic-roughness* PBR shading model that has
 > *PBR is supported in the following xeokit modules:*
 > * *[@xeokit/viewer](https://xeokit.github.io/sdk/docs/modules/_xeokit_viewer.html) - the xeokit Viewer, which supports PBR rendering*
 > * *[@xeokit/scene](https://xeokit.github.io/sdk/docs/modules/_xeokit_scene.html) - the xeokit scene representation, which supports PBR materials*
-> * *[@xeokit/dtx](https://xeokit.github.io/sdk/docs/modules/_xeokit_dtx.html) - loads and saves DTX files, which have PBR materials*
+> * *[@xeokit/xgf](https://xeokit.github.io/sdk/docs/modules/_xeokit_xgf.html) - loads and saves XGF files, which have PBR materials*
 > * *[@xeokit/gltf](https://xeokit.github.io/sdk/docs/modules/_xeokit_gltf.html) - loads glTF with PBR materials into xeokit's scene representation* 
 
 <br>
@@ -618,4 +618,4 @@ development ecosystem going forwards.
 
 
 
-> *See: [@xeokit/dtx](https://xeokit.github.io/sdk/docs/modules/_xeokit_dtx.html)*
+> *See: [@xeokit/xgf](https://xeokit.github.io/sdk/docs/modules/_xeokit_xgf.html)*

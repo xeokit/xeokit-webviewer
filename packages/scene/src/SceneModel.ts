@@ -86,9 +86,8 @@ TEXTURE_ENCODING_OPTIONS[OCCLUSION_TEXTURE] = {
 };
 
 /**
- * Model geometry and materials.
+ * A model in a {@link @xeokit/scene!Scene | Scene}
  *
- * * A representation of a model's geometry and materials within a {@link @xeokit/scene!Scene | Scene}.
  * * Contains {@link @xeokit/scene!SceneObject | SceneObjects}, {@link @xeokit/scene!SceneMesh | SceneMeshes}, {@link @xeokit/scene!SceneGeometry | Geometries} and {@link @xeokit/scene!SceneTexture | Textures}.
  * * View with a {@link @xeokit/viewer!Viewer | Viewer}
  * * Import and export various file formats
@@ -317,7 +316,7 @@ export class SceneModel extends Component {
     }
 
     /**
-     * Adds components to this SceneModel.
+     * Creates components in this SceneModel from JSON.
      *
      * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
      *

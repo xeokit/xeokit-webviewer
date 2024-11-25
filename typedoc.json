@@ -11,7 +11,8 @@
     "includeVersion": true,
     "titleLink": "https://xeokit.io",
     "navigationLinks": {
-        "Home": "https://xeokit.github.io/sdk/docs/",
-        "GitHub": "https://github.com/xeokit/sdk"
+        "Home": "https://xeokit.github.io/sdk/docs/api/index.html",
+        "GitHub": "https://github.com/xeokit/sdk",
+        "Glossary": ""
     }
 }

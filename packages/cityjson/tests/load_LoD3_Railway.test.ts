@@ -20,10 +20,10 @@ describe('loadCityJSON', () => {
         id: "theModel"
     });
 
-    const fileData = JSON.parse(fs.readFileSync("./tests/assets/LoD3_Railway.json", 'utf8'));
+    const fileData = JSON.parse(fs.readFileSync("./tests/assets/model.json", 'utf8'));
 
 
-    test("LoD3_Railway.json loads into SceneModel and DataModel without error", async () => {
+    test("model.json loads into SceneModel and DataModel without error", async () => {
         await loadCityJSON({fileData, sceneModel, dataModel});
     });
 

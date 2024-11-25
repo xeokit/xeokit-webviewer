@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @@include('../../includes/head.html')
+    <title></title>
+</head>
+<body>
+@@include('../../includes/article-navbar.html')
+<header class="bg-black home-header bg-black">
+    <div class="container h-75">
+        <!--                <div class="row h-100 align-items-center">-->
+        <!--                    <div class="col-lg-12">-->
+        <!--                        <h1 class="text-white mt-5 mb-2">@@title</h1>-->
+        <!--                        <p class="lead mb-5 text-white">@@subtitle</p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+    </div>
+</header>
+<section id="intro" class="main-section">
+    <div class="container">
+        <div class="row testimonial-row">
+            <div class="col-lg-12">
+                <h1>@@title</h1>
+            </div>
+        </div>
+
+        <div class="row testimonial-row">
+            <div class="col-lg-12">
+                @@include('content.html')
+            </div>
+        </div>
+    </div>
+</section>
+<section id="related" class="main-section alabaster">
+    <div class="container">
+        <div class="row testimonial-row">
+            <div class="col-lg-12">
+                <h2>Related articles:</h2>
+                <br><br>
+                <ul>
+                    <li>Creating a squirrel mansion</li>
+                    <li>bar</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+<script>
+
+    fetch("./index.json").then(response => {
+        response.json().then(articleIndex => {
+            const relatedArticles = getRelatedArticles(index);
+            const html = [
+            ];
+
+            for (let articleId in index.articles) {
+                const article = index.articles[articleId];
+                html.push(`<div class="col-sm-4  mb-5"><a href="./viewer" class="card-link">
+                <div class="card">
+                    <img class="card-img-top thumbnail"
+                         src="https://github.com/xeokit/xeokit.io/blob/master/img/docs/PerformanceModel/PerformanceModel.png?raw=true"
+                         alt="Thumbnail 2">
+                    <div class="card-body">
+                        <h4 class="card-title">${article.title}</h4>
+                        <p class="card-text"> ${article.description || ""}</p>
+                    </div>`);
+                if (article.tags) {
+                    html.push(`<div class="card-footer tag">`)
+                    for (let i = 0, len = article.tags.length; i < len; i++) {
+                        html.push(`<button type="button" class="btn btn-primary btn-sm btn-tag my-1">${article.tags[i]}</button>`);
+                    }
+                    html.push(`</div>`);
+                }
+                html.push(`</div></a></div>`);
+            }
+            document.getElementById(`content`).innerHTML = html.join("\n");
+        });
+    });
+
+
+</script>
+@@include('../../includes/footer.html')
+</body>
+</html>

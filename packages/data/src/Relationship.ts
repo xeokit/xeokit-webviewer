@@ -1,7 +1,7 @@
 import type {DataObject} from "./DataObject";
 
 /**
- * A one-to-one relationship between two {@link @xeokit/data!DataObject | DataObjects}.
+ * A relationship between two {@link @xeokit/data!DataObject | DataObjects}.
  *
  * See {@link "@xeokit/data" | @xeokit/data}  for usage.
  */

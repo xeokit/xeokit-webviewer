@@ -9,7 +9,7 @@ import type {Scene, SceneModel} from "@xeokit/scene";
 
 
 /**
- * Manages and organizes {@link @xeokit/viewer!ViewObject | ViewObjects} in a {@link @xeokit/viewer!View}.
+ * A layer of {@link @xeokit/viewer!ViewObject | ViewObjects} within a {@link @xeokit/viewer!View}.
  *
  * ViewLayers allow users to group and segregate ViewObjects based on their roles or aspects in a scene, simplifying interaction and focusing operations
  * on specific object groups.

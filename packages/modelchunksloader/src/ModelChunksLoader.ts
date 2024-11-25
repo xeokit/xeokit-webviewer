@@ -3,7 +3,7 @@ import {DataModel} from "@xeokit/data";
 import {ModelChunksManifestParams} from "@xeokit/core";
 
 /**
- * Loads a SceneModel and/or DataModel from a set of files.
+ * Loads a SceneModel and/or DataModel from a set of chunk files.
  *
  * See {@link "@xeokit/modelchunksloader" | @xeokit/modelchunksloader} for usage.
  *

@@ -8,7 +8,7 @@
  *
  * ---
  *
- * ***TODO***
+ * ***Loads multi-part models into SceneModels and DataModels***
  *
  * ---
  *

@@ -204,7 +204,7 @@ First import the npm modules we need from the SDK. Note that we don't need the v
 npm install @xeokit/scene
 npm install @xeokit/core/constants
 npm install @xeokit/gltf
-npm install @xeokit/dtx
+npm install @xeokit/xgf
 ````
 
 Here's the JavaScript for our converter script.
@@ -214,15 +214,15 @@ import {Scene} from "@xeokit/scene";
 import {Data} from "@xeokit/data";
 import {TrianglesPrimitive, LinearEncoding, LinearFilter} from "@xeokit/constants";
 import {loadGLTF} from "@xeokit/gltf";
-import {saveXKT} from "dtx";
+import {saveXKT} from "packages/xgf";
 
 const fs = require('fs');
 
 const scene = new Scene(); // Scene graph
-const sceneModel = scene.createModel({ id: "myModel" }); // Start building the scene graph
+const sceneModel = scene.createModel({id: "myModel"}); // Start building the scene graph
 
 const data = new Data();
-const dataModel = data.createModel({ id: "myModel" }); // Will model the glTF scene hierarchy
+const dataModel = data.createModel({id: "myModel"}); // Will model the glTF scene hierarchy
 
 fs.readFile("./tests/assets/HousePlan.glb", (err, buffer) => {
     const arraybuffer = toArrayBuffer(buffer);
@@ -232,8 +232,9 @@ fs.readFile("./tests/assets/HousePlan.glb", (err, buffer) => {
         dataModel
     }).then(() => {
         sceneModel.build().then(() => { // Compresses textures, geometries etc.
-            const arrayBuffer = saveXKT({ sceneModel, dataModel });
-            fs.writeFile('myModel.dtx', arrayBuffer, err => {});
+            const arrayBuffer = saveXKT({sceneModel, dataModel});
+            fs.writeFile('myModel.xgf', arrayBuffer, err => {
+            });
         });
     })
 });

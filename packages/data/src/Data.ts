@@ -11,8 +11,8 @@ import type {SearchParams} from "./SearchParams";
  * An entity-relationship semantic data model.
  *
  * A Data is a container of {@link @xeokit/data!DataModel | DataModels}, {@link @xeokit/data!DataObject | DataObjects},
- *   {@link @xeokit/data!Relationship | Relationships}, {@link @xeokit/data!PropertySet | PropertySets}
- *   and {@link @xeokit/data!Properties | Properties}.
+ * {@link @xeokit/data!Relationship | Relationships}, {@link @xeokit/data!PropertySet | PropertySets}
+ * and {@link @xeokit/data!Property | Properties}.
  *
  * See {@link "@xeokit/data" | @xeokit/data}  for usage.
  */

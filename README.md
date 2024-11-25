@@ -41,6 +41,12 @@ Work in progress;
 
 * [Live Demos](https://xeokit.github.io/sdk/packages/demos/galleries/)
 
+# Features
+
+- Built for viewing large AECO models in the browser
+- Written natively in TypeScript
+- 
+
 # Modules
 
 ## Scene Graph
@@ -48,7 +54,6 @@ Work in progress;
 The SDK represents models in a scene graph that include the model's objects, geometries, and materials. This scene graph works on 
 both the browser and NodeJS platforms and can be used to create models, convert between model formats, and provide content for the 
 SDK's model viewer.
-
    
 | Package                                                                  | Modules                                                               | Description                                                                  |
 |--------------------------------------------------------------------------|-----------------------------------------------------------------------|------------------------------------------------------------------------------|
@@ -63,7 +68,6 @@ The SDK employs a generic entity-relationship data graph to manage model semanti
 relationships. This data graph is compatible with both the browser and NodeJS and facilitates model generation, format conversion, 
 and content navigation within the SDK's model viewer.
 
-
 | Package                                                                  | Modules                                                               | Description                                                                  |
 |--------------------------------------------------------------------------|-----------------------------------------------------------------------|------------------------------------------------------------------------------|
 | [`@xeokit/data`](https://www.npmjs.com/package/@xeokit/data)             | [`@xeokit/data`](https://xeokit.github.io/sdk/docs/modules/_xeokit_data.html)                        | Entity-relationship graph that contains model semantic data.                 |
@@ -77,7 +81,6 @@ The SDK contains a high-performance Web viewer for displaying our model represen
 the viewer can be extended to utilize various browser graphics APIs, including WebGL and WebGPU. Multiple models can be viewed 
 simultaneously, and the viewer allows for the creation of separate canvases, featuring lights, section planes, annotations, 
 and other elements, to display multiple views of our models.
-
 
 | Package                                                                  | Modules                                                               | Description                                          |
 |--------------------------------------------------------------------------|-----------------------------------------------------------------------|------------------------------------------------------|
@@ -95,13 +98,14 @@ The SDK provides functions for importing and exporting its model representations
 AECO file formats. These functions can be used in NodeJS scripts for file format conversion or in the browser to load 
 various file formats into the viewer.
 
-| Package                                                              | Modules                                                                               | Description                |
-|----------------------------------------------------------------------|---------------------------------------------------------------------------------------|----------------------------|
-| [`@xeokit/dtx`](https://www.npmjs.com/package/@xeokit/dtx)           | [`@xeokit/dtx`](https://xeokit.github.io/sdk/docs/modules/_xeokit_dtx.html)           | Import and export XKT files |
-| [`@xeokit/gltf`](https://www.npmjs.com/package/@xeokit/gltf)         | [`@xeokit/gltf`](https://xeokit.github.io/sdk/docs/modules/_xeokit_gltf.html)         | Import glTF files |
+| Package                                                              | Modules                                                                               | Description                 |
+|----------------------------------------------------------------------|---------------------------------------------------------------------------------------|-----------------------------|
+| [`@xeokit/xgf`](https://www.npmjs.com/package/@xeokit/xgf)           | [`@xeokit/xgf`](https://xeokit.github.io/sdk/docs/modules/_xeokit_xgf.html)           | Import and export XKT files |
+| [`@xeokit/gltf`](https://www.npmjs.com/package/@xeokit/gltf)         | [`@xeokit/gltf`](https://xeokit.github.io/sdk/docs/modules/_xeokit_gltf.html)         | Import glTF files           |
 | [`@xeokit/las`](https://www.npmjs.com/package/@xeokit/las)           | [`@xeokit/las`](https://xeokit.github.io/sdk/docs/modules/_xeokit_las.html)           | Import LAS pointcloud scans |
-| [`@xeokit/cityjson`](https://www.npmjs.com/package/@xeokit/cityjson) | [`@xeokit/cityjson`](https://xeokit.github.io/sdk/docs/modules/_xeokit_cityjson.html) | Import CityJSON files      |
-| [`@xeokit/webifc`](https://www.npmjs.com/package/@xeokit/webifc)     | [`@xeokit/webifc`](https://xeokit.github.io/sdk/docs/modules/_xeokit_webifc.html)     | Import IFC files           |
+| [`@xeokit/cityjson`](https://www.npmjs.com/package/@xeokit/cityjson) | [`@xeokit/cityjson`](https://xeokit.github.io/sdk/docs/modules/_xeokit_cityjson.html) | Import CityJSON files       |
+| [`@xeokit/webifc`](https://www.npmjs.com/package/@xeokit/webifc)     | [`@xeokit/webifc`](https://xeokit.github.io/sdk/docs/modules/_xeokit_webifc.html)     | Import IFC files            |
+| [`@xeokit/xkt`](https://www.npmjs.com/package/@xeokit/xkt)           | [`@xeokit/xkt`](https://xeokit.github.io/sdk/docs/modules/_xeokit_xkt.html)           | Import XKT files            |
 
 ## Interoperating with BIM Software
 
@@ -121,7 +125,7 @@ The SDK's internal and lower-level functionalities are mostly available as utili
 | [`@xeokit/core`](https://www.npmjs.com/package/@xeokit/core)             | [`@xeokit/core`](https://xeokit.github.io/sdk/docs/modules/_xeokit_core_components.html)   | Basic component types used throughout the xeokit SDK |
 |                                                                          | [`@xeokit/core/constants`](https://xeokit.github.io/sdk/docs/modules/_xeokit_core_constants.html)     | Constants used throughout the xeokit SDK             |
 |                                                                          | [`@xeokit/core/utils`](https://xeokit.github.io/sdk/docs/modules/_xeokit_core_utils.html)             | Core utilities used throughout the xeokit SDK        |
-| [`@xeokit/basictypes`](https://www.npmjs.com/package/@xeokit/basictypes)   | [`@xeokit/basictypes/basicTypes`](https://xeokit.github.io/sdk/docs/modules/_xeokit_datatypes_basicTypes.html)  | Basic semantic data type constants  |
+| [`@xeokit/basictypes`](https://www.npmjs.com/package/@xeokit/basictypes) | [`@xeokit/basictypes/basicTypes`](https://xeokit.github.io/sdk/docs/modules/_xeokit_datatypes_basicTypes.html)  | Basic semantic data type constants  |
 |                                                                          | [`@xeokit/ifctypes`](https://xeokit.github.io/sdk/docs/modules/_xeokit_datatypes_ifcTypes.html)      | IFC data type constants  |
 | [`@xeokit/math`](https://www.npmjs.com/package/@xeokit/math)             | [`@xeokit/math/math`](https://xeokit.github.io/sdk/docs/modules/_xeokit_math_math.html)               | General math definitions and constants               |
 |                                                                          | [`@xeokit/math/boundaries`](https://xeokit.github.io/sdk/docs/modules/_xeokit_math_boundaries.html)   | Boundaries math library                              |
@@ -322,7 +326,7 @@ First import the npm modules we need from the SDK. Note that we don't need the v
 npm install @xeokit/scene
 npm install @xeokit/core/constants
 npm install @xeokit/gltf
-npm install @xeokit/dtx
+npm install @xeokit/xgf
 ````
 
 Here's the JavaScript for our converter script.
@@ -332,15 +336,15 @@ import {Scene} from "@xeokit/scene";
 import {Data} from "@xeokit/data";
 import {TrianglesPrimitive, LinearEncoding, LinearFilter} from "@xeokit/core/constants";
 import {loadGLTF} from "@xeokit/gltf";
-import {saveXKT} from "packages/dtx";
+import {saveXKT} from "packages/xgf";
 
 const fs = require('fs');
 
 const scene = new Scene(); // Scene graph
-const sceneModel = scene.createModel({ id: "myModel" }); // Start building the scene graph
+const sceneModel = scene.createModel({id: "myModel"}); // Start building the scene graph
 
 const data = new Data();
-const dataModel = data.createModel({ id: "myModel" }); // Will model the glTF scene hierarchy
+const dataModel = data.createModel({id: "myModel"}); // Will model the glTF scene hierarchy
 
 fs.readFile("./tests/assets/HousePlan.glb", (err, buffer) => {
     const arraybuffer = toArrayBuffer(buffer);
@@ -350,8 +354,9 @@ fs.readFile("./tests/assets/HousePlan.glb", (err, buffer) => {
         dataModel
     }).then(() => {
         sceneModel.build().then(() => { // Compresses textures, geometries etc.
-            const arrayBuffer = saveXKT({ sceneModel, dataModel });
-            fs.writeFile('myModel.dtx', arrayBuffer, err => {});
+            const arrayBuffer = saveXKT({sceneModel, dataModel});
+            fs.writeFile('myModel.xgf', arrayBuffer, err => {
+            });
         });
     })
 });

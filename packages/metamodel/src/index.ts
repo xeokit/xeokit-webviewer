@@ -102,10 +102,10 @@
  */
 export * from "./loadMetaModel";
 export * from "./convertMetaModel";
-export* from "./MetaModelParams";
-export* from "./MetaObjectParams";
-export* from "./MetaPropertySetParams";
-export* from "./MetaPropertyParams";
+export * from "./MetaModelParams";
+export * from "./MetaObjectParams";
+export * from "./MetaPropertySetParams";
+export * from "./MetaPropertyParams";
 
 
 

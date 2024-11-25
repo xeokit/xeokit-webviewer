@@ -48,7 +48,7 @@ export interface SnapshotFinishedEvent {
 
 
 /**
- * An independently-configurable view of the models in a {@link @xeokit/viewer!Viewer | Viewer}.
+ * An independent view within a {@link @xeokit/viewer!Viewer | Viewer}, with its own Canvas, Camera and object visual states.
  *
  * See {@link "@xeokit/viewer" | @xeokit/viewer} for usage.
  *
@@ -56,9 +56,10 @@ export interface SnapshotFinishedEvent {
  *
  * A View is an independently-configurable view of the objects in a Viewer, with
  * its own HTML canvas, camera, light sources, object states, slicing planes etc.
- * A View automatically contains a {@link @xeokit/viewer!ViewObject} for each existing ViewerObject. ViewObjects
- * function as a kind of proxy for the ViewerObjects, through which we control their appearance
- * (show/hide/highlight etc.) within that particular View's canvas.
+ *
+ * A View automatically contains a {@link @xeokit/viewer!ViewObject | ViewObject} for each
+ * {@link @xeokit/scene!SceneObject | SceneObject} in the Viewer's {@link @xeokit/scene!Scene | Scene}. Each ViewObject functions as a sort of proxy through which we control the appearance of its SceneObject in the View.
+ * (show/hide/highlight etc.) within the View.
  *
  * Using Views, we can essentially have multiple canvases viewing the same model, each canvas perhaps showing a different subset
  * of the objects, with different visual effects, camera position etc.
