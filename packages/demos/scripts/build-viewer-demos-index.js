@@ -38,7 +38,7 @@ function readIndexFilesFromSubdirs(baseDir) {
     return index;
 }
 
-const baseDirectory = './galleries/viewer';
+const baseDirectory = './examples/viewer';
 const index = readIndexFilesFromSubdirs(baseDirectory);
 
-fs.writeFileSync("./galleries/viewer/index.json", JSON.stringify(index, null, 2), 'utf8');
+fs.writeFileSync("./examples/viewer/index.json", JSON.stringify(index, null, 2), 'utf8');

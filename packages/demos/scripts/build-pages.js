@@ -29,34 +29,45 @@ const markDownParser = markdownit({
     }
 });
 
-function buildArticles(baseDir) {
+function buildPages(baseDir) {
     const index = {
-        articles: {},
-        tagToArticlesMap: {}
+        pages: {},
+        tagToPagesMap: {}
     };
     try {
+        const docsLinks = JSON.parse(fs.readFileSync("./docsLinks.json", "utf8"));
+
+        const docsLookup = JSON.parse(fs.readFileSync("./docsLookup.json", "utf8"));
+
+        const DOCS_LOOKUP = {...docsLookup, ...docsLinks};
         const files = fs.readdirSync(baseDir);
+
         files.forEach(file => {
-            const articleId = file;
+
+            const pageId = file;
             const subDirPath = path.join(baseDir, file);
             const stats = fs.statSync(subDirPath);
+
             if (stats.isDirectory()) {
+
                 const indexPath = path.join(subDirPath, 'index.json');
-                let articleJSON;
+                let pageJSON;
+
                 if (fs.existsSync(indexPath)) {
                     try {
                         const data = fs.readFileSync(indexPath, 'utf8');
-                        articleJSON = JSON.parse(data);
-                        index.articles[file] = articleJSON;
-                        if (articleJSON.tags) {
-                            const tagToArticlesMap = index.tagToArticlesMap;
-                            for (let tag of articleJSON.tags) {
-                                let tagArticles = tagToArticlesMap[tag];
-                                if (!tagArticles) {
-                                    tagToArticlesMap[tag] = [articleId];
+                        pageJSON = JSON.parse(data);
+                        index.pages[file] = pageJSON;
+
+                        if (pageJSON.tags) {
+                            const tagToPagesMap = index.tagToPagesMap;
+                            for (let tag of pageJSON.tags) {
+                                let tagPages = tagToPagesMap[tag];
+                                if (!tagPages) {
+                                    tagToPagesMap[tag] = [pageId];
                                 } else {
-                                    if (!tagToArticlesMap[tag].includes(articleId)) {
-                                        tagToArticlesMap[tag].push(articleId)
+                                    if (!tagToPagesMap[tag].includes(pageId)) {
+                                        tagToPagesMap[tag].push(pageId)
                                     }
                                 }
                             }
@@ -75,10 +86,12 @@ function buildArticles(baseDir) {
                         const md = fs.readFileSync(mdIndexPath, 'utf8');
                         const mdIndexPath2 = path.join(subDirPath, 'content.html');
 
-                        fs.copyFileSync("./includes/article.html", templateIndexPath);
+                        fs.copyFileSync("./includes/page.html", templateIndexPath);
 
                         (async function convertMarkdownToHtml() {
-                            const html = await markDownParser.render(md);
+
+                            const html = wrapWordsWithLinks(await markDownParser.render(md), DOCS_LOOKUP);
+
                             fs.writeFileSync(mdIndexPath2, html, 'utf8');
                             gulp.src([
                                 templateIndexPath
@@ -94,11 +107,11 @@ function buildArticles(baseDir) {
                                         patterns: [
                                             {
                                                 match: 'title',
-                                                replacement: articleJSON.title
+                                                replacement: pageJSON.title
                                             },
                                             {
                                                 match: 'subtitle',
-                                                replacement: articleJSON.subtitle || ""
+                                                replacement: pageJSON.subtitle || ""
                                             }
                                         ]
                                     })
@@ -121,6 +134,7 @@ function buildArticles(baseDir) {
                     console.log(`index.json not found in ${subDirPath}`);
                 }
             }
+
         });
     } catch (err) {
         console.error(`Error reading directory: ${err}`);
@@ -129,19 +143,35 @@ function buildArticles(baseDir) {
     return index;
 }
 
-const baseDirectory = './articles';
-const index = buildArticles(baseDirectory);
+function wrapWordsWithLinks(text, wordMap) {
+
+    Object.keys(wordMap).forEach(function (key) {
+        const regex = new RegExp(`\\b${key}s?\\b`, 'g');
+        text = text.replace(regex, (match) => {
+            const entry = wordMap[key];
+            const path = entry.path || "";
+            // const kind = entry.kind || "";
+            return /s$/i.test(match)
+                ? `<a href="${path}" target="_blank">${key}</a>s`
+                : `<a href="${path}" target="_blank">${key}</a>`;
+        });
+    });
+    return text;
+}
+
+const baseDirectory = './pages';
+const index = buildPages(baseDirectory);
 
 //console.log(`Contents of index:`, index);
 
-fs.writeFileSync("./articles/index.json", JSON.stringify(index, null, 2), 'utf8');
+fs.writeFileSync("./pages/index.json", JSON.stringify(index, null, 2), 'utf8');
 
 //const mdIndexPath2 = path.join(subDirPath, 'content.html')
 
-fs.copyFileSync(`./includes/article-index.html`, `./articles/article-index.html`);
+fs.copyFileSync(`./includes/page-index.html`, `./pages/page-index.html`);
 
 gulp.src([
-    './articles/article-index.html'
+    './pages/page-index.html'
 ])
     .pipe(fileinclude({
         filters: {
@@ -149,4 +179,4 @@ gulp.src([
         }
     }))
     .pipe(rename("index.html"))
-    .pipe(gulp.dest(`./articles/`));
+    .pipe(gulp.dest(`./pages/`));

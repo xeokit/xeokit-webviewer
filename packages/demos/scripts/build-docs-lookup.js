@@ -18,7 +18,10 @@ function buildDocsLookup(docsDir) {
                     const data = fs.readFileSync(filePath, 'utf8');
                     const moduleData = JSON.parse(data);
                     const packageId = moduleData.name;
-                    const packageLocalName = packageId.substring("@xeokit/".length, packageId.indexOf(" "));
+                    const offset = "@xeokit/".length;
+                    const packageLocalName = packageId.substring(offset);
+
+                    console.log(packageLocalName);
                     const children = moduleData.children;
                     if (children) {
                         for (let child of children) {

@@ -1,6 +1,10 @@
 Let's use xeokit to show a spinning 3D box in a web page.
 
-![](tableSceneModel.png)
+[![](tableSceneModel.png)](/examples/viewer/#SceneModel_build_table/index.html)
+
+* *[Run this example](/examples/viewer/#SceneModel_build_table/index.html)*
+
+---
 
 First install the npm modules we need:
 

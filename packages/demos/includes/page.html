@@ -5,25 +5,27 @@
     <title></title>
 </head>
 <body>
-@@include('../../includes/article-navbar.html')
-<header class="bg-black home-header bg-black">
-    <div class="container h-75">
-        <!--                <div class="row h-100 align-items-center">-->
-        <!--                    <div class="col-lg-12">-->
-        <!--                        <h1 class="text-white mt-5 mb-2">@@title</h1>-->
-        <!--                        <p class="lead mb-5 text-white">@@subtitle</p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-    </div>
-</header>
+@@include('../../includes/navbar.html')
+<!--<header class="bg-black home-header bg-black">-->
+<!--    <div class="container h-75">-->
+<!--        &lt;!&ndash;                <div class="row h-100 align-items-center">&ndash;&gt;-->
+<!--        &lt;!&ndash;                    <div class="col-lg-12">&ndash;&gt;-->
+<!--        &lt;!&ndash;                        <h1 class="text-white mt-5 mb-2">@@title</h1>&ndash;&gt;-->
+<!--        &lt;!&ndash;                        <p class="lead mb-5 text-white">@@subtitle</p>&ndash;&gt;-->
+<!--        &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--        &lt;!&ndash;                </div>&ndash;&gt;-->
+<!--    </div>-->
+<!--</header>-->
 <section id="intro" class="main-section">
     <div class="container">
         <div class="row testimonial-row">
+<!--            <div class="col-lg-12">-->
+<!--                <h5><a href="../index.html">&lt;&lt;&nbsp;Articles</a></h5>-->
+<!--            </div>-->
             <div class="col-lg-12">
                 <h1>@@title</h1>
             </div>
         </div>
-
         <div class="row testimonial-row">
             <div class="col-lg-12">
                 @@include('content.html')
@@ -35,7 +37,7 @@
     <div class="container">
         <div class="row testimonial-row">
             <div class="col-lg-12">
-                <h2>Related articles:</h2>
+                <h2>Related pages:</h2>
                 <br><br>
                 <ul>
                     <li>Creating a squirrel mansion</li>
@@ -46,28 +48,26 @@
     </div>
 </section>
 <script>
-
     fetch("./index.json").then(response => {
-        response.json().then(articleIndex => {
-            const relatedArticles = getRelatedArticles(index);
-            const html = [
-            ];
+        response.json().then(pageIndex => {
+            const relatedPages = getRelatedPages(index);
+            const html = [];
 
-            for (let articleId in index.articles) {
-                const article = index.articles[articleId];
+            for (let pageId in index.pages) {
+                const page = index.pages[pageId];
                 html.push(`<div class="col-sm-4  mb-5"><a href="./viewer" class="card-link">
                 <div class="card">
                     <img class="card-img-top thumbnail"
                          src="https://github.com/xeokit/xeokit.io/blob/master/img/docs/PerformanceModel/PerformanceModel.png?raw=true"
                          alt="Thumbnail 2">
                     <div class="card-body">
-                        <h4 class="card-title">${article.title}</h4>
-                        <p class="card-text"> ${article.description || ""}</p>
+                        <h4 class="card-title">${page.title}</h4>
+                        <p class="card-text"> ${page.description || ""}</p>
                     </div>`);
-                if (article.tags) {
+                if (page.tags) {
                     html.push(`<div class="card-footer tag">`)
-                    for (let i = 0, len = article.tags.length; i < len; i++) {
-                        html.push(`<button type="button" class="btn btn-primary btn-sm btn-tag my-1">${article.tags[i]}</button>`);
+                    for (let i = 0, len = page.tags.length; i < len; i++) {
+                        html.push(`<button type="button" class="btn btn-primary btn-sm btn-tag my-1">${page.tags[i]}</button>`);
                     }
                     html.push(`</div>`);
                 }
@@ -76,7 +76,6 @@
             document.getElementById(`content`).innerHTML = html.join("\n");
         });
     });
-
 
 </script>
 @@include('../../includes/footer.html')

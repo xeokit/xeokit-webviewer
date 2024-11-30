@@ -38,12 +38,12 @@ export class DemoHelper {
                 descElement.innerHTML = this.index.title;
                 this.statusContainer.appendChild(descElement);
             }
-            fetch("../../../../../../../packages/demos/data/tutorials/index.json").then(response => {
-                response.json().then(tutorialsIndex => {
-                    this.tutorialsIndex = tutorialsIndex;
-                    fetch("../../../../../../../packages/demos/docsLinks.json").then(response => {
+            fetch("/pages/index.json").then(response => {
+                response.json().then(pagesIndex => {
+                    this.pagesIndex = pagesIndex;
+                    fetch("/docsLinks.json").then(response => {
                         response.json().then(docsLinks => {
-                            fetch("../../../../../../../packages/demos/docsLookup.json").then(response => {
+                            fetch("/docsLookup.json").then(response => {
                                 response.json().then(docsLookup => {
                                     DOCS_LOOKUP = {...docsLookup, ...docsLinks};
                                     if (cfg.index) {
@@ -185,12 +185,12 @@ export class DemoHelper {
         this.logTitle("Resources");
         this.logViewSource();
 
-        if (this.tutorialsIndex && this.tutorialsIndex.tutorials && Object.keys(this.tutorialsIndex.tutorials).length > 0) {
-            this.logTitle("Related Tutorials");
+        if (this.pagesIndex && this.pagesIndex.pages && Object.keys(this.pagesIndex.pages).length > 0) {
+            this.logTitle("Artices");
             const items = [];
-            for (let tutorialId in this.tutorialsIndex.tutorials) {
-                const tutorial = this.tutorialsIndex.tutorials[tutorialId];
-                items.push(`<a target="_parent" style="font-style: italic" href="${this.gitHubDataDir}/tutorials/${tutorialId}/index.md">${tutorial.title}</a>`);
+            for (let tutorialPageId in this.pagesIndex.pages) {
+                const tutorialPage = this.pagesIndex.pages[tutorialPageId];
+                items.push(`<a target="_parent" style="font-style: italic" href="/pages/${tutorialPageId}/index.html">${tutorialPage.title}</a>`);
             }
             this.logUnorderedItems(items);
         }
