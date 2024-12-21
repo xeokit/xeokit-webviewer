@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="xeokit - SDK for Browser-Based 3D BIM Visualization">
+<meta name="author" content="Lindsay Kay">
+<meta name="keywords" content="BIM,IFC,WebGL,JavaScript,Browser,BCF,Web,xeolabs,3D,3D Viewer,Lindsay Kay,xeokit,MedViz,ArchViz,Open Source,Browser,Viewer">
+
+<title>xeokit - 3D Web Programming Toolkit for BIM and Engineering Visualization</title>
+
+<link href="./../../libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="./../../css/business-frontpage.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="./../../libs/jquery/jquery.min.js"></script>
+<script src="./../../libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/html.min.js"></script>
+
+    <title></title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+    <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent" href="https://github.com/xeokit/sdk">@xeokit/sdk</a>/<a class="navbar-brand" href="./../index.html">Tutorials</a></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+                <a class="nav-link" href="./index.html?foo=0">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownDemos" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Examples </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownLearn">
+                    <a class="dropdown-item" href="../examples/#SceneModel_build_triangle/index.html">Build and View a 3D Triangle</a>
+                    <a class="dropdown-item" href="https://xeokit.io/demo.html?projectId=MAP&tab=objects">View a IFC Model in Global Coordinates</a>
+                    <a class="dropdown-item" href="https://xeokit.io/demo.html?projectId=OTCConferenceCenter&tab=storeys">Create a Multi-Canvas Viewer</a>
+                    <a class="dropdown-item" href="https://xeokit.io/demo.html?projectId=Schependomlaan&tab=storeys">Load Federated Model</a>
+                    <a class="dropdown-item" href="https://xeokit.io/demo.html?projectId=Schependomlaan_selectedStorey&tab=storeys">Schependomlaan Ground Floor</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://xeokit.io/index.html?foo=1#features">Features</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://xeokit.io/index.html?foo=1#faq">FAQ</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://xeokit.io/blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://xeokit.github.io/xeokit-sdk/examples/" target="_demos">Examples</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownLearn" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> Developers </a>
+                <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownLearn">
+                    <a class="dropdown-item" href="https://www.notion.so/xeokit/xeokit-Documentation-4598591fcedb4889bf8896750651f74e">Documentation</a>
+                    <a class="dropdown-item" href="https://xeokit.github.io/xeokit-sdk/examples/" target="_examples">Examples</a>
+                    <a class="dropdown-item" href="https://xeokit.github.io/xeokit-sdk/docs/api/modules.html" target="_docs">API Reference</a>
+                    <a class="dropdown-item" href="https://github.com/xeokit" target="_code">Source Code</a>
+                    <a class="dropdown-item" href="">Pages</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://xeokit.io/index.html?foo=2#pricing">Pricing</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="https://xeokit.io/download.html">Download</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<!--<header class="bg-black home-header bg-black">-->
+<!--    <div class="container h-75">-->
+<!--        &lt;!&ndash;                <div class="row h-100 align-items-center">&ndash;&gt;-->
+<!--        &lt;!&ndash;                    <div class="col-lg-12">&ndash;&gt;-->
+<!--        &lt;!&ndash;                        <h1 class="text-white mt-5 mb-2">ifc2gltf2xgf - Optimized IFC Model Import Pipeline</h1>&ndash;&gt;-->
+<!--        &lt;!&ndash;                        <p class="lead mb-5 text-white"></p>&ndash;&gt;-->
+<!--        &lt;!&ndash;                    </div>&ndash;&gt;-->
+<!--        &lt;!&ndash;                </div>&ndash;&gt;-->
+<!--    </div>-->
+<!--</header>-->
+<section id="intro" class="main-section">
+    <div class="container">
+        <div class="row testimonial-row">
+            <div class="col-lg-12">
+                <h5><a href="../index.html">&lt;&lt;&nbsp;Tutorials</a></h5>
+            </div>
+            <div class="col-lg-12">
+                <h1>ifc2gltf2xgf - Optimized IFC Model Import Pipeline</h1>
+            </div>
+        </div>
+        <div class="row testimonial-row">
+            <div class="col-lg-12">
+                <p>In this tutorial we'll view an IFC model in a xeokit <a href="/docs/api/classes/_xeokit_viewer.Viewer.html" target="_parent">Viewer</a>, after first converted it to
+XGF and JSON metadata files for efficient loading.</p>
+<p>While converting and loading our model, we'll split the IFC file into multiple XGF and metadata files, for the <a href="/docs/api/classes/_xeokit_viewer.Viewer.html" target="_parent">Viewer</a>
+to load as a batch. This improves memory stability while converting and loading, because it enables the converter and
+<a href="/docs/api/classes/_xeokit_viewer.Viewer.html" target="_parent">Viewer</a> to allocate and deallocate memory in smaller, more recoverable increments.</p>
+<p><a href="./../../examples/#SceneModel_build_table/index.html"><img src="screenshot.png" alt=""></a></p>
+<ul>
+<li><em><a href="./../../examples/#SceneModel_build_table/index.html">Run this example</a></em></li>
+</ul>
+<hr>
+<br>
+<h2>Step 1. Converting IFC into glTF and Metadata Files</h2>
+<p>The first step is to convert our IFC file into a set of intermediate glTF geometry and JSON metadata files. For this tutorial, we'll use the Karhumaki <a href="/docs/api/variables/_xeokit_cityjsontypes_1_1_3.Bridge.html" target="_parent">Bridge</a> IFC model
+from <a href="http://drumbeat.cs.hut.fi/ifc/"><code>http://drumbeat.cs.hut.fi/ifc/</code></a>.</p>
+<p>We'll use the <a href="https://www.notion.so/Converting-IFC-to-XKT-using-ifc2gltfcxconverter-a2e0005d00dc4f22b648f1237bc3245d?pvs=21"><code>ifc2gltfcxconverter</code></a>
+CLI tool to do this conversion step:</p>
+<pre><code class="hljs">ifc2gltfcxconverter -i Karhumaki-<a href="/docs/api/variables/_xeokit_cityjsontypes_1_1_3.Bridge.html" target="_parent">Bridge</a>.ifc -o model.glb -m model.json -s 100
+</code></pre>
+<p>The parameters we provided the tool are:</p>
+<ul>
+<li><code>-i</code> specifies the IFC file to convert</li>
+<li><code>-o</code> specifies the name to prefix on each output glTF file</li>
+<li><code>-m</code> specifies the name to prefix on each JSON metadata file</li>
+<li><code>-s</code> specifies the maximum number of megabytes in each glTF file - smaller value means more output files, lower value
+means less files</li>
+</ul>
+<p>The files output by <code><a href="" target="_parent">ifc2gltf</a></code> are:</p>
+<pre><code class="hljs">.
+├── model.glb.manifest.json
+├── model_1.glb
+├── model_1.json
+├── model_2.glb
+├── model_2.json
+├── model_3.glb
+├── model_3.json
+├── model_4.glb
+├── model_4.json
+├── model_5.glb
+├── model_5.json
+├── model_6.glb
+├── model_6.json
+├── model_7.glb
+├── model_7.json
+├── model_8.glb
+├── model_8.json
+├── model_9.glb
+├── model_9.json
+├── model.glb
+└── model.json
+</code></pre>
+<p>The <code>model.glb.manifest.json</code> manifest looks like this:</p>
+<pre><code class="hljs"><span class="hljs-punctuation">{</span>
+    <span class="hljs-attr">&quot;inputFile&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Karhumaki-<a href="/docs/api/variables/_xeokit_cityjsontypes_1_1_3.Bridge.html" target="_parent">Bridge</a>.ifc&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;converterApplication&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ifc2gltfcxconverter&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;converterApplicationVersion&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2.8.6&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;conversionDate&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-09-08 03:01:39&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;gltfOutFiles&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;model.glb&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_1.glb&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_2.glb&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_3.glb&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_4.glb&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_5.glb&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_6.glb&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_7.glb&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_8.glb&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_9.glb&quot;</span>
+    <span class="hljs-punctuation">]</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;metadataOutFiles&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-punctuation">[</span>
+        <span class="hljs-string">&quot;model.json&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_1.json&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_2.json&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_3.json&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_4.json&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_5.json&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_6.json&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_7.json&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_8.json&quot;</span><span class="hljs-punctuation">,</span>
+        <span class="hljs-string">&quot;model_9.json&quot;</span>
+    <span class="hljs-punctuation">]</span>
+<span class="hljs-punctuation">}</span>
+</code></pre>
+<br>
+<h2>Step 3. Viewing the XGF and Metadata Files</h2>
+<p>Now we'll create a Web page containing a xeokit <a href="/docs/api/classes/_xeokit_viewer.Viewer.html" target="_parent">Viewer</a> that views our converted model.</p>
+<p>First install the npm modules we need:</p>
+<pre><code class="hljs">npm install @xeokit/scene
+npm install @xeokit/data
+npm install @xeokit/modelchunksloader
+npm install @xeokit/xgf
+npm install @xeokit/core
+npm install @xeokit/webglrenderer
+npm install @xeokit/viewer
+npm install @xeokit/cameracontrol
+</code></pre>
+<p>Then create an HTML page in <code>index.html</code> that contains a canvas element:</p>
+<pre><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>xeokit Spinning Box<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;myView1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./index.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</code></pre>
+<p>Then create JavaScript in <code>index.js</code> to create the <a href="/docs/api/classes/_xeokit_viewer.Viewer.html" target="_parent">Viewer</a> and view our converted model.</p>
+<p>The steps in the JavaScript are as follows:</p>
+<ol>
+<li>Import the packages we need.</li>
+<li>Create a <a href="/docs/api/classes/_xeokit_data.Data.html" target="_parent">Data</a> to hold the IFC semantic data.</li>
+<li>Create a <a href="/docs/api/classes/_xeokit_viewer.Viewer.html" target="_parent">Viewer</a> with a <a href="/docs/api/classes/_xeokit_scene.Scene.html" target="_parent">Scene</a>, a <a href="/docs/api/classes/_xeokit_webglrenderer.WebGLRenderer.html" target="_parent">WebGLRenderer</a> and one <a href="/docs/api/classes/_xeokit_viewer.View.html" target="_parent">View</a>.</li>
+<li>Attach a <a href="/docs/api/classes/_xeokit_cameracontrol.CameraControl.html" target="_parent">CameraControl</a> to the <a href="/docs/api/classes/_xeokit_viewer.View.html" target="_parent">View</a> so that we can interact with it using mouse and touch.</li>
+<li>Create a <a href="/docs/api/classes/_xeokit_scene.SceneModel.html" target="_parent">SceneModel</a> in the <a href="/docs/api/classes/_xeokit_scene.Scene.html" target="_parent">Scene</a>.</li>
+<li>Create a <a href="/docs/api/classes/_xeokit_data.DataModel.html" target="_parent">DataModel</a> in the <a href="/docs/api/classes/_xeokit_data.Data.html" target="_parent">Data</a>.</li>
+<li>Create a <a href="/docs/api/classes/_xeokit_modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a>, configured to use <a href="/docs/api/functions/_xeokit_xgf.loadXGF.html" target="_parent">loadXGF</a> load each XGF chunk, and <a href="/docs/api/functions/_xeokit_data.loadDataModel.html" target="_parent">loadDataModel</a> to load each JSON data model file.</li>
+<li>Load our <code>model.xgf.manifest.json</code> manifest.</li>
+<li>Use <a href="/docs/api/classes/_xeokit_modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a> to load the files listed in the manifest into our <a href="/docs/api/classes/_xeokit_scene.SceneModel.html" target="_parent">SceneModel</a> and <a href="/docs/api/classes/_xeokit_data.DataModel.html" target="_parent">DataModel</a>.</li>
+<li>Build the <a href="/docs/api/classes/_xeokit_scene.SceneModel.html" target="_parent">SceneModel</a> and <a href="/docs/api/classes/_xeokit_data.DataModel.html" target="_parent">DataModel</a>. The IFC model then appears in the <a href="/docs/api/classes/_xeokit_viewer.Viewer.html" target="_parent">Viewer</a>.</li>
+</ol>
+<pre><code class="hljs"> <span class="hljs-comment">// 1.</span>
+
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/docs/api/classes/_xeokit_scene.Scene.html" target="_parent">Scene</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/scene}&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/docs/api/classes/_xeokit_data.Data.html" target="_parent">Data</a></span>, <a href="/docs/api/functions/_xeokit_data.loadDataModel.html" target="_parent">loadDataModel</a>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/data}&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/docs/api/classes/_xeokit_modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/modelchunksloader}&quot;</span>;
+<span class="hljs-keyword">import</span> {<a href="/docs/api/functions/_xeokit_xgf.loadXGF.html" target="_parent">loadXGF</a>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/xgf}&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">Web</span>GLRenderer} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/webglrenderer&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/docs/api/classes/_xeokit_viewer.Viewer.html" target="_parent">Viewer</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/viewer&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/docs/api/classes/_xeokit_cameracontrol.CameraControl.html" target="_parent">CameraControl</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/cameracontrol&quot;</span>;
+
+<span class="hljs-comment">// 2. </span>
+
+<span class="hljs-keyword">const</span> data = <span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/docs/api/classes/_xeokit_data.Data.html" target="_parent">Data</a></span>();
+
+<span class="hljs-comment">// 3.</span>
+
+<span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/docs/api/classes/_xeokit_scene.Scene.html" target="_parent">Scene</a></span>();
+
+<span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Web</span>GLRenderer({});
+
+<span class="hljs-keyword">const</span> viewer = <span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/docs/api/classes/_xeokit_viewer.Viewer.html" target="_parent">Viewer</a></span>({
+    <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;myViewer&quot;</span>,
+    scene,
+    renderer
+});
+
+<span class="hljs-keyword">const</span> view = viewer.<span class="hljs-title function_">createView</span>({
+    <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;myView&quot;</span>,
+    <span class="hljs-attr">elementId</span>: <span class="hljs-string">&quot;myCanvas&quot;</span>
+});
+
+view.<span class="hljs-property">camera</span>.<span class="hljs-property">eye</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, -<span class="hljs-number">100</span>];
+view.<span class="hljs-property">camera</span>.<span class="hljs-property">look</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>];
+view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</span> = [<span class="hljs-number">0.0</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">0.0</span>];
+
+<span class="hljs-comment">// 4. </span>
+
+<span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/docs/api/classes/_xeokit_cameracontrol.CameraControl.html" target="_parent">CameraControl</a></span>(view, {});
+
+<span class="hljs-comment">// 5.</span>
+
+<span class="hljs-keyword">const</span> sceneModel = scene.<span class="hljs-title function_">createModel</span>({
+    <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;myModel&quot;</span>
+});
+
+<span class="hljs-comment">// 6. </span>
+
+<span class="hljs-keyword">const</span> dataModel = data.<span class="hljs-title function_">createModel</span>({
+    <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;myModel&quot;</span>
+});
+
+<span class="hljs-comment">// 7.</span>
+
+<span class="hljs-keyword">const</span> modelChunksLoader = <span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/docs/api/classes/_xeokit_modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a></span>({
+    <span class="hljs-attr">sceneModelLoader</span>: <a href="/docs/api/functions/_xeokit_gltf.loadGLTF.html" target="_parent">loadGLTF</a>,
+    <span class="hljs-attr">dataModelLoader</span>: <a href="/docs/api/functions/_xeokit_metamodel.loadMetaModel.html" target="_parent">loadMetaModel</a>
+});
+
+<span class="hljs-comment">//  8.</span>
+
+<span class="hljs-title function_">fetch</span>(<span class="hljs-string">`model.glb.manifest.json`</span>)
+    .<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+        response
+            .<span class="hljs-title function_">json</span>()
+            .<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">modelChunksManifest</span> =&gt;</span> {
+
+                <span class="hljs-comment">// 9.</span>
+                
+                modelChunksLoader.<span class="hljs-title function_">load</span>({
+                    modelChunksManifest,
+                    <span class="hljs-attr">baseDir</span>: <span class="hljs-string">&quot;.&quot;</span>,
+                    sceneModel,
+                    dataModel
+
+                }).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> { <span class="hljs-comment">// glTF and JSON files loaded</span>
+                    
+                    <span class="hljs-comment">// 10.</span>
+                    
+                    sceneModel.<span class="hljs-title function_">build</span>();
+                    dataModel.<span class="hljs-title function_">build</span>(); 
+                    
+                    <span class="hljs-comment">// The Karhumaki <a href="/docs/api/variables/_xeokit_cityjsontypes_1_1_3.Bridge.html" target="_parent">Bridge</a> model now appears in our <a href="/docs/api/classes/_xeokit_viewer.Viewer.html" target="_parent">Viewer</a>.</span>
+                });
+            });
+    });
+</code></pre>
+
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="py-5 bg-dark xeokit-footer">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 mb-3  text-left">
+                <h2>xeokit SDK</h2>
+                <p>Powering Engineering Graphics on the Web</p>
+                <img src="./img/xeokitLogoAlphaBG.png">
+            </div>
+            <div class="col-md-8 col-sm-12">
+
+                <div class="col-md-4 col-sm-6 col-6 p-0 float-left mb-3">
+                    <h5 class="mb-4 font-weight-bold text-uppercase ">Learn</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                                href="https://xeokit.io/index.html#features">Features</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
+                                href="https://xeokit.io/demo.html?projectId=OTCConferenceCenter&tab=storeys">Demo</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
+                                href="https://xeokit.io/blog.html">Blog</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                                href="https://xeokit.io/index.html#pricing">Pricing</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                                href="https://xeokit.io/index.html#faq">FAQ</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-6 p-0 mb-3 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase ">Develop</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                                href="https://xeokit.io/download.html">Download</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                                href="https://xeokit.github.io/xeokit-sdk/examples/">Examples</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                                href="https://xeokit.github.io/xeokit-sdk/docs/api/modules.html">API Docs</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                                href="https://github.com/xeokit">Source Code</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                                href="https://www.notion.so/xeokit">Tutorials</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                                href="https://github.com/xeokit/xeokit-sdk/issues">Issues</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                                href="https://xeokit.github.io/xeokit-model-conversion-tests/index.html">Model Conversion</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-6 mb-3 p-0 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase ">Connect</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="http://www.xeolabs.com"><i class="fa fa-globe mr-1"></i>
+                                xeolabs.com</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="https://www.linkedin.com/company/xeolabs"><i class="fa fa-linkedin mr-1"></i>
+                                LinkedIn</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="https://github.com/xeolabs" target="_code"><i class="fa fa-github mr-1"></i>
+                                Github</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="py-4 d-flex justify-content-center align-items-center">
+                    <p class="m-0 text-center">Copyright &copy; <a href="http://xeolabs.com">xeolabs</a> 2021</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

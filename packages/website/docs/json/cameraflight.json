@@ -1,0 +1,2819 @@
+{
+	"id": 0,
+	"name": "@xeokit/cameraflight",
+	"variant": "project",
+	"kind": 1,
+	"flags": {},
+	"children": [
+		{
+			"id": 1,
+			"name": "CameraFlightAnimation",
+			"variant": "declaration",
+			"kind": 128,
+			"flags": {},
+			"comment": {
+				"summary": [
+					{
+						"kind": "text",
+						"text": "Animates a "
+					},
+					{
+						"kind": "inline-tag",
+						"tag": "@link",
+						"text": "@xeokit/viewer!View | View's"
+					},
+					{
+						"kind": "text",
+						"text": " "
+					},
+					{
+						"kind": "inline-tag",
+						"tag": "@link",
+						"text": "@xeokit/viewer!Camera | Camera"
+					},
+					{
+						"kind": "text",
+						"text": " to look at specified objects, boundaries or locations.\n\n## Summary\n\n* Controls a "
+					},
+					{
+						"kind": "inline-tag",
+						"tag": "@link",
+						"text": "@xeokit/viewer!Camera | Camera"
+					},
+					{
+						"kind": "text",
+						"text": "\n* Navigates the Camera to look at a "
+					},
+					{
+						"kind": "inline-tag",
+						"tag": "@link",
+						"text": "@xeokit/viewer!Viewer | Viewer"
+					},
+					{
+						"kind": "text",
+						"text": " or boundary\n* Navigates the Camera to an explicit position given as "
+					},
+					{
+						"kind": "code",
+						"text": "````eye````"
+					},
+					{
+						"kind": "text",
+						"text": ", "
+					},
+					{
+						"kind": "code",
+						"text": "````look````"
+					},
+					{
+						"kind": "text",
+						"text": " and "
+					},
+					{
+						"kind": "code",
+						"text": "````up````"
+					},
+					{
+						"kind": "text",
+						"text": " vectors\n* Jumps or flies the Camera\n* Smoothly transitions between projections"
+					}
+				]
+			},
+			"children": [
+				{
+					"id": 20,
+					"name": "constructor",
+					"variant": "declaration",
+					"kind": 512,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 87,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L87"
+						}
+					],
+					"signatures": [
+						{
+							"id": 21,
+							"name": "new CameraFlightAnimation",
+							"variant": "signature",
+							"kind": 16384,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Creates a new CameraFlightAnimation"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+									"line": 87,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L87"
+								}
+							],
+							"parameters": [
+								{
+									"id": 22,
+									"name": "view",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"type": {
+										"type": "reference",
+										"target": {
+											"sourceFileName": "../viewer/src/View.ts",
+											"qualifiedName": "View"
+										},
+										"name": "View",
+										"package": "@xeokit/viewer"
+									}
+								},
+								{
+									"id": 23,
+									"name": "cfg",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {
+										"isOptional": true
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 24,
+											"name": "__type",
+											"variant": "declaration",
+											"kind": 65536,
+											"flags": {},
+											"children": [
+												{
+													"id": 25,
+													"name": "duration",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "Animation duration in seconds when using "
+															},
+															{
+																"kind": "inline-tag",
+																"tag": "@link",
+																"text": "@xeokit/cameraflight!CameraFlightAnimation.flyTo | CameraFlightAnimation.flyTo"
+															},
+															{
+																"kind": "text",
+																"text": "."
+															}
+														]
+													},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 88,
+															"character": 8,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L88"
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Properties",
+													"children": [
+														25
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+													"line": 87,
+													"character": 34,
+													"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L87"
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "reference",
+								"target": 1,
+								"name": "CameraFlightAnimation",
+								"package": "@xeokit/cameraflight"
+							},
+							"overwrites": {
+								"type": "reference",
+								"target": -1,
+								"name": "Component.constructor"
+							}
+						}
+					],
+					"overwrites": {
+						"type": "reference",
+						"target": -1,
+						"name": "Component.constructor"
+					}
+				},
+				{
+					"id": 27,
+					"name": "camera",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isPublic": true,
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The Camera controlled by this CameraFlightAnimation."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 37,
+							"character": 20,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L37"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"sourceFileName": "../viewer/src/Camera.ts",
+							"qualifiedName": "Camera"
+						},
+						"name": "Camera",
+						"package": "@xeokit/viewer"
+					}
+				},
+				{
+					"id": 105,
+					"name": "destroyed",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "True once this Component has been destroyed.\n\nDon't use this Component if this is "
+							},
+							{
+								"kind": "code",
+								"text": "````true````"
+							},
+							{
+								"kind": "text",
+								"text": "."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "core/dist/Component.d.ts",
+							"line": 22,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": -1,
+						"name": "Component.destroyed"
+					}
+				},
+				{
+					"id": 106,
+					"name": "dirty",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "core/dist/Component.d.ts",
+							"line": 23,
+							"character": 14
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": -1,
+						"name": "Component.dirty"
+					}
+				},
+				{
+					"id": 47,
+					"name": "easing",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 58,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L58"
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "boolean"
+					}
+				},
+				{
+					"id": 104,
+					"name": "id",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Unique ID of this Component."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "core/dist/Component.d.ts",
+							"line": 16,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "intrinsic",
+						"name": "string"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": -1,
+						"name": "Component.id"
+					}
+				},
+				{
+					"id": 55,
+					"name": "onCancelled",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Emits an event each time the animation stops."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 79,
+							"character": 13,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L79"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"sourceFileName": "../core/src/EventEmitter.ts",
+							"qualifiedName": "EventEmitter"
+						},
+						"typeArguments": [
+							{
+								"type": "reference",
+								"target": 1,
+								"name": "CameraFlightAnimation",
+								"package": "@xeokit/cameraflight"
+							},
+							{
+								"type": "literal",
+								"value": null
+							}
+						],
+						"name": "EventEmitter",
+						"package": "@xeokit/core"
+					}
+				},
+				{
+					"id": 107,
+					"name": "onDestroyed",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Emits an event when the "
+							},
+							{
+								"kind": "inline-tag",
+								"tag": "@link",
+								"text": "@xeokit/core!Component | Component"
+							},
+							{
+								"kind": "text",
+								"text": " has been destroyed."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "core/dist/Component.d.ts",
+							"line": 29,
+							"character": 4
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"sourceFileName": "../core/src/EventEmitter.ts",
+							"qualifiedName": "EventEmitter"
+						},
+						"typeArguments": [
+							{
+								"type": "reference",
+								"target": {
+									"sourceFileName": "../core/src/Component.ts",
+									"qualifiedName": "Component"
+								},
+								"name": "Component",
+								"package": "@xeokit/core"
+							},
+							{
+								"type": "literal",
+								"value": null
+							}
+						],
+						"name": "EventEmitter",
+						"package": "@xeokit/core"
+					},
+					"inheritedFrom": {
+						"type": "reference",
+						"target": -1,
+						"name": "Component.onDestroyed"
+					}
+				},
+				{
+					"id": 53,
+					"name": "onStarted",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Emits an event each time the animation starts."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 69,
+							"character": 13,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L69"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"sourceFileName": "../core/src/EventEmitter.ts",
+							"qualifiedName": "EventEmitter"
+						},
+						"typeArguments": [
+							{
+								"type": "reference",
+								"target": 1,
+								"name": "CameraFlightAnimation",
+								"package": "@xeokit/cameraflight"
+							},
+							{
+								"type": "literal",
+								"value": null
+							}
+						],
+						"name": "EventEmitter",
+						"package": "@xeokit/core"
+					}
+				},
+				{
+					"id": 54,
+					"name": "onStopped",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "Emits an event each time the animation stops."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 74,
+							"character": 13,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L74"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"sourceFileName": "../core/src/EventEmitter.ts",
+							"qualifiedName": "EventEmitter"
+						},
+						"typeArguments": [
+							{
+								"type": "reference",
+								"target": 1,
+								"name": "CameraFlightAnimation",
+								"package": "@xeokit/cameraflight"
+							},
+							{
+								"type": "literal",
+								"value": null
+							}
+						],
+						"name": "EventEmitter",
+						"package": "@xeokit/core"
+					}
+				},
+				{
+					"id": 26,
+					"name": "view",
+					"variant": "declaration",
+					"kind": 1024,
+					"flags": {
+						"isPublic": true,
+						"isReadonly": true
+					},
+					"comment": {
+						"summary": [
+							{
+								"kind": "text",
+								"text": "The View that owns this CameraFlightAnimation."
+							}
+						]
+					},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 32,
+							"character": 20,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L32"
+						}
+					],
+					"type": {
+						"type": "reference",
+						"target": {
+							"sourceFileName": "../viewer/src/View.ts",
+							"qualifiedName": "View"
+						},
+						"name": "View",
+						"package": "@xeokit/viewer"
+					}
+				},
+				{
+					"id": 86,
+					"name": "duration",
+					"variant": "declaration",
+					"kind": 262144,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 521,
+							"character": 8,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L521"
+						},
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 531,
+							"character": 8,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L531"
+						}
+					],
+					"getSignature": {
+						"id": 87,
+						"name": "duration",
+						"variant": "signature",
+						"kind": 524288,
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Gets the flight duration in seconds.\n\nDefault value is "
+								},
+								{
+									"kind": "code",
+									"text": "````0.5````"
+								},
+								{
+									"kind": "text",
+									"text": "."
+								}
+							]
+						},
+						"sources": [
+							{
+								"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+								"line": 531,
+								"character": 8,
+								"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L531"
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "number"
+						}
+					},
+					"setSignature": {
+						"id": 88,
+						"name": "duration",
+						"variant": "signature",
+						"kind": 1048576,
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Sets the flight duration in seconds.\n\nStops any flight currently in progress.\n\nDefault value is "
+								},
+								{
+									"kind": "code",
+									"text": "````0.5````"
+								},
+								{
+									"kind": "text",
+									"text": "."
+								}
+							]
+						},
+						"sources": [
+							{
+								"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+								"line": 521,
+								"character": 8,
+								"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L521"
+							}
+						],
+						"parameters": [
+							{
+								"id": 89,
+								"name": "value",
+								"variant": "param",
+								"kind": 32768,
+								"flags": {},
+								"type": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "void"
+						}
+					}
+				},
+				{
+					"id": 90,
+					"name": "fit",
+					"variant": "declaration",
+					"kind": 262144,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 543,
+							"character": 8,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L543"
+						},
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 555,
+							"character": 8,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L555"
+						}
+					],
+					"getSignature": {
+						"id": 91,
+						"name": "fit",
+						"variant": "signature",
+						"kind": 524288,
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "When flying to a "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/scene!SceneModel | SceneModel"
+								},
+								{
+									"kind": "text",
+									"text": ", "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/viewer!ViewObject | ViewObject"
+								},
+								{
+									"kind": "text",
+									"text": " or boundary, indicates if the CameraFlightAnimation always adjusts\nthe distance of "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/viewer!Camera.eye | Camera.eye"
+								},
+								{
+									"kind": "text",
+									"text": " from "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/viewer!Camera.look | Camera.look"
+								},
+								{
+									"kind": "text",
+									"text": " to ensure that the target always fits in view.\n\nWhen false, the eye will remain fixed at its current distance from the look position.\n\nDefault value is "
+								},
+								{
+									"kind": "code",
+									"text": "````true````"
+								},
+								{
+									"kind": "text",
+									"text": "."
+								}
+							]
+						},
+						"sources": [
+							{
+								"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+								"line": 555,
+								"character": 8,
+								"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L555"
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "boolean"
+						}
+					},
+					"setSignature": {
+						"id": 92,
+						"name": "fit",
+						"variant": "signature",
+						"kind": 1048576,
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "When flying to a "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/scene!SceneModel | SceneModel"
+								},
+								{
+									"kind": "text",
+									"text": ", "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/viewer!ViewObject | ViewObject"
+								},
+								{
+									"kind": "text",
+									"text": " or boundary, indicates if the CameraFlightAnimation always adjusts\nthe distance of "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/viewer!Camera.eye | Camera.eye"
+								},
+								{
+									"kind": "text",
+									"text": " from "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/viewer!Camera.look | Camera.look"
+								},
+								{
+									"kind": "text",
+									"text": " to ensure that the target always fits in view.\n\nWhen false, the eye will remain fixed at its current distance from the look position.\n\nDefault value is "
+								},
+								{
+									"kind": "code",
+									"text": "````true````"
+								},
+								{
+									"kind": "text",
+									"text": "."
+								}
+							]
+						},
+						"sources": [
+							{
+								"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+								"line": 543,
+								"character": 8,
+								"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L543"
+							}
+						],
+						"parameters": [
+							{
+								"id": 93,
+								"name": "value",
+								"variant": "param",
+								"kind": 32768,
+								"flags": {},
+								"type": {
+									"type": "intrinsic",
+									"name": "boolean"
+								}
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "void"
+						}
+					}
+				},
+				{
+					"id": 94,
+					"name": "fitFOV",
+					"variant": "declaration",
+					"kind": 262144,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 565,
+							"character": 8,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L565"
+						},
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 575,
+							"character": 8,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L575"
+						}
+					],
+					"getSignature": {
+						"id": 95,
+						"name": "fitFOV",
+						"variant": "signature",
+						"kind": 524288,
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Gets how much of the perspective field-of-view, in degrees, that a target "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/viewer!ViewObject | ViewObject"
+								},
+								{
+									"kind": "text",
+									"text": " should\nfill the canvas when calling "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "CameraFlightAnimation.flyTo",
+									"target": 56,
+									"tsLinkText": "CameraFlightAnimation.flyTo"
+								},
+								{
+									"kind": "text",
+									"text": " or "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "CameraFlightAnimation.jumpTo",
+									"target": 74,
+									"tsLinkText": "CameraFlightAnimation.jumpTo"
+								},
+								{
+									"kind": "text",
+									"text": ".\n\nDefault value is "
+								},
+								{
+									"kind": "code",
+									"text": "````45````"
+								},
+								{
+									"kind": "text",
+									"text": "."
+								}
+							]
+						},
+						"sources": [
+							{
+								"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+								"line": 575,
+								"character": 8,
+								"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L575"
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "number"
+						}
+					},
+					"setSignature": {
+						"id": 96,
+						"name": "fitFOV",
+						"variant": "signature",
+						"kind": 1048576,
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Sets how much of the perspective field-of-view, in degrees, that a target "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/viewer!ViewObject | ViewObject"
+								},
+								{
+									"kind": "text",
+									"text": " should\nfill the canvas when calling "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "CameraFlightAnimation.flyTo",
+									"target": 56,
+									"tsLinkText": "CameraFlightAnimation.flyTo"
+								},
+								{
+									"kind": "text",
+									"text": " or "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "CameraFlightAnimation.jumpTo",
+									"target": 74,
+									"tsLinkText": "CameraFlightAnimation.jumpTo"
+								},
+								{
+									"kind": "text",
+									"text": ".\n\nDefault value is "
+								},
+								{
+									"kind": "code",
+									"text": "````45````"
+								},
+								{
+									"kind": "text",
+									"text": "."
+								}
+							]
+						},
+						"sources": [
+							{
+								"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+								"line": 565,
+								"character": 8,
+								"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L565"
+							}
+						],
+						"parameters": [
+							{
+								"id": 97,
+								"name": "value",
+								"variant": "param",
+								"kind": 32768,
+								"flags": {},
+								"type": {
+									"type": "intrinsic",
+									"name": "number"
+								}
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "void"
+						}
+					}
+				},
+				{
+					"id": 98,
+					"name": "trail",
+					"variant": "declaration",
+					"kind": 262144,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 585,
+							"character": 8,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L585"
+						},
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 595,
+							"character": 8,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L595"
+						}
+					],
+					"getSignature": {
+						"id": 99,
+						"name": "trail",
+						"variant": "signature",
+						"kind": 524288,
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Indicates if this CameraFlightAnimation will orient the "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/viewer!Camera | Camera"
+								},
+								{
+									"kind": "text",
+									"text": "\nin the direction that it is flying.\n\nDefault value is "
+								},
+								{
+									"kind": "code",
+									"text": "````false````"
+								},
+								{
+									"kind": "text",
+									"text": "."
+								}
+							]
+						},
+						"sources": [
+							{
+								"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+								"line": 595,
+								"character": 8,
+								"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L595"
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "boolean"
+						}
+					},
+					"setSignature": {
+						"id": 100,
+						"name": "trail",
+						"variant": "signature",
+						"kind": 1048576,
+						"flags": {},
+						"comment": {
+							"summary": [
+								{
+									"kind": "text",
+									"text": "Indicates if this CameraFlightAnimation will orient the "
+								},
+								{
+									"kind": "inline-tag",
+									"tag": "@link",
+									"text": "@xeokit/viewer!Camera | Camera"
+								},
+								{
+									"kind": "text",
+									"text": "\nin the direction that it is flying.\n\nDefault value is "
+								},
+								{
+									"kind": "code",
+									"text": "````false````"
+								},
+								{
+									"kind": "text",
+									"text": "."
+								}
+							]
+						},
+						"sources": [
+							{
+								"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+								"line": 585,
+								"character": 8,
+								"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L585"
+							}
+						],
+						"parameters": [
+							{
+								"id": 101,
+								"name": "value",
+								"variant": "param",
+								"kind": 32768,
+								"flags": {},
+								"type": {
+									"type": "intrinsic",
+									"name": "boolean"
+								}
+							}
+						],
+						"type": {
+							"type": "intrinsic",
+							"name": "void"
+						}
+					}
+				},
+				{
+					"id": 84,
+					"name": "cancel",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 501,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L501"
+						}
+					],
+					"signatures": [
+						{
+							"id": 85,
+							"name": "cancel",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Cancels a flight in progress, without calling the arrival callback."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+									"line": 501,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L501"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 121,
+					"name": "clean",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "core/dist/Component.d.ts",
+							"line": 75,
+							"character": 14
+						}
+					],
+					"signatures": [
+						{
+							"id": 122,
+							"name": "clean",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Forces this component to action any deferred state updates."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "core/dist/Component.d.ts",
+									"line": 75,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "Component.clean"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"target": -1,
+						"name": "Component.clean"
+					}
+				},
+				{
+					"id": 119,
+					"name": "cleanIfDirty",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "core/dist/Component.d.ts",
+							"line": 71,
+							"character": 14
+						}
+					],
+					"signatures": [
+						{
+							"id": 120,
+							"name": "cleanIfDirty",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Gives this component an opportunity to action any defered state updates."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "core/dist/Component.d.ts",
+									"line": 71,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "Component.cleanIfDirty"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"target": -1,
+						"name": "Component.cleanIfDirty"
+					}
+				},
+				{
+					"id": 114,
+					"name": "error",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "core/dist/Component.d.ts",
+							"line": 63,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 115,
+							"name": "error",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {
+								"isProtected": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Logs an error for this component to the JavaScript console.\n\nThe console message will have this format: *"
+									},
+									{
+										"kind": "code",
+										"text": "````[ERROR] [<component type> =<component id>: <message>````"
+									},
+									{
+										"kind": "text",
+										"text": "*"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "core/dist/Component.d.ts",
+									"line": 63,
+									"character": 4
+								}
+							],
+							"parameters": [
+								{
+									"id": 116,
+									"name": "message",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The error message to log"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "Component.error"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"target": -1,
+						"name": "Component.error"
+					}
+				},
+				{
+					"id": 56,
+					"name": "flyTo",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 150,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L150"
+						}
+					],
+					"signatures": [
+						{
+							"id": 57,
+							"name": "flyTo",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Flies the "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "@xeokit/viewer!Camera | Camera"
+									},
+									{
+										"kind": "text",
+										"text": "  to a target.\n\n * When the target is a boundary, the "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "@xeokit/viewer!Camera | Camera"
+									},
+									{
+										"kind": "text",
+										"text": "  will fly towards the target and stop when the target fills most of the canvas.\n * When the target is an explicit "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "@xeokit/viewer!Camera | Camera"
+									},
+									{
+										"kind": "text",
+										"text": "  position, given as "
+									},
+									{
+										"kind": "code",
+										"text": "````eye````"
+									},
+									{
+										"kind": "text",
+										"text": ", "
+									},
+									{
+										"kind": "code",
+										"text": "````look````"
+									},
+									{
+										"kind": "text",
+										"text": " and "
+									},
+									{
+										"kind": "code",
+										"text": "````up````"
+									},
+									{
+										"kind": "text",
+										"text": ", then CameraFlightAnimation will interpolate the "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "@xeokit/viewer!Camera | Camera"
+									},
+									{
+										"kind": "text",
+										"text": "  to that target and stop there."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+									"line": 150,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L150"
+								}
+							],
+							"parameters": [
+								{
+									"id": 58,
+									"name": "params",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Either a parameters object or a "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@link",
+												"text": "@xeokit/core!Component | Component"
+											},
+											{
+												"kind": "text",
+												"text": " subtype that has\nan AABB. Defaults to the "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@link",
+												"text": "@xeokit/scene!Scene | Scene"
+											},
+											{
+												"kind": "text",
+												"text": ", which causes the "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@link",
+												"text": "@xeokit/viewer!Camera | Camera"
+											},
+											{
+												"kind": "text",
+												"text": "  to fit the Scene in view."
+											}
+										]
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 59,
+											"name": "__type",
+											"variant": "declaration",
+											"kind": 65536,
+											"flags": {},
+											"children": [
+												{
+													"id": 62,
+													"name": "aabb",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "World-space axis-aligned bounding box (AABB) target to fly to."
+															}
+														]
+													},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 153,
+															"character": 14,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L153"
+														}
+													],
+													"type": {
+														"type": "reference",
+														"target": {
+															"sourceFileName": "../math/src/index.ts",
+															"qualifiedName": "FloatArrayParam"
+														},
+														"name": "FloatArrayParam",
+														"package": "@xeokit/math"
+													}
+												},
+												{
+													"id": 69,
+													"name": "duration",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "Flight duration in seconds.  Overrides "
+															},
+															{
+																"kind": "inline-tag",
+																"tag": "@link",
+																"text": "@xeokit/viewer!CameraFlightAnimation.duration | CameraFlightAnimation.duration"
+															},
+															{
+																"kind": "text",
+																"text": "."
+															}
+														]
+													},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 160,
+															"character": 14,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L160"
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 64,
+													"name": "eye",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "Position to fly the eye position to."
+															}
+														]
+													},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 155,
+															"character": 14,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L155"
+														}
+													],
+													"type": {
+														"type": "reference",
+														"target": {
+															"sourceFileName": "../math/src/index.ts",
+															"qualifiedName": "FloatArrayParam"
+														},
+														"name": "FloatArrayParam",
+														"package": "@xeokit/math"
+													}
+												},
+												{
+													"id": 68,
+													"name": "fitFOV",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "How much of field-of-view, in degrees, that a target "
+															},
+															{
+																"kind": "inline-tag",
+																"tag": "@link",
+																"text": "@xeokit/viewer!ViewObject | ViewObject"
+															},
+															{
+																"kind": "text",
+																"text": " or its AABB should\nfill the canvas on arrival. Overrides "
+															},
+															{
+																"kind": "inline-tag",
+																"tag": "@link",
+																"text": "@xeokit/viewer!CameraFlightAnimation.fitFOV | CameraFlightAnimation.fitFOV"
+															},
+															{
+																"kind": "text",
+																"text": "."
+															}
+														]
+													},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 159,
+															"character": 14,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L159"
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 63,
+													"name": "length",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {
+														"isOptional": true
+													},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 154,
+															"character": 14,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L154"
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 65,
+													"name": "look",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "Position to fly the look position to."
+															}
+														]
+													},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 156,
+															"character": 14,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L156"
+														}
+													],
+													"type": {
+														"type": "reference",
+														"target": {
+															"sourceFileName": "../math/src/index.ts",
+															"qualifiedName": "FloatArrayParam"
+														},
+														"name": "FloatArrayParam",
+														"package": "@xeokit/math"
+													}
+												},
+												{
+													"id": 61,
+													"name": "orthoScale",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "Animate the Camera's orthographic scale to this target value. See "
+															},
+															{
+																"kind": "inline-tag",
+																"tag": "@link",
+																"text": "@xeokit/viewer!OrthoProjection.scale | OrthoProjection.scale"
+															},
+															{
+																"kind": "text",
+																"text": "."
+															}
+														]
+													},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 152,
+															"character": 14,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L152"
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 67,
+													"name": "poi",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {
+														"isOptional": true
+													},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 158,
+															"character": 14,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L158"
+														}
+													],
+													"type": {
+														"type": "reference",
+														"target": {
+															"sourceFileName": "../math/src/index.ts",
+															"qualifiedName": "FloatArrayParam"
+														},
+														"name": "FloatArrayParam",
+														"package": "@xeokit/math"
+													}
+												},
+												{
+													"id": 60,
+													"name": "projection",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "Projection type to transition into as we fly. Can be any of the values of "
+															},
+															{
+																"kind": "inline-tag",
+																"tag": "@link",
+																"text": "@xeokit/viewer!Camera.projectionType | Camera.projectionType | Camera.projectionType"
+															},
+															{
+																"kind": "text",
+																"text": "."
+															}
+														]
+													},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 151,
+															"character": 14,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L151"
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "number"
+													}
+												},
+												{
+													"id": 66,
+													"name": "up",
+													"variant": "declaration",
+													"kind": 1024,
+													"flags": {
+														"isOptional": true
+													},
+													"comment": {
+														"summary": [
+															{
+																"kind": "text",
+																"text": "Position to fly the up vector to."
+															}
+														]
+													},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 157,
+															"character": 14,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L157"
+														}
+													],
+													"type": {
+														"type": "reference",
+														"target": {
+															"sourceFileName": "../math/src/index.ts",
+															"qualifiedName": "FloatArrayParam"
+														},
+														"name": "FloatArrayParam",
+														"package": "@xeokit/math"
+													}
+												}
+											],
+											"groups": [
+												{
+													"title": "Properties",
+													"children": [
+														62,
+														69,
+														64,
+														68,
+														63,
+														65,
+														61,
+														67,
+														60,
+														66
+													]
+												}
+											],
+											"sources": [
+												{
+													"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+													"line": 150,
+													"character": 18,
+													"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L150"
+												}
+											]
+										}
+									},
+									"defaultValue": "{}"
+								},
+								{
+									"id": 70,
+									"name": "callback",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {
+										"isOptional": true
+									},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Callback fired on arrival."
+											}
+										]
+									},
+									"type": {
+										"type": "reflection",
+										"declaration": {
+											"id": 71,
+											"name": "__type",
+											"variant": "declaration",
+											"kind": 65536,
+											"flags": {},
+											"sources": [
+												{
+													"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+													"line": 162,
+													"character": 21,
+													"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L162"
+												}
+											],
+											"signatures": [
+												{
+													"id": 72,
+													"name": "__type",
+													"variant": "signature",
+													"kind": 4096,
+													"flags": {},
+													"sources": [
+														{
+															"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+															"line": 162,
+															"character": 21,
+															"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L162"
+														}
+													],
+													"parameters": [
+														{
+															"id": 73,
+															"name": "arg0",
+															"variant": "param",
+															"kind": 32768,
+															"flags": {},
+															"type": {
+																"type": "intrinsic",
+																"name": "any"
+															}
+														}
+													],
+													"type": {
+														"type": "intrinsic",
+														"name": "void"
+													}
+												}
+											]
+										}
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 74,
+					"name": "jumpTo",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 332,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L332"
+						}
+					],
+					"signatures": [
+						{
+							"id": 75,
+							"name": "jumpTo",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Jumps the "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "@xeokit/viewer!Camera | Camera"
+									},
+									{
+										"kind": "text",
+										"text": "  to the given target.\n\n* When the target is a boundary, this CameraFlightAnimation will position the "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "@xeokit/viewer!Camera | Camera"
+									},
+									{
+										"kind": "text",
+										"text": "  at where the target fills most of the canvas.\n* When the target is an explicit "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "@xeokit/viewer!Camera | Camera"
+									},
+									{
+										"kind": "text",
+										"text": "  position, given as "
+									},
+									{
+										"kind": "code",
+										"text": "````eye````"
+									},
+									{
+										"kind": "text",
+										"text": ", "
+									},
+									{
+										"kind": "code",
+										"text": "````look````"
+									},
+									{
+										"kind": "text",
+										"text": " and "
+									},
+									{
+										"kind": "code",
+										"text": "````up````"
+									},
+									{
+										"kind": "text",
+										"text": " vectors, then this CameraFlightAnimation will jump the "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "@xeokit/viewer!Camera | Camera"
+									},
+									{
+										"kind": "text",
+										"text": "  to that target."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+									"line": 332,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L332"
+								}
+							],
+							"parameters": [
+								{
+									"id": 76,
+									"name": "params",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "Either a parameters object or a "
+											},
+											{
+												"kind": "inline-tag",
+												"tag": "@link",
+												"text": "@xeokit/core!Component | Component"
+											},
+											{
+												"kind": "text",
+												"text": " subtype that has a World-space AABB."
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "any"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 108,
+					"name": "log",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "core/dist/Component.d.ts",
+							"line": 45,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 109,
+							"name": "log",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {
+								"isProtected": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Logs a message for this component.\n\nThe message will have this format: *"
+									},
+									{
+										"kind": "code",
+										"text": "````[LOG] [<component type> <component id>: <message>````"
+									},
+									{
+										"kind": "text",
+										"text": "*"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "core/dist/Component.d.ts",
+									"line": 45,
+									"character": 4
+								}
+							],
+							"parameters": [
+								{
+									"id": 110,
+									"name": "message",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The message to log"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "Component.log"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"target": -1,
+						"name": "Component.log"
+					}
+				},
+				{
+					"id": 117,
+					"name": "setDirty",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "core/dist/Component.d.ts",
+							"line": 67,
+							"character": 14
+						}
+					],
+					"signatures": [
+						{
+							"id": 118,
+							"name": "setDirty",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Flags this component as having a defered state updates it needs to perform."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "core/dist/Component.d.ts",
+									"line": 67,
+									"character": 14
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "Component.setDirty"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"target": -1,
+						"name": "Component.setDirty"
+					}
+				},
+				{
+					"id": 82,
+					"name": "stop",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {},
+					"sources": [
+						{
+							"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+							"line": 480,
+							"character": 4,
+							"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L480"
+						}
+					],
+					"signatures": [
+						{
+							"id": 83,
+							"name": "stop",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Stops an earlier "
+									},
+									{
+										"kind": "inline-tag",
+										"tag": "@link",
+										"text": "CameraFlightAnimation.flyTo",
+										"target": 56,
+										"tsLinkText": "CameraFlightAnimation.flyTo"
+									},
+									{
+										"kind": "text",
+										"text": ", fires arrival callback, then \"stopped\" event."
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+									"line": 480,
+									"character": 4,
+									"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L480"
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							}
+						}
+					]
+				},
+				{
+					"id": 111,
+					"name": "warn",
+					"variant": "declaration",
+					"kind": 2048,
+					"flags": {
+						"isProtected": true
+					},
+					"sources": [
+						{
+							"fileName": "core/dist/Component.d.ts",
+							"line": 54,
+							"character": 4
+						}
+					],
+					"signatures": [
+						{
+							"id": 112,
+							"name": "warn",
+							"variant": "signature",
+							"kind": 4096,
+							"flags": {
+								"isProtected": true
+							},
+							"comment": {
+								"summary": [
+									{
+										"kind": "text",
+										"text": "Logs a warning for this component to the JavaScript console.\n\nThe console message will have this format: *"
+									},
+									{
+										"kind": "code",
+										"text": "````[WARN] [<component type> =<component id>: <message>````"
+									},
+									{
+										"kind": "text",
+										"text": "*"
+									}
+								]
+							},
+							"sources": [
+								{
+									"fileName": "core/dist/Component.d.ts",
+									"line": 54,
+									"character": 4
+								}
+							],
+							"parameters": [
+								{
+									"id": 113,
+									"name": "message",
+									"variant": "param",
+									"kind": 32768,
+									"flags": {},
+									"comment": {
+										"summary": [
+											{
+												"kind": "text",
+												"text": "The warning message to log"
+											}
+										]
+									},
+									"type": {
+										"type": "intrinsic",
+										"name": "string"
+									}
+								}
+							],
+							"type": {
+								"type": "intrinsic",
+								"name": "void"
+							},
+							"inheritedFrom": {
+								"type": "reference",
+								"target": -1,
+								"name": "Component.warn"
+							}
+						}
+					],
+					"inheritedFrom": {
+						"type": "reference",
+						"target": -1,
+						"name": "Component.warn"
+					}
+				}
+			],
+			"groups": [
+				{
+					"title": "Constructors",
+					"children": [
+						20
+					]
+				},
+				{
+					"title": "Properties",
+					"children": [
+						27,
+						105,
+						106,
+						47,
+						104,
+						55,
+						53,
+						54,
+						26
+					]
+				},
+				{
+					"title": "Accessors",
+					"children": [
+						86,
+						90,
+						94,
+						98
+					]
+				},
+				{
+					"title": "Methods",
+					"children": [
+						84,
+						121,
+						119,
+						114,
+						56,
+						74,
+						108,
+						117,
+						82,
+						111
+					]
+				},
+				{
+					"title": "Events",
+					"children": [
+						107
+					]
+				}
+			],
+			"sources": [
+				{
+					"fileName": "cameraflight/src/CameraFlightAnimation.ts",
+					"line": 27,
+					"character": 6,
+					"url": "https://github.com/xeokit/sdk/blob/787961c94746c700e3fb6ab7815219e5c791d589/packages/cameraflight/src/CameraFlightAnimation.ts#L27"
+				}
+			],
+			"extendedTypes": [
+				{
+					"type": "reference",
+					"target": {
+						"sourceFileName": "../core/src/Component.ts",
+						"qualifiedName": "Component"
+					},
+					"name": "Component",
+					"package": "@xeokit/core"
+				}
+			]
+		}
+	],
+	"groups": [
+		{
+			"title": "Classes",
+			"children": [
+				1
+			]
+		}
+	],
+	"packageName": "@xeokit/cameraflight",
+	"packageVersion": "0.1.0",
+	"readme": [
+		{
+			"kind": "text",
+			"text": "# @xeokit/cameraflight\n\n* See [API Documentation](https://xeokit.github.io/sdk/docs/modules/_xeokit_cameraflight.html)"
+		}
+	],
+	"symbolIdMap": {
+		"0": {
+			"sourceFileName": "src/index.ts",
+			"qualifiedName": ""
+		},
+		"1": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation"
+		},
+		"20": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.__constructor"
+		},
+		"21": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation"
+		},
+		"22": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "view"
+		},
+		"23": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "cfg"
+		},
+		"24": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type"
+		},
+		"25": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type.duration"
+		},
+		"26": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.view"
+		},
+		"27": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.camera"
+		},
+		"47": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.easing"
+		},
+		"53": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.onStarted"
+		},
+		"54": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.onStopped"
+		},
+		"55": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.onCancelled"
+		},
+		"56": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.flyTo"
+		},
+		"57": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.flyTo"
+		},
+		"58": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "params"
+		},
+		"59": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type"
+		},
+		"60": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type.projection"
+		},
+		"61": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type.orthoScale"
+		},
+		"62": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type.aabb"
+		},
+		"63": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type.length"
+		},
+		"64": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type.eye"
+		},
+		"65": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type.look"
+		},
+		"66": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type.up"
+		},
+		"67": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type.poi"
+		},
+		"68": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type.fitFOV"
+		},
+		"69": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type.duration"
+		},
+		"70": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "callback"
+		},
+		"71": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type"
+		},
+		"72": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "__type"
+		},
+		"73": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "arg0"
+		},
+		"74": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.jumpTo"
+		},
+		"75": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.jumpTo"
+		},
+		"76": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "params"
+		},
+		"82": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.stop"
+		},
+		"83": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.stop"
+		},
+		"84": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.cancel"
+		},
+		"85": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.cancel"
+		},
+		"86": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.duration"
+		},
+		"87": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.duration"
+		},
+		"88": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.duration"
+		},
+		"89": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "value"
+		},
+		"90": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.fit"
+		},
+		"91": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.fit"
+		},
+		"92": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.fit"
+		},
+		"93": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "value"
+		},
+		"94": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.fitFOV"
+		},
+		"95": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.fitFOV"
+		},
+		"96": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.fitFOV"
+		},
+		"97": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "value"
+		},
+		"98": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.trail"
+		},
+		"99": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.trail"
+		},
+		"100": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "CameraFlightAnimation.trail"
+		},
+		"101": {
+			"sourceFileName": "src/CameraFlightAnimation.ts",
+			"qualifiedName": "value"
+		},
+		"104": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.id"
+		},
+		"105": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.destroyed"
+		},
+		"106": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.dirty"
+		},
+		"107": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.onDestroyed"
+		},
+		"108": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.log"
+		},
+		"109": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.log"
+		},
+		"110": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "message"
+		},
+		"111": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.warn"
+		},
+		"112": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.warn"
+		},
+		"113": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "message"
+		},
+		"114": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.error"
+		},
+		"115": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.error"
+		},
+		"116": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "message"
+		},
+		"117": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.setDirty"
+		},
+		"118": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.setDirty"
+		},
+		"119": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.cleanIfDirty"
+		},
+		"120": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.cleanIfDirty"
+		},
+		"121": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.clean"
+		},
+		"122": {
+			"sourceFileName": "../core/src/Component.ts",
+			"qualifiedName": "Component.clean"
+		}
+	}
+}

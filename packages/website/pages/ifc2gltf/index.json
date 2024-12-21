@@ -1,0 +1,5 @@
+{
+    "title": "ifc2gltf - IFC Model Import Pipeline",
+    "description": "How to view an IFC model in a xeokit Viewer, after first converted it to glTF and JSON metadata files for smoother loading.",
+    "tags": ["SceneModel", "DataModel", "Viewer", "glTF", "IFC", "ModelChunksLoader", "loadGLTF", "loadMetaModel"]
+}

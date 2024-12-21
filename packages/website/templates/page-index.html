@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="xeokit - SDK for Browser-Based 3D BIM Visualization">
+    <meta name="author" content="Lindsay Kay">
+    <meta name="keywords" content="BIM,IFC,WebGL,JavaScript,Browser,BCF,Web,xeolabs,3D,3D Viewer,Lindsay Kay,xeokit,MedViz,ArchViz,Open Source,Browser,Viewer">
+
+    <title>xeokit - 3D Web Programming Toolkit for BIM and Engineering Visualization</title>
+
+    <link href="./../libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../css/business-frontpage.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="./../libs/jquery/jquery.min.js"></script>
+    <script src="./../libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <title></title>
+</head>
+<body>
+@@include('../templates/page-navbar.html')
+<header class="bg-black home-header bg-black">
+    <div class="container h-75">
+                <div class="row h-100 align-items-center">
+                    <div class="col-lg-12">
+<!--                        <h1 class="text-white mt-5 mb-2">IFC Conversion Tests</h1>-->
+<!--                        <p class="lead mb-5 text-white">Check the health of our IFC file conversion tools</p>-->
+                    </div>
+                </div>
+    </div>
+</header>
+<section id="intro" class="main-section alabaster">
+    <div class="container">
+        <div class="row testimonial-row">
+            <div class="col-lg-12">
+                <h1>Tutorials</h1>
+            </div>
+        </div>
+        <div class="row testimonial-row" id="content">
+
+        </div>
+    </div>
+</section>
+@@include('../templates/footer.html')
+</body>
+<script>
+
+    function getTagMap(index) {
+        const tagMap = {};
+        const tagList = [];
+        for (let pageId in index.pages) {
+            const page = index.pages[pageId];
+            if (page.tags) {
+                for (let tagId of page.tags) {
+                    if (!tagMap[tagId]) {
+                        tagMap[tagId] = tagId;
+                        tagList.push(tagId);
+                    }
+                }
+            }
+        }
+        return {tagList, tagMap};
+    }
+
+    fetch("./index.json").then(response => {
+        response.json().then(index => {
+            const {tagList} = getTagMap(index);
+            const html = [`
+                     <div class="col-sm-12 mb-5">
+                   <p>Filter by:
+                    <button type="button" class="btn btn-default btn btn-tag">All</button>
+                    <button type="button" class="btn btn-default btn btn-tag">None</button>`
+            ];
+            for (let i = 0, len = tagList.length; i < len; i++) {
+                html.push(`<button type="button" class="btn btn-primary btn btn-tag my-1">${tagList[i]}</button>`);
+            }
+            html.push(`</p></div>`);
+
+            for (let pageId in index.pages) {
+                const page = index.pages[pageId];
+                html.push(`<div class="col-sm-4  mb-5"><a href="./${pageId}" class="card-link">
+                <div class="card">
+                    <img class="card-img-top thumbnail"
+                         src="./${pageId}/_thumbnail.jpg"
+                         alt="Thumbnail 2">
+                    <div class="card-body">
+                        <h4 class="card-title">${page.title}</h4>
+                        <p class="card-text"> ${page.description || ""}</p>
+                    </div>`);
+                if (page.tags) {
+                    html.push(`<div class="card-footer tag">`)
+                    for (let i = 0, len = page.tags.length; i < len; i++) {
+                        html.push(`<button type="button" class="btn btn-outline-primary btn-sm my-1" disabled>${page.tags[i]}</button>`);
+                    }
+                    html.push(`</div>`);
+                }
+                html.push(`</div></a></div>`);
+            }
+            document.getElementById(`content`).innerHTML = html.join("\n");
+        });
+    });
+
+    $(document).ready(function () {
+        $(".btn-tag").click(function (eventObject) {
+            const tag = $(this).html();
+            const totalPanel = document.getElementsByClassName("panel").length;
+            eventObject.preventDefault();
+            for (let x = 1; x <= totalPanel; x++) {
+                if (JSON.stringify($("#project" + x).html()).indexOf(tag) >= 0) {
+                    //console.log( JSON.stringify($("#project" + x ).html()) );
+                    $("#project" + x).hide();
+                    $("#project" + x).fadeIn();
+                } else {
+                    $("#project" + x).hide();
+                }
+            }
+        });
+    });
+</script>
+</html>

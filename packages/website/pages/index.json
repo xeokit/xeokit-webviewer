@@ -1,0 +1,234 @@
+{
+  "pages": {
+    "execWhitePaper": {
+      "title": "Executive White Paper: xeokit SDK for 3D BIM and AEC Visualization",
+      "description": "This white paper outlines how xeokit addresses critical challenges in BIM data visualization, enhances workflow efficiency, and supports scalable, web-based deployments.",
+      "tags": [
+        "whitepaper"
+      ]
+    },
+    "foo": {
+      "title": "Foo",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneObject",
+        "Viewer",
+        "Geometry"
+      ]
+    },
+    "ifc2gltf": {
+      "title": "ifc2gltf - IFC Model Import Pipeline",
+      "description": "How to view an IFC model in a xeokit Viewer, after first converted it to glTF and JSON metadata files for smoother loading.",
+      "tags": [
+        "SceneModel",
+        "DataModel",
+        "Viewer",
+        "glTF",
+        "IFC",
+        "ModelChunksLoader",
+        "loadGLTF",
+        "loadMetaModel"
+      ]
+    },
+    "ifc2gltf2xgf": {
+      "title": "ifc2gltf2xgf - Optimized IFC Model Import Pipeline",
+      "description": "How to view an IFC model in a xeokit Viewer, after first converted it to XGF and JSON metadata files for even smoother loading.",
+      "tags": [
+        "SceneModel",
+        "DataModel",
+        "Viewer",
+        "XGF",
+        "IFC",
+        "ModelChunksLoader",
+        "loadXGF",
+        "loadDataModel",
+        "ifc2gltf",
+        "ifc2gltf2xkt"
+      ]
+    },
+    "intro": {
+      "title": "xeokit SDK Overview",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneObject",
+        "Viewer",
+        "Geometry"
+      ]
+    },
+    "sceneModelAndDataModelBuildTable": {
+      "title": "Build and View a Model with Semantic Data",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneTransform",
+        "SceneObject",
+        "Viewer",
+        "Geometry"
+      ],
+      "thumbnail": "tableSceneModel.png"
+    },
+    "sceneModelBuildBox": {
+      "title": "View a Spinning 3D Box in a Web Page",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneObject",
+        "Viewer",
+        "Geometry"
+      ]
+    },
+    "sceneModelBuildGeometries": {
+      "title": "Build and View 3G Geometries in a Web Page",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneTransform",
+        "SceneObject",
+        "SceneGeometry",
+        "Viewer",
+        "Geometry"
+      ]
+    },
+    "sceneModelBuildTable": {
+      "title": "Build and View a 3D Model",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneTransform",
+        "SceneObject",
+        "Viewer",
+        "Geometry"
+      ],
+      "thumbnail": "tableSceneModel.png"
+    },
+    "techWhitePaper": {
+      "title": "Technical White Paper: xeokit SDK for 3D BIM and AEC Visualization",
+      "description": "This white paper outlines how xeokit addresses critical challenges in BIM data visualization, enhances workflow efficiency, and supports scalable, web-based deployments.",
+      "tags": [
+        "whitepaper"
+      ]
+    },
+    "viewGLTF": {
+      "title": "View a glTF model in a web page",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneTransform",
+        "SceneObject",
+        "Viewer",
+        "Geometry",
+        "glTF"
+      ]
+    }
+  },
+  "tagsToPagesMap": {
+    "whitepaper": [
+      "execWhitePaper",
+      "techWhitePaper"
+    ],
+    "Beginner": [
+      "foo",
+      "intro",
+      "sceneModelAndDataModelBuildTable",
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable",
+      "viewGLTF"
+    ],
+    "SceneModel": [
+      "foo",
+      "ifc2gltf",
+      "ifc2gltf2xgf",
+      "intro",
+      "sceneModelAndDataModelBuildTable",
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable",
+      "viewGLTF"
+    ],
+    "SceneObject": [
+      "foo",
+      "intro",
+      "sceneModelAndDataModelBuildTable",
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable",
+      "viewGLTF"
+    ],
+    "Viewer": [
+      "foo",
+      "ifc2gltf",
+      "ifc2gltf2xgf",
+      "intro",
+      "sceneModelAndDataModelBuildTable",
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable",
+      "viewGLTF"
+    ],
+    "Geometry": [
+      "foo",
+      "intro",
+      "sceneModelAndDataModelBuildTable",
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable",
+      "viewGLTF"
+    ],
+    "DataModel": [
+      "ifc2gltf",
+      "ifc2gltf2xgf"
+    ],
+    "glTF": [
+      "ifc2gltf",
+      "viewGLTF"
+    ],
+    "IFC": [
+      "ifc2gltf",
+      "ifc2gltf2xgf"
+    ],
+    "ModelChunksLoader": [
+      "ifc2gltf",
+      "ifc2gltf2xgf"
+    ],
+    "loadGLTF": [
+      "ifc2gltf"
+    ],
+    "loadMetaModel": [
+      "ifc2gltf"
+    ],
+    "XGF": [
+      "ifc2gltf2xgf"
+    ],
+    "loadXGF": [
+      "ifc2gltf2xgf"
+    ],
+    "loadDataModel": [
+      "ifc2gltf2xgf"
+    ],
+    "ifc2gltf": [
+      "ifc2gltf2xgf"
+    ],
+    "ifc2gltf2xkt": [
+      "ifc2gltf2xgf"
+    ],
+    "SceneTransform": [
+      "sceneModelAndDataModelBuildTable",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable",
+      "viewGLTF"
+    ],
+    "SceneGeometry": [
+      "sceneModelBuildGeometries"
+    ]
+  }
+}

@@ -1,0 +1,51 @@
+{
+    "name": "@xeokit/sdk",
+    "private": false,
+    "version": "0.1.0",
+    "description": "Next generation xeokit SDK",
+    "main": "dist/index.js",
+    "module": "dist/index.js",
+    "scripts": {
+        "test": "jest --passWithNoTests",
+        "dist": "tsc; node ./scripts/build-cli-tools.js",
+        "lint": "eslint . --fix",
+        "docs": "typedoc --json ../../docs/json/sdk.json --options typedoc.json --validation.invalidLink false",
+        "publish": "npm publish --access public"
+    },
+    "bin": {
+        "cityjson2xgf": "./dist/cityjson2xgf/cityjson2xgf.js",
+        "gltf2xgf": "./dist/gltf2xgf/gltf2xgf.js",
+        "dotbim2xgf": "./dist/dotbim2xgf/dotbim2xgf.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/xeokit/sdk.git"
+    },
+    "author": "Lindsay Kay",
+    "license": "SEE LICENSE IN LICENSE.md",
+    "bugs": {
+        "url": "https://github.com/xeokit/sdk/issues"
+    },
+    "homepage": "https://xeokit.github.io/sdk/docs/api/index.html",
+    "files": [
+        "dist/",
+        "README.md",
+        "package.json"
+    ],
+    "keywords": [],
+    "dependencies": {
+        "@xeokit/config": "^0.1.0",
+        "strongly-typed-events": "3.0.7",
+        "@loaders.gl/core": "^4.0.4",
+        "@loaders.gl/images": "^3.4.1",
+        "@loaders.gl/math": "^4.0.4",
+        "@loaders.gl/las": "^4.0.4",
+        "@loaders.gl/gltf": "^4.0.4",
+        "@loaders.gl/polyfills": "^4.0.4",
+        "@loaders.gl/textures": "^4.0.4",
+        "web-ifc": "^0.0.50",
+        "pako": "^2.0.4",
+        "commander": "^11.0.0"
+    },
+    "devDependencies": {}
+}

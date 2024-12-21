@@ -1,0 +1,5314 @@
+{
+  "ABB3ToOBB3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.ABB3ToOBB3.html",
+    "kind": "function"
+  },
+  "addVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.addVec3.html",
+    "kind": "function"
+  },
+  "addVec3Scalar": {
+    "path": "/docs/api/functions/_xeokit_matrix.addVec3Scalar.html",
+    "kind": "function"
+  },
+  "addVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.addVec4.html",
+    "kind": "function"
+  },
+  "addVec4Scalar": {
+    "path": "/docs/api/functions/_xeokit_matrix.addVec4Scalar.html",
+    "kind": "function"
+  },
+  "AlphaFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.AlphaFormat.html",
+    "kind": "variable"
+  },
+  "AmbientLight": {
+    "path": "/docs/api/classes/_xeokit_viewer.AmbientLight.html",
+    "kind": "class"
+  },
+  "angleAxisToQuaternion": {
+    "path": "/docs/api/functions/_xeokit_matrix.angleAxisToQuaternion.html",
+    "kind": "function"
+  },
+  "angleVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.angleVec3.html",
+    "kind": "function"
+  },
+  "apply": {
+    "path": "/docs/api/functions/_xeokit_utils.apply.html",
+    "kind": "function"
+  },
+  "apply2": {
+    "path": "/docs/api/functions/_xeokit_utils.apply2.html",
+    "kind": "function"
+  },
+  "applyIf": {
+    "path": "/docs/api/functions/_xeokit_utils.applyIf.html",
+    "kind": "function"
+  },
+  "b2": {
+    "path": "/docs/api/functions/_xeokit_curves.b2.html",
+    "kind": "function"
+  },
+  "b2p0": {
+    "path": "/docs/api/functions/_xeokit_curves.b2p0.html",
+    "kind": "function"
+  },
+  "b2p1": {
+    "path": "/docs/api/functions/_xeokit_curves.b2p1.html",
+    "kind": "function"
+  },
+  "b2p2": {
+    "path": "/docs/api/functions/_xeokit_curves.b2p2.html",
+    "kind": "function"
+  },
+  "b3": {
+    "path": "/docs/api/functions/_xeokit_curves.b3.html",
+    "kind": "function"
+  },
+  "b3p0": {
+    "path": "/docs/api/functions/_xeokit_curves.b3p0.html",
+    "kind": "function"
+  },
+  "b3p1": {
+    "path": "/docs/api/functions/_xeokit_curves.b3p1.html",
+    "kind": "function"
+  },
+  "b3p2": {
+    "path": "/docs/api/functions/_xeokit_curves.b3p2.html",
+    "kind": "function"
+  },
+  "b3p3": {
+    "path": "/docs/api/functions/_xeokit_curves.b3p3.html",
+    "kind": "function"
+  },
+  "b64": {
+    "path": "/docs/api/functions/_xeokit_utils.b64.html",
+    "kind": "function"
+  },
+  "BasicAggregation": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BasicAggregation.html",
+    "kind": "variable"
+  },
+  "BasicEntity": {
+    "path": "/docs/api/variables/_xeokit_basictypes.BasicEntity.html",
+    "kind": "variable"
+  },
+  "BCFBitmap": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFBitmap.html",
+    "kind": "interface"
+  },
+  "BCFClippingPlane": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFClippingPlane.html",
+    "kind": "interface"
+  },
+  "BCFColoringComponent": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFColoringComponent.html",
+    "kind": "interface"
+  },
+  "BCFComponent": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFComponent.html",
+    "kind": "interface"
+  },
+  "BCFComponents": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFComponents.html",
+    "kind": "interface"
+  },
+  "BCFLine": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFLine.html",
+    "kind": "interface"
+  },
+  "BCFOrthogonalCamera": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFOrthogonalCamera.html",
+    "kind": "interface"
+  },
+  "BCFPerspectiveCamera": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFPerspectiveCamera.html",
+    "kind": "interface"
+  },
+  "BCFSelectionComponent": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFSelectionComponent.html",
+    "kind": "interface"
+  },
+  "BCFSnapshot": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFSnapshot.html",
+    "kind": "interface"
+  },
+  "BCFTranslucencyComponent": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFTranslucencyComponent.html",
+    "kind": "interface"
+  },
+  "BCFVector": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFVector.html",
+    "kind": "interface"
+  },
+  "BCFViewpoint": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFViewpoint.html",
+    "kind": "interface"
+  },
+  "BCFViewSetupHints": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFViewSetupHints.html",
+    "kind": "interface"
+  },
+  "BCFVisibilityComponent": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.BCFVisibilityComponent.html",
+    "kind": "interface"
+  },
+  "Bridge": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.Bridge.html",
+    "kind": "variable"
+  },
+  "BridgeConstructiveElement": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BridgeConstructiveElement.html",
+    "kind": "variable"
+  },
+  "BridgeFurniture": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BridgeFurniture.html",
+    "kind": "variable"
+  },
+  "BridgeInstallation": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BridgeInstallation.html",
+    "kind": "variable"
+  },
+  "BridgePart": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BridgePart.html",
+    "kind": "variable"
+  },
+  "BridgeRoom": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BridgeRoom.html",
+    "kind": "variable"
+  },
+  "buildBoxGeometry": {
+    "path": "/docs/api/functions/_xeokit_procgen.buildBoxGeometry.html",
+    "kind": "function"
+  },
+  "buildBoxLinesGeometry": {
+    "path": "/docs/api/functions/_xeokit_procgen.buildBoxLinesGeometry.html",
+    "kind": "function"
+  },
+  "buildCylinderGeometry": {
+    "path": "/docs/api/functions/_xeokit_procgen.buildCylinderGeometry.html",
+    "kind": "function"
+  },
+  "buildGridGeometry": {
+    "path": "/docs/api/functions/_xeokit_procgen.buildGridGeometry.html",
+    "kind": "function"
+  },
+  "Building": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.Building.html",
+    "kind": "variable"
+  },
+  "BuildingConstructiveElement": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BuildingConstructiveElement.html",
+    "kind": "variable"
+  },
+  "BuildingFurniture": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BuildingFurniture.html",
+    "kind": "variable"
+  },
+  "BuildingInstallation": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BuildingInstallation.html",
+    "kind": "variable"
+  },
+  "BuildingPart": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BuildingPart.html",
+    "kind": "variable"
+  },
+  "BuildingRoom": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BuildingRoom.html",
+    "kind": "variable"
+  },
+  "BuildingStorey": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BuildingStorey.html",
+    "kind": "variable"
+  },
+  "BuildingUnit": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.BuildingUnit.html",
+    "kind": "variable"
+  },
+  "buildMat4": {
+    "path": "/docs/api/functions/_xeokit_scene.buildMat4.html",
+    "kind": "function"
+  },
+  "buildPlaneGeometry": {
+    "path": "/docs/api/functions/_xeokit_procgen.buildPlaneGeometry.html",
+    "kind": "function"
+  },
+  "buildSphereGeometry": {
+    "path": "/docs/api/functions/_xeokit_procgen.buildSphereGeometry.html",
+    "kind": "function"
+  },
+  "buildTorusGeometry": {
+    "path": "/docs/api/functions/_xeokit_procgen.buildTorusGeometry.html",
+    "kind": "function"
+  },
+  "buildVectorTextGeometry": {
+    "path": "/docs/api/functions/_xeokit_procgen.buildVectorTextGeometry.html",
+    "kind": "function"
+  },
+  "ByteType": {
+    "path": "/docs/api/variables/_xeokit_constants.ByteType.html",
+    "kind": "variable"
+  },
+  "Cache": {
+    "path": "/docs/api/variables/_xeokit_utils.Cache.html",
+    "kind": "variable"
+  },
+  "Camera": {
+    "path": "/docs/api/classes/_xeokit_viewer.Camera.html",
+    "kind": "class"
+  },
+  "CameraControl": {
+    "path": "/docs/api/classes/_xeokit_cameracontrol.CameraControl.html",
+    "kind": "class"
+  },
+  "CameraControlParams": {
+    "path": "/docs/api/interfaces/_xeokit_cameracontrol.CameraControlParams.html",
+    "kind": "interface"
+  },
+  "CameraFlightAnimation": {
+    "path": "/docs/api/classes/_xeokit_cameraflight.CameraFlightAnimation.html",
+    "kind": "class"
+  },
+  "Canvas2Image": {
+    "path": "/docs/api/variables/_xeokit_webglutils.Canvas2Image.html",
+    "kind": "variable"
+  },
+  "canvasPosToWorldRay": {
+    "path": "/docs/api/functions/_xeokit_matrix.canvasPosToWorldRay.html",
+    "kind": "function"
+  },
+  "Capabilities": {
+    "path": "/docs/api/interfaces/_xeokit_core.Capabilities.html",
+    "kind": "interface"
+  },
+  "catmullRomInterpolate": {
+    "path": "/docs/api/functions/_xeokit_curves.catmullRomInterpolate.html",
+    "kind": "function"
+  },
+  "CentimetersUnit": {
+    "path": "/docs/api/variables/_xeokit_constants.CentimetersUnit.html",
+    "kind": "variable"
+  },
+  "CityFurniture": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.CityFurniture.html",
+    "kind": "variable"
+  },
+  "CityObjectGroup": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.CityObjectGroup.html",
+    "kind": "variable"
+  },
+  "clamp": {
+    "path": "/docs/api/functions/_xeokit_math.clamp.html",
+    "kind": "function"
+  },
+  "ClampToEdgeWrapping": {
+    "path": "/docs/api/variables/_xeokit_constants.ClampToEdgeWrapping.html",
+    "kind": "variable"
+  },
+  "clone": {
+    "path": "/docs/api/functions/_xeokit_utils.clone.html",
+    "kind": "function"
+  },
+  "collapseAABB3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.collapseAABB3.html",
+    "kind": "function"
+  },
+  "collapseAABB3Int16": {
+    "path": "/docs/api/functions/_xeokit_boundaries.collapseAABB3Int16.html",
+    "kind": "function"
+  },
+  "compareMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.compareMat4.html",
+    "kind": "function"
+  },
+  "compareVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.compareVec3.html",
+    "kind": "function"
+  },
+  "Component": {
+    "path": "/docs/api/classes/_xeokit_core.Component.html",
+    "kind": "class"
+  },
+  "composeMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.composeMat4.html",
+    "kind": "function"
+  },
+  "composeMat4Euler": {
+    "path": "/docs/api/functions/_xeokit_matrix.composeMat4Euler.html",
+    "kind": "function"
+  },
+  "compressGeometryParams": {
+    "path": "/docs/api/functions/_xeokit_scene.compressGeometryParams.html",
+    "kind": "function"
+  },
+  "compressGuid": {
+    "path": "/docs/api/functions/_xeokit_utils.compressGuid.html",
+    "kind": "function"
+  },
+  "compressNormals": {
+    "path": "/docs/api/functions/_xeokit_compression.compressNormals.html",
+    "kind": "function"
+  },
+  "compressPoint3WithAABB3": {
+    "path": "/docs/api/functions/_xeokit_compression.compressPoint3WithAABB3.html",
+    "kind": "function"
+  },
+  "compressPositions3": {
+    "path": "/docs/api/functions/_xeokit_compression.compressPositions3.html",
+    "kind": "function"
+  },
+  "compressRGBColors": {
+    "path": "/docs/api/functions/_xeokit_compression.compressRGBColors.html",
+    "kind": "function"
+  },
+  "compressUVs": {
+    "path": "/docs/api/functions/_xeokit_compression.compressUVs.html",
+    "kind": "function"
+  },
+  "concat": {
+    "path": "/docs/api/functions/_xeokit_utils.concat.html",
+    "kind": "function"
+  },
+  "conjugateQuat": {
+    "path": "/docs/api/functions/_xeokit_matrix.conjugateQuat.html",
+    "kind": "function"
+  },
+  "containsAABB2": {
+    "path": "/docs/api/functions/_xeokit_boundaries.containsAABB2.html",
+    "kind": "function"
+  },
+  "containsAABB2Point2": {
+    "path": "/docs/api/functions/_xeokit_boundaries.containsAABB2Point2.html",
+    "kind": "function"
+  },
+  "containsAABB3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.containsAABB3.html",
+    "kind": "function"
+  },
+  "containsAABB3Point3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.containsAABB3Point3.html",
+    "kind": "function"
+  },
+  "ContextMenu": {
+    "path": "/docs/api/classes/_xeokit_contextmenu.ContextMenu.html",
+    "kind": "class"
+  },
+  "convertIfc2gltfManifest": {
+    "path": "/docs/api/functions/_xeokit_ifc2gltf2xgf.convertIfc2gltfManifest.html",
+    "kind": "function"
+  },
+  "convertMetaModel": {
+    "path": "/docs/api/functions/_xeokit_metamodel.convertMetaModel.html",
+    "kind": "function"
+  },
+  "convertWebGLConstant": {
+    "path": "/docs/api/functions/_xeokit_webglutils.convertWebGLConstant.html",
+    "kind": "function"
+  },
+  "copy": {
+    "path": "/docs/api/functions/_xeokit_utils.copy.html",
+    "kind": "function"
+  },
+  "createAABB2": {
+    "path": "/docs/api/functions/_xeokit_boundaries.createAABB2.html",
+    "kind": "function"
+  },
+  "createAABB3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.createAABB3.html",
+    "kind": "function"
+  },
+  "createAABB3Int16": {
+    "path": "/docs/api/functions/_xeokit_boundaries.createAABB3Int16.html",
+    "kind": "function"
+  },
+  "createKdTree2FromSceneObjectVerts": {
+    "path": "/docs/api/functions/_xeokit_kdtree2.createKdTree2FromSceneObjectVerts.html",
+    "kind": "function"
+  },
+  "createMat3": {
+    "path": "/docs/api/functions/_xeokit_matrix.createMat3.html",
+    "kind": "function"
+  },
+  "createMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.createMat4.html",
+    "kind": "function"
+  },
+  "createOBB2": {
+    "path": "/docs/api/functions/_xeokit_boundaries.createOBB2.html",
+    "kind": "function"
+  },
+  "createOBB3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.createOBB3.html",
+    "kind": "function"
+  },
+  "createPositions3DecompressMat4": {
+    "path": "/docs/api/functions/_xeokit_compression.createPositions3DecompressMat4.html",
+    "kind": "function"
+  },
+  "createPrimsKdTree3": {
+    "path": "/docs/api/functions/_xeokit_kdtree3.createPrimsKdTree3.html",
+    "kind": "function"
+  },
+  "createRTCModelMat": {
+    "path": "/docs/api/functions/_xeokit_rtc.createRTCModelMat.html",
+    "kind": "function"
+  },
+  "createRTCViewMat": {
+    "path": "/docs/api/functions/_xeokit_rtc.createRTCViewMat.html",
+    "kind": "function"
+  },
+  "createSceneModelStreamParams": {
+    "path": "/docs/api/functions/_xeokit_webglrenderer.createSceneModelStreamParams.html",
+    "kind": "function"
+  },
+  "createSceneObjectPrimsKdTree3": {
+    "path": "/docs/api/functions/_xeokit_kdtree3.createSceneObjectPrimsKdTree3.html",
+    "kind": "function"
+  },
+  "createSceneObjectsKdTree3": {
+    "path": "/docs/api/functions/_xeokit_kdtree3.createSceneObjectsKdTree3.html",
+    "kind": "function"
+  },
+  "createSphere3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.createSphere3.html",
+    "kind": "function"
+  },
+  "createUUID": {
+    "path": "/docs/api/functions/_xeokit_utils.createUUID.html",
+    "kind": "function"
+  },
+  "createVec2": {
+    "path": "/docs/api/functions/_xeokit_matrix.createVec2.html",
+    "kind": "function"
+  },
+  "createVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.createVec3.html",
+    "kind": "function"
+  },
+  "createVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.createVec4.html",
+    "kind": "function"
+  },
+  "cross3Vec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.cross3Vec3.html",
+    "kind": "function"
+  },
+  "cross3Vec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.cross3Vec4.html",
+    "kind": "function"
+  },
+  "CustomProjection": {
+    "path": "/docs/api/classes/_xeokit_viewer.CustomProjection.html",
+    "kind": "class"
+  },
+  "CustomProjectionType": {
+    "path": "/docs/api/variables/_xeokit_constants.CustomProjectionType.html",
+    "kind": "variable"
+  },
+  "Data": {
+    "path": "/docs/api/classes/_xeokit_data.Data.html",
+    "kind": "class"
+  },
+  "DataModel": {
+    "path": "/docs/api/classes/_xeokit_data.DataModel.html",
+    "kind": "class"
+  },
+  "DataModelContentParams": {
+    "path": "/docs/api/interfaces/_xeokit_data.DataModelContentParams.html",
+    "kind": "interface"
+  },
+  "DataModelParams": {
+    "path": "/docs/api/interfaces/_xeokit_data.DataModelParams.html",
+    "kind": "interface"
+  },
+  "DataObject": {
+    "path": "/docs/api/classes/_xeokit_data.DataObject.html",
+    "kind": "class"
+  },
+  "DataObjectParams": {
+    "path": "/docs/api/interfaces/_xeokit_data.DataObjectParams.html",
+    "kind": "interface"
+  },
+  "decomposeMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.decomposeMat4.html",
+    "kind": "function"
+  },
+  "decompressAABB3WithAABB3": {
+    "path": "/docs/api/functions/_xeokit_compression.decompressAABB3WithAABB3.html",
+    "kind": "function"
+  },
+  "decompressAABB3WithMat4": {
+    "path": "/docs/api/functions/_xeokit_compression.decompressAABB3WithMat4.html",
+    "kind": "function"
+  },
+  "decompressNormal": {
+    "path": "/docs/api/functions/_xeokit_compression.decompressNormal.html",
+    "kind": "function"
+  },
+  "decompressNormals": {
+    "path": "/docs/api/functions/_xeokit_compression.decompressNormals.html",
+    "kind": "function"
+  },
+  "decompressPoint3WithAABB3": {
+    "path": "/docs/api/functions/_xeokit_compression.decompressPoint3WithAABB3.html",
+    "kind": "function"
+  },
+  "decompressPoint3WithMat4": {
+    "path": "/docs/api/functions/_xeokit_compression.decompressPoint3WithMat4.html",
+    "kind": "function"
+  },
+  "decompressPositions3WithAABB3": {
+    "path": "/docs/api/functions/_xeokit_compression.decompressPositions3WithAABB3.html",
+    "kind": "function"
+  },
+  "decompressPositions3WithMat4": {
+    "path": "/docs/api/functions/_xeokit_compression.decompressPositions3WithMat4.html",
+    "kind": "function"
+  },
+  "decompressUV": {
+    "path": "/docs/api/functions/_xeokit_compression.decompressUV.html",
+    "kind": "function"
+  },
+  "decompressUVs": {
+    "path": "/docs/api/functions/_xeokit_compression.decompressUVs.html",
+    "kind": "function"
+  },
+  "DEFAULT_SAVED_XGF_VERSION": {
+    "path": "/docs/api/variables/_xeokit_xgf.DEFAULT_SAVED_XGF_VERSION.html",
+    "kind": "variable"
+  },
+  "DefaultLoadingManager": {
+    "path": "/docs/api/variables/_xeokit_utils.DefaultLoadingManager.html",
+    "kind": "variable"
+  },
+  "DEGTORAD": {
+    "path": "/docs/api/variables/_xeokit_math.DEGTORAD.html",
+    "kind": "variable"
+  },
+  "DepthFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.DepthFormat.html",
+    "kind": "variable"
+  },
+  "DepthStencilFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.DepthStencilFormat.html",
+    "kind": "variable"
+  },
+  "determinantMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.determinantMat4.html",
+    "kind": "function"
+  },
+  "DirLight": {
+    "path": "/docs/api/classes/_xeokit_viewer.DirLight.html",
+    "kind": "class"
+  },
+  "distVec2": {
+    "path": "/docs/api/functions/_xeokit_matrix.distVec2.html",
+    "kind": "function"
+  },
+  "distVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.distVec3.html",
+    "kind": "function"
+  },
+  "divScalarVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.divScalarVec3.html",
+    "kind": "function"
+  },
+  "divScalarVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.divScalarVec4.html",
+    "kind": "function"
+  },
+  "divVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.divVec3.html",
+    "kind": "function"
+  },
+  "divVec3Scalar": {
+    "path": "/docs/api/functions/_xeokit_matrix.divVec3Scalar.html",
+    "kind": "function"
+  },
+  "divVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.divVec4.html",
+    "kind": "function"
+  },
+  "divVec4Scalar": {
+    "path": "/docs/api/functions/_xeokit_matrix.divVec4Scalar.html",
+    "kind": "function"
+  },
+  "dotVec2": {
+    "path": "/docs/api/functions/_xeokit_matrix.dotVec2.html",
+    "kind": "function"
+  },
+  "dotVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.dotVec3.html",
+    "kind": "function"
+  },
+  "dotVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.dotVec4.html",
+    "kind": "function"
+  },
+  "DynamicDraw": {
+    "path": "/docs/api/variables/_xeokit_constants.DynamicDraw.html",
+    "kind": "variable"
+  },
+  "Edges": {
+    "path": "/docs/api/classes/_xeokit_viewer.Edges.html",
+    "kind": "class"
+  },
+  "EmphasisMaterial": {
+    "path": "/docs/api/classes/_xeokit_viewer.EmphasisMaterial.html",
+    "kind": "class"
+  },
+  "eulerToQuat": {
+    "path": "/docs/api/functions/_xeokit_matrix.eulerToQuat.html",
+    "kind": "function"
+  },
+  "EventEmitter": {
+    "path": "/docs/api/classes/_xeokit_core.EventEmitter.html",
+    "kind": "class"
+  },
+  "expandAABB2": {
+    "path": "/docs/api/functions/_xeokit_boundaries.expandAABB2.html",
+    "kind": "function"
+  },
+  "expandAABB2Point2": {
+    "path": "/docs/api/functions/_xeokit_boundaries.expandAABB2Point2.html",
+    "kind": "function"
+  },
+  "expandAABB3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.expandAABB3.html",
+    "kind": "function"
+  },
+  "expandAABB3Point3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.expandAABB3Point3.html",
+    "kind": "function"
+  },
+  "expandAABB3Points3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.expandAABB3Points3.html",
+    "kind": "function"
+  },
+  "FastRender": {
+    "path": "/docs/api/variables/_xeokit_constants.FastRender.html",
+    "kind": "variable"
+  },
+  "FeetUnit": {
+    "path": "/docs/api/variables/_xeokit_constants.FeetUnit.html",
+    "kind": "variable"
+  },
+  "FileLoader": {
+    "path": "/docs/api/classes/_xeokit_utils.FileLoader.html",
+    "kind": "class"
+  },
+  "findNodeOfType": {
+    "path": "/docs/api/functions/_xeokit_utils.findNodeOfType.html",
+    "kind": "function"
+  },
+  "FirstPersonNavigationMode": {
+    "path": "/docs/api/variables/_xeokit_constants.FirstPersonNavigationMode.html",
+    "kind": "variable"
+  },
+  "FloatArrayParam": {
+    "path": "/docs/api/types/_xeokit_math.FloatArrayParam.html",
+    "kind": "type"
+  },
+  "FloatType": {
+    "path": "/docs/api/variables/_xeokit_constants.FloatType.html",
+    "kind": "variable"
+  },
+  "Frustum3": {
+    "path": "/docs/api/classes/_xeokit_boundaries.Frustum3.html",
+    "kind": "class"
+  },
+  "frustumMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.frustumMat4.html",
+    "kind": "function"
+  },
+  "frustumMat4v": {
+    "path": "/docs/api/functions/_xeokit_matrix.frustumMat4v.html",
+    "kind": "function"
+  },
+  "FrustumPlane3": {
+    "path": "/docs/api/classes/_xeokit_boundaries.FrustumPlane3.html",
+    "kind": "class"
+  },
+  "FrustumProjection": {
+    "path": "/docs/api/classes/_xeokit_viewer.FrustumProjection.html",
+    "kind": "class"
+  },
+  "FrustumProjectionType": {
+    "path": "/docs/api/variables/_xeokit_constants.FrustumProjectionType.html",
+    "kind": "variable"
+  },
+  "geometricMeanVec2": {
+    "path": "/docs/api/functions/_xeokit_matrix.geometricMeanVec2.html",
+    "kind": "function"
+  },
+  "GeometryArrays": {
+    "path": "/docs/api/types/_xeokit_procgen.GeometryArrays.html",
+    "kind": "type"
+  },
+  "GeometryHit": {
+    "path": "/docs/api/interfaces/_xeokit_pick.GeometryHit.html",
+    "kind": "interface"
+  },
+  "GeometryView": {
+    "path": "/docs/api/interfaces/_xeokit_scene.GeometryView.html",
+    "kind": "interface"
+  },
+  "getAABB2Center": {
+    "path": "/docs/api/functions/_xeokit_boundaries.getAABB2Center.html",
+    "kind": "function"
+  },
+  "getAABB3Area": {
+    "path": "/docs/api/functions/_xeokit_boundaries.getAABB3Area.html",
+    "kind": "function"
+  },
+  "getAABB3Center": {
+    "path": "/docs/api/functions/_xeokit_boundaries.getAABB3Center.html",
+    "kind": "function"
+  },
+  "getAABB3Diag": {
+    "path": "/docs/api/variables/_xeokit_boundaries.getAABB3Diag.html",
+    "kind": "variable"
+  },
+  "getAABB3DiagPoint": {
+    "path": "/docs/api/functions/_xeokit_boundaries.getAABB3DiagPoint.html",
+    "kind": "function"
+  },
+  "getPlaneRTCPos": {
+    "path": "/docs/api/functions/_xeokit_rtc.getPlaneRTCPos.html",
+    "kind": "function"
+  },
+  "getPositions3Center": {
+    "path": "/docs/api/functions/_xeokit_boundaries.getPositions3Center.html",
+    "kind": "function"
+  },
+  "getPositions3MinMax": {
+    "path": "/docs/api/functions/_xeokit_compression.getPositions3MinMax.html",
+    "kind": "function"
+  },
+  "getSceneObjectGeometry": {
+    "path": "/docs/api/functions/_xeokit_scene.getSceneObjectGeometry.html",
+    "kind": "function"
+  },
+  "getUVBounds": {
+    "path": "/docs/api/functions/_xeokit_compression.getUVBounds.html",
+    "kind": "function"
+  },
+  "getWebGLExtension": {
+    "path": "/docs/api/functions/_xeokit_webglutils.getWebGLExtension.html",
+    "kind": "function"
+  },
+  "GIFMediaType": {
+    "path": "/docs/api/variables/_xeokit_constants.GIFMediaType.html",
+    "kind": "variable"
+  },
+  "HalfFloatType": {
+    "path": "/docs/api/variables/_xeokit_constants.HalfFloatType.html",
+    "kind": "variable"
+  },
+  "httpRequest": {
+    "path": "/docs/api/functions/_xeokit_utils.httpRequest.html",
+    "kind": "function"
+  },
+  "identityMat3": {
+    "path": "/docs/api/functions/_xeokit_matrix.identityMat3.html",
+    "kind": "function"
+  },
+  "identityMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.identityMat4.html",
+    "kind": "function"
+  },
+  "identityQuat": {
+    "path": "/docs/api/functions/_xeokit_matrix.identityQuat.html",
+    "kind": "function"
+  },
+  "Ifc2gltfManifestParams": {
+    "path": "/docs/api/classes/_xeokit_ifc2gltf2xgf.Ifc2gltfManifestParams.html",
+    "kind": "class"
+  },
+  "IfcActionRequest": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcActionRequest.html",
+    "kind": "variable"
+  },
+  "IfcActor": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcActor.html",
+    "kind": "variable"
+  },
+  "IfcActorRole": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcActorRole.html",
+    "kind": "variable"
+  },
+  "IfcActuator": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcActuator.html",
+    "kind": "variable"
+  },
+  "IfcActuatorType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcActuatorType.html",
+    "kind": "variable"
+  },
+  "IfcAddress": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAddress.html",
+    "kind": "variable"
+  },
+  "IfcAdvancedBrep": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAdvancedBrep.html",
+    "kind": "variable"
+  },
+  "IfcAdvancedBrepWithVoids": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAdvancedBrepWithVoids.html",
+    "kind": "variable"
+  },
+  "IfcAdvancedFace": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAdvancedFace.html",
+    "kind": "variable"
+  },
+  "IfcAirTerminal": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAirTerminal.html",
+    "kind": "variable"
+  },
+  "IfcAirTerminalBox": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAirTerminalBox.html",
+    "kind": "variable"
+  },
+  "IfcAirTerminalBoxType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAirTerminalBoxType.html",
+    "kind": "variable"
+  },
+  "IfcAirTerminalType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAirTerminalType.html",
+    "kind": "variable"
+  },
+  "IfcAirToAirHeatRecovery": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAirToAirHeatRecovery.html",
+    "kind": "variable"
+  },
+  "IfcAirToAirHeatRecoveryType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAirToAirHeatRecoveryType.html",
+    "kind": "variable"
+  },
+  "IfcAlarm": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAlarm.html",
+    "kind": "variable"
+  },
+  "IfcAlarmType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAlarmType.html",
+    "kind": "variable"
+  },
+  "IfcAnnotation": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAnnotation.html",
+    "kind": "variable"
+  },
+  "IfcAnnotationFillArea": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAnnotationFillArea.html",
+    "kind": "variable"
+  },
+  "IfcApplication": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcApplication.html",
+    "kind": "variable"
+  },
+  "IfcAppliedValue": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAppliedValue.html",
+    "kind": "variable"
+  },
+  "IfcApproval": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcApproval.html",
+    "kind": "variable"
+  },
+  "IfcApprovalRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcApprovalRelationship.html",
+    "kind": "variable"
+  },
+  "IfcArbitraryClosedProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcArbitraryClosedProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcArbitraryOpenProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcArbitraryOpenProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcArbitraryProfileDefWithVoids": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcArbitraryProfileDefWithVoids.html",
+    "kind": "variable"
+  },
+  "IfcAsset": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAsset.html",
+    "kind": "variable"
+  },
+  "IfcAsymmetricIShapeProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAsymmetricIShapeProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcAudioVisualAppliance": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAudioVisualAppliance.html",
+    "kind": "variable"
+  },
+  "IfcAudioVisualApplianceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAudioVisualApplianceType.html",
+    "kind": "variable"
+  },
+  "IfcAxis1Placement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAxis1Placement.html",
+    "kind": "variable"
+  },
+  "IfcAxis2Placement2D": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAxis2Placement2D.html",
+    "kind": "variable"
+  },
+  "IfcAxis2Placement3D": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcAxis2Placement3D.html",
+    "kind": "variable"
+  },
+  "IfcBeam": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBeam.html",
+    "kind": "variable"
+  },
+  "IfcBeamStandardCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBeamStandardCase.html",
+    "kind": "variable"
+  },
+  "IfcBeamType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBeamType.html",
+    "kind": "variable"
+  },
+  "IfcBlobTexture": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBlobTexture.html",
+    "kind": "variable"
+  },
+  "IfcBlock": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBlock.html",
+    "kind": "variable"
+  },
+  "IfcBoiler": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoiler.html",
+    "kind": "variable"
+  },
+  "IfcBoilerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoilerType.html",
+    "kind": "variable"
+  },
+  "IfcBooleanClippingResult": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBooleanClippingResult.html",
+    "kind": "variable"
+  },
+  "IfcBooleanResult": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBooleanResult.html",
+    "kind": "variable"
+  },
+  "IfcBoundaryCondition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoundaryCondition.html",
+    "kind": "variable"
+  },
+  "IfcBoundaryCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoundaryCurve.html",
+    "kind": "variable"
+  },
+  "IfcBoundaryEdgeCondition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoundaryEdgeCondition.html",
+    "kind": "variable"
+  },
+  "IfcBoundaryFaceCondition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoundaryFaceCondition.html",
+    "kind": "variable"
+  },
+  "IfcBoundaryNodeCondition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoundaryNodeCondition.html",
+    "kind": "variable"
+  },
+  "IfcBoundaryNodeConditionWarping": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoundaryNodeConditionWarping.html",
+    "kind": "variable"
+  },
+  "IfcBoundedCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoundedCurve.html",
+    "kind": "variable"
+  },
+  "IfcBoundedSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoundedSurface.html",
+    "kind": "variable"
+  },
+  "IfcBoundingBox": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoundingBox.html",
+    "kind": "variable"
+  },
+  "IfcBoxedHalfSpace": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBoxedHalfSpace.html",
+    "kind": "variable"
+  },
+  "IfcBSplineCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBSplineCurve.html",
+    "kind": "variable"
+  },
+  "IfcBSplineCurveWithKnots": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBSplineCurveWithKnots.html",
+    "kind": "variable"
+  },
+  "IfcBSplineSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBSplineSurface.html",
+    "kind": "variable"
+  },
+  "IfcBSplineSurfaceWithKnots": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBSplineSurfaceWithKnots.html",
+    "kind": "variable"
+  },
+  "IfcBuilding": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBuilding.html",
+    "kind": "variable"
+  },
+  "IfcBuildingElementPart": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBuildingElementPart.html",
+    "kind": "variable"
+  },
+  "IfcBuildingElementPartType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBuildingElementPartType.html",
+    "kind": "variable"
+  },
+  "IfcBuildingElementProxy": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBuildingElementProxy.html",
+    "kind": "variable"
+  },
+  "IfcBuildingElementProxyType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBuildingElementProxyType.html",
+    "kind": "variable"
+  },
+  "IfcBuildingStorey": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBuildingStorey.html",
+    "kind": "variable"
+  },
+  "IfcBuildingSystem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBuildingSystem.html",
+    "kind": "variable"
+  },
+  "IfcBurner": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBurner.html",
+    "kind": "variable"
+  },
+  "IfcBurnerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcBurnerType.html",
+    "kind": "variable"
+  },
+  "IfcCableCarrierFitting": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCableCarrierFitting.html",
+    "kind": "variable"
+  },
+  "IfcCableCarrierFittingType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCableCarrierFittingType.html",
+    "kind": "variable"
+  },
+  "IfcCableCarrierSegment": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCableCarrierSegment.html",
+    "kind": "variable"
+  },
+  "IfcCableCarrierSegmentType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCableCarrierSegmentType.html",
+    "kind": "variable"
+  },
+  "IfcCableFitting": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCableFitting.html",
+    "kind": "variable"
+  },
+  "IfcCableFittingType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCableFittingType.html",
+    "kind": "variable"
+  },
+  "IfcCableSegment": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCableSegment.html",
+    "kind": "variable"
+  },
+  "IfcCableSegmentType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCableSegmentType.html",
+    "kind": "variable"
+  },
+  "IfcCartesianPoint": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCartesianPoint.html",
+    "kind": "variable"
+  },
+  "IfcCartesianPointList": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCartesianPointList.html",
+    "kind": "variable"
+  },
+  "IfcCartesianPointList2D": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCartesianPointList2D.html",
+    "kind": "variable"
+  },
+  "IfcCartesianPointList3D": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCartesianPointList3D.html",
+    "kind": "variable"
+  },
+  "IfcCartesianTransformationOperator": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCartesianTransformationOperator.html",
+    "kind": "variable"
+  },
+  "IfcCartesianTransformationOperator2D": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCartesianTransformationOperator2D.html",
+    "kind": "variable"
+  },
+  "IfcCartesianTransformationOperator2DnonUniform": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCartesianTransformationOperator2DnonUniform.html",
+    "kind": "variable"
+  },
+  "IfcCartesianTransformationOperator3D": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCartesianTransformationOperator3D.html",
+    "kind": "variable"
+  },
+  "IfcCartesianTransformationOperator3DnonUniform": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCartesianTransformationOperator3DnonUniform.html",
+    "kind": "variable"
+  },
+  "IfcCenterLineProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCenterLineProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcChiller": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcChiller.html",
+    "kind": "variable"
+  },
+  "IfcChillerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcChillerType.html",
+    "kind": "variable"
+  },
+  "IfcChimney": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcChimney.html",
+    "kind": "variable"
+  },
+  "IfcChimneyType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcChimneyType.html",
+    "kind": "variable"
+  },
+  "IfcCircle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCircle.html",
+    "kind": "variable"
+  },
+  "IfcCircleHollowProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCircleHollowProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcCircleProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCircleProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcCivilElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCivilElement.html",
+    "kind": "variable"
+  },
+  "IfcCivilElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCivilElementType.html",
+    "kind": "variable"
+  },
+  "IfcClassification": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcClassification.html",
+    "kind": "variable"
+  },
+  "IfcClassificationReference": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcClassificationReference.html",
+    "kind": "variable"
+  },
+  "IfcClosedShell": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcClosedShell.html",
+    "kind": "variable"
+  },
+  "IfcCoil": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCoil.html",
+    "kind": "variable"
+  },
+  "IfcCoilType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCoilType.html",
+    "kind": "variable"
+  },
+  "IfcColourRgb": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcColourRgb.html",
+    "kind": "variable"
+  },
+  "IfcColourRgbList": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcColourRgbList.html",
+    "kind": "variable"
+  },
+  "IfcColourSpecification": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcColourSpecification.html",
+    "kind": "variable"
+  },
+  "IfcColumn": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcColumn.html",
+    "kind": "variable"
+  },
+  "IfcColumnStandardCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcColumnStandardCase.html",
+    "kind": "variable"
+  },
+  "IfcColumnType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcColumnType.html",
+    "kind": "variable"
+  },
+  "IfcCommunicationsAppliance": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCommunicationsAppliance.html",
+    "kind": "variable"
+  },
+  "IfcCommunicationsApplianceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCommunicationsApplianceType.html",
+    "kind": "variable"
+  },
+  "IfcComplexProperty": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcComplexProperty.html",
+    "kind": "variable"
+  },
+  "IfcComplexPropertyTemplate": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcComplexPropertyTemplate.html",
+    "kind": "variable"
+  },
+  "IfcCompositeCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCompositeCurve.html",
+    "kind": "variable"
+  },
+  "IfcCompositeCurveOnSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCompositeCurveOnSurface.html",
+    "kind": "variable"
+  },
+  "IfcCompositeCurveSegment": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCompositeCurveSegment.html",
+    "kind": "variable"
+  },
+  "IfcCompositeProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCompositeProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcCompressor": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCompressor.html",
+    "kind": "variable"
+  },
+  "IfcCompressorType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCompressorType.html",
+    "kind": "variable"
+  },
+  "IfcCondenser": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCondenser.html",
+    "kind": "variable"
+  },
+  "IfcCondenserType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCondenserType.html",
+    "kind": "variable"
+  },
+  "IfcConic": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConic.html",
+    "kind": "variable"
+  },
+  "IfcConnectedFaceSet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConnectedFaceSet.html",
+    "kind": "variable"
+  },
+  "IfcConnectionCurveGeometry": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConnectionCurveGeometry.html",
+    "kind": "variable"
+  },
+  "IfcConnectionGeometry": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConnectionGeometry.html",
+    "kind": "variable"
+  },
+  "IfcConnectionPointEccentricity": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConnectionPointEccentricity.html",
+    "kind": "variable"
+  },
+  "IfcConnectionPointGeometry": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConnectionPointGeometry.html",
+    "kind": "variable"
+  },
+  "IfcConnectionSurfaceGeometry": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConnectionSurfaceGeometry.html",
+    "kind": "variable"
+  },
+  "IfcConnectionVolumeGeometry": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConnectionVolumeGeometry.html",
+    "kind": "variable"
+  },
+  "IfcConstraint": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConstraint.html",
+    "kind": "variable"
+  },
+  "IfcConstructionEquipmentResource": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConstructionEquipmentResource.html",
+    "kind": "variable"
+  },
+  "IfcConstructionEquipmentResourceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConstructionEquipmentResourceType.html",
+    "kind": "variable"
+  },
+  "IfcConstructionMaterialResource": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConstructionMaterialResource.html",
+    "kind": "variable"
+  },
+  "IfcConstructionMaterialResourceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConstructionMaterialResourceType.html",
+    "kind": "variable"
+  },
+  "IfcConstructionProductResource": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConstructionProductResource.html",
+    "kind": "variable"
+  },
+  "IfcConstructionProductResourceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConstructionProductResourceType.html",
+    "kind": "variable"
+  },
+  "IfcConstructionResource": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConstructionResource.html",
+    "kind": "variable"
+  },
+  "IfcConstructionResourceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConstructionResourceType.html",
+    "kind": "variable"
+  },
+  "IfcContext": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcContext.html",
+    "kind": "variable"
+  },
+  "IfcContextDependentUnit": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcContextDependentUnit.html",
+    "kind": "variable"
+  },
+  "IfcControl": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcControl.html",
+    "kind": "variable"
+  },
+  "IfcController": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcController.html",
+    "kind": "variable"
+  },
+  "IfcControllerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcControllerType.html",
+    "kind": "variable"
+  },
+  "IfcConversionBasedUnit": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConversionBasedUnit.html",
+    "kind": "variable"
+  },
+  "IfcConversionBasedUnitWithOffset": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcConversionBasedUnitWithOffset.html",
+    "kind": "variable"
+  },
+  "IfcCooledBeam": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCooledBeam.html",
+    "kind": "variable"
+  },
+  "IfcCooledBeamType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCooledBeamType.html",
+    "kind": "variable"
+  },
+  "IfcCoolingTower": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCoolingTower.html",
+    "kind": "variable"
+  },
+  "IfcCoolingTowerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCoolingTowerType.html",
+    "kind": "variable"
+  },
+  "IfcCoordinateOperation": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCoordinateOperation.html",
+    "kind": "variable"
+  },
+  "IfcCoordinateReferenceSystem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCoordinateReferenceSystem.html",
+    "kind": "variable"
+  },
+  "IfcCostItem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCostItem.html",
+    "kind": "variable"
+  },
+  "IfcCostSchedule": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCostSchedule.html",
+    "kind": "variable"
+  },
+  "IfcCostValue": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCostValue.html",
+    "kind": "variable"
+  },
+  "IfcCovering": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCovering.html",
+    "kind": "variable"
+  },
+  "IfcCoveringType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCoveringType.html",
+    "kind": "variable"
+  },
+  "IfcCrewResource": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCrewResource.html",
+    "kind": "variable"
+  },
+  "IfcCrewResourceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCrewResourceType.html",
+    "kind": "variable"
+  },
+  "IfcCsgPrimitive3D": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCsgPrimitive3D.html",
+    "kind": "variable"
+  },
+  "IfcCsgSolid": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCsgSolid.html",
+    "kind": "variable"
+  },
+  "IfcCShapeProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCShapeProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcCurrencyRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCurrencyRelationship.html",
+    "kind": "variable"
+  },
+  "IfcCurtainWall": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCurtainWall.html",
+    "kind": "variable"
+  },
+  "IfcCurtainWallType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCurtainWallType.html",
+    "kind": "variable"
+  },
+  "IfcCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCurve.html",
+    "kind": "variable"
+  },
+  "IfcCurveBoundedPlane": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCurveBoundedPlane.html",
+    "kind": "variable"
+  },
+  "IfcCurveBoundedSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCurveBoundedSurface.html",
+    "kind": "variable"
+  },
+  "IfcCurveStyle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCurveStyle.html",
+    "kind": "variable"
+  },
+  "IfcCurveStyleFont": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCurveStyleFont.html",
+    "kind": "variable"
+  },
+  "IfcCurveStyleFontAndScaling": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCurveStyleFontAndScaling.html",
+    "kind": "variable"
+  },
+  "IfcCurveStyleFontPattern": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCurveStyleFontPattern.html",
+    "kind": "variable"
+  },
+  "IfcCylindricalSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcCylindricalSurface.html",
+    "kind": "variable"
+  },
+  "IfcDamper": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDamper.html",
+    "kind": "variable"
+  },
+  "IfcDamperType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDamperType.html",
+    "kind": "variable"
+  },
+  "IfcDerivedProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDerivedProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcDerivedUnit": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDerivedUnit.html",
+    "kind": "variable"
+  },
+  "IfcDerivedUnitElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDerivedUnitElement.html",
+    "kind": "variable"
+  },
+  "IfcDimensionalExponents": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDimensionalExponents.html",
+    "kind": "variable"
+  },
+  "IfcDirection": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDirection.html",
+    "kind": "variable"
+  },
+  "IfcDiscreteAccessory": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDiscreteAccessory.html",
+    "kind": "variable"
+  },
+  "IfcDiscreteAccessoryType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDiscreteAccessoryType.html",
+    "kind": "variable"
+  },
+  "IfcDistributionChamberElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDistributionChamberElement.html",
+    "kind": "variable"
+  },
+  "IfcDistributionChamberElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDistributionChamberElementType.html",
+    "kind": "variable"
+  },
+  "IfcDistributionCircuit": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDistributionCircuit.html",
+    "kind": "variable"
+  },
+  "IfcDistributionControlElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDistributionControlElement.html",
+    "kind": "variable"
+  },
+  "IfcDistributionControlElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDistributionControlElementType.html",
+    "kind": "variable"
+  },
+  "IfcDistributionElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDistributionElement.html",
+    "kind": "variable"
+  },
+  "IfcDistributionElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDistributionElementType.html",
+    "kind": "variable"
+  },
+  "IfcDistributionFlowElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDistributionFlowElement.html",
+    "kind": "variable"
+  },
+  "IfcDistributionFlowElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDistributionFlowElementType.html",
+    "kind": "variable"
+  },
+  "IfcDistributionPort": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDistributionPort.html",
+    "kind": "variable"
+  },
+  "IfcDistributionSystem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDistributionSystem.html",
+    "kind": "variable"
+  },
+  "IfcDocumentInformation": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDocumentInformation.html",
+    "kind": "variable"
+  },
+  "IfcDocumentInformationRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDocumentInformationRelationship.html",
+    "kind": "variable"
+  },
+  "IfcDocumentReference": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDocumentReference.html",
+    "kind": "variable"
+  },
+  "IfcDoor": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDoor.html",
+    "kind": "variable"
+  },
+  "IfcDoorLiningProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDoorLiningProperties.html",
+    "kind": "variable"
+  },
+  "IfcDoorPanelProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDoorPanelProperties.html",
+    "kind": "variable"
+  },
+  "IfcDoorStandardCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDoorStandardCase.html",
+    "kind": "variable"
+  },
+  "IfcDoorStyle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDoorStyle.html",
+    "kind": "variable"
+  },
+  "IfcDoorType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDoorType.html",
+    "kind": "variable"
+  },
+  "IfcDraughtingPreDefinedColour": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDraughtingPreDefinedColour.html",
+    "kind": "variable"
+  },
+  "IfcDraughtingPreDefinedCurveFont": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDraughtingPreDefinedCurveFont.html",
+    "kind": "variable"
+  },
+  "IfcDuctFitting": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDuctFitting.html",
+    "kind": "variable"
+  },
+  "IfcDuctFittingType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDuctFittingType.html",
+    "kind": "variable"
+  },
+  "IfcDuctSegment": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDuctSegment.html",
+    "kind": "variable"
+  },
+  "IfcDuctSegmentType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDuctSegmentType.html",
+    "kind": "variable"
+  },
+  "IfcDuctSilencer": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDuctSilencer.html",
+    "kind": "variable"
+  },
+  "IfcDuctSilencerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcDuctSilencerType.html",
+    "kind": "variable"
+  },
+  "IfcEdge": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEdge.html",
+    "kind": "variable"
+  },
+  "IfcEdgeCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEdgeCurve.html",
+    "kind": "variable"
+  },
+  "IfcEdgeLoop": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEdgeLoop.html",
+    "kind": "variable"
+  },
+  "IfcElectricAppliance": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricAppliance.html",
+    "kind": "variable"
+  },
+  "IfcElectricApplianceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricApplianceType.html",
+    "kind": "variable"
+  },
+  "IfcElectricDistributionBoard": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricDistributionBoard.html",
+    "kind": "variable"
+  },
+  "IfcElectricDistributionBoardType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricDistributionBoardType.html",
+    "kind": "variable"
+  },
+  "IfcElectricFlowStorageDevice": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricFlowStorageDevice.html",
+    "kind": "variable"
+  },
+  "IfcElectricFlowStorageDeviceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricFlowStorageDeviceType.html",
+    "kind": "variable"
+  },
+  "IfcElectricGenerator": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricGenerator.html",
+    "kind": "variable"
+  },
+  "IfcElectricGeneratorType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricGeneratorType.html",
+    "kind": "variable"
+  },
+  "IfcElectricMotor": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricMotor.html",
+    "kind": "variable"
+  },
+  "IfcElectricMotorType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricMotorType.html",
+    "kind": "variable"
+  },
+  "IfcElectricTimeControl": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricTimeControl.html",
+    "kind": "variable"
+  },
+  "IfcElectricTimeControlType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElectricTimeControlType.html",
+    "kind": "variable"
+  },
+  "IfcElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElement.html",
+    "kind": "variable"
+  },
+  "IfcElementarySurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElementarySurface.html",
+    "kind": "variable"
+  },
+  "IfcElementAssembly": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElementAssembly.html",
+    "kind": "variable"
+  },
+  "IfcElementAssemblyType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElementAssemblyType.html",
+    "kind": "variable"
+  },
+  "IfcElementComponent": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElementComponent.html",
+    "kind": "variable"
+  },
+  "IfcElementComponentType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElementComponentType.html",
+    "kind": "variable"
+  },
+  "IfcElementQuantity": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElementQuantity.html",
+    "kind": "variable"
+  },
+  "IfcElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcElementType.html",
+    "kind": "variable"
+  },
+  "IfcEllipse": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEllipse.html",
+    "kind": "variable"
+  },
+  "IfcEllipseProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEllipseProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcEnergyConversionDevice": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEnergyConversionDevice.html",
+    "kind": "variable"
+  },
+  "IfcEnergyConversionDeviceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEnergyConversionDeviceType.html",
+    "kind": "variable"
+  },
+  "IfcEngine": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEngine.html",
+    "kind": "variable"
+  },
+  "IfcEngineType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEngineType.html",
+    "kind": "variable"
+  },
+  "IfcEvaporativeCooler": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEvaporativeCooler.html",
+    "kind": "variable"
+  },
+  "IfcEvaporativeCoolerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEvaporativeCoolerType.html",
+    "kind": "variable"
+  },
+  "IfcEvaporator": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEvaporator.html",
+    "kind": "variable"
+  },
+  "IfcEvaporatorType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEvaporatorType.html",
+    "kind": "variable"
+  },
+  "IfcEvent": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEvent.html",
+    "kind": "variable"
+  },
+  "IfcEventTime": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEventTime.html",
+    "kind": "variable"
+  },
+  "IfcEventType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcEventType.html",
+    "kind": "variable"
+  },
+  "IfcExtendedProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcExtendedProperties.html",
+    "kind": "variable"
+  },
+  "IfcExternalInformation": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcExternalInformation.html",
+    "kind": "variable"
+  },
+  "IfcExternallyDefinedHatchStyle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcExternallyDefinedHatchStyle.html",
+    "kind": "variable"
+  },
+  "IfcExternallyDefinedSurfaceStyle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcExternallyDefinedSurfaceStyle.html",
+    "kind": "variable"
+  },
+  "IfcExternallyDefinedTextFont": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcExternallyDefinedTextFont.html",
+    "kind": "variable"
+  },
+  "IfcExternalReference": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcExternalReference.html",
+    "kind": "variable"
+  },
+  "IfcExternalReferenceRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcExternalReferenceRelationship.html",
+    "kind": "variable"
+  },
+  "IfcExternalSpatialElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcExternalSpatialElement.html",
+    "kind": "variable"
+  },
+  "IfcExternalSpatialStructureElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcExternalSpatialStructureElement.html",
+    "kind": "variable"
+  },
+  "IfcExtrudedAreaSolid": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcExtrudedAreaSolid.html",
+    "kind": "variable"
+  },
+  "IfcExtrudedAreaSolidTapered": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcExtrudedAreaSolidTapered.html",
+    "kind": "variable"
+  },
+  "IfcFace": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFace.html",
+    "kind": "variable"
+  },
+  "IfcFaceBasedSurfaceModel": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFaceBasedSurfaceModel.html",
+    "kind": "variable"
+  },
+  "IfcFaceBound": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFaceBound.html",
+    "kind": "variable"
+  },
+  "IfcFaceOuterBound": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFaceOuterBound.html",
+    "kind": "variable"
+  },
+  "IfcFaceSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFaceSurface.html",
+    "kind": "variable"
+  },
+  "IfcFacetedBrep": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFacetedBrep.html",
+    "kind": "variable"
+  },
+  "IfcFacetedBrepWithVoids": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFacetedBrepWithVoids.html",
+    "kind": "variable"
+  },
+  "IfcFailureConnectionCondition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFailureConnectionCondition.html",
+    "kind": "variable"
+  },
+  "IfcFan": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFan.html",
+    "kind": "variable"
+  },
+  "IfcFanType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFanType.html",
+    "kind": "variable"
+  },
+  "IfcFastener": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFastener.html",
+    "kind": "variable"
+  },
+  "IfcFastenerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFastenerType.html",
+    "kind": "variable"
+  },
+  "IfcFeatureElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFeatureElement.html",
+    "kind": "variable"
+  },
+  "IfcFeatureElementAddition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFeatureElementAddition.html",
+    "kind": "variable"
+  },
+  "IfcFeatureElementSubtraction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFeatureElementSubtraction.html",
+    "kind": "variable"
+  },
+  "IfcFillAreaStyle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFillAreaStyle.html",
+    "kind": "variable"
+  },
+  "IfcFillAreaStyleHatching": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFillAreaStyleHatching.html",
+    "kind": "variable"
+  },
+  "IfcFillAreaStyleTiles": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFillAreaStyleTiles.html",
+    "kind": "variable"
+  },
+  "IfcFilter": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFilter.html",
+    "kind": "variable"
+  },
+  "IfcFilterType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFilterType.html",
+    "kind": "variable"
+  },
+  "IfcFireSuppressionTerminal": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFireSuppressionTerminal.html",
+    "kind": "variable"
+  },
+  "IfcFireSuppressionTerminalType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFireSuppressionTerminalType.html",
+    "kind": "variable"
+  },
+  "IfcFixedReferenceSweptAreaSolid": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFixedReferenceSweptAreaSolid.html",
+    "kind": "variable"
+  },
+  "IfcFlowController": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowController.html",
+    "kind": "variable"
+  },
+  "IfcFlowControllerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowControllerType.html",
+    "kind": "variable"
+  },
+  "IfcFlowFitting": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowFitting.html",
+    "kind": "variable"
+  },
+  "IfcFlowFittingType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowFittingType.html",
+    "kind": "variable"
+  },
+  "IfcFlowInstrument": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowInstrument.html",
+    "kind": "variable"
+  },
+  "IfcFlowInstrumentType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowInstrumentType.html",
+    "kind": "variable"
+  },
+  "IfcFlowMeter": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowMeter.html",
+    "kind": "variable"
+  },
+  "IfcFlowMeterType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowMeterType.html",
+    "kind": "variable"
+  },
+  "IfcFlowMovingDevice": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowMovingDevice.html",
+    "kind": "variable"
+  },
+  "IfcFlowMovingDeviceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowMovingDeviceType.html",
+    "kind": "variable"
+  },
+  "IfcFlowSegment": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowSegment.html",
+    "kind": "variable"
+  },
+  "IfcFlowSegmentType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowSegmentType.html",
+    "kind": "variable"
+  },
+  "IfcFlowStorageDevice": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowStorageDevice.html",
+    "kind": "variable"
+  },
+  "IfcFlowStorageDeviceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowStorageDeviceType.html",
+    "kind": "variable"
+  },
+  "IfcFlowTerminal": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowTerminal.html",
+    "kind": "variable"
+  },
+  "IfcFlowTerminalType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowTerminalType.html",
+    "kind": "variable"
+  },
+  "IfcFlowTreatmentDevice": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowTreatmentDevice.html",
+    "kind": "variable"
+  },
+  "IfcFlowTreatmentDeviceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFlowTreatmentDeviceType.html",
+    "kind": "variable"
+  },
+  "IfcFooting": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFooting.html",
+    "kind": "variable"
+  },
+  "IfcFootingType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFootingType.html",
+    "kind": "variable"
+  },
+  "IfcFurnishingElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFurnishingElement.html",
+    "kind": "variable"
+  },
+  "IfcFurnishingElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFurnishingElementType.html",
+    "kind": "variable"
+  },
+  "IfcFurniture": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFurniture.html",
+    "kind": "variable"
+  },
+  "IfcFurnitureType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcFurnitureType.html",
+    "kind": "variable"
+  },
+  "IfcGeographicElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcGeographicElement.html",
+    "kind": "variable"
+  },
+  "IfcGeographicElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcGeographicElementType.html",
+    "kind": "variable"
+  },
+  "IfcGeometricCurveSet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcGeometricCurveSet.html",
+    "kind": "variable"
+  },
+  "IfcGeometricRepresentationContext": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcGeometricRepresentationContext.html",
+    "kind": "variable"
+  },
+  "IfcGeometricRepresentationItem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcGeometricRepresentationItem.html",
+    "kind": "variable"
+  },
+  "IfcGeometricRepresentationSubContext": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcGeometricRepresentationSubContext.html",
+    "kind": "variable"
+  },
+  "IfcGeometricSet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcGeometricSet.html",
+    "kind": "variable"
+  },
+  "IfcGrid": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcGrid.html",
+    "kind": "variable"
+  },
+  "IfcGridAxis": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcGridAxis.html",
+    "kind": "variable"
+  },
+  "IfcGridPlacement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcGridPlacement.html",
+    "kind": "variable"
+  },
+  "IfcGroup": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcGroup.html",
+    "kind": "variable"
+  },
+  "IfcHalfSpaceSolid": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcHalfSpaceSolid.html",
+    "kind": "variable"
+  },
+  "IfcHeatExchanger": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcHeatExchanger.html",
+    "kind": "variable"
+  },
+  "IfcHeatExchangerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcHeatExchangerType.html",
+    "kind": "variable"
+  },
+  "IfcHumidifier": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcHumidifier.html",
+    "kind": "variable"
+  },
+  "IfcHumidifierType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcHumidifierType.html",
+    "kind": "variable"
+  },
+  "IfcImageTexture": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcImageTexture.html",
+    "kind": "variable"
+  },
+  "IfcIndexedColourMap": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcIndexedColourMap.html",
+    "kind": "variable"
+  },
+  "IfcIndexedPolyCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcIndexedPolyCurve.html",
+    "kind": "variable"
+  },
+  "IfcIndexedPolygonalFace": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcIndexedPolygonalFace.html",
+    "kind": "variable"
+  },
+  "IfcIndexedPolygonalFaceWithVoids": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcIndexedPolygonalFaceWithVoids.html",
+    "kind": "variable"
+  },
+  "IfcIndexedTextureMap": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcIndexedTextureMap.html",
+    "kind": "variable"
+  },
+  "IfcIndexedTriangleTextureMap": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcIndexedTriangleTextureMap.html",
+    "kind": "variable"
+  },
+  "IfcInterceptor": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcInterceptor.html",
+    "kind": "variable"
+  },
+  "IfcInterceptorType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcInterceptorType.html",
+    "kind": "variable"
+  },
+  "IfcIntersectionCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcIntersectionCurve.html",
+    "kind": "variable"
+  },
+  "IfcInventory": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcInventory.html",
+    "kind": "variable"
+  },
+  "IfcIrregularTimeSeries": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcIrregularTimeSeries.html",
+    "kind": "variable"
+  },
+  "IfcIrregularTimeSeriesValue": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcIrregularTimeSeriesValue.html",
+    "kind": "variable"
+  },
+  "IfcIShapeProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcIShapeProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcJunctionBox": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcJunctionBox.html",
+    "kind": "variable"
+  },
+  "IfcJunctionBoxType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcJunctionBoxType.html",
+    "kind": "variable"
+  },
+  "IfcLaborResource": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLaborResource.html",
+    "kind": "variable"
+  },
+  "IfcLaborResourceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLaborResourceType.html",
+    "kind": "variable"
+  },
+  "IfcLagTime": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLagTime.html",
+    "kind": "variable"
+  },
+  "IfcLamp": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLamp.html",
+    "kind": "variable"
+  },
+  "IfcLampType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLampType.html",
+    "kind": "variable"
+  },
+  "IfcLibraryInformation": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLibraryInformation.html",
+    "kind": "variable"
+  },
+  "IfcLibraryReference": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLibraryReference.html",
+    "kind": "variable"
+  },
+  "IfcLightDistributionData": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLightDistributionData.html",
+    "kind": "variable"
+  },
+  "IfcLightFixture": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLightFixture.html",
+    "kind": "variable"
+  },
+  "IfcLightFixtureType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLightFixtureType.html",
+    "kind": "variable"
+  },
+  "IfcLightIntensityDistribution": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLightIntensityDistribution.html",
+    "kind": "variable"
+  },
+  "IfcLightSource": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLightSource.html",
+    "kind": "variable"
+  },
+  "IfcLightSourceAmbient": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLightSourceAmbient.html",
+    "kind": "variable"
+  },
+  "IfcLightSourceDirectional": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLightSourceDirectional.html",
+    "kind": "variable"
+  },
+  "IfcLightSourceGoniometric": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLightSourceGoniometric.html",
+    "kind": "variable"
+  },
+  "IfcLightSourcePositional": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLightSourcePositional.html",
+    "kind": "variable"
+  },
+  "IfcLightSourceSpot": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLightSourceSpot.html",
+    "kind": "variable"
+  },
+  "IfcLine": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLine.html",
+    "kind": "variable"
+  },
+  "IfcLocalPlacement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLocalPlacement.html",
+    "kind": "variable"
+  },
+  "IfcLoop": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLoop.html",
+    "kind": "variable"
+  },
+  "IfcLShapeProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcLShapeProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcManifoldSolidBrep": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcManifoldSolidBrep.html",
+    "kind": "variable"
+  },
+  "IfcMapConversion": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMapConversion.html",
+    "kind": "variable"
+  },
+  "IfcMappedItem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMappedItem.html",
+    "kind": "variable"
+  },
+  "IfcMaterial": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterial.html",
+    "kind": "variable"
+  },
+  "IfcMaterialClassificationRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialClassificationRelationship.html",
+    "kind": "variable"
+  },
+  "IfcMaterialConstituent": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialConstituent.html",
+    "kind": "variable"
+  },
+  "IfcMaterialConstituentSet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialConstituentSet.html",
+    "kind": "variable"
+  },
+  "IfcMaterialDefinition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialDefinition.html",
+    "kind": "variable"
+  },
+  "IfcMaterialDefinitionRepresentation": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialDefinitionRepresentation.html",
+    "kind": "variable"
+  },
+  "IfcMaterialLayer": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialLayer.html",
+    "kind": "variable"
+  },
+  "IfcMaterialLayerSet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialLayerSet.html",
+    "kind": "variable"
+  },
+  "IfcMaterialLayerSetUsage": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialLayerSetUsage.html",
+    "kind": "variable"
+  },
+  "IfcMaterialLayerWithOffsets": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialLayerWithOffsets.html",
+    "kind": "variable"
+  },
+  "IfcMaterialList": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialList.html",
+    "kind": "variable"
+  },
+  "IfcMaterialProfile": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialProfile.html",
+    "kind": "variable"
+  },
+  "IfcMaterialProfileSet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialProfileSet.html",
+    "kind": "variable"
+  },
+  "IfcMaterialProfileSetUsage": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialProfileSetUsage.html",
+    "kind": "variable"
+  },
+  "IfcMaterialProfileSetUsageTapering": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialProfileSetUsageTapering.html",
+    "kind": "variable"
+  },
+  "IfcMaterialProfileWithOffsets": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialProfileWithOffsets.html",
+    "kind": "variable"
+  },
+  "IfcMaterialProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialProperties.html",
+    "kind": "variable"
+  },
+  "IfcMaterialRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialRelationship.html",
+    "kind": "variable"
+  },
+  "IfcMaterialUsageDefinition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMaterialUsageDefinition.html",
+    "kind": "variable"
+  },
+  "IfcMeasureWithUnit": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMeasureWithUnit.html",
+    "kind": "variable"
+  },
+  "IfcMechanicalFastener": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMechanicalFastener.html",
+    "kind": "variable"
+  },
+  "IfcMechanicalFastenerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMechanicalFastenerType.html",
+    "kind": "variable"
+  },
+  "IfcMedicalDevice": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMedicalDevice.html",
+    "kind": "variable"
+  },
+  "IfcMedicalDeviceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMedicalDeviceType.html",
+    "kind": "variable"
+  },
+  "IfcMember": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMember.html",
+    "kind": "variable"
+  },
+  "IfcMemberStandardCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMemberStandardCase.html",
+    "kind": "variable"
+  },
+  "IfcMemberType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMemberType.html",
+    "kind": "variable"
+  },
+  "IfcMetric": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMetric.html",
+    "kind": "variable"
+  },
+  "IfcMirroredProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMirroredProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcMonetaryUnit": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMonetaryUnit.html",
+    "kind": "variable"
+  },
+  "IfcMotorConnection": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMotorConnection.html",
+    "kind": "variable"
+  },
+  "IfcMotorConnectionType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcMotorConnectionType.html",
+    "kind": "variable"
+  },
+  "IfcNamedUnit": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcNamedUnit.html",
+    "kind": "variable"
+  },
+  "IfcObject": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcObject.html",
+    "kind": "variable"
+  },
+  "IfcObjectDefinition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcObjectDefinition.html",
+    "kind": "variable"
+  },
+  "IfcObjective": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcObjective.html",
+    "kind": "variable"
+  },
+  "IfcObjectPlacement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcObjectPlacement.html",
+    "kind": "variable"
+  },
+  "IfcOccupant": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOccupant.html",
+    "kind": "variable"
+  },
+  "IfcOffsetCurve2D": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOffsetCurve2D.html",
+    "kind": "variable"
+  },
+  "IfcOffsetCurve3D": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOffsetCurve3D.html",
+    "kind": "variable"
+  },
+  "IfcOpeningElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOpeningElement.html",
+    "kind": "variable"
+  },
+  "IfcOpeningStandardCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOpeningStandardCase.html",
+    "kind": "variable"
+  },
+  "IfcOpenShell": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOpenShell.html",
+    "kind": "variable"
+  },
+  "IfcOrganization": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOrganization.html",
+    "kind": "variable"
+  },
+  "IfcOrganizationRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOrganizationRelationship.html",
+    "kind": "variable"
+  },
+  "IfcOrientedEdge": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOrientedEdge.html",
+    "kind": "variable"
+  },
+  "IfcOuterBoundaryCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOuterBoundaryCurve.html",
+    "kind": "variable"
+  },
+  "IfcOutlet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOutlet.html",
+    "kind": "variable"
+  },
+  "IfcOutletType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOutletType.html",
+    "kind": "variable"
+  },
+  "IfcOwnerHistory": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcOwnerHistory.html",
+    "kind": "variable"
+  },
+  "IfcParameterizedProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcParameterizedProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcPath": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPath.html",
+    "kind": "variable"
+  },
+  "IfcPcurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPcurve.html",
+    "kind": "variable"
+  },
+  "IfcPerformanceHistory": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPerformanceHistory.html",
+    "kind": "variable"
+  },
+  "IfcPermeableCoveringProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPermeableCoveringProperties.html",
+    "kind": "variable"
+  },
+  "IfcPermit": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPermit.html",
+    "kind": "variable"
+  },
+  "IfcPerson": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPerson.html",
+    "kind": "variable"
+  },
+  "IfcPersonAndOrganization": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPersonAndOrganization.html",
+    "kind": "variable"
+  },
+  "IfcPhysicalComplexQuantity": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPhysicalComplexQuantity.html",
+    "kind": "variable"
+  },
+  "IfcPhysicalQuantity": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPhysicalQuantity.html",
+    "kind": "variable"
+  },
+  "IfcPhysicalSimpleQuantity": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPhysicalSimpleQuantity.html",
+    "kind": "variable"
+  },
+  "IfcPile": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPile.html",
+    "kind": "variable"
+  },
+  "IfcPileType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPileType.html",
+    "kind": "variable"
+  },
+  "IfcPipeFitting": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPipeFitting.html",
+    "kind": "variable"
+  },
+  "IfcPipeFittingType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPipeFittingType.html",
+    "kind": "variable"
+  },
+  "IfcPipeSegment": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPipeSegment.html",
+    "kind": "variable"
+  },
+  "IfcPipeSegmentType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPipeSegmentType.html",
+    "kind": "variable"
+  },
+  "IfcPixelTexture": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPixelTexture.html",
+    "kind": "variable"
+  },
+  "IfcPlacement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPlacement.html",
+    "kind": "variable"
+  },
+  "IfcPlanarBox": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPlanarBox.html",
+    "kind": "variable"
+  },
+  "IfcPlanarExtent": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPlanarExtent.html",
+    "kind": "variable"
+  },
+  "IfcPlane": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPlane.html",
+    "kind": "variable"
+  },
+  "IfcPlate": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPlate.html",
+    "kind": "variable"
+  },
+  "IfcPlateStandardCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPlateStandardCase.html",
+    "kind": "variable"
+  },
+  "IfcPlateType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPlateType.html",
+    "kind": "variable"
+  },
+  "IfcPoint": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPoint.html",
+    "kind": "variable"
+  },
+  "IfcPointOnCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPointOnCurve.html",
+    "kind": "variable"
+  },
+  "IfcPointOnSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPointOnSurface.html",
+    "kind": "variable"
+  },
+  "IfcPolygonalBoundedHalfSpace": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPolygonalBoundedHalfSpace.html",
+    "kind": "variable"
+  },
+  "IfcPolygonalFaceSet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPolygonalFaceSet.html",
+    "kind": "variable"
+  },
+  "IfcPolyline": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPolyline.html",
+    "kind": "variable"
+  },
+  "IfcPolyLoop": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPolyLoop.html",
+    "kind": "variable"
+  },
+  "IfcPort": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPort.html",
+    "kind": "variable"
+  },
+  "IfcPostalAddress": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPostalAddress.html",
+    "kind": "variable"
+  },
+  "IfcPreDefinedColour": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPreDefinedColour.html",
+    "kind": "variable"
+  },
+  "IfcPreDefinedCurveFont": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPreDefinedCurveFont.html",
+    "kind": "variable"
+  },
+  "IfcPreDefinedItem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPreDefinedItem.html",
+    "kind": "variable"
+  },
+  "IfcPreDefinedProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPreDefinedProperties.html",
+    "kind": "variable"
+  },
+  "IfcPreDefinedPropertySet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPreDefinedPropertySet.html",
+    "kind": "variable"
+  },
+  "IfcPreDefinedTextFont": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPreDefinedTextFont.html",
+    "kind": "variable"
+  },
+  "IfcPresentationItem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPresentationItem.html",
+    "kind": "variable"
+  },
+  "IfcPresentationLayerAssignment": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPresentationLayerAssignment.html",
+    "kind": "variable"
+  },
+  "IfcPresentationLayerWithStyle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPresentationLayerWithStyle.html",
+    "kind": "variable"
+  },
+  "IfcPresentationStyle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPresentationStyle.html",
+    "kind": "variable"
+  },
+  "IfcPresentationStyleAssignment": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPresentationStyleAssignment.html",
+    "kind": "variable"
+  },
+  "IfcProcedure": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProcedure.html",
+    "kind": "variable"
+  },
+  "IfcProcedureType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProcedureType.html",
+    "kind": "variable"
+  },
+  "IfcProcess": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProcess.html",
+    "kind": "variable"
+  },
+  "IfcProduct": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProduct.html",
+    "kind": "variable"
+  },
+  "IfcProductDefinitionShape": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProductDefinitionShape.html",
+    "kind": "variable"
+  },
+  "IfcProductRepresentation": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProductRepresentation.html",
+    "kind": "variable"
+  },
+  "IfcProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcProfileProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProfileProperties.html",
+    "kind": "variable"
+  },
+  "IfcProject": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProject.html",
+    "kind": "variable"
+  },
+  "IfcProjectedCRS": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProjectedCRS.html",
+    "kind": "variable"
+  },
+  "IfcProjectionElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProjectionElement.html",
+    "kind": "variable"
+  },
+  "IfcProjectLibrary": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProjectLibrary.html",
+    "kind": "variable"
+  },
+  "IfcProjectOrder": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProjectOrder.html",
+    "kind": "variable"
+  },
+  "IfcProperty": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProperty.html",
+    "kind": "variable"
+  },
+  "IfcPropertyAbstraction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertyAbstraction.html",
+    "kind": "variable"
+  },
+  "IfcPropertyBoundedValue": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertyBoundedValue.html",
+    "kind": "variable"
+  },
+  "IfcPropertyDefinition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertyDefinition.html",
+    "kind": "variable"
+  },
+  "IfcPropertyDependencyRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertyDependencyRelationship.html",
+    "kind": "variable"
+  },
+  "IfcPropertyEnumeratedValue": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertyEnumeratedValue.html",
+    "kind": "variable"
+  },
+  "IfcPropertyEnumeration": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertyEnumeration.html",
+    "kind": "variable"
+  },
+  "IfcPropertyListValue": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertyListValue.html",
+    "kind": "variable"
+  },
+  "IfcPropertyReferenceValue": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertyReferenceValue.html",
+    "kind": "variable"
+  },
+  "IfcPropertySet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertySet.html",
+    "kind": "variable"
+  },
+  "IfcPropertySetDefinition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertySetDefinition.html",
+    "kind": "variable"
+  },
+  "IfcPropertySetTemplate": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertySetTemplate.html",
+    "kind": "variable"
+  },
+  "IfcPropertySingleValue": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertySingleValue.html",
+    "kind": "variable"
+  },
+  "IfcPropertyTableValue": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertyTableValue.html",
+    "kind": "variable"
+  },
+  "IfcPropertyTemplate": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertyTemplate.html",
+    "kind": "variable"
+  },
+  "IfcPropertyTemplateDefinition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPropertyTemplateDefinition.html",
+    "kind": "variable"
+  },
+  "IfcProtectiveDevice": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProtectiveDevice.html",
+    "kind": "variable"
+  },
+  "IfcProtectiveDeviceTrippingUnit": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProtectiveDeviceTrippingUnit.html",
+    "kind": "variable"
+  },
+  "IfcProtectiveDeviceTrippingUnitType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProtectiveDeviceTrippingUnitType.html",
+    "kind": "variable"
+  },
+  "IfcProtectiveDeviceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProtectiveDeviceType.html",
+    "kind": "variable"
+  },
+  "IfcProxy": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcProxy.html",
+    "kind": "variable"
+  },
+  "IfcPump": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPump.html",
+    "kind": "variable"
+  },
+  "IfcPumpType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcPumpType.html",
+    "kind": "variable"
+  },
+  "IfcQuantityArea": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcQuantityArea.html",
+    "kind": "variable"
+  },
+  "IfcQuantityCount": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcQuantityCount.html",
+    "kind": "variable"
+  },
+  "IfcQuantityLength": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcQuantityLength.html",
+    "kind": "variable"
+  },
+  "IfcQuantitySet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcQuantitySet.html",
+    "kind": "variable"
+  },
+  "IfcQuantityTime": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcQuantityTime.html",
+    "kind": "variable"
+  },
+  "IfcQuantityVolume": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcQuantityVolume.html",
+    "kind": "variable"
+  },
+  "IfcQuantityWeight": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcQuantityWeight.html",
+    "kind": "variable"
+  },
+  "IfcRailing": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRailing.html",
+    "kind": "variable"
+  },
+  "IfcRailingType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRailingType.html",
+    "kind": "variable"
+  },
+  "IfcRamp": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRamp.html",
+    "kind": "variable"
+  },
+  "IfcRampFlight": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRampFlight.html",
+    "kind": "variable"
+  },
+  "IfcRampFlightType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRampFlightType.html",
+    "kind": "variable"
+  },
+  "IfcRampType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRampType.html",
+    "kind": "variable"
+  },
+  "IfcRationalBSplineCurveWithKnots": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRationalBSplineCurveWithKnots.html",
+    "kind": "variable"
+  },
+  "IfcRationalBSplineSurfaceWithKnots": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRationalBSplineSurfaceWithKnots.html",
+    "kind": "variable"
+  },
+  "IfcRectangleHollowProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRectangleHollowProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcRectangleProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRectangleProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcRectangularPyramid": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRectangularPyramid.html",
+    "kind": "variable"
+  },
+  "IfcRectangularTrimmedSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRectangularTrimmedSurface.html",
+    "kind": "variable"
+  },
+  "IfcRecurrencePattern": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRecurrencePattern.html",
+    "kind": "variable"
+  },
+  "IfcReference": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcReference.html",
+    "kind": "variable"
+  },
+  "IfcRegularTimeSeries": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRegularTimeSeries.html",
+    "kind": "variable"
+  },
+  "IfcReinforcementBarProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcReinforcementBarProperties.html",
+    "kind": "variable"
+  },
+  "IfcReinforcementDefinitionProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcReinforcementDefinitionProperties.html",
+    "kind": "variable"
+  },
+  "IfcReinforcingBar": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcReinforcingBar.html",
+    "kind": "variable"
+  },
+  "IfcReinforcingBarType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcReinforcingBarType.html",
+    "kind": "variable"
+  },
+  "IfcReinforcingElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcReinforcingElement.html",
+    "kind": "variable"
+  },
+  "IfcReinforcingElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcReinforcingElementType.html",
+    "kind": "variable"
+  },
+  "IfcReinforcingMesh": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcReinforcingMesh.html",
+    "kind": "variable"
+  },
+  "IfcReinforcingMeshType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcReinforcingMeshType.html",
+    "kind": "variable"
+  },
+  "IfcRelAggregates": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAggregates.html",
+    "kind": "variable"
+  },
+  "IfcRelAssigns": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssigns.html",
+    "kind": "variable"
+  },
+  "IfcRelAssignsToActor": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssignsToActor.html",
+    "kind": "variable"
+  },
+  "IfcRelAssignsToControl": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssignsToControl.html",
+    "kind": "variable"
+  },
+  "IfcRelAssignsToGroup": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssignsToGroup.html",
+    "kind": "variable"
+  },
+  "IfcRelAssignsToGroupByFactor": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssignsToGroupByFactor.html",
+    "kind": "variable"
+  },
+  "IfcRelAssignsToProcess": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssignsToProcess.html",
+    "kind": "variable"
+  },
+  "IfcRelAssignsToProduct": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssignsToProduct.html",
+    "kind": "variable"
+  },
+  "IfcRelAssignsToResource": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssignsToResource.html",
+    "kind": "variable"
+  },
+  "IfcRelAssociates": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssociates.html",
+    "kind": "variable"
+  },
+  "IfcRelAssociatesApproval": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssociatesApproval.html",
+    "kind": "variable"
+  },
+  "IfcRelAssociatesClassification": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssociatesClassification.html",
+    "kind": "variable"
+  },
+  "IfcRelAssociatesConstraint": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssociatesConstraint.html",
+    "kind": "variable"
+  },
+  "IfcRelAssociatesDocument": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssociatesDocument.html",
+    "kind": "variable"
+  },
+  "IfcRelAssociatesLibrary": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssociatesLibrary.html",
+    "kind": "variable"
+  },
+  "IfcRelAssociatesMaterial": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelAssociatesMaterial.html",
+    "kind": "variable"
+  },
+  "IfcRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelationship.html",
+    "kind": "variable"
+  },
+  "IfcRelConnects": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelConnects.html",
+    "kind": "variable"
+  },
+  "IfcRelConnectsElements": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelConnectsElements.html",
+    "kind": "variable"
+  },
+  "IfcRelConnectsPathElements": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelConnectsPathElements.html",
+    "kind": "variable"
+  },
+  "IfcRelConnectsPorts": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelConnectsPorts.html",
+    "kind": "variable"
+  },
+  "IfcRelConnectsPortToElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelConnectsPortToElement.html",
+    "kind": "variable"
+  },
+  "IfcRelConnectsStructuralActivity": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelConnectsStructuralActivity.html",
+    "kind": "variable"
+  },
+  "IfcRelConnectsStructuralMember": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelConnectsStructuralMember.html",
+    "kind": "variable"
+  },
+  "IfcRelConnectsWithEccentricity": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelConnectsWithEccentricity.html",
+    "kind": "variable"
+  },
+  "IfcRelConnectsWithRealizingElements": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelConnectsWithRealizingElements.html",
+    "kind": "variable"
+  },
+  "IfcRelContainedInSpatialStructure": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelContainedInSpatialStructure.html",
+    "kind": "variable"
+  },
+  "IfcRelCoversBldgElements": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelCoversBldgElements.html",
+    "kind": "variable"
+  },
+  "IfcRelCoversSpaces": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelCoversSpaces.html",
+    "kind": "variable"
+  },
+  "IfcRelDeclares": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelDeclares.html",
+    "kind": "variable"
+  },
+  "IfcRelDecomposes": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelDecomposes.html",
+    "kind": "variable"
+  },
+  "IfcRelDefines": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelDefines.html",
+    "kind": "variable"
+  },
+  "IfcRelDefinesByObject": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelDefinesByObject.html",
+    "kind": "variable"
+  },
+  "IfcRelDefinesByProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelDefinesByProperties.html",
+    "kind": "variable"
+  },
+  "IfcRelDefinesByTemplate": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelDefinesByTemplate.html",
+    "kind": "variable"
+  },
+  "IfcRelDefinesByType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelDefinesByType.html",
+    "kind": "variable"
+  },
+  "IfcRelFillsElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelFillsElement.html",
+    "kind": "variable"
+  },
+  "IfcRelFlowControlElements": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelFlowControlElements.html",
+    "kind": "variable"
+  },
+  "IfcRelInterferesElements": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelInterferesElements.html",
+    "kind": "variable"
+  },
+  "IfcRelNests": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelNests.html",
+    "kind": "variable"
+  },
+  "IfcRelProjectsElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelProjectsElement.html",
+    "kind": "variable"
+  },
+  "IfcRelReferencedInSpatialStructure": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelReferencedInSpatialStructure.html",
+    "kind": "variable"
+  },
+  "IfcRelSequence": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelSequence.html",
+    "kind": "variable"
+  },
+  "IfcRelServicesBuildings": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelServicesBuildings.html",
+    "kind": "variable"
+  },
+  "IfcRelSpaceBoundary": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelSpaceBoundary.html",
+    "kind": "variable"
+  },
+  "IfcRelSpaceBoundary1stLevel": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelSpaceBoundary1stLevel.html",
+    "kind": "variable"
+  },
+  "IfcRelSpaceBoundary2ndLevel": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelSpaceBoundary2ndLevel.html",
+    "kind": "variable"
+  },
+  "IfcRelVoidsElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRelVoidsElement.html",
+    "kind": "variable"
+  },
+  "IfcReparametrisedCompositeCurveSegment": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcReparametrisedCompositeCurveSegment.html",
+    "kind": "variable"
+  },
+  "IfcRepresentation": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRepresentation.html",
+    "kind": "variable"
+  },
+  "IfcRepresentationContext": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRepresentationContext.html",
+    "kind": "variable"
+  },
+  "IfcRepresentationItem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRepresentationItem.html",
+    "kind": "variable"
+  },
+  "IfcRepresentationMap": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRepresentationMap.html",
+    "kind": "variable"
+  },
+  "IfcResource": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcResource.html",
+    "kind": "variable"
+  },
+  "IfcResourceApprovalRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcResourceApprovalRelationship.html",
+    "kind": "variable"
+  },
+  "IfcResourceConstraintRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcResourceConstraintRelationship.html",
+    "kind": "variable"
+  },
+  "IfcResourceLevelRelationship": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcResourceLevelRelationship.html",
+    "kind": "variable"
+  },
+  "IfcResourceTime": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcResourceTime.html",
+    "kind": "variable"
+  },
+  "IfcRevolvedAreaSolid": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRevolvedAreaSolid.html",
+    "kind": "variable"
+  },
+  "IfcRevolvedAreaSolidTapered": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRevolvedAreaSolidTapered.html",
+    "kind": "variable"
+  },
+  "IfcRightCircularCone": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRightCircularCone.html",
+    "kind": "variable"
+  },
+  "IfcRightCircularCylinder": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRightCircularCylinder.html",
+    "kind": "variable"
+  },
+  "IfcRoof": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRoof.html",
+    "kind": "variable"
+  },
+  "IfcRoofType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRoofType.html",
+    "kind": "variable"
+  },
+  "IfcRoot": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRoot.html",
+    "kind": "variable"
+  },
+  "IfcRoundedRectangleProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcRoundedRectangleProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcSanitaryTerminal": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSanitaryTerminal.html",
+    "kind": "variable"
+  },
+  "IfcSanitaryTerminalType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSanitaryTerminalType.html",
+    "kind": "variable"
+  },
+  "IfcSchedulingTime": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSchedulingTime.html",
+    "kind": "variable"
+  },
+  "IfcSeamCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSeamCurve.html",
+    "kind": "variable"
+  },
+  "IfcSectionedSpine": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSectionedSpine.html",
+    "kind": "variable"
+  },
+  "IfcSectionProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSectionProperties.html",
+    "kind": "variable"
+  },
+  "IfcSectionReinforcementProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSectionReinforcementProperties.html",
+    "kind": "variable"
+  },
+  "IfcSensor": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSensor.html",
+    "kind": "variable"
+  },
+  "IfcSensorType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSensorType.html",
+    "kind": "variable"
+  },
+  "IfcShadingDevice": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcShadingDevice.html",
+    "kind": "variable"
+  },
+  "IfcShadingDeviceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcShadingDeviceType.html",
+    "kind": "variable"
+  },
+  "IfcShapeAspect": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcShapeAspect.html",
+    "kind": "variable"
+  },
+  "IfcShapeModel": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcShapeModel.html",
+    "kind": "variable"
+  },
+  "IfcShapeRepresentation": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcShapeRepresentation.html",
+    "kind": "variable"
+  },
+  "IfcShellBasedSurfaceModel": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcShellBasedSurfaceModel.html",
+    "kind": "variable"
+  },
+  "IfcSimpleProperty": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSimpleProperty.html",
+    "kind": "variable"
+  },
+  "IfcSimplePropertyTemplate": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSimplePropertyTemplate.html",
+    "kind": "variable"
+  },
+  "IfcSite": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSite.html",
+    "kind": "variable"
+  },
+  "IfcSIUnit": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSIUnit.html",
+    "kind": "variable"
+  },
+  "IfcSlab": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSlab.html",
+    "kind": "variable"
+  },
+  "IfcSlabElementedCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSlabElementedCase.html",
+    "kind": "variable"
+  },
+  "IfcSlabStandardCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSlabStandardCase.html",
+    "kind": "variable"
+  },
+  "IfcSlabType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSlabType.html",
+    "kind": "variable"
+  },
+  "IfcSlippageConnectionCondition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSlippageConnectionCondition.html",
+    "kind": "variable"
+  },
+  "IfcSolarDevice": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSolarDevice.html",
+    "kind": "variable"
+  },
+  "IfcSolarDeviceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSolarDeviceType.html",
+    "kind": "variable"
+  },
+  "IfcSolidModel": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSolidModel.html",
+    "kind": "variable"
+  },
+  "IfcSpace": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSpace.html",
+    "kind": "variable"
+  },
+  "IfcSpaceHeater": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSpaceHeater.html",
+    "kind": "variable"
+  },
+  "IfcSpaceHeaterType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSpaceHeaterType.html",
+    "kind": "variable"
+  },
+  "IfcSpaceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSpaceType.html",
+    "kind": "variable"
+  },
+  "IfcSpatialElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSpatialElement.html",
+    "kind": "variable"
+  },
+  "IfcSpatialElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSpatialElementType.html",
+    "kind": "variable"
+  },
+  "IfcSpatialStructureElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSpatialStructureElement.html",
+    "kind": "variable"
+  },
+  "IfcSpatialStructureElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSpatialStructureElementType.html",
+    "kind": "variable"
+  },
+  "IfcSpatialZone": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSpatialZone.html",
+    "kind": "variable"
+  },
+  "IfcSpatialZoneType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSpatialZoneType.html",
+    "kind": "variable"
+  },
+  "IfcSphere": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSphere.html",
+    "kind": "variable"
+  },
+  "IfcSphericalSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSphericalSurface.html",
+    "kind": "variable"
+  },
+  "IfcStackTerminal": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStackTerminal.html",
+    "kind": "variable"
+  },
+  "IfcStackTerminalType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStackTerminalType.html",
+    "kind": "variable"
+  },
+  "IfcStair": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStair.html",
+    "kind": "variable"
+  },
+  "IfcStairFlight": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStairFlight.html",
+    "kind": "variable"
+  },
+  "IfcStairFlightType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStairFlightType.html",
+    "kind": "variable"
+  },
+  "IfcStairType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStairType.html",
+    "kind": "variable"
+  },
+  "IfcStructuralAction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralAction.html",
+    "kind": "variable"
+  },
+  "IfcStructuralActivity": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralActivity.html",
+    "kind": "variable"
+  },
+  "IfcStructuralAnalysisModel": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralAnalysisModel.html",
+    "kind": "variable"
+  },
+  "IfcStructuralConnection": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralConnection.html",
+    "kind": "variable"
+  },
+  "IfcStructuralConnectionCondition": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralConnectionCondition.html",
+    "kind": "variable"
+  },
+  "IfcStructuralCurveAction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralCurveAction.html",
+    "kind": "variable"
+  },
+  "IfcStructuralCurveConnection": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralCurveConnection.html",
+    "kind": "variable"
+  },
+  "IfcStructuralCurveMember": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralCurveMember.html",
+    "kind": "variable"
+  },
+  "IfcStructuralCurveMemberVarying": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralCurveMemberVarying.html",
+    "kind": "variable"
+  },
+  "IfcStructuralCurveReaction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralCurveReaction.html",
+    "kind": "variable"
+  },
+  "IfcStructuralItem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralItem.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLinearAction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLinearAction.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoad": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoad.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadCase.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadConfiguration": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadConfiguration.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadGroup": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadGroup.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadLinearForce": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadLinearForce.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadOrResult": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadOrResult.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadPlanarForce": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadPlanarForce.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadSingleDisplacement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadSingleDisplacement.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadSingleDisplacementDistortion": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadSingleDisplacementDistortion.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadSingleForce": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadSingleForce.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadSingleForceWarping": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadSingleForceWarping.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadStatic": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadStatic.html",
+    "kind": "variable"
+  },
+  "IfcStructuralLoadTemperature": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralLoadTemperature.html",
+    "kind": "variable"
+  },
+  "IfcStructuralMember": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralMember.html",
+    "kind": "variable"
+  },
+  "IfcStructuralPlanarAction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralPlanarAction.html",
+    "kind": "variable"
+  },
+  "IfcStructuralPointAction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralPointAction.html",
+    "kind": "variable"
+  },
+  "IfcStructuralPointConnection": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralPointConnection.html",
+    "kind": "variable"
+  },
+  "IfcStructuralPointReaction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralPointReaction.html",
+    "kind": "variable"
+  },
+  "IfcStructuralReaction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralReaction.html",
+    "kind": "variable"
+  },
+  "IfcStructuralResultGroup": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralResultGroup.html",
+    "kind": "variable"
+  },
+  "IfcStructuralSurfaceAction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralSurfaceAction.html",
+    "kind": "variable"
+  },
+  "IfcStructuralSurfaceConnection": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralSurfaceConnection.html",
+    "kind": "variable"
+  },
+  "IfcStructuralSurfaceMember": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralSurfaceMember.html",
+    "kind": "variable"
+  },
+  "IfcStructuralSurfaceMemberVarying": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralSurfaceMemberVarying.html",
+    "kind": "variable"
+  },
+  "IfcStructuralSurfaceReaction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStructuralSurfaceReaction.html",
+    "kind": "variable"
+  },
+  "IfcStyledItem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStyledItem.html",
+    "kind": "variable"
+  },
+  "IfcStyledRepresentation": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStyledRepresentation.html",
+    "kind": "variable"
+  },
+  "IfcStyleModel": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcStyleModel.html",
+    "kind": "variable"
+  },
+  "IfcSubContractResource": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSubContractResource.html",
+    "kind": "variable"
+  },
+  "IfcSubContractResourceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSubContractResourceType.html",
+    "kind": "variable"
+  },
+  "IfcSubedge": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSubedge.html",
+    "kind": "variable"
+  },
+  "IfcSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurface.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceCurve.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceCurveSweptAreaSolid": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceCurveSweptAreaSolid.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceFeature": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceFeature.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceOfLinearExtrusion": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceOfLinearExtrusion.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceOfRevolution": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceOfRevolution.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceReinforcementArea": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceReinforcementArea.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceStyle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceStyle.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceStyleLighting": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceStyleLighting.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceStyleRefraction": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceStyleRefraction.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceStyleRendering": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceStyleRendering.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceStyleShading": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceStyleShading.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceStyleWithTextures": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceStyleWithTextures.html",
+    "kind": "variable"
+  },
+  "IfcSurfaceTexture": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSurfaceTexture.html",
+    "kind": "variable"
+  },
+  "IfcSweptAreaSolid": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSweptAreaSolid.html",
+    "kind": "variable"
+  },
+  "IfcSweptDiskSolid": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSweptDiskSolid.html",
+    "kind": "variable"
+  },
+  "IfcSweptDiskSolidPolygonal": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSweptDiskSolidPolygonal.html",
+    "kind": "variable"
+  },
+  "IfcSweptSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSweptSurface.html",
+    "kind": "variable"
+  },
+  "IfcSwitchingDevice": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSwitchingDevice.html",
+    "kind": "variable"
+  },
+  "IfcSwitchingDeviceType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSwitchingDeviceType.html",
+    "kind": "variable"
+  },
+  "IfcSystem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSystem.html",
+    "kind": "variable"
+  },
+  "IfcSystemFurnitureElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSystemFurnitureElement.html",
+    "kind": "variable"
+  },
+  "IfcSystemFurnitureElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcSystemFurnitureElementType.html",
+    "kind": "variable"
+  },
+  "IfcTable": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTable.html",
+    "kind": "variable"
+  },
+  "IfcTableColumn": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTableColumn.html",
+    "kind": "variable"
+  },
+  "IfcTableRow": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTableRow.html",
+    "kind": "variable"
+  },
+  "IfcTank": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTank.html",
+    "kind": "variable"
+  },
+  "IfcTankType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTankType.html",
+    "kind": "variable"
+  },
+  "IfcTask": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTask.html",
+    "kind": "variable"
+  },
+  "IfcTaskTime": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTaskTime.html",
+    "kind": "variable"
+  },
+  "IfcTaskTimeRecurring": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTaskTimeRecurring.html",
+    "kind": "variable"
+  },
+  "IfcTaskType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTaskType.html",
+    "kind": "variable"
+  },
+  "IfcTelecomAddress": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTelecomAddress.html",
+    "kind": "variable"
+  },
+  "IfcTendon": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTendon.html",
+    "kind": "variable"
+  },
+  "IfcTendonAnchor": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTendonAnchor.html",
+    "kind": "variable"
+  },
+  "IfcTendonAnchorType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTendonAnchorType.html",
+    "kind": "variable"
+  },
+  "IfcTendonType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTendonType.html",
+    "kind": "variable"
+  },
+  "IfcTessellatedFaceSet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTessellatedFaceSet.html",
+    "kind": "variable"
+  },
+  "IfcTessellatedItem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTessellatedItem.html",
+    "kind": "variable"
+  },
+  "IfcTextLiteral": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTextLiteral.html",
+    "kind": "variable"
+  },
+  "IfcTextLiteralWithExtent": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTextLiteralWithExtent.html",
+    "kind": "variable"
+  },
+  "IfcTextStyle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTextStyle.html",
+    "kind": "variable"
+  },
+  "IfcTextStyleFontModel": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTextStyleFontModel.html",
+    "kind": "variable"
+  },
+  "IfcTextStyleForDefinedFont": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTextStyleForDefinedFont.html",
+    "kind": "variable"
+  },
+  "IfcTextStyleTextModel": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTextStyleTextModel.html",
+    "kind": "variable"
+  },
+  "IfcTextureCoordinate": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTextureCoordinate.html",
+    "kind": "variable"
+  },
+  "IfcTextureCoordinateGenerator": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTextureCoordinateGenerator.html",
+    "kind": "variable"
+  },
+  "IfcTextureMap": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTextureMap.html",
+    "kind": "variable"
+  },
+  "IfcTextureVertex": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTextureVertex.html",
+    "kind": "variable"
+  },
+  "IfcTextureVertexList": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTextureVertexList.html",
+    "kind": "variable"
+  },
+  "IfcTimePeriod": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTimePeriod.html",
+    "kind": "variable"
+  },
+  "IfcTimeSeries": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTimeSeries.html",
+    "kind": "variable"
+  },
+  "IfcTimeSeriesValue": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTimeSeriesValue.html",
+    "kind": "variable"
+  },
+  "IfcTopologicalRepresentationItem": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTopologicalRepresentationItem.html",
+    "kind": "variable"
+  },
+  "IfcTopologyRepresentation": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTopologyRepresentation.html",
+    "kind": "variable"
+  },
+  "IfcToroidalSurface": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcToroidalSurface.html",
+    "kind": "variable"
+  },
+  "IfcTransformer": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTransformer.html",
+    "kind": "variable"
+  },
+  "IfcTransformerType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTransformerType.html",
+    "kind": "variable"
+  },
+  "IfcTransportElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTransportElement.html",
+    "kind": "variable"
+  },
+  "IfcTransportElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTransportElementType.html",
+    "kind": "variable"
+  },
+  "IfcTrapeziumProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTrapeziumProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcTriangulatedFaceSet": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTriangulatedFaceSet.html",
+    "kind": "variable"
+  },
+  "IfcTrimmedCurve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTrimmedCurve.html",
+    "kind": "variable"
+  },
+  "IfcTShapeProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTShapeProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcTubeBundle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTubeBundle.html",
+    "kind": "variable"
+  },
+  "IfcTubeBundleType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTubeBundleType.html",
+    "kind": "variable"
+  },
+  "ifcTypeCodes": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.ifcTypeCodes.html",
+    "kind": "variable"
+  },
+  "ifcTypeNames": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.ifcTypeNames.html",
+    "kind": "variable"
+  },
+  "IfcTypeObject": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTypeObject.html",
+    "kind": "variable"
+  },
+  "IfcTypeProcess": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTypeProcess.html",
+    "kind": "variable"
+  },
+  "IfcTypeProduct": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTypeProduct.html",
+    "kind": "variable"
+  },
+  "IfcTypeResource": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcTypeResource.html",
+    "kind": "variable"
+  },
+  "IfcUnitaryControlElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcUnitaryControlElement.html",
+    "kind": "variable"
+  },
+  "IfcUnitaryControlElementType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcUnitaryControlElementType.html",
+    "kind": "variable"
+  },
+  "IfcUnitaryEquipment": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcUnitaryEquipment.html",
+    "kind": "variable"
+  },
+  "IfcUnitaryEquipmentType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcUnitaryEquipmentType.html",
+    "kind": "variable"
+  },
+  "IfcUnitAssignment": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcUnitAssignment.html",
+    "kind": "variable"
+  },
+  "IfcUShapeProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcUShapeProfileDef.html",
+    "kind": "variable"
+  },
+  "IfcValve": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcValve.html",
+    "kind": "variable"
+  },
+  "IfcValveType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcValveType.html",
+    "kind": "variable"
+  },
+  "IfcVector": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcVector.html",
+    "kind": "variable"
+  },
+  "IfcVertex": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcVertex.html",
+    "kind": "variable"
+  },
+  "IfcVertexLoop": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcVertexLoop.html",
+    "kind": "variable"
+  },
+  "IfcVertexPoint": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcVertexPoint.html",
+    "kind": "variable"
+  },
+  "IfcVibrationIsolator": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcVibrationIsolator.html",
+    "kind": "variable"
+  },
+  "IfcVibrationIsolatorType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcVibrationIsolatorType.html",
+    "kind": "variable"
+  },
+  "IfcVirtualElement": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcVirtualElement.html",
+    "kind": "variable"
+  },
+  "IfcVirtualGridIntersection": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcVirtualGridIntersection.html",
+    "kind": "variable"
+  },
+  "IfcVoidingFeature": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcVoidingFeature.html",
+    "kind": "variable"
+  },
+  "IfcWall": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWall.html",
+    "kind": "variable"
+  },
+  "IfcWallElementedCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWallElementedCase.html",
+    "kind": "variable"
+  },
+  "IfcWallStandardCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWallStandardCase.html",
+    "kind": "variable"
+  },
+  "IfcWallType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWallType.html",
+    "kind": "variable"
+  },
+  "IfcWasteTerminal": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWasteTerminal.html",
+    "kind": "variable"
+  },
+  "IfcWasteTerminalType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWasteTerminalType.html",
+    "kind": "variable"
+  },
+  "IfcWindow": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWindow.html",
+    "kind": "variable"
+  },
+  "IfcWindowLiningProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWindowLiningProperties.html",
+    "kind": "variable"
+  },
+  "IfcWindowPanelProperties": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWindowPanelProperties.html",
+    "kind": "variable"
+  },
+  "IfcWindowStandardCase": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWindowStandardCase.html",
+    "kind": "variable"
+  },
+  "IfcWindowStyle": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWindowStyle.html",
+    "kind": "variable"
+  },
+  "IfcWindowType": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWindowType.html",
+    "kind": "variable"
+  },
+  "IfcWorkCalendar": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWorkCalendar.html",
+    "kind": "variable"
+  },
+  "IfcWorkControl": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWorkControl.html",
+    "kind": "variable"
+  },
+  "IfcWorkPlan": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWorkPlan.html",
+    "kind": "variable"
+  },
+  "IfcWorkSchedule": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWorkSchedule.html",
+    "kind": "variable"
+  },
+  "IfcWorkTime": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcWorkTime.html",
+    "kind": "variable"
+  },
+  "IfcZone": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcZone.html",
+    "kind": "variable"
+  },
+  "IfcZShapeProfileDef": {
+    "path": "/docs/api/variables/_xeokit_ifctypes.IfcZShapeProfileDef.html",
+    "kind": "variable"
+  },
+  "InchesUnit": {
+    "path": "/docs/api/variables/_xeokit_constants.InchesUnit.html",
+    "kind": "variable"
+  },
+  "inQuotes": {
+    "path": "/docs/api/functions/_xeokit_utils.inQuotes.html",
+    "kind": "function"
+  },
+  "INSIDE": {
+    "path": "/docs/api/variables/_xeokit_boundaries.INSIDE.html",
+    "kind": "variable"
+  },
+  "IntArrayParam": {
+    "path": "/docs/api/types/_xeokit_math.IntArrayParam.html",
+    "kind": "type"
+  },
+  "INTERSECT": {
+    "path": "/docs/api/variables/_xeokit_boundaries.INTERSECT.html",
+    "kind": "variable"
+  },
+  "intersectAABB3Lines3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.intersectAABB3Lines3.html",
+    "kind": "function"
+  },
+  "intersectAABB3Positions3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.intersectAABB3Positions3.html",
+    "kind": "function"
+  },
+  "intersectAABB3s": {
+    "path": "/docs/api/functions/_xeokit_boundaries.intersectAABB3s.html",
+    "kind": "function"
+  },
+  "intersectAABB3Triangles3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.intersectAABB3Triangles3.html",
+    "kind": "function"
+  },
+  "intersectFrustum3AABB3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.intersectFrustum3AABB3.html",
+    "kind": "function"
+  },
+  "intersectFrustum3Lines3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.intersectFrustum3Lines3.html",
+    "kind": "function"
+  },
+  "intersectFrustum3Point3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.intersectFrustum3Point3.html",
+    "kind": "function"
+  },
+  "intersectFrustum3Positions3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.intersectFrustum3Positions3.html",
+    "kind": "function"
+  },
+  "intersectFrustum3Triangle3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.intersectFrustum3Triangle3.html",
+    "kind": "function"
+  },
+  "intersectFrustum3Triangles3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.intersectFrustum3Triangles3.html",
+    "kind": "function"
+  },
+  "IntType": {
+    "path": "/docs/api/variables/_xeokit_constants.IntType.html",
+    "kind": "variable"
+  },
+  "inverseMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.inverseMat4.html",
+    "kind": "function"
+  },
+  "inverseQuat": {
+    "path": "/docs/api/functions/_xeokit_matrix.inverseQuat.html",
+    "kind": "function"
+  },
+  "isArray": {
+    "path": "/docs/api/functions/_xeokit_utils.isArray.html",
+    "kind": "function"
+  },
+  "isEmptyObject": {
+    "path": "/docs/api/functions/_xeokit_utils.isEmptyObject.html",
+    "kind": "function"
+  },
+  "isFunction": {
+    "path": "/docs/api/functions/_xeokit_utils.isFunction.html",
+    "kind": "function"
+  },
+  "isID": {
+    "path": "/docs/api/functions/_xeokit_utils.isID.html",
+    "kind": "function"
+  },
+  "isIdentityMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.isIdentityMat4.html",
+    "kind": "function"
+  },
+  "isJSONObject": {
+    "path": "/docs/api/functions/_xeokit_utils.isJSONObject.html",
+    "kind": "function"
+  },
+  "isNumeric": {
+    "path": "/docs/api/functions/_xeokit_utils.isNumeric.html",
+    "kind": "function"
+  },
+  "isObject": {
+    "path": "/docs/api/functions/_xeokit_utils.isObject.html",
+    "kind": "function"
+  },
+  "isString": {
+    "path": "/docs/api/functions/_xeokit_utils.isString.html",
+    "kind": "function"
+  },
+  "JPEGMediaType": {
+    "path": "/docs/api/variables/_xeokit_constants.JPEGMediaType.html",
+    "kind": "variable"
+  },
+  "KdItem2D": {
+    "path": "/docs/api/interfaces/_xeokit_kdtree2.KdItem2D.html",
+    "kind": "interface"
+  },
+  "KdItem3D": {
+    "path": "/docs/api/interfaces/_xeokit_kdtree3.KdItem3D.html",
+    "kind": "interface"
+  },
+  "KdLinePrim": {
+    "path": "/docs/api/interfaces/_xeokit_kdtree3.KdLinePrim.html",
+    "kind": "interface"
+  },
+  "KdNode2D": {
+    "path": "/docs/api/interfaces/_xeokit_kdtree2.KdNode2D.html",
+    "kind": "interface"
+  },
+  "KdNode3": {
+    "path": "/docs/api/interfaces/_xeokit_kdtree3.KdNode3.html",
+    "kind": "interface"
+  },
+  "KdPointPrim": {
+    "path": "/docs/api/interfaces/_xeokit_kdtree3.KdPointPrim.html",
+    "kind": "interface"
+  },
+  "KdSceneObjectPrim": {
+    "path": "/docs/api/interfaces/_xeokit_kdtree3.KdSceneObjectPrim.html",
+    "kind": "interface"
+  },
+  "KdTree2": {
+    "path": "/docs/api/classes/_xeokit_kdtree2.KdTree2.html",
+    "kind": "class"
+  },
+  "KdTree2DParams": {
+    "path": "/docs/api/interfaces/_xeokit_kdtree2.KdTree2DParams.html",
+    "kind": "interface"
+  },
+  "KdTree3": {
+    "path": "/docs/api/classes/_xeokit_kdtree3.KdTree3.html",
+    "kind": "class"
+  },
+  "KdTree3Params": {
+    "path": "/docs/api/interfaces/_xeokit_kdtree3.KdTree3Params.html",
+    "kind": "interface"
+  },
+  "KdTrianglePrim": {
+    "path": "/docs/api/interfaces/_xeokit_kdtree3.KdTrianglePrim.html",
+    "kind": "interface"
+  },
+  "KdVertex2": {
+    "path": "/docs/api/classes/_xeokit_kdtree2.KdVertex2.html",
+    "kind": "class"
+  },
+  "KTX2TextureTranscoder": {
+    "path": "/docs/api/classes/_xeokit_ktx2.KTX2TextureTranscoder.html",
+    "kind": "class"
+  },
+  "LandUse": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.LandUse.html",
+    "kind": "variable"
+  },
+  "lenVec2": {
+    "path": "/docs/api/functions/_xeokit_matrix.lenVec2.html",
+    "kind": "function"
+  },
+  "lenVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.lenVec3.html",
+    "kind": "function"
+  },
+  "lenVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.lenVec4.html",
+    "kind": "function"
+  },
+  "lerpMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.lerpMat4.html",
+    "kind": "function"
+  },
+  "lerpVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.lerpVec3.html",
+    "kind": "function"
+  },
+  "LinearEncoding": {
+    "path": "/docs/api/variables/_xeokit_constants.LinearEncoding.html",
+    "kind": "variable"
+  },
+  "LinearFilter": {
+    "path": "/docs/api/variables/_xeokit_constants.LinearFilter.html",
+    "kind": "variable"
+  },
+  "LinearMipmapLinearFilter": {
+    "path": "/docs/api/variables/_xeokit_constants.LinearMipmapLinearFilter.html",
+    "kind": "variable"
+  },
+  "LinearMipMapLinearFilter": {
+    "path": "/docs/api/variables/_xeokit_constants.LinearMipMapLinearFilter.html",
+    "kind": "variable"
+  },
+  "LinearMipmapNearestFilter": {
+    "path": "/docs/api/variables/_xeokit_constants.LinearMipmapNearestFilter.html",
+    "kind": "variable"
+  },
+  "LinearMipMapNearestFilter": {
+    "path": "/docs/api/variables/_xeokit_constants.LinearMipMapNearestFilter.html",
+    "kind": "variable"
+  },
+  "LinesMaterial": {
+    "path": "/docs/api/classes/_xeokit_viewer.LinesMaterial.html",
+    "kind": "class"
+  },
+  "LinesPrimitive": {
+    "path": "/docs/api/variables/_xeokit_constants.LinesPrimitive.html",
+    "kind": "variable"
+  },
+  "load3DXML": {
+    "path": "/docs/api/functions/_xeokit_threedxml.load3DXML.html",
+    "kind": "function"
+  },
+  "loadArraybuffer": {
+    "path": "/docs/api/functions/_xeokit_utils.loadArraybuffer.html",
+    "kind": "function"
+  },
+  "loadBCFViewpoint": {
+    "path": "/docs/api/functions/_xeokit_bcf.loadBCFViewpoint.html",
+    "kind": "function"
+  },
+  "LoadBCFViewpointParams": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.LoadBCFViewpointParams.html",
+    "kind": "interface"
+  },
+  "loadCityJSON": {
+    "path": "/docs/api/functions/_xeokit_cityjson.loadCityJSON.html",
+    "kind": "function"
+  },
+  "loadDataModel": {
+    "path": "/docs/api/functions/_xeokit_data.loadDataModel.html",
+    "kind": "function"
+  },
+  "loadDotBIM": {
+    "path": "/docs/api/functions/_xeokit_dotbim.loadDotBIM.html",
+    "kind": "function"
+  },
+  "LOADED_XGF_VERSIONS": {
+    "path": "/docs/api/variables/_xeokit_xgf.LOADED_XGF_VERSIONS.html",
+    "kind": "variable"
+  },
+  "Loader": {
+    "path": "/docs/api/classes/_xeokit_utils.Loader.html",
+    "kind": "class"
+  },
+  "loadGLTF": {
+    "path": "/docs/api/functions/_xeokit_gltf.loadGLTF.html",
+    "kind": "function"
+  },
+  "LoadingManager": {
+    "path": "/docs/api/classes/_xeokit_utils.LoadingManager.html",
+    "kind": "class"
+  },
+  "loadJSON": {
+    "path": "/docs/api/functions/_xeokit_utils.loadJSON.html",
+    "kind": "function"
+  },
+  "loadLAS": {
+    "path": "/docs/api/functions/_xeokit_las.loadLAS.html",
+    "kind": "function"
+  },
+  "loadMetaModel": {
+    "path": "/docs/api/functions/_xeokit_metamodel.loadMetaModel.html",
+    "kind": "function"
+  },
+  "loadWebIFC": {
+    "path": "/docs/api/functions/_xeokit_webifc.loadWebIFC.html",
+    "kind": "function"
+  },
+  "loadXGF": {
+    "path": "/docs/api/functions/_xeokit_xgf.loadXGF.html",
+    "kind": "function"
+  },
+  "loadXKT": {
+    "path": "/docs/api/functions/_xeokit_xkt.loadXKT.html",
+    "kind": "function"
+  },
+  "loadXKTManifest": {
+    "path": "/docs/api/functions/_xeokit_xkt.loadXKTManifest.html",
+    "kind": "function"
+  },
+  "LocaleService": {
+    "path": "/docs/api/classes/_xeokit_locale.LocaleService.html",
+    "kind": "class"
+  },
+  "lookAtMat4v": {
+    "path": "/docs/api/functions/_xeokit_matrix.lookAtMat4v.html",
+    "kind": "function"
+  },
+  "LuminanceAlphaFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.LuminanceAlphaFormat.html",
+    "kind": "variable"
+  },
+  "LuminanceFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.LuminanceFormat.html",
+    "kind": "variable"
+  },
+  "MarqueePickResult": {
+    "path": "/docs/api/interfaces/_xeokit_pick.MarqueePickResult.html",
+    "kind": "interface"
+  },
+  "mat3ToMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.mat3ToMat4.html",
+    "kind": "function"
+  },
+  "mat4ToEuler": {
+    "path": "/docs/api/functions/_xeokit_matrix.mat4ToEuler.html",
+    "kind": "function"
+  },
+  "mat4ToQuat": {
+    "path": "/docs/api/functions/_xeokit_matrix.mat4ToQuat.html",
+    "kind": "function"
+  },
+  "MAX_DOUBLE": {
+    "path": "/docs/api/variables/_xeokit_math.MAX_DOUBLE.html",
+    "kind": "variable"
+  },
+  "MAX_INT": {
+    "path": "/docs/api/variables/_xeokit_math.MAX_INT.html",
+    "kind": "variable"
+  },
+  "MeshHit": {
+    "path": "/docs/api/interfaces/_xeokit_pick.MeshHit.html",
+    "kind": "interface"
+  },
+  "MetaModelParams": {
+    "path": "/docs/api/interfaces/_xeokit_metamodel.MetaModelParams.html",
+    "kind": "interface"
+  },
+  "MetaObjectParams": {
+    "path": "/docs/api/interfaces/_xeokit_metamodel.MetaObjectParams.html",
+    "kind": "interface"
+  },
+  "MetaPropertyParams": {
+    "path": "/docs/api/interfaces/_xeokit_metamodel.MetaPropertyParams.html",
+    "kind": "interface"
+  },
+  "MetaPropertySetParams": {
+    "path": "/docs/api/interfaces/_xeokit_metamodel.MetaPropertySetParams.html",
+    "kind": "interface"
+  },
+  "MetersUnit": {
+    "path": "/docs/api/variables/_xeokit_constants.MetersUnit.html",
+    "kind": "variable"
+  },
+  "Metrics": {
+    "path": "/docs/api/classes/_xeokit_viewer.Metrics.html",
+    "kind": "class"
+  },
+  "MillimetersUnit": {
+    "path": "/docs/api/variables/_xeokit_constants.MillimetersUnit.html",
+    "kind": "variable"
+  },
+  "MIN_DOUBLE": {
+    "path": "/docs/api/variables/_xeokit_math.MIN_DOUBLE.html",
+    "kind": "variable"
+  },
+  "MirroredRepeatWrapping": {
+    "path": "/docs/api/variables/_xeokit_constants.MirroredRepeatWrapping.html",
+    "kind": "variable"
+  },
+  "ModelChunksLoader": {
+    "path": "/docs/api/classes/_xeokit_modelchunksloader.ModelChunksLoader.html",
+    "kind": "class"
+  },
+  "ModelChunksManifestParams": {
+    "path": "/docs/api/interfaces/_xeokit_core.ModelChunksManifestParams.html",
+    "kind": "interface"
+  },
+  "mulMat3": {
+    "path": "/docs/api/functions/_xeokit_matrix.mulMat3.html",
+    "kind": "function"
+  },
+  "mulMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.mulMat4.html",
+    "kind": "function"
+  },
+  "mulMat4v4": {
+    "path": "/docs/api/functions/_xeokit_matrix.mulMat4v4.html",
+    "kind": "function"
+  },
+  "mulQuats": {
+    "path": "/docs/api/functions/_xeokit_matrix.mulQuats.html",
+    "kind": "function"
+  },
+  "mulVec2Scalar": {
+    "path": "/docs/api/functions/_xeokit_matrix.mulVec2Scalar.html",
+    "kind": "function"
+  },
+  "mulVec3Scalar": {
+    "path": "/docs/api/functions/_xeokit_matrix.mulVec3Scalar.html",
+    "kind": "function"
+  },
+  "mulVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.mulVec4.html",
+    "kind": "function"
+  },
+  "mulVec4Scalar": {
+    "path": "/docs/api/functions/_xeokit_matrix.mulVec4Scalar.html",
+    "kind": "function"
+  },
+  "NearestFilter": {
+    "path": "/docs/api/variables/_xeokit_constants.NearestFilter.html",
+    "kind": "variable"
+  },
+  "NearestMipmapLinearFilter": {
+    "path": "/docs/api/variables/_xeokit_constants.NearestMipmapLinearFilter.html",
+    "kind": "variable"
+  },
+  "NearestMipMapLinearFilter": {
+    "path": "/docs/api/variables/_xeokit_constants.NearestMipMapLinearFilter.html",
+    "kind": "variable"
+  },
+  "NearestMipmapNearestFilter": {
+    "path": "/docs/api/variables/_xeokit_constants.NearestMipmapNearestFilter.html",
+    "kind": "variable"
+  },
+  "NearestMipMapNearestFilter": {
+    "path": "/docs/api/variables/_xeokit_constants.NearestMipMapNearestFilter.html",
+    "kind": "variable"
+  },
+  "negateVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.negateVec3.html",
+    "kind": "function"
+  },
+  "negateVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.negateVec4.html",
+    "kind": "function"
+  },
+  "newFloatArray": {
+    "path": "/docs/api/functions/_xeokit_math.newFloatArray.html",
+    "kind": "function"
+  },
+  "normalizeQuat": {
+    "path": "/docs/api/functions/_xeokit_matrix.normalizeQuat.html",
+    "kind": "function"
+  },
+  "normalizeVec2": {
+    "path": "/docs/api/functions/_xeokit_matrix.normalizeVec2.html",
+    "kind": "function"
+  },
+  "normalizeVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.normalizeVec3.html",
+    "kind": "function"
+  },
+  "normalizeVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.normalizeVec4.html",
+    "kind": "function"
+  },
+  "OBB3ToAABB3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.OBB3ToAABB3.html",
+    "kind": "function"
+  },
+  "OrbitNavigationMode": {
+    "path": "/docs/api/variables/_xeokit_constants.OrbitNavigationMode.html",
+    "kind": "variable"
+  },
+  "orthoMat4c": {
+    "path": "/docs/api/functions/_xeokit_matrix.orthoMat4c.html",
+    "kind": "function"
+  },
+  "OrthoProjection": {
+    "path": "/docs/api/classes/_xeokit_viewer.OrthoProjection.html",
+    "kind": "class"
+  },
+  "OrthoProjectionType": {
+    "path": "/docs/api/variables/_xeokit_constants.OrthoProjectionType.html",
+    "kind": "variable"
+  },
+  "OtherConstruction": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.OtherConstruction.html",
+    "kind": "variable"
+  },
+  "OUTSIDE": {
+    "path": "/docs/api/variables/_xeokit_boundaries.OUTSIDE.html",
+    "kind": "variable"
+  },
+  "parseDefaultView": {
+    "path": "/docs/api/functions/_xeokit_threedxml.parseDefaultView.html",
+    "kind": "function"
+  },
+  "perspectiveMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.perspectiveMat4.html",
+    "kind": "function"
+  },
+  "PerspectiveProjection": {
+    "path": "/docs/api/classes/_xeokit_viewer.PerspectiveProjection.html",
+    "kind": "class"
+  },
+  "PerspectiveProjectionType": {
+    "path": "/docs/api/variables/_xeokit_constants.PerspectiveProjectionType.html",
+    "kind": "variable"
+  },
+  "Picker": {
+    "path": "/docs/api/classes/_xeokit_pick.Picker.html",
+    "kind": "class"
+  },
+  "PickParams": {
+    "path": "/docs/api/interfaces/_xeokit_viewer.PickParams.html",
+    "kind": "interface"
+  },
+  "PickResult": {
+    "path": "/docs/api/classes/_xeokit_viewer.PickResult.html",
+    "kind": "class"
+  },
+  "PlantCover": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.PlantCover.html",
+    "kind": "variable"
+  },
+  "PlanViewNavigationMode": {
+    "path": "/docs/api/variables/_xeokit_constants.PlanViewNavigationMode.html",
+    "kind": "variable"
+  },
+  "PNGMediaType": {
+    "path": "/docs/api/variables/_xeokit_constants.PNGMediaType.html",
+    "kind": "variable"
+  },
+  "PointLight": {
+    "path": "/docs/api/classes/_xeokit_viewer.PointLight.html",
+    "kind": "class"
+  },
+  "points3ToAABB3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.points3ToAABB3.html",
+    "kind": "function"
+  },
+  "PointsMaterial": {
+    "path": "/docs/api/classes/_xeokit_viewer.PointsMaterial.html",
+    "kind": "class"
+  },
+  "PointsPrimitive": {
+    "path": "/docs/api/variables/_xeokit_constants.PointsPrimitive.html",
+    "kind": "variable"
+  },
+  "positions3ToAABB3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.positions3ToAABB3.html",
+    "kind": "function"
+  },
+  "PrimHit": {
+    "path": "/docs/api/interfaces/_xeokit_pick.PrimHit.html",
+    "kind": "interface"
+  },
+  "PrimsKdTree3": {
+    "path": "/docs/api/classes/_xeokit_kdtree3.PrimsKdTree3.html",
+    "kind": "class"
+  },
+  "Projection": {
+    "path": "/docs/api/interfaces/_xeokit_viewer.Projection.html",
+    "kind": "interface"
+  },
+  "Property": {
+    "path": "/docs/api/classes/_xeokit_data.Property.html",
+    "kind": "class"
+  },
+  "PropertyParams": {
+    "path": "/docs/api/interfaces/_xeokit_data.PropertyParams.html",
+    "kind": "interface"
+  },
+  "PropertySet": {
+    "path": "/docs/api/classes/_xeokit_data.PropertySet.html",
+    "kind": "class"
+  },
+  "PropertySetParams": {
+    "path": "/docs/api/interfaces/_xeokit_data.PropertySetParams.html",
+    "kind": "interface"
+  },
+  "QualityRender": {
+    "path": "/docs/api/variables/_xeokit_constants.QualityRender.html",
+    "kind": "variable"
+  },
+  "quatToAngleAxis": {
+    "path": "/docs/api/functions/_xeokit_matrix.quatToAngleAxis.html",
+    "kind": "function"
+  },
+  "quatToEuler": {
+    "path": "/docs/api/functions/_xeokit_matrix.quatToEuler.html",
+    "kind": "function"
+  },
+  "quatToMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.quatToMat4.html",
+    "kind": "function"
+  },
+  "quatToRotationMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.quatToRotationMat4.html",
+    "kind": "function"
+  },
+  "Queue": {
+    "path": "/docs/api/classes/_xeokit_utils.Queue.html",
+    "kind": "class"
+  },
+  "RADTODEG": {
+    "path": "/docs/api/variables/_xeokit_math.RADTODEG.html",
+    "kind": "variable"
+  },
+  "Railway": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.Railway.html",
+    "kind": "variable"
+  },
+  "RayPickResult": {
+    "path": "/docs/api/interfaces/_xeokit_pick.RayPickResult.html",
+    "kind": "interface"
+  },
+  "rayTriangleIntersect": {
+    "path": "/docs/api/functions/_xeokit_matrix.rayTriangleIntersect.html",
+    "kind": "function"
+  },
+  "rcpVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.rcpVec3.html",
+    "kind": "function"
+  },
+  "RedFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.RedFormat.html",
+    "kind": "variable"
+  },
+  "RedIntegerFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.RedIntegerFormat.html",
+    "kind": "variable"
+  },
+  "Relationship": {
+    "path": "/docs/api/classes/_xeokit_data.Relationship.html",
+    "kind": "class"
+  },
+  "RelationshipParams": {
+    "path": "/docs/api/interfaces/_xeokit_data.RelationshipParams.html",
+    "kind": "interface"
+  },
+  "Renderer": {
+    "path": "/docs/api/interfaces/_xeokit_viewer.Renderer.html",
+    "kind": "interface"
+  },
+  "RendererGeometry": {
+    "path": "/docs/api/interfaces/_xeokit_scene.RendererGeometry.html",
+    "kind": "interface"
+  },
+  "RendererMesh": {
+    "path": "/docs/api/interfaces/_xeokit_scene.RendererMesh.html",
+    "kind": "interface"
+  },
+  "RendererModel": {
+    "path": "/docs/api/interfaces/_xeokit_scene.RendererModel.html",
+    "kind": "interface"
+  },
+  "RendererObject": {
+    "path": "/docs/api/interfaces/_xeokit_scene.RendererObject.html",
+    "kind": "interface"
+  },
+  "RendererTexture": {
+    "path": "/docs/api/interfaces/_xeokit_scene.RendererTexture.html",
+    "kind": "interface"
+  },
+  "RendererTextureSet": {
+    "path": "/docs/api/interfaces/_xeokit_scene.RendererTextureSet.html",
+    "kind": "interface"
+  },
+  "RepeatWrapping": {
+    "path": "/docs/api/variables/_xeokit_constants.RepeatWrapping.html",
+    "kind": "variable"
+  },
+  "ResolutionScale": {
+    "path": "/docs/api/classes/_xeokit_viewer.ResolutionScale.html",
+    "kind": "class"
+  },
+  "RGB_ETC1_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGB_ETC1_Format.html",
+    "kind": "variable"
+  },
+  "RGB_ETC2_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGB_ETC2_Format.html",
+    "kind": "variable"
+  },
+  "RGB_PVRTC_2BPPV1_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGB_PVRTC_2BPPV1_Format.html",
+    "kind": "variable"
+  },
+  "RGB_PVRTC_4BPPV1_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGB_PVRTC_4BPPV1_Format.html",
+    "kind": "variable"
+  },
+  "RGB_S3TC_DXT1_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGB_S3TC_DXT1_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_10x10_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_10x10_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_10x5_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_10x5_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_10x6_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_10x6_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_10x8_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_10x8_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_12x10_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_12x10_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_12x12_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_12x12_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_4x4_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_4x4_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_5x4_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_5x4_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_5x5_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_5x5_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_6x5_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_6x5_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_6x6_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_6x6_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_8x5_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_8x5_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_8x6_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_8x6_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ASTC_8x8_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ASTC_8x8_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_BPTC_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_BPTC_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_ETC2_EAC_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_ETC2_EAC_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_PVRTC_2BPPV1_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_PVRTC_2BPPV1_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_PVRTC_4BPPV1_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_PVRTC_4BPPV1_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_S3TC_DXT1_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_S3TC_DXT1_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_S3TC_DXT3_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_S3TC_DXT3_Format.html",
+    "kind": "variable"
+  },
+  "RGBA_S3TC_DXT5_Format": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBA_S3TC_DXT5_Format.html",
+    "kind": "variable"
+  },
+  "RGBAFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBAFormat.html",
+    "kind": "variable"
+  },
+  "RGBAIntegerFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBAIntegerFormat.html",
+    "kind": "variable"
+  },
+  "RGBFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.RGBFormat.html",
+    "kind": "variable"
+  },
+  "RGFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.RGFormat.html",
+    "kind": "variable"
+  },
+  "RGIntegerFormat": {
+    "path": "/docs/api/variables/_xeokit_constants.RGIntegerFormat.html",
+    "kind": "variable"
+  },
+  "Road": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.Road.html",
+    "kind": "variable"
+  },
+  "rotationMat4v": {
+    "path": "/docs/api/functions/_xeokit_matrix.rotationMat4v.html",
+    "kind": "function"
+  },
+  "RTC_CELL_SIZE": {
+    "path": "/docs/api/variables/_xeokit_rtc.RTC_CELL_SIZE.html",
+    "kind": "variable"
+  },
+  "rtcToWorldPos": {
+    "path": "/docs/api/functions/_xeokit_rtc.rtcToWorldPos.html",
+    "kind": "function"
+  },
+  "safeInv": {
+    "path": "/docs/api/functions/_xeokit_math.safeInv.html",
+    "kind": "function"
+  },
+  "SAO": {
+    "path": "/docs/api/classes/_xeokit_viewer.SAO.html",
+    "kind": "class"
+  },
+  "saveArrayBuffer": {
+    "path": "/docs/api/functions/_xeokit_utils.saveArrayBuffer.html",
+    "kind": "function"
+  },
+  "saveBCFViewpoint": {
+    "path": "/docs/api/functions/_xeokit_bcf.saveBCFViewpoint.html",
+    "kind": "function"
+  },
+  "SaveBCFViewpointParams": {
+    "path": "/docs/api/interfaces/_xeokit_bcf.SaveBCFViewpointParams.html",
+    "kind": "interface"
+  },
+  "SAVED_XGF_VERSIONS": {
+    "path": "/docs/api/variables/_xeokit_xgf.SAVED_XGF_VERSIONS.html",
+    "kind": "variable"
+  },
+  "saveDotBIM": {
+    "path": "/docs/api/functions/_xeokit_dotbim.saveDotBIM.html",
+    "kind": "function"
+  },
+  "saveJSON": {
+    "path": "/docs/api/functions/_xeokit_utils.saveJSON.html",
+    "kind": "function"
+  },
+  "saveXGF": {
+    "path": "/docs/api/functions/_xeokit_xgf.saveXGF.html",
+    "kind": "function"
+  },
+  "scaleMat4c": {
+    "path": "/docs/api/functions/_xeokit_matrix.scaleMat4c.html",
+    "kind": "function"
+  },
+  "scaleMat4v": {
+    "path": "/docs/api/functions/_xeokit_matrix.scaleMat4v.html",
+    "kind": "function"
+  },
+  "scalingMat3v": {
+    "path": "/docs/api/functions/_xeokit_matrix.scalingMat3v.html",
+    "kind": "function"
+  },
+  "scalingMat4c": {
+    "path": "/docs/api/functions/_xeokit_matrix.scalingMat4c.html",
+    "kind": "function"
+  },
+  "scalingMat4s": {
+    "path": "/docs/api/functions/_xeokit_matrix.scalingMat4s.html",
+    "kind": "function"
+  },
+  "scalingMat4v": {
+    "path": "/docs/api/functions/_xeokit_matrix.scalingMat4v.html",
+    "kind": "function"
+  },
+  "Scene": {
+    "path": "/docs/api/classes/_xeokit_scene.Scene.html",
+    "kind": "class"
+  },
+  "SceneGeometry": {
+    "path": "/docs/api/classes/_xeokit_scene.SceneGeometry.html",
+    "kind": "class"
+  },
+  "SceneGeometryCompressedParams": {
+    "path": "/docs/api/interfaces/_xeokit_scene.SceneGeometryCompressedParams.html",
+    "kind": "interface"
+  },
+  "SceneGeometryParams": {
+    "path": "/docs/api/interfaces/_xeokit_scene.SceneGeometryParams.html",
+    "kind": "interface"
+  },
+  "SceneMesh": {
+    "path": "/docs/api/classes/_xeokit_scene.SceneMesh.html",
+    "kind": "class"
+  },
+  "SceneMeshParams": {
+    "path": "/docs/api/interfaces/_xeokit_scene.SceneMeshParams.html",
+    "kind": "interface"
+  },
+  "SceneModel": {
+    "path": "/docs/api/classes/_xeokit_scene.SceneModel.html",
+    "kind": "class"
+  },
+  "SceneModelParams": {
+    "path": "/docs/api/interfaces/_xeokit_scene.SceneModelParams.html",
+    "kind": "interface"
+  },
+  "SceneModelStats": {
+    "path": "/docs/api/interfaces/_xeokit_scene.SceneModelStats.html",
+    "kind": "interface"
+  },
+  "SceneModelStreamLayerParams": {
+    "path": "/docs/api/interfaces/_xeokit_scene.SceneModelStreamLayerParams.html",
+    "kind": "interface"
+  },
+  "SceneModelStreamParams": {
+    "path": "/docs/api/interfaces/_xeokit_scene.SceneModelStreamParams.html",
+    "kind": "interface"
+  },
+  "SceneObject": {
+    "path": "/docs/api/classes/_xeokit_scene.SceneObject.html",
+    "kind": "class"
+  },
+  "SceneObjectHit": {
+    "path": "/docs/api/interfaces/_xeokit_pick.SceneObjectHit.html",
+    "kind": "interface"
+  },
+  "SceneObjectParams": {
+    "path": "/docs/api/interfaces/_xeokit_scene.SceneObjectParams.html",
+    "kind": "interface"
+  },
+  "SceneObjectsKdTree3": {
+    "path": "/docs/api/classes/_xeokit_kdtree3.SceneObjectsKdTree3.html",
+    "kind": "class"
+  },
+  "SceneObjectsPrimsKdTree3": {
+    "path": "/docs/api/classes/_xeokit_kdtree3.SceneObjectsPrimsKdTree3.html",
+    "kind": "class"
+  },
+  "SceneTexture": {
+    "path": "/docs/api/classes/_xeokit_scene.SceneTexture.html",
+    "kind": "class"
+  },
+  "SceneTextureParams": {
+    "path": "/docs/api/interfaces/_xeokit_scene.SceneTextureParams.html",
+    "kind": "interface"
+  },
+  "SceneTextureSet": {
+    "path": "/docs/api/classes/_xeokit_scene.SceneTextureSet.html",
+    "kind": "class"
+  },
+  "SceneTextureSetParams": {
+    "path": "/docs/api/interfaces/_xeokit_scene.SceneTextureSetParams.html",
+    "kind": "interface"
+  },
+  "scheduler": {
+    "path": "/docs/api/variables/_xeokit_viewer.scheduler.html",
+    "kind": "variable"
+  },
+  "SDKError": {
+    "path": "/docs/api/classes/_xeokit_core.SDKError.html",
+    "kind": "class"
+  },
+  "searchKdTree2ForNearestNeighbor": {
+    "path": "/docs/api/functions/_xeokit_kdtree2.searchKdTree2ForNearestNeighbor.html",
+    "kind": "function"
+  },
+  "searchKdTree3WithAABB": {
+    "path": "/docs/api/functions/_xeokit_kdtree3.searchKdTree3WithAABB.html",
+    "kind": "function"
+  },
+  "searchKdTree3WithFrustum": {
+    "path": "/docs/api/functions/_xeokit_kdtree3.searchKdTree3WithFrustum.html",
+    "kind": "function"
+  },
+  "searchKdTree3WithRay": {
+    "path": "/docs/api/functions/_xeokit_kdtree3.searchKdTree3WithRay.html",
+    "kind": "function"
+  },
+  "SearchParams": {
+    "path": "/docs/api/interfaces/_xeokit_data.SearchParams.html",
+    "kind": "interface"
+  },
+  "SectionPlane": {
+    "path": "/docs/api/classes/_xeokit_viewer.SectionPlane.html",
+    "kind": "class"
+  },
+  "SectionPlaneParams": {
+    "path": "/docs/api/interfaces/_xeokit_viewer.SectionPlaneParams.html",
+    "kind": "interface"
+  },
+  "setFrustum3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.setFrustum3.html",
+    "kind": "function"
+  },
+  "setMat4Translation": {
+    "path": "/docs/api/functions/_xeokit_matrix.setMat4Translation.html",
+    "kind": "function"
+  },
+  "ShortType": {
+    "path": "/docs/api/variables/_xeokit_constants.ShortType.html",
+    "kind": "variable"
+  },
+  "SnapshotFinishedEvent": {
+    "path": "/docs/api/interfaces/_xeokit_viewer.SnapshotFinishedEvent.html",
+    "kind": "interface"
+  },
+  "SnapshotParams": {
+    "path": "/docs/api/interfaces/_xeokit_viewer.SnapshotParams.html",
+    "kind": "interface"
+  },
+  "SnapshotResult": {
+    "path": "/docs/api/classes/_xeokit_viewer.SnapshotResult.html",
+    "kind": "class"
+  },
+  "SnapshotStartedEvent": {
+    "path": "/docs/api/interfaces/_xeokit_viewer.SnapshotStartedEvent.html",
+    "kind": "interface"
+  },
+  "SolidPrimitive": {
+    "path": "/docs/api/variables/_xeokit_constants.SolidPrimitive.html",
+    "kind": "variable"
+  },
+  "SolitaryVegetationObject": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.SolitaryVegetationObject.html",
+    "kind": "variable"
+  },
+  "sqLenVec2": {
+    "path": "/docs/api/functions/_xeokit_matrix.sqLenVec2.html",
+    "kind": "function"
+  },
+  "sqLenVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.sqLenVec3.html",
+    "kind": "function"
+  },
+  "sqLenVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.sqLenVec4.html",
+    "kind": "function"
+  },
+  "sRGBEncoding": {
+    "path": "/docs/api/variables/_xeokit_constants.sRGBEncoding.html",
+    "kind": "variable"
+  },
+  "StaticDraw": {
+    "path": "/docs/api/variables/_xeokit_constants.StaticDraw.html",
+    "kind": "variable"
+  },
+  "subScalarVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.subScalarVec4.html",
+    "kind": "function"
+  },
+  "subVec2": {
+    "path": "/docs/api/functions/_xeokit_matrix.subVec2.html",
+    "kind": "function"
+  },
+  "subVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.subVec3.html",
+    "kind": "function"
+  },
+  "subVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.subVec4.html",
+    "kind": "function"
+  },
+  "subVec4Scalar": {
+    "path": "/docs/api/functions/_xeokit_matrix.subVec4Scalar.html",
+    "kind": "function"
+  },
+  "SurfacePrimitive": {
+    "path": "/docs/api/variables/_xeokit_constants.SurfacePrimitive.html",
+    "kind": "variable"
+  },
+  "tangentQuadraticBézier": {
+    "path": "/docs/api/functions/_xeokit_curves.tangentQuadraticBézier.html",
+    "kind": "function"
+  },
+  "tangentQuadraticBézier3": {
+    "path": "/docs/api/functions/_xeokit_curves.tangentQuadraticBézier3.html",
+    "kind": "function"
+  },
+  "tangentSpline": {
+    "path": "/docs/api/functions/_xeokit_curves.tangentSpline.html",
+    "kind": "function"
+  },
+  "TextureCompressedParams": {
+    "path": "/docs/api/interfaces/_xeokit_core.TextureCompressedParams.html",
+    "kind": "interface"
+  },
+  "TextureTranscoder": {
+    "path": "/docs/api/interfaces/_xeokit_core.TextureTranscoder.html",
+    "kind": "interface"
+  },
+  "Texturing": {
+    "path": "/docs/api/classes/_xeokit_viewer.Texturing.html",
+    "kind": "class"
+  },
+  "TickEvent": {
+    "path": "/docs/api/interfaces/_xeokit_viewer.TickEvent.html",
+    "kind": "interface"
+  },
+  "TickParams": {
+    "path": "/docs/api/interfaces/_xeokit_viewer.TickParams.html",
+    "kind": "interface"
+  },
+  "timeout": {
+    "path": "/docs/api/functions/_xeokit_utils.timeout.html",
+    "kind": "function"
+  },
+  "TINRelief": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.TINRelief.html",
+    "kind": "variable"
+  },
+  "transformOBB3": {
+    "path": "/docs/api/functions/_xeokit_boundaries.transformOBB3.html",
+    "kind": "function"
+  },
+  "transformPoint3": {
+    "path": "/docs/api/functions/_xeokit_matrix.transformPoint3.html",
+    "kind": "function"
+  },
+  "transformPoint4": {
+    "path": "/docs/api/functions/_xeokit_matrix.transformPoint4.html",
+    "kind": "function"
+  },
+  "transformPoints3": {
+    "path": "/docs/api/functions/_xeokit_matrix.transformPoints3.html",
+    "kind": "function"
+  },
+  "transformPositions3": {
+    "path": "/docs/api/functions/_xeokit_matrix.transformPositions3.html",
+    "kind": "function"
+  },
+  "transformPositions4": {
+    "path": "/docs/api/functions/_xeokit_matrix.transformPositions4.html",
+    "kind": "function"
+  },
+  "transformRay": {
+    "path": "/docs/api/functions/_xeokit_matrix.transformRay.html",
+    "kind": "function"
+  },
+  "transformVec3": {
+    "path": "/docs/api/functions/_xeokit_matrix.transformVec3.html",
+    "kind": "function"
+  },
+  "transformVec4": {
+    "path": "/docs/api/functions/_xeokit_matrix.transformVec4.html",
+    "kind": "function"
+  },
+  "translateMat4c": {
+    "path": "/docs/api/functions/_xeokit_matrix.translateMat4c.html",
+    "kind": "function"
+  },
+  "translateMat4v": {
+    "path": "/docs/api/functions/_xeokit_matrix.translateMat4v.html",
+    "kind": "function"
+  },
+  "translationMat3v": {
+    "path": "/docs/api/functions/_xeokit_matrix.translationMat3v.html",
+    "kind": "function"
+  },
+  "translationMat4c": {
+    "path": "/docs/api/functions/_xeokit_matrix.translationMat4c.html",
+    "kind": "function"
+  },
+  "translationMat4s": {
+    "path": "/docs/api/functions/_xeokit_matrix.translationMat4s.html",
+    "kind": "function"
+  },
+  "translationMat4v": {
+    "path": "/docs/api/functions/_xeokit_matrix.translationMat4v.html",
+    "kind": "function"
+  },
+  "TransportationSquare": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.TransportationSquare.html",
+    "kind": "variable"
+  },
+  "transposeMat4": {
+    "path": "/docs/api/functions/_xeokit_matrix.transposeMat4.html",
+    "kind": "function"
+  },
+  "TreeView": {
+    "path": "/docs/api/classes/_xeokit_treeview.TreeView.html",
+    "kind": "class"
+  },
+  "TreeViewNode": {
+    "path": "/docs/api/interfaces/_xeokit_treeview.TreeViewNode.html",
+    "kind": "interface"
+  },
+  "TreeViewNodeContextMenuEvent": {
+    "path": "/docs/api/interfaces/_xeokit_treeview.TreeViewNodeContextMenuEvent.html",
+    "kind": "interface"
+  },
+  "TreeViewNodeTitleClickedEvent": {
+    "path": "/docs/api/interfaces/_xeokit_treeview.TreeViewNodeTitleClickedEvent.html",
+    "kind": "interface"
+  },
+  "TreeViewParams": {
+    "path": "/docs/api/interfaces/_xeokit_treeview.TreeViewParams.html",
+    "kind": "interface"
+  },
+  "triangleNormal": {
+    "path": "/docs/api/functions/_xeokit_matrix.triangleNormal.html",
+    "kind": "function"
+  },
+  "TrianglesPrimitive": {
+    "path": "/docs/api/variables/_xeokit_constants.TrianglesPrimitive.html",
+    "kind": "variable"
+  },
+  "Tunnel": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.Tunnel.html",
+    "kind": "variable"
+  },
+  "TunnelConstructiveElement": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.TunnelConstructiveElement.html",
+    "kind": "variable"
+  },
+  "TunnelFurniture": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.TunnelFurniture.html",
+    "kind": "variable"
+  },
+  "TunnelHollowSpace": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.TunnelHollowSpace.html",
+    "kind": "variable"
+  },
+  "TunnelInstallation": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.TunnelInstallation.html",
+    "kind": "variable"
+  },
+  "TunnelPart": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.TunnelPart.html",
+    "kind": "variable"
+  },
+  "typeCodes": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.typeCodes.html",
+    "kind": "variable"
+  },
+  "typeNames": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.typeNames.html",
+    "kind": "variable"
+  },
+  "UnsignedByteType": {
+    "path": "/docs/api/variables/_xeokit_constants.UnsignedByteType.html",
+    "kind": "variable"
+  },
+  "UnsignedInt248Type": {
+    "path": "/docs/api/variables/_xeokit_constants.UnsignedInt248Type.html",
+    "kind": "variable"
+  },
+  "UnsignedIntType": {
+    "path": "/docs/api/variables/_xeokit_constants.UnsignedIntType.html",
+    "kind": "variable"
+  },
+  "UnsignedShort4444Type": {
+    "path": "/docs/api/variables/_xeokit_constants.UnsignedShort4444Type.html",
+    "kind": "variable"
+  },
+  "UnsignedShort5551Type": {
+    "path": "/docs/api/variables/_xeokit_constants.UnsignedShort5551Type.html",
+    "kind": "variable"
+  },
+  "UnsignedShortType": {
+    "path": "/docs/api/variables/_xeokit_constants.UnsignedShortType.html",
+    "kind": "variable"
+  },
+  "vec3ApplyQuat": {
+    "path": "/docs/api/functions/_xeokit_matrix.vec3ApplyQuat.html",
+    "kind": "function"
+  },
+  "vec3FromMat4Scale": {
+    "path": "/docs/api/variables/_xeokit_matrix.vec3FromMat4Scale.html",
+    "kind": "variable"
+  },
+  "vec3PairToQuat": {
+    "path": "/docs/api/functions/_xeokit_matrix.vec3PairToQuat.html",
+    "kind": "function"
+  },
+  "vecToArray": {
+    "path": "/docs/api/functions/_xeokit_matrix.vecToArray.html",
+    "kind": "function"
+  },
+  "View": {
+    "path": "/docs/api/classes/_xeokit_viewer.View.html",
+    "kind": "class"
+  },
+  "Viewer": {
+    "path": "/docs/api/classes/_xeokit_viewer.Viewer.html",
+    "kind": "class"
+  },
+  "ViewLayer": {
+    "path": "/docs/api/classes/_xeokit_viewer.ViewLayer.html",
+    "kind": "class"
+  },
+  "ViewLayerParams": {
+    "path": "/docs/api/interfaces/_xeokit_viewer.ViewLayerParams.html",
+    "kind": "interface"
+  },
+  "ViewObject": {
+    "path": "/docs/api/classes/_xeokit_viewer.ViewObject.html",
+    "kind": "class"
+  },
+  "ViewParams": {
+    "path": "/docs/api/interfaces/_xeokit_viewer.ViewParams.html",
+    "kind": "interface"
+  },
+  "WaterBody": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.WaterBody.html",
+    "kind": "variable"
+  },
+  "Waterway": {
+    "path": "/docs/api/variables/_xeokit_cityjsontypes_1_1_3.Waterway.html",
+    "kind": "variable"
+  },
+  "WEBGL_INFO": {
+    "path": "/docs/api/variables/_xeokit_webglutils.WEBGL_INFO.html",
+    "kind": "variable"
+  },
+  "WebGLAbstractTexture": {
+    "path": "/docs/api/types/_xeokit_webglutils.WebGLAbstractTexture.html",
+    "kind": "type"
+  },
+  "WebGLArrayBuf": {
+    "path": "/docs/api/classes/_xeokit_webglutils.WebGLArrayBuf.html",
+    "kind": "class"
+  },
+  "WebGLAttribute": {
+    "path": "/docs/api/classes/_xeokit_webglutils.WebGLAttribute.html",
+    "kind": "class"
+  },
+  "WebGLDataTexture": {
+    "path": "/docs/api/classes/_xeokit_webglutils.WebGLDataTexture.html",
+    "kind": "class"
+  },
+  "WebGLProgram": {
+    "path": "/docs/api/classes/_xeokit_webglutils.WebGLProgram.html",
+    "kind": "class"
+  },
+  "WebGLRenderer": {
+    "path": "/docs/api/classes/_xeokit_webglrenderer.WebGLRenderer.html",
+    "kind": "class"
+  },
+  "WebGLSampler": {
+    "path": "/docs/api/classes/_xeokit_webglutils.WebGLSampler.html",
+    "kind": "class"
+  },
+  "WebGLShader": {
+    "path": "/docs/api/classes/_xeokit_webglutils.WebGLShader.html",
+    "kind": "class"
+  },
+  "WebGLTexture": {
+    "path": "/docs/api/classes/_xeokit_webglutils.WebGLTexture.html",
+    "kind": "class"
+  },
+  "WorkerPool": {
+    "path": "/docs/api/classes/_xeokit_utils.WorkerPool.html",
+    "kind": "class"
+  },
+  "worldToRTCCenter": {
+    "path": "/docs/api/functions/_xeokit_rtc.worldToRTCCenter.html",
+    "kind": "function"
+  },
+  "worldToRTCPos": {
+    "path": "/docs/api/functions/_xeokit_rtc.worldToRTCPos.html",
+    "kind": "function"
+  },
+  "worldToRTCPositions": {
+    "path": "/docs/api/functions/_xeokit_rtc.worldToRTCPositions.html",
+    "kind": "function"
+  },
+  "XGFData_v1": {
+    "path": "/docs/api/interfaces/_xeokit_xgf.XGFData_v1.html",
+    "kind": "interface"
+  },
+  "XKTManifest": {
+    "path": "/docs/api/interfaces/_xeokit_xkt.XKTManifest.html",
+    "kind": "interface"
+  },
+  "YardsUnit": {
+    "path": "/docs/api/variables/_xeokit_constants.YardsUnit.html",
+    "kind": "variable"
+  }
+}

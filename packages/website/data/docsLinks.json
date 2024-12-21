@@ -1,0 +1,10 @@
+ {
+
+    "WebIFC": "https://github.com/ThatOpen",
+    "ifc2gltf": "",
+    "ifc2gltf2xgf": "",
+     "@xeokit\/sdk\/xgf": {
+         "path": "",
+         "kind": "interface"
+     }
+}
