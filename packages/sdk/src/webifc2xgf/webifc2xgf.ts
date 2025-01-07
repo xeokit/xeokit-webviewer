@@ -1,11 +1,11 @@
 #!/usr/bin/env node
 
 import '@loaders.gl/polyfills';
-import {Data, DataModel} from "@xeokit/data";
-import {Scene, SceneModel} from "@xeokit/scene";
-import {SDKError} from "@xeokit/core";
-import {loadWebIFC} from "@xeokit/webifc";
-import {saveXGF, SAVED_XGF_VERSIONS, DEFAULT_SAVED_XGF_VERSION} from "@xeokit/xgf";
+import {Data, DataModel} from "../data";
+import {Scene, SceneModel} from "../scene";
+import {SDKError} from "../core";
+import {loadWebIFC} from "../webifc";
+import {saveXGF, SAVED_XGF_VERSIONS, DEFAULT_SAVED_XGF_VERSION} from "../xgf";
 
 /**
  * @private

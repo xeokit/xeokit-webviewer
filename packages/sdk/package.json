@@ -9,8 +9,8 @@
         "test": "jest --passWithNoTests",
         "dist": "tsc; node ./scripts/build-cli-tools.js",
         "lint": "eslint . --fix",
-        "docs": "typedoc --json ../../docs/json/sdk.json --options typedoc.json --validation.invalidLink false",
-        "publish": "npm publish --access public"
+        "docs": "typedoc --json ../../docs/json/sdk.json --options typedoc.json --validation.invalidLink false ",
+        "_publish": "npm publish --access public"
     },
     "bin": {
         "cityjson2xgf": "./dist/cityjson2xgf/cityjson2xgf.js",
@@ -46,6 +46,9 @@
         "web-ifc": "^0.0.50",
         "pako": "^2.0.4",
         "commander": "^11.0.0"
+    },
+    "peerDependencies": {
+        "typedoc": "^0.27.6"
     },
     "devDependencies": {}
 }

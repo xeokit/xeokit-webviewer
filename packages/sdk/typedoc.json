@@ -1,7 +1,15 @@
 {
-    "extends": [
-        "@xeokit/config/typedoc.base.json"
-    ],
+    "$schema": "https://typedoc.org/schema.json",
+    "includeVersion": true,
+    "excludePrivate": true,
+    "visibilityFilters": {
+        "protected": false,
+        "private": false,
+        "inherited": true,
+        "external": false,
+        "@alpha": false,
+        "@beta": false
+    },
     "entryPoints": [
         "src/index.ts"
     ]
