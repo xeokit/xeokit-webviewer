@@ -1,18 +1,11 @@
 {
     "entryPoints": [
-        "packages/*"
+        "packages/sdk/src/index.ts"
     ],
     "entryPointStrategy": "packages",
     "out": "./docs/api",
     "excludePrivate": true,
     "excludeNotDocumented": true,
-    "media": "./packages/docs/src/assets",
-    "includes": "docs",
     "includeVersion": true,
-    "titleLink": "https://xeokit.io",
-    "navigationLinks": {
-        "Home": "https://xeokit.github.io/sdk/docs/api/index.html",
-        "GitHub": "https://github.com/xeokit/sdk",
-        "Glossary": ""
-    }
+    "titleLink": "https://xeokit.io"
 }

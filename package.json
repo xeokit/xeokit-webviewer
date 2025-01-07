@@ -9,16 +9,13 @@
     },
     "license": "SEE LICENSE IN LICENSE.md",
     "scripts": {
-        "convert-demo-models": "turbo run convert-demo-models",
-        "dev": "turbo run dev",
-        "build": "turbo run build",
         "dist": "turbo run dist --concurrency 100",
-        "lint": "turbo run lint --concurrency 100",
         "test": "turbo run test --concurrency 100 --continue || node scripts/test-html-report/index.mjs",
-        "docs-build": "rimraf docs && mkdir docs  && turbo run docs-build --filter=docs && pnpm typedoc-gen",
-        "typedoc-gen": "turbo run docs --concurrency 100 && typedoc --entryPointStrategy merge \"docs/json/*.json\" --tsconfig packages/config/tsconfig.typedoc.json",
-        "docs-serve": "http-server ./docs --port 8080",
-        "publish-packages": "turbo run build lint test && changeset version && changeset publish"
+        "docs": "rimraf docs && mkdir docs  && turbo run docs --concurrency 100 && typedoc --entryPointStrategy merge \"docs/json/*.json\" --tsconfig packages/config/tsconfig.typedoc.json --plugin ./packages/typedoc-theme/dist/index.js",
+        "website-models": "turbo run website-models",
+        "website-docs": "turbo run website-docs",
+
+        "_publish-packages": "turbo run build lint test && changeset version && changeset publish"
     },
     "devDependencies": {
         "@changesets/cli": "^2.27.1",
@@ -55,8 +52,8 @@
         "ts-loader": "^9.4.2",
         "ts-node": "10.9.1",
         "turbo": "^2.0.9",
-        "typedoc": "^0.25.2",
-        "typescript": "4.9.4",
+        "typedoc": "^0.27.6",
+        "typescript": "^5.7.2",
         "webpack": "^5.80.0",
         "webpack-cli": "^5.0.1",
         "webpack-node-externals": "^3.0.0"

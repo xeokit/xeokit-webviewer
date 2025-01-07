@@ -4,10 +4,6 @@
             "cache": false,
             "persistent": true
         },
-        "docs-build": {
-            "cache": false,
-            "persistent": true
-        },
         "docs": {
             "cache": false,
             "persistent": true
@@ -22,9 +18,17 @@
                 "^dist"
             ]
         },
-        "convert-demo-models": {
+        "website-models": {
             "cache": false,
             "dependsOn": [
+                "^dist"
+            ]
+        },
+        "website-docs": {
+            "cache": false,
+            "persistent": true,
+            "dependsOn": [
+                "^docs"
             ]
         }
     }
