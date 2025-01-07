@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="xeokit - SDK for Browser-Based 3D BIM Visualization">
     <meta name="author" content="Lindsay Kay">
-    <meta name="keywords" content="BIM,IFC,WebGL,JavaScript,Browser,BCF,Web,xeolabs,3D,3D Viewer,Lindsay Kay,xeokit,MedViz,ArchViz,Open Source,Browser,Viewer">
+    <meta name="keywords"
+          content="BIM,IFC,WebGL,JavaScript,Browser,BCF,Web,xeolabs,3D,3D Viewer,Lindsay Kay,xeokit,MedViz,ArchViz,Open Source,Browser,Viewer">
 
     <title>xeokit - 3D Web Programming Toolkit for BIM and Engineering Visualization</title>
 
@@ -21,7 +22,11 @@
     <title></title>
 </head>
 <body>
-@@include('../templates/page-navbar.html')
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+    <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent"
+                                                                                                  href="../../">@xeokit/sdk</a></span>
+    @@include('./navbar-pulldown.html')
+</nav>
 <header class="bg-black home-header bg-black">
     <div class="container h-75">
         <!--        <div class="row h-100 align-items-center">-->
@@ -36,14 +41,66 @@
     <div class="container">
         <div class="row testimonial-row">
             <div class="col-lg-12">
-                <h1>Tutorials</h1>
+                <h1>@xeokit/sdk</h1>
             </div>
         </div>
         <div class="row testimonial-row" id="content">
+            <div class="col-sm-4  mb-5">
+                <div class="card">
+                    <img class="card-img-top thumbnail"
+                         src="/images/treeview.png"
+                         alt="Thumbnail 2">
+                    <div class="card-body">
+                        <a href="./examples" class="card-link">
+                            <h4 class="card-title">Live Examples</h4>
+                            <p class="card-text">Run examples built with @xeokit/sdk, live in your browser.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4  mb-5">
 
+                <div class="card">
+                    <img class="card-img-top thumbnail"
+                         src="/images/treeview.png"
+                         alt="Thumbnail 2">
+                    <div class="card-body">
+                        <a href="./api-docs.html" class="card-link">
+                            <h4 class="card-title">API Documentation</h4>
+                            <p class="card-text">Run examples built with @xeokit/sdk, live in your browser.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4  mb-5">
+
+                <div class="card">
+                    <img class="card-img-top thumbnail"
+                         src="/images/treeview.png"
+                         alt="Thumbnail 2">
+                    <div class="card-body">
+                        <a href="./models" class="card-link">
+                            <h4 class="card-title">Sample Models</h4>
+                            <p class="card-text">Run examples built with @xeokit/sdk, live in your browser.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4  mb-5">
+                <div class="card">
+                    <img class="card-img-top thumbnail"
+                         src="/images/treeview.png"
+                         alt="Thumbnail 2">
+                    <div class="card-body">
+                        <a href="./articles" class="card-link">
+                            <h4 class="card-title">Articles</h4>
+                            <p class="card-text">Run examples built with @xeokit/sdk, live in your browser.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
 </section>
-@@include('../templates/footer.html')
+@@include('./footer.html')
 </body>
 </html>

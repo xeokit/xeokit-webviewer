@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="xeokit - SDK for Browser-Based 3D BIM Visualization">
+    <meta name="author" content="Lindsay Kay">
+    <meta name="keywords"
+          content="BIM,IFC,WebGL,JavaScript,Browser,BCF,Web,xeolabs,3D,3D Viewer,Lindsay Kay,xeokit,MedViz,ArchViz,Open Source,Browser,Viewer">
+
+    <title>xeokit - 3D Web Programming Toolkit for BIM and Engineering Visualization</title>
+
+    <link href="./../libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./../css/business-frontpage.css" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <script src="./../libs/jquery/jquery.min.js"></script>
+    <script src="./../libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <title></title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+    <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent"
+                                                                                                  href="../../">@xeokit/sdk</a></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/index.html?foo=0">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="/examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="/models/index.html">Models</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/articles/index.html">Articles</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/api-docs">API Docs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/xeokit/sdk">GitHub</a>
+        </li>
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link" href="https://xeokit.io/index.html?foo=2#pricing">Pricing</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link" href="https://xeokit.io/download.html">Download</a>-->
+<!--        </li>-->
+    </ul>
+</div>
+
+</nav>
+<header class="bg-black home-header bg-black">
+    <div class="container h-75">
+        <!--        <div class="row h-100 align-items-center">-->
+        <!--            <div class="col-lg-12">-->
+        <!--                <h1 class="text-white mt-5 mb-2">IFC Conversion Tests</h1>-->
+        <!--                <p class="lead mb-5 text-white">Check the health of our IFC file conversion tools</p>-->
+        <!--            </div>-->
+        <!--        </div>-->
+    </div>
+</header>
+<section id="intro" class="main-section alabaster">
+    <div class="container">
+        <div class="row testimonial-row">
+            <div class="col-lg-12">
+                <h1>@xeokit/sdk</h1>
+            </div>
+        </div>
+        <div class="row testimonial-row" id="content">
+            <div class="col-sm-4  mb-5">
+                <div class="card">
+                    <img class="card-img-top thumbnail"
+                         src="/images/treeview.png"
+                         alt="Thumbnail 2">
+                    <div class="card-body">
+                        <a href="./examples" class="card-link">
+                            <h4 class="card-title">Live Examples</h4>
+                            <p class="card-text">Run examples built with @xeokit/sdk, live in your browser.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4  mb-5">
+
+                <div class="card">
+                    <img class="card-img-top thumbnail"
+                         src="/images/treeview.png"
+                         alt="Thumbnail 2">
+                    <div class="card-body">
+                        <a href="./api-docs.html" class="card-link">
+                            <h4 class="card-title">API Documentation</h4>
+                            <p class="card-text">Run examples built with @xeokit/sdk, live in your browser.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4  mb-5">
+
+                <div class="card">
+                    <img class="card-img-top thumbnail"
+                         src="/images/treeview.png"
+                         alt="Thumbnail 2">
+                    <div class="card-body">
+                        <a href="./models" class="card-link">
+                            <h4 class="card-title">Sample Models</h4>
+                            <p class="card-text">Run examples built with @xeokit/sdk, live in your browser.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-4  mb-5">
+                <div class="card">
+                    <img class="card-img-top thumbnail"
+                         src="/images/treeview.png"
+                         alt="Thumbnail 2">
+                    <div class="card-body">
+                        <a href="./articles" class="card-link">
+                            <h4 class="card-title">Articles</h4>
+                            <p class="card-text">Run examples built with @xeokit/sdk, live in your browser.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+</section>
+<footer class="py-5 bg-dark xeokit-footer">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 mb-3  text-left">
+                <h2>xeokit SDK</h2>
+                <p>Powering Engineering Graphics on the Web</p>
+                <img src="/images/xeokitLogoAlphaBG.png">
+            </div>
+            <div class="col-md-8 col-sm-12">
+
+                <div class="col-md-4 col-sm-6 col-6 p-0 float-left mb-3">
+                    <h5 class="mb-4 font-weight-bold text-uppercase ">Learn</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="./examples">Examples</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
+                            href="./articles">Tutorials</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
+                            href="./api-docs.html">API Docs</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="">Pricing</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="">FAQ</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-6 p-0 mb-3 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase ">Develop</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="https://github.com/xeokit/sdk/releases">Download</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="https://github.com/xeokit/sdk">Source Code</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="https://github.com/xeokit/xeokit-sdk/issues">Issues</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-6 mb-3 p-0 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase ">Connect</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="http://www.xeolabs.com"><i class="fa fa-globe mr-1"></i>
+                                xeolabs.com</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="https://www.linkedin.com/company/xeolabs"><i class="fa fa-linkedin mr-1"></i>
+                                LinkedIn</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="https://github.com/xeolabs" target="_code"><i class="fa fa-github mr-1"></i>
+                                Github</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="py-4 d-flex justify-content-center align-items-center">
+                    <p class="m-0 text-center">Copyright &copy; <a href="http://xeolabs.com">xeolabs</a> 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

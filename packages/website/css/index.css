@@ -30,6 +30,7 @@ iframe {
     padding: 20px;
     padding-bottom: 100px;
     user-select: none;
+    width:100%;
 }
 
 #index a {
@@ -140,9 +141,9 @@ iframe {
 .slideout-sidebar {
     position: fixed;
     top: 0;
-    left: -600px;
+    left: -430px;
     z-index: 10;
-    width: 560px;
+    width: 430px;
     height: 100%;
     padding: 0;
     padding-top: 55px;
@@ -180,7 +181,7 @@ iframe {
     top: 0;
     left: 0px;
     z-index: 10;
-    width: 560px;
+    width:430px;
     height: 100%;
     padding: 0;
 }
@@ -247,7 +248,7 @@ iframe {
 }
 
 #index_toggle:checked + .index-button {
-    left: 458px;
+    left: 450px;
     z-index: 50000;
     /*color: white;*/
 }

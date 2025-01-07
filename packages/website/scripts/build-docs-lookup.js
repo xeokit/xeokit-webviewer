@@ -21,7 +21,7 @@ function buildDocsLookup(docsDir) {
                     const offset = "@xeokit/".length;
                     const packageLocalName = packageId.substring(offset);
 
-                    console.log(packageLocalName);
+                  //  console.log(packageLocalName);
                     const children = moduleData.children;
                     if (children) {
                         for (let child of children) {
@@ -36,24 +36,24 @@ function buildDocsLookup(docsDir) {
                                     continue;
                                     break;
                                 case 128:
-                                    entry.path = `/docs/api/classes/_xeokit_${packageLocalName}.${child.name}.html`;
+                                    entry.path = `/api-docs#/docs/api/classes/${packageLocalName}.${child.name}.html`;
                                     entry.kind="class";
                                     break;
                                 case 32:
-                                    entry.path = `/docs/api/variables/_xeokit_${packageLocalName}.${child.name}.html`;
+                                    entry.path = `/api-docs#/docs/api/variables/${packageLocalName}.${child.name}.html`;
                                     entry.kind="variable";
                                     break;
                                 case 64:
-                                    entry.path = `/docs/api/functions/_xeokit_${packageLocalName}.${child.name}.html`;
+                                    entry.path = `/api-docs#/docs/api/functions/${packageLocalName}.${child.name}.html`;
                                     entry.kind="function";
                                     break;
                                 case 87:
                                 case 256:
-                                    entry.path = `/docs/api/interfaces/_xeokit_${packageLocalName}.${child.name}.html`;
+                                    entry.path = `/api-docs#/docs/api/interfaces/${packageLocalName}.${child.name}.html`;
                                     entry.kind="interface";
                                     break;
                                 case 2097152:
-                                    entry.path = `/docs/api/types/_xeokit_${packageLocalName}.${child.name}.html`;
+                                    entry.path = `/api-docs#/docs/api/types/${packageLocalName}.${child.name}.html`;
                                     entry.kind="type";
                                     break;
                                 default:

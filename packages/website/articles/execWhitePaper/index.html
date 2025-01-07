@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="xeokit - SDK for Browser-Based 3D BIM Visualization">
+<meta name="author" content="Lindsay Kay">
+<meta name="keywords" content="BIM,IFC,WebGL,JavaScript,Browser,BCF,Web,xeolabs,3D,3D Viewer,Lindsay Kay,xeokit,MedViz,ArchViz,Open Source,Browser,Viewer">
+
+<title>xeokit SDK 3 - 3D Web Programming Toolkit for BIM and Engineering Visualization</title>
+
+<link href="./../../libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="./../../css/business-frontpage.css" rel="stylesheet">
+
+<link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+<script src="./../../libs/jquery/jquery.min.js"></script>
+<script src="./../../libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/html.min.js"></script>
+
+    <title></title>
+</head>
+<body>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
+    <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent" href="../../">@xeokit/sdk</a>/<a class="navbar-brand" href="./index.html">Articles</a></span>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarResponsive">
+    <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+            <a class="nav-link" href="/index.html?foo=0">Home</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="/examples/index.html">Examples</a>
+        </li>
+        <li class="nav-item dropdown">
+            <a class="nav-link" href="/models/index.html">Models</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/articles/index.html">Articles</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="/api-docs">API Docs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="https://github.com/xeokit/sdk">GitHub</a>
+        </li>
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link" href="https://xeokit.io/index.html?foo=2#pricing">Pricing</a>-->
+<!--        </li>-->
+<!--        <li class="nav-item">-->
+<!--            <a class="nav-link" href="https://xeokit.io/download.html">Download</a>-->
+<!--        </li>-->
+    </ul>
+</div>
+
+</nav>
+<header class="bg-black home-header bg-black">
+    <div class="container h-75">
+        <!--                <div class="row h-100 align-items-center">-->
+        <!--                    <div class="col-lg-12">-->
+        <!--                        <h1 class="text-white mt-5 mb-2">Executive White Paper: xeokit SDK for 3D BIM and AEC Visualization</h1>-->
+        <!--                        <p class="lead mb-5 text-white"></p>-->
+        <!--                    </div>-->
+        <!--                </div>-->
+    </div>
+</header>
+<section id="intro" class="main-section">
+    <div class="container">
+        <div class="row testimonial-row">
+            <div class="col-lg-12">
+                <h5><a href="../index.html">&lt;&lt;&nbsp;Articles</a></h5>
+            </div>
+            <div class="col-lg-12">
+                <h1>Executive White Paper: xeokit SDK for 3D BIM and AEC Visualization</h1>
+            </div>
+        </div>
+        <div class="row testimonial-row">
+            <div class="col-lg-12">
+                <p><a href="./../../examples/#SceneModel_build_table/index.html"><img src="screenshot.png" alt=""></a></p>
+<ul>
+<li><em><a href="./../../examples/#SceneModel_build_table/index.html">Run this example</a></em></li>
+</ul>
+<h2>1. Executive Summary</h2>
+<p>The <strong>xeokit SDK</strong> is a high-performance, web-based toolkit designed for 3D visualization and analysis of <a href="/api-docs#/docs/api/variables/cityjsontypes_1_1_3.Building.html" target="_parent">Building</a> Information Models (BIM) in the Architecture, Engineering, and Construction (AEC) industry. xeokit enables seamless viewing, exploration, and management of large-scale 3D models directly in the browser, without requiring server-side processing or plugin installations. This white paper outlines how xeokit addresses critical challenges in BIM data visualization, enhances workflow efficiency, and supports scalable, web-based deployments.</p>
+<h2>2. Industry Context and Challenges</h2>
+<h3>The Rise of BIM in AEC</h3>
+<p>The adoption of BIM has transformed the AEC industry by providing a comprehensive digital representation of building and infrastructure projects. BIM supports collaborative workflows, design validation, and lifecycle management. However, fully leveraging BIM's potential requires effective visualization tools that can handle the growing complexity and size of these 3D models.</p>
+<h3>Challenges in 3D BIM Visualization</h3>
+<ol>
+<li><strong>Performance Bottlenecks</strong>: Large BIM models can contain millions of polygons, leading to slow rendering times and sluggish performance.</li>
+<li><strong>Web Accessibility</strong>: Many existing BIM visualization tools rely on desktop applications or require heavy server infrastructure, hindering seamless web-based deployment.</li>
+<li><strong>Interoperability</strong>: Ensuring compatibility with various BIM file formats like IFC (Industry Foundation Classes) can be challenging.</li>
+<li><strong>Scalability</strong>: As projects scale in complexity, visualizing models effectively without compromising user experience becomes difficult.</li>
+</ol>
+<h2>3. Introducing xeokit SDK</h2>
+<p>The <strong>xeokit SDK</strong> is designed to address these challenges by providing a lightweight, high-performance solution for rendering and interacting with large 3D BIM models on the web. xeokit is built with modern web technologies and supports a range of BIM and CAD formats.</p>
+<h3>Key Features</h3>
+<ol>
+<li>
+<p><strong>High-Performance Web-Based Rendering</strong>:</p>
+<ul>
+<li>Optimized for real-time visualization of large 3D models.</li>
+<li>Leverages WebGL for client-side rendering, reducing server load and latency.</li>
+</ul>
+</li>
+<li>
+<p><strong>Supports Open Standards</strong>:</p>
+<ul>
+<li>Native support for open BIM standards, including IFC, glTF, and OBJ formats.</li>
+<li>Facilitates interoperability with a wide range of BIM authoring tools.</li>
+</ul>
+</li>
+<li>
+<p><strong>Advanced Visualization Tools</strong>:</p>
+<ul>
+<li>Provides capabilities like clipping planes, section views, transparency, and model annotations.</li>
+<li>Enables advanced interaction such as picking, highlighting, and object isolation.</li>
+</ul>
+</li>
+<li>
+<p><strong>No Plugins or Installations</strong>:</p>
+<ul>
+<li>Runs entirely in modern web browsers, eliminating the need for plugins or proprietary software.</li>
+</ul>
+</li>
+<li>
+<p><strong>Scalability and Efficiency</strong>:</p>
+<ul>
+<li>Designed to handle models with millions of elements while maintaining performance.</li>
+</ul>
+</li>
+</ol>
+<h3>Use Cases</h3>
+<ul>
+<li><strong>Web-Based BIM <a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>s</strong>: Create customizable BIM viewing applications accessible through any browser.</li>
+<li><strong>Facilities Management</strong>: Visualize and analyze building data for operations and maintenance.</li>
+<li><strong>Construction Planning</strong>: Integrate 3D models into construction management platforms.</li>
+<li><strong>Design Review and Collaboration</strong>: Enable real-time collaboration and feedback in the design process.</li>
+</ul>
+<h2>4. Architecture Overview</h2>
+<p>The xeokit SDK architecture is designed for flexibility and performance:</p>
+<ol>
+<li><strong>Core Engine</strong>: Handles 3D rendering, scene management, and interaction.</li>
+<li><strong><a href="/api-docs#/docs/api/classes/utils.Loader.html" target="_parent">Loader</a>s</strong>: Support for various model formats (IFC, glTF, OBJ) and data parsing.</li>
+<li><strong>Plugins</strong>: Extend functionality with features like annotations, measurement tools, and clipping planes.</li>
+<li><strong>Web-Based Deployment</strong>: Designed for use with single-page applications (SPAs) and web-based dashboards.</li>
+</ol>
+<h2>5. Business Benefits</h2>
+<h3>Improved Efficiency</h3>
+<ul>
+<li>Faster model loading and interaction enable users to review and analyze designs more effectively.</li>
+</ul>
+<h3>Reduced Costs</h3>
+<ul>
+<li>Eliminate the need for expensive server infrastructure or desktop software licenses.</li>
+</ul>
+<h3>Enhanced Collaboration</h3>
+<ul>
+<li>Web-based access allows stakeholders to view models anytime, anywhere.</li>
+</ul>
+<h3>Scalable Solutions</h3>
+<ul>
+<li>Handle increasingly complex models without sacrificing performance.</li>
+</ul>
+<h2>6. Conclusion</h2>
+<p>The xeokit SDK is a powerful, flexible solution for web-based 3D BIM visualization. By addressing key challenges in performance, scalability, and accessibility, xeokit empowers AEC professionals to better visualize, analyze, and manage their BIM data. Whether used for design review, facilities management, or construction planning, xeokit supports efficient workflows and enhances collaboration across project stakeholders.</p>
+<p>For more information, visit the <a href="https://xeokit.io/">xeokit SDK website</a>.</p>
+
+            </div>
+        </div>
+    </div>
+</section>
+<footer class="py-5 bg-dark xeokit-footer">
+    <div class="container pt-5">
+        <div class="row">
+            <div class="col-md-4 col-sm-12 mb-3  text-left">
+                <h2>xeokit SDK</h2>
+                <p>Powering Engineering Graphics on the Web</p>
+                <img src="/images/xeokitLogoAlphaBG.png">
+            </div>
+            <div class="col-md-8 col-sm-12">
+
+                <div class="col-md-4 col-sm-6 col-6 p-0 float-left mb-3">
+                    <h5 class="mb-4 font-weight-bold text-uppercase ">Learn</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="./examples">Examples</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
+                            href="./articles">Tutorials</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
+                            href="./api-docs.html">API Docs</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="">Pricing</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="">FAQ</a></li>
+
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-6 p-0 mb-3 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase ">Develop</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="https://github.com/xeokit/sdk/releases">Download</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="https://github.com/xeokit/sdk">Source Code</a></li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
+                            href="https://github.com/xeokit/xeokit-sdk/issues">Issues</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-6 mb-3 p-0 float-left">
+                    <h5 class="mb-4 font-weight-bold text-uppercase ">Connect</h5>
+                    <ul class="list-group">
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="http://www.xeolabs.com"><i class="fa fa-globe mr-1"></i>
+                                xeolabs.com</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="https://www.linkedin.com/company/xeolabs"><i class="fa fa-linkedin mr-1"></i>
+                                LinkedIn</a>
+                        </li>
+                        <li class="list-group-item bg-transparent border-0 p-0 mb-2">
+                            <a href="https://github.com/xeolabs" target="_code"><i class="fa fa-github mr-1"></i>
+                                Github</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <div class="py-4 d-flex justify-content-center align-items-center">
+                    <p class="m-0 text-center">Copyright &copy; <a href="http://xeolabs.com">xeolabs</a> 2025</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

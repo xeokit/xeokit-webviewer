@@ -28,7 +28,7 @@ const markDownParser = markdownit({
         }
         return (
             '<pre><code class="hljs">' +
-        //    hljs.utils.escapeHtml(str) +
+            //    hljs.utils.escapeHtml(str) +
             "</code></pre>"
         );
     }
@@ -36,52 +36,48 @@ const markDownParser = markdownit({
 
 function buildPages(baseDir) {
     const index = {
-        pages: {},
-        tagsToPagesMap: {}
+        articles: {},
+        tagsToArticlesMap: {}
     };
     try {
         const docsLinks = JSON.parse(fs.readFileSync("./data/docsLinks.json", "utf8"));
-
         const docsLookup = JSON.parse(fs.readFileSync("./data/docsLookup.json", "utf8"));
-
         const DOCS_LOOKUP = {...docsLookup, ...docsLinks};
-
-        console.log(DOCS_LOOKUP)
         const files = fs.readdirSync(baseDir);
 
         files.forEach(file => {
 
-            const pageId = file;
+            const articleId = file;
             const subDirPath = path.join(baseDir, file);
             const stats = fs.statSync(subDirPath);
 
             if (stats.isDirectory()) {
 
                 const indexPath = path.join(subDirPath, 'index.json');
-                let pageJSON;
+                let articleJSON;
 
                 if (fs.existsSync(indexPath)) {
                     try {
                         const data = fs.readFileSync(indexPath, 'utf8');
-                        pageJSON = JSON.parse(data);
-                        index.pages[file] = pageJSON;
+                        articleJSON = JSON.parse(data);
+                        index.articles[file] = articleJSON;
 
-                        if (pageJSON.tags) {
-                            const tagsToPagesMap = index.tagsToPagesMap;
-                            for (let tag of pageJSON.tags) {
-                                let tagPages = tagsToPagesMap[tag];
-                                if (!tagPages) {
-                                    tagsToPagesMap[tag] = [pageId];
+                        if (articleJSON.tags) {
+                            const tagsToArticlesMap = index.tagsToArticlesMap;
+                            for (let tag of articleJSON.tags) {
+                                let tagArticles = tagsToArticlesMap[tag];
+                                if (!tagArticles) {
+                                    tagsToArticlesMap[tag] = [articleId];
                                 } else {
-                                    if (!tagsToPagesMap[tag].includes(pageId)) {
-                                        tagsToPagesMap[tag].push(pageId)
+                                    if (!tagsToArticlesMap[tag].includes(articleId)) {
+                                        tagsToArticlesMap[tag].push(articleId)
                                     }
                                 }
                             }
                         }
                         (async function () {
                             try {
-                                let thumbnailPath = pageJSON.thumbnail;
+                                let thumbnailPath = articleJSON.thumbnail;
                                 if (!thumbnailPath) {
                                     const imageFiles = await listImageFiles(subDirPath);
                                     if (imageFiles.length > 0) {
@@ -93,7 +89,7 @@ function buildPages(baseDir) {
                                         }
                                     }
                                     if (!thumbnailPath) {
-                                        thumbnailPath = "./../../images/xktWithTextures.png";
+                                        thumbnailPath = "./../images/xktWithTextures.png";
                                     }
                                 } else {
                                     thumbnailPath = path.join(subDirPath, thumbnailPath);
@@ -126,7 +122,7 @@ function buildPages(baseDir) {
                         const md = fs.readFileSync(mdIndexPath, 'utf8');
                         const mdIndexPath2 = path.join(subDirPath, 'content.html');
 
-                        fs.copyFileSync("./templates/page.html", templateIndexPath);
+                        fs.copyFileSync("./templates/article.html", templateIndexPath);
 
                         (async function convertMarkdownToHtml() {
                             const html = wrapWordsWithLinks(await markDownParser.render(md), DOCS_LOOKUP);
@@ -145,11 +141,11 @@ function buildPages(baseDir) {
                                         patterns: [
                                             {
                                                 match: 'title',
-                                                replacement: pageJSON.title
+                                                replacement: articleJSON.title
                                             },
                                             {
                                                 match: 'subtitle',
-                                                replacement: pageJSON.subtitle || ""
+                                                replacement: articleJSON.subtitle || ""
                                             }
                                         ]
                                     })
@@ -172,58 +168,33 @@ function buildPages(baseDir) {
             }
         });
 
-        gulp.src([
-            "./templates/examples-index.html"
-        ])
-            .pipe(fileinclude({
-                filters: {
-                    //markdown: markdown.parse
-                }
-            }))
+        gulp.src(["./templates/examples-index.html"])
+            .pipe(fileinclude({}))
             .pipe(rename("index.html"))
-            .pipe(
-                replace({
-                    patterns: [
-                        {
-                            match: 'title',
-                            replacement: "Examples"
-                        },
-                        {
-                            match: 'subtitle',
-                            replacement: "More examples than ever"
-                        }
-                    ]
-                })
-            )
             .pipe(gulp.dest(`./examples/`))
-            .on('end', function () {
-            });
+            .on('end', function () {});
 
-        gulp.src([
-            "./templates/index.html"
-        ])
-            .pipe(fileinclude({
-                filters: {
-                    //markdown: markdown.parse
-                }
-            }))
-            .pipe(
-                replace({
-                    patterns: [
-                        {
-                            match: 'title',
-                            replacement: "Examples"
-                        },
-                        {
-                            match: 'subtitle',
-                            replacement: "More examples than ever"
-                        }
-                    ]
-                })
-            )
+        gulp.src(["./templates/models-index.html"])
+            .pipe(fileinclude({}))
+            .pipe(rename("index.html"))
+            .pipe(gulp.dest(`./models/`))
+            .on('end', function () {});
+
+        gulp.src(["./templates/article-index.html"])
+            .pipe(fileinclude({}))
+            .pipe(rename("index.html"))
+            .pipe(gulp.dest(`./articles/`))
+            .on('end', function () {});
+
+        gulp.src(["./templates/index.html"])
+            .pipe(fileinclude({}))
             .pipe(gulp.dest(`./`))
-            .on('end', function () {
-            });
+            .on('end', function () {});
+
+        gulp.src(["./templates/api-docs.html"])
+            .pipe(fileinclude({}))
+            .pipe(gulp.dest(`./`))
+            .on('end', function () {});
 
     } catch (err) {
         console.error(`Error reading directory: ${err}`);
@@ -264,22 +235,9 @@ function wrapWordsWithLinks(text, wordMap) {
     return text;
 }
 
-const baseDirectory = './pages';
+const baseDirectory = './articles';
+
 const index = buildPages(baseDirectory);
 
-fs.writeFileSync("./pages/index.json", JSON.stringify(index, null, 2), 'utf8');
+fs.writeFileSync("./articles/index.json", JSON.stringify(index, null, 2), 'utf8');
 
-//const mdIndexPath2 = path.join(subDirPath, 'content.html')
-
-fs.copyFileSync(`./templates/page-index.html`, `./pages/page-index.html`);
-
-gulp.src([
-    './pages/page-index.html'
-])
-    .pipe(fileinclude({
-        filters: {
-            //markdown: markdown.parse
-        }
-    }))
-    .pipe(rename("index.html"))
-    .pipe(gulp.dest(`./pages/`));
