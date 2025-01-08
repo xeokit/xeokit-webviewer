@@ -1,4 +1,6 @@
 {
-    "title": "Viewing an IFC model in multiple Views, with different render modes",
-    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views, along with a Data. In the Scene, we create a SceneModel, and in the Data we create a DataModel. Then we load JSON into the SceneModel and DataModel. The Viewer then draws the model in each View's canvas. We also set the renderMode of the first View to QualityRender and the other two Views to FastRender."
+  "title": "Viewing an IFC model in multiple Views, with different render modes",
+  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views, along with a Data. In the Scene, we create a SceneModel, and in the Data we create a DataModel. Then we load JSON into the SceneModel and DataModel. The Viewer then draws the model in each View's canvas. We also set the renderMode of the first View to QualityRender and the other two Views to FastRender.",
+  "id": "View_multiView_renderModes",
+  "type": "example"
 }

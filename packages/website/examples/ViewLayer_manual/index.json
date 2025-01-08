@@ -1,4 +1,6 @@
 {
-    "title": "Creating a Viewer with manual ViewLayers",
-    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. For the View, configure autoLayers=false. In the View, create two ViewLayers; \"modelLayer\" and \"gridLayer\". In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, also create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. The View then contains two ViewsLayers, \"modelLayer\" containing the model, and \"gridLayer\" containing the grid."
+  "title": "Creating a Viewer with manual ViewLayers",
+  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. For the View, configure autoLayers=false. In the View, create two ViewLayers; \"modelLayer\" and \"gridLayer\". In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, also create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. The View then contains two ViewsLayers, \"modelLayer\" containing the model, and \"gridLayer\" containing the grid.",
+  "id": "ViewLayer_manual",
+  "type": "example"
 }

@@ -25,10 +25,6 @@
 	},
 	"engines": {
 		"node": ">=18.0.0"
-	},
-	"keywords": [
-		"typedoc-theme",
-		"typedoc-github-theme"
-	]
+	}
 }
 

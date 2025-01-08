@@ -21,49 +21,81 @@ export class DemoHelper {
         this.viewer = cfg.viewer;
         this.data = cfg.data;
         this.index = null;
-        this.gitHubDataDir = cfg.gitHubDataDir || "https://github.com/xeokit/sdk/tree/develop/packages/demos/data/";
+        this.gitHubDataDir = cfg.gitHubDataDir || "https://github.com/xeokit/sdk/tree/develop/packages/website/";
         this.statusContainer = div;
         this.startTime = null;
         this.assets = [];
         this.steps = [];
         this.info = [];
+        this.isViewModel = false;
     }
 
     init(cfg = {}) {
+
         return new Promise((resolve, reject) => {
+
             this.statusContainer.innerHTML = '';
+
             const logTitle = () => {
                 const descElement = document.createElement('div');
                 descElement.className = 'status-title';
                 descElement.innerHTML = this.index.title;
                 this.statusContainer.appendChild(descElement);
             }
-            fetch("./index.json").then(response => {
+
+            fetch("./../../../articles/index.json").then(response => {
                 response.json().then(articlesIndex => {
+
                     this.articlesIndex = articlesIndex;
+
                     fetch("./../../../data/docsLinks.json").then(response => {
                         response.json().then(docsLinks => {
+
                             fetch("./../../../data/docsLookup.json").then(response => {
                                 response.json().then(docsLookup => {
+
                                     DOCS_LOOKUP = {...docsLookup, ...docsLinks};
+
                                     if (cfg.index) {
+
+                                        // Example / index descriptor JSON provided as argument
+
                                         const index = cfg.index;
+
                                         this.index = index;
+
+                                        this.isViewModel = true;
+
                                         logTitle();
+
                                         if (index.summary) {
                                             this.logTitle("Steps");
                                             this.logItems(index.summary.split('.').filter(Boolean));
                                         }
+
                                         this.startTime = performance.now();
+
                                         resolve();
+
                                     } else {
+
+                                        // Else load the example / article descriptor JSON
+
                                         fetch("./index.json").then(response => {
+
                                             response.json().then(index => {
+
                                                 this.index = index;
+
+                                                this.isViewModel = false;
+
                                                 logTitle();
+
                                                 this.logTitle("Steps");
                                                 //    this.log(index.summary);
-                                                this.logItems(index.summary.split('.').filter(Boolean));
+                                                if (index.summary) {
+                                                    this.logItems(index.summary.split('.').filter(Boolean));
+                                                }
                                                 this.startTime = performance.now();
                                                 resolve();
                                             });
@@ -115,16 +147,25 @@ export class DemoHelper {
         this.statusContainer.appendChild(document.createElement('hr'));
     }
 
-    logViewSource() {
+    logExampleSource(exampleId) {
         const viewSourceElement = document.createElement('div');
         viewSourceElement.className = 'status-message';
-        const selected = "";
-        viewSourceElement.innerHTML = `<ul><li><a target="_parent" href='https://github.com/xeokit/sdk/tree/develop/packages/demos/galleries/viewer/${selected}'>Source code</a></li></ul>`;
+        viewSourceElement.innerHTML = `<ul><li><a target="_parent" href='https://github.com/xeokit/sdk/tree/develop/packages/website/examples/${exampleId}'>Source code</a></li></ul>`;
+        this.statusContainer.appendChild(viewSourceElement);
+    }
+
+    logViewerSource() {
+        const viewSourceElement = document.createElement('div');
+        viewSourceElement.className = 'status-message';
+        viewSourceElement.innerHTML = `<ul><li><a target="_parent" href='https://github.com/xeokit/sdk/blob/develop/packages/website/models/viewModel.html'>Viewer source code</a></li></ul>`;
         this.statusContainer.appendChild(viewSourceElement);
     }
 
     logViewingModel(modelId, pipelineId) {
-        this.logInfo(`Model: <a href="${this.gitHubDataDir}models/${modelId}/${pipelineId}" target="_parent">${modelId}</a>`);
+        const viewSourceElement = document.createElement('div');
+        viewSourceElement.className = 'status-message';
+        viewSourceElement.innerHTML = `<ul><li>Model: <a href="${this.gitHubDataDir}models/${modelId}/${pipelineId}" target="_parent">${modelId}</a></li></ul>`;
+        this.statusContainer.appendChild(viewSourceElement);
     }
 
     logImportPipeline(pipelineId) {
@@ -183,13 +224,18 @@ export class DemoHelper {
         }
         this.logInfo(`Demo completed in ${elapsedTime.toFixed(2)} ms`);
         this.logTitle("Resources");
-        this.logViewSource();
+        if (this.index) {
+            if (this.index.type === "example") {
+                if (this.index.id !== undefined) {
+                    this.logExampleSource(this.index.id);
+                }
+            } else {
+                this.logViewerSource();
+
+            }
+        }
 
         if (this.articlesIndex && this.articlesIndex.articles && Object.keys(this.articlesIndex.articles).length > 0) {
-
-            fetch("/pages/index.json").json().then((pagesIndex) => {
-                console.log(pagesIndex)
-            });
 
             // this.logTitle("Artices");
             // const items = [];
@@ -223,9 +269,7 @@ export class DemoHelper {
 }
 
 
-function
-
-trunc(vec) {
+function trunc(vec) {
     const vec2 = [];
     for (let i = 0, len = vec.length; i < len; i++) {
         vec2[i] = Math.trunc(vec[i] * 100) / 100;
@@ -233,9 +277,7 @@ trunc(vec) {
     return vec2;
 }
 
-function
-
-truncateUntilSubstring(str, substring) {
+function truncateUntilSubstring(str, substring) {
     const index = str.indexOf(substring);
     if (index !== -1) {
         return str.slice(index);
@@ -243,9 +285,7 @@ truncateUntilSubstring(str, substring) {
     return str;
 }
 
-function
-
-wrapWordsWithLinks(text, wordMap) {
+function wrapWordsWithLinks(text, wordMap) {
     Object.keys(wordMap).forEach(function (key) {
         const regex = new RegExp(`\\b${key}s?\\b`, 'g');
         text = text.replace(regex, (match) => {

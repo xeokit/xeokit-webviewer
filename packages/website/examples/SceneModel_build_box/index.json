@@ -1,7 +1,9 @@
 {
-    "title": "Build and view a box-shaped SceneModel",
-    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that contains a SceneObject, a SceneMesh, and a SceneGeometry that defines the shape of the box.",
-    "articles": [
-        "sceneModelBuildBox"
-    ]
+  "title": "Build and view a box-shaped SceneModel",
+  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that contains a SceneObject, a SceneMesh, and a SceneGeometry that defines the shape of the box.",
+  "articles": [
+    "sceneModelBuildBox"
+  ],
+  "id": "SceneModel_build_box",
+  "type": "example"
 }

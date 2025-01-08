@@ -18,11 +18,14 @@ function readIndexFilesFromSubdirs(baseDir) {
                     try {
                         const data = fs.readFileSync(indexPath, 'utf8');
                         const jsonData = JSON.parse(data);
+                        jsonData.id = file;
+                        jsonData.type = "example";
                         index.pages[file] = jsonData;
                         if (jsonData.template) {
                             //console.log(`Using template: ./templates/${jsonData.template}`);
                             fs.cpSync(`./templates/${jsonData.template}.html`, `${subDirPath}/index.html`);
                         }
+                        fs.writeFileSync(indexPath, JSON.stringify(jsonData, null, 2), 'utf8');
                     } catch (err) {
                         console.error(`Error reading or parsing JSON in file: ${indexPath}`, err);
                     }

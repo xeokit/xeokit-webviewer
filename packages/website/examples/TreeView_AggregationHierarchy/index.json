@@ -1,4 +1,6 @@
 {
-    "title": "Using a TreeView configured with AggregationHierarchy",
-    "summary": ""
+  "title": "Using a TreeView configured with AggregationHierarchy",
+  "summary": "",
+  "id": "TreeView_AggregationHierarchy",
+  "type": "example"
 }

@@ -13,7 +13,7 @@
             "persistent": true
         },
         "dist": {
-            "cache": false,
+            "cache": true,
             "dependsOn": [
                 "^dist"
             ]
@@ -25,7 +25,7 @@
             ]
         },
         "website-docs": {
-            "cache": false,
+            "cache": true,
             "persistent": true,
             "dependsOn": [
                 "^docs"

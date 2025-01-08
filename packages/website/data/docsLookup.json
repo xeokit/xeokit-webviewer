@@ -271,10 +271,6 @@
     "path": "/api-docs#/docs/api/classes/cameraflight.CameraFlightAnimation.html",
     "kind": "class"
   },
-  "Canvas2Image": {
-    "path": "/api-docs#/docs/api/variables/webglutils.Canvas2Image.html",
-    "kind": "variable"
-  },
   "canvasPosToWorldRay": {
     "path": "/api-docs#/docs/api/functions/matrix.canvasPosToWorldRay.html",
     "kind": "function"
@@ -401,10 +397,6 @@
   },
   "convertMetaModel": {
     "path": "/api-docs#/docs/api/functions/metamodel.convertMetaModel.html",
-    "kind": "function"
-  },
-  "convertWebGLConstant": {
-    "path": "/api-docs#/docs/api/functions/webglutils.convertWebGLConstant.html",
     "kind": "function"
   },
   "copy": {
@@ -793,10 +785,6 @@
   },
   "getUVBounds": {
     "path": "/api-docs#/docs/api/functions/compression.getUVBounds.html",
-    "kind": "function"
-  },
-  "getWebGLExtension": {
-    "path": "/api-docs#/docs/api/functions/webglutils.getWebGLExtension.html",
     "kind": "function"
   },
   "GIFMediaType": {
@@ -4155,10 +4143,6 @@
     "path": "/api-docs#/docs/api/variables/constants.LinesPrimitive.html",
     "kind": "variable"
   },
-  "load3DXML": {
-    "path": "/api-docs#/docs/api/functions/threedxml.load3DXML.html",
-    "kind": "function"
-  },
   "loadArraybuffer": {
     "path": "/api-docs#/docs/api/functions/utils.loadArraybuffer.html",
     "kind": "function"
@@ -4422,10 +4406,6 @@
   "OUTSIDE": {
     "path": "/api-docs#/docs/api/variables/boundaries.OUTSIDE.html",
     "kind": "variable"
-  },
-  "parseDefaultView": {
-    "path": "/api-docs#/docs/api/functions/threedxml.parseDefaultView.html",
-    "kind": "function"
   },
   "perspectiveMat4": {
     "path": "/api-docs#/docs/api/functions/matrix.perspectiveMat4.html",
@@ -5243,44 +5223,8 @@
     "path": "/api-docs#/docs/api/variables/cityjsontypes_1_1_3.Waterway.html",
     "kind": "variable"
   },
-  "WEBGL_INFO": {
-    "path": "/api-docs#/docs/api/variables/webglutils.WEBGL_INFO.html",
-    "kind": "variable"
-  },
-  "WebGLAbstractTexture": {
-    "path": "/api-docs#/docs/api/types/webglutils.WebGLAbstractTexture.html",
-    "kind": "type"
-  },
-  "WebGLArrayBuf": {
-    "path": "/api-docs#/docs/api/classes/webglutils.WebGLArrayBuf.html",
-    "kind": "class"
-  },
-  "WebGLAttribute": {
-    "path": "/api-docs#/docs/api/classes/webglutils.WebGLAttribute.html",
-    "kind": "class"
-  },
-  "WebGLDataTexture": {
-    "path": "/api-docs#/docs/api/classes/webglutils.WebGLDataTexture.html",
-    "kind": "class"
-  },
-  "WebGLProgram": {
-    "path": "/api-docs#/docs/api/classes/webglutils.WebGLProgram.html",
-    "kind": "class"
-  },
   "WebGLRenderer": {
     "path": "/api-docs#/docs/api/classes/webglrenderer.WebGLRenderer.html",
-    "kind": "class"
-  },
-  "WebGLSampler": {
-    "path": "/api-docs#/docs/api/classes/webglutils.WebGLSampler.html",
-    "kind": "class"
-  },
-  "WebGLShader": {
-    "path": "/api-docs#/docs/api/classes/webglutils.WebGLShader.html",
-    "kind": "class"
-  },
-  "WebGLTexture": {
-    "path": "/api-docs#/docs/api/classes/webglutils.WebGLTexture.html",
     "kind": "class"
   },
   "WorkerPool": {

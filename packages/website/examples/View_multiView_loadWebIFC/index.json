@@ -1,7 +1,9 @@
 {
-    "title": "Viewing an IFC model in multiple Views",
-    "summary": "In this example, we create a Viewer configured with a WebGLRenderer, a Scene, and three Views, along with a Data. In the Scene, we create a SceneModel, and in the Data we create a DataModel. Then we use loadWebIFC to load an IFC file into the SceneModel and DataModel. The Viewer then draws the IFC model in each View's canvas.",
-    "models": [
-        "IfcOpenHouse4/ifc"
-    ]
+  "title": "Viewing an IFC model in multiple Views",
+  "summary": "In this example, we create a Viewer configured with a WebGLRenderer, a Scene, and three Views, along with a Data. In the Scene, we create a SceneModel, and in the Data we create a DataModel. Then we use loadWebIFC to load an IFC file into the SceneModel and DataModel. The Viewer then draws the IFC model in each View's canvas.",
+  "models": [
+    "IfcOpenHouse4/ifc"
+  ],
+  "id": "View_multiView_loadWebIFC",
+  "type": "example"
 }

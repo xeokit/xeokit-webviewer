@@ -32,27 +32,38 @@
 
     const info = {
         "xgf": {
-            description: `View '${modelId}' model from XGF`,
-            summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadXGF to load the XGF file into the SceneModel and DataModel."
+            title: `View '${modelId}' model from XGF`,
+            summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
+            Create a Data.
+            In the Scene, create a SceneModel.
+            In the Data, create a DataModel.
+            Use loadXGF to load the XGF file into the SceneModel and DataModel.
+            Build the SceneModel and DataModel.
+            Model then appears in the View.`
         },
         "gltf": {
-            description: `View '${modelId}' model from glTF`,
+            title: `View '${modelId}' model from glTF`,
             summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadGLTF to load the glTF file into the SceneModel and DataModel."
         },
         "ifc": {
-            description: `View '${modelId}' model from IFC`,
-            summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadWebIFC to load the IFC file into the SceneModel and DataModel."
+            title: `View '${modelId}' model from IFC`,
+            summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
+            Create a Data. In the Scene, create a SceneModel.
+            In the Data, create a DataModel.
+            Use loadWebIFC to load the IFC file into the SceneModel and DataModel.
+            Build the SceneModel and DataModel.
+            Model then appears in the View.`
         },
         "dotbim": {
-            description: `View '${modelId}' model from .BIM`,
+            title: `View '${modelId}' model from DotBIM`,
             summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadDotBIM to load the DotBIM file into the SceneModel and DataModel."
         },
         "gltf2xgf": {
-            description: `View '${modelId}' model from XGF+JSON created by gltf2xgf`,
+            title: `View '${modelId}' model from XGF+JSON created by gltf2xgf`,
             summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadXGF to load the XGF file into the SceneModel. Use SceneModel.fromJSON to load the JSON into the DataModel."
         },
         "ifc2gltf": {
-            description: `View '${modelId}' model from glTF+JSON created by ifc2gltf`,
+            title: `View '${modelId}' model from glTF+JSON created from IFC by ifc2gltf`,
             summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
             Create a Data.
             In the Scene, create a SceneModel.
@@ -64,7 +75,7 @@
             Model then appears in the View.`
         },
         "ifc2gltf2xgf": {
-            description: `View '${modelId}' model from XGF+JSON created by ifc2gltf2xgf`,
+            title: `View '${modelId}' model from XGF+JSON created by ifc2gltf2xgf`,
             summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
             Create a Data.
             In the Scene, create a SceneModel.
@@ -75,13 +86,75 @@
             Model then appears in the View.`
         },
         "dotbim2xgf": {
-            description: `View '${modelId}' model from XGF+JSON created by dotbim2xgf`,
+            title: `View '${modelId}' model from XGF+JSON created from DotBIM by dotbim2xgf`,
             summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
             Create a Data.
             In the Scene, create a SceneModel.
             In the Data, create a DataModel.
             Load the ModelChunksManifestParams manifest that was output by ifc2gltf2xgf.
-            Load the XGF and JSON files into the SceneModel and DataModel, using loadXKT and DataModel.fromJSON.
+            Load the XGF and JSON files into the SceneModel and DataModel, using loadXKT and DataModel#fromJSON.
+            Build the SceneModel and DataModel.
+            Model then appears in the View.`
+        },
+        "json": {
+            title: `View '${modelId}' model from JSON`,
+            summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
+            Create a Data.
+            In the Scene, create a SceneModel.
+            In the Data, create a DataModel.
+            Load JSON files into the SceneModel and DataModel, using SceneModel#fromJSON and DataModel#fromJSON.
+            Build the SceneModel and DataModel.
+            Model then appears in the View.`
+        },
+        "cityjson": {
+            title: `View '${modelId}' model from CityJSON`,
+            summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
+            Create a Data.
+            In the Scene, create a SceneModel.
+            In the Data, create a DataModel.
+            Load the CityJSON files into the SceneModel and DataModel, using loadCityJSON.
+            Build the SceneModel and DataModel.
+            Model then appears in the View.`
+        },
+        "las": {
+            title: `View '${modelId}' model from LAS`,
+            summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
+            Create a Data.
+            In the Scene, create a SceneModel.
+            In the Data, create a DataModel.
+            Use loadLAS to load the LAS file into the SceneModel and DataModel.
+            Build the SceneModel and DataModel.
+            Model then appears in the View.`
+        },
+        "laz": {
+            title: `View '${modelId}' model from LAZ`,
+            summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
+            Create a Data.
+            In the Scene, create a SceneModel.
+            In the Data, create a DataModel.
+            Use loadLAS to load the LAZ file into the SceneModel and DataModel.
+            Build the SceneModel and DataModel.
+            Model then appears in the View.`
+        },
+        "las2xgf": {
+            title: `View '${modelId}' model from XGF+JSON created from LAS/LAZ by las2xgf`,
+            summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
+            Create a Data.
+            In the Scene, create a SceneModel.
+            In the Data, create a DataModel.
+            Use loadXGF to load the XGF file into the SceneModel.
+            Use SceneModel.fromJSON to load the JSON into the DataModel.
+            Build the SceneModel and DataModel.
+            Model then appears in the View.`
+        },
+        "webifc2xgf": {
+            title: `View '${modelId}' model from XGF+JSON created from IFC by webifc2xgf`,
+            summary: `Create a Viewer with a WebGLRenderer, a Scene and a View.
+            Create a Data.
+            In the Scene, create a SceneModel.
+            In the Data, create a DataModel.
+            Use loadXGF to load the XGF file into the SceneModel.
+            Use SceneModel.fromJSON to load the JSON into the DataModel.
             Build the SceneModel and DataModel.
             Model then appears in the View.`
         }

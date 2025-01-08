@@ -1,4 +1,6 @@
 {
-    "title": "Creating a Viewer with multiple Views and ViewLayers",
-    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. For each View, configure autoLayers=false. In the first and second Views, create two ViewLayers; \"modelLayer\" and \"gridLayer\". In the third View, create just a \"modelLayer\" ViewLayer. In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. Thanks to the masking effect of the ViewLayers, the Viewer then draws the model in all three Views, but only draws the grid in the first and second Views."
+  "title": "Creating a Viewer with multiple Views and ViewLayers",
+  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. For each View, configure autoLayers=false. In the first and second Views, create two ViewLayers; \"modelLayer\" and \"gridLayer\". In the third View, create just a \"modelLayer\" ViewLayer. In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. Thanks to the masking effect of the ViewLayers, the Viewer then draws the model in all three Views, but only draws the grid in the first and second Views.",
+  "id": "ViewLayer_multiView",
+  "type": "example"
 }

@@ -11,10 +11,9 @@
     "scripts": {
         "dist": "turbo run dist --concurrency 100",
         "test": "turbo run test --concurrency 100 --continue || node scripts/test-html-report/index.mjs",
-        "docs": "rimraf docs && mkdir docs  && turbo run docs --concurrency 100 && typedoc --entryPointStrategy merge \"docs/json/*.json\" --tsconfig packages/config/tsconfig.typedoc.json --plugin ./packages/typedoc-theme/dist/index.js",
+        "docs": "rimraf docs && mkdir docs && turbo run docs && typedoc --entryPointStrategy merge \"docs/json/*.json\" --tsconfig packages/config/tsconfig.typedoc.json",
         "website-models": "turbo run website-models",
         "website-docs": "turbo run website-docs",
-
         "_publish-packages": "turbo run build lint test && changeset version && changeset publish"
     },
     "devDependencies": {

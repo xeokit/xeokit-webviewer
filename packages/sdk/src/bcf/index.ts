@@ -1,7 +1,4 @@
 /**
- * [![npm version](https://badge.fury.io/js/%40xeokit%2Fbcf.svg)](https://badge.fury.io/js/%40xeokit%2Fbcf)
- * [![](https://data.jsdelivr.com/v1/package/npm/@xeokit/bcf/badge)](https://www.jsdelivr.com/package/npm/@xeokit/bcf)
- *
  * <img style="padding:20px; padding-bottom:10px; " src="media://images/xeokit_bcf_logo.png"/>
  *
  * # xeokit BCF Viewpoint Importer and Exporter

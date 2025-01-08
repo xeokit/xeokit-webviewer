@@ -12,7 +12,7 @@
     "scripts": {
         "dist": "node scripts/build-xeokit-demo-bundle.js",
         "website-models": "node scripts/build-convert-models.js; sh scripts/convert-models.sh",
-        "website-docs": "cp -Rf ../../docs . ; node scripts/build-docs-lookup.js; node scripts/build-viewer-demos-index.js; node scripts/build-pages.js;"
+        "website-docs": "cp -Rf ../../docs . ; node scripts/build-docs-lookup.js; node scripts/build-examples-index.js; node scripts/build-pages.js;"
     },
     "author": "Lindsay Kay",
     "license": "SEE LICENSE IN LICENSE.md",

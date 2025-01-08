@@ -1,4 +1,6 @@
 {
-    "title": "Building a table-shaped SceneModel in multiple Views",
-    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple table-shaped model. The Viewer then draws the model in each View's canvas. Meanwhile, orbit the primary View's Camera."
+  "title": "Building a table-shaped SceneModel in multiple Views",
+  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple table-shaped model. The Viewer then draws the model in each View's canvas. Meanwhile, orbit the primary View's Camera.",
+  "id": "View_multiView_SceneModel_build_table",
+  "type": "example"
 }
