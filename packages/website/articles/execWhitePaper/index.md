@@ -5,17 +5,22 @@
 
 ## 1. Executive Summary
 
-The **xeokit SDK** is a high-performance, web-based toolkit designed for 3D visualization and analysis of Building Information Models (BIM) in the Architecture, Engineering, and Construction (AEC) industry. xeokit enables seamless viewing, exploration, and management of large-scale 3D models directly in the browser, without requiring server-side processing or plugin installations. This white paper outlines how xeokit addresses critical challenges in BIM data visualization, enhances workflow efficiency, and supports scalable, web-based deployments.
+The **xeokit SDK** is a high-performance, web-based toolkit designed for 3D visualization of Building Information Models (BIM) in the 
+Architecture, Engineering, and Construction (AEC) industry. xeokit enables seamless viewing, exploration, and management of large-scale 
+3D models directly in the browser, without requiring server-side processing or plugin installations. This white paper outlines how 
+xeokit addresses critical challenges in BIM data visualization, enhances workflow efficiency, and supports scalable, web-based deployments.
 
 ## 2. Industry Context and Challenges
 
 ### The Rise of BIM in AEC
 
-The adoption of BIM has transformed the AEC industry by providing a comprehensive digital representation of building and infrastructure projects. BIM supports collaborative workflows, design validation, and lifecycle management. However, fully leveraging BIM's potential requires effective visualization tools that can handle the growing complexity and size of these 3D models.
+The adoption of BIM has transformed the AEC industry by providing a comprehensive digital representation of building and infrastructure 
+projects. BIM supports collaborative workflows, design validation, and lifecycle management. However, fully leveraging BIM's potential 
+requires effective visualization tools that can handle the growing complexity and size of these 3D models.
 
 ### Challenges in 3D BIM Visualization
 
-1. **Performance Bottlenecks**: Large BIM models can contain millions of polygons, leading to slow rendering times and sluggish performance.
+1. **Performance Bottlenecks**: Large BIM models can contain millions of objects, leading to slow rendering times and sluggish performance.
 2. **Web Accessibility**: Many existing BIM visualization tools rely on desktop applications or require heavy server infrastructure, hindering seamless web-based deployment.
 3. **Interoperability**: Ensuring compatibility with various BIM file formats like IFC (Industry Foundation Classes) can be challenging.
 4. **Scalability**: As projects scale in complexity, visualizing models effectively without compromising user experience becomes difficult.
