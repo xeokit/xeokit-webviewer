@@ -1,5 +1,5 @@
 /**
- * <img style="padding:20px" src="media://images/xeokit_docmodel_greyscale_icon.png"/>
+ * <img style="padding:20px" src="/docs/assets/xeokit_docmodel_greyscale_icon.png"/>
  *
  * # xeokit 3D Scene Representation
  *

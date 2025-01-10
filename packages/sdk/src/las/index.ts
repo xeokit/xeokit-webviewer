@@ -1,5 +1,5 @@
 /**
- * <img style="padding:0px; padding-top:20px; padding-bottom:30px;" src="media://images/autzen.png"/>
+ * <img style="padding:0px; padding-top:20px; padding-bottom:30px;" src="/docs/assets/autzen.png"/>
  *
  * <br>
  *

@@ -1,8 +1,5 @@
 /**
- * [![npm version](https://badge.fury.io/js/%40xeokit%2Fwebgl.svg)](https://badge.fury.io/js/%40xeokit%2Fwebgl)
- * [![](https://data.jsdelivr.com/v1/package/npm/@xeokit/webglrenderer/badge)](https://www.jsdelivr.com/package/npm/@xeokit/webglrenderer)
- *
- * <img style="padding:0px; padding-top:20px; padding-bottom:30px; height:100px;" src="media://images/xeokit_webgl_logo.svg"/>
+ * <img style="padding:0px; padding-top:20px; padding-bottom:30px; height:100px;" src="/docs/assets/xeokit_webgl_logo.svg"/>
  *
  * # xeokit WebGL2 Renderer
  *
@@ -23,7 +20,7 @@
  * ## Installation
  *
  * ````bash
- * npm install @xeokit/webglrenderer
+ * npm install @xeokit/sdk
  * ````
  *
  * ## Usage

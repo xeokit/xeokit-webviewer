@@ -30,7 +30,7 @@
         "emitDeclarationOnly": true
     },
     "include": [
-        "../*/src/**/*.ts"
+        "./packages/sdk/src/**/*.ts"
     ],
     "exclude": [
         "dist",

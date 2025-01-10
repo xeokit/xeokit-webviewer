@@ -1,5 +1,5 @@
 /**
- * <img style="padding:0px; padding-top:20px; padding-bottom:30px; width: 180px;" src="media://images/dotbim-logo.png"/>
+ * <img style="padding:0px; padding-top:20px; padding-bottom:30px; width: 180px;" src="/docs/assets/dotbim-logo.png"/>
  *
  * # xeokit .BIM Importer and Exporter
  *

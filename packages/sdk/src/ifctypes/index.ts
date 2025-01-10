@@ -1,5 +1,5 @@
 /**
- * <img style="padding-top:20px; padding-bottom: 10px;" src="media://images/ifc_logo.png"/>
+ * <img style="padding-top:20px; padding-bottom: 10px;" src="/docs/assets/ifc_logo.png"/>
  *
  * # xeokit IFC Data Types
  *

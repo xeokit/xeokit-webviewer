@@ -1,5 +1,5 @@
 /**
- * <img style="padding:0px; padding-top:20px; padding-bottom:30px; height:130px;" src="media://images/cityJSONLogo.svg"/>
+ * <img style="padding:0px; padding-top:20px; padding-bottom:30px; height:130px;" src="/docs/assets/cityJSONLogo.svg"/>
  *
  * # xeokit CityJSON 1.1.3 Data Types
  *

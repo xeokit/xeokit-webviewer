@@ -1,5 +1,5 @@
 /**
- * <img style="padding:50px" src="media://images/xeokit_datamodel_icon.png"/>
+ * <img style="padding:50px" src="/docs/assets/xeokit_datamodel_icon.png"/>
  *
  * # xeokit Semantic Data Model
  *

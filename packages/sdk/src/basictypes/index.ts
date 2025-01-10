@@ -1,5 +1,5 @@
 /**
- * <img style="padding:10px; width:300px" src="media://images/xeokit_components_icon.png"/>
+ * <img style="padding:10px; width:300px" src="/docs/assets/xeokit_components_icon.png"/>
  *
  * # xeokit Basic Semantic Data Types
  *

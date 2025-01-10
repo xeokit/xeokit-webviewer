@@ -1,5 +1,5 @@
 /**
- * <img style="padding:20px" src="media://images/geometry_icon.png"/>
+ * <img style="padding:20px" src="/docs/assets/geometry_icon.png"/>
  *
  * # xeokit SceneGeometry Compression / Decompression Utilities
  *

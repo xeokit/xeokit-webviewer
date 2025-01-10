@@ -3,7 +3,7 @@
         "packages/sdk/src/index.ts"
     ],
     "entryPointStrategy": "packages",
-    "out": "./docs/api",
+    "out": "./packages/website/docs/api",
     "excludePrivate": true,
     "excludeNotDocumented": true,
     "includeVersion": true,

@@ -1,5 +1,5 @@
 /**
- * <img style="padding:0px; padding-top:20px; padding-bottom:30px; height:140px;" src="media://images/matrix_icon.png"/>
+ * <img style="padding:0px; padding-top:20px; padding-bottom:30px; height:140px;" src="/docs/assets/matrix_icon.png"/>
  *
  * # xeokit Matrix and Vector Math Library
  *

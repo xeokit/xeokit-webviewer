@@ -1,5 +1,5 @@
 /**
- * <img style="padding:0px; padding-top:20px; padding-bottom:20px;  height:270px" src="media://images/3D-Cart.svg"/>
+ * <img style="padding:0px; padding-top:20px; padding-bottom:20px;  height:270px" src="/docs/assets/3D-Cart.svg"/>
  *
  * # xeokit RTC Coordinate Utilities
  *

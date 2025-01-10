@@ -25,7 +25,7 @@
             ]
         },
         "website-docs": {
-            "cache": true,
+            "cache": false,
             "persistent": true,
             "dependsOn": [
                 "^docs"
