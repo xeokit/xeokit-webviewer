@@ -4,9 +4,9 @@
  * # xeokit CityJSON 1.1.3 Data Types
  *
  * * Defines numeric constants for the set of [CityJSON](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#cityjson) 1.1.3 entity and relationship types.
- * * Use with {@link "@xeokit/data" | @xeokit/data}  to assign CityJSON types to {@link data!DataObject | DataObjects}
+ * * Use with {@link data | data}  to assign CityJSON types to {@link data!DataObject | DataObjects}
  * and {@link data!Relationship | Relationships} and treat them as elements of a basic entity-relationship graph.
- * * Use with {@link "@xeokit/treeview" | @xeokit/treeview} , to configure the appearance and behaviour of
+ * * Use with {@link "treeview" | treeview} , to configure the appearance and behaviour of
  * {@link treeview!TreeView | TreeViews} for navigating CityJSON objects.
  *
  * ## Installation

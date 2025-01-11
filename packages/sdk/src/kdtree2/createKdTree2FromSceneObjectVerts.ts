@@ -14,9 +14,9 @@ import type {KdVertex2} from "./KdVertex2";
 
 /**
  * A k-d tree to accelerate intersection and nearest-neighbour tests on the projected
- * 2D canvas positions of {@link @xeokit/scene!SceneObject} geometry vertices.
+ * 2D canvas positions of {@link scene!SceneObject} geometry vertices.
  *
- * See {@link "@xeokit/kd-canvas-verts"} for usage.
+ * See {@link kdtree2} for usage.
  */
 export function createKdTree2FromSceneObjectVerts(params: {
     viewMatrix: FloatArrayParam,

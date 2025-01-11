@@ -7,21 +7,21 @@ file format that is a runtime asset delivery format for 3D scenes and models.</p
 browsers. It stores geometry, materials, textures, animations, and scene hierarchy, and is open and royalty-free,
 making it a popular choice for 3D content distribution and exchange.</p>
 <p>To import a glTF model into xeokit, use the <a href="../functions/gltf.loadGLTF.html" class="tsd-kind-function">loadGLTF</a> function, which will load the file into
-a @xeokit/scene!SceneModel | SceneModel.</p>
+a <a href="../classes/scene.SceneModel.html" class="tsd-kind-class">SceneModel</a>.</p>
 <br>
 <p><a href="https://mermaid.live/edit#pako:eNpVkctOwzAQRX8lmhVIaZVHE6dRlVUFm1Ygygp548YTMErsynYkStV_x84DqDf2vTM-Mx5foFYcoYS6ZcZsBXvXrKOSSi401lYoGexevB7iwaFGiXt3ow0uVAZuCT7u6vjp8s0oao3M4tNg3d2P3rEXLZ8FR2O1Ont59fSZv1OMP-5eH56Za8PMNTabk9doUVfVaDWixS2zbFTmt62JN9LaifbHaXo5PMpjhsTbghQiCotFRSGmcPgHnUlz7PYahNCh7pjgbpBDLQr2AzukULojx4b1raXgarpU1lt1OMsaSqt7DKE_cTesafRQNqw1zkUurNL76XP8FsKJSSgv8AVlEqXLvMgzEufrjCRRFsIZylVULAuyIklKkoKQNLuG8K2Ug0bLLEoJidd55Ow0iQfY2xDzXVx_ANo5py0"><img src="https://mermaid.ink/img/pako:eNpVkctOwzAQRX8lmhVIaZVHE6dRlVUFm1Ygygp548YTMErsynYkStV_x84DqDf2vTM-Mx5foFYcoYS6ZcZsBXvXrKOSSi401lYoGexevB7iwaFGiXt3ow0uVAZuCT7u6vjp8s0oao3M4tNg3d2P3rEXLZ8FR2O1Ont59fSZv1OMP-5eH56Za8PMNTabk9doUVfVaDWixS2zbFTmt62JN9LaifbHaXo5PMpjhsTbghQiCotFRSGmcPgHnUlz7PYahNCh7pjgbpBDLQr2AzukULojx4b1raXgarpU1lt1OMsaSqt7DKE_cTesafRQNqw1zkUurNL76XP8FsKJSSgv8AVlEqXLvMgzEufrjCRRFsIZylVULAuyIklKkoKQNLuG8K2Ug0bLLEoJidd55Ow0iQfY2xDzXVx_ANo5py0?type=png" alt=""></a></p>
 <br>
-<a id="installation" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Installation<a href="#installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">@xeokit/gltf</span>
+<a id="installation" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Installation<a href="#installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">@xeokit/sdk</span>
 </code><button type="button">Copy</button></pre>
 
-<a id="usage" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>In the example below, we will create a @xeokit/viewer!Viewer | Viewer with
-a @xeokit/webglrenderer!WebGLRenderer | WebGLRenderer  and a @xeokit/scene!Scene | Scene, which holds model geometry and materials.</p>
-<p>On our Viewer, we will create a single @xeokit/viewer!View | View to render it to a canvas element on the page. We will
-also attach a @xeokit/cameracontrol!CameraControl | CameraControl to our View, allowing us to control its camera with mouse and touch input.</p>
-<p>Within the Scene, we will create a @xeokit/scene!SceneModel | SceneModel to hold a model. We will then use
-@xeokit/gltf!loadGLTF | loadGLTF to load
+<a id="usage" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>In the example below, we will create a <a href="../classes/viewer.Viewer.html" class="tsd-kind-class">Viewer</a> with
+a <a href="../classes/webglrenderer.WebGLRenderer.html" class="tsd-kind-class">WebGLRenderer</a>  and a <a href="../classes/scene.Scene.html" class="tsd-kind-class">Scene</a>, which holds model geometry and materials.</p>
+<p>On our Viewer, we will create a single <a href="../classes/viewer.View.html" class="tsd-kind-class">View</a> to render it to a canvas element on the page. We will
+also attach a <a href="../classes/cameracontrol.CameraControl.html" class="tsd-kind-class">CameraControl</a> to our View, allowing us to control its camera with mouse and touch input.</p>
+<p>Within the Scene, we will create a <a href="../classes/scene.SceneModel.html" class="tsd-kind-class">SceneModel</a> to hold a model. We will then use
+<a href="../functions/gltf.loadGLTF.html" class="tsd-kind-function">loadGLTF</a> to load
 a binary glTF (GLB) file into our SceneModel.</p>
-<p>The @xeokit/core!SDKError | SDKError class will be used to handle any errors that may occur during this process.</p>
+<p>The <a href="../classes/core.SDKError.html" class="tsd-kind-class">SDKError</a> class will be used to handle any errors that may occur during this process.</p>
 <ul>
 <li><a href="">Run this example</a></li>
 </ul>

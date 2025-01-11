@@ -71,6 +71,6 @@
  * cityjson2xgf -i duplex.json -s duplex.xgf -f 1
  * ````
  *
- * @module gltf2xgf
+ * @module cityjson2xgf
  */
 export * from "./cityjson2xgf";

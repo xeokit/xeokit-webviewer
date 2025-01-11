@@ -11,7 +11,7 @@ export class Ifc2gltfManifestParams {
     /**
      * Paths to JSON metadata files created by if2gltf.
      *
-     * Metadata file format is described by {@link @xeokit/metamodel!MetaModelParams | MetaModelParams}.
+     * Metadata file format is described by {@link metamodel!MetaModelParams | MetaModelParams}.
      */
     metadataOutFiles: string[];
 }

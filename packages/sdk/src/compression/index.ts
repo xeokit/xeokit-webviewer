@@ -1,19 +1,12 @@
 /**
  * <img style="padding:20px" src="/docs/assets/geometry_icon.png"/>
  *
- * # xeokit SceneGeometry Compression / Decompression Utilities
+ * # xeokit Geometry Compression / Decompression Utilities
  *
- * ---
- *
- * ### *Tools for geometry compression and decompression*
- *
- * ---
- *
- * The xeokit SceneGeometry Compression/Decompression Utilities library provides functions used internally within
- * {@link scene!SceneModel.createGeometry | SceneModel.createGeometry} implementations to compress geometry. These functions are also
- * provided for users who want to pre-compress their geometry "offline" and then
- * use {@link scene!SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}
- * to create compressed geometry directly.
+ * This module provides geometry compression functions that are used internally within
+ * {@link scene!SceneModel.createGeometry | SceneModel.createGeometry}. We provide these compression functions
+ * as a public part of the API, so that users have the option to pre-compress their geometry parameters and then
+ * pass the parameters to {@link scene!SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed} to create the geometry.
  *
  * The compression techniques used include simplifying geometry by combining duplicate positions and adjusting indices, generating edge
  * indices for triangle meshes, ignoring normals (as shaders auto-generate them), converting positions to relative-to-center (RTC)

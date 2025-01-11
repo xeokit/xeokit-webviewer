@@ -4,10 +4,10 @@
  * # xeokit Basic Semantic Data Types
  *
  * * Defines numeric constants for a basic set of entity and relationship types.
- * * Use with {@link "@xeokit/sdk/data" | @xeokit/sdk/data}  to assign basic types to {@link data!DataObject | DataObjects}
+ * * Use with {@link data | data}  to assign basic types to {@link data!DataObject | DataObjects}
  * and {@link data!Relationship | Relationships} and treat them as elements of a basic entity-relationship graph.
- * * Use with {@link "@xeokit/treeview" | @xeokit/treeview} , to configure the appearance and behaviour of
- * {@link @xeokit/treeview!TreeView | TreeViews} for navigating basic element hierachies.
+ * * Use with {@link treeview | treeview} , to configure the appearance and behaviour of
+ * {@link treeview!TreeView | TreeViews} for navigating basic element hierachies.
  *
  * ## Installation
  *

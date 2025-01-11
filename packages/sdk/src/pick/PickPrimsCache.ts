@@ -8,8 +8,8 @@ import type {FloatArrayParam} from "../math";
  * again to the methods, we can avoid the method needing to re-generate them.
  *
  * > Internally, the resources consist of lazy-generated {@link PrimsKdTree3 | PrimsKdTree3s}, cached for
- * {@link @xeokit/scene!SceneGeometryBucket | GeometryBuckets} of
- * candidate {@link @xeokit/scene!SceneObject | SceneObjects} while picking.
+ * {@link scene!SceneGeometryBucket | GeometryBuckets} of
+ * candidate {@link scene!SceneObject | SceneObjects} while picking.
  */
 export class PickPrimsCache {
 

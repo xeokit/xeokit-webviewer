@@ -13,8 +13,8 @@
  * a standard file format used in the field of Building Information Modeling (BIM) to exchange information between
  * different software applications used in the construction and building industries.
  *
- * To import a medium-sized IFC model into xeokit, use the {@link @xeokit/webifc!loadWebIFC | loadWebIFC} function, which will load the file into
- * a {@link @xeokit/scene!SceneModel | SceneModel} and a {@link @xeokit/data!DataModel | DataModel}. Internally, loadWebIFC
+ * To import a medium-sized IFC model into xeokit, use the {@link webifc!loadWebIFC | loadWebIFC} function, which will load the file into
+ * a {@link scene!SceneModel | SceneModel} and a {@link data!DataModel | DataModel}. Internally, loadWebIFC
  * uses the [web-ifc](https://github.com/IFCjs/web-ifc) API to parse geometry and data from the IFC file.
  *
  * <br>
@@ -31,23 +31,23 @@
  *
  * ## Usage
  *
- * The example below shows how to use {@link @xeokit/webifc!loadWebIFC | loadWebIFC} in context.
+ * The example below shows how to use {@link webifc!loadWebIFC | loadWebIFC} in context.
  *
- * In this example, we will create a {@link @xeokit/viewer!Viewer | Viewer} with
- * a {@link @xeokit/webglrenderer!WebGLRenderer | WebGLRenderer}  and a {@link @xeokit/scene!Scene | Scene}, which holds model geometry
- * and materials. We'll also create a {@link @xeokit/data!Data | Data}, which will hold semantic data for our model.
+ * In this example, we will create a {@link viewer!Viewer | Viewer} with
+ * a {@link webglrenderer!WebGLRenderer | WebGLRenderer}  and a {@link scene!Scene | Scene}, which holds model geometry
+ * and materials. We'll also create a {@link data!Data | Data}, which will hold semantic data for our model.
  *
- * On our Viewer, we will create a single {@link @xeokit/viewer!View | View} to render it to a canvas element on the page. We will
- * also attach a {@link @xeokit/cameracontrol!CameraControl | CameraControl} to our View, allowing us to control its camera with mouse and touch input.
+ * On our Viewer, we will create a single {@link viewer!View | View} to render it to a canvas element on the page. We will
+ * also attach a {@link cameracontrol!CameraControl | CameraControl} to our View, allowing us to control its camera with mouse and touch input.
  *
- * Within the Scene, we will create a {@link @xeokit/scene!SceneModel | SceneModel} to hold model geometry and materials. Within Data, we will
- * create a {@link @xeokit/data!DataModel | DataModel} to hold semantic IFC data, which includes IFC elements and property sets.
+ * Within the Scene, we will create a {@link scene!SceneModel | SceneModel} to hold model geometry and materials. Within Data, we will
+ * create a {@link data!DataModel | DataModel} to hold semantic IFC data, which includes IFC elements and property sets.
  *
  * We will then use
- * {@link @xeokit/webifc!loadWebIFC | loadWebIFC} to load an IFC file into our SceneModel and DataModel. Before we do that, however,
+ * {@link webifc!loadWebIFC | loadWebIFC} to load an IFC file into our SceneModel and DataModel. Before we do that, however,
  * we need to successfully instantiate and initialize the WebIFC API, which we pass into loadWebIFC.
  *
- * The {@link @xeokit/core!SDKError | SDKError} class will be used to handle any errors that may occur during this process.
+ * The {@link core!SDKError | SDKError} class will be used to handle any errors that may occur during this process.
  *
  * * [Run this example]()
  *

@@ -127,8 +127,8 @@
 //      *
 //      * Supported pick modes are:
 //      *
-//      * * MarqueePicker.PICK_MODE_INSIDE - picks {@link @xeokit/viewer!ViewObject | ViewObjects} that are completely inside the marquee box.
-//      * * MarqueePicker.PICK_MODE_INTERSECTS - picks {@link @xeokit/viewer!ViewObject | ViewObjects} that intersect the marquee box.
+//      * * MarqueePicker.PICK_MODE_INSIDE - picks {@link viewer!ViewObject | ViewObjects} that are completely inside the marquee box.
+//      * * MarqueePicker.PICK_MODE_INTERSECTS - picks {@link viewer!ViewObject | ViewObjects} that intersect the marquee box.
 //      *
 //      * @param {number} pickMode The pick mode.
 //      */
@@ -150,8 +150,8 @@
 //      *
 //      * Supported pick modes are:
 //      *
-//      * * MarqueePicker.PICK_MODE_INSIDE - picks {@link @xeokit/viewer!ViewObject | ViewObjects} that are completely inside the marquee box.
-//      * * MarqueePicker.PICK_MODE_INTERSECTS - picks {@link @xeokit/viewer!ViewObject | ViewObjects} that intersect the marquee box.
+//      * * MarqueePicker.PICK_MODE_INSIDE - picks {@link viewer!ViewObject | ViewObjects} that are completely inside the marquee box.
+//      * * MarqueePicker.PICK_MODE_INTERSECTS - picks {@link viewer!ViewObject | ViewObjects} that intersect the marquee box.
 //      *
 //      * @returns {number} The pick mode.
 //      */
@@ -167,11 +167,11 @@
 //     }
 //
 //     /**
-//      * Attempts to pick {@link @xeokit/viewer!ViewObject | ViewObjects}, using the current MarquePicker settings.
+//      * Attempts to pick {@link viewer!ViewObject | ViewObjects}, using the current MarquePicker settings.
 //      *
-//      * Fires a "picked" event with the IDs of the {@link @xeokit/viewer!ViewObject | ViewObjects} that were picked, if any.
+//      * Fires a "picked" event with the IDs of the {@link viewer!ViewObject | ViewObjects} that were picked, if any.
 //      *
-//      * @returns {string[]} IDs of the {@link @xeokit/viewer!ViewObject | ViewObjects} that were picked, if any
+//      * @returns {string[]} IDs of the {@link viewer!ViewObject | ViewObjects} that were picked, if any
 //      */
 //     pick(): string[] {
 //         this.#updateMarquee();

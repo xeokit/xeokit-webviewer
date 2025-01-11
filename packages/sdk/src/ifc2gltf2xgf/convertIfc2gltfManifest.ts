@@ -2,8 +2,8 @@ import {Ifc2gltfManifestParams} from "./Ifc2gltfManifestParams";
 import {ModelChunksManifestParams} from "../core";
 
 /**
- * Converts a file manifest from {@link @xeokit/ifc2gltf2xgf!Ifc2gltfManifestParams | Ifc2gltfManifestParams} to
- * {@link @xeokit/core!ModelChunksManifestParams | ModelChunksManifestParams}.
+ * Converts a file manifest from {@link ifc2gltf2xgf!Ifc2gltfManifestParams | Ifc2gltfManifestParams} to
+ * {@link core!ModelChunksManifestParams | ModelChunksManifestParams}.
  */
 function convertIfc2gltfManifest(ifc2gltfManifestParams: Ifc2gltfManifestParams): ModelChunksManifestParams {
     const chunksManifest: ModelChunksManifestParams = {

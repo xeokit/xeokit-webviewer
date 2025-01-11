@@ -5,7 +5,7 @@
  *
  * ---
  *
- * ### *Tools for spatial searches and collision tests with 2D k-d trees and boundaries*
+ * ***Tools for spatial searches and collision tests with 2D k-d trees and boundaries***
  *
  * ---
  *

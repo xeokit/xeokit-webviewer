@@ -16,9 +16,9 @@
  * a compact payload that loads quickly over the Web into a xeokit viewer running in the browser.
  *
  * To import a [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) model into xeokit, use the {@link loadXKT} function, which will load the file into
- * a {@link @xeokit/scene!SceneModel | SceneModel}.
+ * a {@link scene!SceneModel | SceneModel}.
  *
- * Use the {@link @xeokit/metamodel!loadMetaModel | loadMetaModel} function to load legacy JSON metadata into a {@link @xeokit/data!DataModel | DataModel}.
+ * Use the {@link metamodel!loadMetaModel | loadMetaModel} function to load legacy JSON metadata into a {@link data!DataModel | DataModel}.
  *
  * <br>
  *
@@ -34,17 +34,17 @@
  *
  * ## Usage
  *
- * In the example below, we will create a {@link @xeokit/viewer!Viewer | Viewer} with
- * a {@link @xeokit/webglrenderer!WebGLRenderer | WebGLRenderer}  and a {@link @xeokit/scene!Scene | Scene}, which holds model geometry and materials.
+ * In the example below, we will create a {@link viewer!Viewer | Viewer} with
+ * a {@link webglrenderer!WebGLRenderer | WebGLRenderer}  and a {@link scene!Scene | Scene}, which holds model geometry and materials.
  *
- * On our Viewer, we will create a single {@link @xeokit/viewer!View | View} to render it to a canvas element on the page. We will
- * also attach a {@link @xeokit/cameracontrol!CameraControl | CameraControl} to our View, allowing us to control its camera with mouse and touch input.
+ * On our Viewer, we will create a single {@link viewer!View | View} to render it to a canvas element on the page. We will
+ * also attach a {@link cameracontrol!CameraControl | CameraControl} to our View, allowing us to control its camera with mouse and touch input.
  *
- * Within the Scene, we will create a {@link @xeokit/scene!SceneModel | SceneModel} to hold a model. We will then use
- * {@link @xeokit/xkt!loadXKT | loadXKT} to load
+ * Within the Scene, we will create a {@link scene!SceneModel | SceneModel} to hold a model. We will then use
+ * {@link xkt!loadXKT | loadXKT} to load
  * any XKT file into our SceneModel.
  *
- * The {@link @xeokit/core!SDKError | SDKError} class will be used to handle any errors that may occur during this process.
+ * The {@link core!SDKError | SDKError} class will be used to handle any errors that may occur during this process.
  *
  * * [Run this example]()
  *

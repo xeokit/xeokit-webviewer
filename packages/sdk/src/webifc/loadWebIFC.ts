@@ -26,11 +26,11 @@ interface ParsingContext {
 }
 
 /**
- * Uses WebIFc to load an IFC file into a {@link @xeokit/scene!SceneModel | SceneModel} and/or {@link @xeokit/data!DataModel | DataModel}.
+ * Uses WebIFc to load an IFC file into a {@link scene!SceneModel | SceneModel} and/or {@link data!DataModel | DataModel}.
  *
  * * Experimental  - expect some glitches.
- * * Expects {@link @xeokit/scene!SceneModel.built | SceneModel.built} and {@link @xeokit/scene!SceneModel.destroyed | SceneModel.destroyed} to be ````false````
- * * Does not call {@link @xeokit/scene!SceneModel.build | SceneModel.build} - we call that ourselves, when we have finished building the SceneModel
+ * * Expects {@link scene!SceneModel.built | SceneModel.built} and {@link scene!SceneModel.destroyed | SceneModel.destroyed} to be ````false````
+ * * Does not call {@link scene!SceneModel.build | SceneModel.build} - we call that ourselves, when we have finished building the SceneModel
  *
  * See {@link "@xeokit/webifc" | @xeokit/webifc} for usage.
  *
@@ -40,7 +40,7 @@ interface ParsingContext {
  * @param params.sceneModel - SceneModel to load into.
  * @param params.dataModel - DataModel to load into.
  * @returns {Promise} Resolves when IFC has been loaded into the SceneModel and/or DataModel.
- * @throws *{@link @xeokit/core!SDKError | SDKError}*
+ * @throws *{@link core!SDKError | SDKError}*
  * * If the SceneModel has already been destroyed.
  * * If the SceneModel has already been built.
  * * If the DataModel has already been destroyed.

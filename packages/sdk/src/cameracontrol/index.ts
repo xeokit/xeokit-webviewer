@@ -5,7 +5,7 @@
  *
  * ---
  *
- * ### *Import 3D urban models from CityJSON format*
+ * ***Controls ***
  *
  * ---
  *

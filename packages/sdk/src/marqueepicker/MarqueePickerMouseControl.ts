@@ -9,7 +9,7 @@
 //  *
 //  * When the MarqueePickerMouseControl is active:
 //  *
-//  * * Long-click, drag and release on the canvas to define a marque box that picks {@link @xeokit/viewer!ViewObject | ViewObjects}.
+//  * * Long-click, drag and release on the canvas to define a marque box that picks {@link viewer!ViewObject | ViewObjects}.
 //  * * Drag left-to-right to pick Entities that intersect the box.
 //  * * Drag right-to-left to pick Entities that are fully inside the box.
 //  * * On release, the MarqueePicker will fire a "picked" event with IDs of the picked Entities , if any.

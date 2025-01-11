@@ -38,11 +38,11 @@ interface ParsingContext {
 }
 
 /**
- * Loads glTF file data into a {@link @xeokit/scene!SceneModel | SceneModel} and/or
- * a {@link @xeokit/data!DataModel | DataModel}.
+ * Loads glTF file data into a {@link scene!SceneModel | SceneModel} and/or
+ * a {@link data!DataModel | DataModel}.
  *
- * * Expects {@link @xeokit/scene!SceneModel.built | SceneModel.built} and {@link @xeokit/scene!SceneModel.destroyed | SceneModel.destroyed} to be ````false````
- * * Does not call {@link @xeokit/scene!SceneModel.build | SceneModel.build} - we call that ourselves, when we have finished building the SceneModel
+ * * Expects {@link scene!SceneModel.built | SceneModel.built} and {@link scene!SceneModel.destroyed | SceneModel.destroyed} to be ````false````
+ * * Does not call {@link scene!SceneModel.build | SceneModel.build} - we call that ourselves, when we have finished building the SceneModel
  *
  * See {@link "@xeokit/gltf" | @xeokit/gltf} for usage.
  *
@@ -52,7 +52,7 @@ interface ParsingContext {
  * @param params.dataModel - DataModel to load basic semantic data into. For glTF, this will create a basic aggregation hierarchy (see {@link "@xeokit/basictypes/basicTypes"}).
  * @returns {Promise} Resolves when glTF has been loaded.
  * @returns {Promise} Resolves when glTF has been loaded into the SceneModel and/or DataModel.
- * @throws *{@link @xeokit/core!SDKError | SDKError}*
+ * @throws *{@link core!SDKError | SDKError}*
  * * If the SceneModel has already been destroyed.
  * * If the SceneModel has already been built.
  * * If the DataModel has already been destroyed.

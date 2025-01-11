@@ -5,7 +5,7 @@
  *
  * ---
  *
- * ### *Interoperate with other BIM software through the exchange of BCF viewpoints*
+ * ***Interoperate with other BIM software through the exchange of BCF viewpoints***
  *
  * ---
  *
@@ -15,11 +15,11 @@
  * problem description, location, and proposed solutions. It is used to facilitate communication and collaboration among
  * project stakeholders in BIM workflows.
  *
- * To import a JSON-encoded BCF viewpoint into a {@link @xeokit/viewer!View | View} belonging to a {@link @xeokit/viewer!Viewer | Viewer}, use the
- * {@link @xeokit/bcf!loadBCFViewpoint | loadBCFViewpoint} function. Similarly, to export the state of a View as a JSON-encoded BCF viewpoint, use
- * the {@link @xeokit/bcf!saveBCFViewpoint | saveBCFViewpoint} function.
+ * To import a JSON-encoded BCF viewpoint into a {@link viewer!View | View} belonging to a {@link viewer!Viewer | Viewer}, use the
+ * {@link bcf!loadBCFViewpoint | loadBCFViewpoint} function. Similarly, to export the state of a View as a JSON-encoded BCF viewpoint, use
+ * the {@link bcf!saveBCFViewpoint | saveBCFViewpoint} function.
  *
- * Refer to {@link @xeokit/bcf!BCFViewpoint | BCFViewpoint} for information on the BCF viewpoint format.
+ * Refer to {@link bcf!BCFViewpoint | BCFViewpoint} for information on the BCF viewpoint format.
  *
  * <br>
  *
@@ -42,10 +42,10 @@
  *
  * We'll start with these steps:
  *
- * * create a {@link @xeokit/scene!Scene | Scene} and a {@link @xeokit/data!Data | Data},
- * * initialize a Viewer with the Scene and a {@link @xeokit/webglrenderer!WebGLRenderer | WebGLRenderer},
- * * create a new {@link @xeokit/viewer!View | View}, {@link @xeokit/scene!SceneModel | SceneModel} and {@link @xeokit/data!DataModel | DataModel},
- * * load a [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) file using the {@link @xeokit/xkt!loadXKT | loadXKT} function, and
+ * * create a {@link scene!Scene | Scene} and a {@link data!Data | Data},
+ * * initialize a Viewer with the Scene and a {@link webglrenderer!WebGLRenderer | WebGLRenderer},
+ * * create a new {@link viewer!View | View}, {@link scene!SceneModel | SceneModel} and {@link data!DataModel | DataModel},
+ * * load a [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) file using the {@link xkt!loadXKT | loadXKT} function, and
  * * build the Scene and Data models, rendering the 3D model in the web browser.
  *
  * ````javascript
@@ -89,14 +89,14 @@
  * });
  * ````
  *
- * When our [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) has loaded, that call to {@link @xeokit/scene!SceneModel.build | SceneModel.build} will finalize our SceneModel
+ * When our [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) has loaded, that call to {@link scene!SceneModel.build | SceneModel.build} will finalize our SceneModel
  * and cause it to immediately appear in the View's canvas.
  *
- * That call will also trigger {@link @xeokit/scene!SceneModel.onBuilt | SceneModel.onBuilt} and
- * {@link @xeokit/data!DataModel.onBuilt | DataModel.onBuilt} events.
+ * That call will also trigger {@link scene!SceneModel.onBuilt | SceneModel.onBuilt} and
+ * {@link data!DataModel.onBuilt | DataModel.onBuilt} events.
  *
- * On the SceneModel.onBuilt event, we'll customize the View by arranging the {@link @xeokit/viewer!Camera | Camera} and applying
- * an X-ray effect tp a couple of objects, then we'll use {@link @xeokit/bcf!saveBCFViewpoint | saveBCFViewpoint} to save the state of the View to
+ * On the SceneModel.onBuilt event, we'll customize the View by arranging the {@link viewer!Camera | Camera} and applying
+ * an X-ray effect tp a couple of objects, then we'll use {@link bcf!saveBCFViewpoint | saveBCFViewpoint} to save the state of the View to
  * a BCF viewpoint.
  *
  * Once the SceneModel and DataModel have been built, we can no longer add anything to them.
@@ -120,8 +120,8 @@
  * });
  * ````
  *
- * Now that we've saved the {@link @xeokit/bcf!BCFViewpoint | BCFViewpoint}, we could now use {@link @xeokit/bcf!loadBCFViewpoint | loadBCFViewpoint} to load
- * the {@link @xeokit/bcf!BCFViewpoint | BCFViewpoint} back into the {@link @xeokit/viewer!View | View}:
+ * Now that we've saved the {@link bcf!BCFViewpoint | BCFViewpoint}, we could now use {@link bcf!loadBCFViewpoint | loadBCFViewpoint} to load
+ * the {@link bcf!BCFViewpoint | BCFViewpoint} back into the {@link viewer!View | View}:
  *
  * ````javascript
  * loadBCFViewpoint({
@@ -134,7 +134,7 @@
  *
  * As before, let's create a Viewer with a View and a SceneModel.
  *
- * This time, we'll add two {@link @xeokit/viewer!ViewLayer | ViewLayers} to our View, and we'll associate our SceneModel with one of those
+ * This time, we'll add two {@link viewer!ViewLayer | ViewLayers} to our View, and we'll associate our SceneModel with one of those
  * ViewLayers. ViewLayers allow us to partition our ViewObjects into bins, so that we can conveniently focus certain operations (eg. import/export
  * BCF) only on the relevant ViewObjects.
  *
@@ -185,8 +185,8 @@
  * myOtherSceneModel.build();
  * ````
  *
- * Now we can use {@link @xeokit/bcf!saveBCFViewpoint | saveBCFViewpoint} to save the states of only the {@link @xeokit/viewer!ViewObject | ViewObjects} in the
- * {@link @xeokit/viewer!ViewLayer | ViewLayer} that contains our SceneModel to a {@link @xeokit/bcf!BCFViewpoint | BCFViewpoint}, while ignoring the
+ * Now we can use {@link bcf!saveBCFViewpoint | saveBCFViewpoint} to save the states of only the {@link viewer!ViewObject | ViewObjects} in the
+ * {@link viewer!ViewLayer | ViewLayer} that contains our SceneModel to a {@link bcf!BCFViewpoint | BCFViewpoint}, while ignoring the
  * other ViewLayer:
  *
  * ````javascript
@@ -197,7 +197,7 @@
  * });
  * ````
  *
- * Use {@link @xeokit/bcf!loadBCFViewpoint | loadBCFViewpoint} to load the {@link @xeokit/bcf!BCFViewpoint | BCFViewpoint} back into the {@link @xeokit/viewer!ViewLayer | ViewLayer}:
+ * Use {@link bcf!loadBCFViewpoint | loadBCFViewpoint} to load the {@link bcf!BCFViewpoint | BCFViewpoint} back into the {@link viewer!ViewLayer | ViewLayer}:
  *
  * ````javascript
  * loadBCFViewpoint({

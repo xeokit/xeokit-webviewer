@@ -5,7 +5,7 @@
  *
  * ---
  *
- * ### *Spatial searches and collision testing with 3D k-d trees, rays and boundaries*
+ * ***Spatial searches and collision testing with 3D k-d trees, rays and boundaries***
  *
  * ---
  *
@@ -26,7 +26,7 @@
  *
  * With these components, applications can implement (at least):
  *
- * * Frustum3 culling for {@link @xeokit/scene!SceneObject | SceneObjects}
+ * * Frustum3 culling for {@link scene!SceneObject | SceneObjects}
  * * Ray-picking SceneObjects
  * * Marquee selection of SceneObjects
  *
@@ -38,7 +38,7 @@
  *
  * ## Usage
  *
- * Querying for {@link @xeokit/scene!SceneObject | SceneObjects} that intersect a 3D World-space boundary:
+ * Querying for {@link scene!SceneObject | SceneObjects} that intersect a 3D World-space boundary:
  *
  * ````javascript
  * import {Scene} from "@xeokit/scene";

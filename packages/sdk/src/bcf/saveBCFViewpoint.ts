@@ -6,7 +6,7 @@ import {OrthoProjectionType} from "../constants";
 import {ViewObject} from "../viewer";
 
 /**
- * Saves a {@link @xeokit/viewer!View | View} to a {@link @xeokit/bcf!BCFViewpoint | BCFViewpoint}.
+ * Saves a {@link viewer!View | View} to a {@link bcf!BCFViewpoint | BCFViewpoint}.
  *
  * See {@link "@xeokit/bcf" | @xeokit/bcf} for usage.
  *

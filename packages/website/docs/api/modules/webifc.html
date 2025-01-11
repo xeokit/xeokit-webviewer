@@ -4,8 +4,8 @@
 <p>The xeokit SDK can import 3D building models from  Industry Foundation Classes (<a href="https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ifc">IFC</a>) files,
 a standard file format used in the field of Building Information Modeling (BIM) to exchange information between
 different software applications used in the construction and building industries.</p>
-<p>To import a medium-sized IFC model into xeokit, use the @xeokit/webifc!loadWebIFC | loadWebIFC function, which will load the file into
-a @xeokit/scene!SceneModel | SceneModel and a @xeokit/data!DataModel | DataModel. Internally, loadWebIFC
+<p>To import a medium-sized IFC model into xeokit, use the <a href="../functions/webifc.loadWebIFC.html" class="tsd-kind-function">loadWebIFC</a> function, which will load the file into
+a <a href="../classes/scene.SceneModel.html" class="tsd-kind-class">SceneModel</a> and a <a href="../classes/data.DataModel.html" class="tsd-kind-class">DataModel</a>. Internally, loadWebIFC
 uses the <a href="https://github.com/IFCjs/web-ifc">web-ifc</a> API to parse geometry and data from the IFC file.</p>
 <br>
 <p><a href="https://mermaid.live/edit#pako:eNqNUsFqwzAM_ZWg0zY62K6hFLaVQaFlpTns4otiK6uHYwfbYYTSf58dJ03bQVkuznt6lp5kHYAbQZADV-jcUuKXxZpppoW0xL00OlvvIu7jWcFJ0ybcUNmB6Sx8UqTTlN9B7xLgltDTR0_d3SeubKUSIxDkvDVdhMeYfcy_RI99-lvZG2sasr4r6Fa9xO1IYezC7WVzGdlOWf5lMRlcGxSfVK7e37YYJuXGMcznTcTkyS4WiUJrsXttq4psItxpeEOFsdkEf6iUFb-opk7VpjpVq_t3iWXOpEn2sl31yiF07ZbBE4PHxwWDZwbFmZ2bwuXk86_uYdKdLDA9GR-D1zdhBjXZGqUIy9c3x8DvqSYGefgVVGGrPIPQSZBi603RaQ65ty3NoG3C8GhYV8grVC6wJKQ3djMsdDyOv8sQ9og"><img src="https://mermaid.ink/img/pako:eNqNUsFqwzAM_ZWg0zY62K6hFLaVQaFlpTns4otiK6uHYwfbYYTSf58dJ03bQVkuznt6lp5kHYAbQZADV-jcUuKXxZpppoW0xL00OlvvIu7jWcFJ0ybcUNmB6Sx8UqTTlN9B7xLgltDTR0_d3SeubKUSIxDkvDVdhMeYfcy_RI99-lvZG2sasr4r6Fa9xO1IYezC7WVzGdlOWf5lMRlcGxSfVK7e37YYJuXGMcznTcTkyS4WiUJrsXttq4psItxpeEOFsdkEf6iUFb-opk7VpjpVq_t3iWXOpEn2sl31yiF07ZbBE4PHxwWDZwbFmZ2bwuXk86_uYdKdLDA9GR-D1zdhBjXZGqUIy9c3x8DvqSYGefgVVGGrPIPQSZBi603RaQ65ty3NoG3C8GhYV8grVC6wJKQ3djMsdDyOv8sQ9og?type=png" alt=""></a></p>
@@ -13,18 +13,18 @@ uses the <a href="https://github.com/IFCjs/web-ifc">web-ifc</a> API to parse geo
 <a id="installation" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Installation<a href="#installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">@xeokit/sdk</span>
 </code><button type="button">Copy</button></pre>
 
-<a id="usage" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The example below shows how to use @xeokit/webifc!loadWebIFC | loadWebIFC in context.</p>
-<p>In this example, we will create a @xeokit/viewer!Viewer | Viewer with
-a @xeokit/webglrenderer!WebGLRenderer | WebGLRenderer  and a @xeokit/scene!Scene | Scene, which holds model geometry
-and materials. We'll also create a @xeokit/data!Data | Data, which will hold semantic data for our model.</p>
-<p>On our Viewer, we will create a single @xeokit/viewer!View | View to render it to a canvas element on the page. We will
-also attach a @xeokit/cameracontrol!CameraControl | CameraControl to our View, allowing us to control its camera with mouse and touch input.</p>
-<p>Within the Scene, we will create a @xeokit/scene!SceneModel | SceneModel to hold model geometry and materials. Within Data, we will
-create a @xeokit/data!DataModel | DataModel to hold semantic IFC data, which includes IFC elements and property sets.</p>
+<a id="usage" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The example below shows how to use <a href="../functions/webifc.loadWebIFC.html" class="tsd-kind-function">loadWebIFC</a> in context.</p>
+<p>In this example, we will create a <a href="../classes/viewer.Viewer.html" class="tsd-kind-class">Viewer</a> with
+a <a href="../classes/webglrenderer.WebGLRenderer.html" class="tsd-kind-class">WebGLRenderer</a>  and a <a href="../classes/scene.Scene.html" class="tsd-kind-class">Scene</a>, which holds model geometry
+and materials. We'll also create a <a href="../classes/data.Data.html" class="tsd-kind-class">Data</a>, which will hold semantic data for our model.</p>
+<p>On our Viewer, we will create a single <a href="../classes/viewer.View.html" class="tsd-kind-class">View</a> to render it to a canvas element on the page. We will
+also attach a <a href="../classes/cameracontrol.CameraControl.html" class="tsd-kind-class">CameraControl</a> to our View, allowing us to control its camera with mouse and touch input.</p>
+<p>Within the Scene, we will create a <a href="../classes/scene.SceneModel.html" class="tsd-kind-class">SceneModel</a> to hold model geometry and materials. Within Data, we will
+create a <a href="../classes/data.DataModel.html" class="tsd-kind-class">DataModel</a> to hold semantic IFC data, which includes IFC elements and property sets.</p>
 <p>We will then use
-@xeokit/webifc!loadWebIFC | loadWebIFC to load an IFC file into our SceneModel and DataModel. Before we do that, however,
+<a href="../functions/webifc.loadWebIFC.html" class="tsd-kind-function">loadWebIFC</a> to load an IFC file into our SceneModel and DataModel. Before we do that, however,
 we need to successfully instantiate and initialize the WebIFC API, which we pass into loadWebIFC.</p>
-<p>The @xeokit/core!SDKError | SDKError class will be used to handle any errors that may occur during this process.</p>
+<p>The <a href="../classes/core.SDKError.html" class="tsd-kind-class">SDKError</a> class will be used to handle any errors that may occur during this process.</p>
 <ul>
 <li><a href="">Run this example</a></li>
 </ul>

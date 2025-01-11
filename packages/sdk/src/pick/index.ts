@@ -9,11 +9,11 @@
  *
  * The following class diagrams depict xeokit's picking system architecture.
  *
- * The {@link @xeokit/collision!SceneObjectsKdTree3 | SceneObjectsKdTree3} class, a k-d tree that arranges
- * {@link @xeokit/scene!SceneObject | SceneObjects} for
+ * The {@link collision!SceneObjectsKdTree3 | SceneObjectsKdTree3} class, a k-d tree that arranges
+ * {@link scene!SceneObject | SceneObjects} for
  * efficient collision testing with boundaries, rays, and frustums, is positioned in the center of the
  * first diagram. To construct a SceneObjectsKdTree3, use
- * the {@link @xeokit/collision!createSceneObjectsKdTree3 | createSceneObjectsKdTree3} function.
+ * the {@link collision!createSceneObjectsKdTree3 | createSceneObjectsKdTree3} function.
  *
  * To find SceneObjects in the SceneObjectsKdTree3 that intersect a 3D world-space ray,
  * use {@link Picker.rayPick | Picker.rayPick()}, which will generate a {@link RayPickResult}. To find SceneObjects

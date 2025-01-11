@@ -6,22 +6,22 @@ native runtime asset delivery format for model representations and semantics.</p
 <p>The <a href="https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt">XKT</a> format compresses large double-precision model geometry to
 a compact payload that loads quickly over the Web into a xeokit viewer running in the browser.</p>
 <p>To import a <a href="https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt">XKT</a> model into xeokit, use the <a href="../functions/xkt.loadXKT.html" class="tsd-kind-function">loadXKT</a> function, which will load the file into
-a @xeokit/scene!SceneModel | SceneModel.</p>
-<p>Use the @xeokit/metamodel!loadMetaModel | loadMetaModel function to load legacy JSON metadata into a @xeokit/data!DataModel | DataModel.</p>
+a <a href="../classes/scene.SceneModel.html" class="tsd-kind-class">SceneModel</a>.</p>
+<p>Use the <a href="../functions/metamodel.loadMetaModel.html" class="tsd-kind-function">loadMetaModel</a> function to load legacy JSON metadata into a <a href="../classes/data.DataModel.html" class="tsd-kind-class">DataModel</a>.</p>
 <br>
 <p><a href="https://mermaid.live/edit#pako:eNqNkt9vgjAQx_8Vck9bggYYoBLjw-LbNDOyJcvSl0qPyYItaUsyZvzf14LoeJhZX9r79bnrN3eETDCEBLKSKrUs6IekB8IJZ4XETBeCO6uttdu4k2bIcW0qSudIuGNOwbpb7D5NvuqMTCLV-Ny67u47364uStYbDJWWorHmydJ7_pJq2uJv0SspKpS6SfFWv863xZLaX6h9UQ0jmyvlXyN2A64EZW9PLxtqZFK9BvN5ZW3UKBeLzkWlpM1jnecoO4e6KDfglR3vSspr3spuQW3eoCMBj8BotCDgE0h_If_OukhK-LlZHxnUJM6rQuVcPmKUBRcOKA-0YGY_2gEJ6D0ekEBingxzWpeagBnUpNJai7ThGSRa1uhCXTGj8nmjIMlpqYwXWaGFXJ93zl4uVJRDcoQvSEZ-OB0_TKPQ98JJ7EVhFLjQQOKH8TiYemEUB_4sDsPg5MK3EAbrj71g4nlBPAvMiWa2wPDe26Ad5PQDhIPxEQ"><img src="https://mermaid.ink/img/pako:eNqNkt9vgjAQx_8Vck9bggYYoBLjw-LbNDOyJcvSl0qPyYItaUsyZvzf14LoeJhZX9r79bnrN3eETDCEBLKSKrUs6IekB8IJZ4XETBeCO6uttdu4k2bIcW0qSudIuGNOwbpb7D5NvuqMTCLV-Ny67u47364uStYbDJWWorHmydJ7_pJq2uJv0SspKpS6SfFWv863xZLaX6h9UQ0jmyvlXyN2A64EZW9PLxtqZFK9BvN5ZW3UKBeLzkWlpM1jnecoO4e6KDfglR3vSspr3spuQW3eoCMBj8BotCDgE0h_If_OukhK-LlZHxnUJM6rQuVcPmKUBRcOKA-0YGY_2gEJ6D0ekEBingxzWpeagBnUpNJai7ThGSRa1uhCXTGj8nmjIMlpqYwXWaGFXJ93zl4uVJRDcoQvSEZ-OB0_TKPQ98JJ7EVhFLjQQOKH8TiYemEUB_4sDsPg5MK3EAbrj71g4nlBPAvMiWa2wPDe26Ad5PQDhIPxEQ?type=png" alt=""></a></p>
 <br>
 <a id="installation" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Installation<a href="#installation" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">install</span><span class="hl-1"> </span><span class="hl-2">@xeokit/sdk</span>
 </code><button type="button">Copy</button></pre>
 
-<a id="usage" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>In the example below, we will create a @xeokit/viewer!Viewer | Viewer with
-a @xeokit/webglrenderer!WebGLRenderer | WebGLRenderer  and a @xeokit/scene!Scene | Scene, which holds model geometry and materials.</p>
-<p>On our Viewer, we will create a single @xeokit/viewer!View | View to render it to a canvas element on the page. We will
-also attach a @xeokit/cameracontrol!CameraControl | CameraControl to our View, allowing us to control its camera with mouse and touch input.</p>
-<p>Within the Scene, we will create a @xeokit/scene!SceneModel | SceneModel to hold a model. We will then use
-@xeokit/xkt!loadXKT | loadXKT to load
+<a id="usage" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Usage<a href="#usage" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="../assets/icons.svg#icon-anchor"></use></svg></a></h2><p>In the example below, we will create a <a href="../classes/viewer.Viewer.html" class="tsd-kind-class">Viewer</a> with
+a <a href="../classes/webglrenderer.WebGLRenderer.html" class="tsd-kind-class">WebGLRenderer</a>  and a <a href="../classes/scene.Scene.html" class="tsd-kind-class">Scene</a>, which holds model geometry and materials.</p>
+<p>On our Viewer, we will create a single <a href="../classes/viewer.View.html" class="tsd-kind-class">View</a> to render it to a canvas element on the page. We will
+also attach a <a href="../classes/cameracontrol.CameraControl.html" class="tsd-kind-class">CameraControl</a> to our View, allowing us to control its camera with mouse and touch input.</p>
+<p>Within the Scene, we will create a <a href="../classes/scene.SceneModel.html" class="tsd-kind-class">SceneModel</a> to hold a model. We will then use
+<a href="../functions/xkt.loadXKT.html" class="tsd-kind-function">loadXKT</a> to load
 any XKT file into our SceneModel.</p>
-<p>The @xeokit/core!SDKError | SDKError class will be used to handle any errors that may occur during this process.</p>
+<p>The <a href="../classes/core.SDKError.html" class="tsd-kind-class">SDKError</a> class will be used to handle any errors that may occur during this process.</p>
 <ul>
 <li><a href="">Run this example</a></li>
 </ul>

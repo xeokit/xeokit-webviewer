@@ -42,8 +42,8 @@
  * ### Converting IFC geometry
  *
  * The invocation below converts an IFC file to XGF. The XGF objects will have geometries and material colors
- * parsed from the IFC. The XGF file can then be loaded into a xeokit {@link @xeokit/scene!SceneModel | SceneModel}
- * using {@link @xeokit/xgf!loadXGF | loadXGF()}.
+ * parsed from the IFC. The XGF file can then be loaded into a xeokit {@link scene!SceneModel | SceneModel}
+ * using {@link xgf!loadXGF | loadXGF()}.
  *
  * ````bash
  * node webifc2xgf -i duplex.ifc -o duplex.xgf
@@ -53,8 +53,8 @@
  *
  * In the next example, we'll convert an IFC file to XGF, while also creating a JSON file that defines
  * a simple data model that expresses the IFC semantic data. The JSON file can
- * then be loaded into a xeokit {@link @xeokit/data!DataModel | DataModel}
- * using {@link @xeokit/data!Data.createModel | Data.createModel()}.
+ * then be loaded into a xeokit {@link data!DataModel | DataModel}
+ * using {@link data!Data.createModel | Data.createModel()}.
  *
  * ````bash
  * node webifc2xgf -i duplex.ifc -s duplex.xgf -d duplex.json

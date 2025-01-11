@@ -5,7 +5,7 @@
  *
  * ---
  *
- * ### *Tools for 2D and 3D boundary analysis, boundary transformation, and collision detection*
+ * ***Tools for 2D and 3D boundary analysis, boundary transformation, and collision detection***
  *
  * ---
  *

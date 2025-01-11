@@ -256,7 +256,6 @@ export function subVec4Scalar(v: FloatArrayParam, s: number, dest?: FloatArrayPa
 
 /**
  * Sets each element of a 4-element vector to a scalar value minus the value of that element.
- * @method subScalarVec4
  * @static
  * @param {Array(Number)} v The vector
  * @param s The scalar
@@ -419,8 +418,6 @@ export function sqLenVec4(v: FloatArrayParam) { // TODO
 
 /**
  * Returns the length of a four-element vector.
- * @method lenVec4
- * @static
  * @param {Array(Number)} v The vector
  * @return The length
  */
@@ -483,8 +480,6 @@ export const distVec2 = ((() => {
 }))();
 
 /**
- * @method rcpVec3
- * @static
  * @param v createVec3
  * @param dest createVec3 - optional destination
  * @return [] dest if specified, v otherwise
@@ -505,8 +500,6 @@ export function normalizeVec4(v: FloatArrayParam, dest: FloatArrayParam) {
 
 /**
  * Normalizes a three-element vector
- * @method normalizeVec4
- * @static
  */
 export function normalizeVec3(v: FloatArrayParam, dest?: FloatArrayParam) {
     const f = 1.0 / lenVec3(v);
@@ -1116,8 +1109,7 @@ export function mulMat4v4(m: FloatArrayParam, v: FloatArrayParam, dest?: FloatAr
 
 /**
  * Multiplies the two given 4x4 matrix by each other.
- * @method mulMat4
- * @static
+
  */
 export function mulMat4(a: FloatArrayParam, b: FloatArrayParam, dest?: FloatArrayParam): FloatArrayParam {
     if (!dest) {
@@ -1215,8 +1207,6 @@ export function mulMat3(a: FloatArrayParam, b: FloatArrayParam, dest: FloatArray
 
 /**
  * Transforms a three-element position by a 4x4 matrix.
- * @method transformPoint3
- * @static
  */
 export function transformPoint3(m: FloatArrayParam, p: FloatArrayParam, dest?: FloatArrayParam) {
     if (!dest) {
@@ -1233,8 +1223,6 @@ export function transformPoint3(m: FloatArrayParam, p: FloatArrayParam, dest?: F
 
 /**
  * Transforms a homogeneous coordinate by a 4x4 matrix.
- * @method transformPoint3
- * @static
  */
 export function transformPoint4(m: FloatArrayParam, v: FloatArrayParam, dest: FloatArrayParam) {
     dest[0] = m[0] * v[0] + m[4] * v[1] + m[8] * v[2] + m[12] * v[3];
@@ -1247,8 +1235,6 @@ export function transformPoint4(m: FloatArrayParam, v: FloatArrayParam, dest: Fl
 
 /**
  * Transforms an array of three-element positions by a 4x4 matrix.
- * @method transformPoints3
- * @static
  */
 export function transformPoints3(m: FloatArrayParam, points: number[][], points2: number[][]) {
     const result = points2 || [];
@@ -1403,8 +1389,6 @@ export function transformVec3(m: FloatArrayParam, v: FloatArrayParam, dest?: Flo
 
 /**
  * Transforms a four-element vector by a 4x4 matrix.
- * @method transformVec4
- * @static
  */
 export function transformVec4(m: FloatArrayParam, v: FloatArrayParam, dest?: FloatArrayParam) {
     const v0 = v[0];
@@ -1475,7 +1459,6 @@ export const scalingMat4c = ((() => {
 
 /**
  * Efficiently post-concatenates a scaling to the given matrix.
- * @method scaleMat4c
  * @param x
  * @param y
  * @param z
@@ -2330,8 +2313,6 @@ export function transformRay(matrix: FloatArrayParam, rayOrigin: FloatArrayParam
 
 /**
  Transforms a Canvas-space position into a World-space ray, in the context of a Camera.
- @method canvasPosToWorldRay
- @static
  @param {Number[]} viewMatrix View matrix
  @param {Number[]} projMatrix Projection matrix
  @param {String} projection Projection type (e.g. "ortho")

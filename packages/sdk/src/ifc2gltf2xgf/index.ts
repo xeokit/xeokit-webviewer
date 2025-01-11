@@ -41,9 +41,9 @@
  *   -h, --help             display help for command
  * ````
  *
- * Our input {@link @xeokit/ifc2gltf2xgf!Ifc2gltfManifestParams | Ifc2gltfManifestParams} file, `ifc2gltfManifest.json`, is shown below.
+ * Our input {@link ifc2gltf2xgf!Ifc2gltfManifestParams | Ifc2gltfManifestParams} file, `ifc2gltfManifest.json`, is shown below.
  *
- * Each file in `gltfOutFiles` is a glTF, and each file in `metadataOutFiles` is a {@link @xeokit/metamodel!MetaModelParams | ModelModelParams} JSON file.
+ * Each file in `gltfOutFiles` is a glTF, and each file in `metadataOutFiles` is a {@link metamodel!MetaModelParams | ModelModelParams} JSON file.
  *
  * ````json
  * {
@@ -82,8 +82,8 @@
  * }
  * ````
  *
- * We invoke `ifc2gltf2xgf` with paths to a source {@link @xeokit/ifc2gltf2xgf!Ifc2gltfManifestParams | Ifc2gltfManifestParams} file
- * to read and a target {@link @xeokit/core!ModelChunksManifestParams | ModelChunksManifestParams} file to write:
+ * We invoke `ifc2gltf2xgf` with paths to a source {@link ifc2gltf2xgf!Ifc2gltfManifestParams | Ifc2gltfManifestParams} file
+ * to read and a target {@link core!ModelChunksManifestParams | ModelChunksManifestParams} file to write:
  *
  * ````bash
  * node ifc2gltf2xgf -i ifc2gltfManifest.json -o xgfManifest.json
@@ -133,10 +133,10 @@
  *      });
  * ````
  *
- * Our `xgfManifest.json` output file is shown below. This file has the format of {@link @xeokit/core!ModelChunksManifestParams | ModelChunksManifestParams} and is shown below.
+ * Our `xgfManifest.json` output file is shown below. This file has the format of {@link core!ModelChunksManifestParams | ModelChunksManifestParams} and is shown below.
  *
- * Each file referenced in `sceneModelFiles` is an XGF geometry file (see {@link ""@xeokit/sdk/xgf" | @xeokit/xgf}). Each file referenced
- * in `dataModelFiles` is a JSON data model file with the format of {@link @xeokit/metamodel!MetaModelParams | ModelModelParams}.
+ * Each file referenced in `sceneModelFiles` is an XGF geometry file (see {@link sdk/xgf | xgf}). Each file referenced
+ * in `dataModelFiles` is a JSON data model file with the format of {@link metamodel!MetaModelParams | ModelModelParams}.
  *
  * ````json
  * {
