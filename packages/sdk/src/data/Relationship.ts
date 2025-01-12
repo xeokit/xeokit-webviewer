@@ -1,9 +1,9 @@
 import type {DataObject} from "./DataObject";
 
 /**
- * A relationship between two {@link data!DataObject | DataObjects}.
+ * A relationship between two {@link DataObject | DataObjects}.
  *
- * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+ * See {@link data | @xeokit/sdk/data}   for usage.
  */
 export class Relationship {
 
@@ -15,18 +15,18 @@ export class Relationship {
     readonly type: number;
 
     /**
-     * The relating {@link data!DataObject | DataObject} in this Relationship.
+     * The relating {@link DataObject | DataObject} in this Relationship.
      *
-     * This Relationship will be stored by {@link data!DataObject.type | DataObject.type}
-     * in the DataObject's {@link data!DataObject.related | DataObject.related} attribute.
+     * This Relationship will be stored by {@link DataObject.type | DataObject.type}
+     * in the DataObject's {@link DataObject.related | DataObject.related} attribute.
      */
     readonly relatingObject: DataObject;
 
     /**
-     * The related {@link data!DataObject | DataObject} in this Relationship.
+     * The related {@link DataObject | DataObject} in this Relationship.
      *
-     * This Relationship will be stored by {@link data!DataObject.type | DataObject.type} in
-     * the DataObject's {@link data!DataObject.relating | DataObject.relating} attribute.
+     * This Relationship will be stored by {@link DataObject.type | DataObject.type} in
+     * the DataObject's {@link DataObject.relating | DataObject.relating} attribute.
      */
     readonly relatedObject: DataObject;
 

@@ -2,9 +2,9 @@ import type {PropertySet} from "./PropertySet";
 import type {PropertyParams} from "./PropertyParams";
 
 /**
- * A property in a {@link data!PropertySet | PropertySet}.
+ * A property in a {@link PropertySet | PropertySet}.
  *
- * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+ * See {@link data | @xeokit/sdk/data}   for usage.
  */
 export class Property {
 

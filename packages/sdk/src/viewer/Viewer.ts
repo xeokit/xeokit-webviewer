@@ -14,7 +14,7 @@ import type {TickParams} from "./TickParams";
 /**
  * The xeokit SDK's Browser-based model viewer.
  *
- * See {@link "@xeokit/viewer" | @xeokit/viewer} for usage.
+ * See {@link viewer | "@xeokit/sdk/viewer" } for usage.
  */
 export class Viewer extends Component {
 
@@ -50,14 +50,14 @@ export class Viewer extends Component {
     readonly onTick: EventEmitter<Viewer, TickParams>;
 
     /**
-     * Emits an event each time a {@link viewer!View} is created.
+     * Emits an event each time a {@link View} is created.
      *
      * @event
      */
     readonly onViewCreated: EventEmitter<Viewer, View>;
 
     /**
-     * Emits an event each time a {@link viewer!View} is destroyed.
+     * Emits an event each time a {@link View} is destroyed.
      *
      * @event
      */
@@ -75,9 +75,9 @@ export class Viewer extends Component {
     /**
      * Map of all the Views in this Viewer.
      *
-     * Each {@link viewer!View} is mapped here against {@link viewer!View.id | View.id}.
+     * Each {@link View} is mapped here against {@link View.id | View.id}.
      *
-     * Each {@link viewer!View} is an independently configurable view of the Viewer's models, with its own
+     * Each {@link View} is an independently configurable view of the Viewer's models, with its own
      * canvas, camera position, section planes, lights, and object visual states.
      */
     readonly views: { [key: string]: View };
@@ -85,7 +85,7 @@ export class Viewer extends Component {
     /**
      * List of all the Views in this Viewer.
      *
-     * Each {@link viewer!View} is an independently configurable view of the Viewer's models, with its own canvas, camera position, section planes, lights, and object visual states.
+     * Each {@link View} is an independently configurable view of the Viewer's models, with its own canvas, camera position, section planes, lights, and object visual states.
      *
      * @internal
      */
@@ -242,7 +242,7 @@ export class Viewer extends Component {
     }
 
     /**
-     * Creates a new {@link viewer!View} within this Viewer.
+     * Creates a new {@link View} within this Viewer.
      *
      * * The maximum number of views you're allowed to create is provided in {@link Capabilities.maxViews}. This
      * will be determined by the {@link Renderer} implementation the Viewer is configured with.
@@ -269,7 +269,7 @@ export class Viewer extends Component {
      * ````
      *
      * @param params View configuration.
-     * @returns *{@link View}*
+     * @returns *{@link View | View}*
      * * On success.
      * @returns *{@link core!SDKError | SDKError}*
      * * If View already exists with the given ID.

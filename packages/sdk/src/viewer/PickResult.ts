@@ -60,7 +60,7 @@ class PickResult {
     }
 
     /**
-     * The picked {@link viewer!ViewObject}.
+     * The picked {@link ViewObject}.
      */
     get viewObject(): ViewObject | null | undefined {
         return this.#viewObject;

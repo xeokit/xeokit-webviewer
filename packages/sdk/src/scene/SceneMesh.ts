@@ -35,42 +35,42 @@ function getPositionsWorldAABB3(
 }
 
 /**
- * A mesh in a {@link scene!SceneModel | SceneModel}.
+ * A mesh in a {@link SceneModel | SceneModel}.
  *
- * * Stored in {@link scene!SceneModel.meshes | SceneModel.meshes}
- * * Created with {@link scene!SceneModel.createMesh | SceneModel.createMesh}
- * * Referenced by {@link scene!SceneObject.meshes | SceneObject.meshes}
+ * * Stored in {@link SceneModel.meshes | SceneModel.meshes}
+ * * Created with {@link SceneModel.createMesh | SceneModel.createMesh}
+ * * Referenced by {@link SceneObject.meshes | SceneObject.meshes}
  *
- * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
+ * See {@link scene | @xeokit/sdk/scene}   for usage.
  */
 export class SceneMesh {
 
     /**
      * Unique ID of this SceneMesh.
      *
-     * SceneMesh is stored by this ID in {@link scene!SceneModel.meshes}.
+     * SceneMesh is stored by this ID in {@link SceneModel.meshes}.
      */
     readonly id: string;
 
     /**
-     * {@link scene!SceneTile} this SceneMesh belongs to.
+     * {@link SceneTile} this SceneMesh belongs to.
      */
     readonly tile: SceneTile;
 
     /**
-     * {@link scene!SceneGeometry} used by this SceneMesh.
+     * {@link SceneGeometry} used by this SceneMesh.
      */
     readonly geometry: SceneGeometry;
 
     /**
-     * {@link scene!SceneTextureSet} used by this SceneMesh.
+     * {@link SceneTextureSet} used by this SceneMesh.
      */
     readonly textureSet?: SceneTextureSet;
 
     /**
-     *  Internal interface through which a {@link scene!SceneMesh} can load property updates into a renderers.
+     *  Internal interface through which a {@link SceneMesh} can load property updates into a renderers.
      *
-     *  This is defined when the owner {@link scene!SceneModel | SceneModel} has been added to
+     *  This is defined when the owner {@link SceneModel | SceneModel} has been added to
      *  a {@link viewer!Viewer | Viewer}.
      *
      * @internal
@@ -78,7 +78,7 @@ export class SceneMesh {
     rendererMesh: RendererMesh | null;
 
     /**
-     * The {@link scene!SceneObject} that uses this SceneMesh.
+     * The {@link SceneObject} that uses this SceneMesh.
      */
     object: SceneObject | null;
 

@@ -9,14 +9,14 @@ import {Projection} from "./Projection";
 
 
 /**
- * Orthographic projection configuration for a {@link viewer!Camera | Camera} .
+ * Orthographic projection configuration for a {@link Camera | Camera} .
  *
- * * Located at {@link viewer!Camera.orthoProjection | Camera.orthoProjection}.
+ * * Located at {@link Camera.orthoProjection | Camera.orthoProjection}.
  * * Works like Blender's orthographic projection, where the positions of the left, right, top and bottom planes are implicitly
- * indicated with a single {@link viewer!OrthoProjection.scale | OrthoProjection.scale} property, which causes the frustum to be symmetrical on X and Y axis, large enough to
- * contain the number of units given by {@link viewer!OrthoProjection.scale | OrthoProjection.scale}.
- * * {@link viewer!OrthoProjection.near | OrthoProjection.near} and {@link viewer!OrthoProjection.far | OrthoProjection.far} indicated the distances to the clipping planes.
- * * {@link viewer!OrthoProjection.onProjMatrix | OrthoProjection.onProjMatrix} will fire an event whenever {@link viewer!OrthoProjection.projMatrix | OrthoProjection.projMatrix} updates, which indicates that one or more other properties have updated.
+ * indicated with a single {@link OrthoProjection.scale | OrthoProjection.scale} property, which causes the frustum to be symmetrical on X and Y axis, large enough to
+ * contain the number of units given by {@link OrthoProjection.scale | OrthoProjection.scale}.
+ * * {@link OrthoProjection.near | OrthoProjection.near} and {@link OrthoProjection.far | OrthoProjection.far} indicated the distances to the clipping planes.
+ * * {@link OrthoProjection.onProjMatrix | OrthoProjection.onProjMatrix} will fire an event whenever {@link OrthoProjection.projMatrix | OrthoProjection.projMatrix} updates, which indicates that one or more other properties have updated.
  */
 export class OrthoProjection extends Component implements Projection {
 
@@ -26,7 +26,7 @@ export class OrthoProjection extends Component implements Projection {
     public readonly camera: Camera;
 
     /**
-     * Emits an event each time {@link viewer!OrthoProjection.projMatrix | OrthoProjection.projMatrix} updates.
+     * Emits an event each time {@link OrthoProjection.projMatrix | OrthoProjection.projMatrix} updates.
      *
      * @event
      */
@@ -178,9 +178,9 @@ export class OrthoProjection extends Component implements Projection {
     }
 
     /**
-     * Gets the inverse of {@link viewer!OrthoProjection.projMatrix | OrthoProjection.projMatrix}.
+     * Gets the inverse of {@link OrthoProjection.projMatrix | OrthoProjection.projMatrix}.
      *
-     * @returns  The inverse of {@link viewer!OrthoProjection.projMatrix | OrthoProjection.projMatrix}.
+     * @returns  The inverse of {@link OrthoProjection.projMatrix | OrthoProjection.projMatrix}.
      */
     get inverseProjMatrix(): FloatArrayParam {
         if (this.dirty) {
@@ -194,9 +194,9 @@ export class OrthoProjection extends Component implements Projection {
     }
 
     /**
-     * Gets the transpose of {@link viewer!OrthoProjection.projMatrix | OrthoProjection.projMatrix}.
+     * Gets the transpose of {@link OrthoProjection.projMatrix | OrthoProjection.projMatrix}.
      *
-     * @returns  The transpose of {@link viewer!OrthoProjection.projMatrix | OrthoProjection.projMatrix}.
+     * @returns  The transpose of {@link OrthoProjection.projMatrix | OrthoProjection.projMatrix}.
      */
     get transposedProjMatrix(): FloatArrayParam {
         if (this.dirty) {

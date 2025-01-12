@@ -10,13 +10,12 @@ import {BCFVector} from "./BCFVector";
 import {BCFComponent} from "./BCFComponent";
 
 const tempVec3 = createVec3();
-const tempVec3b = createVec3();
-const tempVec3c = createVec3();
+
 
 /**
- * Loads a {@link bcf!BCFViewpoint | BCFViewpoint} into a {@link viewer!View | View}.
+ * Loads a {@link BCFViewpoint | BCFViewpoint} into a {@link viewer!View | View}.
  *
- * See {@link "@xeokit/bcf" | @xeokit/bcf} for usage.
+ * See {@link "bcf" | @xeokit/bcf} for usage.
  *
  * @param params BCF viewpoint loading paremeters.
  */

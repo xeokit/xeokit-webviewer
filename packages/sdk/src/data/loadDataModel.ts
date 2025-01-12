@@ -3,12 +3,12 @@ import {DataModel} from "./DataModel";
 
 
 /**
- * Loads {@link scene!DataModelParams | DataModelParams} into a {@link scene!DataModel | DataModel}.
+ * Loads {@link DataModelParams | DataModelParams} into a {@link DataModel | DataModel}.
  *
- * Expects {@link scene!DataModel.built | DataModel.built} and
- * {@link scene!DataModel.destroyed | DataModel.destroyed} to be ````false````
+ * Expects {@link DataModel.built | DataModel.built} and
+ * {@link DataModel.destroyed | DataModel.destroyed} to be ````false````
  *
- * See {@link "@xeokit/data" | @xeokit/data} for usage.
+ * See {@link data | @xeokit/sdk/data}  for usage.
  *
  * @param params - Loading parameters.
  * @param params.fileData - DataModelParams to load.

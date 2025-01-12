@@ -9,7 +9,7 @@ import {MetaModelParams} from "./MetaModelParams";
  * Expects {@link data!DataModel.built | DataModel.built} and
  * {@link data!DataModel.destroyed | DataModel.destroyed} to be ````false````
  *
- * See {@link "@xeokit/metamodel" | @xeokit/model} for usage.
+ * See {@link "metamodel" | @xeokit/model} for usage.
  *
  * @param params - Loading parameters.
  * @param params.fileData - [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) file data

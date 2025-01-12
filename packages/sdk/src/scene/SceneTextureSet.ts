@@ -3,13 +3,13 @@ import type {SceneTextureSetParams} from "./SceneTextureSetParams";
 import type {RendererTextureSet} from "./RendererTextureSet";
 
 /**
- * A set of {@link scene!SceneTexture | Textures} in a {@link scene!SceneModel | SceneModel}.
+ * A set of {@link SceneTexture | Textures} in a {@link SceneModel | SceneModel}.
  *
- * * Stored in {@link scene!SceneModel.textureSets | SceneModel.textureSets}
- * * Created with {@link scene!SceneModel.createTextureSet | SceneModel.createTextureSet}
- * * Referenced by {@link scene!SceneMesh.textureSet | SceneMesh.textureSet}
+ * * Stored in {@link SceneModel.textureSets | SceneModel.textureSets}
+ * * Created with {@link SceneModel.createTextureSet | SceneModel.createTextureSet}
+ * * Referenced by {@link SceneMesh.textureSet | SceneMesh.textureSet}
  *
- * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
+ * See {@link scene | @xeokit/sdk/scene}   for usage.
  */
 export class SceneTextureSet {
 
@@ -19,29 +19,29 @@ export class SceneTextureSet {
     id: string;
 
     /**
-     * The color {@link scene!SceneTexture} in this set.
+     * The color {@link SceneTexture} in this set.
      */
     colorTexture?: SceneTexture;
 
     /**
-     * The metallic-roughness {@link scene!SceneTexture} in this set.
+     * The metallic-roughness {@link SceneTexture} in this set.
      */
     metallicRoughnessTexture?: SceneTexture;
 
     /**
-     * The occlusion {@link scene!SceneTexture} in this set.
+     * The occlusion {@link SceneTexture} in this set.
      */
     occlusionTexture?: SceneTexture;
 
     /**
-     * The emissive {@link scene!SceneTexture} in this set.
+     * The emissive {@link SceneTexture} in this set.
      */
     emissiveTexture?: SceneTexture;
 
     /**
      *  Internal interface through which a SceneTextureSet can load property updates into a renderers.
      *
-     *  This is defined while the owner {@link scene!SceneModel | SceneModel} has been added to a {@link viewer!Viewer | Viewer}.
+     *  This is defined while the owner {@link SceneModel | SceneModel} has been added to a {@link viewer!Viewer | Viewer}.
      *
      * @internal
      */

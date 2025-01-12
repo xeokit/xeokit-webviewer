@@ -13,7 +13,6 @@ import {TrianglesPrimitive} from "../constants";
  *
  * ````
  *
- * @function buildCylinderGeometry
  * @param cfg Configs
  * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
  * @param [cfg.center]  3D point indicating the center position.

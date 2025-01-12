@@ -15,7 +15,6 @@ import type {GeometryArrays} from "./GeometryArrays";
  * TODO
  * ````
  *
- * @function buildBoxLinesGeometry
  * @param cfg Configs
  * @param [cfg.id] Optional ID, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
  * @param [cfg.center]  3D point indicating the center position.

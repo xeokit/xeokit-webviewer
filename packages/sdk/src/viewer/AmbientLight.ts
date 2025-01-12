@@ -4,9 +4,9 @@ import type {FloatArrayParam} from "../math";
 
 
 /**
- * An ambient light source within a {@link viewer!View}.
+ * An ambient light source within a {@link View}.
  *
- * ## Summary
+ *
  *
  * * Has fixed color and intensity that illuminates all objects equally.
  * * {@link AmbientLight}s, {@link DirLight}s and {@link PointLight}s are registered by their {@link Component.id} on {@link View.lights}.
@@ -14,7 +14,7 @@ import type {FloatArrayParam} from "../math";
 class AmbientLight extends Component {
 
     /**
-     ID of this AmbientLight, unique within the {@link viewer!View}.
+     ID of this AmbientLight, unique within the {@link View}.
      */
     declare public id: string;
 

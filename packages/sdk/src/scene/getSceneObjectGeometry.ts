@@ -8,7 +8,7 @@ import {LinesPrimitive, TrianglesPrimitive} from "../constants";
 
 /**
  * The {@link getSceneObjectGeometry} passes an instance of GeometryView to its callback
- * for each {@link scene!SceneGeometry} it visits.
+ * for each {@link SceneGeometry} it visits.
  *
  * The GeometryView provides the SceneObject, SceneMesh and SceneGeometry at the current state
  * of iteration, along with accessors through which the caller can
@@ -18,27 +18,27 @@ import {LinesPrimitive, TrianglesPrimitive} from "../constants";
 export interface GeometryView {
 
     /**
-     * The current {@link scene!SceneObject}.
+     * The current {@link SceneObject}.
      */
     object: SceneObject;
 
     /**
-     * The current {@link scene!SceneMesh}.
+     * The current {@link SceneMesh}.
      */
     mesh: SceneMesh;
 
     /**
-     * The current {@link scene!SceneMesh | SceneMesh's} position in {@link scene!SceneModel.meshes | SceneObject.meshes}.
+     * The current {@link SceneMesh | SceneMesh's} position in {@link SceneModel.meshes | SceneObject.meshes}.
      */
     meshIndex: number;
 
     /**
-     * The current {@link scene!SceneGeometry}.
+     * The current {@link SceneGeometry}.
      */
     geometry: SceneGeometry;
 
     /**
-     * The number of primitives in the current {@link scene!SceneGeometry}.
+     * The number of primitives in the current {@link SceneGeometry}.
      */
     readonly numPrimitives: number;
 
@@ -113,8 +113,8 @@ class GeometryViewImpl {
 const geometryView = new GeometryViewImpl();
 
 /**
- * Gets the uncompressed, World-space geometry of each {@link scene!SceneGeometryBucket} in each
- * {@link scene!SceneGeometry} in each {@link scene!SceneMesh} in a {@link scene!SceneObject}.
+ * Gets the uncompressed, World-space geometry of each {@link SceneGeometryBucket} in each
+ * {@link SceneGeometry} in each {@link SceneMesh} in a {@link SceneObject}.
  *
  * If the callback returns ````true````, then this method immediately stops iterating and also returns ````true````.
  *

@@ -48,72 +48,14 @@ export interface SnapshotFinishedEvent {
 
 
 /**
- * An independent view within a {@link viewer!Viewer | Viewer}, with its own Canvas, Camera and object visual states.
+ * An independent view within a {@link Viewer | Viewer}, with its own Canvas, Camera and object visual states.
  *
- * See {@link "@xeokit/viewer" | @xeokit/viewer} for usage.
- *
- * ## Overview
- *
- * A View is an independently-configurable view of the objects in a Viewer, with
- * its own HTML canvas, camera, light sources, object states, slicing planes etc.
- *
- * A View automatically contains a {@link viewer!ViewObject | ViewObject} for each
- * {@link scene!SceneObject | SceneObject} in the Viewer's {@link scene!Scene | Scene}. Each ViewObject functions as a sort of proxy through which we control the appearance of its SceneObject in the View.
- * (show/hide/highlight etc.) within the View.
- *
- * Using Views, we can essentially have multiple canvases viewing the same model, each canvas perhaps showing a different subset
- * of the objects, with different visual effects, camera position etc.
- *
- * ## Quickstart
- *
- * * Create a View with {@link Viewer.createView}
- * * Control the View's viewpoint and projection with {@link View.camera}
- * * Create light sources with {@link View.createLightSource}
- * * Create slicing planes with {@link View createSectionPlane}
- * * Each View automatically has a {@link viewer!ViewObject} for every {@link RendererObject}
- * * Uses {@link viewer!ViewLayer | ViewLayers} to organize ViewObjects into layers
- * * Optionally uses ViewLayers to mask which ViewObjects are automatically maintained
- * * Control the visibility of ViewObjects with {@link View.setObjectsVisible}
- * * Emphasise ViewObjects with {@link View.setObjectsHighlighted}, {@link View.setObjectsSelected}, {@link View.setObjectsXRayed} and {@link View.setObjectsColorized}
- *
- * # Examples
- *
- * Create a view in a given canvas, with three objects visible and a couple of object X-rayed (rendered translucent):
- *
- * ````javascript
- * const view1 = myViewer.createView({
- *      id: "myView",
- *      elementId: "myView1"
- * });
- *
- * view1.camera.eye = [-3.933, 2.855, 27.018];
- * view1.camera.look = [4.400, 3.724, 8.899];
- * view1.camera.up = [-0.018, 0.999, 0.039];
- *
- * view1.setObjectsVisible(["myObject1", "myObject2", "myObject3", ...], true);
- * view1.setObjectsXRayed(["myObject1", "myObject", ...], true);
- * ````
- *
- * Create a second view, using a different canvas, that shows two objects visible, with one of them highlighted:
- *
- * ```` javascript
- * const view2 = myViewer.createView({
- *      id: "myView2",
- *      elementId: "myView2"
- * });
- *
- * view2.camera.eye = [-1.4, 1.5, 15.8];
- * view2.camera.look = [4.0, 3.7, 1.8];
- * view2.camera.up = [0.0, 0.9, 0.0];
- *
- * view2.setObjectsVisible(["myObject1", "myObject3", ...], true);
- * view2.setObjectsHighlighted(["myObject3", ...], true);
- * ````
+ * See {@link viewer | @xeokit/sdk/viewer } for usage.
  */
 class View extends Component {
 
     /**
-     ID of this View, unique within the {@link viewer!Viewer | Viewer}.
+     ID of this View, unique within the {@link Viewer | Viewer}.
      */
     declare viewId: string;
 
@@ -160,29 +102,29 @@ class View extends Component {
     readonly texturing: Texturing;
 
     /**
+     * Configures the appearance of edges belonging to {@link ViewObject} in this View.
+     */
+    readonly edges: Edges;
+
+    /**
      * Manages measurement units, origin and scale for this View.
      */
     readonly metrics: Metrics;
 
     /**
-     * Configures the X-rayed appearance of {@link viewer!ViewObject | ViewObjects} in this View.
+     * Configures the X-rayed appearance of {@link ViewObject | ViewObjects} in this View.
      */
     readonly xrayMaterial: EmphasisMaterial;
 
     /**
-     * Configures the highlighted appearance of {@link viewer!ViewObject | ViewObjects} in this View.
+     * Configures the highlighted appearance of {@link ViewObject | ViewObjects} in this View.
      */
     readonly highlightMaterial: EmphasisMaterial;
 
     /**
-     * Configures the appearance of {@link viewer!ViewObject | ViewObjects} in this View.
+     * Configures the appearance of {@link ViewObject | ViewObjects} in this View.
      */
     readonly selectedMaterial: EmphasisMaterial;
-
-    /**
-     * Configures the appearance of edges belonging to {@link viewer!ViewObject} in this View.
-     */
-    readonly edges: Edges;
 
     /**
      * Configures resolution scaling for this View.
@@ -190,72 +132,72 @@ class View extends Component {
     readonly resolutionScale: ResolutionScale;
 
     /**
-     * Configures the appearance of point primitives belonging to {@link viewer!ViewObject | ViewObjects} in this View .
+     * Configures the appearance of point primitives belonging to {@link ViewObject | ViewObjects} in this View .
      */
     readonly pointsMaterial: PointsMaterial;
 
     /**
-     * Configures the appearance of lines belonging to {@link viewer!ViewObject | ViewObjects} in this View.
+     * Configures the appearance of lines belonging to {@link ViewObject | ViewObjects} in this View.
      */
     readonly linesMaterial: LinesMaterial;
 
     /**
-     * Map of the all {@link viewer!ViewObject | ViewObjects} in this View.
+     * Map of the all {@link ViewObject | ViewObjects} in this View.
      *
-     * Each {@link viewer!ViewObject} is mapped here by {@link viewer!ViewObject.id}.
+     * Each {@link ViewObject} is mapped here by {@link ViewObject.id}.
      *
-     * The View automatically ensures that there is a {@link viewer!ViewObject} here for
-     * each {@link RendererObject} in the {@link viewer!Viewer | Viewer}
+     * The View automatically ensures that there is a {@link ViewObject} here for
+     * each {@link RendererObject} in the {@link Viewer | Viewer}
      */
     readonly objects: { [key: string]: ViewObject };
 
     /**
-     * Map of the currently visible {@link viewer!ViewObject | ViewObjects} in this View.
+     * Map of the currently visible {@link ViewObject | ViewObjects} in this View.
      *
-     * A ViewObject is visible when {@link viewer!ViewObject.visible} is true.
+     * A ViewObject is visible when {@link ViewObject.visible} is true.
      *
-     * Each {@link viewer!ViewObject} is mapped here by {@link viewer!ViewObject.id}.
+     * Each {@link ViewObject} is mapped here by {@link ViewObject.id}.
      */
     readonly visibleObjects: { [key: string]: ViewObject };
 
     /**
-     * Map of currently x-rayed {@link viewer!ViewObject | ViewObjects} in this View.
+     * Map of currently x-rayed {@link ViewObject | ViewObjects} in this View.
      *
-     * A ViewObject is x-rayed when {@link viewer!ViewObject.xrayed} is true.
+     * A ViewObject is x-rayed when {@link ViewObject.xrayed} is true.
      *
-     * Each {@link viewer!ViewObject} is mapped here by {@link viewer!ViewObject.id}.
+     * Each {@link ViewObject} is mapped here by {@link ViewObject.id}.
      */
     readonly xrayedObjects: { [key: string]: ViewObject };
 
     /**
-     * Map of currently highlighted {@link viewer!ViewObject | ViewObjects} in this View.
+     * Map of currently highlighted {@link ViewObject | ViewObjects} in this View.
      *
-     * A ViewObject is highlighted when {@link viewer!ViewObject.highlighted} is true.
+     * A ViewObject is highlighted when {@link ViewObject.highlighted} is true.
      *
-     * Each {@link viewer!ViewObject} is mapped here by {@link viewer!ViewObject.id}.
+     * Each {@link ViewObject} is mapped here by {@link ViewObject.id}.
      */
     readonly highlightedObjects: { [key: string]: ViewObject };
 
     /**
-     * Map of currently selected {@link viewer!ViewObject | ViewObjects} in this View.
+     * Map of currently selected {@link ViewObject | ViewObjects} in this View.
      *
-     * A ViewObject is selected when {@link viewer!ViewObject.selected} is true.
+     * A ViewObject is selected when {@link ViewObject.selected} is true.
      *
-     * Each {@link viewer!ViewObject} is mapped here by {@link viewer!ViewObject.id}.
+     * Each {@link ViewObject} is mapped here by {@link ViewObject.id}.
      */
     readonly selectedObjects: { [key: string]: ViewObject };
 
     /**
-     * Map of currently colorized {@link viewer!ViewObject | ViewObjects} in this View.
+     * Map of currently colorized {@link ViewObject | ViewObjects} in this View.
      *
-     * Each {@link viewer!ViewObject} is mapped here by {@link viewer!ViewObject.id}.
+     * Each {@link ViewObject} is mapped here by {@link ViewObject.id}.
      */
     readonly colorizedObjects: { [key: string]: ViewObject };
 
     /**
-     * Map of {@link viewer!ViewObject | ViewObjects} in this View whose opacity has been updated.
+     * Map of {@link ViewObject | ViewObjects} in this View whose opacity has been updated.
      *
-     * Each {@link viewer!ViewObject} is mapped here by {@link viewer!ViewObject.id}.
+     * Each {@link ViewObject} is mapped here by {@link ViewObject.id}.
      */
     readonly opacityObjects: { [key: string]: ViewObject };
 
@@ -284,22 +226,22 @@ class View extends Component {
     gammaOutput: boolean;
 
     /**
-     * Map of the all {@link viewer!ViewLayer}s in this View.
+     * Map of the all {@link ViewLayer}s in this View.
      *
-     * Each {@link viewer!ViewLayer} is mapped here by {@link viewer!ViewLayer.id}.
+     * Each {@link ViewLayer} is mapped here by {@link ViewLayer.id}.
      */
     readonly layers: { [key: string]: ViewLayer };
 
     /**
-     * Whether the View will automatically create {@link viewer!ViewLayer | ViewLayers} on-demand
+     * Whether the View will automatically create {@link ViewLayer | ViewLayers} on-demand
      * as {@link RendererObject | ViewerObjects} are created.
      *
-     * When ````true```` (default), the View will automatically create {@link viewer!ViewLayer | ViewLayers} as needed for each new
+     * When ````true```` (default), the View will automatically create {@link ViewLayer | ViewLayers} as needed for each new
      * {@link RendererObject.layerId} encountered, including a "default" ViewLayer for ViewerObjects that have no
      * layerId. This default setting therefore ensures that a ViewObject is created in the View for every SceneObject that is created.
      *
-     * If you set this ````false````, however, then the View will only create {@link viewer!ViewObject | ViewObjects} for {@link RendererObject | ViewerObjects} that have
-     * a {@link RendererObject.layerId} that matches the ID of a {@link viewer!ViewLayer} that you have explicitly created previously with {@link View.createLayer}.
+     * If you set this ````false````, however, then the View will only create {@link ViewObject | ViewObjects} for {@link RendererObject | ViewerObjects} that have
+     * a {@link RendererObject.layerId} that matches the ID of a {@link ViewLayer} that you have explicitly created previously with {@link View.createLayer}.
      *
      * Setting this parameter false enables Views to contain only the ViewObjects that they actually need to show, i.e. to represent only
      * ViewerObjects that they need to view. This enables a View to avoid wastefully creating and maintaining ViewObjects for ViewerObjects
@@ -315,50 +257,50 @@ class View extends Component {
     readonly onBoundary: EventEmitter<View, IntArrayParam>;
 
     /**
-     * Emits an event each time a {@link viewer!ViewObject} is created in this View.
+     * Emits an event each time a {@link ViewObject} is created in this View.
      *
      * @event
      */
     readonly onObjectCreated: EventEmitter<View, ViewObject>;
 
     /**
-     * Emits an event each time a {@link viewer!ViewObject} is destroyed in this View.
+     * Emits an event each time a {@link ViewObject} is destroyed in this View.
      *
      * @event
      */
     readonly onObjectDestroyed: EventEmitter<View, ViewObject>;
 
     /**
-     * Emits an event each time the visibility of a {@link viewer!ViewObject} changes in this View.
+     * Emits an event each time the visibility of a {@link ViewObject} changes in this View.
      *
-     * ViewObjects are shown and hidden with {@link View.setObjectsVisible}, {@link viewer!ViewLayer.setObjectsVisible} or {@link viewer!ViewObject.visible}.
+     * ViewObjects are shown and hidden with {@link View.setObjectsVisible}, {@link ViewLayer.setObjectsVisible} or {@link ViewObject.visible}.
      *
      * @event
      */
     readonly onObjectVisibility: EventEmitter<View, ViewObject>;
 
     /**
-     * Emits an event each time the X-ray state of a {@link viewer!ViewObject} changes in this View.
+     * Emits an event each time the X-ray state of a {@link ViewObject} changes in this View.
      *
-     * ViewObjects are X-rayed with {@link View.setObjectsXRayed}, {@link viewer!ViewLayer.setObjectsXRayed} or {@link viewer!ViewObject.xrayed}.
+     * ViewObjects are X-rayed with {@link View.setObjectsXRayed}, {@link ViewLayer.setObjectsXRayed} or {@link ViewObject.xrayed}.
      *
      * @event
      */
     readonly onObjectXRayed: EventEmitter<View, ViewObject>;
 
     /**
-     * Emits an event each time a {@link viewer!ViewLayer} is created in this View.
+     * Emits an event each time a {@link ViewLayer} is created in this View.
      *
-     * Layers are created explicitly with {@link View.createLayer}, or implicitly with {@link View.createModel} and {@link CreateModelParams.layerId}.
+     * Layers are created explicitly with {@link View.createLayer}, or implicitly with {@link View.createModel} and {@link scene!CreateSceneModelParams.layerId}.
      *
      * @event
      */
     readonly onLayerCreated: EventEmitter<View, ViewLayer>;
 
     /**
-     * Emits an event each time a {@link viewer!ViewLayer} in this View is destroyed.
+     * Emits an event each time a {@link ViewLayer} in this View is destroyed.
      *
-     * ViewLayers are destroyed explicitly with {@link viewer!ViewLayer.destroy}, or implicitly when they become empty and {@link View.autoLayers} is false.
+     * ViewLayers are destroyed explicitly with {@link ViewLayer.destroy}, or implicitly when they become empty and {@link View.autoLayers} is false.
      *
      * @event
      */
@@ -918,14 +860,14 @@ class View extends Component {
     }
 
     /**
-     * Gets the number of {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the number of {@link ViewObject | ViewObjects} in this View.
      */
     get numObjects(): number {
         return this.#numObjects;
     }
 
     /**
-     * Gets the IDs of the {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the IDs of the {@link ViewObject | ViewObjects} in this View.
      */
     get objectIds(): string[] {
         if (!this.#objectIds) {
@@ -935,14 +877,14 @@ class View extends Component {
     }
 
     /**
-     * Gets the number of visible {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the number of visible {@link ViewObject | ViewObjects} in this View.
      */
     get numVisibleObjects(): number {
         return this.#numVisibleObjects;
     }
 
     /**
-     * Gets the IDs of the visible {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the IDs of the visible {@link ViewObject | ViewObjects} in this View.
      */
     get visibleObjectIds(): string[] {
         if (!this.#visibleObjectIds) {
@@ -952,14 +894,14 @@ class View extends Component {
     }
 
     /**
-     * Gets the number of X-rayed {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the number of X-rayed {@link ViewObject | ViewObjects} in this View.
      */
     get numXRayedObjects(): number {
         return this.#numXRayedObjects;
     }
 
     /**
-     * Gets the IDs of the X-rayed {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the IDs of the X-rayed {@link ViewObject | ViewObjects} in this View.
      */
     get xrayedObjectIds(): string[] {
         if (!this.#xrayedObjectIds) {
@@ -969,14 +911,14 @@ class View extends Component {
     }
 
     /**
-     * Gets the number of highlighted {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the number of highlighted {@link ViewObject | ViewObjects} in this View.
      */
     get numHighlightedObjects(): number {
         return this.#numHighlightedObjects;
     }
 
     /**
-     * Gets the IDs of the highlighted {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the IDs of the highlighted {@link ViewObject | ViewObjects} in this View.
      */
     get highlightedObjectIds(): string[] {
         if (!this.#highlightedObjectIds) {
@@ -986,14 +928,14 @@ class View extends Component {
     }
 
     /**
-     * Gets the number of selected {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the number of selected {@link ViewObject | ViewObjects} in this View.
      */
     get numSelectedObjects(): number {
         return this.#numSelectedObjects;
     }
 
     /**
-     * Gets the IDs of the selected {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the IDs of the selected {@link ViewObject | ViewObjects} in this View.
      */
     get selectedObjectIds(): string[] {
         if (!this.#selectedObjectIds) {
@@ -1003,14 +945,14 @@ class View extends Component {
     }
 
     /**
-     * Gets the number of colorized {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the number of colorized {@link ViewObject | ViewObjects} in this View.
      */
     get numColorizedObjects(): number {
         return this.#numColorizedObjects;
     }
 
     /**
-     * Gets the IDs of the colorized {@link viewer!ViewObject | ViewObjects} in this View.
+     * Gets the IDs of the colorized {@link ViewObject | ViewObjects} in this View.
      */
     get colorizedObjectIds(): string[] {
         if (!this.#colorizedObjectIds) {
@@ -1020,7 +962,7 @@ class View extends Component {
     }
 
     /**
-     * Gets the IDs of the {@link viewer!ViewObject | ViewObjects} in this View that have updated opacities.
+     * Gets the IDs of the {@link ViewObject | ViewObjects} in this View that have updated opacities.
      */
     get opacityObjectIds(): string[] {
         if (!this.#opacityObjectIds) {
@@ -1030,7 +972,7 @@ class View extends Component {
     }
 
     /**
-     * Gets the number of {@link viewer!ViewObject | ViewObjects} in this View that have updated opacities.
+     * Gets the number of {@link ViewObject | ViewObjects} in this View that have updated opacities.
      */
     get numOpacityObjects(): number {
         return this.#numOpacityObjects;
@@ -1301,14 +1243,14 @@ class View extends Component {
     }
 
     /**
-     * Updates the visibility of the given {@link viewer!ViewObject | ViewObjects} in this View.
+     * Updates the visibility of the given {@link ViewObject | ViewObjects} in this View.
      *
-     * - Updates {@link viewer!ViewObject.visible} on the Objects with the given IDs.
+     * - Updates {@link ViewObject.visible} on the Objects with the given IDs.
      * - Updates {@link View.visibleObjects} and {@link View.numVisibleObjects}.
      *
-     * @param {String[]} objectIds Array of {@link viewer!ViewObject.id} values.
+     * @param {String[]} objectIds Array of {@link ViewObject.id} values.
      * @param visible Whether or not to cull.
-     * @returns True if any {@link viewer!ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
+     * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
     setObjectsVisible(objectIds: string[], visible: boolean): boolean {
         return this.withObjects(objectIds, (viewObject: ViewObject) => {
@@ -1319,13 +1261,13 @@ class View extends Component {
     }
 
     /**
-     * Updates the collidability of the given {@link viewer!ViewObject | ViewObjects} in this View.
+     * Updates the collidability of the given {@link ViewObject | ViewObjects} in this View.
      *
-     * Updates {@link viewer!ViewObject.collidable} on the Objects with the given IDs.
+     * Updates {@link ViewObject.collidable} on the Objects with the given IDs.
      *
-     * @param {String[]} objectIds Array of {@link viewer!ViewObject.id} values.
+     * @param {String[]} objectIds Array of {@link ViewObject.id} values.
      * @param collidable Whether or not to cull.
-     * @returns True if any {@link viewer!ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
+     * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
     setObjectsCollidable(objectIds: string[], collidable: boolean): boolean {
         return this.withObjects(objectIds, (viewObject: ViewObject) => {
@@ -1336,13 +1278,13 @@ class View extends Component {
     }
 
     /**
-     * Updates the culled status of the given {@link viewer!ViewObject | ViewObjects} in this View.
+     * Updates the culled status of the given {@link ViewObject | ViewObjects} in this View.
      *
-     * Updates {@link viewer!ViewObject.culled} on the Objects with the given IDs.
+     * Updates {@link ViewObject.culled} on the Objects with the given IDs.
      *
-     * @param {String[]} objectIds Array of {@link viewer!ViewObject.id} values.
+     * @param {String[]} objectIds Array of {@link ViewObject.id} values.
      * @param culled Whether or not to cull.
-     * @returns True if any {@link viewer!ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
+     * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
     setObjectsCulled(objectIds: string[], culled: boolean): boolean {
         return this.withObjects(objectIds, (viewObject: ViewObject) => {
@@ -1353,14 +1295,14 @@ class View extends Component {
     }
 
     /**
-     * Selects or deselects the given {@link viewer!ViewObject | ViewObjects} in this View.
+     * Selects or deselects the given {@link ViewObject | ViewObjects} in this View.
      *
-     * - Updates {@link viewer!ViewObject.selected} on the Objects with the given IDs.
+     * - Updates {@link ViewObject.selected} on the Objects with the given IDs.
      * - Updates {@link View.selectedObjects} and {@link View.numSelectedObjects}.
      *
-     * @param  objectIds One or more {@link viewer!ViewObject.id} values.
+     * @param  objectIds One or more {@link ViewObject.id} values.
      * @param selected Whether or not to select.
-     * @returns True if any {@link viewer!ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
+     * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
     setObjectsSelected(objectIds: string[], selected: boolean): boolean {
         return this.withObjects(objectIds, (viewObject: ViewObject) => {
@@ -1371,14 +1313,14 @@ class View extends Component {
     }
 
     /**
-     * Highlights or un-highlights the given {@link viewer!ViewObject | ViewObjects} in this View.
+     * Highlights or un-highlights the given {@link ViewObject | ViewObjects} in this View.
      *
-     * - Updates {@link viewer!ViewObject.highlighted} on the Objects with the given IDs.
+     * - Updates {@link ViewObject.highlighted} on the Objects with the given IDs.
      * - Updates {@link View.highlightedObjects} and {@link View.numHighlightedObjects}.
      *
-     * @param  objectIds One or more {@link viewer!ViewObject.id} values.
+     * @param  objectIds One or more {@link ViewObject.id} values.
      * @param highlighted Whether or not to highlight.
-     * @returns True if any {@link viewer!ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
+     * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
     setObjectsHighlighted(objectIds: string[], highlighted: boolean): boolean {
         return this.withObjects(objectIds, (viewObject: ViewObject) => {
@@ -1389,14 +1331,14 @@ class View extends Component {
     }
 
     /**
-     * Applies or removes X-ray rendering for the given {@link viewer!ViewObject | ViewObjects} in this View.
+     * Applies or removes X-ray rendering for the given {@link ViewObject | ViewObjects} in this View.
      *
-     * - Updates {@link viewer!ViewObject.xrayed} on the Objects with the given IDs.
+     * - Updates {@link ViewObject.xrayed} on the Objects with the given IDs.
      * - Updates {@link View.xrayedObjects} and {@link View.numXRayedObjects}.
      *
-     * @param  objectIds One or more {@link viewer!ViewObject.id} values.
+     * @param  objectIds One or more {@link ViewObject.id} values.
      * @param xrayed Whether or not to xray.
-     * @returns True if any {@link viewer!ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
+     * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
     setObjectsXRayed(objectIds: string[], xrayed: boolean): boolean {
         return this.withObjects(objectIds, (viewObject: ViewObject) => {
@@ -1409,14 +1351,14 @@ class View extends Component {
     }
 
     /**
-     * Colorizes the given {@link viewer!ViewObject | ViewObjects} in this View.
+     * Colorizes the given {@link ViewObject | ViewObjects} in this View.
      *
-     * - Updates {@link viewer!ViewObject.colorize} on the Objects with the given IDs.
+     * - Updates {@link ViewObject.colorize} on the Objects with the given IDs.
      * - Updates {@link View.colorizedObjects} and {@link View.numColorizedObjects}.
      *
-     * @param  objectIds One or more {@link viewer!ViewObject.id} values.
+     * @param  objectIds One or more {@link ViewObject.id} values.
      * @param colorize - RGB colorize factors in range ````[0..1,0..1,0..1]````.
-     * @returns True if any {@link viewer!ViewObject | ViewObjects} changed opacity, else false if all updates were redundant and not applied.
+     * @returns True if any {@link ViewObject | ViewObjects} changed opacity, else false if all updates were redundant and not applied.
      */
     setObjectsColorized(objectIds: string[], colorize: number[]) {
         return this.withObjects(objectIds, (viewObject: ViewObject) => {
@@ -1425,14 +1367,14 @@ class View extends Component {
     }
 
     /**
-     * Sets the opacity of the given {@link viewer!ViewObject | ViewObjects} in this View.
+     * Sets the opacity of the given {@link ViewObject | ViewObjects} in this View.
      *
-     * - Updates {@link viewer!ViewObject.opacity} on the Objects with the given IDs.
+     * - Updates {@link ViewObject.opacity} on the Objects with the given IDs.
      * - Updates {@link View.opacityObjects} and {@link View.numOpacityObjects}.
      *
-     * @param  objectIds - One or more {@link viewer!ViewObject.id} values.
+     * @param  objectIds - One or more {@link ViewObject.id} values.
      * @param opacity - Opacity factor in range ````[0..1]````.
-     * @returns True if any {@link viewer!ViewObject | ViewObjects} changed opacity, else false if all updates were redundant and not applied.
+     * @returns True if any {@link ViewObject | ViewObjects} changed opacity, else false if all updates were redundant and not applied.
      */
     setObjectsOpacity(objectIds: string[], opacity: number): boolean {
         return this.withObjects(objectIds, (viewObject: ViewObject) => {
@@ -1445,14 +1387,14 @@ class View extends Component {
     }
 
     /**
-     * Sets the pickability of the given {@link viewer!ViewObject | ViewObjects} in this View.
+     * Sets the pickability of the given {@link ViewObject | ViewObjects} in this View.
      *
-     * - Updates {@link viewer!ViewObject.pickable} on the Objects with the given IDs.
+     * - Updates {@link ViewObject.pickable} on the Objects with the given IDs.
      * - Enables or disables the ability to pick the given Objects with {@link View.pick}.
      *
-     * @param {String[]} objectIds Array of {@link viewer!ViewObject.id} values.
+     * @param {String[]} objectIds Array of {@link ViewObject.id} values.
      * @param pickable Whether or not to set pickable.
-     * @returns True if any {@link viewer!ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
+     * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
     setObjectsPickable(objectIds: string[], pickable: boolean): boolean {
         return this.withObjects(objectIds, (viewObject: ViewObject) => {
@@ -1465,14 +1407,14 @@ class View extends Component {
     }
 
     /**
-     * Sets the clippability of the given {@link viewer!ViewObject | ViewObjects} in this View.
+     * Sets the clippability of the given {@link ViewObject | ViewObjects} in this View.
      *
-     * - Updates {@link viewer!ViewObject.clippable} on the Objects with the given IDs.
+     * - Updates {@link ViewObject.clippable} on the Objects with the given IDs.
      * - Enables or disables the ability to clip the given Objects with {@link SectionPlane}.
      *
-     * @param {String[]} objectIds Array of {@link viewer!ViewObject.id} values.
+     * @param {String[]} objectIds Array of {@link ViewObject.id} values.
      * @param clippable Whether or not to set clippable.
-     * @returns True if any {@link viewer!ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
+     * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
     setObjectsClippable(objectIds: string[], clippable: boolean): boolean {
         return this.withObjects(objectIds, (viewObject: ViewObject) => {
@@ -1485,11 +1427,11 @@ class View extends Component {
     }
 
     /**
-     * Iterates with a callback over the given {@link viewer!ViewObject | ViewObjects} in this View.
+     * Iterates with a callback over the given {@link ViewObject | ViewObjects} in this View.
      *
-     * @param objectIds One or more {@link viewer!ViewObject.id} values.
-     * @param callback Callback to execute on each {@link viewer!ViewObject}.
-     * @returns True if any {@link viewer!ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
+     * @param objectIds One or more {@link ViewObject.id} values.
+     * @param callback Callback to execute on each {@link ViewObject}.
+     * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
     withObjects(objectIds: string[], callback: Function): boolean {
         let changed = false;
@@ -1504,12 +1446,12 @@ class View extends Component {
     }
 
     /**
-     * Creates a {@link viewer!ViewLayer} in this View.
+     * Creates a {@link ViewLayer} in this View.
      *
      * The ViewLayer is then registered in {@link View.layers}.
      *
-     * Since the ViewLayer is created explicitly by this method, the ViewLayer will persist until {@link viewer!ViewLayer.destroy}
-     * is called, or the {@link viewer!View} itself is destroyed. If a ViewLayer with the given ID already exists, then the method
+     * Since the ViewLayer is created explicitly by this method, the ViewLayer will persist until {@link ViewLayer.destroy}
+     * is called, or the {@link View} itself is destroyed. If a ViewLayer with the given ID already exists, then the method
      * returns that existing ViewLayer. The method will also ensure that the existing ViewLayer likewise persists.
      *
      * @param viewLayerParams
@@ -1544,7 +1486,7 @@ class View extends Component {
      * * No View is currently attached to this Renderer.
      * * Can't find a View attached to this Renderer with the given handle.
      * * Illegal picking parameters given.
-     * @returns {@link viewer!PickResult}
+     * @returns {@link PickResult}
      * * Picking attempt completed.
      */
     pick(pickParams: PickParams, pickResult?: PickResult): PickResult | null {
@@ -1664,7 +1606,7 @@ class View extends Component {
     /**
      * Destroys this View.
      *
-     * Causes {@link viewer!Viewer | Viewer} to fire a "viewDestroyed" event.
+     * Causes {@link Viewer | Viewer} to fire a "viewDestroyed" event.
      */
     destroy() {
         this.viewer.onTick.unsubscribe(this.#onTick);

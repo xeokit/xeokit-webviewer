@@ -11,10 +11,10 @@ import type {FloatArrayParam} from "../math";
 /**
  *  An arbitrarily-aligned World-space clipping plane.
  *
- * ## Summary
  *
- * * Belongs to a {@link viewer!View}.
- * * Slices portions off {@link viewer!ViewObject | ViewObjects} to create cross-section views or reveal interiors.
+ *
+ * * Belongs to a {@link View | View}.
+ * * Slices portions off {@link ViewObject | ViewObjects} to create cross-section views or reveal interiors.
  * * Registered by {@link SectionPlane.id} in {@link View.sectionPlanes}.
  * * Indicates its World-space position in {@link SectionPlane.pos} and orientation vector in {@link SectionPlane.dir}.
  * * Discards elements from the half-space in the direction of {@link SectionPlane.dir}.
@@ -59,7 +59,7 @@ import type {FloatArrayParam} from "../math";
 class SectionPlane extends Component {
 
     /**
-     ID of this SectionPlane, unique within the {@link viewer!View}.
+     ID of this SectionPlane, unique within the {@link View}.
      */
     declare public id: string;
 
@@ -68,7 +68,7 @@ class SectionPlane extends Component {
      *
      * @property view
      * @type {View}
-     * @final
+     *
      */
     public readonly view: View;
 
@@ -102,7 +102,7 @@ class SectionPlane extends Component {
 
     /**
      * @private
-     * @constructor
+     *
      */
     constructor(view: View, cfg: {
         pos?: FloatArrayParam;

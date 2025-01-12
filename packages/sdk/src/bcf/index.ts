@@ -16,10 +16,10 @@
  * project stakeholders in BIM workflows.
  *
  * To import a JSON-encoded BCF viewpoint into a {@link viewer!View | View} belonging to a {@link viewer!Viewer | Viewer}, use the
- * {@link bcf!loadBCFViewpoint | loadBCFViewpoint} function. Similarly, to export the state of a View as a JSON-encoded BCF viewpoint, use
- * the {@link bcf!saveBCFViewpoint | saveBCFViewpoint} function.
+ * {@link loadBCFViewpoint | loadBCFViewpoint} function. Similarly, to export the state of a View as a JSON-encoded BCF viewpoint, use
+ * the {@link saveBCFViewpoint | saveBCFViewpoint} function.
  *
- * Refer to {@link bcf!BCFViewpoint | BCFViewpoint} for information on the BCF viewpoint format.
+ * Refer to {@link BCFViewpoint | BCFViewpoint} for information on the BCF viewpoint format.
  *
  * <br>
  *
@@ -96,7 +96,7 @@
  * {@link data!DataModel.onBuilt | DataModel.onBuilt} events.
  *
  * On the SceneModel.onBuilt event, we'll customize the View by arranging the {@link viewer!Camera | Camera} and applying
- * an X-ray effect tp a couple of objects, then we'll use {@link bcf!saveBCFViewpoint | saveBCFViewpoint} to save the state of the View to
+ * an X-ray effect tp a couple of objects, then we'll use {@link saveBCFViewpoint | saveBCFViewpoint} to save the state of the View to
  * a BCF viewpoint.
  *
  * Once the SceneModel and DataModel have been built, we can no longer add anything to them.
@@ -120,8 +120,8 @@
  * });
  * ````
  *
- * Now that we've saved the {@link bcf!BCFViewpoint | BCFViewpoint}, we could now use {@link bcf!loadBCFViewpoint | loadBCFViewpoint} to load
- * the {@link bcf!BCFViewpoint | BCFViewpoint} back into the {@link viewer!View | View}:
+ * Now that we've saved the {@link BCFViewpoint | BCFViewpoint}, we could now use {@link loadBCFViewpoint | loadBCFViewpoint} to load
+ * the {@link BCFViewpoint | BCFViewpoint} back into the {@link viewer!View | View}:
  *
  * ````javascript
  * loadBCFViewpoint({
@@ -185,8 +185,8 @@
  * myOtherSceneModel.build();
  * ````
  *
- * Now we can use {@link bcf!saveBCFViewpoint | saveBCFViewpoint} to save the states of only the {@link viewer!ViewObject | ViewObjects} in the
- * {@link viewer!ViewLayer | ViewLayer} that contains our SceneModel to a {@link bcf!BCFViewpoint | BCFViewpoint}, while ignoring the
+ * Now we can use {@link saveBCFViewpoint | saveBCFViewpoint} to save the states of only the {@link viewer!ViewObject | ViewObjects} in the
+ * {@link viewer!ViewLayer | ViewLayer} that contains our SceneModel to a {@link BCFViewpoint | BCFViewpoint}, while ignoring the
  * other ViewLayer:
  *
  * ````javascript
@@ -197,7 +197,7 @@
  * });
  * ````
  *
- * Use {@link bcf!loadBCFViewpoint | loadBCFViewpoint} to load the {@link bcf!BCFViewpoint | BCFViewpoint} back into the {@link viewer!ViewLayer | ViewLayer}:
+ * Use {@link loadBCFViewpoint | loadBCFViewpoint} to load the {@link BCFViewpoint | BCFViewpoint} back into the {@link viewer!ViewLayer | ViewLayer}:
  *
  * ````javascript
  * loadBCFViewpoint({

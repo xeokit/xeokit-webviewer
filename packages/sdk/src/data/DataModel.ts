@@ -15,14 +15,14 @@ import {DataModelContentParams} from "./DataModelContentParams";
  *
  * An entity-relationship data model.
  *
- * * Created with {@link data!Data.createModel | Data.createModel}
- * * Stored in {@link data!Data.models | Data.models}
- * * Contains {@link data!DataObject | DataObjects}, {@link data!Relationship | Relationships}, {@link data!PropertySet | PropertySets} and {@link data!Property | Properties}
+ * * Created with {@link Data.createModel | Data.createModel}
+ * * Stored in {@link Data.models | Data.models}
+ * * Contains {@link DataObject | DataObjects}, {@link Relationship | Relationships}, {@link PropertySet | PropertySets} and {@link Property | Properties}
  * * Import and export various file formats
  * * Traverse and search
  * * Build programmatically
  *
- * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+ * See {@link data | @xeokit/sdk/data} for usage.
  */
 export class DataModel extends Component {
 
@@ -34,7 +34,7 @@ export class DataModel extends Component {
     /**
      * Unique ID of this DataModel.
      *
-     * DataModels are stored against this ID in {@link data!Data.models | Data.models}.
+     * DataModels are stored against this ID in {@link Data.models | Data.models}.
      */
     declare public readonly id: string;
 
@@ -74,52 +74,52 @@ export class DataModel extends Component {
     public schema?: string;
 
     /**
-     * The{@link data!PropertySet | PropertySets} in this DataModel, mapped to{@link data!PropertySet.id | PropertySet.id}.
+     * The{@link PropertySet | PropertySets} in this DataModel, mapped to{@link PropertySet.id | PropertySet.id}.
      *
-     * PropertySets have globally-unique IDs and will also be stored in {@link data!Data.propertySets | Data.propertySets}.
+     * PropertySets have globally-unique IDs and will also be stored in {@link Data.propertySets | Data.propertySets}.
      */
     public readonly propertySets: { [key: string]: PropertySet };
 
     /**
-     * The {@link data!DataObject | DataObjects} in this DataModel, mapped to {@link data!DataObject.id | DataObject.id}.
+     * The {@link DataObject | DataObjects} in this DataModel, mapped to {@link DataObject.id | DataObject.id}.
      *
-     * DataObjects have globally-unique IDs and will also be stored in {@link data!Data.objects | Data.objects}.
+     * DataObjects have globally-unique IDs and will also be stored in {@link Data.objects | Data.objects}.
      */
     public objects: { [key: string]: DataObject };
 
     /**
-     * The root {@link data!DataObject | DataObjects} in this DataModel, mapped
-     * to {@link data!DataObject.id | DataObject.id}.
+     * The root {@link DataObject | DataObjects} in this DataModel, mapped
+     * to {@link DataObject.id | DataObject.id}.
      *
      * * This is the set of DataObjects in this DataModel that are not the *related* participant in
-     * any {@link data!Relationship | Relationships}, where they have no incoming Relationships and
-     * their {@link data!DataObject.relating} property is empty.
+     * any {@link Relationship | Relationships}, where they have no incoming Relationships and
+     * their {@link DataObject.relating} property is empty.
      */
     public rootObjects: { [key: string]: DataObject };
 
     /**
-     * The {@link data!DataObject | DataObjects} in this DataModel, mapped to {@link data!DataObject.type | DataObject.type},
-     * sub-mapped to {@link data!DataObject.id | DataObject.id}.
+     * The {@link DataObject | DataObjects} in this DataModel, mapped to {@link DataObject.type | DataObject.type},
+     * sub-mapped to {@link DataObject.id | DataObject.id}.
      */
     public objectsByType: { [key: string]: { [key: string]: DataObject } };
 
     /**
-     * The {@link data!Relationship | Relationships} in this DataModel.
+     * The {@link Relationship | Relationships} in this DataModel.
      *
      * * The Relationships can be between DataObjects in different DataModels, but always within the same Data.
      */
     public relationships: Relationship[];
 
     /**
-     * The count of each type of {@link data!DataObject | DataObject} in this DataModel, mapped to {@link data!DataObject.type | DataObject.type}.
+     * The count of each type of {@link DataObject | DataObject} in this DataModel, mapped to {@link DataObject.type | DataObject.type}.
      */
     public readonly typeCounts: { [key: string]: number };
 
     /**
-     * Emits an event when the {@link data!DataModel | DataModel} has been built.
+     * Emits an event when the {@link DataModel | DataModel} has been built.
      *
-     * * The DataModel is built using {@link data!DataModel.build | DataModel.build}.
-     * * {@link data!DataModel.built | DataModel.built} indicates if the DataModel is currently built.
+     * * The DataModel is built using {@link DataModel.build | DataModel.build}.
+     * * {@link DataModel.built | DataModel.built} indicates if the DataModel is currently built.
      * * Don't create anything more in this DataModel once it's built.
      *
      * @event
@@ -129,8 +129,8 @@ export class DataModel extends Component {
     /**
      * Indicates if this DataModel has been built.
      *
-     * * Set true by {@link data!DataModel.build | DataModel.build}.
-     * * Subscribe to updates using {@link data!DataModel.onBuilt | DataModel.onBuilt} and {@link data!Data.onModelCreated | Data.onModelCreated}.
+     * * Set true by {@link DataModel.build | DataModel.build}.
+     * * Subscribe to updates using {@link DataModel.onBuilt | DataModel.onBuilt} and {@link Data.onModelCreated | Data.onModelCreated}.
      */
     built: boolean;
 
@@ -177,7 +177,7 @@ export class DataModel extends Component {
     /**
      * Creates components in this DataModel from JSON.
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+     * See {@link data | @xeokit/sdk/data}   for usage.
      *
      * @param dataModelParams
      * @returns *void*
@@ -214,12 +214,12 @@ export class DataModel extends Component {
     }
 
     /**
-     * Creates a new {@link data!PropertySet | PropertySet}.
+     * Creates a new {@link PropertySet | PropertySet}.
      *
-     * * Stores the new PropertySet in {@link data!DataModel.propertySets | DataModel.propertySets}
-     * and {@link data!Data.propertySets | Data.propertySets}.
+     * * Stores the new PropertySet in {@link DataModel.propertySets | DataModel.propertySets}
+     * and {@link Data.propertySets | Data.propertySets}.
      * * Note that PropertySet IDs are globally unique. PropertySet instances are automatically reused and shared among DataModels
-     * when IDs given to {@link data!DataModel.createPropertySet | DataModel.createPropertySet} match existing PropertySet
+     * when IDs given to {@link DataModel.createPropertySet | DataModel.createPropertySet} match existing PropertySet
      * instances in the same Data.
      *
      * ### Usage
@@ -250,7 +250,7 @@ export class DataModel extends Component {
      * }
      * ````
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for more usage info.
+     * See {@link data | @xeokit/sdk/data}   for more usage info.
      *
      * @param propertySetCfg - PropertySet creation parameters.
      * @returns *{@link PropertySet}*
@@ -285,9 +285,9 @@ export class DataModel extends Component {
     }
 
     /**
-     * Creates a new {@link data!DataObject | DataObject}.
+     * Creates a new {@link DataObject | DataObject}.
      *
-     * * Stores the new {@link data!DataObject | DataObject} in {@link DataModel.objects | DataModel.objects} and {@link Data.objects | Data.objects}.
+     * * Stores the new {@link DataObject | DataObject} in {@link DataModel.objects | DataModel.objects} and {@link Data.objects | Data.objects}.
      * * Fires an event via {@link Data.onObjectCreated | Data.onObjectCreated}.
      * * Note that DataObject IDs are globally unique. DataObject instances are automatically reused and shared among DataModels when
      * IDs given to {@link DataModel.createObject | DataModel.createObject} match existing DataObject instances in the same
@@ -322,7 +322,7 @@ export class DataModel extends Component {
      * }
      * ````
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for more usage info.
+     * See {@link data | @xeokit/sdk/data}   for more usage info.
      *
      * @param dataObjectParams - DataObject creation parameters.
      * @returns *{@link DataObject}*
@@ -405,7 +405,7 @@ export class DataModel extends Component {
     }
 
     /**
-     * Creates a new {@link data!Relationship | Relationship} between two existing {@link DataObject | DataObjects}.
+     * Creates a new {@link Relationship | Relationship} between two existing {@link DataObject | DataObjects}.
      *
      * * A Relationship involves a *relating* DataObject and a *related* DataObject.
      * * The *relating* and *related* DataObjects can exist within different DataModels,
@@ -437,10 +437,10 @@ export class DataModel extends Component {
      * }
      * ````
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for more usage info.
+     * See {@link data | @xeokit/sdk/data}   for more usage info.
      *
      * @param relationshipParams - Relationship creation parameters.
-     * @returns *{@link data!Relationship | Relationship}*
+     * @returns *{@link Relationship | Relationship}*
      * * On success.
      * @returns *{@link core!SDKError | SDKError}*
      * * If this DataModel has already been built or destroyed.
@@ -502,7 +502,7 @@ export class DataModel extends Component {
      * }
      * ````
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+     * See {@link data | @xeokit/sdk/data}   for usage.
      *
      * @throws *{@link core!SDKError | SDKError}*
      * * If DataModel has already been built or destroyed.
@@ -596,7 +596,7 @@ export class DataModel extends Component {
      * * Once destroyed, no more components can be created in a DataModel.
      * * Does not matter if the DataModel has not yet been built.
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+     * See {@link data | @xeokit/sdk/data}   for usage.
      *
      * @returns *void*
      * * On success.

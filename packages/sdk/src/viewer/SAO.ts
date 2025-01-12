@@ -1,9 +1,11 @@
 import type {View} from "./View";
-import {Component, SDKError} from "../core";
+import {Component} from "../core";
 import {CustomProjectionType, FastRender, FrustumProjectionType, QualityRender} from "../constants";
 
 /**
- * Configures Scalable Ambient Obscurance (SAO) for a {@link viewer!View}.
+ * Configures Scalable Ambient Obscurance (SAO) for a {@link View}.
+ *
+ * * Located at {@link View.sao}.
  */
 export class SAO extends Component {
 
@@ -84,7 +86,7 @@ export class SAO extends Component {
     }
 
     /**
-     * Gets whether SAO is enabled for the {@link viewer!View}.
+     * Gets whether SAO is enabled for the {@link View}.
      *
      * Even when enabled, SAO will only apply if supported.
      *
@@ -95,7 +97,7 @@ export class SAO extends Component {
     }
 
     /**
-     * Sets whether SAO is enabled for the {@link viewer!View}.
+     * Sets whether SAO is enabled for the {@link View}.
      *
      * Even when enabled, SAO will only work if supported.
      *

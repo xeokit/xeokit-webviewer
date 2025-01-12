@@ -5,12 +5,12 @@ import {QualityRender} from "../constants";
 
 
 /**
- * Configures the appearance of {@link viewer!ViewObject | ViewObjects} when their edges are emphasised.
+ * Configures the appearance of {@link ViewObject | ViewObjects} when their edges are emphasised.
  *
- * ## Summary
+ *
  *
  * * Located at {@link View.edges}.
- * * Emphasise edges of a {@link viewer!ViewObject} by setting {@link viewer!ViewObject.enabled} ````true````.
+ * * Emphasise edges of a {@link ViewObject} by setting {@link ViewObject.enabled} ````true````.
  */
 class Edges extends Component {
 

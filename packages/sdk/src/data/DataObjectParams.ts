@@ -1,27 +1,27 @@
 /**
- * Parameters to create a {@link data!DataObject | DataObject} with {@link data!DataModel.createObject | DataModel.createObject}.
+ * Parameters to create a {@link DataObject | DataObject} with {@link DataModel.createObject | DataModel.createObject}.
  *
- * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+ * See {@link data | @xeokit/sdk/data}   for usage.
  */
 export interface DataObjectParams {
 
     /**
-     * Globally-unique ID for the {@link data!DataObject | DataObject}.
+     * Globally-unique ID for the {@link DataObject | DataObject}.
      *
-     * DataObjects are stored by ID in {@link data!Data.objects | Data.objects}, {@link data!Data.rootObjects | Data.rootObjects}, {@link data!Data.objectsByType | Data.objectsByType}, {@link data!DataModel.objects | Data.objects}, {@link data!DataModel.rootObjects | Data.rootObjects}.
+     * DataObjects are stored by ID in {@link Data.objects | Data.objects}, {@link Data.rootObjects | Data.rootObjects}, {@link Data.objectsByType | Data.objectsByType}, {@link DataModel.objects | Data.objects}, {@link DataModel.rootObjects | Data.rootObjects}.
      *
-     * See {@link data!Data | Data} for usage examples.
+     * See {@link scene | @xeokit/sdk/scene}   for usage.
      */
     id: string;
 
     /**
      * ID of this DataObject within the originating system, is any. Defaults to the value of
-     * {@link data!DataObject.id | DataObject.id}.
+     * {@link DataObject.id | DataObject.id}.
      */
     originalSystemId?: string;
 
     /**
-     * The {@link data!DataObject | DataObject} type.
+     * The {@link DataObject | DataObject} type.
      */
     type: number;
 
@@ -36,7 +36,7 @@ export interface DataObjectParams {
     description?: string;
 
     /**
-     * IDs of associated{@link data!PropertySet | PropertySets}, if any.
+     * IDs of associated{@link PropertySet | PropertySets}, if any.
      */
     propertySetIds?: string[];
 }

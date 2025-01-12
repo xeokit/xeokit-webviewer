@@ -50,9 +50,9 @@ const offsetEye = createVec3();
 
 
 /**
- * Controls the viewpoint and projection for a {@link viewer!View}.
+ * Controls the viewpoint and projection for a {@link View}.
  *
- * ## Summary
+ *
  *
  * * Located at {@link View.camera}
  * * Views are located at {@link Viewer.views}
@@ -64,7 +64,7 @@ const offsetEye = createVec3();
  *
  * ## Getting a View's Camera
  *
- * Let's create a {@link viewer!Viewer | Viewer} with a single {@link viewer!View}, from which we'll get a Camera:
+ * Let's create a {@link Viewer | Viewer} with a single {@link View}, from which we'll get a Camera:
  *
  * ````javascript
  * const viewer = new Viewer();
@@ -102,14 +102,14 @@ const offsetEye = createVec3();
  *
  * ## Rotating the Camera
  *
- * Orbiting the {@link viewer!Camera.look | Camera.look} position:
+ * Orbiting the {@link Camera.look | Camera.look} position:
  *
  * ````javascript
  * camera.orbitYaw(20.0);
  * camera.orbitPitch(10.0);
  * ````
  *
- * Perform a *first-person* rotation, in which we rotate {@link viewer!Camera.look | Camera.look} and {@link viewer!Camera.up | Camera.up} about {@link viewer!Camera.eye | Camera.eye}:
+ * Perform a *first-person* rotation, in which we rotate {@link Camera.look | Camera.look} and {@link Camera.up | Camera.up} about {@link Camera.eye | Camera.eye}:
  *
  * ````javascript
  * camera.yaw(5.0);
@@ -126,13 +126,13 @@ const offsetEye = createVec3();
  *
  * ## Zooming the Camera
  *
- * Zoom to vary distance between {@link viewer!Camera.eye | Camera.eye} and {@link viewer!Camera.look | Camera.look}:
+ * Zoom to vary distance between {@link Camera.eye | Camera.eye} and {@link Camera.look | Camera.look}:
  *
  * ````javascript
  * camera.zoom(-5); // Move five units closer
  * ````
  *
- * Get the current distance between {@link viewer!Camera.eye | Camera.eye} and {@link viewer!Camera.look | Camera.look}:
+ * Get the current distance between {@link Camera.eye | Camera.eye} and {@link Camera.look | Camera.look}:
  *
  * ````javascript
  * var distance = camera.eyeLookDist;
@@ -235,7 +235,7 @@ class Camera extends Component {
      *
      * @property view
      * @type {View}
-     * @final
+     *
      */
     public readonly view: View;
 
@@ -483,7 +483,7 @@ class Camera extends Component {
     }
 
     /**
-     * Gets the direction of this Camera's {@link viewer!Camera.up | Camera.up} vector.
+     * Gets the direction of this Camera's {@link Camera.up | Camera.up} vector.
      *
      * @returns {Number[]} Direction of "up".
      */
@@ -492,7 +492,7 @@ class Camera extends Component {
     }
 
     /**
-     * Sets the direction of this Camera's {@link viewer!Camera.up | Camera.up} vector.
+     * Sets the direction of this Camera's {@link Camera.up | Camera.up} vector.
      *
      * @param up Direction of "up".
      */
@@ -544,7 +544,7 @@ class Camera extends Component {
     /**
      * Gets whether to prevent camera from being pitched upside down.
      *
-     * The camera is upside down when the angle between {@link viewer!Camera.up | Camera.up} and {@link Camera.worldUp} is less than one degree.
+     * The camera is upside down when the angle between {@link Camera.up | Camera.up} and {@link Camera.worldUp} is less than one degree.
      *
      * Default value is ````false````.
      *
@@ -557,7 +557,7 @@ class Camera extends Component {
     /**
      * Sets whether to prevent camera from being pitched upside down.
      *
-     * The camera is upside down when the angle between {@link viewer!Camera.up | Camera.up} and {@link Camera.worldUp} is less than one degree.
+     * The camera is upside down when the angle between {@link Camera.up | Camera.up} and {@link Camera.worldUp} is less than one degree.
      *
      * Default value is ````false````.
      *
@@ -672,7 +672,7 @@ class Camera extends Component {
     }
 
     /**
-     * Gets distance from {@link viewer!Camera.look | Camera.look} to {@link viewer!Camera.eye | Camera.eye}.
+     * Gets distance from {@link Camera.look | Camera.look} to {@link Camera.eye | Camera.eye}.
      *
      * @returns {Number} The distance.
      */
@@ -810,7 +810,7 @@ class Camera extends Component {
     }
 
     /**
-     * Rotates {@link viewer!Camera.eye | Camera.eye} about {@link viewer!Camera.look | Camera.look}, around the {@link viewer!Camera.up | Camera.up} vector
+     * Rotates {@link Camera.eye | Camera.eye} about {@link Camera.look | Camera.look}, around the {@link Camera.up | Camera.up} vector
      *
      * @param angleInc Angle of rotation in degrees
      */
@@ -823,7 +823,7 @@ class Camera extends Component {
     }
 
     /**
-     * Rotates {@link viewer!Camera.eye | Camera.eye} about {@link viewer!Camera.look | Camera.look} around the right axis (orthogonal to {@link viewer!Camera.up | Camera.up} and "look").
+     * Rotates {@link Camera.eye | Camera.eye} about {@link Camera.look | Camera.look} around the right axis (orthogonal to {@link Camera.up | Camera.up} and "look").
      *
      * @param angleInc Angle of rotation in degrees
      */
@@ -843,7 +843,7 @@ class Camera extends Component {
     }
 
     /**
-     * Rotates {@link viewer!Camera.look | Camera.look} about {@link viewer!Camera.eye | Camera.eye}, around the {@link viewer!Camera.up | Camera.up} vector.
+     * Rotates {@link Camera.look | Camera.look} about {@link Camera.eye | Camera.eye}, around the {@link Camera.up | Camera.up} vector.
      *
      * @param angleInc Angle of rotation in degrees
      */
@@ -858,7 +858,7 @@ class Camera extends Component {
     }
 
     /**
-     * Rotates {@link viewer!Camera.look | Camera.look} about {@link viewer!Camera.eye | Camera.eye}, around the right axis (orthogonal to {@link viewer!Camera.up | Camera.up} and "look").
+     * Rotates {@link Camera.look | Camera.look} about {@link Camera.eye | Camera.eye}, around the right axis (orthogonal to {@link Camera.up | Camera.up} and "look").
 
      * @param angleInc Angle of rotation in degrees
      */
@@ -910,7 +910,7 @@ class Camera extends Component {
     }
 
     /**
-     * Increments/decrements the Camera's zoom factor, which is the distance between {@link viewer!Camera.eye | Camera.eye} and {@link viewer!Camera.look | Camera.look}.
+     * Increments/decrements the Camera's zoom factor, which is the distance between {@link Camera.eye | Camera.eye} and {@link Camera.look | Camera.look}.
      *
      * @param delta Zoom factor increment.
      */

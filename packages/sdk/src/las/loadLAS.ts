@@ -18,7 +18,7 @@ const MAX_VERTICES = 500000; // TODO: Rough estimate
  * * Expects {@link scene!SceneModel.built | SceneModel.built} and {@link scene!SceneModel.destroyed | SceneModel.destroyed} to be ````false````
  * * Does not call {@link scene!SceneModel.build | SceneModel.build} - we call that ourselves, when we have finished building the SceneModel
  *
- * See {@link "@xeokit/las"} for usage.
+ * See {@link "las"} for usage.
  *
  * @param params - Loading parameters.
  * @param params.fileData - LAS/LAZ file data

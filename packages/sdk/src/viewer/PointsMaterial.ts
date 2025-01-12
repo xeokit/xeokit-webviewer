@@ -2,9 +2,9 @@ import {Component} from "../core";
 import type {View} from "./View";
 
 /**
- * Configures the size and shape of {@link viewer!ViewObject | ViewObjects} that represent clouds of points.
+ * Configures the size and shape of {@link ViewObject | ViewObjects} that represent clouds of points.
  *
- * ## Summary
+ *
  *
  * * Located at {@link View.pointsMaterial}.
  * * Supports round and square points.

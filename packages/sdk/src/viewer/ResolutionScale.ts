@@ -42,9 +42,7 @@ import {FastRender, QualityRender} from "../constants";
 // }
 
 /**
- * Configures the appearance of {@link viewer!ViewObject | ViewObjects} when canvas resolution scaling is applied.
- *
- * ## Summary
+ * Configures the appearance of {@link ViewObject | ViewObjects} when canvas resolution scaling is applied.
  *
  * * Located at {@link View.resolutionScale}.
  */

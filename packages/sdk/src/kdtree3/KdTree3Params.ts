@@ -3,7 +3,7 @@ import type {FloatArrayParam} from "../math";
 /**
  * Parameters for creating a {@link KdTree3}.
  *
- * See {@link "@xeokit/kdtree3"} for usage.
+ * See {@link "kdtree3"} for usage.
  */
 export interface KdTree3Params {
 

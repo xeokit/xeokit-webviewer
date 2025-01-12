@@ -1,9 +1,9 @@
 import type {View} from "../viewer";
 
 /**
- * Options for {@link bcf!saveBCFViewpoint | saveBCFViewpoint}.
+ * Options for {@link saveBCFViewpoint | saveBCFViewpoint}.
  *
- * See {@link "@xeokit/bcf" | @xeokit/bcf} for usage.
+ * See {@link bcf | @xeokit/sdk/bcf}  for usage.
  */
 export interface SaveBCFViewpointParams {
 
@@ -12,7 +12,7 @@ export interface SaveBCFViewpointParams {
     /**
      * Whether to capture a snapshot image in the BCF viewpoint.
      *
-     * The snapshot would be saved in {@link bcf!BCFViewpoint.snapshot | BCFViewpoint.snapshot}.
+     * The snapshot would be saved in {@link BCFViewpoint.snapshot | BCFViewpoint.snapshot}.
      */
     snapshot?: boolean;
 
@@ -27,39 +27,39 @@ export interface SaveBCFViewpointParams {
     reverseClippingPlanes?: boolean;
 
     /**
-     * Value to set on {@link bcf!BCFSetupHints.openings_translucent | BCFSetupHints.openings_translucent} within the BCF viewpoint.
+     * Value to set on {@link BCFViewSetupHints.openings_translucent | BCFViewSetupHints.openings_translucent} within the BCF viewpoint.
      */
     openings_translucent?: boolean;
 
     /**
-     * Value to set on {@link bcf!BCFSetupHints.space_boundaries_translucent | BCFSetupHints.space_boundaries_translucent} within the BCF viewpoint.
+     * Value to set on {@link BCFViewSetupHints.space_boundaries_translucent | BCFViewSetupHints.space_boundaries_translucent} within the BCF viewpoint.
      */
     space_boundaries_translucent?: boolean;
 
     /**
-     * Value to set on {@link bcf!BCFSetupHints.spaces_translucent | BCFSetupHints.spaces_translucent} within the BCF viewpoint.
+     * Value to set on {@link BCFViewSetupHints.spaces_translucent | BCFViewSetupHints.spaces_translucent} within the BCF viewpoint.
      */
     spaces_translucent?: boolean;
 
     /**
-     * Value to set on {@link bcf!BCFSetupHints.openingsVisible | BCFSetupHints.openingsVisible} within the BCF viewpoint.
+     * Value to set on {@link BCFViewSetupHints.openings_visible | BCFViewSetupHints.openings_visible} within the BCF viewpoint.
      */
     openingsVisible?: boolean;
 
     /**
-     * Value to set on {@link bcf!BCFSetupHints.spaceBoundariesVisible | BCFSetupHints.spaceBoundariesVisible} within the BCF viewpoint.
+     * Value to set on {@link BCFViewSetupHints.space_boundaries_visible | BCFViewSetupHints.space_boundaries_visible} within the BCF viewpoint.
      */
     spaceBoundariesVisible?: boolean;
 
     /**
-     * Value to set on {@link bcf!BCFSetupHints.spacesVisible | BCFSetupHints.spacesVisible} within the BCF viewpoint.
+     * Value to set on {@link BCFViewSetupHints.spaces_visible | BCFViewSetupHints.spaces_visible} within the BCF viewpoint.
      */
     spacesVisible?: boolean;
 
     /**
      * The {@link viewer!View | View} to save as a BCF viewpoint.
      *
-     * This will save component states in the BCF (see {@link bcf!BCFComponents}) for all
+     * This will save component states in the BCF (see {@link BCFComponents}) for all
      * {@link viewer!ViewObject | ViewObjects} in this View.
      */
     view: View;
@@ -68,10 +68,10 @@ export interface SaveBCFViewpointParams {
      * Only save BCF viewpoint components if their corresponding {@link viewer!ViewObject | ViewObjects}
      * are in {@link viewer!ViewLayer | ViewLayers} that match these IDs.
      *
-     * The {@link bcf!saveBCFViewpoint | saveBCFViewpoint} function will silently ignore each component state that has no corresponding
+     * The {@link saveBCFViewpoint | saveBCFViewpoint} function will silently ignore each component state that has no corresponding
      * ViewObject in any of these ViewLayers.
      *
-     * Each ViewLayer's occurrence in {@link bcf!SaveBCFViewpointParams.excludeLayerIds | SaveBCFViewpointParams.excludeLayerIds} will override
+     * Each ViewLayer's occurrence in {@link SaveBCFViewpointParams.excludeLayerIds | SaveBCFViewpointParams.excludeLayerIds} will override
      * its appearance in this list.
      */
     includeLayerIds?: string[]
@@ -80,11 +80,11 @@ export interface SaveBCFViewpointParams {
      * Never save BCF viewpoint components if their corresponding {@link viewer!ViewObject | ViewObjects}
      * are in {@link viewer!ViewLayer |ViewLayers} that have the given IDs.
      *
-     * The {@link bcf!saveBCFViewpoint | saveBCFViewpoint} function will silently ignore each component state that has a corresponding
+     * The {@link saveBCFViewpoint | saveBCFViewpoint} function will silently ignore each component state that has a corresponding
      * ViewObject in any of these ViewLayers.
      *
      * Each ViewLayer's occurrence in this list will override its occurrance
-     * in {@link bcf!SaveBCFViewpointParams.includeLayerIds}.
+     * in {@link SaveBCFViewpointParams.includeLayerIds}.
      */
     excludeLayerIds?: string[]
 }

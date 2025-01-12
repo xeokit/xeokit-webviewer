@@ -10,73 +10,73 @@ import type {SearchParams} from "./SearchParams";
 /**
  * A federated entity-relationship semantic data model.
  *
- * A Data is a container of {@link data!DataModel | DataModels}, {@link data!DataObject | DataObjects},
- * {@link data!Relationship | Relationships}, {@link data!PropertySet | PropertySets}
- * and {@link data!Property | Properties}.
+ * A Data is a container of {@link DataModel | DataModels}, {@link DataObject | DataObjects},
+ * {@link Relationship | Relationships}, {@link PropertySet | PropertySets}
+ * and {@link Property | Properties}.
  *
- * See {@link "data" | data}  for usage.
+ * See {@link data | @xeokit/sdk/data}  for usage.
  */
 export class Data extends Component {
 
     /**
-     * The {@link data!DataModel | DataModels} belonging to this Data, each keyed to
-     * its {@link data!DataModel.id | DataModel.id}.
+     * The {@link DataModel | DataModels} belonging to this Data, each keyed to
+     * its {@link DataModel.id | DataModel.id}.
      */
     public readonly models: { [key: string]: DataModel };
 
     /**
-     * The{@link data!PropertySet | PropertySets} belonging to this Data, mapped to{@link data!PropertySet.id | PropertySet.id}.
+     * The{@link PropertySet | PropertySets} belonging to this Data, mapped to{@link PropertySet.id | PropertySet.id}.
      */
     public readonly propertySets: { [key: string]: PropertySet };
 
     /**
-     * The {@link data!DataObject | DataObjects} in this Data, mapped to {@link data!DataObject.id | DataObject.id}.
+     * The {@link DataObject | DataObjects} in this Data, mapped to {@link DataObject.id | DataObject.id}.
      */
     public readonly objects: { [key: string]: DataObject };
 
     /**
-     * The root {@link data!DataObject | DataObjects} belonging to this Data, each keyed to its {@link data!DataObject.id | DataObject.id}.
+     * The root {@link DataObject | DataObjects} belonging to this Data, each keyed to its {@link DataObject.id | DataObject.id}.
      *
      * * This is the set of DataObjects in the DataModels within this Data that are not the *related* participant in
-     * any {@link data!Relationship | Relationships}, where they have no incoming Relationships and
-     * their {@link data!DataObject.relating} property is empty.
+     * any {@link Relationship | Relationships}, where they have no incoming Relationships and
+     * their {@link DataObject.relating} property is empty.
      */
     public readonly rootObjects: { [key: string]: DataObject };
 
     /**
-     * The {@link data!DataObject | DataObjects} belonging to this Data, each map keyed to {@link data!DataObject.type | DataObject.type},
-     * containing {@link data!DataObject | DataObjects} keyed to {@link data!DataObject.id | DataObject.id}.
+     * The {@link DataObject | DataObjects} belonging to this Data, each map keyed to {@link DataObject.type | DataObject.type},
+     * containing {@link DataObject | DataObjects} keyed to {@link DataObject.id | DataObject.id}.
      */
     public readonly objectsByType: { [key: string]: { [key: string]: DataObject } };
 
     /**
-     * Tracks number of {@link data!DataObject | DataObjects} of each type in this Data.
+     * Tracks number of {@link DataObject | DataObjects} of each type in this Data.
      */
     public readonly typeCounts: { [key: string]: number };
 
     /**
-     * Emits an event each time a {@link data!DataModel | DataModel} has been created in this Data.
+     * Emits an event each time a {@link DataModel | DataModel} has been created in this Data.
      *
      * @event
      */
     public readonly onModelCreated: EventEmitter<Data, DataModel>;
 
     /**
-     * Emits an event each time a {@link data!DataModel | DataModel} has been destroyed within this Data.
+     * Emits an event each time a {@link DataModel | DataModel} has been destroyed within this Data.
      *
      * @event
      */
     public readonly onModelDestroyed: EventEmitter<Data, DataModel>;
 
     /**
-     * Emits an event each time a {@link data!DataObject | DataObject} is created within this Data.
+     * Emits an event each time a {@link DataObject | DataObject} is created within this Data.
      *
      * @event
      */
     public readonly onObjectCreated: EventEmitter<Data, DataObject>;
 
     /**
-     * Emits an event each time a {@link data!DataObject | DataObject} is destroyed within this Data.
+     * Emits an event each time a {@link DataObject | DataObject} is destroyed within this Data.
      *
      * @event
      */
@@ -85,7 +85,7 @@ export class Data extends Component {
     /**
      * Creates a new Data.
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+     * See {@link data | @xeokit/sdk/data}   for usage.
      */
     constructor() {
 
@@ -105,26 +105,26 @@ export class Data extends Component {
     }
 
     /**
-     * Creates a new {@link data!DataModel | DataModel} in this Data.
+     * Creates a new {@link DataModel | DataModel} in this Data.
      *
-     * Remember to call {@link data!DataModel.build | DataModel.build} when you've finished building or loading the DataModel. That will
-     * fire events via {@link data!Data.onModelCreated | Data.onModelCreated} and {@link data!DataModel.onBuilt | DataModel.onBuilt}, to
+     * Remember to call {@link DataModel.build | DataModel.build} when you've finished building or loading the DataModel. That will
+     * fire events via {@link Data.onModelCreated | Data.onModelCreated} and {@link DataModel.onBuilt | DataModel.onBuilt}, to
      * indicate to any subscribers that the DataModel is built and ready for use.
      *
-     * Note that while we're building/loading the DataModel, each call that we make to {@link data!DataModel.createObject | DataModel.createObject}
-     * will create a new {@link data!DataObject | DataObject}
-     * in {@link data!Data.objects | Data.objects} and {@link data!DataModel.objects | DataModel.objects}, and will also fire an event
-     * via {@link data!Data.onObjectCreated | Data.onObjectCreated}. However,
-     * only when we've received the {@link data!Data.onModelCreated | Data.onModelCreated} and {@link data!DataModel.onBuilt | DataModel.onBuilt}
+     * Note that while we're building/loading the DataModel, each call that we make to {@link DataModel.createObject | DataModel.createObject}
+     * will create a new {@link DataObject | DataObject}
+     * in {@link Data.objects | Data.objects} and {@link DataModel.objects | DataModel.objects}, and will also fire an event
+     * via {@link Data.onObjectCreated | Data.onObjectCreated}. However,
+     * only when we've received the {@link Data.onModelCreated | Data.onModelCreated} and {@link DataModel.onBuilt | DataModel.onBuilt}
      * events can we actually consider the DataModel to be fully constructed.
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for more details on usage.
+     * See {@link data | @xeokit/sdk/data}   for more details on usage.
      *
-     * @param  dataModelParams Creation parameters for the new {@link data!DataModel | DataModel}.
-     * @param [options] Options for creating the {@link data!DataModel | DataModel}.
-     * @param [options.includeTypes] When provided, only create {@link data!DataObject | DataObjects} with types in this list.
-     * @param  [options.excludeRelating] When provided, never create {@link data!DataObject | DataObjects} with types in this list.
-     * @returns {@link data!DataModel | DataModel}
+     * @param  dataModelParams Creation parameters for the new {@link DataModel | DataModel}.
+     * @param [options] Options for creating the {@link DataModel | DataModel}.
+     * @param [options.includeTypes] When provided, only create {@link DataObject | DataObjects} with types in this list.
+     * @param  [options.excludeRelating] When provided, never create {@link DataObject | DataObjects} with types in this list.
+     * @returns {@link DataModel | DataModel}
      * * On success.
      * @returns *{@link core!SDKError | SDKError}*
      * * This Data has already been destroyed.
@@ -158,9 +158,9 @@ export class Data extends Component {
     }
 
     /**
-     * Gets the {@link data!DataObject.id}s of the {@link DataObject | DataObjects} that have the given {@link DataObject.type}.
+     * Gets the {@link DataObject.id}s of the {@link DataObject | DataObjects} that have the given {@link DataObject.type}.
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+     * See {@link data | @xeokit/sdk/data}   for usage.
      *
      * @param type The type.
      * @returns {string[]}
@@ -182,7 +182,7 @@ export class Data extends Component {
      * Usually we use this method to recursively find DataObjects of specific {@link DataObject.type | types} within
      * a hierarchy.
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+     * See {@link data | @xeokit/sdk/data}   for usage.
      *
      * @param searchParams Search parameters.
      * @returns *void*
@@ -273,7 +273,7 @@ export class Data extends Component {
      * * Fires {@link Data.onModelDestroyed | Data.onModelDestroyed} and {@link DataModel.onDestroyed | DataModel.onDestroyed}
      * for each existing DataModel in this Data.
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+     * See {@link data | @xeokit/sdk/data}   for usage.
      *
      * @returns *void*
      * * On success.
@@ -296,7 +296,7 @@ export class Data extends Component {
      * for each existing DataModels in this Data.
      * * Unsubscribes all subscribers to {@link Data.onModelCreated | Data.onModelCreated}, {@link Data.onModelDestroyed | Data.onModelDestroyed}, {@link DataModel.onDestroyed | DataModel.onDestroyed}
      *
-     * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+     * See {@link data | @xeokit/sdk/data}   for usage.
      *
      * @returns *void*
      * * On success.

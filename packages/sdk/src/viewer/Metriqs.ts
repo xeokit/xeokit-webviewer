@@ -28,15 +28,15 @@ const unitsInfo = {
 };
 
 /**
- * Configures its {@link viewer!View}'s measurement unit and mapping between the Real-space and World-space 3D Cartesian coordinate systems.
+ * Configures its {@link View}'s measurement unit and mapping between the Real-space and World-space 3D Cartesian coordinate systems.
  *
  *
- * ## Summary
+ *
  *
  * * Located at {@link View.metrics}.
  * * {@link Metrics.units} configures the Real-space unit type, which is {@link constants!MetersUnit} by default.
  * * {@link Metrics.scale} configures the number of Real-space units represented by each unit within the World-space 3D coordinate system. This is ````1.0```` by default.
- * * {@link Metrics.origin} configures the 3D Real-space origin, in current Real-space units, at which this {@link viewer!View}'s World-space coordinate origin sits, This is ````[0,0,0]```` by default.
+ * * {@link Metrics.origin} configures the 3D Real-space origin, in current Real-space units, at which this {@link View}'s World-space coordinate origin sits, This is ````[0,0,0]```` by default.
  *
  * ## Usage
  *
@@ -148,14 +148,14 @@ class Metrics extends Component {
     }
 
     /**
-     * Gets the {@link viewer!View}'s Real-space unit type.
+     * Gets the {@link View}'s Real-space unit type.
      */
     get units(): number {
         return this.#units;
     }
 
     /**
-     * Sets the {@link viewer!View}'s Real-space unit type.
+     * Sets the {@link View}'s Real-space unit type.
      *
      * Accepted values are {@link constants!MetersUnit}, {@link constants!CentimetersUnit}, {@link constants!MillimetersUnit}, {@link constants!YardsUnit}, {@link constants!FeetUnit} and {@link constants!InchesUnit}.
      */
@@ -174,14 +174,14 @@ class Metrics extends Component {
     }
 
     /**
-     * Gets the number of Real-space units represented by each unit of the {@link viewer!View}'s World-space coordinate system.
+     * Gets the number of Real-space units represented by each unit of the {@link View}'s World-space coordinate system.
      */
     get scale(): number {
         return this.#scale;
     }
 
     /**
-     * Sets the number of Real-space units represented by each unit of the {@link viewer!View}'s World-space coordinate system.
+     * Sets the number of Real-space units represented by each unit of the {@link View}'s World-space coordinate system.
      *
      * For example, if {@link Metrics.units} is {@link constants!MetersUnit}, and there are ten meters per World-space coordinate system unit, then ````scale```` would have a value of ````10.0````.
      */
@@ -196,14 +196,14 @@ class Metrics extends Component {
     }
 
     /**
-     * Gets the 3D Real-space origin, in Real-space units, at which this {@link viewer!View}'s World-space coordinate origin ````[0,0,0]```` sits.
+     * Gets the 3D Real-space origin, in Real-space units, at which this {@link View}'s World-space coordinate origin ````[0,0,0]```` sits.
      */
     get origin(): FloatArrayParam {
         return this.#origin;
     }
 
     /**
-     * Sets the Real-space 3D origin, in Real-space units, at which this {@link viewer!View}'s World-space coordinate origin ````[0,0,0]```` sits.
+     * Sets the Real-space 3D origin, in Real-space units, at which this {@link View}'s World-space coordinate origin ````[0,0,0]```` sits.
      */
     set origin(value: FloatArrayParam | undefined) {
         if (!value) {

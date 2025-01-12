@@ -11,29 +11,29 @@ import {SceneModelStreamParams} from "./SceneModelStreamParams";
 
 
 /**
- * {@link scene!SceneModel | SceneModel} creation parameters for {@link scene!Scene.createModel | Scene.createModel}.
+ * {@link SceneModel | SceneModel} creation parameters for {@link Scene.createModel | Scene.createModel}.
  *
- * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
+ * See {@link scene | @xeokit/sdk/scene}   for usage.
  */
 export interface SceneModelParams {
 
     /**
      * Indicates what renderer resources will need to be allocated in a {@link viewer!Viewer | Viewer's}
-     * {@link viewer!Renderer | Renderer} to support progressive loading for a {@link scene!SceneModel | SceneModel}.
+     * {@link viewer!Renderer | Renderer} to support progressive loading for a {@link SceneModel | SceneModel}.
      */
     streamParams?: SceneModelStreamParams;
 
     /**
      * Unique ID for the SceneModel.
      *
-     * The SceneModel is stored with this ID in {@link scene!Scene.models | Scene.models}
+     * The SceneModel is stored with this ID in {@link Scene.models | Scene.models}
      */
     id: string;
 
     /**
-     * Whether IDs of the {@link scene!SceneObject | SceneObjects} are globalized.
+     * Whether IDs of the {@link SceneObject | SceneObjects} are globalized.
      *
-     * When globalized, the IDs are prefixed with the value of {@link scene!SceneModel.id | SceneModel.id}
+     * When globalized, the IDs are prefixed with the value of {@link SceneModel.id | SceneModel.id}
      *
      * Default is ````false````.
      */
@@ -67,32 +67,32 @@ export interface SceneModelParams {
     position?: FloatArrayParam;
 
     /**
-     * {@link scene!SceneGeometryParams} in the SceneModel.
+     * {@link SceneGeometryParams} in the SceneModel.
      */
     geometries?: SceneGeometryParams[];
 
     /**
-     * {@link scene!SceneGeometryCompressedParams | SceneGeometryCompressedParams} in the SceneModel.
+     * {@link SceneGeometryCompressedParams | SceneGeometryCompressedParams} in the SceneModel.
      */
     geometriesCompressed?: SceneGeometryCompressedParams[];
 
     /**
-     * {@link scene!SceneTexture | Textures} in the SceneModel.
+     * {@link SceneTexture | Textures} in the SceneModel.
      */
     textures?: SceneTextureParams[];
 
     /**
-     * {@link scene!SceneTextureSet | TextureSets} in the SceneModel.
+     * {@link SceneTextureSet | TextureSets} in the SceneModel.
      */
     textureSets?: SceneTextureSetParams[];
 
     /**
-     * {@link scene!SceneMesh | Meshes} in the SceneModel.
+     * {@link SceneMesh | Meshes} in the SceneModel.
      */
     meshes?: SceneMeshParams[];
 
     /**
-     * {@link scene!SceneObject | SceneObjects} in the SceneModel.
+     * {@link SceneObject | SceneObjects} in the SceneModel.
      */
     objects?: SceneObjectParams[];
 
@@ -102,7 +102,7 @@ export interface SceneModelParams {
      *
      * Will be "default" by default.
      *
-     * Overrides {@link scene!SceneObjectParams.layerId | SceneObjectParams.layerId}.
+     * Overrides {@link SceneObjectParams.layerId | SceneObjectParams.layerId}.
      */
     layerId?: string;
 

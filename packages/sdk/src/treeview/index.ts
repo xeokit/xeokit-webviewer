@@ -92,7 +92,7 @@
  * @module treeview
  */
 export * from "./TreeView";
-export {TreeViewParams} from "./TreeViewparams";
+export {TreeViewParams} from "./TreeViewParams";
 export {TreeViewNode} from "./TreeViewNode";
 export {TreeViewNodeContextMenuEvent} from "./TreeViewNodeContextMenuEvent";
 export {TreeViewNodeTitleClickedEvent} from "./TreeViewNodeTitleClickedEvent";

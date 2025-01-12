@@ -256,7 +256,7 @@ export function subVec4Scalar(v: FloatArrayParam, s: number, dest?: FloatArrayPa
 
 /**
  * Sets each element of a 4-element vector to a scalar value minus the value of that element.
- * @static
+ *
  * @param {Array(Number)} v The vector
  * @param s The scalar
  * @param  {Array(Number)} [dest] Destination vector

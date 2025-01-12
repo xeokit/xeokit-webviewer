@@ -21,22 +21,22 @@ import type {SceneTextureParams} from "./SceneTextureParams";
 import {createVec4} from "../matrix";
 
 /**
- * A texture in a {@link scene!SceneModel | SceneModel}.
+ * A texture in a {@link SceneModel | SceneModel}.
  *
- * * Stored in {@link scene!SceneModel.textures | SceneModel.textures}
- * * Created with {@link scene!SceneModel.createTexture | SceneModel.createTexture}
- * * Referenced by {@link scene!SceneTextureSet.colorTexture | SceneTextureSet.colorTexture},
- * {@link scene!SceneTextureSet.metallicRoughnessTexture | SceneTextureSet.metallicRoughnessTexture},
- * {@link scene!SceneTextureSet.occlusionTexture | SceneTextureSet.occlusionTexture} and {@link scene!SceneTextureSet.emissiveTexture | SceneTextureSet.emissiveTexture}
+ * * Stored in {@link SceneModel.textures | SceneModel.textures}
+ * * Created with {@link SceneModel.createTexture | SceneModel.createTexture}
+ * * Referenced by {@link SceneTextureSet.colorTexture | SceneTextureSet.colorTexture},
+ * {@link SceneTextureSet.metallicRoughnessTexture | SceneTextureSet.metallicRoughnessTexture},
+ * {@link SceneTextureSet.occlusionTexture | SceneTextureSet.occlusionTexture} and {@link SceneTextureSet.emissiveTexture | SceneTextureSet.emissiveTexture}
  *
- * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
+ * See {@link scene | @xeokit/sdk/scene}   for usage.
  */
 export class SceneTexture {
 
     /**
-     *  Internal interface through which this {@link scene!SceneTexture} can load property updates into a renderers.
+     *  Internal interface through which this {@link SceneTexture} can load property updates into a renderers.
      *
-     *  This is defined when the owner {@link scene!SceneModel | SceneModel} has been added to a {@link viewer!Viewer | Viewer}.
+     *  This is defined when the owner {@link SceneModel | SceneModel} has been added to a {@link viewer!Viewer | Viewer}.
      *
      * @internal
      */

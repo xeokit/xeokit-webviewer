@@ -4,11 +4,9 @@ import {QualityRender} from "../constants";
 
 
 /**
- * Configures when textures are rendered on {@link viewer!ViewObject | ViewObjects}.
+ * Configures whether a {@link View} shows textures on its {@link ViewObject | ViewObjects}.
  *
- * ## Summary
- *
- * * Located at {@link View.textures}.
+ * * Located at {@link View.texturing}.
  */
 class Texturing extends Component {
 

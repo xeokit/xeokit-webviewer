@@ -16,7 +16,7 @@ const newLookEyeVec = createVec3();
 /**
  * Animates a {@link viewer!View | View's} {@link viewer!Camera | Camera} to look at specified objects, boundaries or locations.
  *
- * ## Summary
+ *
  *
  * * Controls a {@link viewer!Camera | Camera}
  * * Navigates the Camera to look at a {@link viewer!Viewer | Viewer} or boundary
@@ -140,10 +140,10 @@ class CameraFlightAnimation extends Component {
      * @param [params.look] Position to fly the look position to.
      * @param [params.up] Position to fly the up vector to.
      * @param [params.projection] Projection type to transition into as we fly. Can be any of the values of {@link viewer!Camera.projectionType | Camera.projectionType | Camera.projectionType}.
-     * @param [params.fit=true] Whether to fit the target to the view volume. Overrides {@link viewer!CameraFlightAnimation.fit | CameraFlightAnimation.fit}.
+     * @param [params.fit=true] Whether to fit the target to the view volume. Overrides {@link cameraFlightAnimation.fit | CameraFlightAnimation.fit}.
      * @param [params.fitFOV] How much of field-of-view, in degrees, that a target {@link viewer!ViewObject | ViewObject} or its AABB should
-     * fill the canvas on arrival. Overrides {@link viewer!CameraFlightAnimation.fitFOV | CameraFlightAnimation.fitFOV}.
-     * @param [params.duration] Flight duration in seconds.  Overrides {@link viewer!CameraFlightAnimation.duration | CameraFlightAnimation.duration}.
+     * fill the canvas on arrival. Overrides {@link cameraFlightAnimation.fitFOV | CameraFlightAnimation.fitFOV}.
+     * @param [params.duration] Flight duration in seconds.  Overrides {@link cameraFlightAnimation.duration | CameraFlightAnimation.duration}.
      * @param [params.orthoScale] Animate the Camera's orthographic scale to this target value. See {@link viewer!OrthoProjection.scale | OrthoProjection.scale}.
      * @param {Function} [callback] Callback fired on arrival.
      */
@@ -327,7 +327,7 @@ class CameraFlightAnimation extends Component {
      * @param [params.up] Position to fly the up vector to.
      * @param [params.projection] Projection type to transition into. Can be any of the values of {@link viewer!Camera.projectionType | Camera.projectionType}.
      * @param [params.fitFOV] How much of field-of-view, in degrees, that a target {@link viewer!Viewer | Viewer} or its AABB should fill the canvas on arrival. Overrides {@link CameraFlightAnimation.fitFOV}.
-     * @param [params.fit] Whether to fit the target to the view volume. Overrides {@link viewer!CameraFlightAnimation.fit | CameraFlightAnimation.fit}.
+     * @param [params.fit] Whether to fit the target to the view volume. Overrides {@link cameraFlightAnimation.fit | CameraFlightAnimation.fit}.
      */
     jumpTo(params: any) {
         this.#jumpTo(params);

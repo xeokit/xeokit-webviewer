@@ -4,13 +4,13 @@ import {SceneQuantizationRangeParams} from "./SceneQuantizationRangeParams";
 
 
 /**
- * A geometry in a {@link scene!SceneModel | SceneModel}.
+ * A geometry in a {@link SceneModel | SceneModel}.
  *
- * * Stored in {@link scene!SceneModel.quantizationRanges | SceneModel.quantizationRanges}
- * * Created with {@link scene!SceneModel.createQuantizationRange | SceneModel.createQuantizationRange}
- * * Referenced by {@link scene!SceneGeometry.geometry | SceneGeometry.geometry}
+ * * Stored in {@link SceneModel.quantizationRanges | SceneModel.quantizationRanges}
+ * * Created with {@link SceneModel.createQuantizationRange | SceneModel.createQuantizationRange}
+ * * Referenced by {@link SceneGeometry.geometry | SceneGeometry.geometry}
  *
- * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
+ * See {@link scene | @xeokit/sdk/scene}   for usage.
  */
 export class SceneQuantizationRange {
 

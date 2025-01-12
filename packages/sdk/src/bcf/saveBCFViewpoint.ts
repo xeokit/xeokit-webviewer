@@ -6,9 +6,9 @@ import {OrthoProjectionType} from "../constants";
 import {ViewObject} from "../viewer";
 
 /**
- * Saves a {@link viewer!View | View} to a {@link bcf!BCFViewpoint | BCFViewpoint}.
+ * Saves a {@link viewer!View | View} to a {@link BCFViewpoint | BCFViewpoint}.
  *
- * See {@link "@xeokit/bcf" | @xeokit/bcf} for usage.
+ * See {@link "bcf" | @xeokit/bcf} for usage.
  *
  * @param params BCF saving parameers.
  * @returns The BCF viewpoint.

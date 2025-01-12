@@ -2,7 +2,7 @@ import type {View, Viewer, ViewObject} from "../viewer";
 import {Component, EventEmitter} from "../core";
 import type {Data, DataModel, DataObject} from "../data";
 import {EventDispatcher} from "strongly-typed-events";
-import {TreeViewParams} from "./TreeViewparams";
+import {TreeViewParams} from "./TreeViewParams";
 import {TreeViewNode} from "./TreeViewNode";
 import {TreeViewNodeContextMenuEvent} from "./TreeViewNodeContextMenuEvent";
 import {TreeViewNodeTitleClickedEvent} from "./TreeViewNodeTitleClickedEvent";
@@ -118,8 +118,6 @@ export class TreeView extends Component {
     #dataObjectSceneObjectCounts: { [key: string]: number };
 
     /**
-     *
-     * TODO
      *
      * @param params
      */

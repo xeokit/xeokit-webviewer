@@ -8,7 +8,7 @@ import {createMat4, frustumMat4, inverseMat4, mulMat4v4, mulVec3Scalar, transpos
 import {Projection} from "./Projection";
 
 /**
- *  FrustumProjection-based perspective projection configuration for a {@link viewer!Camera | Camera} .
+ *  FrustumProjection-based perspective projection configuration for a {@link Camera | Camera} .
  *
  * * Located at {@link Camera.frustumProjection}.
  * * Allows to explicitly set the positions of the left, right, top, bottom, near and far planes, which is useful for asymmetrical view volumes, such as for stereo viewing.

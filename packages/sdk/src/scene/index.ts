@@ -17,8 +17,8 @@
  *
  * To elaborate further:
  *
- * * The {@link scene!Scene | Scene} acts as a container for {@link scene!SceneModel | SceneModels}, which, in turn,
- * comprise {@link scene!SceneObject | SceneObjects}, {@link scene!SceneMesh | SceneMeshes}, {@link scene!SceneGeometry | SceneGeometries}, and {@link scene!SceneTexture | SceneTextures}.
+ * * The {@link Scene | Scene} acts as a container for {@link SceneModel | SceneModels}, which, in turn,
+ * comprise {@link SceneObject | SceneObjects}, {@link SceneMesh | SceneMeshes}, {@link SceneGeometry | SceneGeometries}, and {@link SceneTexture | SceneTextures}.
  * * Optionally attach the Scene to a {@link viewer!Viewer | Viewer} to view it in the browser.
  * * Import and export various formats, including {@link gltf}, {@link las}, {@link cityjson}, {@link xgf}, {@link dotbim} and {@link webifc}.
  * * Create Scene content programmatically using builder methods.
@@ -103,12 +103,12 @@
  *
  * ## Building a SceneModel
  *
- * In the example below, we'll create a {@link scene!SceneModel | SceneModel} that will model the simple table object
+ * In the example below, we'll create a {@link SceneModel | SceneModel} that will model the simple table object
  * shown in the image above. Our SceneModel will contain five
- * {@link scene!SceneObject | SceneObjects}, five {@link scene!SceneMesh | SceneMeshes},
- * one {@link scene!SceneGeometry | SceneGeometry} and one {@link scene!SceneTexture | SceneTexture}.
+ * {@link SceneObject | SceneObjects}, five {@link SceneMesh | SceneMeshes},
+ * one {@link SceneGeometry | SceneGeometry} and one {@link SceneTexture | SceneTexture}.
  *
- * When we've finished constructing our SceneModel, we'll call {@link scene!SceneModel.build | SceneModel.build}. After that,
+ * When we've finished constructing our SceneModel, we'll call {@link SceneModel.build | SceneModel.build}. After that,
  * our SceneModel appears in our Viewer and we can interact with it.
  *
  * ````javascript
@@ -308,18 +308,18 @@
  *
  * ## Using Compressed Geometry
  *
- * When we created our SceneModel, the {@link scene!SceneModel.createGeometry | SceneModel.createGeometry}
+ * When we created our SceneModel, the {@link SceneModel.createGeometry | SceneModel.createGeometry}
  * method internally performed some on-the-fly compression and processing of our geometry parameters.
  *
  * To speed up SceneModel creation, we may want to perform that compression in advance.
  *
- * We can use the {@link scene!compressGeometryParams | compressGeometryParams} function to pre-compress the geometry parameters so
- * that we can then use {@link scene!SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}
+ * We can use the {@link compressGeometryParams | compressGeometryParams} function to pre-compress the geometry parameters so
+ * that we can then use {@link SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}
  * instead, to create the geometry directly from the compressed parameters.
  *
- * In the example below, we'll now use {@link scene!compressGeometryParams | compressGeometryParams} to compress
- * a {@link scene!SceneGeometryParams | SceneGeometryParams} into a
- * {@link scene!SceneGeometryCompressedParams | SceneGeometryCompressedParams}.
+ * In the example below, we'll now use {@link compressGeometryParams | compressGeometryParams} to compress
+ * a {@link SceneGeometryParams | SceneGeometryParams} into a
+ * {@link SceneGeometryCompressedParams | SceneGeometryCompressedParams}.
  *
  * ````javascript
  * import {compressGeometryParams} from "@xeokit/sdk/compression";
@@ -343,7 +343,7 @@
  *  });
  * ````
  *
- * The value of our new {@link scene!SceneGeometryCompressedParams | SceneGeometryCompressedParams} is shown below.
+ * The value of our new {@link SceneGeometryCompressedParams | SceneGeometryCompressedParams} is shown below.
  *
  * We can see that:
  *

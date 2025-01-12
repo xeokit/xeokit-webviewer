@@ -15,10 +15,10 @@
  * properties, and relationships and is compatible with both the browser and NodeJS. It serves as a versatile tool for generating
  * models, converting between model formats, and navigating content within the model viewer.
  *
- * In more detail, the xeokit SDK provides a {@link data!Data | Data} container class that holds
- * {@link data!DataModel | DataModels} consisting of {@link data!DataObject | DataObjects},
- * {@link data!PropertySet | PropertySets}, and
- * {@link data!Relationship | Relationships}, as shown in the diagram below.
+ * In more detail, the xeokit SDK provides a {@link Data | Data} container class that holds
+ * {@link DataModel | DataModels} consisting of {@link DataObject | DataObjects},
+ * {@link PropertySet | PropertySets}, and
+ * {@link Relationship | Relationships}, as shown in the diagram below.
  *
  * <br>
  *
@@ -29,10 +29,10 @@
  * while DataModels can be exported to the native [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) format using {@link xgf!saveXGF | saveXGF}.
  *
  * To programmatically build DataModels, builder methods
- * such as {@link data!Data.createModel | Data.createModel}, {@link data!DataModel.createObject | DataModel.createObject},
- * {@link data!DataModel.createPropertySet | DataModel.createPropertySet}, and
- * {@link data!DataModel.createRelationship | DataModel.createRelationship} can be employed.
- * DataObjects can be queried using the {@link data!Data.searchObjects | Data.searchObjects} method, and
+ * such as {@link Data.createModel | Data.createModel}, {@link DataModel.createObject | DataModel.createObject},
+ * {@link DataModel.createPropertySet | DataModel.createPropertySet}, and
+ * {@link DataModel.createRelationship | DataModel.createRelationship} can be employed.
+ * DataObjects can be queried using the {@link Data.searchObjects | Data.searchObjects} method, and
  * semantic data can be attached to model representations by
  * using it alongside SceneModel.
  *
@@ -42,32 +42,28 @@
  *
  * <br>
  *
- * <br>
- *
  * # Usage
- *
- * <br>
  *
  * ## Creating a DataModel from JSON
  *
- * We will start with an example where we create a {@link data!DataModel | DataModel} using a single parameter
- * object of type {@link data!DataModelParams | DataModelParams}.
+ * We will start with an example where we create a {@link DataModel | DataModel} using a single parameter
+ * object of type {@link DataModelParams | DataModelParams}.
  * The DataModel we create will define a simple piece of furniture - a table consisting of a tabletop and four legs.
- * We will then query the data model to retrieve all the {@link data!DataObject | DataObjects} within it.
+ * We will then query the data model to retrieve all the {@link DataObject | DataObjects} within it.
  *
  * To achieve this, we will create a DataModel that contains six DataObjects: one for the
  * table, one for the tabletop, and one for each of the four legs. We will also define Relationships
  * to connect the DataObjects into an aggregation hierarchy, and we will assign {@link Property | Properties} to the
  * DataObjects to give them attributes such as height and weight.
  *
- * To give the DataObjects and {@link data!Relationship | Relationships} semantic meaning, we will assign
- * them types from one of the SDK's bundled data type sets, {@link "@xeokit/basictypes" | @xeokit/basictypes}. This set of types classifies each DataObject
+ * To give the DataObjects and {@link Relationship | Relationships} semantic meaning, we will assign
+ * them types from one of the SDK's bundled data type sets, {@link "basictypes" | @xeokit/basictypes}. This set of types classifies each DataObject
  * as a {@link basictypes!BasicEntity | BasicEntity} and each Relationship as
  * a {@link basictypes!BasicAggregation | BasicAggregation}.
  *
  * It's worth noting that in a real-world scenario, we would likely use a more complex set of data types, such as
- * {@link "@xeokit/ifctypes" | @xeokit/ifctypes}. However, we cannot mix different sets of data types within our {@link data!Data | Data},
- * as traversals of the DataObjects with {@link data!Data.searchObjects | Data.searchObjects } must be
+ * {@link "ifctypes" | @xeokit/ifctypes}. However, we cannot mix different sets of data types within our {@link Data | Data},
+ * as traversals of the DataObjects with {@link Data.searchObjects | Data.searchObjects } must be
  * guided uniformly by the same set of types across all the DataObjects and Relationships in the graph.
  *
  * To create our DataModel, we will use the following code, which creates a new Data object and then
@@ -207,10 +203,10 @@
  *
  * ## Creating a DataModel using Builder Methods
  *
- * In our second example, we'll create our {@link data!DataModel | DataModel} again, this time instantiating
- * each {@link data!PropertySet | PropertySet}, {@link Property}, {@link data!DataObject | DataObject}
- * and {@link data!Relationship | Relationship} individually, using the
- * {@link data!DataModel | DataModel's} builder methods.
+ * In our second example, we'll create our {@link DataModel | DataModel} again, this time instantiating
+ * each {@link PropertySet | PropertySet}, {@link Property}, {@link DataObject | DataObject}
+ * and {@link Relationship | Relationship} individually, using the
+ * {@link DataModel | DataModel's} builder methods.
  *
  * ````javascript
  * import {SDKError} from "@xeokit/sdk/core";
@@ -370,8 +366,8 @@
  *
  * ## Reading DataObjects
  *
- * With our {@link data!DataModel | DataModel} built, we'll now use the {@link data!Data.searchObjects | Data.searchObjects} method to
- * traverse it to fetch the IDs of the {@link data!DataObject | DataObjects} we find on that path.
+ * With our {@link DataModel | DataModel} built, we'll now use the {@link Data.searchObjects | Data.searchObjects} method to
+ * traverse it to fetch the IDs of the {@link DataObject | DataObjects} we find on that path.
  *
  * One example of where we use this method is to query the aggregation hierarchy of the DataObjects for building
  * a tree view of an IFC element hierarchy.
@@ -393,8 +389,8 @@
  *
  * ## Searching DataObjects
  *
- * In our next example, we'll demonstrate how to traverse the {@link data!DataObject | DataObjects} along their
- * {@link data!Relationship | Relationships}. We'll start at the root DataObject and visit all the DataObjects
+ * In our next example, we'll demonstrate how to traverse the {@link DataObject | DataObjects} along their
+ * {@link Relationship | Relationships}. We'll start at the root DataObject and visit all the DataObjects
  * we encounter along the outgoing Relationships.
  *
  * ````javascript
@@ -439,6 +435,51 @@
  *
  * ````javascript
  *  dataModel2.destroy();
+ * ````
+ *
+ * ## Loading a DataModel from a File
+ *
+ * We can also import {@link DataModel | DataModels} from several file formats.
+ *
+ * For example, let's use {@link dotbim!loadDotBIM | loadDotBIM} to load a .BIM file into a new {@link scene!SceneModel | SceneModel} and DataModel:
+ *
+ * ````javascript
+ * const sceneModel3 = scene.createModel({
+ *     id: "myModel3"
+ * });
+ *
+ * const dataModel3 = data.createModel({
+ *     id: "myModel3"
+ * });
+ *
+ * fetch("model.json").then(response => {
+ *
+ *     response.json().then(fileData => {
+ *
+ *         loadDotBIM({
+ *             fileData,
+ *             sceneModel3,
+ *             dataModel3
+ *         }).then(() => {
+ *
+ *             sceneModel3.build();
+ *             dataModel3.build();
+ *
+ *         }).catch(err => {
+ *
+ *             sceneModel3.destroy();
+ *             dataModel3.destroy();
+ *
+ *             console.error(`Error loading CityJSON: ${err}`);
+ *         });
+ *
+ *     }).catch(err => {
+ *         console.error(`Error creating JSON from fetch response: ${err}`);
+ *     });
+ *
+ * }).catch(err => {
+ *     console.error(`Error fetching CityJSON file: ${err}`);
+ * });
  * ````
  *
  * @module data

@@ -2,9 +2,9 @@ import {SceneModelStreamLayerParams} from "./SceneModelStreamLayerParams";
 
 /**
  * Indicates what renderer resources will need to be allocated in a {@link viewer!Viewer | Viewer's}
- * {@link viewer!Renderer | Renderer} to support progressive loading for a {@link scene!SceneModel | SceneModel}.
+ * {@link viewer!Renderer | Renderer} to support progressive loading for a {@link SceneModel | SceneModel}.
  *
- * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
+ * See {@link scene | @xeokit/sdk/scene}   for usage.
  */
 export interface SceneModelStreamParams {
 

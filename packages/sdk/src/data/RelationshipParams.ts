@@ -1,8 +1,8 @@
 
 /**
- * Parameters for creating a {@link data!Relationship | Relationship} with {@link data!DataModel.createRelationship | DataModel.createRelationship}.
+ * Parameters for creating a {@link Relationship | Relationship} with {@link DataModel.createRelationship | DataModel.createRelationship}.
  *
- * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+ * See {@link data | @xeokit/sdk/data}   for usage.
  */
 export interface RelationshipParams {
 
@@ -12,12 +12,12 @@ export interface RelationshipParams {
     type: number,
 
     /**
-     * The relating {@link data!DataObject | DataObject}.
+     * The relating {@link DataObject | DataObject}.
      */
     relatingObjectId: string,
 
     /**
-     * The related {@link data!DataObject | DataObject}.
+     * The related {@link DataObject | DataObject}.
      */
     relatedObjectId: string
 }

@@ -33,7 +33,7 @@
  * }
  * ````
  *
- * In this file, `sceneModelFiles` contains a list of {@link "@xeokit/xgf" | XGF} files, and `dataModelFiles`
+ * In this file, `sceneModelFiles` contains a list of {@link "xgf" | XGF} files, and `dataModelFiles`
  * contains a list of {@link metamodel!MetaModelParams | ModelModelParams} files.
  *
  * We can now load this file into a {@link scene!SceneModel | SceneModel} and

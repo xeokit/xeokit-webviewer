@@ -13,9 +13,7 @@ const parsers = {
  * * Expects {@link scene!SceneModel.built | SceneModel.built} and
  * {@link scene!SceneModel.destroyed | SceneModel.destroyed} to be ````false````
  *
- * See {@link "@xeokit/xkt" | @xeokit/xkt} for usage.
- *
- * See {@link xkt!XKTData} for insights into the structure of a [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) file.
+ * See {@link xkt} for usage.
  *
  * @param params - Loading parameters.
  * @param params.fileData - [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) file data

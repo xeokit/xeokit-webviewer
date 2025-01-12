@@ -1,11 +1,11 @@
 import type {FloatArrayParam} from "../math";
 
 /**
- * Interface through which a {@link scene!SceneMesh | SceneMesh} loads attribute updates
+ * Interface through which a {@link SceneMesh | SceneMesh} loads attribute updates
  * into a {@link viewer!Viewer | Viewer's} {@link viewer!Renderer | Renderer}.
  *
- *  This exists at each {@link scene!SceneMesh.rendererMesh | SceneMesh.rendererMesh} when the
- *  containing {@link scene!SceneModel | SceneModel} has been added
+ *  This exists at each {@link SceneMesh.rendererMesh | SceneMesh.rendererMesh} when the
+ *  containing {@link SceneModel | SceneModel} has been added
  *  to a {@link viewer!Viewer | Viewer}.
  *
  * @internal
@@ -13,9 +13,9 @@ import type {FloatArrayParam} from "../math";
 export interface RendererMesh {
 
     /**
-     * Loads the {@link scene!SceneMesh | SceneMesh's} modeling matrix into the {@link viewer!Renderer}.
+     * Loads the {@link SceneMesh | SceneMesh's} modeling matrix into the {@link viewer!Renderer}.
      *
-     * {@link scene!SceneMesh} calls this when we update {@link scene!SceneMesh | SceneMesh.matrix}.
+     * {@link SceneMesh} calls this when we update {@link SceneMesh | SceneMesh.matrix}.
      *
      * @internal
      */
@@ -24,7 +24,7 @@ export interface RendererMesh {
     /**
      * Loads a material color value into the {@link viewer!Renderer}.
      *
-     * {@link scene!SceneMesh} calls this when we update {@link scene!SceneMesh | SceneMesh.color}.
+     * {@link SceneMesh} calls this when we update {@link SceneMesh | SceneMesh.color}.
      *
      * @internal
      */

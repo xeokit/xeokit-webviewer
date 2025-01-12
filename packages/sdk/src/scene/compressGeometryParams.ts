@@ -10,9 +10,9 @@ import {worldToRTCPositions} from "../rtc";
 const rtcCenter = createVec3();
 
 /**
- * Compresses a {@link scene!SceneGeometryParams | SceneGeometryParams} into a {@link scene!SceneGeometryCompressedParams | SceneGeometryCompressedParams}.
+ * Compresses a {@link SceneGeometryParams | SceneGeometryParams} into a {@link SceneGeometryCompressedParams | SceneGeometryCompressedParams}.
  *
- * See {@link scene} for usage examples.
+ * See {@link scene | @xeokit/sdk/scene}  for usage examples.
  *
  * @param geometryParams Uncompressed geometry params.
  * @returns Compressed geometry params.

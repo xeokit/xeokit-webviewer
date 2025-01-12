@@ -27,7 +27,7 @@ export interface PickParams  {
     rayPick?: boolean;
 
     /**
-     * Set this ````true```` to pick a {@link viewer!ViewObject | ViewObjects}.
+     * Set this ````true```` to pick a {@link ViewObject | ViewObjects}.
      */
     pickViewObject?: boolean;
 
@@ -37,7 +37,7 @@ export interface PickParams  {
     pickSurface?: boolean;
 
     /**
-     * Set this ````false```` to not pick invisible {@link viewer!ViewObject | ViewObjects}. Default is ````true````.
+     * Set this ````false```` to not pick invisible {@link ViewObject | ViewObjects}. Default is ````true````.
      */
     pickInvisible?: boolean;
 

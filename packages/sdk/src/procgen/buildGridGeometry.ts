@@ -12,7 +12,6 @@ import type {GeometryArrays} from "./GeometryArrays";
 
  * ````
  *
- * @function buildGridGeometry
  * @param cfg Configs
  * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
  * @param [cfg.size=1] Dimension on the X and Z-axis.

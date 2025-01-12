@@ -10,53 +10,53 @@ import {SceneTile} from "./SceneTile";
 /**
  * Container of model geometry and materials.
  *
- * A Scene contains {@link scene!SceneModel | SceneModels}, {@link scene!SceneObject | SceneObjects},
- *  {@link scene!SceneMesh | SceneMeshes}, {@link scene!SceneGeometry | SceneGeometries},
- *  {@link scene!SceneTextureSet | SceneTextureSets} and {@link scene!SceneTexture | SceneTextures}.
+ * A Scene contains {@link SceneModel | SceneModels}, {@link SceneObject | SceneObjects},
+ *  {@link SceneMesh | SceneMeshes}, {@link SceneGeometry | SceneGeometries},
+ *  {@link SceneTextureSet | SceneTextureSets} and {@link SceneTexture | SceneTextures}.
  *
- * See {@link scene | @xeokit/sdk/scene}  for usage.
+ * See {@link scene | @xeokit/sdk/scene} for usage.
  */
 export class Scene extends Component {
 
     /**
-     * The {@link scene!SceneModel | SceneModels} belonging to this Scene, each keyed to
-     * its {@link scene!SceneModel.id | SceneModel.id}.
+     * The {@link SceneModel | SceneModels} belonging to this Scene, each keyed to
+     * its {@link SceneModel.id | SceneModel.id}.
      */
     public readonly models: { [key: string]: SceneModel };
 
     /**
-     * The {@link scene!SceneObject | SceneObjects} in this Scene, mapped to {@link scene!SceneObject.id | SceneObject.id}.
+     * The {@link SceneObject | SceneObjects} in this Scene, mapped to {@link SceneObject.id | SceneObject.id}.
      */
     public readonly objects: { [key: string]: SceneObject };
 
     /**
-     * The {@link scene!SceneTile | Tiles} in this Scene
+     * The {@link SceneTile | Tiles} in this Scene
      */
     public readonly tiles: { [key: string]: SceneTile };
 
     /**
-     * Emits an event each time a {@link scene!SceneModel | SceneModel} is created in this Scene.
+     * Emits an event each time a {@link SceneModel | SceneModel} is created in this Scene.
      *
      * @event
      */
     public readonly onModelCreated: EventEmitter<Scene, SceneModel>;
 
     /**
-     * Emits an event each time a {@link scene!SceneModel | SceneModel} is destroyed in this Scene.
+     * Emits an event each time a {@link SceneModel | SceneModel} is destroyed in this Scene.
      *
      * @event
      */
     public readonly onModelDestroyed: EventEmitter<Scene, SceneModel>;
 
     /**
-     * Emits an event each time a {@link scene!SceneTile} is created in this Scene.
+     * Emits an event each time a {@link SceneTile} is created in this Scene.
      *
      * @event
      */
     public readonly  onTileCreated:  EventEmitter<Scene, SceneTile>;
 
     /**
-     * Emits an event each time a {@link scene!SceneTile | SceneTile} is destroyed in this Scene.
+     * Emits an event each time a {@link SceneTile | SceneTile} is destroyed in this Scene.
      *
      * @event
      */
@@ -92,7 +92,7 @@ export class Scene extends Component {
     }
 
     /**
-     * Gets the collective World-space 3D center of all the {@link scene!SceneModel | SceneModels} in this Scene.
+     * Gets the collective World-space 3D center of all the {@link SceneModel | SceneModels} in this Scene.
      */
     get center(): Float64Array {
         if (this.#aabbDirty) {
@@ -105,7 +105,7 @@ export class Scene extends Component {
     }
 
     /**
-     * Gets the collective World-space 3D [axis-aligned boundary](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#aabb) of all the {@link scene!SceneModel | SceneModels} in this Scene.
+     * Gets the collective World-space 3D [axis-aligned boundary](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#aabb) of all the {@link SceneModel | SceneModels} in this Scene.
      *
      * The boundary will be of the form ````[xMin, yMin, zMin, xMax, yMax, zMax]````.
      */
@@ -168,17 +168,17 @@ export class Scene extends Component {
     }
 
     /**
-     * Creates a new {@link scene!SceneModel | SceneModel} in this Scene.
+     * Creates a new {@link SceneModel | SceneModel} in this Scene.
      *
-     * Remember to call {@link scene!SceneModel.build | SceneModel.build} when you've finished building or
+     * Remember to call {@link SceneModel.build | SceneModel.build} when you've finished building or
      * loading the SceneModel. That will
-     * fire events via {@link scene!Scene.onModelCreated | Scene.onModelCreated} and {@link scene!SceneModel.onBuilt | SceneModel.onBuilt}, to
+     * fire events via {@link Scene.onModelCreated | Scene.onModelCreated} and {@link SceneModel.onBuilt | SceneModel.onBuilt}, to
      * indicate to any subscribers that the SceneModel is built and ready for use.
      *
-     * See {@link "@xeokit/scene" | @xeokit/scene}  for more details on usage.
+     * See {@link scene | @xeokit/sdk/scene}   for more details on usage.
      *
-     * @param  sceneModelParams Creation parameters for the new {@link scene!SceneModel | SceneModel}.
-     * @returns *{@link scene!SceneModel | SceneModel}*
+     * @param  sceneModelParams Creation parameters for the new {@link SceneModel | SceneModel}.
+     * @returns *{@link SceneModel | SceneModel}*
      * * On success.
      * @returns *{@link core!SDKError | SDKError}*
      * * This Scene has already been destroyed.
@@ -217,12 +217,12 @@ export class Scene extends Component {
     }
 
     /**
-     * Destroys all contained {@link scene!SceneModel | SceneModels}.
+     * Destroys all contained {@link SceneModel | SceneModels}.
      *
-     * * Fires {@link scene!Scene.onModelDestroyed | Scene.onModelDestroyed} and
-     * {@link scene!SceneModel.onDestroyed | SceneModel.onDestroyed} for each existing SceneModel in this Scene.
+     * * Fires {@link Scene.onModelDestroyed | Scene.onModelDestroyed} and
+     * {@link SceneModel.onDestroyed | SceneModel.onDestroyed} for each existing SceneModel in this Scene.
      *
-     * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
+     * See {@link scene | @xeokit/sdk/scene}   for usage.
      * @returns *void*
      * * On success.
      * @returns *{@link core!SDKError | SDKError}*
@@ -238,13 +238,13 @@ export class Scene extends Component {
     }
 
     /**
-     * Destroys this Scene and all contained {@link scene!SceneModel | SceneModels}.
+     * Destroys this Scene and all contained {@link SceneModel | SceneModels}.
      *
-     * * Fires {@link scene!Scene.onModelDestroyed | Scene.onModelDestroyed} and {@link scene!SceneModel.onDestroyed | SceneModel.onDestroyed}
+     * * Fires {@link Scene.onModelDestroyed | Scene.onModelDestroyed} and {@link SceneModel.onDestroyed | SceneModel.onDestroyed}
      * for each existing SceneModels in this Data.
-     * * Unsubscribes all subscribers to {@link scene!Scene.onModelCreated | Scene.onModelCreated}, {@link scene!Scene.onModelDestroyed | Scene.onModelDestroyed}, {@link scene!SceneModel.onDestroyed | SceneModel.onDestroyed}
+     * * Unsubscribes all subscribers to {@link Scene.onModelCreated | Scene.onModelCreated}, {@link Scene.onModelDestroyed | Scene.onModelDestroyed}, {@link SceneModel.onDestroyed | SceneModel.onDestroyed}
      *
-     * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
+     * See {@link scene | @xeokit/sdk/scene}   for usage.
      *
      * @returns *void*
      * * On success.

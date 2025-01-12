@@ -8,7 +8,7 @@ import {PickParams} from "./PickParams";
 import {PickResult} from "./PickResult";
 
 /**
- * Defines the contract for the rendering strategy used internally within a {@link viewer!Viewer | Viewer}.
+ * Defines the contract for the rendering strategy used internally within a {@link Viewer | Viewer}.
  *
  * A Viewer uses an implementation of this internally to allocate and render geometry and materials using an
  * available browser 3D graphics API, such as WebGL or WebGPU.
@@ -32,9 +32,9 @@ export interface Renderer {
     get viewer(): Viewer;
 
     /**
-     * Interfaces through which each {@link viewer!ViewObject | ViewObject} shows/hides/highlights/selects/xrays/colorizes
-     * its {@link scene!SceneObject | SceneObject} within the {@link viewer!Renderer | Renderer} that's
-     * configured on its {@link viewer!Viewer | Viewer}.
+     * Interfaces through which each {@link ViewObject | ViewObject} shows/hides/highlights/selects/xrays/colorizes
+     * its {@link scene!SceneObject | SceneObject} within the {@link Renderer | Renderer} that's
+     * configured on its {@link Viewer | Viewer}.
      *
      * @internal
      */
@@ -47,7 +47,7 @@ export interface Renderer {
     //  rendererModels: { [key: string]: RendererModel };
 
     /**
-     * Initializes this Renderer by attaching a {@link viewer!Viewer | Viewer}.
+     * Initializes this Renderer by attaching a {@link Viewer | Viewer}.
      *
      * @internal
      * @param viewer Viewer to attach.
@@ -60,7 +60,7 @@ export interface Renderer {
     attachViewer(viewer: Viewer): void | SDKError;
 
     /**
-     * Detaches the {@link viewer!Viewer | Viewer} that is currently attached, if any.
+     * Detaches the {@link Viewer | Viewer} that is currently attached, if any.
      *
      * @internal
      * @returns *void*
@@ -85,13 +85,13 @@ export interface Renderer {
     getSAOSupported(): boolean;
 
     /**
-     * Attaches a {@link viewer!View} to this Renderer.
+     * Attaches a {@link View} to this Renderer.
      *
      * The Renderer will then begin rendering each {@link scene!SceneModel | SceneModel} previously or subsequently
      * created with {@link scene!Scene.createModel | Scene.createModel} , for the new View.
      *
      * You can only attach as many Views as indicated in {@link  @xeokit/core!Capabilities.maxViews | Capabilities.maxViews}, as returned by
-     * {@link viewer!Renderer.getCapabilities | Renderer.getCapabilities}.
+     * {@link Renderer.getCapabilities | Renderer.getCapabilities}.
      *
      * You must attach a View before you can attach a SceneModel.
      *
@@ -107,7 +107,7 @@ export interface Renderer {
     attachView(view: View): SDKError | void;
 
     /**
-     * Detaches the given {@link viewer!View} from this Renderer.
+     * Detaches the given {@link View} from this Renderer.
      *
      * The Renderer will then cease rendering for that View.
      *
@@ -135,7 +135,7 @@ export interface Renderer {
      *
      * Then, when we make any state updates to those components, they will upload the updates into the Renderer.
      *
-     * You must first attach a View with {@link viewer!Renderer.attachView | Renderer.attachView} before you can attach a SceneModel.
+     * You must first attach a View with {@link Renderer.attachView | Renderer.attachView} before you can attach a SceneModel.
      *
      * @param sceneModel
      * @internal
@@ -152,7 +152,7 @@ export interface Renderer {
      *
      * Detaches and destroys the {@link scene!RendererModel}, {@link scene!RendererObject} and
      * {@link scene!RendererMesh},
-     * {@link scene!RendererTexture} instances that were attached in {@link viewer!Renderer.attachSceneModel}.
+     * {@link scene!RendererTexture} instances that were attached in {@link Renderer.attachSceneModel}.
      *
      * @internal
      * @param sceneModel The SceneModel
@@ -167,7 +167,7 @@ export interface Renderer {
     /**
      * Enable/disable rendering of transparent objects for the given View.
      *
-     * @param viewIndex Handle to the View, returned earlier by {@link viewer!Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
      * @param enabled Whether to enable or disable transparent objects for the View.
      * @internal
      * @returns *void*
@@ -181,7 +181,7 @@ export interface Renderer {
     /**
      * Enable/disable edge enhancement for the given View.
      *
-     * @param viewIndex Handle to the View, returned earlier by {@link viewer!Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
      * @param enabled Whether to enable or disable edges for the View.
      * @internal
      * @returns *void*
@@ -195,7 +195,7 @@ export interface Renderer {
     /**
      * Enable/disable scaleable ambient obscurrance SAO for the given View.
      *
-     * @param viewIndex Handle to the View, returned earlier by {@link viewer!Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
      * @param enabled Whether to enable or disable SAO for the View.
      * @internal
      * @returns *void*
@@ -209,7 +209,7 @@ export interface Renderer {
     /**
      * Enable/disable physically-based rendering (PBR) for the given View.
      *
-     * @param viewIndex Handle to the View, returned earlier by {@link viewer!Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
      * @param enabled Whether to enable or disable PBR for the View.
      * @internal
      * @returns *void*
@@ -224,7 +224,7 @@ export interface Renderer {
      * Indicates that the renderers needs to render a new frame for the given View.
      *
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@link viewer!Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
      * @returns *void*
      * * Success.
      * @returns *{@link core!SDKError | SDKError}*
@@ -237,7 +237,7 @@ export interface Renderer {
      * Clears the renderer for the given view.
      *
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@link viewer!Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
      * @returns *void*
      * * Success.
      * @returns *{@link core!SDKError | SDKError}*
@@ -249,7 +249,7 @@ export interface Renderer {
     /**
      * Triggers a rebuild of the shaders within this Renderer for the given View.
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@link viewer!Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
      * @returns *void*
      * * Success.
      * @returns *{@link core!SDKError | SDKError}*
@@ -261,7 +261,7 @@ export interface Renderer {
     /**
      * Gets if a new frame needs to be rendered for the given View.
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@link viewer!Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
      * @returns *boolean*
      * * True if a new frame needs to be rendered for the View.
      * @returns *{@link core!SDKError | SDKError}*
@@ -276,7 +276,7 @@ export interface Renderer {
      * @param params Rendering params.
      * @param [params.force=false] True to force a render, else only render if needed.
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@link viewer!Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
      * @returns *{@link core!SDKError | SDKError}*
      * * No View is currently attached to this Renderer.
      * * Can't find a View attached to this Renderer with the given handle.
@@ -286,16 +286,16 @@ export interface Renderer {
     /**
      * Picks a ViewerObject within a View.
      *
-     * @param viewIndex Handle to the View, returned earlier by {@link viewer!Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@xeokit/viewer!Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex Handle to the View, returned earlier by {@xeokit/Renderer.attachView | Renderer.attachView}.
      * @param pickParams Picking parameters.
      * @param pickResult Picking results, when caller wants to manage them externally.
      * @throws {@link core!SDKError | SDKError}
      * * No View is currently attached to this Renderer.
      * * Can't find a View attached to this Renderer with the given handle.
      * * Illegal picking parameters given.
-     * @returns {@link viewer!PickResult}
+     * @returns {@link PickResult}
      * * Picking attempt completed.
      */
     pick(viewIndex: number, pickParams: PickParams, pickResult?: PickResult):  PickResult | null;

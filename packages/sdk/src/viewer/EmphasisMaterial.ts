@@ -4,14 +4,14 @@ import type {FloatArrayParam} from "../math";
 import type {View} from "./View";
 
 /**
- * Configures the appearance of {@link viewer!ViewObject | ViewObjects} when they are xrayed, highlighted or selected.
+ * Configures the appearance of {@link ViewObject | ViewObjects} when they are xrayed, highlighted or selected.
  *
- * ## Summary
+ *
  *
  * * Located at {@link View.xrayMaterial}, {@link View.highlightMaterial} and {@link View.selectedMaterial}.
- * * XRay a {@link viewer!ViewObject} by setting {@link viewer!ViewObject.xrayed} ````true````.
- * * Highlight a {@link viewer!ViewObject} by setting {@link viewer!ViewObject.highlighted} ````true````.
- * * Select a {@link viewer!ViewObject} by setting {@link viewer!ViewObject.selected} ````true````.
+ * * XRay a {@link ViewObject} by setting {@link ViewObject.xrayed} ````true````.
+ * * Highlight a {@link ViewObject} by setting {@link ViewObject.highlighted} ````true````.
+ * * Select a {@link ViewObject} by setting {@link ViewObject.selected} ````true````.
  */
 class EmphasisMaterial extends Component {
 
@@ -65,7 +65,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Sets if the surfaces of emphasized {@link viewer!ViewObject | ViewObjects} are filled with color.
+     * Sets if the surfaces of emphasized {@link ViewObject | ViewObjects} are filled with color.
      *
      * Default is ````true````.
      */
@@ -78,7 +78,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Gets if the surfaces of emphasized {@link viewer!ViewObject | ViewObjects} are filled with color.
+     * Gets if the surfaces of emphasized {@link ViewObject | ViewObjects} are filled with color.
      *
      * Default is ````true````.
      */
@@ -87,7 +87,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Sets the RGB surface fill color for the surfaces of emphasized {@link viewer!ViewObject | ViewObjects}.
+     * Sets the RGB surface fill color for the surfaces of emphasized {@link ViewObject | ViewObjects}.
      *
      * Default is ````[0.4, 0.4, 0.4]````.
      */
@@ -103,7 +103,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Gets the RGB surface fill color for the surfaces of emphasized {@link viewer!ViewObject | ViewObjects}.
+     * Gets the RGB surface fill color for the surfaces of emphasized {@link ViewObject | ViewObjects}.
      *
      * Default is ````[0.4, 0.4, 0.4]````.
      */
@@ -112,7 +112,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Sets the transparency of the surfaces of emphasized {@link viewer!ViewObject | ViewObjects}.
+     * Sets the transparency of the surfaces of emphasized {@link ViewObject | ViewObjects}.
      *
      * A value of ````0.0```` indicates fully transparent, ````1.0```` is fully opaque.
      *
@@ -127,7 +127,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Gets the transparency of the surfaces of emphasized {@link viewer!ViewObject | ViewObjects}.
+     * Gets the transparency of the surfaces of emphasized {@link ViewObject | ViewObjects}.
      *
      * A value of ````0.0```` indicates fully transparent, ````1.0```` is fully opaque.
      *
@@ -138,7 +138,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Sets if the edges on emphasized {@link viewer!ViewObject | ViewObjects} are visible.
+     * Sets if the edges on emphasized {@link ViewObject | ViewObjects} are visible.
      *
      * Default is ````true````.
      */
@@ -151,7 +151,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Gets if the edges on emphasized {@link viewer!ViewObject | ViewObjects} are visible.
+     * Gets if the edges on emphasized {@link ViewObject | ViewObjects} are visible.
      *
      * Default is ````true````.
      */
@@ -160,7 +160,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Sets the RGB color of the edges of emphasized {@link viewer!ViewObject | ViewObjects}.
+     * Sets the RGB color of the edges of emphasized {@link ViewObject | ViewObjects}.
      *
      * Default is ```` [0.2, 0.2, 0.2]````.
      */
@@ -176,7 +176,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Gets the RGB color of the edges of emphasized {@link viewer!ViewObject | ViewObjects}.
+     * Gets the RGB color of the edges of emphasized {@link ViewObject | ViewObjects}.
      *
      * Default is ```` [0.2, 0.2, 0.2]````.
      */
@@ -185,7 +185,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Sets the transparency of the edges of emphasized {@link viewer!ViewObject | ViewObjects}.
+     * Sets the transparency of the edges of emphasized {@link ViewObject | ViewObjects}.
      *
      * A value of ````0.0```` indicates fully transparent, ````1.0```` is fully opaque.
      *
@@ -200,7 +200,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Gets the transparency of the edges of emphasized {@link viewer!ViewObject | ViewObjects}.
+     * Gets the transparency of the edges of emphasized {@link ViewObject | ViewObjects}.
      *
      * A value of ````0.0```` indicates fully transparent, ````1.0```` is fully opaque.
      *
@@ -211,7 +211,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Sets the width of the edges of emphasized {@link viewer!ViewObject | ViewObjects}.
+     * Sets the width of the edges of emphasized {@link ViewObject | ViewObjects}.
      *
      * Default value is ````1.0```` pixels.
      */
@@ -221,7 +221,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Gets the width of the edges of emphasized {@link viewer!ViewObject | ViewObjects}.
+     * Gets the width of the edges of emphasized {@link ViewObject | ViewObjects}.
      *
      * This is not supported by WebGL implementations based on DirectX [2019].
      *
@@ -232,7 +232,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Sets whether to render backfaces of emphasized {@link viewer!ViewObject | ViewObjects} when {@link EmphasisMaterial.fill} is ````true````.
+     * Sets whether to render backfaces of emphasized {@link ViewObject | ViewObjects} when {@link EmphasisMaterial.fill} is ````true````.
      *
      * Default is ````false````.
      */
@@ -245,7 +245,7 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Gets whether to render backfaces of emphasized {@link viewer!ViewObject | ViewObjects} when {@link EmphasisMaterial.fill} is ````true````.
+     * Gets whether to render backfaces of emphasized {@link ViewObject | ViewObjects} when {@link EmphasisMaterial.fill} is ````true````.
      *
      * Default is ````false````.
      */

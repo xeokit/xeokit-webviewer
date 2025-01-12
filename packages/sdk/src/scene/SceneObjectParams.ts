@@ -1,5 +1,5 @@
 /**
- * {@link scene!SceneObject} creation parameters for {@link scene!SceneModel.createObject | SceneModel.createObject}.
+ * {@link SceneObject} creation parameters for {@link SceneModel.createObject | SceneModel.createObject}.
  */
 export interface SceneObjectParams {
 
@@ -10,12 +10,12 @@ export interface SceneObjectParams {
 
     /**
      * ID of this SceneObject within the originating system, is any. Defaults to the value of
-     * {@link scene!SceneObjectParams.id | SceneObjectParams.id}.
+     * {@link SceneObjectParams.id | SceneObjectParams.id}.
      */
     originalSystemId?: string;
 
     /**
-     * IDs of meshes previously created with {@link scene!SceneModel.createMesh | SceneModel.createMesh}.
+     * IDs of meshes previously created with {@link SceneModel.createMesh | SceneModel.createMesh}.
      */
     meshIds: string[];
 
@@ -25,10 +25,10 @@ export interface SceneObjectParams {
      *
      * When you create an object in a model, each {@link viewer!View} will automatically create
      * a {@link viewer!ViewObject} to
-     * represent it. When the object has a {@link scene!SceneObjectParams.layerId} property, then each View will first
+     * represent it. When the object has a {@link SceneObjectParams.layerId} property, then each View will first
      * ensure that it has a {@link viewer!ViewLayer} with this ID, and will register the ViewObject in that ViewLayer.
      *
-     * Overridden by {@link scene!SceneObjectParams.layerId | SceneObjectParams.layerId}.
+     * Overridden by {@link SceneObjectParams.layerId | SceneObjectParams.layerId}.
      */
     layerId?: string;
 }

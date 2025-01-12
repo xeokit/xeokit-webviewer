@@ -5,7 +5,7 @@
  *
  * ---
  *
- * ### *Import and export the open, free and simple .BIM model file format*
+ * ***Import and export the open, free and simple .BIM model file format***
  *
  * ---
  *

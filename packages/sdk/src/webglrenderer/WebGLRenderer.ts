@@ -20,8 +20,6 @@ import {WebGLRendererMesh} from "./WebGLRendererMesh";
 import {SAOOcclusionRenderer} from "./SAOOcclusionRenderer";
 import {SAODepthLimitedBlurRenderer} from "./SAODepthLimitedBlurRenderer";
 
-const ua = navigator.userAgent.match(/(opera|chrome|safari|firefox|msie|mobile)\/?\s*(\.?\d+(\.\d+)*)/i);
-const isSafari = (ua && ua[1].toLowerCase() === "safari");
 
 /** @private */
 class WebGLRendererView {
@@ -78,7 +76,7 @@ const pickTemps = {
 /**
  * A WebGL-based rendering strategy for a {@link viewer!Viewer | Viewer}.
  *
- * See {@link "@xeokit/webglrenderer" | @xeokit/webglrenderer} for usage.
+ * See {@link "webglrenderer" | @xeokit/webglrenderer} for usage.
  */
 export class WebGLRenderer implements Renderer {
 

@@ -1,7 +1,9 @@
 import type {FloatArrayParam} from "../math";
 
 /**
- * {@link scene!SceneMesh} creation parameters for {@link scene!SceneModel.createMesh | SceneModel.createMesh}.
+ * {@link SceneMesh} creation parameters for {@link SceneModel.createMesh | SceneModel.createMesh}.
+ *
+ * See {@link scene | @xeokit/sdk/scene} for usage.
  */
 export interface SceneMeshParams {
 
@@ -11,36 +13,36 @@ export interface SceneMeshParams {
     streamLayerIndex?: number;
 
     /**
-     * ID for the new {@link scene!SceneMesh}, unique within the {@link scene!SceneModel | SceneModel}.
+     * ID for the new {@link SceneMesh}, unique within the {@link SceneModel | SceneModel}.
      */
     id: string;
 
     /**
-     * ID of a {@link scene!SceneTextureSet} that was created previously with {@link scene!SceneModel.createTextureSet | SceneModel.createTextureSet}.
+     * ID of a {@link SceneTextureSet} that was created previously with {@link SceneModel.createTextureSet | SceneModel.createTextureSet}.
      */
     textureSetId?: string;
 
     /**
-     * ID of a {@link scene!SceneGeometry} that was created previously with {@link scene!SceneModel.createGeometry | SceneModel.createGeometry} or {@link scene!SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}.
+     * ID of a {@link SceneGeometry} that was created previously with {@link SceneModel.createGeometry | SceneModel.createGeometry} or {@link SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}.
      */
     geometryId: string;
 
     /**
-     * RGB base color of the new {@link scene!SceneMesh}.
+     * RGB base color of the new {@link SceneMesh}.
      *
      * * Default is ````[1,1,1]````.
      */
     color?: FloatArrayParam;
 
     /**
-     * RGB pick color of the new {@link scene!SceneMesh}.
+     * RGB pick color of the new {@link SceneMesh}.
      *
-     * This is used internally within {@link scene!SceneModel | SceneModel}.
+     * This is used internally within {@link SceneModel | SceneModel}.
      */
     pickColor?: FloatArrayParam;
 
     /**
-     * Opacity of the new {@link scene!SceneMesh}.
+     * Opacity of the new {@link SceneMesh}.
      *
      * Default is 1.
      */
@@ -69,18 +71,16 @@ export interface SceneMeshParams {
     /**
      * Optional local 3D transform matrix.
      *
-     * Overrides {@link scene!SceneMeshParams.position}, {@link scene!SceneMeshParams.scale | SceneMeshParams.scale},
-     * {@link scene!SceneMeshParams.quaternion | SceneMeshParams.quaternion}
-     * and {@link scene!SceneMeshParams.rotation | SceneMeshParams.rotation}.
+     * Overrides {@link SceneMeshParams.position}, {@link SceneMeshParams.scale | SceneMeshParams.scale},
+     * {@link SceneMeshParams.quaternion | SceneMeshParams.quaternion}
+     * and {@link SceneMeshParams.rotation | SceneMeshParams.rotation}.
      */
     matrix?: FloatArrayParam;
 
     /**
      * Relative-to-center (RTC) origin.
      *
-     * When this is given, then {@link scene!SceneMeshParams.matrix | SceneMeshParams.matrix} will be relative to this origin.
-     *
-     * Overrides {@link scene!SceneMeshParams.rtcMatrix | SceneMeshParams.rtcMatrix}
+     * When this is given, then {@link SceneMeshParams.matrix | SceneMeshParams.matrix} will be relative to this origin.
      */
     origin?:FloatArrayParam;
 }

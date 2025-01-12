@@ -4,7 +4,7 @@ import type {MeshHit} from "./MeshHit";
 /**
  * Represents a picked {@link scene!SceneObject | SceneObject} within a {@link RayPickResult}.
  *
- * See {@link "@xeokit/collision!pick"} for usage.
+ * See {@link "collision!pick"} for usage.
  */
 export interface SceneObjectHit {
 

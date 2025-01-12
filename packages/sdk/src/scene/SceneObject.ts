@@ -6,20 +6,20 @@ import {collapseAABB3,  expandAABB3} from "../boundaries";
 import {SceneObjectParams} from "./SceneObjectParams";
 
 /**
- * An object in a {@link scene!SceneModel | SceneModel}.
+ * An object in a {@link SceneModel | SceneModel}.
  *
- * * Stored in {@link scene!SceneModel.objects | SceneModel.objects} and {@link scene!Scene.objects | Scene.objects}
- * * Created with {@link scene!SceneModel.createObject | SceneModel.createObject}
+ * * Stored in {@link SceneModel.objects | SceneModel.objects} and {@link Scene.objects | Scene.objects}
+ * * Created with {@link SceneModel.createObject | SceneModel.createObject}
  *
- * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
+ * See {@link scene | @xeokit/sdk/scene}   for usage.
  */
 export class SceneObject {
 
     /**
      * Unique ID of this SceneObject.
      *
-     * SceneObjects are stored by ID in {@link scene!Scene.objects | Scene.objects}
-     * and {@link scene!SceneModel.objects | SceneModel.objects}.
+     * SceneObjects are stored by ID in {@link Scene.objects | Scene.objects}
+     * and {@link SceneModel.objects | SceneModel.objects}.
      */
     public readonly id: string;
 
@@ -34,12 +34,12 @@ export class SceneObject {
     public readonly layerId?: string;
 
     /**
-     * The {@link scene!SceneModel | SceneModel} that contains this SceneObject.
+     * The {@link SceneModel | SceneModel} that contains this SceneObject.
      */
     public readonly model: SceneModel;
 
     /**
-     * The {@link scene!SceneMesh | Meshes} belonging to this SceneObject.
+     * The {@link SceneMesh | Meshes} belonging to this SceneObject.
      */
     public readonly meshes: SceneMesh[];
 
@@ -47,7 +47,7 @@ export class SceneObject {
      *  Internal interface through which a {@link viewer!ViewObject | ViewObject} can load property updates
      *  into a {@link viewer!Renderer | Renderer} for this SceneObject.
      *
-     *  This is defined when the owner {@link scene!SceneModel | SceneModel} has been added to a {@link viewer!Viewer | Viewer}.
+     *  This is defined when the owner {@link SceneModel | SceneModel} has been added to a {@link viewer!Viewer | Viewer}.
      *
      * @internal
      */

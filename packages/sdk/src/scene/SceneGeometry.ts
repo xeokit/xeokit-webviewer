@@ -5,15 +5,17 @@ import {createAABB3} from "../boundaries";
 import {IntArrayParam} from "../math";
 
 /**
- * A geometry in a {@link scene!SceneModel | SceneModel}.
+ * A geometry in a {@link SceneModel | SceneModel}.
  *
  * * Contains triangles, lines or points
- * * Stored in {@link scene!SceneModel.geometries | SceneModel.geometries}
- * * Created with {@link scene!SceneModel.createGeometry | SceneModel.createGeometry}
- * or {@link scene!SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}
- * * Referenced by {@link scene!SceneMesh.geometry | SceneMesh.geometry}
+ * * Stored in {@link SceneModel.geometries | SceneModel.geometries}
+ * * Created with {@link SceneModel.createGeometry | SceneModel.createGeometry}
+ * or {@link SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}
+ * * Referenced by {@link SceneMesh.geometry | SceneMesh.geometry}
  *
- * See {@link "@xeokit/scene" | @xeokit/scene}  for usage.
+ * See {@link scene | @xeokit/sdk/scene}  for usage.
+ *
+ * See {@link scene | @xeokit/sdk/scene}   for usage.
  */
 export class SceneGeometry {
 
@@ -44,7 +46,7 @@ export class SceneGeometry {
     /**
      * 3D vertex positions, quantized as 16-bit integers.
      *
-     * Internally, the Viewer dequantizes these with {@link scene!SceneGeometry.positionsDecompressMatrix | SceneGeometry.positionsDecompressMatrix}.
+     * Internally, the Viewer dequantizes these with {@link SceneGeometry.positionsDecompressMatrix | SceneGeometry.positionsDecompressMatrix}.
      *
      * Vertex positions are required for all primitive types.
      */
@@ -53,7 +55,7 @@ export class SceneGeometry {
     /**
      * UV coordinates, quantized as 16-bit integers.
      *
-     * Internally, the Viewer de-quantizes these with {@link scene!SceneGeometry.uvsDecompressMatrix | SceneGeometry.uvsDecompressMatrix}.
+     * Internally, the Viewer de-quantizes these with {@link SceneGeometry.uvsDecompressMatrix | SceneGeometry.uvsDecompressMatrix}.
      */
     uvsCompressed?: IntArrayParam;
 
@@ -89,7 +91,7 @@ export class SceneGeometry {
     origin?:FloatArrayParam;
 
     /**
-     * The count of {@link scene!SceneMesh | SceneMeshes} that reference this SceneGeometry.
+     * The count of {@link SceneMesh | SceneMeshes} that reference this SceneGeometry.
      */
     numMeshes: number;
 

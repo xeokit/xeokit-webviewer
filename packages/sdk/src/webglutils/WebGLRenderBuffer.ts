@@ -1,7 +1,7 @@
 import {WebGLAbstractTexture} from "./WebGLAbstractTexture";
 
 /**
- * @desc Represents a WebGL render buffer.
+ *  Represents a WebGL render buffer.
  * @private
  */
 class WebGLRenderBuffer {

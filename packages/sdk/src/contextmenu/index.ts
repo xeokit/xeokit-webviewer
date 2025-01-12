@@ -1,6 +1,6 @@
 
 /**
- * @desc A customizable HTML context menu.
+ *  A customizable HTML context menu.
  *
  * [<img src="http://xeokit.io/img/docs/ContextMenu/ContextMenu.gif">](https://xeokit.github.io/xeokit-sdk/examples/index.html#ContextMenu_Canvas_TreeViewPlugin_Custom)
  *
@@ -17,7 +17,7 @@
  *
  * ## Usage
  *
- * In the example below we'll create a ````ContextMenu```` that pops up whenever we right-click on an {@link Entity} within
+ * In the example below we'll create a ````ContextMenu```` that pops up whenever we right-click on an object within
  * our {@link Scene}.
  *
  * First, we'll create the ````ContextMenu````, configuring it with a list of menu items.

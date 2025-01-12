@@ -3,12 +3,12 @@ import type {DataModel} from "./DataModel";
 import type {PropertySetParams} from "./PropertySetParams";
 
 /**
- * A set of {@link Property | Properties} in a {@link data!DataModel | DataModel}.
+ * A set of {@link Property | Properties} in a {@link DataModel | DataModel}.
  *
- * * Created with {@link data!DataModel.createPropertySet | DataModel.createPropertySet}
- * * Stored in {@link data!Data.propertySets | Data.propertySets} and {@link data!DataModel.propertySets | Data.propertySets}
+ * * Created with {@link DataModel.createPropertySet | DataModel.createPropertySet}
+ * * Stored in {@link Data.propertySets | Data.propertySets} and {@link DataModel.propertySets | Data.propertySets}
  *
- * See {@link "@xeokit/data" | @xeokit/data}  for usage.
+ * See {@link data | @xeokit/sdk/data}   for usage.
  */
 export class PropertySet {
 
@@ -20,8 +20,8 @@ export class PropertySet {
     /**
      * Unique ID.
      *
-     * PropertySet instances are registered by this ID in {@link data!Data.propertySets | Data.propertySets}
-     * and {@link data!DataModel.propertySets | DataModel.propertySets}.
+     * PropertySet instances are registered by this ID in {@link Data.propertySets | Data.propertySets}
+     * and {@link DataModel.propertySets | DataModel.propertySets}.
      */
     public readonly id: string;
 

@@ -5,38 +5,61 @@
  *
  * ---
  *
- * ### *The SDK's browser-based 3D/2D scene viewer*
+ * ***The SDK's browser-based 3D/2D scene viewer***
  *
  * ---
  *
  * # Features
  *
- * * Use a {@link viewer!Viewer | Viewer} to interactively view a {@link scene!Scene | Scene} in all major browsers, including mobile.
+ * * Use a {@link Viewer | Viewer} to interactively explore a {@link scene!Scene | Scene} across all major browsers, including mobile platforms.
  *
- * * **Pluggable Renderer** - A Viewer has a pluggable {@link viewer!Renderer | Renderer} strategy that adapts the Viewer to use different
- * browser graphics APIs. In this documentation, we'll use a {@link webglrenderer!WebGLRenderer | WebGLRenderer}, which adapts the Viewer to use
- * WebGL for rendering.
+ * * **Pluggable Renderer** - The Viewer employs a customizable {@link Renderer | Renderer} strategy, enabling compatibility with various
+ * browser graphics APIs. In this documentation, we utilize the {@link webglrenderer!WebGLRenderer | WebGLRenderer}, which configures
+ * the Viewer to render using WebGL.
  *
- * * **Scene Models** - A Viewer has a {@link scene!Scene | Scene} which holds model geometry and materials. A Scene is a container of
- * {@link scene!SceneModel | SceneModels}, {@link scene!SceneObject | SceneObjects}, {@link scene!SceneMesh | SceneMeshes}
- * and {@link scene!SceneGeometry | SceneGeometries}. It is a data structure that can be built programmatically, as well as loaded and saved
- * as a variety of file formats.
+ * * **Scene Models** - The Viewer includes a {@link scene!Scene | Scene} that contains the geometry and materials for models. The Scene
+ * acts as a container for {@link scene!SceneModel | SceneModels}, {@link scene!SceneObject | SceneObjects},
+ * {@link scene!SceneMesh | SceneMeshes}, and {@link scene!SceneGeometry | SceneGeometries}. It can be programmatically
+ * constructed, as well as imported from or exported to various file formats.
  *
- * * **Full-Precision** - A Viewer can accurately view models that rely on large double-precision World coordinates.
+ * * **Full-Precision** - The Viewer supports accurate rendering of models that depend on large double-precision World coordinates.
  *
- * * **Multiple Views** - A Viewer can have multiple {@link viewer!View | Views}, each providing an independent view of the Scene in
- * it's own HTML canvas. Each View has its own camera position, projection, lighting, object states (shown, highlighted, X-rayed, colorized..), etc.
+ * * **Multiple Views** - The Viewer can support multiple {@link View | Views}, each providing an independent perspective of the
+ * Scene within its own HTML canvas. Each View maintains its own camera position, projection settings, lighting configuration,
+ * and object states (e.g., visibility, highlighting, X-ray, colorization).
  *
- * * **View Layers** - Each View can organize objects in {@link viewer!ViewLayer | ViewLayers}. These allow us to partition our
- * objects into different *bins* depending on what they represent in the View, and then conveniently focus our updates (toggle visibility, select,
- * highlight, slice etc.) on certain bins, exclusively.
+ * * **View Layers** - Views in the Viewer can organize objects into {@link ViewLayer | ViewLayers}, which act as bins to group
+ * objects based on their role within the View. These layers make it easier to apply updates (e.g., toggling visibility,
+ * selection, highlighting, or slicing) to specific groups of objects.
  *
- * * **Data Models** - A Viewer can optionally integrate with semantic {@link data!Data | Data}. The Data is an
- * entity-relationship graph that provides an API through users can programmatically construct and search data models. A Data is a container
- * for {@link data!DataModel | DataModels}, {@link data!DataObject | DataObjects}, {@link data!PropertySet | PropertySets}
- * and {@link data!Relationship | Relationships}. Typically, when we want to attach semantic data to a
- * {@link scene!SceneModel | SceneModel}, we would shadow it with a DataModel that has the same ID. For each of the DataModel's SceneObjects that
- we want to attach data to, we would likewise shadow it in the DataModel with a DataObject that has the same ID.
+ * * **Data Models** - The Viewer can optionally integrate with semantic {@link data!Data | Data}, which is represented as an
+ * entity-relationship graph. This graph provides an API for programmatically creating and searching data models. The Data
+ * contains {@link data!DataModel | DataModels}, {@link data!DataObject | DataObjects}, {@link data!PropertySet | PropertySets},
+ * and {@link data!Relationship | Relationships}. To attach semantic data to a {@link scene!SceneModel | SceneModel}, a
+ * corresponding DataModel with the same ID can be created. Similarly, to attach data to specific SceneObjects, matching
+ * DataObjects with the same IDs can be used.
+ *
+ * * **BCF Interoperability** - When viewing BIM models, use {@link bcf!saveBCFViewpoint | saveViewpoint} and {@link bcf!loadBCFViewpoint | loadViewpoint} to share snapshots
+ * of the Viewer’s state with other BIM viewers. These snapshots are encoded in the Building Collaboration Format (BCF), an
+ * open file format designed to facilitate data exchange and collaboration on 3D models and building information.
+ *
+ * * **Custom Slicing Planes** -
+ *
+ * * **Highlight, Select, X-Ray**
+ *
+ * * **Dynamic Resolution Scaling**
+ *
+ * * **Ambient Shadows (SAO)**
+ *
+ * * **Edge Enhancement**
+ *
+ * * **Dynamic Lighting**
+ *
+ * * **Object Picking**
+ *
+ * * **Canvas Snapshot**
+ *
+ * * **Perspective and Orthographic Projections**
  *
  * <br>
  *
@@ -54,20 +77,6 @@
  *
  * <br>
  *
- * ## Import NPM Modules
- *
- * Install the NPM modules we need for our usage examples:
- *
- * ````bash
- * npm install @xeokit/scene
- * npm install @xeokit/viewer
- * npm install @xeokit/ktx2
- * npm install @xeokit/webglrenderer
- * npm install @xeokit/constants
- * npm install @xeokit/cameracontrol
- * npm install @xeokit/xgf
- * ````
- *
  *  In JavaScript, import the modules:
  *
  * ````javascript
@@ -84,9 +93,7 @@
  *
  * ## Create a Scene
  *
- * Create a {@link scene!Scene | Scene} to hold our model geometry.
- *
- * > *See [@xeokit/scene](/docs/modules/_xeokit_scene.html)*
+ * Create a {@link scene!Scene | Scene} to hold our model geometry and materials.
  *
  * ````javascript
  * const scene = new Scene();
@@ -96,7 +103,7 @@
  *
  * ## Create a Viewer
  *
- * Create a {@link viewer!Viewer | Viewer} to view our Scene.
+ * Create a {@link Viewer | Viewer} to view our Scene.
  *
  * Our Viewer gets a {@link webglrenderer!WebGLRenderer | WebGLRenderer}, which adapts it to use the browser's WebGL graphics API.
  * We'll also equip our WebGLRenderer with a {@link ktx2!KTX2TextureTranscoder | KTX2TextureTranscoder} so we that we can view compressed textures.
@@ -117,12 +124,10 @@
  *
  * ## Create a View
  *
- * A Viewer draws its output to one or more {@link viewer!View | Views}. Each View is an independent and interactive view of the Scene,
- * with its own canvas, {@link viewer!Camera | Camera}, object visual states etc.
+ * A Viewer draws its output to one or more {@link View | Views}. Each View is an independent and interactive view of the Scene,
+ * with its own canvas, {@link Camera | Camera}, object visual states etc.
  *
- * Within our Viewer, we'll create a {@link viewer!View | View} and arrange its Camera:
- *
- * > *See {@xeokit/viewer!View | View}*
+ * Within our Viewer, we'll create a {@link View | View} and arrange its Camera:
  *
  * ````javascript
  * const view1 = myViewer.createView({
@@ -141,8 +146,6 @@
  *
  * Add a {@link cameracontrol!CameraControl | CameraControl} to the View, to control the View's Camera with mouse and touch input:
  *
- * > *See [@xeokit/cameracontrol](/docs/modules/_xeokit_cameracontrol.html)*
- *
  * ````javascript
  * const myCameraControl = new CameraControl({
  *      view: view1
@@ -158,8 +161,6 @@
  * Within the Scene, we'll create a {@link scene!SceneModel | SceneModel} that contains a couple
  * of textured {@link scene!SceneModel | SceneObjects}. As soon as we've called {@link scene!SceneModel.build | SceneModel.build}, two
  * new 3D objects appear in the View's canvas.
- *
- * > *See [@xeokit/scene](/docs/modules/_xeokit_scene.html)*
  *
  * ````javascript
  * const sceneModel = scene.createModel();
@@ -276,13 +277,13 @@
  * ````
  *
  * To show an independent view of {@link scene!SceneModel | SceneObjects}, a View
- * proxies them with {@link viewer!ViewObject | ViewObjects}, which represent and control their appearance within the View's canvas.
+ * proxies them with {@link ViewObject | ViewObjects}, which represent and control their appearance within the View's canvas.
  *
  * <br>
  *
  * ## Slicing Objects
  *
- * Each View can have an unlimited number of interactive {@link viewer!SectionPlane | SectionPlanes}, with which we can use to slice open objects
+ * Each View can have an unlimited number of interactive {@link SectionPlane | SectionPlanes}, with which we can use to slice open objects
  * to view interior structures.
  *
  * Create a couple of SectionPlanes within our second View, to slice through one of our
@@ -308,15 +309,15 @@
  *
  * ## Creating ViewLayers
  *
- * Sometimes we want to create SceneModels whose objects will never be included in any BCF viewpoints that we save, and
- * will never be disturbed by any viewpoints that we load.
+ * A {@link ViewLayer} is a layer of {@link ViewObject | ViewObjects} within a {@link View}.
  *
- * An example of such a case is a skybox, which we'd never want included in any BCF viewpoints, or hidden
- * whenever we load a BCF viewpoint.
+ * ViewLayers allow users to group and segregate ViewObjects based on their roles or aspects in a scene, simplifying interaction and focusing operations
+ * on specific object groups.
  *
- * TODO TODO TODO TODO
+ * ViewLayers group ViewObjects based on the {@link scene!SceneObject.layerId | layerId} of the
+ * corresponding {@link scene!SceneObject | SceneObject}.
  *
- * > *See {@xeokit/viewer!ViewLayer | Viewlayer}*
+ * Let's add a ViewLayer to our {@link View}, to hold environmental objects, like sky boxes, that are not part of any model.
  *
  * ````javascript
  * const environmentViewLayer = view.createLayer({
@@ -340,16 +341,13 @@
  * skyboxSceneModel.build();
  * ````
  *
+ * Hide all objects in our new ViewLayer:
+ *
  * ````javascript
- * environmentViewLayer.set
+ * environmentViewLayer.setObjectsVisible(environmentLayer.objectIds, false);
  * ````
  *
- *
- * <br>
- *
  * ## Loading SceneModels
- *
- * > *See [@xeokit/demos](/docs/api/modules/_xeokit_demos.html)*
  *
  * ````javascript
  * const sceneModel2 = scene.createModel({
@@ -361,7 +359,8 @@
  *         response
  *             .json()
  *             .then(fileData => {
- *                 loadDotBIM({
+ *
+ *                  loadDotBIM({
  *                     fileData,
  *                     sceneModel2
  *                 })
@@ -455,7 +454,6 @@
  *      excludeLayerIds: ["myEnvironmentViewLayer"]
  * });
  * ````
- *
  *
  * @module viewer
  */

@@ -7,14 +7,14 @@ import {inverseMat4, createMat4, mulMat4v4, mulVec3Scalar, perspectiveMat4, tran
 import {Projection} from "./Projection";
 
 /**
- * PerspectiveProjection projection configuration for a {@link viewer!Camera | Camera} .
+ * PerspectiveProjection projection configuration for a {@link Camera | Camera} .
  *
- * ## Summary
  *
- * * Located at {@link viewer!Camera.perspectiveProjection | Camera.perspectiveProjection}.
- * * Implicitly sets the left, right, top, bottom frustum planes using {@link viewer!PerspectiveProjection.fov | PerspectiveProjection.fov}.
- * * {@link viewer!PerspectiveProjection.near | PerspectiveProjection.near} and {@link viewer!PerspectiveProjection.far| PerspectiveProjection.far} specify the distances to the clipping planes.
- * * {@link viewer!PerspectiveProjection.onProjMatrix | PerspectiveProjection.onProjMatrix} will fire an event whenever {@link viewer!PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix} updates, which indicates that one or more other properties have updated.
+ *
+ * * Located at {@link Camera.perspectiveProjection | Camera.perspectiveProjection}.
+ * * Implicitly sets the left, right, top, bottom frustum planes using {@link PerspectiveProjection.fov | PerspectiveProjection.fov}.
+ * * {@link PerspectiveProjection.near | PerspectiveProjection.near} and {@link PerspectiveProjection.far| PerspectiveProjection.far} specify the distances to the clipping planes.
+ * * {@link PerspectiveProjection.onProjMatrix | PerspectiveProjection.onProjMatrix} will fire an event whenever {@link PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix} updates, which indicates that one or more other properties have updated.
  */
 export class PerspectiveProjection extends Component implements Projection {
 
@@ -24,7 +24,7 @@ export class PerspectiveProjection extends Component implements Projection {
     public readonly camera: Camera;
 
     /**
-     * Emits an event each time {@link viewer!PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix} updates.
+     * Emits an event each time {@link PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix} updates.
      *
      * @event
      */
@@ -208,9 +208,9 @@ export class PerspectiveProjection extends Component implements Projection {
     }
 
     /**
-     * Gets the inverse of {@link viewer!PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix}.
+     * Gets the inverse of {@link PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix}.
      *
-     * @returns  The inverse of {@link viewer!PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix}.
+     * @returns  The inverse of {@link PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix}.
      */
     get inverseProjMatrix(): FloatArrayParam {
         if (this.dirty) {
@@ -224,9 +224,9 @@ export class PerspectiveProjection extends Component implements Projection {
     }
 
     /**
-     * Gets the transpose of {@link viewer!PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix}.
+     * Gets the transpose of {@link PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix}.
      *
-     * @returns  The transpose of {@link viewer!PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix}.
+     * @returns  The transpose of {@link PerspectiveProjection.projMatrix | PerspectiveProjection.projMatrix}.
      */
     get transposedProjMatrix(): FloatArrayParam {
         if (this.dirty) {

@@ -3,15 +3,15 @@ import {IntArrayParam} from "../math";
 
 
 /**
- * Pre-compressed geometry creation parameters for {@link scene!SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}.
+ * Pre-compressed geometry creation parameters for {@link SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}.
  *
- * ## Summary
- *
- * * Created from {@link scene!SceneGeometryParams | SceneGeometryParams} using {@link scene!compressGeometryParams | compressGeometryParams}
- * * Used with {@link scene!SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}
+ * * Created from {@link SceneGeometryParams | SceneGeometryParams} using {@link compressGeometryParams | compressGeometryParams}
+ * * Used with {@link SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}
  * * Generates edge indices for triangle meshes
  * * Ignores normals (our shaders auto-generate them)
  * * Quantizes positions and UVs as 16-bit unsigned integers
+ *
+ * See {@link scene | @xeokit/sdk/scene} for usage.
  */
 export interface SceneGeometryCompressedParams {
 
@@ -42,7 +42,7 @@ export interface SceneGeometryCompressedParams {
      * 3D vertex positions, quantized as 16-bit integers.
      *
      * Internally, the Viewer decompresses thses
-     * with {@link scene!SceneGeometryCompressedParams.positionsDecompressMatrix | SceneGeometryCompressedParams.positionsDecompressMatrix}.
+     * with {@link SceneGeometryCompressedParams.positionsDecompressMatrix | SceneGeometryCompressedParams.positionsDecompressMatrix}.
      *
      * Vertex positions are required for all primitive types.
      */
@@ -52,7 +52,7 @@ export interface SceneGeometryCompressedParams {
      * UV coordinates, quantized as 16-bit integers.
      *
      * Internally, the Viewer de-quantizes these
-     * with {@link scene!SceneGeometryCompressedParams.uvsDecompressMatrix | SceneGeometryCompressedParams.uvsDecompressMatrix}.
+     * with {@link SceneGeometryCompressedParams.uvsDecompressMatrix | SceneGeometryCompressedParams.uvsDecompressMatrix}.
      */
     uvsCompressed?: IntArrayParam,
 

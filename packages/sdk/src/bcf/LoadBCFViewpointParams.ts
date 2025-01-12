@@ -3,9 +3,9 @@ import type {BCFViewpoint} from "./BCFViewpoint";
 import {Data} from "../data";
 
 /**
- * Options for {@link bcf!loadBCFViewpoint | loadBCFViewpoint}.
+ * Options for {@link loadBCFViewpoint | loadBCFViewpoint}.
  *
- * See {@link "@xeokit/bcf" | @xeokit/bcf} for usage.
+ * See {@link "bcf" | @xeokit/bcf} for usage.
  */
 export interface LoadBCFViewpointParams {
 
@@ -26,11 +26,11 @@ export interface LoadBCFViewpointParams {
     /**
      * A {@link viewer!View | View} to load the BCF viewpoint's component states into.
      *
-     * This will load the viewpoint's component states (see {@link bcf!BCFComponents}) into their corresponding
+     * This will load the viewpoint's component states (see {@link BCFComponents}) into their corresponding
      * {@link viewer!ViewObject | ViewObjects} within the given target View, ignoring any
      * {@link viewer!ViewLayer | ViewLayers} that those ViewObjects may have been partitioned into.
      *
-     * The {@link bcf!loadBCFViewpoint | loadBCFViewpoint} function will silently ignore each component state that has no corresponding
+     * The {@link loadBCFViewpoint | loadBCFViewpoint} function will silently ignore each component state that has no corresponding
      * ViewObject in the target View.
      */
     view: View;
@@ -44,10 +44,10 @@ export interface LoadBCFViewpointParams {
      * Only load BCF viewpoint components if their corresponding {@link viewer!ViewObject | ViewObjects}
      * are in {@link viewer!ViewLayer |ViewLayers} that have the given IDs.
      *
-     * The {@link bcf!loadBCFViewpoint | loadBCFViewpoint} function will silently ignore each component state that has no corresponding
+     * The {@link loadBCFViewpoint | loadBCFViewpoint} function will silently ignore each component state that has no corresponding
      * ViewObject in any of these ViewLayers.
      *
-     * Each ViewLayer's occurrence in {@link bcf!LoadBCFViewpointParams.excludeLayerIds | LoadBCFViewpointParams.excludeLayerIds} will override
+     * Each ViewLayer's occurrence in {@link LoadBCFViewpointParams.excludeLayerIds | LoadBCFViewpointParams.excludeLayerIds} will override
      * its appearance in this list.
      */
     includeLayerIds?: string[]
@@ -56,11 +56,11 @@ export interface LoadBCFViewpointParams {
      * Never load BCF viewpoint components if their corresponding {@link viewer!ViewObject | ViewObjects}
      * are in {@link viewer!ViewLayer | ViewLayers} that have the given IDs.
      *
-     * The {@link bcf!loadBCFViewpoint | loadBCFViewpoint} function will silently ignore each component state that has a corresponding
+     * The {@link loadBCFViewpoint | loadBCFViewpoint} function will silently ignore each component state that has a corresponding
      * ViewObject in any of these ViewLayers.
      *
      * Each ViewLayer's occurrence in this list will override its occurrance
-     * in {@link bcf!LoadBCFViewpointParams.includeLayerIds | LoadBCFViewpointParams.includeLayerIds}.
+     * in {@link LoadBCFViewpointParams.includeLayerIds | LoadBCFViewpointParams.includeLayerIds}.
      */
     excludeLayerIds?: string[]
 }

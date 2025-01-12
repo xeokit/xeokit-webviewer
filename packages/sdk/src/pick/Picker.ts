@@ -18,7 +18,7 @@ import type {SceneGeometry, SceneObject} from "../scene";
 import type {Frustum3} from "../boundaries";
 
 /**
- * See {@link "@xeokit/collision!pick"} for usage.
+ * See {@link "collision!pick"} for usage.
  */
 export class Picker {
 
@@ -114,7 +114,7 @@ export class Picker {
     }
 
     /**
-     * Picks a {@link scene!SceneObjectsKdTree3} using a 2D marquee to obtain a {@link MarqueePickResult}
+     * Picks a {@link kdtree3!SceneObjectsKdTree3} using a 2D marquee to obtain a {@link MarqueePickResult}
      * containing picked {@link scene!SceneObject | SceneObjects}, {@link scene!SceneMesh}, {@link scene!SceneGeometry},
      * {@link scene!SceneGeometryBucket | GeometryBuckets}, {@link KdTrianglePrim}, {@link KdLinePrim} and {@link KdPointPrim}.
      * @param params

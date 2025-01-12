@@ -2,7 +2,7 @@ import type { LinearEncoding } from "../constants";
 import type {FloatArrayParam} from "../math";
 
 /**
- * {@link scene!SceneTexture} creation parameters for {@link scene!SceneModel.createTexture | SceneModel.createTexture}.
+ * {@link SceneTexture} creation parameters for {@link SceneModel.createTexture | SceneModel.createTexture}.
  */
 export interface SceneTextureParams {
 
