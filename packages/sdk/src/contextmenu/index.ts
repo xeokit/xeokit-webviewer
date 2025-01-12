@@ -4,10 +4,6 @@
  *
  * [<img src="http://xeokit.io/img/docs/ContextMenu/ContextMenu.gif">](https://xeokit.github.io/xeokit-sdk/examples/index.html#ContextMenu_Canvas_TreeViewPlugin_Custom)
  *
- * * [[Run this example](https://xeokit.github.io/xeokit-sdk/examples/index.html#ContextMenu_Canvas_TreeViewPlugin_Custom)]
- *
- * ## Overview
- *
  * * A pure JavaScript, lightweight context menu
  * * Dynamically configure menu items
  * * Dynamically enable or disable items
@@ -15,7 +11,13 @@
  * * Supports cascading sub-menus
  * * Configure custom style with CSS (see examples above)
  *
- * ## Usage
+ * # Installation
+ *
+ * ````bash
+ * npm install @xeokit/sdk
+ * ````
+ *
+ * # Usage
  *
  * In the example below we'll create a ````ContextMenu```` that pops up whenever we right-click on an object within
  * our {@link Scene}.

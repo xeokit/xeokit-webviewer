@@ -26,7 +26,7 @@
  * and then use {@link scene!SceneModel.createGeometryCompressed | SceneModel.createGeometryCompressed}
  * to create the compressed geometry directly.
  *
- * ### Compression Techniques Used
+ * # Compression Techniques
  *
  * * Simplifies geometry by combining duplicate positions and adjusting indices
  * * Generates edge indices for triangle meshes
@@ -34,13 +34,13 @@
  * * Converts positions to relative-to-center (RTC) coordinates
  * * Quantizes positions and UVs as 16-bit unsigned integers
  *
- * ## Installation
+ * # Installation
  *
  * ````bash
  * npm install @xeokit/sdk
  * ````
  *
- * ## Usage
+ * # Usage
  *
  * In the example below, we'll use {@link scene!compressGeometryParams | compressGeometryParams} to compress
  * a {@link scene!SceneGeometryParams | SceneGeometryParams} into a

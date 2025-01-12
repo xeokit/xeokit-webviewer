@@ -1,15 +1,23 @@
 /**
  * <img style="padding:10px" src="/docs/assets/xeokit_components_icon.png"/>
  *
- * ## xeokit SDK Core Components
+ * # xeokit SDK Core Components
  *
  * * {@link core!Component | Component} base class
  * * Various interfaces that are implemented throughout the SDK.
  *
- * ## Installation
+ * # Installation
  *
  * ````bash
  * npm install @xeokit/sdk
+ * ````
+ *
+ * # Usage
+ *
+ * ````javascript
+ * import {Component, SDKError} from "@xeokit/sdk/core";
+ *
+ * //...
  * ````
  *
  * @module core

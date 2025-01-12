@@ -9,10 +9,18 @@
  * * Use with {@link treeview | treeview} , to configure the appearance and behaviour of
  * {@link treeview!TreeView | TreeViews} for navigating basic element hierachies.
  *
- * ## Installation
+ *  # Installation
  *
  * ````bash
  * npm install @xeokit/sdk
+ * ````
+ *
+ * # Usage
+ *
+ * ````javascript
+ * import {BasicEntity, BasicAggregation} from "@xeokit/sdk/basctypes";
+ *
+ * //...
  * ````
  *
  * @module basictypes

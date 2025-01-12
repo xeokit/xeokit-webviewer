@@ -1,22 +1,26 @@
 /**
- * # xeokit Curves Math Library
+ * <img style="padding:10px" src="/docs/assets/xeokit_components_icon.png"/>
+ *
+ * # Spline curve math functions
  *
  * ---
  *
- * ### *Spline curve math functions*
+ * ***Spline curve math functions***
  *
  * ---
  *
- * ## Installation
+ * # Installation
  *
  * ````bash
  * npm install @xeokit/sdk
  * ````
  *
- * ````javascript
- * import * as curves from "@xeokit/curves";
+ * # Usage
  *
- * //..
+ * ````javascript
+ * import {tangentQuadraticBézier, tangentQuadraticBézier3} from "@xeokit/sdk/curves";
+ *
+ * //...
  * ````
  *
  * @module curves

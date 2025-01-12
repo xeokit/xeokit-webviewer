@@ -42,6 +42,12 @@
  *
  * <br>
  *
+ * # Installation
+ *
+ * ````bash
+ * npm install @xeokit/sdk
+ * ````
+ *
  * # Usage
  *
  * ## Creating a DataModel from JSON

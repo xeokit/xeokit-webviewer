@@ -16,18 +16,20 @@
  * * Find center of positions
  * * FrustumProjection-boundary intersection tests
  *
- * ## Installation
+ * # Installation
  *
  * ````bash
  * npm install @xeokit/sdk
  * ````
  *
- * ## Usage
+ * # Usage
  *
  * ````javascript
- * import * as boundaries from "@xeokit/sdk/boundaries";
+ * import {createAABB3} from "@xeokit/sdk/boundaries";
  *
- * //..TODO
+ * const aabb = createAABB([-100,-100,-100,100,100,100]);
+ *
+ * //...
  * ````
  *
  * @module boundaries
