@@ -5,7 +5,7 @@
  *
  * ---
  *
- * ### *Math functions for working with RTC cartesian coordinates*
+ * ***Math functions for working with RTC cartesian coordinates***
  *
  * ---
  *
@@ -21,7 +21,7 @@
  * ## Usage
  *
  * ````javascript
- * import * as rtc from "@xeokit/sdk/rtc";
+ * import {worldToRTCPos} from "@xeokit/sdk/rtc";
  *
  * const worldPos = [100000000000.0, 1000000000.0, 1000000000000.0];
  * const rtcCenter = [0,0,0];
@@ -36,7 +36,8 @@
  */
 import type {FloatArrayParam} from "../math";
 import {
-    createVec3, createVec4,
+    createVec3,
+    createVec4,
     dotVec3,
     mulVec3Scalar,
     normalizeVec3,

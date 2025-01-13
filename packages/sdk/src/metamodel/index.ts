@@ -5,7 +5,7 @@
  *
  * ---
  *
- * ### *Import data models from xeokit's [legacy metamodel](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#metamodel) format*
+ * ***Import data models from xeokit's [legacy metamodel](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#metamodel) format***
  *
  * ---
  *
@@ -26,7 +26,7 @@
  * # Installation
  *
  * ````bash
- * npm install @xeokit/metamodel
+ * npm install @xeokit/sdk
  * ````
  *
  * # Usage

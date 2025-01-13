@@ -7,7 +7,7 @@ const kdTreeDimLength = new Float32Array(2);
 /**
  * An item stored in a 2D k-d tree.
  *
- * See {@link kdtree2} for usage.
+ *  See {@link kdtree2 | @xeokit/sdk/kdtree2} for usage.
  */
 export interface KdItem2D {
 
@@ -20,7 +20,7 @@ export interface KdItem2D {
 /**
  * A 2D k-d tree node.
  *
- * See {@link "kdtree2"} for usage.
+ *  See {@link kdtree2 | @xeokit/sdk/kdtree2} for usage.
  */
 export interface KdNode2D {
 

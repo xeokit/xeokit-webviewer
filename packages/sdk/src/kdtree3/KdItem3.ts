@@ -1,5 +1,7 @@
 /**
  * Binds an item to a {@link KdNode3}.
+ *
+ * See {@link kdtree3 | @xeokit/sdk/kdtree3} for usage.
  */
 export interface KdItem3D {
 

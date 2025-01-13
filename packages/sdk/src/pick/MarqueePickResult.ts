@@ -3,7 +3,7 @@ import type {SceneObject} from "../scene";
 /**
  * Marquee picking results returned by {@link marqueePick}.
  *
- * See {@link "collision!pick"} for usage.
+ * See {@link pick | @xeokit/sdk/pick} for usage.
  */
 export interface MarqueePickResult {
 

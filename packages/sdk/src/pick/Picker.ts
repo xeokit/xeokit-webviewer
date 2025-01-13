@@ -18,7 +18,7 @@ import type {SceneGeometry, SceneObject} from "../scene";
 import type {Frustum3} from "../boundaries";
 
 /**
- * See {@link "collision!pick"} for usage.
+ * See {@link pick | @xeokit/sdk/pick} for usage.
  */
 export class Picker {
 

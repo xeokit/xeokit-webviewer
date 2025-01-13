@@ -4,7 +4,7 @@ import type {FloatArrayParam} from "../math";
 /**
  * Represents an intersecting primitive within a {@link RayPickResult}.
  *
- * See {@link "collision!pick"} for usage.
+ * See {@link pick | @xeokit/sdk/pick} for usage.
  */
 export interface PrimHit {
 

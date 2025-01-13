@@ -13,9 +13,7 @@ export class SceneObjectsPrimsKdTree3 extends KdTree3 {}
 /**
  * Creates a KdTree3 that indexes the primitives belonging to the given SceneObjects in 3D World-space.
  *
- * See {@link "kdtree3"} for usage.
- *
- * @param sceneObjects
+ * See {@link kdtree3 | @xeokit/sdk/kdtree3} for usage.
  */
 export function createSceneObjectPrimsKdTree3(sceneObjects: SceneObject[]): SceneObjectsPrimsKdTree3 {
 

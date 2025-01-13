@@ -9,6 +9,12 @@
  *
  * ---
  *
+ *  * # Installation
+ *
+ * ````bash
+ * npm install @xeokit/sdk
+ * ````
+ *
  * # Usage
  *
  * Use a {@link modelchunksloader!ModelChunksLoader | ModelChunksLoader} to batch-load the files listed in a
@@ -43,7 +49,7 @@
  * ````
  * import {Scene} from "@xeokit/sdk/scene}";
  * import {Data} from "@xeokit/sdk/data}";
- * import {ModelChunksLoader} from "@xeokit/sdk/modelChunksLoader}";
+ * import {ModelChunksLoader} from "@xeokit/sdk/modelchunksloader}";
  * import {loadXGF} from "@xeokit/sdk/xgf}";
  * import {loadDataModel} from "@xeokit/sdk/data}";
  * import {SDKError} from "@xeokit/sdk/core";

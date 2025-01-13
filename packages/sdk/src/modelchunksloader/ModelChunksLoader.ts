@@ -5,7 +5,7 @@ import {ModelChunksManifestParams} from "../core";
 /**
  * Loads a SceneModel and/or DataModel from a set of chunk files.
  *
- * See {@link "modelchunksloader" | modelchunksloader} for usage.
+ * See {@link "modelchunksloader" | @xeokit/sdk/modelchunksloader} for usage.
  *
  * @param params
  */

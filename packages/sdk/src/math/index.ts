@@ -5,14 +5,20 @@
  *
  * ---
  *
- * ### *Basic math types and constants*
+ * ***Basic math types and constants***
  *
  * ---
+ *
+ *  * ## Installation
+ *
+ * ````bash
+ * npm install @xeokit/sdk
+ * ````
  *
  * ## Usage
  *
  * ````javascript
- * import * as math from "@xeokit/sdk/math";
+ * import {MIN_DOUBLE, MAX_DOUBLE, DEGTORAD} from "@xeokit/sdk/math";
  *
  * //..
  * ````

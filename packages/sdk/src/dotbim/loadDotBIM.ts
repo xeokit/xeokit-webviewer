@@ -12,7 +12,7 @@ import {isJSONObject} from "../utils";
  * * Expects {@link scene!SceneModel.built | SceneModel.built} and {@link scene!SceneModel.destroyed | SceneModel.destroyed} to be ````false````
  * * Does not call {@link scene!SceneModel.build | SceneModel.build} - we call that ourselves, when we have finished building the SceneModel
  *
- * See {@link "dotbim" | dotbim} for usage.
+ * See {@link dotbim | @xeokit/sdk/dotbim} for usage.
  *
  * @param params - Loading parameters.
  * @param params.fileData - JSON .BIM file data.

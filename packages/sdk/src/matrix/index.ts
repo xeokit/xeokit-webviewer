@@ -5,21 +5,30 @@
  *
  * ---
  *
- * ### *Math functions for 3D/2D matrices, quaternions and vectors*
+ * ***Math functions for 3D/2D matrices, quaternions and vectors***
  *
  * ---
  *
- * ## Usage
+ * # Installation
+ *
+ * ````bash
+ * npm install @xeokit/sdk
+ * ````
+ *
+ * # Usage
  *
  * ````javascript
- * import * as matrix from "@xeokit/sdk";
+ * import {dotVec3, createVec3} as matrix from "@xeokit/sdk/matrix";
  *
- * //..
+ * const a = createVec3([0.1, 1, 2.1]);
+ * const b = createVec3([0.5, 2.1, -1.3]);
+ *
+ * const c = dotVec3(a, b);
  * ````
  *
  * @module matrix
  */
-import {clamp, DEGTORAD, type FloatArrayParam, newFloatArray} from "../math";
+import {clamp, DEGTORAD, FloatArrayParam, newFloatArray} from "../math";
 
 
 const tempVec4a: FloatArrayParam = createVec4();

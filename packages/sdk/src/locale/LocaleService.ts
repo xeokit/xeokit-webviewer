@@ -4,7 +4,7 @@ import {EventEmitter} from "../core";
 /**
  * The localization service for a {@link viewer!Viewer | Viewer}.
  *
- * See {@link "locale"} for usage.
+ * See {@link locale | @xeokit/sdk/locale} for usage.
  */
 class LocaleService {
 

@@ -49,7 +49,7 @@
  * import {SDKError} from "@xeokit/sdk/core";
  * import {Scene} from "@xeokit/sdk/scene";
  * import {Data} from "@xeokit/sdk/data";
- * import  {WebGLRenderer} from "@xeokit/sdk/webglrenderer";
+ * import {WebGLRenderer} from "@xeokit/sdk/webglrenderer";
  * import {Viewer} from "@xeokit/sdk/viewer";
  * import {CameraControl} from "@xeokit/sdk/cameracontrol";
  * import {loadGLTF} from "@xeokit/sdk/gltf";

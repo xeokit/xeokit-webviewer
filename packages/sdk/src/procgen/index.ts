@@ -5,17 +5,17 @@
  *
  * ---
  *
- * ### *Functions to generate various 3D geometric primitives*
+ * ***Functions to generate various 3D geometric primitives***
  *
  * ---
  *
- * ## Installation
+ * # Installation
  *
  * ````bash
  * npm install @xeokit/sdk
  * ````
  *
- * ## Usage
+ * # Usage
  *
  * ````javascript
  * import {buildBoxGeometry} from "@xeokit/sdk/procgen";

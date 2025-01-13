@@ -3,7 +3,7 @@
  *
  * ---
  *
- * ### *Select objects and primitives using rays and boundaries*
+ * ***Select objects and primitives using rays and boundaries***
  *
  * ---
  *
@@ -54,19 +54,19 @@
  * scene graph have been designed in such a way that requires some boilerplate code to traverse and unpack them. This
  * includes coordinate decompression and transformation, which we'll demonstrate in the example code below.
  *
- * ## Installation
+ * # Installation
  *
  * ````bash
  * npm install @xeokit/sdk
  * ````
  *
- * ## Usage
+ * # Usage
  *
  * ````javascript
- * import {Scene} from "@xeokit/scene";
- * import {SDKError} from "@xeokit/core";
- * import {TrianglesPrimitive, LinesPrimitive, PointsPrimitive} from "@xeokit/constants";
- * import {KdTree3, searchKdTree3WithAABB} from "@xeokit/kdtree3";
+ * import {Scene} from "@xeokit/sdk/scene";
+ * import {SDKError} from "@xeokit/sdk/core";
+ * import {TrianglesPrimitive, LinesPrimitive, PointsPrimitive} from "@xeokit/sdk/constants";
+ * import {KdTree3, searchKdTree3WithAABB} from "@xeokit/sdk/kdtree3";
  *
  * // Create a scene graph - notice there's not a Viewer in sight
  *

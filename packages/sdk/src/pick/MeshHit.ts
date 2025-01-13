@@ -3,7 +3,7 @@ import type {SceneGeometry, SceneMesh} from "../scene";
 /**
  * Represents an intersecting {@link scene!SceneMesh | SceneMesh} within a {@link RayPickResult}.
  *
- * See {@link "collision!pick"} for usage.
+ * See {@link pick | @xeokit/sdk/pick} for usage.
  */
 export interface MeshHit {
 
