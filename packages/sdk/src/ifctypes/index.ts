@@ -16,6 +16,14 @@
  * npm install @xeokit/sdk
  * ````
  *
+ * # Usage
+ *
+ * ````javascript
+ * import {IfcWallStandardCase, IfcArbitraryClosedProfileDef} from "@xeokit/sdk/ifctypes";
+ *
+ * //...
+ * ````
+ *
  * @module ifctypes
  */
 

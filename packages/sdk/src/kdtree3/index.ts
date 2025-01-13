@@ -41,10 +41,10 @@
  * Querying for {@link scene!SceneObject | SceneObjects} that intersect a 3D World-space boundary:
  *
  * ````javascript
- * import {Scene} from "@xeokit/scene";
- * import {SDKError} from "@xeokit/core";
- * import {TrianglesPrimitive} from "@xeokit/constants";
- * import {KdTree3, searchKdTree3WithAABB} from "@xeokit/kdtree3";
+ * import {Scene} from "@xeokit/sdk/scene";
+ * import {SDKError} from "@xeokit/sdk/core";
+ * import {TrianglesPrimitive} from "@xeokit/sdk/constants";
+ * import {KdTree3, searchKdTree3WithAABB} from "@xeokit/sdk/kdtree3";
  *
  * const scene = new Scene();
  *

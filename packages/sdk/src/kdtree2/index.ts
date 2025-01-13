@@ -18,7 +18,9 @@
  * ## Usage
  *
  * ````javascript
+ * import {createKdTree2FromSceneObjectVerts} from "@xeokit/sdk/kdtree2";
  *
+ *  // TODO
  * ````
  *
  * @module kdtree2

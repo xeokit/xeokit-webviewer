@@ -70,6 +70,11 @@ class Item {
 interface ItemParam {
 }
 
+/**
+ * An HTML context menu.
+ *
+ * See {@link contextmenu | @xeokit/sdk/contextmenu} for usage.
+ */
 export class ContextMenu {
 
     #id: string;

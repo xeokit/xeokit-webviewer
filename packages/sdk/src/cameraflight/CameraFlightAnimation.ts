@@ -16,13 +16,7 @@ const newLookEyeVec = createVec3();
 /**
  * Animates a {@link viewer!View | View's} {@link viewer!Camera | Camera} to look at specified objects, boundaries or locations.
  *
- *
- *
- * * Controls a {@link viewer!Camera | Camera}
- * * Navigates the Camera to look at a {@link viewer!Viewer | Viewer} or boundary
- * * Navigates the Camera to an explicit position given as ````eye````, ````look```` and ````up```` vectors
- * * Jumps or flies the Camera
- * * Smoothly transitions between projections
+ * See {@link cameraflight | @xeokit/sdk/cameraflight} for usage.
  */
 class CameraFlightAnimation extends Component {
 
@@ -61,7 +55,6 @@ class CameraFlightAnimation extends Component {
     #projection2: number;
     #projMatrix1: FloatArrayParam;
     #projMatrix2: FloatArrayParam;
-
 
     /**
      * Emits an event each time the animation starts.

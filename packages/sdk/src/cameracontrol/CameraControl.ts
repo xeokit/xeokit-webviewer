@@ -82,7 +82,8 @@ export interface CameraControlParams {
 }
 
 /**
- * Controls the {@link viewer!Camera} with user input, and fires events when the user interacts with pickable {@link viewer!ViewObject | ViewObjects}.
+ * Controls a {@link viewer!Camera} with user input, and fires events when the
+ * user interacts with pickable {@link viewer!ViewObject | ViewObjects}.
  *
  * # Overview
  *

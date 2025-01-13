@@ -48,8 +48,6 @@
  *
  * The {@link core!SDKError | SDKError} class will be used to handle any errors that may occur during this process.
  *
- * * [Run this example]()
- *
  * ````javascript
  * import {SDKError, Scene, WebGLRenderer, Viewer, CameraControl, loadDotBIM} from "@xeokit/sdk/dotbim";
  *

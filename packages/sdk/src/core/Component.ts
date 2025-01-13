@@ -17,12 +17,6 @@ const createUUID = ((() => {
 
 /**
  * Common base class for xeokit SDK components.
- *
- *
- *
- * * Unique ID
- * * Logging methods
- * * Manages lifecycle of child Components
  */
 export class Component {
 

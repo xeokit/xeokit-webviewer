@@ -5,7 +5,7 @@
  *
  * ---
  *
- * ### *Import models from the industry standard glTF model file format*
+ * ***Import models from the industry standard glTF model file format***
  *
  * ---
  *
@@ -44,8 +44,6 @@
  * a binary glTF (GLB) file into our SceneModel.
  *
  * The {@link core!SDKError | SDKError} class will be used to handle any errors that may occur during this process.
- *
- * * [Run this example]()
  *
  * ````javascript
  * import {SDKError} from "@xeokit/sdk/core";

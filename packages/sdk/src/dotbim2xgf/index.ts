@@ -1,5 +1,4 @@
 /**
-
  * <img  style="padding:0px; padding-top:30px; padding-bottom:10px; height:130px;" src="/docs/assets/xeokit_logo_mesh.png"/>
  *
  * # xeokit .BIM -> XGF Converter
