@@ -3,6 +3,8 @@ import {TreeView} from "./TreeView";
 
 /**
  * Event fired by {@link TreeView.onContextMenu}.
+ *
+ * See {@link treeview | @xeokit/sdk/treeview} for usage.
  */
 export interface TreeViewNodeContextMenuEvent {
     event: Event;

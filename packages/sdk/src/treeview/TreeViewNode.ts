@@ -1,5 +1,7 @@
 /**
  * A node in a TreeView.
+ *
+ * See {@link treeview | @xeokit/sdk/treeview} for usage.
  */
 export interface TreeViewNode {
     nodeId: string;

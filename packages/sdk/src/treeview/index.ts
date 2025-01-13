@@ -3,21 +3,21 @@
  *
  * <br>
  *
- * ## xeokit Tree View UI
+ * # xeokit Tree View UI
  *
- * * {@link treeview!TreeView}
+ * * {@link treeview!TreeView | TreeView}
  * * Fast HTML tree view to navigate federated models in a {@link viewer!Viewer | Viewer}
  * * Use with a {@link viewer!View | View} and a semantic {@link data!Data | Data} model
  * * Supports Industry Foundation Classes ([IFC](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ifc))
  * * Supports any schema expressable as ER graph with aggregation relationships
  *
- * ## Installation
+ * # Installation
  *
  * ````bash
  * npm install @xeokit/sdk
  * ````
  *
- * ## Usage
+ * # Usage
  *
  * TODO
  *

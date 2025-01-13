@@ -3,6 +3,8 @@ import {Data} from "../data";
 
 /**
  * Parameters to create a {@link treeview!TreeView | TreeView}.
+ *
+ * See {@link treeview | @xeokit/sdk/treeview} for usage.
  */
 export interface TreeViewParams {
 
