@@ -479,7 +479,7 @@
  *
  * ## Loading BCF
  *
- * Let's now reload that BCF viewpoint back into our View.
+ * Let's now use {@link bcf!loadBCFViewpoint | loadBCFViewpoint} to reload that BCF viewpoint back into our View.
  *
  * Even though no skybox/environment ViewObject states were saved in this viewpoint, we'll pretend they were, and demonstrate
  * how we can filter them out and prevent them from loading.
