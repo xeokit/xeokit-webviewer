@@ -1,14 +1,26 @@
+
 /**
- * ## xeokit SDK Core Utilities Library
+ * <img style="padding:10px; width:300px" src="/docs/assets/xeokit_components_icon.png"/>
  *
- * ## Installation
+ * # xeokit SDK Core Utilities Library
+ *
+ * # Installation
  *
  * ````bash
  * npm install @xeokit/sdk
  * ````
  *
+ * # Usage
+ *
+ * ````javascript
+ * import {Map, Queue, Loader, LoadingManager, WorkerPool, Cache, FileLoader} from "@xeokit/sdk/utils";
+ *
+ * //...
+ * ````
+ *
  * @module utils
  */
+
 
 export * from "./Map";
 export * from "./Queue";

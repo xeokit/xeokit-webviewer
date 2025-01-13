@@ -87,6 +87,7 @@
  * import {TrianglesPrimitive, LinearEncoding, LinearFilter} from "@xeokit/sdk/constants";
  * import {CameraControl} from "@xeokit/sdk/cameracontrol";
  * import {loadXGF} from "@xeokit/sdk/xgf";
+ * import {saveBCFViewpoint, loadBCFViewpoint} from "@xeokit/sdk/bcf";
  * ````
  *
  * <br>
@@ -144,7 +145,8 @@
  *
  * ## Add a CameraControl
  *
- * Add a {@link cameracontrol!CameraControl | CameraControl} to the View, to control the View's Camera with mouse and touch input:
+ * Add a {@link cameracontrol!CameraControl | CameraControl} to the View, to control the View's Camera with mouse and
+ * touch input:
  *
  * ````javascript
  * const myCameraControl = new CameraControl({
@@ -159,7 +161,8 @@
  * Our {@link scene!Scene | Scene } is a container for model geometry and materials.
  *
  * Within the Scene, we'll create a {@link scene!SceneModel | SceneModel} that contains a couple
- * of textured {@link scene!SceneModel | SceneObjects}. As soon as we've called {@link scene!SceneModel.build | SceneModel.build}, two
+ * of textured {@link scene!SceneModel | SceneObjects}. As soon as we've
+ * called {@link scene!SceneModel.build | SceneModel.build}, two
  * new 3D objects appear in the View's canvas.
  *
  * ````javascript
@@ -212,7 +215,7 @@
  *
  * <br>
  *
- * ## Showing and Hiding Objects
+ * ## Show and Hide Objects
  *
  * Having created our Scene, Viewer, View and SceneModel, we now have a couple of objects showing in our View.
  *
@@ -236,7 +239,7 @@
  *
  * <br>
  *
- * ## Highlighting, Selecting and X-Raying Objects
+ * ## Highlight, Select and X-Ray Objects
  *
  * The functions for highlighting, selecting, colorizing and X-raying objects work the same as when hiding and
  * showing them.
@@ -251,7 +254,7 @@
  *
  * <br>
  *
- * ## Creating Additional Views
+ * ## Create Additional Views
  *
  * A Viewer can have an unlimited number of Views, each providing an independent view of the Scene in a separate
  * HTML canvas. Each View can have a completely different viewpoint, projection, and configuration of which objects
@@ -281,7 +284,7 @@
  *
  * <br>
  *
- * ## Slicing Objects
+ * ## Slice Objects
  *
  * Each View can have an unlimited number of interactive {@link SectionPlane | SectionPlanes}, with which we can use to slice open objects
  * to view interior structures.
@@ -311,7 +314,8 @@
  *
  * A {@link ViewLayer} is a layer of {@link ViewObject | ViewObjects} within a {@link View}.
  *
- * ViewLayers allow users to group and segregate ViewObjects based on their roles or aspects in a scene, simplifying interaction and focusing operations
+ * ViewLayers allow users to group and segregate ViewObjects based on their roles or aspects in a scene, simplifying
+ * interaction and focusing operations
  * on specific object groups.
  *
  * ViewLayers group ViewObjects based on the {@link scene!SceneObject.layerId | layerId} of the
@@ -349,6 +353,11 @@
  *
  * ## Loading SceneModels
  *
+ * We can view additional models by creating SceneModels and loading files into them.
+ *
+ * Lets create a new SceneModel in the Scene and then use {@link dotbim!loadDotBIM} to
+ * load a house model into it from .BIM format.
+ *
  * ````javascript
  * const sceneModel2 = scene.createModel({
  *     id: "houseModel"
@@ -382,22 +391,41 @@
  *
  * ## Saving SceneModels
  *
+ * We can save the SceneModels in our Scene to a variety of formats.
+ *
+ * Lets use {@link dotbim!saveDotBIM} to save our house model back to a .BIM file.
+ *
  * ````javascript
- * const fileData = saveDotBIM({
+ * const xktFileData = saveXKT({
  *      sceneModel
  * });
  * ````
  *
  * <br>
  *
- * ## Canvas Snapshots
+ * ## Capturing Canvas Snapshots
+ *
+ * Let's use {!link View.getSnapshot | View.getSnapshot} to capture a snapshot image of the
+ * canvas to a {@link SnapshotResult}, while including UI elements ({@link treeview!TreeView | TreeView} etc) in the snapshot.
+ *
+ * ````javascript
+ * const snapshotResult = view.getSnapshot({
+ *     includeGizmos: true,
+ *     height: 100,
+ *     width: 150
+ * });
+ * ````
  *
  * <br>
  *
  * ## Render Modes
  *
+ * A View allows us to define various rendering modes and specify the rendering effects for each mode. When a View
+ * is set to a particular rendering mode, it activates only the effects configured for that mode.
+ *
  * Let's configure our View to apply enhanced edges and ambient
- * shadows when in QualityRender mode, and only apply resolution scaling in FastRender mode.
+ * shadows when in {@link constants!QualityRender | QualityRender} mode, and only apply resolution scaling
+ * in {@link constants!FastRender | FastRender} mode.
  *
  * ````javascript
  * import {FastRender, QualityRender} from "@xeokit/sdk/constants";
@@ -420,37 +448,46 @@
  * myView.renderMode = QualityRender;
  * ````
  *
- * Switch it back to FastRender mode whenever we want to enable canvas scaling, and disable edges and ambient shaodows for smoother interaction.
+ * Switch it back to FastRender mode whenever we want to enable canvas scaling, and disable edges and ambient shadows
+ * for smoother interaction.
  *
  * ````javascript
  * myView.renderMode = FastRender;
  * ````
  *
+ * In this documentation, we use the two bundled constants, QualityRender and FastRender, to identify two
+ * rendering modes. However, the number of supported modes is actually unlimited, and we can use our own constants
+ * to identify them if we want.
+ *
  * <br>
  *
  * ## Saving BCF
+ *
+ * Let's use {@link bcf!saveBCFViewpoint | saveBCFViewpoint} to save the visual state of our View to a BCF
+ * viewpoint. The viewpoint is a {@link bcf!BCFViewpoint | BCFViewpoint}, which can serialize directly to JSON.
+ *
+ * We'll also exclude the states of the ViewObjects in the skybox/environment ViewLayer from being saved in the viewpoint.
+ *
+ * ````javascript
+ * const bcfViewpoint = saveBCFViewpoint({
+ *     view,
+ *     excludeLayerIds: ["myEnviromentViewLayer"]
+ * });
+ * ````
  *
  * <br>
  *
  * ## Loading BCF
  *
+ * Let's now reload that BCF viewpoint back into our View.
  *
- * TODO
- * Now we can save that View as a BCF viewpoint that will never include our skybox objects:
- *
- * ````javascript
- * const bcfViewpointAgain = saveBCFViewpoint({
- *      view: view2,
- *      excludeLayerIds: ["myEnviromentViewLayer"]
- * });
- * ````
- *
- * We can also load that viewpoint back into our View, in a way that won't disrupt our skybox:
+ * Even though no skybox/environment ViewObject states were saved in this viewpoint, we'll pretend they were, and demonstrate
+ * how we can filter them out and prevent them from loading.
  *
  * ````javascript
  * loadBCFViewpoint({
- *      bcfViewpoint: bcfViewpointAgain
- *      view: view2,
+ *      bcfViewpoint
+ *      view,
  *      excludeLayerIds: ["myEnvironmentViewLayer"]
  * });
  * ````

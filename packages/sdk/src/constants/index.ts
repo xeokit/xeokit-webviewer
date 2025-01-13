@@ -1,29 +1,9 @@
 /**
- * ## xeokit SDK Constant Definitions
- *
- * ## Installation
- *
- * ````bash
- * npm install @xeokit/sdk
- * ````
- *
- * @module constants
- */
-
-
-
-/**
  * <img style="padding:10px; width:300px" src="/docs/assets/xeokit_components_icon.png"/>
  *
  * # xeokit SDK Constant Definitions
  *
- * * Defines numeric constants for a basic set of entity and relationship types.
- * * Use with {@link data | data}  to assign basic types to {@link data!DataObject | DataObjects}
- * and {@link data!Relationship | Relationships} and treat them as elements of a basic entity-relationship graph.
- * * Use with {@link treeview | treeview} , to configure the appearance and behaviour of
- * {@link treeview!TreeView | TreeViews} for navigating basic element hierachies.
- *
- * # Installation
+ *  # Installation
  *
  * ````bash
  * npm install @xeokit/sdk
@@ -32,7 +12,7 @@
  * # Usage
  *
  * ````javascript
- * import {RepeatWrapping, ClampToEdgeWrapping} from "@xeokit/sdk/constants";
+ * import {ClampToEdgeWrapping, RGBA_S3TC_DXT3_Format} from "@xeokit/sdk/constants";
  *
  * //...
  * ````

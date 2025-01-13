@@ -19,7 +19,7 @@
  *
  * # Usage
  *
- * TODO
+ * Import the modules we need:
  *
  * ````javascript
  * import {Viewer} from "@xeokit/sdk/viewer";
@@ -54,7 +54,7 @@
  * const data = new Data();
  * ````
  *
- * Create a {@link treeview!TreeView}, configured to show TODO:
+ * Create a {@link treeview!TreeView}:
  *
  * ````javascript
  * const treeView = new TreeView({
