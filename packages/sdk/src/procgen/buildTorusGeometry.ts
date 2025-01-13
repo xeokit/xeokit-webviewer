@@ -21,7 +21,7 @@ import {TrianglesPrimitive} from "../constants";
  * @param [cfg.radialSegments=32] The number of radial segments.
  * @param [cfg.tubeSegments=24] The number of tubular segments.
  * @param [cfg.arc=Math.PI*0.5] The length of the arc in radians, where Math.PI*2 is a closed torus.
- * @returns {Object} Configuration for a {@link scene!SceneGeometry} subtype.
+ * @returns {GeometryArrays} Configuration for a {@link scene!SceneGeometry} subtype.
  */
 export function buildTorusGeometry(cfg: {
     tube?: number;

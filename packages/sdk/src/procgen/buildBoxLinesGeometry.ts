@@ -2,8 +2,6 @@ import * as utils from "../utils";
 import * as constants from "../constants";
 import type {GeometryArrays} from "./GeometryArrays";
 
-
-
 /**
  * Creates a box-shaped wireframe geometry.
  *

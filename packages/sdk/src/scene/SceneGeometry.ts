@@ -14,8 +14,6 @@ import {IntArrayParam} from "../math";
  * * Referenced by {@link SceneMesh.geometry | SceneMesh.geometry}
  *
  * See {@link scene | @xeokit/sdk/scene}  for usage.
- *
- * See {@link scene | @xeokit/sdk/scene}   for usage.
  */
 export class SceneGeometry {
 

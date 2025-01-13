@@ -1,7 +1,7 @@
 import {FloatArrayParam, IntArrayParam} from "../math";
 
 /**
- * TrianglesLayerGeometryBucket data arrays.
+ * Geometry data arrays.
  */
 export type GeometryArrays = {
     primitive: number,
