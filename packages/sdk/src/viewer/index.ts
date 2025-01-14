@@ -414,6 +414,8 @@
  *     height: 100,
  *     width: 150
  * });
+ *
+ * const imageData = snapshotResult.imageData;
  * ````
  *
  * <br>
@@ -460,6 +462,27 @@
  * to identify them if we want.
  *
  * <br>
+ *
+ * ## Slicing with Section Planes
+ *
+ * We can create an unlimited number of {@link SectionPlane | SectionPlanes}, to slice parts
+ * off our model and reveal inner structures:
+ *
+ * ````javascript
+ * // Create a SectionPlane on negative diagonal
+ * const sectionPlane1 = new SectionPlane(viewer.scene, {
+ *     pos: [1.0, 1.0, 1.0],
+ *     dir: [-1.0, -1.0, -1.0],
+ *     active: true
+ * }),
+ *
+ * // Create a SectionPlane on positive diagonal
+ * const sectionPlane2 = new SectionPlane(viewer.scene, {
+ *     pos: [-1.0, -1.0, -1.0],
+ *     dir: [1.0, 1.0, 1.0],
+ *     active: true
+ * });
+ * ````
  *
  * ## Saving BCF
  *

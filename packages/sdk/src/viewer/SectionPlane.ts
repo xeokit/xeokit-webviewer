@@ -11,50 +11,14 @@ import type {FloatArrayParam} from "../math";
 /**
  *  An arbitrarily-aligned World-space clipping plane.
  *
- *
- *
  * * Belongs to a {@link View | View}.
- * * Slices portions off {@link ViewObject | ViewObjects} to create cross-section views or reveal interiors.
  * * Registered by {@link SectionPlane.id} in {@link View.sectionPlanes}.
+ * * Slices portions off {@link ViewObject | ViewObjects} to create cross-section views or reveal interiors.
  * * Indicates its World-space position in {@link SectionPlane.pos} and orientation vector in {@link SectionPlane.dir}.
  * * Discards elements from the half-space in the direction of {@link SectionPlane.dir}.
  * * Can be be enabled or disabled via {@link SectionPlane.active}.
  *
- * ## Usage
- *
- * In the example below, we'll create two SectionPlanes to slice a model loaded from glTF. Note that we could also create them
- * using a {@link SectionPlanesPlugin}.
- *
- * ````javascript
- * import {Viewer, GLTFLoaderPlugin, SectionPlane} from "xeokit-viewer.es.js";
- *
- * const viewer = new Viewer({
- *      elementId: "myCanvas"
- * });
- *
- * const gltfLoaderPlugin = new GLTFModelsPlugin(viewer, {
- *      id: "GLTFModels"
- * });
- *
- * const model = gltfLoaderPlugin.load({
- *      id: "myModel",
- *      src: "./models/gltf/mygltfmodel.gltf"
- * });
- *
- * // Create a SectionPlane on negative diagonal
- * const sectionPlane1 = new SectionPlane(viewer.scene, {
- *     pos: [1.0, 1.0, 1.0],
- *     dir: [-1.0, -1.0, -1.0],
- *     active: true
- * }),
- *
- * // Create a SectionPlane on positive diagonal
- * const sectionPlane2 = new SectionPlane(viewer.scene, {
- *     pos: [-1.0, -1.0, -1.0],
- *     dir: [1.0, 1.0, 1.0],
- *     active: true
- * });
- * ````
+ * See {@link viewer | @xeokit/sdk/viewer} for usage info.
  */
 class SectionPlane extends Component {
 
@@ -64,7 +28,7 @@ class SectionPlane extends Component {
     declare public id: string;
 
     /**
-     * The View to which this DirLight belongs.
+     * The View to which this SectionPlane belongs.
      *
      * @property view
      * @type {View}
