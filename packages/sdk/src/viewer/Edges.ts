@@ -1,7 +1,8 @@
-import {Component} from "../core";
+import {Component, SDKError} from "../core";
 import type {View} from "./View";
 import type {FloatArrayParam} from "../math";
 import {QualityRender} from "../constants";
+import {EdgesParams} from "./EdgesParams";
 
 
 /**
@@ -23,7 +24,7 @@ class Edges extends Component {
      * @private
      */
     #state: {
-        edgeColor: Float32Array;
+        edgeColor: FloatArrayParam;
         edgeWidth: number;
         edgeAlpha: number;
         enabled: boolean;
@@ -33,13 +34,7 @@ class Edges extends Component {
     /**
      * @private
      */
-    constructor(view: View, options: {
-        edgeColor?: FloatArrayParam;
-        edgeWidth?: number;
-        edgeAlpha?: number;
-        enabled?: boolean;
-        renderModes?: number[];
-    } = {}) {
+    constructor(view: View, options: EdgesParams = {}) {
 
         super(view, options);
 
@@ -102,7 +97,7 @@ class Edges extends Component {
         /////////////////////////////////////////////////////////////////////////
         return false;
 
-   //     return this.#state.enabled;
+        //     return this.#state.enabled;
     }
 
     /**
@@ -126,7 +121,7 @@ class Edges extends Component {
      *
      * Default value is ````[0.2, 0.2, 0.2]````.
      */
-    get edgeColor(): Float32Array {
+    get edgeColor(): FloatArrayParam {
         return this.#state.edgeColor;
     }
 
@@ -197,6 +192,31 @@ class Edges extends Component {
             }
         }
         return false;
+    }
+
+    /**
+     * Gets this Edges as JSON.
+     */
+    getJSON(): EdgesParams {
+        return {
+            renderModes: this.renderModes,
+            edgeColor: this.edgeColor,
+            edgeWidth: this.edgeWidth,
+            edgeAlpha: this.edgeAlpha,
+            enabled: this.enabled
+        };
+    }
+
+    /**
+     * Configures this Edges from JSON.
+     * @param edgesParams
+     */
+    fromJSON(edgesParams: EdgesParams) {
+        this.renderModes = edgesParams.renderModes;
+        this.edgeColor = Array.from(edgesParams.edgeColor);
+        this.edgeWidth = edgesParams.edgeWidth;
+        this.edgeAlpha = edgesParams.edgeAlpha;
+        this.enabled = edgesParams.enabled;
     }
 
     /**

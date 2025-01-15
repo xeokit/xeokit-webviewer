@@ -1,11 +1,14 @@
 import type {View} from "./View";
-import {Component} from "../core";
+import {Component, SDKError} from "../core";
 import {CustomProjectionType, FastRender, FrustumProjectionType, QualityRender} from "../constants";
+import {SAOParams} from "./SAOParams";
 
 /**
  * Configures Scalable Ambient Obscurance (SAO) for a {@link View}.
  *
  * * Located at {@link View.sao}.
+ *
+ * See {@link viewer | @xeokit/sdk/viewer} for usage info.
  */
 export class SAO extends Component {
 
@@ -29,9 +32,9 @@ export class SAO extends Component {
     }
 
     /** @private */
-    constructor(view: View, params: any) {
+    constructor(view: View, cfg: any, params: SAOParams) {
 
-        super(view, params);
+        super(view, cfg);
 
         this.view = view;
 
@@ -45,7 +48,7 @@ export class SAO extends Component {
             minResolution: (params.minResolution !== undefined) ? params.minResolution : 0.0,
             numSamples: (params.numSamples !== undefined) ? params.numSamples : 10,
             blur: !!(params.blur),
-            blendCutoff: (params.blendCutff !== undefined) ? params.blendCutoff : 0.3,
+            blendCutoff: (params.blendCutoff !== undefined) ? params.blendCutoff : 0.3,
             blendFactor: (params.blendFactor !== undefined) ? params.blendFactor : 1.0
         };
     }
@@ -384,6 +387,43 @@ export class SAO extends Component {
             }
         }
         return false;
+    }
+
+    /**
+     * Gets this SAO as JSON.
+     */
+    getJSON(): SAOParams {
+        return{
+            renderModes: this.renderModes,
+            intensity: this.intensity,
+            minResolution: this.minResolution,
+            blendFactor: this.blendFactor,
+            numSamples: this.numSamples,
+            bias: this.bias,
+            scale: this.scale,
+            blur: this.blur,
+            blendCutoff: this.blendCutoff,
+            enabled: this.enabled,
+            kernelRadius: this.kernelRadius
+        };
+    }
+
+    /**
+     * Configures this SAO from JSON.
+     * @param saoParams
+     */
+    fromJSON(saoParams: SAOParams) {
+        this.renderModes = saoParams.renderModes;
+        this.intensity = saoParams.intensity;
+        this.minResolution = saoParams.minResolution;
+        this.blendFactor = saoParams.blendFactor;
+        this.numSamples = saoParams.numSamples;
+        this.bias = saoParams.bias;
+        this.scale = saoParams.scale;
+        this.blur = saoParams.blur;
+        this.blendCutoff = saoParams.blendCutoff;
+        this.enabled = saoParams.enabled;
+        this.kernelRadius = saoParams.kernelRadius;
     }
 
     /**

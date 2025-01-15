@@ -33,6 +33,7 @@ import {
 } from "../constants";
 import {Frustum3, setFrustum3} from "../boundaries";
 import {Projection} from "./Projection";
+import {CameraParams} from "./CameraParams";
 
 
 const tempVec3 = createVec3();
@@ -51,8 +52,6 @@ const offsetEye = createVec3();
 
 /**
  * Controls the viewpoint and projection for a {@link View}.
- *
- *
  *
  * * Located at {@link View.camera}
  * * Views are located at {@link Viewer.views}
@@ -925,21 +924,26 @@ class Camera extends Component {
         this.eye = addVec3(this.#state.look, mulVec3Scalar(dir, newLenLook), tempVec3d);
     }
 
-    // /**
-    //  * Gets this Camera as JSON.
-    //  */
-    // getJSON(): CameraParams {
-    //     const cameraParams = <CameraParams>{
-    //         eye: Array.from(this.#state.eye),
-    //         look: Array.from(this.#state.look),
-    //         up: Array.from(this.#state.up),
-    //         worldUp: Array.from(this.#state.worldUp),
-    //         worldRight: Array.from(this.#state.worldRight),
-    //         worldForward: Array.from(this.#state.worldForward),
-    //         projectionType: this.projectionType
-    //     };
-    //     return cameraParams;
-    // }
+    /**
+     * Gets this Camera as JSON.
+     */
+    getJSON(): CameraParams {
+        return {
+            eye: Array.from(this.#state.eye),
+            look: Array.from(this.#state.look),
+            up: Array.from(this.#state.up),
+            worldUp: Array.from(this.#state.worldUp),
+            worldRight: Array.from(this.#state.worldRight),
+            worldForward: Array.from(this.#state.worldForward),
+            gimbalLock: this.gimbalLock,
+            constrainPitch: this.constrainPitch,
+            projectionType: this.projectionType,
+            perspectiveProjection: this.perspectiveProjection.getJSON(),
+            orthoProjection: this.orthoProjection.getJSON(),
+            frustumProjection: this.frustumProjection.getJSON(),
+            customProjection: this.customProjection.getJSON()
+        };
+    }
 
     /**
      * @private
@@ -951,8 +955,6 @@ class Camera extends Component {
         this.onProjMatrix.clear();
         this.onWorldAxis.clear();
     }
-
-
 }
 
 export {Camera};

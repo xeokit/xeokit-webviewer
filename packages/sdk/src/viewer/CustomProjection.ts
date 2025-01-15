@@ -7,6 +7,8 @@ import type {FloatArrayParam} from "../math";
 import {CustomProjectionType} from "../constants";
 import {identityMat4, inverseMat4, createMat4, mulMat4v4, mulVec3Scalar, transposeMat4} from "../matrix";
 import {Projection} from "./Projection";
+import {FrustumProjectionParams} from "./FrustumProjectionParams";
+import {CustomProjectionParams} from "./CustomProjectionParams";
 
 /**
  * Configures a custom projection for a {@link Camera | Camera} .
@@ -153,6 +155,15 @@ class CustomProjection  extends Component implements Projection {
         viewPos[1] *= -1;
         mulMat4v4(this.camera.inverseViewMatrix, viewPos, worldPos);
         return worldPos;
+    }
+
+    /**
+     * Gets this CustomProjection as JSON.
+     */
+    getJSON(): CustomProjectionParams {
+        return {
+            projMatrix: this.projMatrix
+        };
     }
 
     /** @private

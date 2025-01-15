@@ -10,6 +10,7 @@ import type {Renderer} from "./Renderer";
 
 import type {ViewParams} from "./ViewParams";
 import type {TickParams} from "./TickParams";
+import {ViewerParams} from "./ViewerParams";
 
 /**
  * The xeokit SDK's Browser-based model viewer.
@@ -397,6 +398,15 @@ export class Viewer extends Component {
         delete this.views[view.id];
         delete this.viewList[view.viewIndex];
         this.numViews--;
+    }
+
+    /**
+     * Gets this Viewer as JSON.
+     */
+    getJSON(): ViewerParams {
+        return {
+            views: this.viewList.map(el => el.getJSON())
+        };
     }
 
     /**

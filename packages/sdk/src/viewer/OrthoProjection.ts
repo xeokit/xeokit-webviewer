@@ -5,6 +5,8 @@ import type {FloatArrayParam} from "../math";
 import {OrthoProjectionType} from "../constants";
 import {createMat4, inverseMat4, mulMat4v4, mulVec3Scalar, orthoMat4c, transposeMat4} from "../matrix";
 import {Projection} from "./Projection";
+import {PerspectiveProjectionParams} from "./PerspectiveProjectionParams";
+import {OrthoProjectionParams} from "./OrthoProjectionParams";
 
 
 
@@ -289,6 +291,17 @@ export class OrthoProjection extends Component implements Projection {
         mulMat4v4(this.camera.inverseViewMatrix, viewPos, worldPos);
 
         return worldPos;
+    }
+
+    /**
+     * Gets this OrthoProjection as JSON.
+     */
+    getJSON(): OrthoProjectionParams {
+        return {
+            far: this.far,
+            near: this.near,
+            scale: this.scale
+        };
     }
 
     /** @private

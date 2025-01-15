@@ -1,7 +1,10 @@
-import {Component} from "../core";
+import {Component, SDKError} from "../core";
 import type {FloatArrayParam} from "../math";
 
 import type {View} from "./View";
+import {EmphasisMaterialParams} from "./EmphasisMaterialParams";
+
+
 
 /**
  * Configures the appearance of {@link ViewObject | ViewObjects} when they are xrayed, highlighted or selected.
@@ -44,7 +47,7 @@ class EmphasisMaterial extends Component {
         edges?: boolean;
         fillAlpha?: number;
         fill?: boolean;
-        glowThrough?:boolean;
+        glowThrough?: boolean;
     } = {}) {
 
         super(view, options);
@@ -287,6 +290,23 @@ class EmphasisMaterial extends Component {
      */
     get hash(): string {
         return "";
+    }
+
+    /**
+     * Gets this emphasis material as JSON.
+     */
+    getJSON(): EmphasisMaterialParams {
+        return {
+            fillColor: Array.from(this.#state.fillColor),
+            backfaces: this.#state.backfaces,
+            edgeColor: Array.from(this.#state.edgeColor),
+            edgeWidth: this.#state.edgeWidth,
+            edgeAlpha: this.#state.edgeAlpha,
+            edges: this.#state.edges,
+            fillAlpha: this.#state.fillAlpha,
+            fill: this.#state.fill,
+            glowThrough: this.#state.glowThrough
+        };
     }
 
     /**

@@ -1,6 +1,8 @@
 import {Component} from "../core";
 import type {View} from "./View";
 import {FastRender, QualityRender} from "../constants";
+import {PointLightParams} from "./PointLightParams";
+import {ResolutionScaleParams} from "./ResolutionScaleParams";
 
 
 //  /**
@@ -167,6 +169,18 @@ export class ResolutionScale extends Component {
         }
         return false;
     }
+
+    /**
+     * Gets this ResolutionScale as JSON.
+     */
+    getJSON(): ResolutionScaleParams {
+        return {
+            enabled: this.enabled,
+            renderModes: this.renderModes,
+            resolutionScale: this.resolutionScale
+        };
+    }
+
 
     /**
      * @private

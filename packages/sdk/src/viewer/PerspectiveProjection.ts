@@ -5,6 +5,9 @@ import {PerspectiveProjectionType} from "../constants";
 import type {FloatArrayParam} from "../math";
 import {inverseMat4, createMat4, mulMat4v4, mulVec3Scalar, perspectiveMat4, transposeMat4} from "../matrix";
 import {Projection} from "./Projection";
+import {PerspectiveProjectionParams} from "./PerspectiveProjectionParams";
+
+
 
 /**
  * PerspectiveProjection projection configuration for a {@link Camera | Camera} .
@@ -289,6 +292,18 @@ export class PerspectiveProjection extends Component implements Projection {
         mulMat4v4(this.camera.inverseViewMatrix, viewPos, worldPos);
 
         return worldPos;
+    }
+
+    /**
+     * Gets this PerspectiveProjection as JSON.
+     */
+    getJSON(): PerspectiveProjectionParams {
+        return {
+            far: this.far,
+            near: this.near,
+            fov: this.fov,
+            fovAxis: this.fovAxis
+        };
     }
 
     /** @private

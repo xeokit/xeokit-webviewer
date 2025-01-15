@@ -1,4 +1,15 @@
 import type {FloatArrayParam} from "../math";
+import {SAOParams} from "./SAOParams";
+import {ViewLayerParams} from "./ViewLayerParams";
+import {CameraParams} from "./CameraParams";
+import {EdgesParams} from "./EdgesParams";
+import {EmphasisMaterialParams} from "./EmphasisMaterialParams";
+import {PointLightParams} from "./PointLightParams";
+import {AmbientLightParams} from "./AmbientLightParams";
+import {DirLightParams} from "./DirLightParams";
+import {SectionPlaneParams} from "./SectionPlaneParams";
+import {PointsMaterialParams} from "./PointsMaterialParams";
+import {ResolutionScaleParams} from "./ResolutionScaleParams";
 
 /**
  * {@link View} creation parameters for {@link Viewer.createView}.
@@ -50,10 +61,19 @@ export interface ViewParams {
 
     transparent?: boolean;
 
+    /**
+     *
+     */
     pbrEnabled?: boolean;
 
+    /**
+     *
+     */
     colorTextureEnabled?: boolean;
 
+    /**
+     *
+     */
     edgesEnabled?: boolean;
 
     /**
@@ -72,4 +92,65 @@ export interface ViewParams {
      * that it never needs to show.
      */
     autoLayers?: boolean;
+
+    /**
+     * Configures the View's scalable ambient obscurance effect, {@link SAO}, which enhances 3D model visualization by darkening
+     * areas with limited ambient light exposure.
+     */
+    sao?: SAOParams;
+
+    /**
+     * Configures the View's edge enhancement effect, {@link Edges}.
+     */
+    edges?: EdgesParams;
+
+    /**
+     * Configures the appearance of {@link ViewObject | ViewObjects} in the View when they are selected.
+     */
+    selected?: EmphasisMaterialParams;
+
+    /**
+     * Configures the appearance of {@link ViewObject | ViewObjects} in the View when they are highlighted.
+     */
+    highlight?: EmphasisMaterialParams;
+
+    /**
+     * Configures the appearance of {@link ViewObject | ViewObjects} in the View when they are X-rayed.
+     */
+    xray?: EmphasisMaterialParams;
+
+    /**
+     * Configures the appearance of the {@link View | View's} {@link PointsMaterial}.
+     */
+    points?: PointsMaterialParams;
+
+    /**
+     * Configures the View's {@link ViewLayer | ViewLayers}.
+     */
+    viewLayers?: ViewLayerParams[];
+
+    /**
+     * Configures the View's {@link Camera}.
+     */
+    camera?: CameraParams;
+
+    /**
+     * Configures the View's light sources.
+     */
+    lights?: (AmbientLightParams | PointLightParams | DirLightParams)[];
+
+    /**
+     * Configures the View's {@link SectionPlane | SectionPlanes}.
+     */
+    sectionPlanes?: SectionPlaneParams[];
+
+    /**
+     * Configures the View's {@link ResolutionScale}.
+     */
+    resolutionScale?: ResolutionScaleParams;
+
+    /**
+     * Sets which rendering mode the View is in.
+     */
+    renderMode?: number;
 }

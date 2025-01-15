@@ -29,6 +29,8 @@ import type {PickResult} from "./PickResult";
 import {SnapshotResult} from "./SnapshotResult";
 import type {SnapshotParams} from "./SnapshotParams";
 import {ResolutionScale} from "./ResolutionScale";
+import {SAOParams} from "./SAOParams";
+import {ViewParams} from "./ViewParams";
 
 /**
  * Event that signifies the beginning of a canvas snapshot captured with
@@ -1601,6 +1603,27 @@ class View extends Component {
 
     getNumAllocatedSectionPlanes(): number {
         return this.sectionPlanesList.length;
+    }
+
+    /**
+     * Gets this View as JSON.
+     */
+    getJSON(): ViewParams {
+        return {
+            camera: this.camera.getJSON(),
+            autoLayers: this.autoLayers,
+            viewLayers: Object.values(this.layers).map(viewLayer => viewLayer.getJSON()),
+            sectionPlanes: Object.values(this.sectionPlanes).map(sectionPlane => sectionPlane.getJSON()),
+            lights: Object.values(this.lights).map(light => light.getJSON()),
+            sao: this.sao.getJSON(),
+            edges: this.edges.getJSON(),
+            highlightMaterial: this.highlightMaterial.getJSON(),
+            selectedMaterial: this.selectedMaterial.getJSON(),
+            xrayMaterial: this.xrayMaterial.getJSON(),
+            points: this.pointsMaterial.getJSON(),
+            resolutionScale: this.resolutionScale.getJSON(),
+            renderMode: this.renderMode
+        };
     }
 
     /**

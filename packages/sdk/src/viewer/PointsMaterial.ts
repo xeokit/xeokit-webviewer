@@ -1,5 +1,6 @@
 import {Component} from "../core";
 import type {View} from "./View";
+import {PointsMaterialParams} from "./PointsMaterialParams";
 
 /**
  * Configures the size and shape of {@link ViewObject | ViewObjects} that represent clouds of points.
@@ -245,6 +246,22 @@ class PointsMaterial extends Component {
         ${state.minPerspectivePointSize};
         ${state.maxPerspectivePointSize};
         ${state.filterIntensity}`;
+    }
+
+    /**
+     * Gets this PointsMaterial as JSON.
+     */
+    getJSON(): PointsMaterialParams {
+        return {
+            pointSize: this.pointSize,
+            roundPoints:this.roundPoints,
+            perspectivePoints: this.perspectivePoints,
+            minPerspectivePointSize:this.minPerspectivePointSize,
+            maxPerspectivePointSize: this.maxPerspectivePointSize,
+            filterIntensity: this.filterIntensity,
+            minIntensity: this.minIntensity,
+            maxIntensity: this.maxIntensity
+        };
     }
 
     /**

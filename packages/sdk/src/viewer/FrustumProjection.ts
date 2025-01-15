@@ -6,6 +6,7 @@ import {FrustumProjectionType} from "../constants";
 import type {FloatArrayParam} from "../math";
 import {createMat4, frustumMat4, inverseMat4, mulMat4v4, mulVec3Scalar, transposeMat4} from "../matrix";
 import {Projection} from "./Projection";
+import {FrustumProjectionParams} from "./FrustumProjectionParams";
 
 /**
  *  FrustumProjection-based perspective projection configuration for a {@link Camera | Camera} .
@@ -294,6 +295,20 @@ export class FrustumProjection extends Component implements Projection {
         mulMat4v4(this.camera.inverseViewMatrix, viewPos, worldPos);
 
         return worldPos;
+    }
+
+    /**
+     * Gets this FrustumProjection as JSON.
+     */
+    getJSON(): FrustumProjectionParams {
+        return {
+            far: this.far,
+            near: this.near,
+            top: this.top,
+            bottom: this.bottom,
+            right: this.right,
+            left: this.left
+        };
     }
 
     /** @private

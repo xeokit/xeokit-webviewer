@@ -1,6 +1,8 @@
 import {Component} from "../core";
 import type {View} from "./View";
 import type {FloatArrayParam} from "../math";
+import {DirLightParams} from "./DirLightParams";
+import {PointLightParams} from "./PointLightParams";
 
 
 /**
@@ -238,6 +240,21 @@ class PointLight extends Component {
     set quadraticAttenuation(value: number) {
         this.#state.attenuation[2] = value;
         this.view.redraw();
+    }
+
+    /**
+     * Gets this PointLight as JSON.
+     */
+    getJSON(): PointLightParams {
+        return {
+            color:Array.from(this.color),
+            pos:Array.from(this.pos),
+            quadraticAttenuation: this.quadraticAttenuation,
+            linearAttenuation: this.linearAttenuation,
+            constantAttenuation:this.constantAttenuation,
+            intensity: this.intensity,
+            space: this.space
+        };
     }
 
     /**

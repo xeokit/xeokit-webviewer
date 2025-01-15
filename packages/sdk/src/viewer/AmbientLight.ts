@@ -1,12 +1,11 @@
 import {Component} from "../core";
 import type {View} from "./View";
 import type {FloatArrayParam} from "../math";
+import {AmbientLightParams} from "./AmbientLightParams";
 
 
 /**
  * An ambient light source within a {@link View}.
- *
- *
  *
  * * Has fixed color and intensity that illuminates all objects equally.
  * * {@link AmbientLight}s, {@link DirLight}s and {@link PointLight}s are registered by their {@link Component.id} on {@link View.lights}.
@@ -94,6 +93,17 @@ class AmbientLight extends Component {
     get intensity(): number {
         return this.#state.intensity;
     }
+
+    /**
+     * Gets this AmbientLight as JSON.
+     */
+    getJSON(): AmbientLightParams {
+        return {
+            color: Array.from(this.color),
+            intensity: this.intensity
+        };
+    }
+
 
     /**
      * Destroys this AmbientLight.

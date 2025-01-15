@@ -8,8 +8,6 @@ import {SDKError} from "../core";
 /**
  * An object within a {@link View | View}.
  *
- *
- *
  * * Proxies a {@link scene!SceneObject | SceneObject} and controls its visual state in the View.
  * * Stored in {@link View.objects | View.objects} and {@link ViewLayer.objects | ViewLayer.objects}.
  * * Viewer automatically creates one of these in each {@link View | View} whenever a {@link scene!SceneModel | SceneObject} is created.
@@ -23,7 +21,7 @@ import {SDKError} from "../core";
  * we destroy a SceneObject, each View will automatically destroy its corresponding ViewObject. The ViewObjects in a View
  * are therefore a manifest of the ViewerObjects in the View.
  *
- * {@link ViewLayer}.
+ * See {@link viewer | @xeokit/sdk/viewer} for usage.
  */
 export class ViewObject {
 

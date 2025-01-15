@@ -43,17 +43,24 @@
  * of the Viewer’s state with other BIM viewers. These snapshots are encoded in the Building Collaboration Format (BCF), an
  * open file format designed to facilitate data exchange and collaboration on 3D models and building information.
  *
- * * **Custom Slicing Planes** -
+ * * **Custom Slicing Planes** - Create unlimited {@link SectionPlane | SectionPlanes} within each View to slice through models and expose internal structures.
+ * SectionPlanes can be dynamically repositioned either programmatically or through user input.
  *
- * * **Highlight, Select, X-Ray**
+ * * **Highlight, Select, Colorize, X-Ray** - A View's objects can be dynamically highlighted, selected, colorized, or X-rayed. Highlighted
+ * or selected objects emit a glowing effect. Colorized objects temporarily adopt a new color, while X-rayed objects appear translucent.
  *
- * * **Dynamic Resolution Scaling**
+ * * **Dynamic Resolution Scaling** - The resolution of a View's canvas can be adjusted dynamically. This technique is particularly
+ * useful for temporarily lowering the resolution while the View's camera is in motion, then restoring it once the camera comes to a stop.
  *
- * * **Ambient Shadows (SAO)**
+ * * **Ambient Shadows (SAO)** - A View has a scalable ambient obscurance effect, {@link SAO}, which enhances 3D model visualization by darkening
+ * areas with limited ambient light exposure. This effect adds depth and realism, improving the clarity of spatial
+ * relationships and fine details.
  *
- * * **Edge Enhancement**
+ * * **Edge Enhancement** - A View includes an edge enhancement effect, {@link Edges}, that improves the visualization of 3D triangle meshes by automatically rendering
+ * lines along their edges. It highlights edges shared by a single triangle or by two non-coplanar triangles.
  *
- * * **Dynamic Lighting**
+ * * **Dynamic Lighting** - Each View can have unlimited number of {@link DirLight | DirLights}, {@link PointLight | PointLights}
+ * and {@link AmbientLight | AmbientLights}. These light sources can be dynamically repositioned programmatically.
  *
  * * **Object Picking**
  *
@@ -518,33 +525,49 @@
  * @module viewer
  */
 export * from "./Viewer";
+export * from "./ViewerParams";
 export * from "./ViewParams";
 export * from "./Renderer";
 export * from "./Camera";
+export * from "./CameraParams";
 export * from "./Projection";
 export * from "./FrustumProjection";
+export * from "./FrustumProjectionParams";
 export * from "./OrthoProjection";
+export * from "./OrthoProjectionParams";
 export * from "./PerspectiveProjection";
+export * from "./PerspectiveProjectionParams";
 export * from "./CustomProjection";
+export * from "./CustomProjectionParams";
 export * from "./scheduler";
 export * from "./AmbientLight";
+export * from "./AmbientLightParams";
 export * from "./DirLight";
+export * from "./DirLightParams";
 export * from "./PointLight";
+export * from "./PointLightParams";
 export * from "./EmphasisMaterial";
+export * from "./EmphasisMaterialParams";
 export * from "./Edges";
+export * from "./EdgesParams";
 export * from "./PointsMaterial";
+export * from "./PointsMaterialParams";
 export * from "./LinesMaterial";
 export * from "./Metriqs";
 export * from "./View";
+export * from "./ViewParams";
 export * from "./ViewLayer";
+export * from "./ViewLayerParams";
 export * from "./ViewObject";
 export * from "./SectionPlane";
 export * from "./SectionPlaneParams";
 export * from "./SAO";
+export * from "./SAOParams";
 export * from "./PickParams";
 export * from "./PickResult";
 export * from "./ViewLayerParams";
 export * from "./ResolutionScale";
+export * from "./ResolutionScaleParams";
 export * from "./Texturing";
 export * from "./TickParams";
 export * from "./SnapshotParams";

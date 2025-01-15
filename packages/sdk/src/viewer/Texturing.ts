@@ -7,6 +7,8 @@ import {QualityRender} from "../constants";
  * Configures whether a {@link View} shows textures on its {@link ViewObject | ViewObjects}.
  *
  * * Located at {@link View.texturing}.
+ *
+ * See {@link viewer | @xeokit/sdk/viewer} for usage info.
  */
 class Texturing extends Component {
 

@@ -3,11 +3,10 @@ import {Component} from "../core";
 
 import type {View} from "./View";
 import type {FloatArrayParam} from "../math";
+import {DirLightParams} from "./DirLightParams";
 
 /**
  * A directional light source within a {@link View}.
- *
- *
  *
  * * Illuminates all objects equally from a given direction.
  * * Has an emission direction vector in {@link DirLight.dir}, but no position.
@@ -135,6 +134,18 @@ class DirLight extends Component {
     set intensity(intensity: number) {
         this.#state.intensity = intensity;
         this.view.redraw();
+    }
+
+    /**
+     * Gets this DirLight as JSON.
+     */
+    getJSON(): DirLightParams {
+        return {
+            dir: Array.from(this.dir),
+            color:Array.from(this.color),
+            intensity: this.intensity,
+            space: this.space
+        };
     }
 
     /**
