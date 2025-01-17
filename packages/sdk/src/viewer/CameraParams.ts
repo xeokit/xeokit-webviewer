@@ -6,8 +6,13 @@ import {CustomProjectionParams} from "./CustomProjectionParams";
 
 /**
  * Configures the View's {@link Camera}.
+ *
+ * * Returned by {@link Camera.getJSON | Camera.getJSON}
+ * * Located at {@link ViewParams.camera | ViewParams.camera}
  */
 export interface CameraParams {
+
+
     eye?: FloatArrayParam;
     look?: FloatArrayParam;
     up?: FloatArrayParam;
@@ -22,4 +27,5 @@ export interface CameraParams {
     orthoProjection?: OrthoProjectionParams;
     frustumProjection?: FrustumProjectionParams;
     customProjection?: CustomProjectionParams;
+
 }

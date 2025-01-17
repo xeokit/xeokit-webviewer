@@ -1,5 +1,8 @@
 /**
  * Configures a {@link PointsMaterial}.
+ *
+ * * Returned by {@link PointsMaterial.getJSON | PointsMaterial.getJSON}
+ * * Located at {@link ViewerParams.pointsMaterial | ViewerParams.pointsMaterial}
  */
 export interface PointsMaterialParams {
     pointSize?: number,

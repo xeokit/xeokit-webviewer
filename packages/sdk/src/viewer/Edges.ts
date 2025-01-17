@@ -200,7 +200,7 @@ class Edges extends Component {
     getJSON(): EdgesParams {
         return {
             renderModes: this.renderModes,
-            edgeColor: this.edgeColor,
+            edgeColor: Array.from(this.edgeColor),
             edgeWidth: this.edgeWidth,
             edgeAlpha: this.edgeAlpha,
             enabled: this.enabled

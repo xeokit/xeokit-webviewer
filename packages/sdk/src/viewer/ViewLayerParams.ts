@@ -1,5 +1,7 @@
 /**
  * {@link ViewLayer} creation parameters for {@link View.createLayer}.
+ *
+ * * Returned by {@link View.createLayer | View.createLayer}
  */
 export interface ViewLayerParams {
 
@@ -14,4 +16,9 @@ export interface ViewLayerParams {
      * Default initial visibility of the {@link ViewObject | ViewObjects} in the new ViewLayer.
      */
     visible?: boolean;
+
+    /**
+     * When true, View destroys the ViewLayer as soon as there are no ViewObjects that need it. When false, the View will retain it.
+     */
+    autoDestroy?: boolean;
 }

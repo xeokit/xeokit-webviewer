@@ -74,7 +74,7 @@ class DirLight extends Component {
     /**
      * The coordinate system the DirLight is defined in - ````"view"```` or ````"space"````.
      */
-    get space(): String {
+    get space(): string {
         return this.#state.space;
     }
 

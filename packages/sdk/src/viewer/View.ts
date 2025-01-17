@@ -29,7 +29,6 @@ import type {PickResult} from "./PickResult";
 import {SnapshotResult} from "./SnapshotResult";
 import type {SnapshotParams} from "./SnapshotParams";
 import {ResolutionScale} from "./ResolutionScale";
-import {SAOParams} from "./SAOParams";
 import {ViewParams} from "./ViewParams";
 
 /**
@@ -356,7 +355,6 @@ class View extends Component {
     #colorizedObjectIds: string[] | null;
     #numOpacityObjects: number;
     #opacityObjectIds: string[] | null;
-    #qualityRender: boolean;
     #lightsHash: string | null = null;
     #sectionPlanesHash: string | null = null;
     #snapshotBegun: boolean;
@@ -364,27 +362,16 @@ class View extends Component {
     /**
      * @private
      */
-    constructor(options: {
-        viewer: Viewer;
-        origin?: number[];
-        scale?: number;
-        units?: number;
-        elementId?: string;
-        htmlElement: HTMLElement;
-        backgroundColor?: any[];
-        backgroundColorFromAmbientLight?: boolean;
-        premultipliedAlpha?: boolean;
-        transparent?: boolean;
-        qualityRender?: boolean;
-        autoLayers?: boolean;
-    }) {
-        super(null, options);
+    constructor(viewer: Viewer,
+                viewParams: ViewParams) {
 
-        this.viewer = options.viewer;
+        super(null, viewParams);
+
+        this.viewer = viewer;
 
         const canvas =
-            options.htmlElement ||
-            document.getElementById(<string>options.elementId);
+            viewParams.htmlElement ||
+            document.getElementById(<string>viewParams.elementId);
 
         if (!(canvas instanceof HTMLElement)) {
             throw "Mandatory View config expected: valid HTMLElement";
@@ -419,7 +406,6 @@ class View extends Component {
         this.#colorizedObjectIds = null;
         this.#numOpacityObjects = 0;
         this.#opacityObjectIds = null;
-        this.#qualityRender = !!options.qualityRender;
         this.gammaOutput = true;
         this.#snapshotBegun = false;
 
@@ -428,10 +414,10 @@ class View extends Component {
 
         // this.canvas = new View(this, {
         //     canvas: canvas,
-        //     transparent: !!options.transparent,
-        //     backgroundColor: options.backgroundColor,
-        //     backgroundColorFromAmbientLight: !!options.backgroundColorFromAmbientLight,
-        //     premultipliedAlpha: !!options.premultipliedAlpha
+        //     transparent: !!viewParams.transparent,
+        //     backgroundColor: viewParams.backgroundColor,
+        //     backgroundColorFromAmbientLight: !!viewParams.backgroundColorFromAmbientLight,
+        //     premultipliedAlpha: !!viewParams.premultipliedAlpha
         // });
         //
         // this.canvas.onBoundary.subscribe(() => {
@@ -443,13 +429,13 @@ class View extends Component {
         );
 
         this.#backgroundColor = createVec3([
-            options.backgroundColor ? options.backgroundColor[0] : 1,
-            options.backgroundColor ? options.backgroundColor[1] : 1,
-            options.backgroundColor ? options.backgroundColor[2] : 1,
+            viewParams.backgroundColor ? viewParams.backgroundColor[0] : 1,
+            viewParams.backgroundColor ? viewParams.backgroundColor[1] : 1,
+            viewParams.backgroundColor ? viewParams.backgroundColor[2] : 1,
         ]);
         this.#backgroundColorFromAmbientLight =
-            !!options.backgroundColorFromAmbientLight;
-        this.transparent = !!options.transparent;
+            !!viewParams.backgroundColorFromAmbientLight;
+        this.transparent = !!viewParams.transparent;
         // this.htmlElement.width = this.htmlElement.clientWidth;
         // this.htmlElement.height = this.htmlElement.clientHeight;
         this.boundary = [
@@ -537,17 +523,17 @@ class View extends Component {
 
         this.camera = new Camera(this);
 
-        this.sao = new SAO(this, {});
+        this.sao = new SAO(this, viewParams.sao || {});
 
         this.texturing = new Texturing(this, {});
 
         this.metrics = new Metrics(this, {
-            units: options.units,
-            scale: options.scale,
-            origin: options.origin,
+            units: viewParams.units,
+            scale: viewParams.scale,
+            origin: viewParams.origin,
         });
 
-        this.xrayMaterial = new EmphasisMaterial(this, {
+        this.xrayMaterial = new EmphasisMaterial(this, viewParams.xrayMaterial || {
             fill: true,
             fillColor: [0.9, 0.7, 0.6],
             fillAlpha: 0.4,
@@ -557,7 +543,7 @@ class View extends Component {
             edgeWidth: 1,
         });
 
-        this.highlightMaterial = new EmphasisMaterial(this, {
+        this.highlightMaterial = new EmphasisMaterial(this, viewParams.highlightMaterial || {
             fill: true,
             fillColor: [1.0, 1.0, 0.0],
             fillAlpha: 0.5,
@@ -567,7 +553,7 @@ class View extends Component {
             edgeWidth: 1,
         });
 
-        this.selectedMaterial = new EmphasisMaterial(this, {
+        this.selectedMaterial = new EmphasisMaterial(this, viewParams.selectedMaterial || {
             fill: true,
             fillColor: [0.0, 1.0, 0.0],
             fillAlpha: 0.5,
@@ -577,7 +563,7 @@ class View extends Component {
             edgeWidth: 1,
         });
 
-        this.edges = new Edges(this, {
+        this.edges = new Edges(this, viewParams.edges || {
             edgeColor: [0.0, 0.0, 0.0],
             edgeAlpha: 1.0,
             edgeWidth: 1,
@@ -585,13 +571,13 @@ class View extends Component {
             renderModes: [QualityRender],
         });
 
-        this.resolutionScale = new ResolutionScale(this, {
+        this.resolutionScale = new ResolutionScale(this, viewParams.resolutionScale ||{
             enabled: true,
             renderModes: [FastRender],
             resolutionScale: 1.0
         });
 
-        this.pointsMaterial = new PointsMaterial(this, {
+        this.pointsMaterial = new PointsMaterial(this, viewParams.pointsMaterial ||{
             pointSize: 1,
             roundPoints: true,
             perspectivePoints: true,
@@ -608,9 +594,7 @@ class View extends Component {
 
         this.lights = {};
 
-        this.#qualityRender = !!options.qualityRender;
-
-        this.autoLayers = options.autoLayers !== false;
+        this.autoLayers = viewParams.autoLayers !== false;
 
         this.onObjectCreated = new EventEmitter(
             new EventDispatcher<View, ViewObject>()
@@ -837,28 +821,6 @@ class View extends Component {
     get gammaFactor() {
         // TODO
         return 1.0;
-    }
-
-    /**
-     * Gets whether quality rendering is enabled for this View.
-     *
-     * Default is ````false````.
-     */
-    get qualityRender(): boolean {
-        return this.#qualityRender;
-    }
-
-    /**
-     * Sets whether quality rendering is enabled for this View.
-     *
-     * Default is ````false````.
-     */
-    set qualityRender(value: boolean) {
-        if (this.#qualityRender === value) {
-            return;
-        }
-        this.#qualityRender = value;
-        this.redraw();
     }
 
     /**
@@ -1475,7 +1437,7 @@ class View extends Component {
                 this.onLayerDestroyed.dispatch(this, viewLayer);
             });
         }
-        viewLayer.autoDestroy = false;
+        viewLayer.autoDestroy = viewLayerParams.autoDestroy || false;
         return viewLayer;
     }
 
@@ -1620,7 +1582,7 @@ class View extends Component {
             highlightMaterial: this.highlightMaterial.getJSON(),
             selectedMaterial: this.selectedMaterial.getJSON(),
             xrayMaterial: this.xrayMaterial.getJSON(),
-            points: this.pointsMaterial.getJSON(),
+            pointsMaterial: this.pointsMaterial.getJSON(),
             resolutionScale: this.resolutionScale.getJSON(),
             renderMode: this.renderMode
         };

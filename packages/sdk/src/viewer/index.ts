@@ -522,6 +522,22 @@
  * });
  * ````
  *
+ * <br>
+ *
+ * ## Serializing Viewer Configuration
+ *
+ * Let's now use {@link viewer!Viewer.getJSON | Viewer.getJSON} to serialize the configuration of our Viewer to JSON.
+ *
+ * ````javascript
+ * const viewerParams = viewer.getJSON();
+ * ````
+ *
+ * Let's now use {@link viewer!Viewer.getJSON | Viewer.getJSON} to serialize the configuration of our Viewer to JSON.
+ *
+ * ````javascript
+ * const viewer2 = new Viewer(viewerParams);
+ * ````
+ *
  * @module viewer
  */
 export * from "./Viewer";

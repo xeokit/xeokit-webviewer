@@ -940,7 +940,7 @@ export class WebGLRenderer implements Renderer {
 
         renderContext.reset();
         renderContext.view = view;
-        renderContext.pbrEnabled = rendererView.pbrEnabled && !!view.qualityRender;
+        renderContext.pbrEnabled = rendererView.pbrEnabled ;
 
         gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
 

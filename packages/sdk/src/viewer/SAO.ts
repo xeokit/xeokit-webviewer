@@ -32,24 +32,24 @@ export class SAO extends Component {
     }
 
     /** @private */
-    constructor(view: View, cfg: any, params: SAOParams) {
+    constructor(view: View, saoParams: SAOParams) {
 
-        super(view, cfg);
+        super(view, saoParams);
 
         this.view = view;
 
         this.#state = {
             renderModes: [QualityRender],
-            enabled: params.enabled !== false,
-            kernelRadius: params.kernelRadius || 100.0,
-            intensity: (params.intensity !== undefined) ? params.intensity : 0.15,
-            bias: (params.bias !== undefined) ? params.bias : 0.5,
-            scale: (params.scale !== undefined) ? params.scale : 1.0,
-            minResolution: (params.minResolution !== undefined) ? params.minResolution : 0.0,
-            numSamples: (params.numSamples !== undefined) ? params.numSamples : 10,
-            blur: !!(params.blur),
-            blendCutoff: (params.blendCutoff !== undefined) ? params.blendCutoff : 0.3,
-            blendFactor: (params.blendFactor !== undefined) ? params.blendFactor : 1.0
+            enabled: saoParams.enabled !== false,
+            kernelRadius: saoParams.kernelRadius || 100.0,
+            intensity: (saoParams.intensity !== undefined) ? saoParams.intensity : 0.15,
+            bias: (saoParams.bias !== undefined) ? saoParams.bias : 0.5,
+            scale: (saoParams.scale !== undefined) ? saoParams.scale : 1.0,
+            minResolution: (saoParams.minResolution !== undefined) ? saoParams.minResolution : 0.0,
+            numSamples: (saoParams.numSamples !== undefined) ? saoParams.numSamples : 10,
+            blur: !!(saoParams.blur),
+            blendCutoff: (saoParams.blendCutoff !== undefined) ? saoParams.blendCutoff : 0.3,
+            blendFactor: (saoParams.blendFactor !== undefined) ? saoParams.blendFactor : 1.0
         };
     }
 

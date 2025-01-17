@@ -12,7 +12,10 @@ import {PointsMaterialParams} from "./PointsMaterialParams";
 import {ResolutionScaleParams} from "./ResolutionScaleParams";
 
 /**
- * {@link View} creation parameters for {@link Viewer.createView}.
+ * Parameters for {@link Viewer.createView} to create a {@link View}.
+ *
+ * * Returned by {@link View.getJSON | View.getJSON}
+ * * Located at {@link ViewerParams.views | ViewerParams.views}
  */
 export interface ViewParams {
 
@@ -107,22 +110,22 @@ export interface ViewParams {
     /**
      * Configures the appearance of {@link ViewObject | ViewObjects} in the View when they are selected.
      */
-    selected?: EmphasisMaterialParams;
+    selectedMaterial?: EmphasisMaterialParams;
 
     /**
      * Configures the appearance of {@link ViewObject | ViewObjects} in the View when they are highlighted.
      */
-    highlight?: EmphasisMaterialParams;
+    highlightMaterial?: EmphasisMaterialParams;
 
     /**
      * Configures the appearance of {@link ViewObject | ViewObjects} in the View when they are X-rayed.
      */
-    xray?: EmphasisMaterialParams;
+    xrayMaterial?: EmphasisMaterialParams;
 
     /**
      * Configures the appearance of the {@link View | View's} {@link PointsMaterial}.
      */
-    points?: PointsMaterialParams;
+    pointsMaterial?: PointsMaterialParams;
 
     /**
      * Configures the View's {@link ViewLayer | ViewLayers}.

@@ -6,6 +6,7 @@ import * as matrix from '../matrix';
 
 import type {View} from "./View";
 import type {FloatArrayParam} from "../math";
+import {SectionPlaneParams} from "./SectionPlaneParams";
 
 
 /**
@@ -68,20 +69,16 @@ class SectionPlane extends Component {
      * @private
      *
      */
-    constructor(view: View, cfg: {
-        pos?: FloatArrayParam;
-        active?: boolean;
-        dir?: FloatArrayParam
-    } = {}) {
+    constructor(view: View, sectionPlaneParams: SectionPlaneParams = {}) {
 
-        super(view, cfg);
+        super(view, sectionPlaneParams);
 
         this.view = view;
 
         this.#state = {
-            active: cfg.active !== false,
-            pos: new Float64Array(cfg.pos || [0, 0, 0]),
-            dir: new Float32Array(cfg.pos || [0, 0, -1]),
+            active: sectionPlaneParams.active !== false,
+            pos: new Float64Array(sectionPlaneParams.pos || [0, 0, 0]),
+            dir: new Float32Array(sectionPlaneParams.pos || [0, 0, -1]),
             dist: 0
         };
 
@@ -124,7 +121,7 @@ class SectionPlane extends Component {
      *
      * @returns  Current position.
      */
-    get pos(): Float64Array {
+    get pos(): FloatArrayParam {
         return this.#state.pos;
     }
 
@@ -148,7 +145,7 @@ class SectionPlane extends Component {
      *
      * @returns value Current direction.
      */
-    get dir(): Float32Array {
+    get dir(): FloatArrayParam {
         return this.#state.dir;
     }
 
@@ -189,6 +186,18 @@ class SectionPlane extends Component {
         this.#state.dist = (-matrix.dotVec3(this.#state.pos, this.#state.dir));
         this.onDir.dispatch(this, this.#state.dir);
         this.view.redraw();
+    }
+
+    /**
+     * Gets this SectionPlane as JSON.
+     */
+    getJSON(): SectionPlaneParams {
+        return {
+            id: this.id,
+            dir: Array.from(this.#state.dir),
+            pos: Array.from(this.#state.pos),
+            active: this.#state.active
+        };
     }
 
     /**

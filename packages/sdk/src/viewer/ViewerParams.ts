@@ -1,6 +1,9 @@
 import {ViewParams} from "./ViewParams";
+
 /**
  * {@link Viewer} creation parameters.
+ *
+ * * Returned by {@link Viewer.getJSON | Viewer.getJSON}
  */
 export interface ViewerParams {
 

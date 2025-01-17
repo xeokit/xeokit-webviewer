@@ -1,7 +1,10 @@
 import {FloatArrayParam} from "../math";
 
 /**
- * Configures a {@link DirLight}.
+ * Configures the View's {@link DirLight}.
+ *
+ * * Returned by {@link DirLight.getJSON | DirLight.getJSON}
+ * * Located at {@link ViewParams.lights | ViewParams.lights}
  */
 export interface DirLightParams {
     dir?: FloatArrayParam;

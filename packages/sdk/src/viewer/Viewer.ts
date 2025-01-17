@@ -276,27 +276,27 @@ export class Viewer extends Component {
      * * If View already exists with the given ID.
      * * Attempted to create too many Views - see {@link Capabilities.maxViews | Capabilities.maxViews}.
      */
-    createView(params: ViewParams): View | SDKError {
+    createView(viewParams: ViewParams): View | SDKError {
         if (this.viewList.length >= this.capabilities.maxViews) {
             return new SDKError(`Attempted to create too many Views with View.createView() - maximum of ${this.capabilities.maxViews} is allowed`);
         }
-        let viewId = params.id || createUUID();
+        let viewId = viewParams.id || createUUID();
         if (this.views[viewId]) {
             return new SDKError(`View with ID "${viewId}" already exists in this Viewer`);
         }
         // @ts-ignore
-        const htmlElement = params.htmlElement || document.getElementById(params.elementId);
+        const htmlElement = viewParams.htmlElement || document.getElementById(viewParams.elementId);
         if (!(htmlElement instanceof HTMLElement)) {
             return new SDKError("Mandatory View config expected: valid elementId or HTMLElement");
         }
-        const view = new View(apply({viewId, viewer: this}, params));
-        {
+        const view = new View(this, apply({id: viewId}, viewParams));
+
             const result: void | SDKError = this.renderer.attachView(view);
             if (result instanceof SDKError) {
                 this.error(`Failed to create View (id = "${view.viewId}"): ${result.message}`);
                 return result;
             }
-        }
+
         this.#registerView(view);
         view.onDestroyed.one(() => {
             this.#deregisterView(view);

@@ -5,7 +5,8 @@ import {ViewObject} from "./ViewObject";
 import type {Viewer} from "./Viewer";
 import type {View} from "./View";
 import type {Scene, SceneModel} from "../scene";
-
+import {ViewParams} from "./ViewParams";
+import {ViewLayerParams} from "./ViewLayerParams";
 
 
 /**
@@ -427,15 +428,13 @@ class ViewLayer extends Component {
     #numOpacityObjects: number;
     #opacityObjectIds: string[] | null;
 
-    #qualityRender: boolean;
-
     gammaOutput: boolean;
 
     constructor(options: {
         id: string;
         viewer: Viewer;
         view: View;
-        qualityRender?: boolean;
+        renderMode?: number;
         autoDestroy?: boolean;
     }) {
 
@@ -462,8 +461,6 @@ class ViewLayer extends Component {
         this.#numSelectedObjects = 0;
         this.#numColorizedObjects = 0;
         this.#numOpacityObjects = 0;
-
-        this.#qualityRender = !!options.qualityRender;
 
         this.#renderModes = [];
 
@@ -971,13 +968,13 @@ class ViewLayer extends Component {
             const sceneObject = sceneObjects[id];
             const rendererViewObject = this.viewer.renderer.rendererObjects[id];
             if (sceneObject.layerId == this.id) {
-               if (!this.objects[id]) {
-                   const viewObject = new ViewObject(this, sceneObject, rendererViewObject);
-                   this.objects[viewObject.id] = viewObject;
-                   this.#numObjects++;
-                   this.#objectIds = null; // Lazy regenerate
-                   this.onObjectCreated.dispatch(this, viewObject);
-               }
+                if (!this.objects[id]) {
+                    const viewObject = new ViewObject(this, sceneObject, rendererViewObject);
+                    this.objects[viewObject.id] = viewObject;
+                    this.#numObjects++;
+                    this.#objectIds = null; // Lazy regenerate
+                    this.onObjectCreated.dispatch(this, viewObject);
+                }
             }
         }
     }
@@ -994,6 +991,16 @@ class ViewLayer extends Component {
                 this.onObjectDestroyed.dispatch(this, viewObject);
             }
         }
+    }
+
+    /**
+     * Gets this ViewLayer as JSON.
+     */
+    getJSON(): ViewLayerParams {
+        return {
+            id: this.id,
+            autoDestroy: this.autoDestroy
+        };
     }
 
     /**

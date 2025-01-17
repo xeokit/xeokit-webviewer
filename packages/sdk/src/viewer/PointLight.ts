@@ -93,7 +93,7 @@ class PointLight extends Component {
     /**
      * The coordinate system the PointLight is defined in - ````"view"```` or ````"space"````.
      */
-    get space(): String {
+    get space(): string {
         return this.#state.space;
     }
 
@@ -247,11 +247,11 @@ class PointLight extends Component {
      */
     getJSON(): PointLightParams {
         return {
-            color:Array.from(this.color),
-            pos:Array.from(this.pos),
+            color: Array.from(this.color),
+            pos: Array.from(this.pos),
             quadraticAttenuation: this.quadraticAttenuation,
             linearAttenuation: this.linearAttenuation,
-            constantAttenuation:this.constantAttenuation,
+            constantAttenuation: this.constantAttenuation,
             intensity: this.intensity,
             space: this.space
         };

@@ -1,12 +1,12 @@
 import {BCFComponent} from "./BCFComponent";
 
 /**
- * TODO
+ * A BCF coloring component.
  */
 export interface BCFColoringComponent {
 
     /**
-     * TODO
+     * The components in this
      */
     components: BCFComponent[];
 

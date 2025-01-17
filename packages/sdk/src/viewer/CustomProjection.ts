@@ -162,7 +162,7 @@ class CustomProjection  extends Component implements Projection {
      */
     getJSON(): CustomProjectionParams {
         return {
-            projMatrix: this.projMatrix
+            projMatrix: Array.from(this.projMatrix)
         };
     }
 
