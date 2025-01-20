@@ -291,11 +291,11 @@ export class Viewer extends Component {
         }
         const view = new View(this, apply({id: viewId}, viewParams));
 
-            const result: void | SDKError = this.renderer.attachView(view);
-            if (result instanceof SDKError) {
-                this.error(`Failed to create View (id = "${view.viewId}"): ${result.message}`);
-                return result;
-            }
+        const result: void | SDKError = this.renderer.attachView(view);
+        if (result instanceof SDKError) {
+            this.error(`Failed to create View (id = "${view.viewId}"): ${result.message}`);
+            return result;
+        }
 
         this.#registerView(view);
         view.onDestroyed.one(() => {
@@ -361,6 +361,19 @@ export class Viewer extends Component {
     }
 
     /**
+     * Clears this Viewer.
+     *
+     * Destroys all existing {@link View | Views} and resets all properties to their default values.
+     */
+    clear() {
+        for (let viewId in this.views) {
+            const view = this.views[viewId];
+            view.destroy();
+        }
+        // TODO: set other defaults?
+    }
+
+    /**
      * @private
      * @param params
      */
@@ -368,7 +381,7 @@ export class Viewer extends Component {
         for (let viewIndex = 0; viewIndex < this.viewList.length; viewIndex++) {
             // console.log("this.renderer.render()");
             // console.log("...");
-             this.renderer.render(viewIndex, {force: false});
+            this.renderer.render(viewIndex, {force: false});
         }
     }
 
@@ -401,7 +414,29 @@ export class Viewer extends Component {
     }
 
     /**
-     * Gets this Viewer as JSON.
+     * Configures this Viewer.
+     *
+     * @param viewerParams
+     */
+    fromJSON(viewerParams: ViewerParams) {
+        if (viewerParams.views) {
+            for (let viewParams of viewerParams.views) {
+                if (viewParams.id !== undefined) {
+                    const existingView = this.views[viewParams.id];
+                    if (existingView) {
+                        existingView.fromJSON(viewParams); // Update existing View
+                    } else {
+                        this.createView(viewParams);
+                    }
+                } else {
+                    this.createView(viewParams);
+                }
+            }
+        }
+    }
+
+    /**
+     * Gets the current configuration of this Viewer.
      */
     getJSON(): ViewerParams {
         return {

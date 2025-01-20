@@ -8,7 +8,6 @@ import {Projection} from "./Projection";
 import {PerspectiveProjectionParams} from "./PerspectiveProjectionParams";
 
 
-
 /**
  * PerspectiveProjection projection configuration for a {@link Camera | Camera} .
  *
@@ -80,7 +79,7 @@ export class PerspectiveProjection extends Component implements Projection {
         this.#inverseMatrixDirty = true;
         this.#transposedProjMatrixDirty = true;
 
-        this.#onViewBoundary = this.camera.view.onBoundary.subscribe( () => {
+        this.#onViewBoundary = this.camera.view.onBoundary.subscribe(() => {
             this.setDirty();
         });
 
@@ -111,7 +110,7 @@ export class PerspectiveProjection extends Component implements Projection {
         }
         this.#state.fov = value;
         this.setDirty();
-     }
+    }
 
     /**
      * Gets the PerspectiveProjection's FOV axis.
@@ -292,6 +291,25 @@ export class PerspectiveProjection extends Component implements Projection {
         mulMat4v4(this.camera.inverseViewMatrix, viewPos, worldPos);
 
         return worldPos;
+    }
+
+    /**
+     * Sets the state of this PerspectiveParams from the given parameters.
+     * @param perspectiveProjectionParams
+     */
+    fromJSON(perspectiveProjectionParams: PerspectiveProjectionParams) {
+        if (perspectiveProjectionParams.far !== undefined) {
+            this.far = perspectiveProjectionParams.far;
+        }
+        if (perspectiveProjectionParams.near !== undefined) {
+            this.near = perspectiveProjectionParams.near;
+        }
+        if (perspectiveProjectionParams.fov !== undefined) {
+            this.fov = perspectiveProjectionParams.fov;
+        }
+        if (perspectiveProjectionParams.fovAxis !== undefined) {
+            this.fovAxis = perspectiveProjectionParams.fovAxis;
+        }
     }
 
     /**

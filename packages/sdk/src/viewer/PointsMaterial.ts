@@ -1,6 +1,7 @@
 import {Component} from "../core";
 import type {View} from "./View";
 import {PointsMaterialParams} from "./PointsMaterialParams";
+import {EmphasisMaterialParams} from "./EmphasisMaterialParams";
 
 /**
  * Configures the size and shape of {@link ViewObject | ViewObjects} that represent clouds of points.
@@ -170,7 +171,8 @@ class PointsMaterial extends Component {
     }
 
     /**
-     * Sets if rendered point size reduces with distance when {@link Camera.projection} is set to ````PerspectiveProjectionType````.
+     * Sets whether points are made invisible when their intensity lies outside {@link PointsMaterial.minIntensity}
+     * and {@link PointsMaterial.maxIntensity}.
      *
      * Default is ````false````.
      */
@@ -183,7 +185,8 @@ class PointsMaterial extends Component {
     }
 
     /**
-     * Gets if rendered point size reduces with distance when {@link Camera.projection} is set to PerspectiveProjectionType.
+     * Gets whether points are made invisible when their intensity lies outside {@link PointsMaterial.minIntensity}
+     * and {@link PointsMaterial.maxIntensity}.
      *
      * Default is ````false````.
      */
@@ -192,7 +195,7 @@ class PointsMaterial extends Component {
     }
 
     /**
-     * Sets the minimum rendered size of points when {@link PointsMaterial.perspectivePoints} is ````true````.
+     * Sets the minimum intensity of rendered points when {@link PointsMaterial.filterIntensity} is ````true````.
      *
      * Default value is ````0````.
      */
@@ -205,7 +208,7 @@ class PointsMaterial extends Component {
     }
 
     /**
-     * Gets the minimum rendered size of points when {@link PointsMaterial.filterIntensity} is ````true````.
+     * Gets the minimum intensity of rendered points when {@link PointsMaterial.filterIntensity} is ````true````.
      *
      * Default value is ````0````.
      */
@@ -214,7 +217,7 @@ class PointsMaterial extends Component {
     }
 
     /**
-     * Sets the maximum rendered size of points when {@link PointsMaterial.filterIntensity} is ````true````.
+     * Sets the maximum intensity of rendered points when {@link PointsMaterial.filterIntensity} is ````true````.
      *
      * Default value is ````1````.
      */
@@ -227,7 +230,7 @@ class PointsMaterial extends Component {
     }
 
     /**
-     * Gets the maximum rendered size of points when {@link PointsMaterial.filterIntensity} is ````true````.
+     * Gets the maximum intensity of rendered points when {@link PointsMaterial.filterIntensity} is ````true````.
      *
      * Default value is ````1````.
      */
@@ -249,7 +252,33 @@ class PointsMaterial extends Component {
     }
 
     /**
-     * Gets this PointsMaterial as JSON.
+     * Configures this PointsMaterial.
+     *
+     * @param pointsMaterialParams
+     */
+    fromJSON(pointsMaterialParams: PointsMaterialParams) {
+        if (pointsMaterialParams.pointSize !== undefined) {
+            this.pointSize = pointsMaterialParams.pointSize;
+        }
+        if (pointsMaterialParams.roundPoints !== undefined) {
+            this.roundPoints = pointsMaterialParams.roundPoints;
+        }
+        if (pointsMaterialParams.perspectivePoints !== undefined) {
+            this.perspectivePoints = pointsMaterialParams.perspectivePoints;
+        }
+        if (pointsMaterialParams.minPerspectivePointSize !== undefined) {
+            this.minPerspectivePointSize = pointsMaterialParams.minPerspectivePointSize;
+        }
+        if (pointsMaterialParams.maxPerspectivePointSize !== undefined) {
+            this.maxPerspectivePointSize = pointsMaterialParams.maxPerspectivePointSize;
+        }
+        if (pointsMaterialParams.filterIntensity !== undefined) {
+            this.filterIntensity = pointsMaterialParams.filterIntensity;
+        }
+    }
+
+    /**
+     * Gets the current configuration of this PointsMaterial.
      */
     getJSON(): PointsMaterialParams {
         return {

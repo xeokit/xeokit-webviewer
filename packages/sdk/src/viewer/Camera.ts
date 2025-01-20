@@ -348,16 +348,7 @@ class Camera extends Component {
     /**
      * @private
      */
-    constructor(view: View, cfg: {
-        eye?: FloatArrayParam;
-        look?: FloatArrayParam,
-        up?: FloatArrayParam;
-        deviceMatrix?: FloatArrayParam;
-        gimbalLock?: boolean;
-        worldAxis?: FloatArrayParam;
-        constrainPitch?: boolean;
-        projectionType?: number
-    } = {}) {
+    constructor(view: View, cfg: CameraParams = {}) {
 
         super(view, cfg);
 
@@ -925,16 +916,14 @@ class Camera extends Component {
     }
 
     /**
-     * Gets this Camera as JSON.
+     * Gets the configuration of this Camera.
      */
     getJSON(): CameraParams {
         return {
             eye: Array.from(this.#state.eye),
             look: Array.from(this.#state.look),
             up: Array.from(this.#state.up),
-            worldUp: Array.from(this.#state.worldUp),
-            worldRight: Array.from(this.#state.worldRight),
-            worldForward: Array.from(this.#state.worldForward),
+            worldAxis: Array.from(this.#state.worldAxis),
             gimbalLock: this.gimbalLock,
             constrainPitch: this.constrainPitch,
             projectionType: this.projectionType,
@@ -943,6 +932,43 @@ class Camera extends Component {
             frustumProjection: this.frustumProjection.getJSON(),
             customProjection: this.customProjection.getJSON()
         };
+    }
+
+    /**
+     * Configures this Camera.
+     * @param cameraParams
+     */
+    fromJSON(cameraParams: CameraParams) {
+        if (cameraParams.eye) {
+            this.eye = cameraParams.eye;
+        }
+        if (cameraParams.look) {
+            this.look = cameraParams.look;
+        }
+        if (cameraParams.up) {
+            this.up = cameraParams.up;
+        }
+        if (cameraParams.constrainPitch !== undefined) {
+            this.constrainPitch = cameraParams.constrainPitch;
+        }
+        if (cameraParams.gimbalLock !== undefined) {
+            this.gimbalLock = cameraParams.gimbalLock;
+        }
+        if (cameraParams.perspectiveProjection) {
+            this.perspectiveProjection.fromJSON(cameraParams.perspectiveProjection);
+        }
+        if (cameraParams.orthoProjection) {
+            this.orthoProjection.fromJSON(cameraParams.orthoProjection);
+        }
+        if (cameraParams.frustumProjection) {
+            this.frustumProjection.fromJSON(cameraParams.frustumProjection);
+        }
+        if (cameraParams.projectionType !== undefined) {
+            this.projectionType = cameraParams.projectionType;
+        }
+        if (cameraParams.worldAxis) {
+            this.worldAxis = cameraParams.worldAxis;
+        }
     }
 
     /**

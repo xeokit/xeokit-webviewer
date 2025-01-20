@@ -234,23 +234,6 @@ class View extends Component {
     readonly layers: { [key: string]: ViewLayer };
 
     /**
-     * Whether the View will automatically create {@link ViewLayer | ViewLayers} on-demand
-     * as {@link RendererObject | ViewerObjects} are created.
-     *
-     * When ````true```` (default), the View will automatically create {@link ViewLayer | ViewLayers} as needed for each new
-     * {@link RendererObject.layerId} encountered, including a "default" ViewLayer for ViewerObjects that have no
-     * layerId. This default setting therefore ensures that a ViewObject is created in the View for every SceneObject that is created.
-     *
-     * If you set this ````false````, however, then the View will only create {@link ViewObject | ViewObjects} for {@link RendererObject | ViewerObjects} that have
-     * a {@link RendererObject.layerId} that matches the ID of a {@link ViewLayer} that you have explicitly created previously with {@link View.createLayer}.
-     *
-     * Setting this parameter false enables Views to contain only the ViewObjects that they actually need to show, i.e. to represent only
-     * ViewerObjects that they need to view. This enables a View to avoid wastefully creating and maintaining ViewObjects for ViewerObjects
-     * that it never needs to show.
-     */
-    readonly autoLayers: boolean;
-
-    /**
      * Emits an event each time the canvas boundary changes.
      *
      * @event
@@ -339,6 +322,7 @@ class View extends Component {
 
     #renderMode: number = QualityRender;
 
+    #autoLayers: boolean;
     #backgroundColor: FloatArrayParam;
     #backgroundColorFromAmbientLight: boolean;
     #numObjects: number;
@@ -571,13 +555,13 @@ class View extends Component {
             renderModes: [QualityRender],
         });
 
-        this.resolutionScale = new ResolutionScale(this, viewParams.resolutionScale ||{
+        this.resolutionScale = new ResolutionScale(this, viewParams.resolutionScale || {
             enabled: true,
             renderModes: [FastRender],
             resolutionScale: 1.0
         });
 
-        this.pointsMaterial = new PointsMaterial(this, viewParams.pointsMaterial ||{
+        this.pointsMaterial = new PointsMaterial(this, viewParams.pointsMaterial || {
             pointSize: 1,
             roundPoints: true,
             perspectivePoints: true,
@@ -594,7 +578,7 @@ class View extends Component {
 
         this.lights = {};
 
-        this.autoLayers = viewParams.autoLayers !== false;
+        this.#autoLayers = viewParams.autoLayers !== false;
 
         this.onObjectCreated = new EventEmitter(
             new EventDispatcher<View, ViewObject>()
@@ -668,9 +652,7 @@ class View extends Component {
      * @private
      */
     initViewObjects() {
-        for (const id in this.viewer.scene.models) {
-            this.#createViewObjectsForSceneModel(this.viewer.scene.models[id]);
-        }
+        this.#createViewObjectsForScene();
         this.viewer.scene.onModelCreated.subscribe((scene: Scene, sceneModel: SceneModel) => {
                 this.#createViewObjectsForSceneModel(sceneModel);
             }
@@ -681,38 +663,84 @@ class View extends Component {
         );
     }
 
+    #createViewObjectsForScene() {
+        for (const id in this.viewer.scene.models) {
+            this.#createViewObjectsForSceneModel(this.viewer.scene.models[id]);
+        }
+    }
+
     #createViewObjectsForSceneModel(sceneModel: SceneModel) {
         // The Renderer has a RendererObject for each object, through which a ViewObject can
         // push state changes into the Renderer for its object.
         // The RendererObject
         const sceneObjects = sceneModel.objects;
-        const rendererObjects = this.viewer.renderer.rendererObjects;
         for (let id in sceneObjects) {
-            const sceneObject = sceneObjects[id];
-            const rendererObject = rendererObjects[id];
-            const layerId = sceneObject.layerId || "default";
-            let viewLayer = this.layers[layerId];
-            if (!viewLayer) {
-                if (!this.autoLayers) {
-                    continue;
+            if (!this.objects[id]) {
+                const sceneObject = sceneObjects[id];
+                const layerId = sceneObject.layerId || "default";
+                let viewLayer = this.layers[layerId];
+                if (!viewLayer) {
+                    if (!this.#autoLayers) {
+                        continue;
+                    }
+                    viewLayer = new ViewLayer({
+                        id: layerId,
+                        view: this,
+                        viewer: this.viewer,
+                    });
+                    this.layers[layerId] = viewLayer;
+                    viewLayer.onDestroyed.one(() => {
+                        delete this.layers[viewLayer.id];
+                        this.onLayerDestroyed.dispatch(this, viewLayer);
+                    });
+                    this.onLayerCreated.dispatch(this, viewLayer);
                 }
-                viewLayer = new ViewLayer({
-                    id: layerId,
-                    view: this,
-                    viewer: this.viewer,
-                });
-                this.layers[layerId] = viewLayer;
-                viewLayer.onDestroyed.one(() => {
-                    delete this.layers[viewLayer.id];
-                    this.onLayerDestroyed.dispatch(this, viewLayer);
-                });
-                this.onLayerCreated.dispatch(this, viewLayer);
+                const rendererObjects = this.viewer.renderer.rendererObjects;
+                const rendererObject = rendererObjects[id];
+                const viewObject = new ViewObject(viewLayer, sceneObject, rendererObject);
+                viewLayer.registerViewObject(viewObject);
+                this.registerViewObject(viewObject);
+                this.onObjectCreated.dispatch(this, viewObject);
             }
-            const viewObject = new ViewObject(viewLayer, sceneObject, rendererObject);
-            viewLayer.registerViewObject(viewObject);
-            this.registerViewObject(viewObject);
-            this.onObjectCreated.dispatch(this, viewObject);
         }
+    }
+
+    /**
+     * Sets wether this View will automatically create {@link ViewLayer | ViewLayers} on-demand
+     * as {@link RendererObject | ViewerObjects} are created.
+     *
+     * When ````true```` (default), the View will automatically create {@link ViewLayer | ViewLayers} as needed for each new
+     * {@link RendererObject.layerId} encountered, including a "default" ViewLayer for ViewerObjects that have no
+     * layerId. This "default" ViewLayer ensures that a ViewObject is created in the View for every SceneObject that is created.
+     *
+     * If you set this ````false````, however, then the View will only create {@link ViewObject | ViewObjects} for
+     * {@link scene!SceneObject | SceneObjects} that have a {@link scene!SceneObject.layerId} that matches the ID of a
+     * {@link ViewLayer} that you have explicitly created previously with {@link View.createLayer}.
+     *
+     * Setting this parameter false enables Views to contain only the ViewObjects that they actually need to show, i.e. to represent only
+     * ViewerObjects that they need to view. This enables a View to avoid wastefully creating and maintaining ViewObjects for ViewerObjects
+     * that it never needs to show.
+     *
+     * Default value is `true``.
+     *
+     * @param autoLayers The new value for atuoLayers
+     */
+    set autoLayers(autoLayers: boolean) {
+        if (this.#autoLayers === autoLayers) {
+            return;
+        }
+        this.#autoLayers = autoLayers;
+        if (autoLayers) {
+            this.#createViewObjectsForScene();
+        }
+    }
+
+    /**
+     * Gets wether this View will automatically create {@link ViewLayer | ViewLayers} on-demand
+     * as {@link RendererObject | ViewerObjects} are created.
+     */
+    get autoLayers(): boolean {
+        return this.#autoLayers;
     }
 
     /**
@@ -1565,6 +1593,54 @@ class View extends Component {
 
     getNumAllocatedSectionPlanes(): number {
         return this.sectionPlanesList.length;
+    }
+
+    /**
+     * Sets the state of this View.
+     * @param viewParams
+     */
+    fromJSON(viewParams: ViewParams) {
+        if (viewParams.camera) {
+            this.camera.fromJSON(viewParams.camera);
+        }
+        this.autoLayers = viewParams.autoLayers;
+        if (viewParams.viewLayers) {
+            for (let viewLayerParams of viewParams.viewLayers) {
+                const existingViewLayer = this.layers[viewLayerParams.id];
+                if (!existingViewLayer) {
+                    this.createLayer(viewLayerParams);
+                }
+            }
+        }
+        if (viewParams.sectionPlanes) {
+            for (let sectionPlaneParams of viewParams.sectionPlanes) {
+                const existingSectionPlane = this.sectionPlanes[sectionPlaneParams.id];
+                if (existingSectionPlane) {
+                    existingSectionPlane.fromJSON(sectionPlaneParams);
+                } else {
+                    this.createSectionPlane(sectionPlaneParams);
+                }
+            }
+        }
+        if (viewParams.sao) {
+            this.sao.fromJSON(viewParams.sao);
+        }
+        if (viewParams.edges) {
+            this.edges.fromJSON(viewParams.edges);
+        }
+        if (viewParams.highlightMaterial) {
+            this.highlightMaterial.fromJSON(viewParams.highlightMaterial);
+        }
+        if (viewParams.selectedMaterial) {
+            this.selectedMaterial.fromJSON(viewParams.selectedMaterial);
+        }
+        if (viewParams.xrayMaterial) {
+            this.xrayMaterial.fromJSON(viewParams.xrayMaterial);
+        }
+        if (viewParams.pointsMaterial) {
+            this.pointsMaterial.fromJSON(viewParams.pointsMaterial);
+        }
+        // TODO: Update lights
     }
 
     /**

@@ -2,6 +2,7 @@ import {Component} from "../core";
 import type {View} from "./View";
 import type {FloatArrayParam} from "../math";
 import {AmbientLightParams} from "./AmbientLightParams";
+import {DirLightParams} from "./DirLightParams";
 
 
 /**
@@ -32,14 +33,7 @@ class AmbientLight extends Component {
      * @param view Owner component. When destroyed, the owner will destroy this AmbientLight as well.
      * @param cfg AmbientLight configuration
      */
-    constructor(view: View, cfg: {
-        /** Optional ID, generated automatically when omitted.*/
-        id?: string;
-        /** Intensity factor in range ````[0..1]````.  Default is ````1````.*/
-        intensity?: number;
-        /** RGB color in range ````[0..1,0..1,0..1]````. Default is ````[0.7, 0.7, 0.7]````.*/
-        color?: FloatArrayParam
-    } = {}) {
+    constructor(view: View, cfg: AmbientLightParams = {}) {
         super(view, cfg);
         this.view = view;
         this.#state = {
@@ -95,7 +89,20 @@ class AmbientLight extends Component {
     }
 
     /**
-     * Gets this AmbientLight as JSON.
+     * Configures this AmbientLight.
+     * @param ambientLightParams
+     */
+    fromJSON(ambientLightParams: AmbientLightParams) {
+        if (ambientLightParams.color) {
+            this.color = ambientLightParams.color;
+        }
+        if (ambientLightParams.intensity !== undefined) {
+            this.intensity = ambientLightParams.intensity;
+        }
+    }
+
+    /**
+     * Gets the current configuration of this AmbientLight.
      */
     getJSON(): AmbientLightParams {
         return {

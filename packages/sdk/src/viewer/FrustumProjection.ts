@@ -7,6 +7,7 @@ import type {FloatArrayParam} from "../math";
 import {createMat4, frustumMat4, inverseMat4, mulMat4v4, mulVec3Scalar, transposeMat4} from "../matrix";
 import {Projection} from "./Projection";
 import {FrustumProjectionParams} from "./FrustumProjectionParams";
+import {PerspectiveProjectionParams} from "./PerspectiveProjectionParams";
 
 /**
  *  FrustumProjection-based perspective projection configuration for a {@link Camera | Camera} .
@@ -50,14 +51,7 @@ export class FrustumProjection extends Component implements Projection {
     /**
      * @private
      */
-    constructor(camera: Camera, cfg: {
-        far?: number;
-        near?: number;
-        top?: number;
-        bottom?: number;
-        right?: number;
-        left?: number;
-    } = {}) {
+    constructor(camera: Camera, cfg: FrustumProjectionParams = {}) {
 
         super(camera, cfg);
 
@@ -298,7 +292,33 @@ export class FrustumProjection extends Component implements Projection {
     }
 
     /**
-     * Gets this FrustumProjection as JSON.
+     * Configures this FrustumProjection.
+     *
+     * @param frustumProjectionParams
+     */
+    fromJSON(frustumProjectionParams: FrustumProjectionParams) {
+        if (frustumProjectionParams.far !== undefined) {
+            this.far = frustumProjectionParams.far;
+        }
+        if (frustumProjectionParams.near !== undefined) {
+            this.near = frustumProjectionParams.near;
+        }
+        if (frustumProjectionParams.top !== undefined) {
+            this.top = frustumProjectionParams.top;
+        }
+        if (frustumProjectionParams.bottom !== undefined) {
+            this.bottom = frustumProjectionParams.bottom;
+        }
+        if (frustumProjectionParams.right !== undefined) {
+            this.right = frustumProjectionParams.right;
+        }
+        if (frustumProjectionParams.left !== undefined) {
+            this.left = frustumProjectionParams.left;
+        }
+    }
+
+    /**
+     * Gets the current configuration of this FrustumProjection.
      */
     getJSON(): FrustumProjectionParams {
         return {

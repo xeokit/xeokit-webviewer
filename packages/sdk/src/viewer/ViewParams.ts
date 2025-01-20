@@ -12,15 +12,16 @@ import {PointsMaterialParams} from "./PointsMaterialParams";
 import {ResolutionScaleParams} from "./ResolutionScaleParams";
 
 /**
- * Parameters for {@link Viewer.createView} to create a {@link View}.
+ * Configuration for a {@link View}.
  *
  * * Returned by {@link View.getJSON | View.getJSON}
+ * * Passed to {@link View.fromJSON | View.fromJSON} and {@link Viewer.createView | Viewer.createView}
  * * Located at {@link ViewerParams.views | ViewerParams.views}
  */
 export interface ViewParams {
 
     /**
-     * ID for the new View.
+     * Optional ID, genarated automatically by {@link Viewer.createView} if omitted.
      */
     id?: string;
 
@@ -33,7 +34,7 @@ export interface ViewParams {
     /**
      * The number of Real-space units represented by each unit of the {@link View}'s World-space coordinate system.
      *
-     * For example, if {@link ViewParams.units} is {@link constants!MetersUnit}, and there are ten meters per World-space coordinate
+     * For example, if {@link ViewParams.units} is {@link constants!MetersUnit | MetersUnit}, and there are ten meters per World-space coordinate
      * system unit, then this property would have a value of ````10.0````.
      */
     scale?: number;
@@ -84,15 +85,18 @@ export interface ViewParams {
      * as {@link ViewObject | ViewObjects} are created.
      *
      * When ````true```` (default), the {@link View} will automatically create {@link ViewLayer | ViewLayers} as needed for each new
-     * {@link ViewObject.layerId | ViewObject.layerId} encountered, including a "default" ViewLayer for ViewerObjects that have no
-     * layerId. This default setting therefore ensures that a ViewObject is created in the {@link View} for every ViewerObject that is created.
+     * {@link scene!SceneObject.layerId | SceneObject.layerId} encountered, including a "default" ViewLayer for ViewerObjects corresponding to
+     * SceneObjects that have no layerId. This default setting therefore ensures that a ViewObject is created in the {@link View} for every
+     * SceneObject that is created.
      *
-     * If you set this ````false````, however, then the {@link View} will only create {@link ViewObject | ViewObjects} for {@link ViewObject | ViewObjects} that have
-     * a {@link ViewObject.layerId | ViewObject.layerId} that matches the ID of a {@link ViewLayer} that you have explicitly created previously with {@link View.createLayer}.
+     * If you set this ````false````, however, then the {@link View} will only create {@link ViewObject | ViewObjects}
+     * for {@link scene!SceneObject | SceneObjects} that have
+     * a {@link scene!SceneObject.layerId | SceneObject.layerId} that matches the ID of some {@link ViewLayer} that you
+     * explicitly created earlier with {@link View.createLayer}.
      *
-     * Setting this parameter false enables Views to contain only the ViewObjects that they actually need to show, i.e. to represent only
-     * ViewerObjects that they need to view. This enables a View to avoid wastefully creating and maintaining ViewObjects for ViewerObjects
-     * that it never needs to show.
+     * Setting this parameter ````false```` enables a View to contain only the ViewObjects that it actually needs to show, i.e. to
+     * represent only SceneObjects that it needs to view. This enables a View to avoid wastefully creating and maintaining
+     * ViewObjects for SceneObjects that it never needs to show.
      */
     autoLayers?: boolean;
 

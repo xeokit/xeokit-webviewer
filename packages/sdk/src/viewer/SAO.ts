@@ -56,8 +56,6 @@ export class SAO extends Component {
     /**
      * Sets which rendering modes in which to render edges.
      *
-     * Accepted modes are {@link constants!QualityRender | QualityRender} and {@link constants!FastRender | FastRender}.
-     *
      * Default value is [{@link constants!QualityRender | QualityRender}].
      */
     set renderModes(value: number[]) {
@@ -390,7 +388,7 @@ export class SAO extends Component {
     }
 
     /**
-     * Gets this SAO as JSON.
+     * Gets the current configuration of this SAO.
      */
     getJSON(): SAOParams {
         return{
@@ -409,7 +407,8 @@ export class SAO extends Component {
     }
 
     /**
-     * Configures this SAO from JSON.
+     * Configures this SAO.
+     *
      * @param saoParams
      */
     fromJSON(saoParams: SAOParams) {

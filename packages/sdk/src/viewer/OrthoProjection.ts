@@ -5,9 +5,7 @@ import type {FloatArrayParam} from "../math";
 import {OrthoProjectionType} from "../constants";
 import {createMat4, inverseMat4, mulMat4v4, mulVec3Scalar, orthoMat4c, transposeMat4} from "../matrix";
 import {Projection} from "./Projection";
-import {PerspectiveProjectionParams} from "./PerspectiveProjectionParams";
 import {OrthoProjectionParams} from "./OrthoProjectionParams";
-
 
 
 /**
@@ -55,11 +53,7 @@ export class OrthoProjection extends Component implements Projection {
     /**
      * @private
      */
-    constructor(camera: Camera, cfg: {
-        far?: number;
-        near?: number;
-        scale?: number;
-    } = {}) {
+    constructor(camera: Camera, cfg: OrthoProjectionParams = {}) {
 
         super(camera, cfg);
 
@@ -294,7 +288,24 @@ export class OrthoProjection extends Component implements Projection {
     }
 
     /**
-     * Gets this OrthoProjection as JSON.
+     * Configures this OrthoProjection.
+     *
+     * @param orthoProjectionParams
+     */
+    fromJSON(orthoProjectionParams: OrthoProjectionParams) {
+        if (orthoProjectionParams.far !== undefined) {
+            this.far = orthoProjectionParams.far;
+        }
+        if (orthoProjectionParams.near !== undefined) {
+            this.near = orthoProjectionParams.near;
+        }
+        if (orthoProjectionParams.scale !== undefined) {
+            this.scale = orthoProjectionParams.scale;
+        }
+    }
+
+    /**
+     * Gets the current configuration of this OrthoProjection.
      */
     getJSON(): OrthoProjectionParams {
         return {

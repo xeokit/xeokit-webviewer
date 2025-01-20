@@ -7,7 +7,6 @@ import type {FloatArrayParam} from "../math";
 import {CustomProjectionType} from "../constants";
 import {identityMat4, inverseMat4, createMat4, mulMat4v4, mulVec3Scalar, transposeMat4} from "../matrix";
 import {Projection} from "./Projection";
-import {FrustumProjectionParams} from "./FrustumProjectionParams";
 import {CustomProjectionParams} from "./CustomProjectionParams";
 
 /**
@@ -47,9 +46,7 @@ class CustomProjection  extends Component implements Projection {
     /**
      * @private
      */
-    constructor(camera: Camera, cfg: {
-        projMatrix?: FloatArrayParam
-    } = {}) {
+    constructor(camera: Camera, cfg: CustomProjectionParams = {}) {
 
         super(camera, cfg);
 
@@ -158,7 +155,17 @@ class CustomProjection  extends Component implements Projection {
     }
 
     /**
-     * Gets this CustomProjection as JSON.
+     * Configures this CustomProjection.
+     * @param customProjectionParams
+     */
+    fromJSON(customProjectionParams: CustomProjectionParams) {
+        if (customProjectionParams.projMatrix) {
+            this.projMatrix = customProjectionParams.projMatrix;
+        }
+    }
+
+    /**
+     * Gets the current configuration of this CustomProjection.
      */
     getJSON(): CustomProjectionParams {
         return {

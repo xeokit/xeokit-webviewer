@@ -293,7 +293,41 @@ class EmphasisMaterial extends Component {
     }
 
     /**
-     * Gets this emphasis material as JSON.
+     * Configures this EmphasisMaterial.
+     * @param emphasisMaterialParams
+     */
+    fromJSON(emphasisMaterialParams: EmphasisMaterialParams) {
+        if (emphasisMaterialParams.fillColor !== undefined) {
+            this.fillColor = emphasisMaterialParams.fillColor;
+        }
+        if (emphasisMaterialParams.edgeColor !== undefined) {
+            this.edgeColor = emphasisMaterialParams.edgeColor;
+        }
+        if (emphasisMaterialParams.edgeWidth !== undefined) {
+            this.edgeWidth = emphasisMaterialParams.edgeWidth;
+        }
+        if (emphasisMaterialParams.edgeAlpha !== undefined) {
+            this.edgeAlpha = emphasisMaterialParams.edgeAlpha;
+        }
+        if (emphasisMaterialParams.edges !== undefined) {
+            this.edges = emphasisMaterialParams.edges;
+        }
+        if (emphasisMaterialParams.fillAlpha !== undefined) {
+            this.fillAlpha = emphasisMaterialParams.fillAlpha;
+        }
+        if (emphasisMaterialParams.fill !== undefined) {
+            this.fill = emphasisMaterialParams.fill;
+        }
+        if (emphasisMaterialParams.backfaces !== undefined) {
+            this.backfaces = emphasisMaterialParams.backfaces;
+        }
+        if (emphasisMaterialParams.glowThrough !== undefined) {
+            this.glowThrough = emphasisMaterialParams.glowThrough;
+        }
+    }
+
+    /**
+     * Gets the current configuration of this EmphasisMaterial.
      */
     getJSON(): EmphasisMaterialParams {
         return {

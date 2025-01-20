@@ -1,7 +1,6 @@
 import {Component} from "../core";
 import type {View} from "./View";
-import {FastRender, QualityRender} from "../constants";
-import {PointLightParams} from "./PointLightParams";
+import {FastRender} from "../constants";
 import {ResolutionScaleParams} from "./ResolutionScaleParams";
 
 
@@ -67,11 +66,7 @@ export class ResolutionScale extends Component {
     /**
      * @private
      */
-    constructor(view: View, options: {
-        enabled?: boolean;
-        resolutionScale?: number;
-        renderModes?: number[];
-    } = {}) {
+    constructor(view: View, options: ResolutionScaleParams = {}) {
 
         super(view, options);
 
@@ -109,9 +104,7 @@ export class ResolutionScale extends Component {
     /**
      * Sets which rendering modes in which to apply ResolutionScale.
      *
-     * Accepted modes are {@link constants!QualityRender} and {@link constants!FastRender}.
-     *
-     * Default value is [{@link constants!FastRender}].
+     * Default value is [{@link constants!FastRender | FastRender}].
      */
     set renderModes(value: number[]) {
         this.#state.renderModes = value;
@@ -121,9 +114,7 @@ export class ResolutionScale extends Component {
     /**
      * Gets which rendering modes in which to apply ResolutionScale.
      *
-     * Accepted modes are {@link constants!QualityRender} and {@link constants!FastRender}.
-     *
-     * Default value is [{@link constants!FastRender}].
+     * Default value is [{@link constants!FastRender | FastRender}].
      */
     get renderModes(): number[] {
         return this.#state.renderModes;
@@ -171,7 +162,24 @@ export class ResolutionScale extends Component {
     }
 
     /**
-     * Gets this ResolutionScale as JSON.
+     * Configures this ResolutionScale.
+     *
+     * @param resolutionScaleParams
+     */
+    fromJSON(resolutionScaleParams: ResolutionScaleParams) {
+        if (resolutionScaleParams.renderModes !== undefined) {
+            this.renderModes = resolutionScaleParams.renderModes;
+        }
+        if (resolutionScaleParams.enabled !== undefined) {
+            this.enabled = resolutionScaleParams.enabled;
+        }
+        if (resolutionScaleParams.resolutionScale !== undefined) {
+            this.resolutionScale = resolutionScaleParams.resolutionScale;
+        }
+    }
+
+    /**
+     * Gets the current configuration of this ResolutionScale.
      */
     getJSON(): ResolutionScaleParams {
         return {
@@ -180,7 +188,6 @@ export class ResolutionScale extends Component {
             resolutionScale: this.resolutionScale
         };
     }
-
 
     /**
      * @private

@@ -43,34 +43,8 @@ class PointLight extends Component {
     /**
      * @param view View that owns this PointLight. When destroyed, the View will destroy this PointLight as well.
      * @param cfg The PointLight configuration
-     * @param [cfg.id] Optional ID, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
-     * @param [cfg.pos=[ 1.0, 1.0, 1.0 ]] Position, in either World or View space, depending on the value of the **space** parameter.
-     * @param [cfg.color=[0.7, 0.7, 0.8 ]] Color of this PointLight.
-     * @param [cfg.intensity=1.0] Intensity of this PointLight, as a factor in range ````[0..1]````.
-     * @param [cfg.constantAttenuation=0] Constant attenuation factor.
-     * @param [cfg.linearAttenuation=0] Linear attenuation factor.
-     * @param [cfg.quadraticAttenuation=0] Quadratic attenuation factor.
-     * @param [cfg.space="view"] The coordinate system this PointLight is defined in - "view" or "world".
-     * @param [cfg.castsShadow=false] Flag which indicates if this PointLight casts a castsShadow.
      */
-    constructor(view: View, cfg: {
-        /** Optional ID, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.*/
-        id?: string;
-        /** Intensity of this PointLight, as a factor in range ````[0..1]````. */
-        intensity?: number;
-        /** RGB color */
-        color?: FloatArrayParam;
-        /** World-space position */
-        pos?: FloatArrayParam;
-        /** Quadratic attenuation factor. */
-        quadraticAttenuation?: number;
-        /** Constant attenuation factor */
-        constantAttenuation?: number;
-        /** The coordinate system this PointLight is defined in - "view" or "world". */
-        space?: string;
-        /** Linear attenuation factor */
-        linearAttenuation?: number
-    } = {}) {
+    constructor(view: View, cfg: PointLightParams = {}) {
 
         super(view, cfg);
 
@@ -243,7 +217,28 @@ class PointLight extends Component {
     }
 
     /**
-     * Gets this PointLight as JSON.
+     * Configures this PointLight.
+     *
+     * Ignores {@link PointLightParams.space | PointLightParams.space}, because
+     * {@link PointLight.space | PointLight.space} is not dynamically updatable.
+     *
+     * @param pointLightParams
+     */
+    fromJSON(pointLightParams: PointLightParams) {
+        if (pointLightParams.pos) {
+            this.pos = pointLightParams.pos;
+        }
+        if (pointLightParams.color) {
+            this.color = pointLightParams.color;
+        }
+        if (pointLightParams.intensity !== undefined) {
+            this.intensity = pointLightParams.intensity;
+        }
+        // Space is not dynamicaly-updatable
+    }
+
+    /**
+     * Gets the current configuration of this PointLight.
      */
     getJSON(): PointLightParams {
         return {

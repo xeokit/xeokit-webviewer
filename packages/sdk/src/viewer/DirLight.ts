@@ -4,6 +4,7 @@ import {Component} from "../core";
 import type {View} from "./View";
 import type {FloatArrayParam} from "../math";
 import {DirLightParams} from "./DirLightParams";
+import {CustomProjectionParams} from "./CustomProjectionParams";
 
 /**
  * A directional light source within a {@link View}.
@@ -32,7 +33,7 @@ class DirLight extends Component {
         dir: Float32Array;
         color: Float32Array;
         intensity: number;
-        space: "world" | "view"
+        space: string
     };
 
     /**
@@ -44,10 +45,7 @@ class DirLight extends Component {
      * @param [options.intensity=1.0] The intensity of this DirLight, as a factor in range ````[0..1]````.
      * @param [options.space="view"] The coordinate system the DirLight is defined in - ````"view"```` or ````"space"````.
      */
-    constructor(view: View, options: {
-        intensity?: number; color?: FloatArrayParam;
-        dir?: FloatArrayParam; space?: "world" | "view"
-    } = {}) {
+    constructor(view: View, options: DirLightParams = {}) {
         super(view, options);
         this.view = view;
         this.#state = {
@@ -137,12 +135,33 @@ class DirLight extends Component {
     }
 
     /**
-     * Gets this DirLight as JSON.
+     * Configures this DirLight.
+     *
+     * Ignores {@link DirLightParams.space | DirLightParams.space}, because
+     * {@link DirLight.space | DirLight.space} is not dynamically updatable.
+     *
+     * @param dirLightParams
+     */
+    fromJSON(dirLightParams: DirLightParams) {
+        if (dirLightParams.dir) {
+            this.dir = dirLightParams.dir;
+        }
+        if (dirLightParams.color) {
+            this.color = dirLightParams.color;
+        }
+        if (dirLightParams.intensity !== undefined) {
+            this.intensity = dirLightParams.intensity;
+        }
+        // Space is not dynamically-updatable
+    }
+
+    /**
+     * Gets this DirLight's current configuration.
      */
     getJSON(): DirLightParams {
         return {
             dir: Array.from(this.dir),
-            color:Array.from(this.color),
+            color: Array.from(this.color),
             intensity: this.intensity,
             space: this.space
         };

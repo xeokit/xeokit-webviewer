@@ -52,8 +52,6 @@ class Edges extends Component {
     /**
      * Sets which rendering modes in which to render edges.
      *
-     * Accepted modes are {@link constants!QualityRender | QualityRender} and {@link constants!FastRender | FastRender}.
-     *
      * Default value is [{@link constants!QualityRender | QualityRender}].
      */
     set renderModes(value: number[]) {
@@ -63,8 +61,6 @@ class Edges extends Component {
 
     /**
      * Gets which rendering modes in which to render edges.
-     *
-     * Accepted modes are {@link constants!QualityRender | QualityRender} and {@link constants!FastRender | FastRender}.
      *
      * Default value is [{@link constants!QualityRender | QualityRender}].
      */
@@ -195,7 +191,7 @@ class Edges extends Component {
     }
 
     /**
-     * Gets this Edges as JSON.
+     * Gets the current configuration of this Edges effect.
      */
     getJSON(): EdgesParams {
         return {
@@ -208,7 +204,8 @@ class Edges extends Component {
     }
 
     /**
-     * Configures this Edges from JSON.
+     * Configures this Edges effect.
+     *
      * @param edgesParams
      */
     fromJSON(edgesParams: EdgesParams) {

@@ -189,7 +189,24 @@ class SectionPlane extends Component {
     }
 
     /**
-     * Gets this SectionPlane as JSON.
+     * COnfigures this SectionPlane.
+     *
+     * @param sectionPlaneParams
+     */
+    fromJSON(sectionPlaneParams: SectionPlaneParams) {
+        if (sectionPlaneParams.dir) {
+            this.dir = sectionPlaneParams.dir;
+        }
+        if (sectionPlaneParams.pos) {
+            this.pos = sectionPlaneParams.pos;
+        }
+        if (sectionPlaneParams.active !== undefined) {
+            this.active = sectionPlaneParams.active;
+        }
+    }
+
+    /**
+     * Gets the current configuration of this SectionPlane.
      */
     getJSON(): SectionPlaneParams {
         return {

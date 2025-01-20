@@ -994,7 +994,18 @@ class ViewLayer extends Component {
     }
 
     /**
-     * Gets this ViewLayer as JSON.
+     * Configures this ViewLayer.
+     *
+     * @param viewLayerParams
+     */
+    fromJSON(viewLayerParams: ViewLayerParams) {
+        if (viewLayerParams.autoDestroy) {
+            this.autoDestroy = viewLayerParams.autoDestroy;
+        }
+    }
+
+    /**
+     * Gets the current configuration of this ViewLayer.
      */
     getJSON(): ViewLayerParams {
         return {
