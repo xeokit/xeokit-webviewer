@@ -107,9 +107,9 @@ export class SceneGeometry {
     }
 
     /**
-     * Gets this SceneGeometry as JSON.
+     * Gets this SceneGeometry as SceneGeometryCompressedParams.
      */
-    getJSON(): SceneGeometryCompressedParams {
+    toParams(): SceneGeometryCompressedParams {
         const params = <SceneGeometryCompressedParams>{
             id: this.id,
             primitive: this.primitive,

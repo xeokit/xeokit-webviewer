@@ -418,7 +418,7 @@
  * ## Serializing a DataModel to JSON
  *
  * ````javascript
- *  const dataModelJSON = dataModel.getJSON();
+ *  const dataModelParams = dataModel.toParams();
  * ````
  *
  * <br>
@@ -430,7 +430,7 @@
  *     id: "myDataModel2"
  * });
  *
- * dataModel2.fromJSON(dataModelJSON);
+ * dataModel2.fromParams(dataModelParams);
  *
  * dataModel2.build();
  * ````

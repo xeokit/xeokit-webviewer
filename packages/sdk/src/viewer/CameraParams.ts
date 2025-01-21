@@ -5,10 +5,10 @@ import {FrustumProjectionParams} from "./FrustumProjectionParams";
 import {CustomProjectionParams} from "./CustomProjectionParams";
 
 /**
- * Configures a {@link Camera}.
+ * Parameters for a {@link Camera}.
  *
- * * Returned by {@link Camera.getJSON | Camera.getJSON}
- * * Passed to {@link Camera.fromJSON | Camera.fromJSON}
+ * * Returned by {@link Camera.toParams | Camera.toParams}
+ * * Passed to {@link Camera.fromParams | Camera.fromParams}
  * * Located at {@link ViewParams.camera | ViewParams.camera}
  */
 export interface CameraParams {
@@ -78,22 +78,22 @@ export interface CameraParams {
     projectionType?: number;
 
     /**
-     * Configuration for the {@link PerspectiveProjection} at {@link Camera.perspectiveProjection | Camera.perspectiveProjection}.
+     * Parameters for the {@link PerspectiveProjection} at {@link Camera.perspectiveProjection | Camera.perspectiveProjection}.
      */
     perspectiveProjection?: PerspectiveProjectionParams;
 
     /**
-     * Configuration for the {@link OrthoProjection} at {@link Camera.orthoProjection | Camera.orthoProjection}.
+     * Parameters for the {@link OrthoProjection} at {@link Camera.orthoProjection | Camera.orthoProjection}.
      */
     orthoProjection?: OrthoProjectionParams;
 
     /**
-     * Configuration for the {@link FrustumProjection} at {@link Camera.frustumProjection | Camera.frutsumProjection}.
+     * Parameters for the {@link FrustumProjection} at {@link Camera.frustumProjection | Camera.frutsumProjection}.
      */
     frustumProjection?: FrustumProjectionParams;
 
     /**
-     * Configuration for the {@link CustomProjection} at {@link Camera.customProjection | Camera.customProjection}.
+     * Parameters for the {@link CustomProjection} at {@link Camera.customProjection | Camera.customProjection}.
      */
     customProjection?: CustomProjectionParams;
 

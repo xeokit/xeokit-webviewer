@@ -442,7 +442,7 @@
  * ## Serializing a SceneModel to JSON
  *
  * ````javascript
- *  const sceneModel2JSON = sceneModel2.getJSON();
+ *  const sceneModel2JSON = sceneModel2.toParams();
  * ````
  *
  * <br>
@@ -454,7 +454,7 @@
  *     id: "mySceneModel3"
  * });
  *
- * sceneModel3.fromJSON(sceneModel2JSON);
+ * sceneModel3.fromParams(sceneModel2JSON);
  *
  * sceneModel3.build();
  * ````

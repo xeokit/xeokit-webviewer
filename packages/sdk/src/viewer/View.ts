@@ -1613,9 +1613,9 @@ class View extends Component {
      * Sets the state of this View.
      * @param viewParams
      */
-    fromJSON(viewParams: ViewParams) {
+    fromParams(viewParams: ViewParams) {
         if (viewParams.camera) {
-            this.camera.fromJSON(viewParams.camera);
+            this.camera.fromParams(viewParams.camera);
         }
         this.autoLayers = viewParams.autoLayers;
         if (viewParams.layers) {
@@ -1630,29 +1630,29 @@ class View extends Component {
             for (let sectionPlaneParams of viewParams.sectionPlanes) {
                 const existingSectionPlane = this.sectionPlanes[sectionPlaneParams.id];
                 if (existingSectionPlane) {
-                    existingSectionPlane.fromJSON(sectionPlaneParams);
+                    existingSectionPlane.fromParams(sectionPlaneParams);
                 } else {
                     this.createSectionPlane(sectionPlaneParams);
                 }
             }
         }
         if (viewParams.sao) {
-            this.sao.fromJSON(viewParams.sao);
+            this.sao.fromParams(viewParams.sao);
         }
         if (viewParams.edges) {
-            this.edges.fromJSON(viewParams.edges);
+            this.edges.fromParams(viewParams.edges);
         }
         if (viewParams.highlightMaterial) {
-            this.highlightMaterial.fromJSON(viewParams.highlightMaterial);
+            this.highlightMaterial.fromParams(viewParams.highlightMaterial);
         }
         if (viewParams.selectedMaterial) {
-            this.selectedMaterial.fromJSON(viewParams.selectedMaterial);
+            this.selectedMaterial.fromParams(viewParams.selectedMaterial);
         }
         if (viewParams.xrayMaterial) {
-            this.xrayMaterial.fromJSON(viewParams.xrayMaterial);
+            this.xrayMaterial.fromParams(viewParams.xrayMaterial);
         }
         if (viewParams.pointsMaterial) {
-            this.pointsMaterial.fromJSON(viewParams.pointsMaterial);
+            this.pointsMaterial.fromParams(viewParams.pointsMaterial);
         }
         // TODO: Update lights
     }
@@ -1660,21 +1660,21 @@ class View extends Component {
     /**
      * Gets this View as JSON.
      */
-    getJSON(): ViewParams {
+    toParams(): ViewParams {
         return {
             id: this.id,
-            camera: this.camera.getJSON(),
+            camera: this.camera.toParams(),
             autoLayers: this.autoLayers,
-            layers: Object.values(this.layers).map(viewLayer => viewLayer.getJSON()),
-            sectionPlanes: Object.values(this.sectionPlanes).map(sectionPlane => sectionPlane.getJSON()),
-            lights: Object.values(this.lights).map(light => light.getJSON()),
-            sao: this.sao.getJSON(),
-            edges: this.edges.getJSON(),
-            highlightMaterial: this.highlightMaterial.getJSON(),
-            selectedMaterial: this.selectedMaterial.getJSON(),
-            xrayMaterial: this.xrayMaterial.getJSON(),
-            pointsMaterial: this.pointsMaterial.getJSON(),
-            resolutionScale: this.resolutionScale.getJSON(),
+            layers: Object.values(this.layers).map(viewLayer => viewLayer.toParams()),
+            sectionPlanes: Object.values(this.sectionPlanes).map(sectionPlane => sectionPlane.toParams()),
+            lights: Object.values(this.lights).map(light => light.toParams()),
+            sao: this.sao.toParams(),
+            edges: this.edges.toParams(),
+            highlightMaterial: this.highlightMaterial.toParams(),
+            selectedMaterial: this.selectedMaterial.toParams(),
+            xrayMaterial: this.xrayMaterial.toParams(),
+            pointsMaterial: this.pointsMaterial.toParams(),
+            resolutionScale: this.resolutionScale.toParams(),
             renderMode: this.renderMode
         };
     }

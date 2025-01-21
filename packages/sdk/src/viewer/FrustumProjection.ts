@@ -296,7 +296,7 @@ export class FrustumProjection extends Component implements Projection {
      *
      * @param frustumProjectionParams
      */
-    fromJSON(frustumProjectionParams: FrustumProjectionParams) {
+    fromParams(frustumProjectionParams: FrustumProjectionParams) {
         if (frustumProjectionParams.far !== undefined) {
             this.far = frustumProjectionParams.far;
         }
@@ -320,7 +320,7 @@ export class FrustumProjection extends Component implements Projection {
     /**
      * Gets the current configuration of this FrustumProjection.
      */
-    getJSON(): FrustumProjectionParams {
+    toParams(): FrustumProjectionParams {
         return {
             far: this.far,
             near: this.near,

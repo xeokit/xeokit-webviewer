@@ -22,9 +22,9 @@ export interface SceneGeometryParams {
     /**
      * Primitive type.
      *
-     * Accepted values are {@link constants!SolidPrimitive}, {@link constants!SurfacePrimitive},
-     * {@link constants!LinesPrimitive}, {@link constants!PointsPrimitive}
-     * and {@link constants!TrianglesPrimitive}.
+     * Accepted values are {@link constants!SolidPrimitive | SolidPrimitive}, {@link constants!SurfacePrimitive | SurfacePrimitive},
+     * {@link constants!LinesPrimitive | LinesPrimitive}, {@link constants!PointsPrimitive | PointsPrimitive}
+     * and {@link constants!TrianglesPrimitive | TrianglesPrimitive}.
      */
     primitive: number;
 

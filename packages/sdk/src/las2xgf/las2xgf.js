@@ -89,7 +89,7 @@ try {
         createDataModel
     }).then(result => {
 
-        const {xgfArrayBuffer, dataModelJSON} = result;
+        const {xgfArrayBuffer, dataModelParams} = result;
         const sceneModelDir = path.dirname(sceneModelSrc);
 
         if (sceneModelDir !== "" && !fs.existsSync(sceneModelDir)) {
@@ -101,13 +101,13 @@ try {
         const xktContent = Buffer.from(xgfArrayBuffer);
         fs.writeFileSync(sceneModelSrc, xktContent);
 
-        if (createDataModel && dataModelJSON) {
+        if (createDataModel && dataModelParams) {
             const dataModelDir = path.dirname(dataModelSrc);
             if (dataModelDir !== "" && !fs.existsSync(dataModelDir)) {
                 fs.mkdirSync(dataModelDir, {recursive: true});
             }
             logInfo(`Writing target DataModel JSON: ${dataModelSrc}`);
-            const dataModelContent = JSON.stringify(dataModelJSON);
+            const dataModelContent = JSON.stringify(dataModelParams);
             fs.writeFileSync(dataModelSrc, dataModelContent);
         }
 

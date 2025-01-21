@@ -243,9 +243,9 @@ export class SceneMesh {
     }
 
     /**
-     * Gets this SceneMesh as JSON.
+     * Gets this SceneMesh as SceneMeshParams.
      */
-    getJSON(): SceneMeshParams {
+    toParams(): SceneMeshParams {
         const meshParams = <SceneMeshParams>{
             streamLayerIndex: this.streamLayerIndex || 0,
             id: this.id,

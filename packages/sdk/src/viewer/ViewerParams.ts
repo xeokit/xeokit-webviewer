@@ -1,10 +1,10 @@
 import {ViewParams} from "./ViewParams";
 
 /**
- * Configures a {@link Viewer}.
+ * Parameters for a {@link Viewer}.
  *
- * * Passed to {@link Viewer.fromJSON | Viewer.fromJSON}
- * * Returned by {@link Viewer.getJSON | Viewer.getJSON}
+ * * Passed to {@link Viewer.fromParams | Viewer.fromParams}
+ * * Returned by {@link Viewer.toParams | Viewer.toParams}
  */
 export interface ViewerParams {
 
@@ -16,7 +16,7 @@ export interface ViewerParams {
     /**
      * Paramaters to create or configure {@link View | Views} within the target {@link Viewer}.
      *
-     * When the ViewerParsms is passed to {@link Viewer.fromJSON}, for each {@link ViewParams | ViewParams}
+     * When the ViewerParsms is passed to {@link Viewer.fromParams}, for each {@link ViewParams | ViewParams}
      * that matches the ID of a pre-existing View, the View is updated with whatever properties are provided on the ViewParams.
      *
      * For each ViewParams whose ID matches no existiong View, a new View is created, giving it the ID and

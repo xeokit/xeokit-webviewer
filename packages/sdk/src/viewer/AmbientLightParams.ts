@@ -1,10 +1,10 @@
 import {FloatArrayParam} from "../math";
 
 /**
- * Configures an {@link AmbientLight}.
+ * Parameters for an {@link AmbientLight}.
  *
- * * Returned by {@link AmbientLight.getJSON | AmbientLight.getJSON}
- * * Passed to {@link AmbientLight.fromJSON | AmbientLight.fromJSON}
+ * * Returned by {@link AmbientLight.toParams | AmbientLight.toParams}
+ * * Passed to {@link AmbientLight.fromParams | AmbientLight.fromParams}
  * * Located at {@link ViewParams.lights | ViewParams.lights}
  */
 export interface AmbientLightParams {

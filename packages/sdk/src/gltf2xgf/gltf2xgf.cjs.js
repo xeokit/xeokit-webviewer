@@ -62,12 +62,12 @@ function gltf2xgf(params) {
                 if (xgfArrayBuffer instanceof import_core.SDKError) {
                   return reject(xgfArrayBuffer.message);
                 } else {
-                  const dataModelJSON = dataModel.getJSON();
+                  const dataModelParams = dataModel.toParams();
                   return resolve({
                     xgfArrayBuffer,
                     sceneModel,
                     dataModel,
-                    dataModelJSON
+                    dataModelParams
                   });
                 }
               }).catch((reason) => {
@@ -97,7 +97,7 @@ function gltf2xgf(params) {
                 xgfArrayBuffer,
                 sceneModel,
                 dataModel: null,
-                dataModelJSON: null
+                dataModelParams: null
               });
             }
           }).catch((err) => {

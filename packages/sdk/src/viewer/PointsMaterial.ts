@@ -256,7 +256,7 @@ class PointsMaterial extends Component {
      *
      * @param pointsMaterialParams
      */
-    fromJSON(pointsMaterialParams: PointsMaterialParams) {
+    fromParams(pointsMaterialParams: PointsMaterialParams) {
         if (pointsMaterialParams.pointSize !== undefined) {
             this.pointSize = pointsMaterialParams.pointSize;
         }
@@ -280,7 +280,7 @@ class PointsMaterial extends Component {
     /**
      * Gets the current configuration of this PointsMaterial.
      */
-    getJSON(): PointsMaterialParams {
+    toParams(): PointsMaterialParams {
         return {
             pointSize: this.pointSize,
             roundPoints:this.roundPoints,

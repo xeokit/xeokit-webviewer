@@ -9,11 +9,13 @@ import type {SceneGeometryParams} from "./SceneGeometryParams";
 import type {SceneObjectParams} from "./SceneObjectParams";
 import {SceneModelStreamParams} from "./SceneModelStreamParams";
 
-
 /**
- * {@link SceneModel | SceneModel} creation parameters for {@link Scene.createModel | Scene.createModel}.
+ * Parameters for a {@link SceneModel}.
  *
- * See {@link scene | @xeokit/sdk/scene}   for usage.
+ * * Returned by {@link SceneModel.toParams | SceneModel.toParams}
+ * * Passed to {@link SceneModel.fromParams | SceneModel.fromParams} and {@link Scene.createModel | Scene.createModel}
+ *
+ * See {@link scene | @xeokit/sdk/scene} for usage.
  */
 export interface SceneModelParams {
 
@@ -67,32 +69,32 @@ export interface SceneModelParams {
     position?: FloatArrayParam;
 
     /**
-     * {@link SceneGeometryParams} in the SceneModel.
+     * Parameters for {@link SceneGeometry  | SceneGeometries} in the {@link SceneModel | SceneModel}.
      */
     geometries?: SceneGeometryParams[];
 
     /**
-     * {@link SceneGeometryCompressedParams | SceneGeometryCompressedParams} in the SceneModel.
+     * Compressed parameters for {@link SceneGeometry  | SceneGeometries} in the {@link SceneModel | SceneModel}.
      */
     geometriesCompressed?: SceneGeometryCompressedParams[];
 
     /**
-     * {@link SceneTexture | Textures} in the SceneModel.
+     * Parameters for {@link SceneTexture  | SceneTextures} in the {@link SceneModel | SceneModel}.
      */
     textures?: SceneTextureParams[];
 
     /**
-     * {@link SceneTextureSet | TextureSets} in the SceneModel.
+     * Parameters for {@link SceneTextureSet  | SceneTextureSets} in the {@link SceneModel | SceneModel}.
      */
     textureSets?: SceneTextureSetParams[];
 
     /**
-     * {@link SceneMesh | Meshes} in the SceneModel.
+     * Parameters for {@link SceneMesh  | SceneMeshes} in the {@link SceneModel | SceneModel}.
      */
     meshes?: SceneMeshParams[];
 
     /**
-     * {@link SceneObject | SceneObjects} in the SceneModel.
+     * Parameters for {@link SceneObject  | SceneObjects} in the {@link SceneModel | SceneModel}.
      */
     objects?: SceneObjectParams[];
 
@@ -107,7 +109,10 @@ export interface SceneModelParams {
     layerId?: string;
 
     /**
-     * TODO
+     * Whether this SceneModel retains its {@link SceneObject | SceneObjects}, {@link SceneMesh | SceneMeshes},
+     * {@link SceneGeometry | SceneGeometries} etc. after we call {@link SceneModel.build | SceneModel.build}.
+     *
+     * Default value is `true`.
      */
     retained?: boolean;
 }

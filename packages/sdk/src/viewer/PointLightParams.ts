@@ -1,10 +1,10 @@
 import {FloatArrayParam} from "../math";
 
 /**
- * Configures a {@link PointLight}.
+ * Parameters for a {@link PointLight}.
  *
- * * Returned by {@link PointLight.getJSON | PointLight.getJSON}
- * * Passed toy {@link PointLight.fromJSON | PointLight.fromJSON}
+ * * Returned by {@link PointLight.toParams | PointLight.toParams}
+ * * Passed toy {@link PointLight.fromParams | PointLight.fromParams}
  * * Located at {@link ViewParams.lights | ViewParams.lights}
  */
 export interface PointLightParams {

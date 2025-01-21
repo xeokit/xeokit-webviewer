@@ -1,7 +1,10 @@
 import type {FloatArrayParam} from "../math";
 
 /**
- * {@link SceneMesh} creation parameters for {@link SceneModel.createMesh | SceneModel.createMesh}.
+ * Parameters for a {@link SceneMesh}.
+ *
+ * * Passed to  {@link SceneModel.createMesh | SceneModel.createMesh}
+ * * Located at {@link SceneModelParams.meshes | SceneModelParams.meshes}
  *
  * See {@link scene | @xeokit/sdk/scene} for usage.
  */

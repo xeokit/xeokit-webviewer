@@ -1,8 +1,8 @@
 /**
- * Configures a {@link PointsMaterial}.
+ * Parameters for a {@link PointsMaterial}.
  *
- * * Returned by {@link PointsMaterial.getJSON | PointsMaterial.getJSON}
- * * Passed to {@link PointsMaterial.fromJSON | PointsMaterial.fromJSON}
+ * * Returned by {@link PointsMaterial.toParams | PointsMaterial.toParams}
+ * * Passed to {@link PointsMaterial.fromParams | PointsMaterial.fromParams}
  * * Located at {@link ViewParams.pointsMaterial | ViewParams.pointsMaterial}
  */
 export interface PointsMaterialParams {

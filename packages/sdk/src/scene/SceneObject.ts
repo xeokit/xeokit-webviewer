@@ -104,9 +104,9 @@ export class SceneObject {
     }
 
     /**
-     * Gets this SceneObject as JSON.
+     * Gets this SceneObject as SceneObjectParams.
      */
-    getJSON(): SceneObjectParams {
+    toParams(): SceneObjectParams {
         const sceneObjectParams = <SceneObjectParams>{
             id: this.id,
             meshIds: []

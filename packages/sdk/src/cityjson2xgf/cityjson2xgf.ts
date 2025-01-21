@@ -17,7 +17,7 @@ function cityjson2xgf(params: {
     xgfArrayBuffer: ArrayBuffer,
     sceneModel: SceneModel,
     dataModel?: DataModel,
-    dataModelJSON: any
+    dataModelParams: any
 }> {
     const {fileData, xgfVersion, createDataModel} = params;
     return new Promise(function (resolve, reject) {
@@ -49,12 +49,12 @@ function cityjson2xgf(params: {
                             if (xgfArrayBuffer instanceof SDKError) {
                                 return reject(xgfArrayBuffer.message);
                             } else {
-                                const dataModelJSON = dataModel.getJSON();
+                                const dataModelParams = dataModel.toParams();
                                 return resolve({
                                     xgfArrayBuffer,
                                     sceneModel,
                                     dataModel,
-                                    dataModelJSON
+                                    dataModelParams
                                 });
                             }
                         }).catch(reason => {

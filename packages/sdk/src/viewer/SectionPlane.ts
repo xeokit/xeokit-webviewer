@@ -193,7 +193,7 @@ class SectionPlane extends Component {
      *
      * @param sectionPlaneParams
      */
-    fromJSON(sectionPlaneParams: SectionPlaneParams) {
+    fromParams(sectionPlaneParams: SectionPlaneParams) {
         if (sectionPlaneParams.dir) {
             this.dir = sectionPlaneParams.dir;
         }
@@ -208,7 +208,7 @@ class SectionPlane extends Component {
     /**
      * Gets the current configuration of this SectionPlane.
      */
-    getJSON(): SectionPlaneParams {
+    toParams(): SectionPlaneParams {
         return {
             id: this.id,
             dir: Array.from(this.#state.dir),

@@ -159,7 +159,7 @@ class Edges extends Component {
     /**
      * Gets the current configuration of this Edges effect.
      */
-    getJSON(): EdgesParams {
+    toParams(): EdgesParams {
         return {
             renderModes: this.renderModes,
             edgeColor: Array.from(this.edgeColor),
@@ -173,7 +173,7 @@ class Edges extends Component {
      *
      * @param edgesParams
      */
-    fromJSON(edgesParams: EdgesParams) {
+    fromParams(edgesParams: EdgesParams) {
         this.renderModes = edgesParams.renderModes;
         this.edgeColor = Array.from(edgesParams.edgeColor);
         this.edgeWidth = edgesParams.edgeWidth;

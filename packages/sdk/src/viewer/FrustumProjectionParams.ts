@@ -1,8 +1,8 @@
 /**
- * Configuration for a {@link FrustumProjection}.
+ * Parameters for a {@link FrustumProjection}.
  *
- * * Returned by {@link FrustumProjection.getJSON | FrustumProjection.getJSON}
- * * Passed to {@link FrustumProjection.fromJSON | FrustumProjection.fromJSON}
+ * * Returned by {@link FrustumProjection.toParams | FrustumProjection.toParams}
+ * * Passed to {@link FrustumProjection.fromParams | FrustumProjection.fromParams}
  * * Located at {@link CameraParams.frustumProjection | CameraParams.frustumProjection}
  */
 export interface FrustumProjectionParams {

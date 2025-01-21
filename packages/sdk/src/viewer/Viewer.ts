@@ -424,13 +424,13 @@ export class Viewer extends Component {
      *
      * @param viewerParams
      */
-    fromJSON(viewerParams: ViewerParams) {
+    fromParams(viewerParams: ViewerParams) {
         if (viewerParams.views) {
             for (let viewParams of viewerParams.views) {
                 if (viewParams.id !== undefined) {
                     const existingView = this.views[viewParams.id];
                     if (existingView) {
-                        existingView.fromJSON(viewParams); // Update existing View
+                        existingView.fromParams(viewParams); // Update existing View
                     } else {
                         this.createView(viewParams);
                     }
@@ -444,9 +444,9 @@ export class Viewer extends Component {
     /**
      * Gets the current configuration of this Viewer.
      */
-    getJSON(): ViewerParams {
+    toParams(): ViewerParams {
         return {
-            views: this.viewList.map(el => el.getJSON())
+            views: this.viewList.map(el => el.toParams())
         };
     }
 

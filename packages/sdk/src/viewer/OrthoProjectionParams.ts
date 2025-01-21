@@ -1,8 +1,8 @@
 /**
- * Configuration for an {@link OrthoProjection}.
+ * Parameters for an {@link OrthoProjection}.
  *
- * * Returned by {@link OrthoProjection.getJSON | OrthoProjection.getJSON}
- * * Passed to {@link OrthoProjection.fromJSON | OrthoProjection.fromJSON}
+ * * Returned by {@link OrthoProjection.toParams | OrthoProjection.toParams}
+ * * Passed to {@link OrthoProjection.fromParams | OrthoProjection.fromParams}
  * * Located at {@link CameraParams.orthoProjection | CameraParams.orthoProjection}
  */
 export interface OrthoProjectionParams {

@@ -19,7 +19,7 @@ function webifc2xgf(params: {
     xgfArrayBuffer: ArrayBuffer,
     sceneModel: SceneModel,
     dataModel?: DataModel,
-    dataModelJSON: any
+    dataModelParams: any
 }> {
     const {ifcAPI, fileData, xgfVersion, createDataModel} = params;
     return new Promise(function (resolve, reject) {
@@ -53,12 +53,12 @@ function webifc2xgf(params: {
                                 if (xgfArrayBuffer instanceof SDKError) {
                                     return reject(xgfArrayBuffer.message);
                                 } else {
-                                    const dataModelJSON = dataModel.getJSON();
+                                    const dataModelParams = dataModel.toParams();
                                     return resolve({
                                         xgfArrayBuffer,
                                         sceneModel,
                                         dataModel,
-                                        dataModelJSON
+                                        dataModelParams
                                     });
                                 }
                             }).catch(reason => {
@@ -89,7 +89,7 @@ function webifc2xgf(params: {
                                 xgfArrayBuffer,
                                 sceneModel,
                                 dataModel: null,
-                                dataModelJSON: null
+                                dataModelParams: null
                             });
                         }
                     }).catch(reason => {

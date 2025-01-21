@@ -1,10 +1,10 @@
 import type {FloatArrayParam} from "../math";
 
 /**
- * Configuration for a {@link SectionPlane}.
+ * Parameters for a {@link SectionPlane}.
  *
- * * Returned by {@link SectionPlane.getJSON | SectionPlane.getJSON}
- * * Passed to {@link SectionPlane.fromJSON | SectionPlane.fromJSON} and {@link View.createSectionPlane | View.createSectionPlane}
+ * * Returned by {@link SectionPlane.toParams | SectionPlane.toParams}
+ * * Passed to {@link SectionPlane.fromParams | SectionPlane.fromParams} and {@link View.createSectionPlane | View.createSectionPlane}
  * * Located at {@link ViewParams.sectionPlanes | ViewParams.sectionPlanes}
  */
 export interface SectionPlaneParams {

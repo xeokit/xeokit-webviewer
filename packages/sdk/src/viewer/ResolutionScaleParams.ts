@@ -1,8 +1,8 @@
 /**
- * Configuration for a {@link ResolutionScale}.
+ * Parameters for a {@link ResolutionScale}.
  *
- * * Returned by {@link ResolutionScale.getJSON | ResolutionScale.getJSON}
- * * Passed to {@link ResolutionScale.fromJSON | ResolutionScale.fromJSON}
+ * * Returned by {@link ResolutionScale.toParams | ResolutionScale.toParams}
+ * * Passed to {@link ResolutionScale.fromParams | ResolutionScale.fromParams}
  * * Located at {@link ViewParams.resolutionScale | ViewParams.resolutionScale}
  */
 export interface ResolutionScaleParams {

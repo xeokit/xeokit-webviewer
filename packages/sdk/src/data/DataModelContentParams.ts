@@ -4,24 +4,24 @@ import type {DataObjectParams} from "./DataObjectParams";
 import type {RelationshipParams} from "./RelationshipParams";
 
 /**
- * Parameters for populating a {@link DataModel} with {@link data!DataModel.fromJSON | DataModel.fromJSON}.
+ * Parameters for populating a {@link DataModel} with {@link data!DataModel.fromParams | DataModel.fromParams}.
  *
  * See {@link data | @xeokit/sdk/data} for usage.
  */
 export interface DataModelContentParams {
 
     /**
-     * The{@link PropertySet | PropertySets} in the DataModel.
+     * Parameters fpr {@link PropertySet | PropertySets} in the {@link DataModel | DataModel}.
      */
     propertySets?: PropertySetParams[];
 
     /**
-     * The {@link DataObject | DataObjects} in the DataModel.
+     * Parameters fpr {@link DataObject | DataObjects} in the {@link DataModel | DataModel}.
      */
     objects?: DataObjectParams[];
 
     /**
-     * The {@link Relationship | Relationshipships} in the DataModel.
+     * Parameters fpr {@link Relationship | Relationships} in the {@link DataModel | DataModel}.
      */
     relationships?: RelationshipParams[];
 }

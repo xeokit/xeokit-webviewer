@@ -39,7 +39,7 @@ export function loadDataModel(params: {
         if (dataModel.built) {
             return reject("DataModel already built");
         }
-        dataModel.fromJSON(fileData);
+        dataModel.fromParams(fileData);
         return resolve();
     });
 }

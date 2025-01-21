@@ -1,5 +1,10 @@
 /**
- * {@link SceneObject} creation parameters for {@link SceneModel.createObject | SceneModel.createObject}.
+ * Parameters for a {@link SceneObject}.
+ *
+ * * Passed to  {@link SceneModel.createObject | SceneModel.createObject}
+ * * Located at {@link SceneModelParams.objects | SceneModelParams.objects}
+ *
+ * See {@link scene | @xeokit/sdk/scene} for usage.
  */
 export interface SceneObjectParams {
 

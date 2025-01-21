@@ -998,7 +998,7 @@ class ViewLayer extends Component {
      *
      * @param viewLayerParams
      */
-    fromJSON(viewLayerParams: ViewLayerParams) {
+    fromParams(viewLayerParams: ViewLayerParams) {
         if (viewLayerParams.autoDestroy) {
             this.autoDestroy = viewLayerParams.autoDestroy;
         }
@@ -1007,7 +1007,7 @@ class ViewLayer extends Component {
     /**
      * Gets the current configuration of this ViewLayer.
      */
-    getJSON(): ViewLayerParams {
+    toParams(): ViewLayerParams {
         return {
             id: this.id,
             autoDestroy: this.autoDestroy

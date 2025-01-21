@@ -1,10 +1,10 @@
 import {FloatArrayParam} from "../math";
 
 /**
- * Configuration for a View's selected, highlighted and x-ray effects.
+ * Parameters for a View's selected, highlighted and x-ray effects.
  *
- * * Returned by {@link EmphasisMaterial.getJSON | EmphasisMaterial.getJSON}
- * * Passed to {@link EmphasisMaterial.fromJSON | EmphasisMaterial.fromJSON}
+ * * Returned by {@link EmphasisMaterial.toParams | EmphasisMaterial.toParams}
+ * * Passed to {@link EmphasisMaterial.fromParams | EmphasisMaterial.fromParams}
  * * Located at {@link ViewParams.highlightMaterial | ViewParams.highlightMaterial}, {@link ViewParams.selectedMaterial | ViewParams.selectedMaterial} and {@link ViewParams.xrayMaterial | ViewParams.xrayMaterial}
  */
 export interface EmphasisMaterialParams {

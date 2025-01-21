@@ -292,7 +292,7 @@ export class OrthoProjection extends Component implements Projection {
      *
      * @param orthoProjectionParams
      */
-    fromJSON(orthoProjectionParams: OrthoProjectionParams) {
+    fromParams(orthoProjectionParams: OrthoProjectionParams) {
         if (orthoProjectionParams.far !== undefined) {
             this.far = orthoProjectionParams.far;
         }
@@ -307,7 +307,7 @@ export class OrthoProjection extends Component implements Projection {
     /**
      * Gets the current configuration of this OrthoProjection.
      */
-    getJSON(): OrthoProjectionParams {
+    toParams(): OrthoProjectionParams {
         return {
             far: this.far,
             near: this.near,

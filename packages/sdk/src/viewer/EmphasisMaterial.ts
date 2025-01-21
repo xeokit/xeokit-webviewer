@@ -296,7 +296,7 @@ class EmphasisMaterial extends Component {
      * Configures this EmphasisMaterial.
      * @param emphasisMaterialParams
      */
-    fromJSON(emphasisMaterialParams: EmphasisMaterialParams) {
+    fromParams(emphasisMaterialParams: EmphasisMaterialParams) {
         if (emphasisMaterialParams.fillColor !== undefined) {
             this.fillColor = emphasisMaterialParams.fillColor;
         }
@@ -329,7 +329,7 @@ class EmphasisMaterial extends Component {
     /**
      * Gets the current configuration of this EmphasisMaterial.
      */
-    getJSON(): EmphasisMaterialParams {
+    toParams(): EmphasisMaterialParams {
         return {
             fillColor: Array.from(this.#state.fillColor),
             backfaces: this.#state.backfaces,

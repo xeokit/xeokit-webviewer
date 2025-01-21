@@ -1,6 +1,8 @@
-
 /**
- * Parameters for creating a {@link Relationship | Relationship} with {@link DataModel.createRelationship | DataModel.createRelationship}.
+ * Parameters for a {@link Relationship}.
+ *
+ * * Passed to  {@link DataModel.createRelationship | DataModel.createRelationship}
+ * * Located at {@link DataModelParams.relationships | DataModelParams.relationships}
  *
  * See {@link data | @xeokit/sdk/data}   for usage.
  */

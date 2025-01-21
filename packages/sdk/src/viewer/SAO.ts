@@ -354,7 +354,7 @@ export class SAO extends Component {
     /**
      * Gets the current configuration of this SAO.
      */
-    getJSON(): SAOParams {
+    toParams(): SAOParams {
         return{
             renderModes: this.renderModes,
             intensity: this.intensity,
@@ -374,7 +374,7 @@ export class SAO extends Component {
      *
      * @param saoParams
      */
-    fromJSON(saoParams: SAOParams) {
+    fromParams(saoParams: SAOParams) {
         this.renderModes = saoParams.renderModes;
         this.intensity = saoParams.intensity;
         this.minResolution = saoParams.minResolution;

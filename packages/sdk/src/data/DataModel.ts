@@ -171,46 +171,7 @@ export class DataModel extends Component {
         this.built = false;
         this.#destroyed = false;
 
-        this.fromJSON(dataModelParams);
-    }
-
-    /**
-     * Creates components in this DataModel from JSON.
-     *
-     * See {@link data | @xeokit/sdk/data}   for usage.
-     *
-     * @param dataModelParams
-     * @returns *void*
-     * * On success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * If this DataModel has already been built.
-     * * If this DataModel has already been destroyed.
-     * * A duplicate PropertySet was already created for this DataModel.
-     * * A duplicate DataObject was already created in this DataModel.
-     * * DataObjects were not found for a Relationship.
-     */
-    fromJSON(dataModelParams: DataModelContentParams): void | SDKError {
-        if (this.destroyed) {
-            return new SDKError("Failed to add components to DataModel - DataModel already destroyed");
-        }
-        if (this.built) {
-            throw new SDKError("Failed to add components to DataModel - DataModel already built");
-        }
-        if (dataModelParams.propertySets) {
-            for (let i = 0, len = dataModelParams.propertySets.length; i < len; i++) {
-                this.createPropertySet(dataModelParams.propertySets[i]);
-            }
-        }
-        if (dataModelParams.objects) {
-            for (let i = 0, len = dataModelParams.objects.length; i < len; i++) {
-                this.createObject(dataModelParams.objects[i]);
-            }
-        }
-        if (dataModelParams.relationships) {
-            for (let i = 0, len = dataModelParams.relationships.length; i < len; i++) {
-                this.createRelationship(dataModelParams.relationships[i]);
-            }
-        }
+        this.fromParams(dataModelParams);
     }
 
     /**
@@ -522,9 +483,48 @@ export class DataModel extends Component {
     }
 
     /**
-     * Gets this DataModel as JSON.
+     * Adds components from the given DataModelParams.
+     *
+     * See {@link data | @xeokit/sdk/data}   for usage.
+     *
+     * @param dataModelParams
+     * @returns *void*
+     * * On success.
+     * @returns *{@link core!SDKError | SDKError}*
+     * * If this DataModel has already been built.
+     * * If this DataModel has already been destroyed.
+     * * A duplicate PropertySet was already created for this DataModel.
+     * * A duplicate DataObject was already created in this DataModel.
+     * * DataObjects were not found for a Relationship.
      */
-    getJSON(): DataModelParams | SDKError {
+    fromParams(dataModelParams: DataModelContentParams): void | SDKError {
+        if (this.destroyed) {
+            return new SDKError("Failed to add components to DataModel - DataModel already destroyed");
+        }
+        if (this.built) {
+            throw new SDKError("Failed to add components to DataModel - DataModel already built");
+        }
+        if (dataModelParams.propertySets) {
+            for (let i = 0, len = dataModelParams.propertySets.length; i < len; i++) {
+                this.createPropertySet(dataModelParams.propertySets[i]);
+            }
+        }
+        if (dataModelParams.objects) {
+            for (let i = 0, len = dataModelParams.objects.length; i < len; i++) {
+                this.createObject(dataModelParams.objects[i]);
+            }
+        }
+        if (dataModelParams.relationships) {
+            for (let i = 0, len = dataModelParams.relationships.length; i < len; i++) {
+                this.createRelationship(dataModelParams.relationships[i]);
+            }
+        }
+    }
+
+    /**
+     * Gets this DataModel as a DataModelParams.
+     */
+    toParams(): DataModelParams | SDKError {
         if (this.destroyed) {
             return new SDKError("DataModel already destroyed");
         }

@@ -12,10 +12,10 @@ import {PointsMaterialParams} from "./PointsMaterialParams";
 import {ResolutionScaleParams} from "./ResolutionScaleParams";
 
 /**
- * Configuration for a {@link View}.
+ * Parameters for a {@link View}.
  *
- * * Returned by {@link View.getJSON | View.getJSON}
- * * Passed to {@link View.fromJSON | View.fromJSON} and {@link Viewer.createView | Viewer.createView}
+ * * Returned by {@link View.toParams | View.toParams}
+ * * Passed to {@link View.fromParams | View.fromParams} and {@link Viewer.createView | Viewer.createView}
  * * Located at {@link ViewerParams.views | ViewerParams.views}
  */
 export interface ViewParams {
@@ -118,58 +118,58 @@ export interface ViewParams {
     autoLayers?: boolean;
 
     /**
-     * Configures the View's scalable ambient obscurance effect, {@link SAO}, which enhances 3D model visualization by darkening
+     * Parameters for the View's scalable ambient obscurance effect, {@link SAO}, which enhances 3D model visualization by darkening
      * areas with limited ambient light exposure.
      */
     sao?: SAOParams;
 
     /**
-     * Configures the View's edge enhancement effect, {@link Edges}.
+     * Parameters for the View's edge enhancement effect, {@link Edges}.
      */
     edges?: EdgesParams;
 
     /**
-     * Configures the appearance of {@link ViewObject | ViewObjects} in the View when they are selected.
+     * Parameters for the appearance of {@link ViewObject | ViewObjects} in the View when they are selected.
      */
     selectedMaterial?: EmphasisMaterialParams;
 
     /**
-     * Configures the appearance of {@link ViewObject | ViewObjects} in the View when they are highlighted.
+     * Parameters for the appearance of {@link ViewObject | ViewObjects} in the View when they are highlighted.
      */
     highlightMaterial?: EmphasisMaterialParams;
 
     /**
-     * Configures the appearance of {@link ViewObject | ViewObjects} in the View when they are X-rayed.
+     * Parameters for the appearance of {@link ViewObject | ViewObjects} in the View when they are X-rayed.
      */
     xrayMaterial?: EmphasisMaterialParams;
 
     /**
-     * Configures the appearance of the {@link View | View's} {@link PointsMaterial}.
+     * Parameters for the {@link View | View's} {@link PointsMaterial}.
      */
     pointsMaterial?: PointsMaterialParams;
 
     /**
-     * Configures the View's {@link ViewLayer | ViewLayers}.
+     * Parameters for the View's {@link ViewLayer | ViewLayers}.
      */
     layers?: ViewLayerParams[];
 
     /**
-     * Configures the View's {@link Camera}.
+     * Parameters for the View's {@link Camera}.
      */
     camera?: CameraParams;
 
     /**
-     * Configures the View's light sources.
+     * Parameters for the View's light sources.
      */
     lights?: (AmbientLightParams | PointLightParams | DirLightParams)[];
 
     /**
-     * Configures the View's {@link SectionPlane | SectionPlanes}.
+     * Paramaters for the View's {@link SectionPlane | SectionPlanes}.
      */
     sectionPlanes?: SectionPlaneParams[];
 
     /**
-     * Configures the View's {@link ResolutionScale}.
+     * Paramaters the View's {@link ResolutionScale}.
      */
     resolutionScale?: ResolutionScaleParams;
 

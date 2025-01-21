@@ -1,15 +1,17 @@
-
 import {DataModelContentParams} from "./DataModelContentParams";
 
 /**
- * Parameters for creating a {@link DataModel | DataModel} with {@link Data.createModel | Data.createModel}.
+ * Parameters for a {@link DataModel}.
+ *
+ * * Returned by {@link DataModel.toParams | DataModel.toParams}
+ * * Passed to {@link DataModel.fromParams | DataModel.fromParams} and {@link Data.createModel | Data.createModel}
  *
  * See {@link data | @xeokit/sdk/data} for usage.
  */
 export interface DataModelParams extends DataModelContentParams {
 
     /**
-     * Unique ID of the DataModel.
+     * Unique ID of the data model.
      *
      * The DataModel is stored in {@link Data.models | Data.models} under this ID.
      */
@@ -31,7 +33,7 @@ export interface DataModelParams extends DataModelContentParams {
     author?: string;
 
     /**
-     * The data the model was created, if available.
+     * The date that the data model was created on, if available.
      */
     createdAt?: string;
 

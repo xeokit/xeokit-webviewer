@@ -23,8 +23,9 @@ export interface SceneGeometryCompressedParams {
     /**
      * Primitive type.
      *
-     * Possible values are {@link constants!SolidPrimitive}, {@link constants!SurfacePrimitive}, {@link constants!LinesPrimitive}, {@link constants!PointsPrimitive}
-     * and {@link constants!TrianglesPrimitive}.
+     * Possible values are {@link constants!SolidPrimitive | SolidPrimitive}, {@link constants!SurfacePrimitive | SurfacePrimitive},
+     * {@link constants!LinesPrimitive | LinesPrimitive}, {@link constants!PointsPrimitive | PointsPrimitive}
+     * and {@link constants!TrianglesPrimitive | TrianglesPrimitive}.
      */
     primitive: number;
 

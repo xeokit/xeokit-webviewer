@@ -432,10 +432,10 @@ export class WebGLRenderer implements Renderer {
      */
     attachSceneModel(sceneModel: SceneModel): SDKError | void {
         if (!this.#viewer) {
-            throw new SDKError("Can't attach SceneModel to WebGLRenderer - no Viewer is attached");
+            return new SDKError("Can't attach SceneModel to WebGLRenderer - no Viewer is attached");
         }
         if (this.#rendererViewsList.length === 0) {
-            throw new SDKError("Can't attach SceneModel to WebGLRenderer - no View is attached");
+            return new SDKError("Can't attach SceneModel to WebGLRenderer - no View is attached");
         }
         const rendererModel = new WebGLRendererModel({
             id: sceneModel.id,
@@ -609,11 +609,11 @@ export class WebGLRenderer implements Renderer {
      */
     clear(viewIndex: number): void | SDKError {
         if (!this.#viewer) {
-            throw new SDKError("Can't clear canvas with WebGLRenderer - no Viewer and View is attached");
+            return new SDKError("Can't clear canvas with WebGLRenderer - no Viewer and View is attached");
         }
         const rendererView = this.#rendererViewsList[viewIndex];
         if (!rendererView) {
-            throw new SDKError(`Can't clear canvas with WebGLRenderer - no View attached at given viewIndex: ${viewIndex}`);
+            return new SDKError(`Can't clear canvas with WebGLRenderer - no View attached at given viewIndex: ${viewIndex}`);
         }
         const gl = this.renderContext.gl;
         gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
@@ -671,11 +671,11 @@ export class WebGLRenderer implements Renderer {
      */
     render(viewIndex: number, params?: { force: boolean; opaqueOnly: boolean }): void | SDKError {
         if (!this.#viewer) {
-            throw new SDKError("Can't render with WebGLRenderer - no Viewer and View is attached");
+            return new SDKError("Can't render with WebGLRenderer - no Viewer and View is attached");
         }
         const rendererView = this.#rendererViewsList[viewIndex];
         if (!rendererView) {
-            throw new SDKError(`Can't render with WebGLRenderer - no View attached at given viewIndex: ${viewIndex}`);
+            return new SDKError(`Can't render with WebGLRenderer - no View attached at given viewIndex: ${viewIndex}`);
         }
         this.renderStats.reset();
         if (this.#shadersDirty) {
@@ -790,7 +790,7 @@ export class WebGLRenderer implements Renderer {
             return;
         }
         this.#activateExtensions();
-        if (rendererView.view.sao.enabled && rendererView.view.sao.possible) {
+        if (rendererView.view.sao.applied) {
       //      this.#drawSAOBuffers(params);
         }
         this.#drawColor(params);
@@ -1026,7 +1026,7 @@ export class WebGLRenderer implements Renderer {
                 }
             }
 
-            if (rendererView.edgesEnabled && view.edges.enabled) {
+            if (rendererView.edgesEnabled && view.edges.applied) {
                 if (meshCounts.numTransparent < meshCounts.numMeshes) {
                     edgesColorOpaqueBin.push(layer);
                 }

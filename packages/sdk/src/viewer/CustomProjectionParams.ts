@@ -1,10 +1,10 @@
 import {FloatArrayParam} from "../math";
 
 /**
- * Configures a {@link CustomProjection}.
+ * Parameters for a {@link CustomProjection}.
  *
- * * Returned by {@link CustomProjection.getJSON | CustomProjection.getJSON}
- * * Passed to {@link CustomProjection.fromJSON | CustomProjection.fromJSON}
+ * * Returned by {@link CustomProjection.toParams | CustomProjection.toParams}
+ * * Passed to {@link CustomProjection.fromParams | CustomProjection.fromParams}
  * * Located at {@link CameraParams.customProjection | CameraParams.customProjection}
  */
 export interface CustomProjectionParams {

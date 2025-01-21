@@ -24,7 +24,7 @@ export class ModelChunksLoader {
         const {sceneModelLoader, dataModelLoader, mimeType} = params;
         this.#sceneModelLoader = sceneModelLoader;
         this.#dataModelLoader = dataModelLoader || ((params) => {
-            params.dataModel.fromJSON(params.fileData);
+            params.dataModel.fromParams(params.fileData);
         })
         this.#mimeType = mimeType;
         this.#cancelled = false;

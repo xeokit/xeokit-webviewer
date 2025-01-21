@@ -142,7 +142,7 @@ class DirLight extends Component {
      *
      * @param dirLightParams
      */
-    fromJSON(dirLightParams: DirLightParams) {
+    fromParams(dirLightParams: DirLightParams) {
         if (dirLightParams.dir) {
             this.dir = dirLightParams.dir;
         }
@@ -158,7 +158,7 @@ class DirLight extends Component {
     /**
      * Gets this DirLight's current configuration.
      */
-    getJSON(): DirLightParams {
+    toParams(): DirLightParams {
         return {
             id: this.id,
             dir: Array.from(this.dir),

@@ -1,8 +1,8 @@
 /**
- * Configuration for an {@link SAO}.
+ * Parameters for an {@link SAO}.
  *
- * * Returned by {@link SAO.getJSON | SAO.getJSON}
- * * Passed to {@link SAO.fromJSON | SAO.fromJSON}
+ * * Returned by {@link SAO.toParams | SAO.toParams}
+ * * Passed to {@link SAO.fromParams | SAO.fromParams}
  * * Located at {@link ViewParams.sao | ViewParams.sao}
  */
 export interface SAOParams {

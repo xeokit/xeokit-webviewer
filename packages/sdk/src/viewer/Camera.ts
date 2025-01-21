@@ -918,7 +918,7 @@ class Camera extends Component {
     /**
      * Gets the configuration of this Camera.
      */
-    getJSON(): CameraParams {
+    toParams(): CameraParams {
         return {
             eye: Array.from(this.#state.eye),
             look: Array.from(this.#state.look),
@@ -927,10 +927,10 @@ class Camera extends Component {
             gimbalLock: this.gimbalLock,
             constrainPitch: this.constrainPitch,
             projectionType: this.projectionType,
-            perspectiveProjection: this.perspectiveProjection.getJSON(),
-            orthoProjection: this.orthoProjection.getJSON(),
-            frustumProjection: this.frustumProjection.getJSON(),
-            customProjection: this.customProjection.getJSON()
+            perspectiveProjection: this.perspectiveProjection.toParams(),
+            orthoProjection: this.orthoProjection.toParams(),
+            frustumProjection: this.frustumProjection.toParams(),
+            customProjection: this.customProjection.toParams()
         };
     }
 
@@ -938,7 +938,7 @@ class Camera extends Component {
      * Configures this Camera.
      * @param cameraParams
      */
-    fromJSON(cameraParams: CameraParams) {
+    fromParams(cameraParams: CameraParams) {
         if (cameraParams.eye) {
             this.eye = cameraParams.eye;
         }
@@ -955,13 +955,13 @@ class Camera extends Component {
             this.gimbalLock = cameraParams.gimbalLock;
         }
         if (cameraParams.perspectiveProjection) {
-            this.perspectiveProjection.fromJSON(cameraParams.perspectiveProjection);
+            this.perspectiveProjection.fromParams(cameraParams.perspectiveProjection);
         }
         if (cameraParams.orthoProjection) {
-            this.orthoProjection.fromJSON(cameraParams.orthoProjection);
+            this.orthoProjection.fromParams(cameraParams.orthoProjection);
         }
         if (cameraParams.frustumProjection) {
-            this.frustumProjection.fromJSON(cameraParams.frustumProjection);
+            this.frustumProjection.fromParams(cameraParams.frustumProjection);
         }
         if (cameraParams.projectionType !== undefined) {
             this.projectionType = cameraParams.projectionType;

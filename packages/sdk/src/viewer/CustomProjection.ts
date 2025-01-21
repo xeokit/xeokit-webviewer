@@ -158,7 +158,7 @@ class CustomProjection  extends Component implements Projection {
      * Configures this CustomProjection.
      * @param customProjectionParams
      */
-    fromJSON(customProjectionParams: CustomProjectionParams) {
+    fromParams(customProjectionParams: CustomProjectionParams) {
         if (customProjectionParams.projMatrix) {
             this.projMatrix = customProjectionParams.projMatrix;
         }
@@ -167,7 +167,7 @@ class CustomProjection  extends Component implements Projection {
     /**
      * Gets the current configuration of this CustomProjection.
      */
-    getJSON(): CustomProjectionParams {
+    toParams(): CustomProjectionParams {
         return {
             projMatrix: Array.from(this.projMatrix)
         };

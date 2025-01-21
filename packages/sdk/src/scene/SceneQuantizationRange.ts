@@ -31,7 +31,7 @@ export class SceneQuantizationRange {
     /**
      * Gets this SceneQuantizationRange as JSON.
      */
-    getJSON(): SceneQuantizationRangeParams {
+    toParams(): SceneQuantizationRangeParams {
         const quantizationRangeParams = <SceneQuantizationRangeParams>{
             id: this.id,
             aabb: [

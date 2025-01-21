@@ -1,10 +1,10 @@
 import {FloatArrayParam} from "../math";
 
 /**
- * Configures a {@link DirLight}.
+ * Parameters for a {@link DirLight}.
  *
- * * Returned by {@link DirLight.getJSON | DirLight.getJSON}
- * * Passed to {@link DirLight.fromJSON | DirLight.fromJSON}
+ * * Returned by {@link DirLight.toParams | DirLight.toParams}
+ * * Passed to {@link DirLight.fromParams | DirLight.fromParams}
  * * Located at {@link ViewParams.lights | ViewParams.lights}
  */
 export interface DirLightParams {

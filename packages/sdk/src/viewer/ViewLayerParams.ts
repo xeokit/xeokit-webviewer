@@ -1,8 +1,8 @@
 /**
- * Configuration for a {@link ViewLayer}.
+ * Parameters for a {@link ViewLayer}.
  *
- * * Returned by {@link ViewLayer.getJSON | ViewLayer.getJSON}
- * * Passed to {@link ViewLayer.fromJSON | ViewLayer.fromJSON} and {@link View.createLayer | View.createLayer}
+ * * Returned by {@link ViewLayer.toParams | ViewLayer.toParams}
+ * * Passed to {@link ViewLayer.fromParams | ViewLayer.fromParams} and {@link View.createLayer | View.createLayer}
  * * Located at {@link ViewParams.viewLayers | ViewParams.viewLayers}
  */
 export interface ViewLayerParams {

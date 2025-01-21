@@ -247,9 +247,10 @@ export class SceneModel extends Component {
     public readonly stats: SceneModelStats;
 
     /**
-     * TODO
+     * Whether this SceneModel retains {@link SceneObject | SceneObjects}, {@link SceneMesh | SceneMeshes},
+     * {@link SceneGeometry | SceneGeometries} etc after we call {@link SceneModel.build | SceneModel.build}.
      *
-     * @see {@link SceneModelParams | SceneModelParams}.
+     * Default value is `true`.
      */
     public readonly retained: boolean;
 
@@ -311,62 +312,9 @@ export class SceneModel extends Component {
             textureBytes: 0
         };
 
-        this.fromJSON(sceneModelParams);
+        this.fromParams(sceneModelParams);
 
         this.retained = (sceneModelParams.retained !== false);
-    }
-
-    /**
-     * Creates components in this SceneModel from JSON.
-     *
-     * See {@link scene | @xeokit/sdk/scene}   for usage.
-     *
-     * @param sceneModelParams
-     * @returns *void*
-     * * On success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * If this SceneModel has already been built.
-     * * If this SceneModel has already been destroyed.
-     * * A duplicate component ({@link SceneObject}, {@link SceneMesh},
-     * {@link SceneGeometry}, {@link SceneTexture} etc.) was already created within this SceneModel.
-     */
-    fromJSON(sceneModelParams: SceneModelParams): void | SDKError {
-        if (this.destroyed) {
-            return new SDKError("Failed to add components to SceneModel - SceneModel already destroyed");
-        }
-        if (this.built) {
-            return new SDKError("Failed to add components to SceneModel - SceneModel already built");
-        }
-        if (sceneModelParams.geometries) {
-            for (let i = 0, len = sceneModelParams.geometries.length; i < len; i++) {
-                this.createGeometry(sceneModelParams.geometries[i]);
-            }
-        }
-        if (sceneModelParams.geometriesCompressed) {
-            for (let i = 0, len = sceneModelParams.geometriesCompressed.length; i < len; i++) {
-                this.createGeometryCompressed(sceneModelParams.geometriesCompressed[i]);
-            }
-        }
-        if (sceneModelParams.textures) {
-            for (let i = 0, len = sceneModelParams.textures.length; i < len; i++) {
-                this.createTexture(sceneModelParams.textures[i]);
-            }
-        }
-        if (sceneModelParams.textureSets) {
-            for (let i = 0, len = sceneModelParams.textureSets.length; i < len; i++) {
-                this.createTextureSet(sceneModelParams.textureSets[i]);
-            }
-        }
-        if (sceneModelParams.meshes) {
-            for (let i = 0, len = sceneModelParams.meshes.length; i < len; i++) {
-                this.createMesh(sceneModelParams.meshes[i]);
-            }
-        }
-        if (sceneModelParams.objects) {
-            for (let i = 0, len = sceneModelParams.objects.length; i < len; i++) {
-                this.createObject(sceneModelParams.objects[i]);
-            }
-        }
     }
 
     /**
@@ -1026,9 +974,64 @@ export class SceneModel extends Component {
     }
 
     /**
-     * Gets this SceneModel as JSON.
+     * Creates components in this SceneModel from SceneModelParams.
+     *
+     * See {@link scene | @xeokit/sdk/scene} for usage.
+     *
+     * @param sceneModelParams
+     * @returns *void*
+     * * On success.
+     * @returns *{@link core!SDKError | SDKError}*
+     * * If this SceneModel has already been built.
+     * * If this SceneModel has already been destroyed.
+     * * A duplicate component ({@link SceneObject}, {@link SceneMesh},
+     * {@link SceneGeometry}, {@link SceneTexture} etc.) was already created within this SceneModel.
      */
-    getJSON(): SceneModelParams {
+    fromParams(sceneModelParams: SceneModelParams): void | SDKError {
+        if (this.destroyed) {
+            return new SDKError("Failed to add components to SceneModel - SceneModel already destroyed");
+        }
+        if (this.built) {
+            return new SDKError("Failed to add components to SceneModel - SceneModel already built");
+        }
+        if (sceneModelParams.geometries) {
+            for (let i = 0, len = sceneModelParams.geometries.length; i < len; i++) {
+                this.createGeometry(sceneModelParams.geometries[i]);
+            }
+        }
+        if (sceneModelParams.geometriesCompressed) {
+            for (let i = 0, len = sceneModelParams.geometriesCompressed.length; i < len; i++) {
+                this.createGeometryCompressed(sceneModelParams.geometriesCompressed[i]);
+            }
+        }
+        if (sceneModelParams.textures) {
+            for (let i = 0, len = sceneModelParams.textures.length; i < len; i++) {
+                this.createTexture(sceneModelParams.textures[i]);
+            }
+        }
+        if (sceneModelParams.textureSets) {
+            for (let i = 0, len = sceneModelParams.textureSets.length; i < len; i++) {
+                this.createTextureSet(sceneModelParams.textureSets[i]);
+            }
+        }
+        if (sceneModelParams.meshes) {
+            for (let i = 0, len = sceneModelParams.meshes.length; i < len; i++) {
+                this.createMesh(sceneModelParams.meshes[i]);
+            }
+        }
+        if (sceneModelParams.objects) {
+            for (let i = 0, len = sceneModelParams.objects.length; i < len; i++) {
+                this.createObject(sceneModelParams.objects[i]);
+            }
+        }
+    }
+
+    /**
+     * Gets this SceneModel as SceneModelParams.
+     *
+     * See {@link scene | @xeokit/sdk/scene} for usage.
+     */
+    toParams(): SceneModelParams {
         const sceneModelParams = <SceneModelParams>{
             id: this.id,
             geometriesCompressed: [],
@@ -1042,19 +1045,19 @@ export class SceneModel extends Component {
             sceneModelParams.streamParams = this.streamParams;
         }
         Object.entries(this.geometries).forEach(([key, sceneGeometry]) => {
-            sceneModelParams.geometriesCompressed.push((<SceneGeometry>sceneGeometry).getJSON());
+            sceneModelParams.geometriesCompressed.push((<SceneGeometry>sceneGeometry).toParams());
         });
         // Object.entries(this.textures).forEach(([key, value]) => {
-        //     sceneModelParams.textures[key] = (<SceneTexture>value).getJSON();
+        //     sceneModelParams.textures[key] = (<SceneTexture>value).toParams();
         // });
         // Object.entries(this.textureSets).forEach(([key, value]) => {
-        //     sceneModelParams.textureSets[key] = (<SceneTextureSet>value).getJSON();
+        //     sceneModelParams.textureSets[key] = (<SceneTextureSet>value).toParams();
         // });
         Object.entries(this.meshes).forEach(([key, sceneMesh]) => {
-            sceneModelParams.meshes.push((<SceneMesh>sceneMesh).getJSON());
+            sceneModelParams.meshes.push((<SceneMesh>sceneMesh).toParams());
         });
         Object.entries(this.objects).forEach(([key, sceneObject]) => {
-            sceneModelParams.objects.push((<SceneObject>sceneObject).getJSON());
+            sceneModelParams.objects.push((<SceneObject>sceneObject).toParams());
         });
         return sceneModelParams;
     }

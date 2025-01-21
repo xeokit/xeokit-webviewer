@@ -92,7 +92,7 @@ class AmbientLight extends Component {
      * Configures this AmbientLight.
      * @param ambientLightParams
      */
-    fromJSON(ambientLightParams: AmbientLightParams) {
+    fromParams(ambientLightParams: AmbientLightParams) {
         if (ambientLightParams.color) {
             this.color = ambientLightParams.color;
         }
@@ -104,7 +104,7 @@ class AmbientLight extends Component {
     /**
      * Gets the current configuration of this AmbientLight.
      */
-    getJSON(): AmbientLightParams {
+    toParams(): AmbientLightParams {
         return {
             id: this.id,
             color: Array.from(this.color),

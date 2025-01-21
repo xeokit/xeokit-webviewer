@@ -1,10 +1,10 @@
 import {FloatArrayParam} from "../math";
 
 /**
- * Configures a View's edge enhancement effect, {@link Edges}.
+ * Parameters for a View's edge enhancement effect, {@link Edges}.
  *
- * * Returned by {@link Edges.getJSON | Edges.getJSON}
- * * Passed to {@link Edges.fromJSON | Edges.fromJSON}
+ * * Returned by {@link Edges.toParams | Edges.toParams}
+ * * Passed to {@link Edges.fromParams | Edges.fromParams}
  * * Located at {@link ViewParams.edges | ViewParams.edges}
  */
 export interface EdgesParams {

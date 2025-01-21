@@ -138,7 +138,7 @@ export class ResolutionScale extends Component {
      *
      * @param resolutionScaleParams
      */
-    fromJSON(resolutionScaleParams: ResolutionScaleParams) {
+    fromParams(resolutionScaleParams: ResolutionScaleParams) {
         if (resolutionScaleParams.renderModes !== undefined) {
             this.renderModes = resolutionScaleParams.renderModes;
         }
@@ -150,7 +150,7 @@ export class ResolutionScale extends Component {
     /**
      * Gets the current configuration of this ResolutionScale.
      */
-    getJSON(): ResolutionScaleParams {
+    toParams(): ResolutionScaleParams {
         return {
             renderModes: this.renderModes,
             resolutionScale: this.resolutionScale

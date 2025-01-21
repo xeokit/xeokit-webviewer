@@ -88,7 +88,7 @@
  *
  *          // Then we could load the DataModelParams into our DataModel
  *
- *         dataModel.fromJSON(dataModelParams);
+ *         dataModel.fromParams(dataModelParams);
  *
  *         dataModel.build();
  *     });

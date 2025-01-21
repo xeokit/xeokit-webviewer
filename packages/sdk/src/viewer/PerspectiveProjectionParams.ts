@@ -1,8 +1,8 @@
 /**
- * Configuration for a {@link PerspectiveProjection}.
+ * Parameters for a {@link PerspectiveProjection}.
  *
- * * Returned by {@link PerspectiveProjection.getJSON | PerspectiveProjection.getJSON}
- * * Passed to {@link PerspectiveProjection.fromJSON | PerspectiveProjection.fromJSON}
+ * * Returned by {@link PerspectiveProjection.toParams | PerspectiveProjection.toParams}
+ * * Passed to {@link PerspectiveProjection.fromParams | PerspectiveProjection.fromParams}
  * * Located at {@link CameraParams.perspectiveProjection | CameraParams.perspectiveProjection}
  */
 export interface PerspectiveProjectionParams {

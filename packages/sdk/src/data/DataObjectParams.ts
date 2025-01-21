@@ -1,5 +1,8 @@
 /**
- * Parameters to create a {@link DataObject | DataObject} with {@link DataModel.createObject | DataModel.createObject}.
+ * Parameters for a {@link DataObject}.
+ *
+ * * Passed to  {@link DataModel.createObject | DataModel.createObject}
+ * * Located at {@link DataModelParams.objects | DataModelParams.objects}
  *
  * See {@link data | @xeokit/sdk/data}   for usage.
  */

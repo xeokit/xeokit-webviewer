@@ -526,13 +526,13 @@
  *
  * ## Serializing Viewer Configuration
  *
- * Let's now use {@link viewer!Viewer.getJSON | Viewer.getJSON} to serialize the configuration of our Viewer to JSON.
+ * Let's now use {@link viewer!Viewer.toParams | Viewer.toParams} to serialize the configuration of our Viewer to JSON.
  *
  * ````javascript
- * const viewerParams = viewer.getJSON();
+ * const viewerParams = viewer.toParams();
  * ````
  *
- * Let's now use {@link viewer!Viewer.getJSON | Viewer.getJSON} to serialize the configuration of our Viewer to JSON.
+ * Let's now use {@link viewer!Viewer.toParams | Viewer.toParams} to serialize the configuration of our Viewer to JSON.
  *
  * ````javascript
  * const viewer2 = new Viewer(viewerParams);

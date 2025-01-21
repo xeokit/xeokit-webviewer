@@ -224,7 +224,7 @@ class PointLight extends Component {
      *
      * @param pointLightParams
      */
-    fromJSON(pointLightParams: PointLightParams) {
+    fromParams(pointLightParams: PointLightParams) {
         if (pointLightParams.pos) {
             this.pos = pointLightParams.pos;
         }
@@ -240,7 +240,7 @@ class PointLight extends Component {
     /**
      * Gets the current configuration of this PointLight.
      */
-    getJSON(): PointLightParams {
+    toParams(): PointLightParams {
         return {
             id: this.id,
             color: Array.from(this.color),

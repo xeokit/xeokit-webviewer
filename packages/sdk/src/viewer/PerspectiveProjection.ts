@@ -297,7 +297,7 @@ export class PerspectiveProjection extends Component implements Projection {
      * Sets the state of this PerspectiveParams from the given parameters.
      * @param perspectiveProjectionParams
      */
-    fromJSON(perspectiveProjectionParams: PerspectiveProjectionParams) {
+    fromParams(perspectiveProjectionParams: PerspectiveProjectionParams) {
         if (perspectiveProjectionParams.far !== undefined) {
             this.far = perspectiveProjectionParams.far;
         }
@@ -315,7 +315,7 @@ export class PerspectiveProjection extends Component implements Projection {
     /**
      * Gets this PerspectiveProjection as JSON.
      */
-    getJSON(): PerspectiveProjectionParams {
+    toParams(): PerspectiveProjectionParams {
         return {
             far: this.far,
             near: this.near,
