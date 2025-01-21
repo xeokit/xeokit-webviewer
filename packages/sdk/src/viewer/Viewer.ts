@@ -269,7 +269,7 @@ export class Viewer extends Component {
      * }
      * ````
      *
-     * @param params View configuration.
+     * @param viewParams View configuration.
      * @returns *{@link View | View}*
      * * On success.
      * @returns *{@link core!SDKError | SDKError}*
@@ -285,12 +285,18 @@ export class Viewer extends Component {
             return new SDKError(`View with ID "${viewId}" already exists in this Viewer`);
         }
         // @ts-ignore
-        const htmlElement = viewParams.htmlElement || document.getElementById(viewParams.elementId);
-        if (!(htmlElement instanceof HTMLElement)) {
-            return new SDKError("Mandatory View config expected: valid elementId or HTMLElement");
+        if (viewParams.elementId) {
+            const htmlElement = document.getElementById(viewParams.elementId);
+            if (!(htmlElement instanceof HTMLElement)) {
+                return new SDKError("viewParams.htmlElement is not an HTMLElement");
+            }
+        }
+        if (viewParams.htmlElement) {
+            if (!(viewParams.htmlElement instanceof HTMLElement)) {
+                return new SDKError("viewParams.elementId does not reference an HTMLElement");
+            }
         }
         const view = new View(this, apply({id: viewId}, viewParams));
-
         const result: void | SDKError = this.renderer.attachView(view);
         if (result instanceof SDKError) {
             this.error(`Failed to create View (id = "${view.viewId}"): ${result.message}`);

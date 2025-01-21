@@ -106,6 +106,7 @@ class AmbientLight extends Component {
      */
     getJSON(): AmbientLightParams {
         return {
+            id: this.id,
             color: Array.from(this.color),
             intensity: this.intensity
         };

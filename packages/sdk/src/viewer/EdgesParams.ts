@@ -33,13 +33,6 @@ export interface EdgesParams {
     edgeAlpha?: number;
 
     /**
-     * Whether the edges rendered by the {@link Edges} effect are currently visible.
-     *
-     * Default is ````true````.
-     */
-    enabled?: boolean;
-
-    /**
      * Which rendering modes in which to render edges.
      *
      * Default value is [{@link constants!QualityRender | QualityRender}].

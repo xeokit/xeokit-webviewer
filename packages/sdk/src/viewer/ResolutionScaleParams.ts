@@ -8,13 +8,6 @@
 export interface ResolutionScaleParams {
 
     /**
-     * Whether the {@link ResolutionScale} is enabled.
-     *
-     * Default is ````true````.
-     */
-    enabled?: boolean;
-
-    /**
      * Which rendering modes in which to apply the {@link ResolutionScale}.
      *
      * Default value is [{@link constants!FastRender | FastRender}].

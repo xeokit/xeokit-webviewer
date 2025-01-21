@@ -53,32 +53,47 @@ export interface ViewParams {
     elementId?: string;
 
     /**
+     * An HTMLElement in the DOM.
      *
+     * Overrides {@link ViewParams.elementId | ViewParams.elementId}
      */
     htmlElement?: HTMLCanvasElement;
 
+    /**
+     * RGB clear color for the {@link View | View's} canvas.
+     *
+     * Only works when canvas is not transparent.
+     *
+     * Default value is `[1,1,1]`.
+     */
     backgroundColor?: FloatArrayParam;
 
+    /**
+     * Set true to attempt to derive the {@link View | View's} canvas RGB clear color from
+     * any {@link AmbientLight | AmbientLights} defined in the {@link View} .
+     *
+     * Only works when canvas is not transparent.
+     *
+     * Falls back on {@link View.backgroundColor | }
+     *
+     * Default value is `[1,1,1]`.
+     */
     backgroundColorFromAmbientLight?: boolean;
 
+    /**
+     * Whether the {@link View | View} performs alpha composition with premultiplied alpha. Highlighting and selection works best when
+     * this is ````false````.
+     *
+     * Default value is `false`.
+     */
     premultipliedAlpha?: boolean;
 
+    /**
+     * Configures whether the {@link View | View's} canvas is transparent.
+     *
+     * Default value is `false`.
+     */
     transparent?: boolean;
-
-    /**
-     *
-     */
-    pbrEnabled?: boolean;
-
-    /**
-     *
-     */
-    colorTextureEnabled?: boolean;
-
-    /**
-     *
-     */
-    edgesEnabled?: boolean;
 
     /**
      * Whether the {@link View} will automatically create {@link ViewLayer | ViewLayers} on-demand
@@ -97,6 +112,8 @@ export interface ViewParams {
      * Setting this parameter ````false```` enables a View to contain only the ViewObjects that it actually needs to show, i.e. to
      * represent only SceneObjects that it needs to view. This enables a View to avoid wastefully creating and maintaining
      * ViewObjects for SceneObjects that it never needs to show.
+     *
+     * Default value is `true`.
      */
     autoLayers?: boolean;
 
@@ -134,7 +151,7 @@ export interface ViewParams {
     /**
      * Configures the View's {@link ViewLayer | ViewLayers}.
      */
-    viewLayers?: ViewLayerParams[];
+    layers?: ViewLayerParams[];
 
     /**
      * Configures the View's {@link Camera}.
@@ -157,7 +174,9 @@ export interface ViewParams {
     resolutionScale?: ResolutionScaleParams;
 
     /**
-     * Sets which rendering mode the View is in.
+     * Configures which rendering mode the View is in.
+     *
+     * Default is {@link constants!QualityRender | QualityRender}.
      */
     renderMode?: number;
 }

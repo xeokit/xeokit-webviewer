@@ -160,6 +160,7 @@ class DirLight extends Component {
      */
     getJSON(): DirLightParams {
         return {
+            id: this.id,
             dir: Array.from(this.dir),
             color: Array.from(this.color),
             intensity: this.intensity,

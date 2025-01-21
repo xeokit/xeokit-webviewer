@@ -9,6 +9,10 @@ import {FloatArrayParam} from "../math";
  */
 export interface AmbientLightParams {
 
+    /** Optional ID, generated automatically when omitted.
+     */
+    id?: string;
+
     /**
      * RGB color of the {@link AmbientLight}.
      *

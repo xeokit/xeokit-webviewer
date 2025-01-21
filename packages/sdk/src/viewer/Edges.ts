@@ -27,7 +27,6 @@ class Edges extends Component {
         edgeColor: FloatArrayParam;
         edgeWidth: number;
         edgeAlpha: number;
-        enabled: boolean;
         renderModes: number[];
     };
 
@@ -42,7 +41,6 @@ class Edges extends Component {
 
         this.#state = {
             renderModes: options.renderModes || [QualityRender],
-            enabled: options.enabled !== false,
             edgeColor: new Float32Array(options.edgeColor || [0.2, 0.2, 0.2]),
             edgeAlpha: (options.edgeAlpha !== undefined && options.edgeAlpha !== null) ? options.edgeAlpha : 0.5,
             edgeWidth: (options.edgeWidth !== undefined && options.edgeWidth !== null) ? options.edgeWidth : 1
@@ -66,34 +64,6 @@ class Edges extends Component {
      */
     get renderModes(): number[] {
         return this.#state.renderModes;
-    }
-
-    /**
-     * Sets if edges of {@link ViewObject | ViewObjects} are visible.
-     *
-     * Default is ````true````.
-     */
-    set enabled(value: boolean) {
-        if (this.#state.enabled === value) {
-            return;
-        }
-        this.#state.enabled = value;
-        this.view.redraw();
-    }
-
-    /**
-     * Gets if edges of {@link ViewObject | ViewObjects} are visible.
-     *
-     * Default is ````true````.
-     */
-    get enabled(): boolean {
-
-        /////////////////////////////////////////////////////////////////////////
-        // HACK
-        /////////////////////////////////////////////////////////////////////////
-        return false;
-
-        //     return this.#state.enabled;
     }
 
     /**
@@ -174,14 +144,10 @@ class Edges extends Component {
     /**
      * Gets if edges are currently applied.
      *
-     * This is `true` when {@link Edges.enabled | Edges.enabled} is `true`
-     * and {@link View.renderMode | View.renderMode} is
+     * This is `true` when {@link View.renderMode | View.renderMode} is
      * in {@link Edges.renderModes | Edges.renderModes}.
      */
     get applied(): boolean {
-        if (!this.#state.enabled) {
-            return false;
-        }
         for (let i = 0, len = this.#state.renderModes.length; i < len; i++) {
             if (this.view.renderMode === this.#state.renderModes[i]) {
                 return true;
@@ -198,8 +164,7 @@ class Edges extends Component {
             renderModes: this.renderModes,
             edgeColor: Array.from(this.edgeColor),
             edgeWidth: this.edgeWidth,
-            edgeAlpha: this.edgeAlpha,
-            enabled: this.enabled
+            edgeAlpha: this.edgeAlpha
         };
     }
 
@@ -213,7 +178,6 @@ class Edges extends Component {
         this.edgeColor = Array.from(edgesParams.edgeColor);
         this.edgeWidth = edgesParams.edgeWidth;
         this.edgeAlpha = edgesParams.edgeAlpha;
-        this.enabled = edgesParams.enabled;
     }
 
     /**

@@ -15,13 +15,6 @@ export interface SAOParams {
     kernelRadius?: number;
 
     /**
-     * Whether {@link SAO} is enabled.
-     *
-     * Default value is ````false````.
-     */
-    enabled?: boolean;
-
-    /**
      * The {@link SAO} blend cutoff.
      *
      * Default value is ````0.3````.

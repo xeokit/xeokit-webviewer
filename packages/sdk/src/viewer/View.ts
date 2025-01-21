@@ -47,7 +47,6 @@ export interface SnapshotFinishedEvent {
     height: number;
 }
 
-
 /**
  * An independent view within a {@link Viewer | Viewer}, with its own Canvas, Camera and object visual states.
  *
@@ -342,6 +341,7 @@ class View extends Component {
     #lightsHash: string | null = null;
     #sectionPlanesHash: string | null = null;
     #snapshotBegun: boolean;
+    #autoCanvas: boolean;
 
     /**
      * @private
@@ -353,12 +353,28 @@ class View extends Component {
 
         this.viewer = viewer;
 
-        const canvas =
-            viewParams.htmlElement ||
-            document.getElementById(<string>viewParams.elementId);
+        let canvas;
 
-        if (!(canvas instanceof HTMLElement)) {
-            throw "Mandatory View config expected: valid HTMLElement";
+        if (viewParams.htmlElement || viewParams.elementId) {
+            canvas = // Canvas is actually a generic HTMLElement, but we think of it as a canvas
+                viewParams.htmlElement || document.getElementById(<string>viewParams.elementId);
+            if (!(canvas instanceof HTMLElement)) {
+                console.error("Mandatory View config expected: valid HTMLElement");
+            }
+            this.#autoCanvas = false;
+        }
+
+        if (!canvas) {
+            canvas = document.createElement('canvas');
+            canvas.style.position = "absolute";
+            canvas.style.zIndex = "100000";
+            canvas.style.width = '600px';
+            canvas.style.height = '500px';
+            canvas.style.position = 'absolute';
+            canvas.style.background = 'white';
+            canvas.style.border = '0';
+            document.body.appendChild(canvas);
+            this.#autoCanvas = true;
         }
 
         this.htmlElement = canvas;
@@ -551,12 +567,10 @@ class View extends Component {
             edgeColor: [0.0, 0.0, 0.0],
             edgeAlpha: 1.0,
             edgeWidth: 1,
-            enabled: true,
             renderModes: [QualityRender],
         });
 
         this.resolutionScale = new ResolutionScale(this, viewParams.resolutionScale || {
-            enabled: true,
             renderModes: [FastRender],
             resolutionScale: 1.0
         });
@@ -1604,8 +1618,8 @@ class View extends Component {
             this.camera.fromJSON(viewParams.camera);
         }
         this.autoLayers = viewParams.autoLayers;
-        if (viewParams.viewLayers) {
-            for (let viewLayerParams of viewParams.viewLayers) {
+        if (viewParams.layers) {
+            for (let viewLayerParams of viewParams.layers) {
                 const existingViewLayer = this.layers[viewLayerParams.id];
                 if (!existingViewLayer) {
                     this.createLayer(viewLayerParams);
@@ -1648,9 +1662,10 @@ class View extends Component {
      */
     getJSON(): ViewParams {
         return {
+            id: this.id,
             camera: this.camera.getJSON(),
             autoLayers: this.autoLayers,
-            viewLayers: Object.values(this.layers).map(viewLayer => viewLayer.getJSON()),
+            layers: Object.values(this.layers).map(viewLayer => viewLayer.getJSON()),
             sectionPlanes: Object.values(this.sectionPlanes).map(sectionPlane => sectionPlane.getJSON()),
             lights: Object.values(this.lights).map(light => light.getJSON()),
             sao: this.sao.getJSON(),

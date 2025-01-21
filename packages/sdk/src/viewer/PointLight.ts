@@ -242,6 +242,7 @@ class PointLight extends Component {
      */
     getJSON(): PointLightParams {
         return {
+            id: this.id,
             color: Array.from(this.color),
             pos: Array.from(this.pos),
             quadraticAttenuation: this.quadraticAttenuation,

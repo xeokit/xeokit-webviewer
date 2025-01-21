@@ -27,7 +27,6 @@ export class SAO extends Component {
         scale: number;
         blur: boolean;
         blendCutoff: number;
-        enabled: boolean;
         kernelRadius: number;
     }
 
@@ -40,7 +39,6 @@ export class SAO extends Component {
 
         this.#state = {
             renderModes: [QualityRender],
-            enabled: saoParams.enabled !== false,
             kernelRadius: saoParams.kernelRadius || 100.0,
             intensity: (saoParams.intensity !== undefined) ? saoParams.intensity : 0.15,
             bias: (saoParams.bias !== undefined) ? saoParams.bias : 0.5,
@@ -87,42 +85,12 @@ export class SAO extends Component {
     }
 
     /**
-     * Gets whether SAO is enabled for the {@link View}.
-     *
-     * Even when enabled, SAO will only apply if supported.
-     *
-     * Default value is ````false````.
-     */
-    get enabled(): boolean {
-        return this.#state.enabled;
-    }
-
-    /**
-     * Sets whether SAO is enabled for the {@link View}.
-     *
-     * Even when enabled, SAO will only work if supported.
-     *
-     * Default value is ````false````.
-     */
-    set enabled(value: boolean) {
-        value = !!value;
-        if (this.#state.enabled === value) {
-            return;
-        }
-        this.#state.enabled = value;
-        this.view.redraw();
-    }
-
-    /**
      * Returns true if SAO is currently possible, where it is supported, enabled, and the current view state is compatible.
      * Called internally by renderers logic.
      * @private
      */
     get possible(): boolean {
         if (!this.supported) {
-            return false;
-        }
-        if (!this.#state.enabled) {
             return false;
         }
         const projectionType = this.view.camera.projectionType;
@@ -371,14 +339,10 @@ export class SAO extends Component {
     /**
      * Gets if SAO is currently applied.
      *
-     * This is `true` when {@link SAO.enabled | SAO.enabled} is `true`
-     * and {@link View.renderMode | View.renderMode} is
+     * This is `true` when {@link View.renderMode | View.renderMode} is
      * in {@link SAO.renderModes | SAO.renderModes}.
      */
     get applied(): boolean {
-        if (!this.#state.enabled) {
-            return false;
-        }
         for (let i = 0, len = this.#state.renderModes.length; i < len; i++) {
             if (this.view.renderMode === this.#state.renderModes[i]) {
                 return true;
@@ -401,7 +365,6 @@ export class SAO extends Component {
             scale: this.scale,
             blur: this.blur,
             blendCutoff: this.blendCutoff,
-            enabled: this.enabled,
             kernelRadius: this.kernelRadius
         };
     }
@@ -421,7 +384,6 @@ export class SAO extends Component {
         this.scale = saoParams.scale;
         this.blur = saoParams.blur;
         this.blendCutoff = saoParams.blendCutoff;
-        this.enabled = saoParams.enabled;
         this.kernelRadius = saoParams.kernelRadius;
     }
 
