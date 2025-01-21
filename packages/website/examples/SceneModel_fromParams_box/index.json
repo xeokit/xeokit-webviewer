@@ -1,0 +1,6 @@
+{
+  "title": "Building and viewing a box-shaped SceneModel, from JSON",
+  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromParams method to load a SceneModelParams into the SceneModel. The Viewer then draws the SceneModel in the View's canvas.",
+  "id": "SceneModel_fromParams_box",
+  "type": "example"
+}

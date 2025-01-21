@@ -1,0 +1,6 @@
+{
+  "title": "Building and viewing a SceneModel containing various geometry types, from JSON",
+  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from a SceneModelParams, containing a set of SceneMeshs that represent various geometric primitives.",
+  "id": "SceneModel_fromParams_geometries",
+  "type": "example"
+}

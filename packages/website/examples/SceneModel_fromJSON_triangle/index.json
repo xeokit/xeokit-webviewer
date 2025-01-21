@@ -1,6 +1,0 @@
-{
-  "title": "Building and viewing a simple SceneModel, from JSON",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that contains a single triangle, from JSON. The SceneModel has one SceneObject, one SceneMesh, and one SceneGeometry, which contains the triangle geometry.",
-  "id": "SceneModel_fromJSON_triangle",
-  "type": "example"
-}

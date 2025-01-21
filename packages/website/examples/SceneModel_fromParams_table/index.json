@@ -1,0 +1,6 @@
+{
+  "title": "Building and viewing a table-shaped SceneModel, from JSON",
+  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from SceneModelParams that represents a simple kitchen table. The SceneModel has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives.",
+  "id": "SceneModel_fromParams_table",
+  "type": "example"
+}

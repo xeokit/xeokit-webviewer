@@ -76,16 +76,16 @@
 
                 fetch("../../../data/models/Duplex/json/scenemodel.json").then(response => {
 
-                    response.json().then(sceneModelJSON => {
+                    response.json().then(sceneModelParams => {
 
                         demoHelper.logAsset("../../../data/models/Duplex/json/datamodel.json");
 
                         fetch("../../../data/models/Duplex/json/datamodel.json").then(response => {
 
-                            response.json().then(dataModelJSON => {
+                            response.json().then(dataModelParams => {
 
-                                dataModel.fromJSON(dataModelJSON);
-                                sceneModel.fromJSON(sceneModelJSON);
+                                dataModel.fromParams(dataModelParams);
+                                sceneModel.fromParams(sceneModelParams);
 
                                 dataModel.build();
                                 sceneModel.build();

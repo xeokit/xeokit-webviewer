@@ -51,7 +51,7 @@
 
             new xeokit.cameracontrol.CameraControl(view);
 
-            const sceneModel = scene.createModel({
+            const sceneModel = scene.createModel({ // SceneModelParams
                 id: "demoModel"
             });
 
@@ -59,8 +59,7 @@
                 log(`Error creating SceneModel: ${sceneModel.message}`);
             } else {
 
-                sceneModel.fromJSON({
-                    id: "demoModel",
+                sceneModel.fromParams({ // SceneModelParams
                     geometries: [
                         {
                             id: "demoBoxGeometry",

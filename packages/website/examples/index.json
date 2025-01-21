@@ -6,10 +6,10 @@
       "id": "SceneModel_DataModel_build_table",
       "type": "example"
     },
-    "SceneModel_DataModel_fromJSON_IfcOpenHouse4": {
+    "SceneModel_DataModel_fromParams_IfcOpenHouse4": {
       "title": "Loading an IFC model from JSON into a SceneModel and a DataModel",
-      "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use SceneModel's fromJSON method to load JSON-encoded model geometry and materials into the SceneModel. Likewise, use DataModel's fromJSON method to load a JSON-encoded entity-relationship model into the DataModel. The Viewer then draws the IFC model in the View's canvas.",
-      "id": "SceneModel_DataModel_fromJSON_IfcOpenHouse4",
+      "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use SceneModel's fromParams method to load a SceneModelParams, which contains model geometry and materials, into the SceneModel. Likewise, use DataModel's fromParams method to load a DataModelParams, which contains an entity-relationship model, into the DataModel. The Viewer then draws the IFC model in the View's canvas.",
+      "id": "SceneModel_DataModel_fromParams_IfcOpenHouse4",
       "type": "example"
     },
     "SceneModel_build_box": {
@@ -68,34 +68,34 @@
       "id": "SceneModel_build_triangle_checkErrors",
       "type": "example"
     },
-    "SceneModel_fromJSON_box": {
+    "SceneModel_fromParams_box": {
       "title": "Building and viewing a box-shaped SceneModel, from JSON",
-      "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromJSON method to load JSON-encoded model geometry and materials into the SceneModel. The Viewer then draws the model in the View's canvas.",
-      "id": "SceneModel_fromJSON_box",
+      "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromParams method to load a SceneModelParams into the SceneModel. The Viewer then draws the SceneModel in the View's canvas.",
+      "id": "SceneModel_fromParams_box",
       "type": "example"
     },
-    "SceneModel_fromJSON_box_compressedGeometry": {
+    "SceneModel_fromParams_box_compressedGeometry": {
       "title": "Building and viewing a box-shaped SceneModel, from JSON, using compressed geometry",
-      "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromJSON method to load JSON-encoded model containing compressed geometry into the SceneModel. The Viewer then draws the model in the View's canvas.",
-      "id": "SceneModel_fromJSON_box_compressedGeometry",
+      "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromParams method to load a SceneModelParams containing compressed geometry into the SceneModel. The Viewer then draws the SceneModel in the View's canvas.",
+      "id": "SceneModel_fromParams_box_compressedGeometry",
       "type": "example"
     },
-    "SceneModel_fromJSON_geometries": {
+    "SceneModel_fromParams_geometries": {
       "title": "Building and viewing a SceneModel containing various geometry types, from JSON",
-      "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from JSON, containing a set of SceneMeshs that represent various geometric primitives.",
-      "id": "SceneModel_fromJSON_geometries",
+      "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from a SceneModelParams, containing a set of SceneMeshs that represent various geometric primitives.",
+      "id": "SceneModel_fromParams_geometries",
       "type": "example"
     },
-    "SceneModel_fromJSON_table": {
+    "SceneModel_fromParams_table": {
       "title": "Building and viewing a table-shaped SceneModel, from JSON",
-      "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that represents a simple kitchen table, from JSON. The SceneModel has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives.",
-      "id": "SceneModel_fromJSON_table",
+      "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from SceneModelParams that represents a simple kitchen table. The SceneModel has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives.",
+      "id": "SceneModel_fromParams_table",
       "type": "example"
     },
-    "SceneModel_fromJSON_triangle": {
+    "SceneModel_fromParams_triangle": {
       "title": "Building and viewing a simple SceneModel, from JSON",
-      "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that contains a single triangle, from JSON. The SceneModel has one SceneObject, one SceneMesh, and one SceneGeometry, which contains the triangle geometry.",
-      "id": "SceneModel_fromJSON_triangle",
+      "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from SceneModelParams that contains a single triangle. The SceneModel has one SceneObject, one SceneMesh, and one SceneGeometry, which contains the triangle geometry.",
+      "id": "SceneModel_fromParams_triangle",
       "type": "example"
     },
     "SceneModel_retainedFalse": {
@@ -206,10 +206,28 @@
       "id": "Viewer_drawTriangle_getEvents",
       "type": "example"
     },
+    "Viewer_fromParams": {
+      "title": "Configuring a Viewer with ViewerParams; Creating a new View",
+      "summary": "Create a Viewer with a WebGLRenderer and a Scene, but no Views. Within the Scene, create a SceneModel that contains a single 3D triangle. Configure the Viewer with the given ViewerParams, which contains one ViewParams. The Viewer then creates itself a View using those ViewParams.",
+      "id": "Viewer_fromParams",
+      "type": "example"
+    },
+    "Viewer_fromParams_existingView": {
+      "title": "Configuring a Viewer with ViewerParams; Updating a pre-existing View",
+      "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Configure the Viewer with the given ViewerParams, which have a ViewParams with the same ID as the View. The View then receives whatever updated properties are provided in the ViewParams.",
+      "id": "Viewer_fromParams_existingView",
+      "type": "example"
+    },
     "Viewer_getCapabilities": {
       "title": "Querying Viewer capabilities",
       "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Query the Capabilities of the Viewer.",
       "id": "Viewer_getCapabilities",
+      "type": "example"
+    },
+    "Viewer_toParams": {
+      "title": "Serializing a Viewer Configuration to JSON",
+      "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Get the Viewer's current configuration as a ViewerParams. Stringify and log the ViewParams to the console. Using the ViewerParams, we can then create a second Viewer, that has exact same configuration as our first Viewer.",
+      "id": "Viewer_toParams",
       "type": "example"
     }
   }

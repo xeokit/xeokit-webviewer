@@ -200,7 +200,7 @@
 
             fetch("../../../data/models/Duplex/json/scenemodel.json").then(response => {
                 response.json().then(fileData => {
-                    sceneModel.fromJSON(fileData);
+                    sceneModel.fromParams(fileData);
                     sceneModel.build();
                 });
             });

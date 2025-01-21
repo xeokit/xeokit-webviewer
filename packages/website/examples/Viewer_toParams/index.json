@@ -1,0 +1,6 @@
+{
+  "title": "Saving a Viewer Configuration to ViewParams",
+  "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Get the Viewer's current configuration as a ViewerParams. Stringify and log the ViewParams to the console. Using the ViewerParams, we can then create a second Viewer, that has exact same configuration as our first Viewer.",
+  "id": "Viewer_toParams",
+  "type": "example"
+}
