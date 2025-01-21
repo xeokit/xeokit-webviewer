@@ -292,9 +292,7 @@ function wrapWordsWithLinks(text, wordMap) {
             const entry = wordMap[key];
             const path = entry.path || "";
             const kind = entry.kind || "";
-            return /s$/i.test(match)
-                ? `<a href="${path}" target="_parent">${key}</a>s`
-                : `<a href="${path}" target="_parent">${key}</a>`;
+            return `<a href="${path}" target="_parent">${key}</a>`;
         });
     });
     return text;

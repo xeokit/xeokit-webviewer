@@ -27,6 +27,10 @@
     "path": "/api-docs#/docs/api/classes/viewer.AmbientLight.html",
     "kind": "class"
   },
+  "AmbientLightParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.AmbientLightParams.html",
+    "kind": "interface"
+  },
   "angleAxisToQuaternion": {
     "path": "/api-docs#/docs/api/functions/matrix.angleAxisToQuaternion.html",
     "kind": "function"
@@ -271,6 +275,10 @@
     "path": "/api-docs#/docs/api/classes/cameraflight.CameraFlightAnimation.html",
     "kind": "class"
   },
+  "CameraParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.CameraParams.html",
+    "kind": "interface"
+  },
   "canvasPosToWorldRay": {
     "path": "/api-docs#/docs/api/functions/matrix.canvasPosToWorldRay.html",
     "kind": "function"
@@ -495,6 +503,10 @@
     "path": "/api-docs#/docs/api/classes/viewer.CustomProjection.html",
     "kind": "class"
   },
+  "CustomProjectionParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.CustomProjectionParams.html",
+    "kind": "interface"
+  },
   "CustomProjectionType": {
     "path": "/api-docs#/docs/api/variables/constants.CustomProjectionType.html",
     "kind": "variable"
@@ -595,6 +607,10 @@
     "path": "/api-docs#/docs/api/classes/viewer.DirLight.html",
     "kind": "class"
   },
+  "DirLightParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.DirLightParams.html",
+    "kind": "interface"
+  },
   "distVec2": {
     "path": "/api-docs#/docs/api/functions/matrix.distVec2.html",
     "kind": "function"
@@ -647,9 +663,17 @@
     "path": "/api-docs#/docs/api/classes/viewer.Edges.html",
     "kind": "class"
   },
+  "EdgesParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.EdgesParams.html",
+    "kind": "interface"
+  },
   "EmphasisMaterial": {
     "path": "/api-docs#/docs/api/classes/viewer.EmphasisMaterial.html",
     "kind": "class"
+  },
+  "EmphasisMaterialParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.EmphasisMaterialParams.html",
+    "kind": "interface"
   },
   "eulerToQuat": {
     "path": "/api-docs#/docs/api/functions/matrix.eulerToQuat.html",
@@ -726,6 +750,10 @@
   "FrustumProjection": {
     "path": "/api-docs#/docs/api/classes/viewer.FrustumProjection.html",
     "kind": "class"
+  },
+  "FrustumProjectionParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.FrustumProjectionParams.html",
+    "kind": "interface"
   },
   "FrustumProjectionType": {
     "path": "/api-docs#/docs/api/variables/constants.FrustumProjectionType.html",
@@ -4395,6 +4423,10 @@
     "path": "/api-docs#/docs/api/classes/viewer.OrthoProjection.html",
     "kind": "class"
   },
+  "OrthoProjectionParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.OrthoProjectionParams.html",
+    "kind": "interface"
+  },
   "OrthoProjectionType": {
     "path": "/api-docs#/docs/api/variables/constants.OrthoProjectionType.html",
     "kind": "variable"
@@ -4414,6 +4446,10 @@
   "PerspectiveProjection": {
     "path": "/api-docs#/docs/api/classes/viewer.PerspectiveProjection.html",
     "kind": "class"
+  },
+  "PerspectiveProjectionParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.PerspectiveProjectionParams.html",
+    "kind": "interface"
   },
   "PerspectiveProjectionType": {
     "path": "/api-docs#/docs/api/variables/constants.PerspectiveProjectionType.html",
@@ -4447,6 +4483,10 @@
     "path": "/api-docs#/docs/api/classes/viewer.PointLight.html",
     "kind": "class"
   },
+  "PointLightParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.PointLightParams.html",
+    "kind": "interface"
+  },
   "points3ToAABB3": {
     "path": "/api-docs#/docs/api/functions/boundaries.points3ToAABB3.html",
     "kind": "function"
@@ -4454,6 +4494,10 @@
   "PointsMaterial": {
     "path": "/api-docs#/docs/api/classes/viewer.PointsMaterial.html",
     "kind": "class"
+  },
+  "PointsMaterialParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.PointsMaterialParams.html",
+    "kind": "interface"
   },
   "PointsPrimitive": {
     "path": "/api-docs#/docs/api/variables/constants.PointsPrimitive.html",
@@ -4586,6 +4630,10 @@
   "ResolutionScale": {
     "path": "/api-docs#/docs/api/classes/viewer.ResolutionScale.html",
     "kind": "class"
+  },
+  "ResolutionScaleParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.ResolutionScaleParams.html",
+    "kind": "interface"
   },
   "RGB_ETC1_Format": {
     "path": "/api-docs#/docs/api/variables/constants.RGB_ETC1_Format.html",
@@ -4734,6 +4782,10 @@
   "SAO": {
     "path": "/api-docs#/docs/api/classes/viewer.SAO.html",
     "kind": "class"
+  },
+  "SAOParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.SAOParams.html",
+    "kind": "interface"
   },
   "saveArrayBuffer": {
     "path": "/api-docs#/docs/api/functions/utils.saveArrayBuffer.html",
@@ -5198,6 +5250,10 @@
   "Viewer": {
     "path": "/api-docs#/docs/api/classes/viewer.Viewer.html",
     "kind": "class"
+  },
+  "ViewerParams": {
+    "path": "/api-docs#/docs/api/interfaces/viewer.ViewerParams.html",
+    "kind": "interface"
   },
   "ViewLayer": {
     "path": "/api-docs#/docs/api/classes/viewer.ViewLayer.html",

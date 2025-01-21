@@ -18,7 +18,7 @@ function buildDocsLookup(docsDir) {
                     path: null,
                     kind: null
                 };
-                console.log("child.name, kind = " + child.name + " , " + child.kind)
+             //   console.log("child.name, kind = " + child.name + " , " + child.kind)
                 switch (kind) {
                     case 4:
                         // entry.path = `/api-docs#/docs/api/modules/${child.name}.html`;

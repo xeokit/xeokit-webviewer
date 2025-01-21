@@ -60,7 +60,7 @@
         },
         "gltf2xgf": {
             title: `View '${modelId}' model from XGF+JSON created by gltf2xgf`,
-            summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadXGF to load the XGF file into the SceneModel. Use SceneModel.fromJSON to load the JSON into the DataModel."
+            summary: "Create a Viewer with a WebGLRenderer, a Scene and a View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use loadXGF to load the XGF file into the SceneModel. Use SceneModel.fromParams to load the JSON into the DataModel."
         },
         "ifc2gltf": {
             title: `View '${modelId}' model from glTF+JSON created from IFC by ifc2gltf`,
@@ -92,7 +92,7 @@
             In the Scene, create a SceneModel.
             In the Data, create a DataModel.
             Load the ModelChunksManifestParams manifest that was output by ifc2gltf2xgf.
-            Load the XGF and JSON files into the SceneModel and DataModel, using loadXKT and DataModel#fromJSON.
+            Load the XGF and JSON files into the SceneModel and DataModel, using loadXKT and DataModel#fromParams.
             Build the SceneModel and DataModel.
             Model then appears in the View.`
         },
@@ -102,7 +102,7 @@
             Create a Data.
             In the Scene, create a SceneModel.
             In the Data, create a DataModel.
-            Load JSON files into the SceneModel and DataModel, using SceneModel#fromJSON and DataModel#fromJSON.
+            Load JSON files into the SceneModel and DataModel, using SceneModel#fromParams and DataModel#fromParams.
             Build the SceneModel and DataModel.
             Model then appears in the View.`
         },
@@ -143,7 +143,7 @@
             In the Scene, create a SceneModel.
             In the Data, create a DataModel.
             Use loadXGF to load the XGF file into the SceneModel.
-            Use SceneModel.fromJSON to load the JSON into the DataModel.
+            Use SceneModel.fromParams to load the JSON into the DataModel.
             Build the SceneModel and DataModel.
             Model then appears in the View.`
         },
@@ -154,7 +154,7 @@
             In the Scene, create a SceneModel.
             In the Data, create a DataModel.
             Use loadXGF to load the XGF file into the SceneModel.
-            Use SceneModel.fromJSON to load the JSON into the DataModel.
+            Use SceneModel.fromParams to load the JSON into the DataModel.
             Build the SceneModel and DataModel.
             Model then appears in the View.`
         }
@@ -442,7 +442,7 @@
                                         response
                                             .json()
                                             .then(dataModelFileData => {
-                                                dataModel.fromJSON(dataModelFileData);
+                                                dataModel.fromParams(dataModelFileData);
                                                 demoHelper.logAsset(`${baseDir}/model.xgf`, "XGF")
                                                 fetch(`${baseDir}/model.xgf`)
                                                     .then(response => {
@@ -474,7 +474,7 @@
                                         response
                                             .json()
                                             .then(dataModelFileData => {
-                                                dataModel.fromJSON(dataModelFileData);
+                                                dataModel.fromParams(dataModelFileData);
                                                 demoHelper.logAsset(`${baseDir}/model.xgf`, "XGF")
                                                 fetch(`${baseDir}/model.xgf`)
                                                     .then(response => {
@@ -500,7 +500,7 @@
                                         response
                                             .json()
                                             .then(dataModelFileData => {
-                                                const result = dataModel.fromJSON(dataModelFileData);
+                                                const result = dataModel.fromParams(dataModelFileData);
                                                 if (result instanceof xeokit.core.SDKError) {
                                                     onError(result.message);
                                                 } else {
@@ -510,7 +510,7 @@
                                                             response
                                                                 .json()
                                                                 .then(fileData => {
-                                                                    const result = sceneModel.fromJSON(fileData);
+                                                                    const result = sceneModel.fromParams(fileData);
                                                                     if (result instanceof xeokit.core.SDKError) {
                                                                         onError(result.message);
                                                                     } else {
