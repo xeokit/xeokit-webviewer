@@ -90,7 +90,7 @@ export interface Renderer {
      * The Renderer will then begin rendering each {@link scene!SceneModel | SceneModel} previously or subsequently
      * created with {@link scene!Scene.createModel | Scene.createModel} , for the new View.
      *
-     * You can only attach as many Views as indicated in {@link  @xeokit/core!Capabilities.maxViews | Capabilities.maxViews}, as returned by
+     * You can only attach as many Views as indicated in {@link  core!Capabilities.maxViews | Capabilities.maxViews}, as returned by
      * {@link Renderer.getCapabilities | Renderer.getCapabilities}.
      *
      * You must attach a View before you can attach a SceneModel.

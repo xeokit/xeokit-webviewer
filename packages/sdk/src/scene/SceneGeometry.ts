@@ -44,7 +44,7 @@ export class SceneGeometry {
     /**
      * 3D vertex positions, quantized as 16-bit integers.
      *
-     * Internally, the Viewer dequantizes these with {@link SceneGeometry.positionsDecompressMatrix | SceneGeometry.positionsDecompressMatrix}.
+     * Internally, the Viewer dequantizes these using {@link SceneGeometry.aabb | SceneGeometry.aabb}, which provides their unquantized 3D boundary.
      *
      * Vertex positions are required for all primitive types.
      */

@@ -43,7 +43,7 @@ export interface SceneGeometryCompressedParams {
      * 3D vertex positions, quantized as 16-bit integers.
      *
      * Internally, the Viewer decompresses thses
-     * with {@link SceneGeometryCompressedParams.positionsDecompressMatrix | SceneGeometryCompressedParams.positionsDecompressMatrix}.
+     * with {@link SceneGeometryCompressedParams.aabb | SceneGeometryCompressedParams.aabb}.
      *
      * Vertex positions are required for all primitive types.
      */

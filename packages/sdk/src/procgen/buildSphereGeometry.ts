@@ -3,7 +3,7 @@ import type {GeometryArrays} from "./GeometryArrays";
 import {TrianglesPrimitive} from "../constants";
 
 /**
- * Creates a sphere-shaped {@link scene!SceneGeometry}.
+ * Creates a sphere-shaped {@link scene!SceneGeometry | SceneGeometry}.
  *
  * ## Usage
  *
@@ -12,12 +12,12 @@ import {TrianglesPrimitive} from "../constants";
  * ````
  *
  * @param cfg Configs
- * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
+ * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry | SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
  * @param [cfg.center]  3D point indicating the center position.
  * @param [cfg.radius=1]  Radius.
  * @param [cfg.heightSegments=24] Number of latitudinal bands.
  * @param  {Number} [cfg.widthSegments=18] Number of longitudinal bands.
- * @returns {Object} Configuration for a {@link scene!SceneGeometry} subtype.
+ * @returns {Object} Configuration for a {@link scene!SceneGeometry | SceneGeometry} subtype.
  */
 export function buildSphereGeometry(cfg: {
     center: number[];

@@ -87,7 +87,6 @@ export interface CameraControlParams {
  *
  * # Overview
  *
- * * Each {@link viewer!Viewer} has a ````CameraControl````, located at {@link viewer!Viewer.cameraControl | Viewer.cameraControl}.
  * * {@link CameraControl#navMode} selects the navigation mode:
  *      * ````OrbitNavigationMode```` rotates the {@link viewer!Camera} position about the target.
  *      * ````"firstPerson"```` rotates the World about the Camera position.

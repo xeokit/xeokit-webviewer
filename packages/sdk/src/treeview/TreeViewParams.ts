@@ -27,12 +27,12 @@ export interface TreeViewParams {
     /**
      *
      */
-    includeLayerIds?: string[];
+    includeViewLayerIds?: string[];
 
     /**
      *
      */
-    excludeLayerIds?: string[];
+    excludeViewLayerIds?: string[];
 
     /**
      * When traversing the {@link data!Data | Data} to build the tree UI nodes, at each

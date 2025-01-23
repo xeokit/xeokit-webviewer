@@ -2,21 +2,21 @@ import * as utils from "../utils";
 import type {GeometryArrays} from "./GeometryArrays";
 
 /**
- * Creates a grid-shaped {@link scene!SceneGeometry}.
+ * Creates a grid-shaped {@link scene!SceneGeometry | SceneGeometry}.
  *
  * ## Usage
  *
- * Creating a {@link scene!SceneMesh} with a grid-shaped {@link scene!SceneGeometry}:
+ * Creating a {@link scene!SceneMesh | SceneMesh} with a grid-shaped {@link scene!SceneGeometry | SceneGeometry}:
  *
  * ````javascript
 
  * ````
  *
  * @param cfg Configs
- * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
+ * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry | SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
  * @param [cfg.size=1] Dimension on the X and Z-axis.
  * @param [cfg.divisions=1] Number of divisions on X and Z axis..
- * @returns {Object} Configuration for a {@link scene!SceneGeometry} subtype.
+ * @returns {Object} Configuration for a {@link scene!SceneGeometry | SceneGeometry} subtype.
  */
 export function buildGridGeometry(cfg = {
     size: 1,

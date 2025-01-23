@@ -3,27 +3,27 @@ import {BCFVisibilityComponent} from "./BCFVisibilityComponent";
 import {BCFComponent} from "./BCFComponent";
 
 /**
- * TODO
+ * Visual states of BCF components.
  */
 export interface BCFComponents {
 
     /**
-     * TODO
+     * Colored BCF components.
      */
     coloring: BCFColoringComponent[];
 
     /**
-     * TODO
+     * Visibility BCF components.
      */
     visibility?: BCFVisibilityComponent;
 
     /**
-     * TODO
+     * Selected BCF components.
      */
     selection?: BCFComponent[];
 
     /**
-     * TODO
+     * X-rayed BCF components.
      */
     translucency: BCFComponent[];
 }

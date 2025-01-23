@@ -135,7 +135,7 @@
  *
  * Our `xgfManifest.json` output file is shown below. This file has the format of {@link core!ModelChunksManifestParams | ModelChunksManifestParams} and is shown below.
  *
- * Each file referenced in `sceneModelFiles` is an XGF geometry file (see {@link sdk/xgf | xgf}). Each file referenced
+ * Each file referenced in `sceneModelFiles` is an XGF geometry file (see {@link xgf | @xeokit/sdk/xgf}). Each file referenced
  * in `dataModelFiles` is a JSON data model file with the format of {@link metamodel!MetaModelParams | ModelModelParams}.
  *
  * ````json

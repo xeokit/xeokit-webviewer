@@ -7,7 +7,7 @@ import type {GeometryArrays} from "./GeometryArrays";
  *
  * ## Usage
  *
- * Creating a {@link ../scene!SceneMesh} with a box-shaped wireframe {@link scene!SceneGeometry}:
+ * Creating a {@link scene!SceneMesh | SceneMesh} with a box-shaped wireframe {@link scene!SceneGeometry | SceneGeometry}:
  *
  * ````javascript
  * TODO
@@ -19,7 +19,7 @@ import type {GeometryArrays} from "./GeometryArrays";
  * @param [cfg.xSize=1.0]  Half-size on the X-axis.
  * @param [cfg.ySize=1.0]  Half-size on the Y-axis.
  * @param [cfg.zSize=1.0]  Half-size on the Z-axis.
- * @returns {Object} Configuration for a {@link scene!SceneGeometry} subtype.
+ * @returns {Object} Configuration for a {@link scene!SceneGeometry | SceneGeometry} subtype.
  */
 export function buildBoxLinesGeometry(cfg: {
     center?: (number[] | Float32Array | Float64Array),

@@ -7,14 +7,14 @@ import {TrianglesPrimitive} from "../constants";
  *
  * ## Usage
  *
- * Creating a {@link scene!SceneMesh} with a cylinder-shaped {@link scene!SceneGeometry}:
+ * Creating a {@link scene!SceneMesh | SceneMesh} with a cylinder-shaped {@link scene!SceneGeometry | SceneGeometry}:
  *
  * ````javascript
  *
  * ````
  *
  * @param cfg Configs
- * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
+ * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry | SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
  * @param [cfg.center]  3D point indicating the center position.
  * @param [cfg.radiusTop=1]  Radius of top.
  * @param [cfg.radiusBottom=1]  Radius of bottom.
@@ -22,7 +22,7 @@ import {TrianglesPrimitive} from "../constants";
  * @param [cfg.radialSegments=60]  Number of horizontal segments.
  * @param [cfg.heightSegments=1]  Number of vertical segments.
  * @param [cfg.openEnded=false]  Whether or not the cylinder has solid caps on the ends.
- * @returns {Object} Configuration for a {@link scene!SceneGeometry} subtype.
+ * @returns {Object} Configuration for a {@link scene!SceneGeometry | SceneGeometry} subtype.
  */
 export function buildCylinderGeometry(cfg: {
     radiusBottom: number;

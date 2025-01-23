@@ -1,7 +1,7 @@
 import type {View} from "../viewer";
 
 /**
- * Options for {@link saveBCFViewpoint | saveBCFViewpoint}.
+ * Parameters for {@link saveBCFViewpoint | saveBCFViewpoint}.
  *
  * See {@link bcf | @xeokit/sdk/bcf}  for usage.
  */
@@ -71,10 +71,10 @@ export interface SaveBCFViewpointParams {
      * The {@link saveBCFViewpoint | saveBCFViewpoint} function will silently ignore each component state that has no corresponding
      * ViewObject in any of these ViewLayers.
      *
-     * Each ViewLayer's occurrence in {@link SaveBCFViewpointParams.excludeLayerIds | SaveBCFViewpointParams.excludeLayerIds} will override
+     * Each ViewLayer's occurrence in {@link SaveBCFViewpointParams.excludeViewLayerIds | SaveBCFViewpointParams.excludeViewLayerIds} will override
      * its appearance in this list.
      */
-    includeLayerIds?: string[]
+    includeViewLayerIds?: string[]
 
     /**
      * Never save BCF viewpoint components if their corresponding {@link viewer!ViewObject | ViewObjects}
@@ -84,7 +84,7 @@ export interface SaveBCFViewpointParams {
      * ViewObject in any of these ViewLayers.
      *
      * Each ViewLayer's occurrence in this list will override its occurrance
-     * in {@link SaveBCFViewpointParams.includeLayerIds}.
+     * in {@link SaveBCFViewpointParams.includeViewLayerIds}.
      */
-    excludeLayerIds?: string[]
+    excludeViewLayerIds?: string[]
 }

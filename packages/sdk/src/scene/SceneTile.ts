@@ -6,10 +6,9 @@ import {SceneObject} from "./SceneObject";
 /**
  * A tile in a {@link SceneModel | SceneModel}.
  *
- *
  * * {@link SceneMeshParams.origin | SceneMeshParams.origin}
  * * Stored in {@link SceneModel.tiles | SceneModel.tiles}
- * * Created automatically for each distinct value of {@link SceneMeshParams.origin | SceneMeshParams.origin} given to {@link SceneMeshParams.createMesh | SceneMeshParams.createMesh}
+ * * Created automatically for each distinct value of {@link SceneMeshParams.origin | SceneMeshParams.origin} given to {@link SceneModel.createMesh | SceneModel.createMesh}
  * * Each SceneTile is destroyed as soon all {@link SceneTile | SceneTiles} with that origin heve been destroyed
  *
  * See {@link scene | @xeokit/sdk/scene}   for usage.

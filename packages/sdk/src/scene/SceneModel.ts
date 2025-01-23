@@ -28,8 +28,6 @@ import {
     identityQuat, mulMat4, mulVec3Scalar, translateMat4v
 } from "../matrix";
 import {SceneModelStreamParams} from "./SceneModelStreamParams";
-import {SceneQuantizationRange} from "./SceneQuantizationRange";
-import {SceneQuantizationRangeParams} from "./SceneQuantizationRangeParams";
 import {SceneTile} from "./SceneTile";
 import {createRTCModelMat} from "../rtc";
 import {FloatArrayParam} from "../math";
@@ -164,13 +162,6 @@ export class SceneModel extends Component {
     public readonly geometries: { [key: string]: SceneGeometry };
 
     /**
-     * {@link SceneQuantizationRange | SceneQuantizationRanges} within this SceneModel, each mapped to {@link SceneQuantizationRange.id | SceneQuantizationRange.id}.
-     *
-     * * Created by {@link SceneModel.createGeometry | SceneModel.createGeometry}.
-     */
-    public readonly quantizationRanges: { [key: string]: SceneQuantizationRange };
-
-    /**
      * {@link SceneTexture | Textures} within this SceneModel, each mapped to {@link SceneTexture.id | SceneTexture.id}.
      *
      * * Created by {@link SceneModel.createTexture | SceneModel.createTexture}.
@@ -289,7 +280,6 @@ export class SceneModel extends Component {
         this.layerId = sceneModelParams.layerId;
         this.edgeThreshold = 10;
         this.geometries = {};
-        this.quantizationRanges = {};
         this.textures = {};
         this.#texturesList = [];
         this.textureSets = {};
@@ -660,29 +650,6 @@ export class SceneModel extends Component {
     }
 
     /**
-     *
-     * @param quantizationRangeParams
-     */
-    createQuantizationRange(quantizationRangeParams: SceneQuantizationRangeParams): SceneQuantizationRange | SDKError {
-        if (this.destroyed) {
-            return new SDKError("Failed to add SceneQuantizationRange to SceneModel - SceneModel already destroyed");
-        }
-        if (this.built) {
-            return new SDKError("Failed to add SceneQuantizationRange to SceneModel - SceneModel already built");
-        }
-        if (!quantizationRangeParams) {
-            return new SDKError("Failed to add SceneQuantizationRange to SceneModel - Parameters expected: geometryCompressedParams");
-        }
-        const quantizationRangeId = quantizationRangeParams.id;
-        if (this.quantizationRanges[quantizationRangeId]) {
-            return new SDKError(`Failed to add SceneQuantizationRange to SceneModel - SceneQuantizationRange with this ID already created: ${quantizationRangeId}`);
-        }
-        const quantizationRange = new SceneQuantizationRange(quantizationRangeParams);
-        this.quantizationRanges[quantizationRangeId] = quantizationRange;
-        return quantizationRange;
-    }
-
-    /**
      * Creates a new {@link SceneMesh} within this SceneModel.
      *
      * * Stores the new {@link SceneMesh} in {@link SceneModel.meshes | SceneModel.meshes}.
@@ -788,7 +755,6 @@ export class SceneModel extends Component {
      * Creates a new {@link SceneObject}.
      *
      * * Stores the new {@link SceneObject} in {@link SceneModel.objects | SceneModel.objects} and {@link Scene.objects | Scene.objects}.
-     * * Fires an event via {@link Scene.onObjectCreated | Scene.onObjectCreated}.
      * * Each {@link SceneMesh} is allowed to belong to one SceneObject.
      * * SceneObject IDs must be unique within the SceneModel's {@link Scene | Scene}.
      *

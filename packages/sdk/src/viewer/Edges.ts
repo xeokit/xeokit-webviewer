@@ -8,10 +8,7 @@ import {EdgesParams} from "./EdgesParams";
 /**
  * Configures the appearance of {@link ViewObject | ViewObjects} when their edges are emphasised.
  *
- *
- *
  * * Located at {@link View.edges}.
- * * Emphasise edges of a {@link ViewObject} by setting {@link ViewObject.enabled} ````true````.
  */
 class Edges extends Component {
 

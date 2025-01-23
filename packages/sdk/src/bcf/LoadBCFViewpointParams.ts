@@ -5,17 +5,41 @@ import {Data} from "../data";
 /**
  * Options for {@link loadBCFViewpoint | loadBCFViewpoint}.
  *
- * See {@link "bcf" | @xeokit/bcf} for usage.
+ * See {@link "bcf" | @xeokit/sdk/bcf} for usage.
  */
 export interface LoadBCFViewpointParams {
 
-    duration?: number;
+    /**
+     * Identifies the system from where the BCF viewpoint originates.
+     */
     originatingSystem?: string;
-    updateCompositeObjects?: boolean;
-    reverseClippingPlanes?: boolean;
-    reset?: boolean;
-    immediate?: boolean;
 
+    /**
+     * When ````true````, then when visibility and selection updates refer to composite objects (eg. an IfcBuildingStorey),
+     * then this method will apply the updates to objects within those composites.
+     */
+    updateCompositeObjects?: boolean;
+
+    /**
+     * Whether to flip the direction of the slicing planes in the BCF viewpoint.
+     *
+     * Default is `false`.
+     */
+    reverseClippingPlanes?: boolean;
+
+    /**
+     * Whether to reset the selection and X-ray states of {@link viewer!ViewObject | ViewObjects} within the given target {@link viewer!View | View}.
+     *
+     * Default is `false`.
+     */
+    reset?: boolean;
+
+    /**
+     * When ````true```` (default), will attempt to set {@link viewer!Camera.look | Camera.look} to the closest
+     * point of surface intersection with a ray fired from the BCF ````camera_view_point```` in the direction of ````camera_direction````.
+     *
+     * Default is `true`.
+     */
     rayCast?: boolean;
 
     /**
@@ -47,10 +71,10 @@ export interface LoadBCFViewpointParams {
      * The {@link loadBCFViewpoint | loadBCFViewpoint} function will silently ignore each component state that has no corresponding
      * ViewObject in any of these ViewLayers.
      *
-     * Each ViewLayer's occurrence in {@link LoadBCFViewpointParams.excludeLayerIds | LoadBCFViewpointParams.excludeLayerIds} will override
+     * Each ViewLayer's occurrence in {@link LoadBCFViewpointParams.excludeViewLayerIds | LoadBCFViewpointParams.excludeViewLayerIds} will override
      * its appearance in this list.
      */
-    includeLayerIds?: string[]
+    includeViewLayerIds?: string[]
 
     /**
      * Never load BCF viewpoint components if their corresponding {@link viewer!ViewObject | ViewObjects}
@@ -60,7 +84,7 @@ export interface LoadBCFViewpointParams {
      * ViewObject in any of these ViewLayers.
      *
      * Each ViewLayer's occurrence in this list will override its occurrance
-     * in {@link LoadBCFViewpointParams.includeLayerIds | LoadBCFViewpointParams.includeLayerIds}.
+     * in {@link LoadBCFViewpointParams.includeViewLayerIds | LoadBCFViewpointParams.includeViewLayerIds}.
      */
-    excludeLayerIds?: string[]
+    excludeViewLayerIds?: string[]
 }

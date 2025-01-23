@@ -49,7 +49,7 @@ interface ParsingContext {
  * @param params - Loading parameters.
  * @param params.fileData - glTF file data
  * @param params.sceneModel - SceneModel to load geometry and material colors into.
- * @param params.dataModel - DataModel to load basic semantic data into. For glTF, this will create a basic aggregation hierarchy (see {@link "basictypes/basicTypes"}).
+ * @param params.dataModel - DataModel to load basic semantic data into. For glTF, this will create a basic aggregation hierarchy (see {@link basictypes | @xeokit/sdk/basictypes}).
  * @returns {Promise} Resolves when glTF has been loaded.
  * @returns {Promise} Resolves when glTF has been loaded into the SceneModel and/or DataModel.
  * @throws *{@link core!SDKError | SDKError}*

@@ -33,8 +33,7 @@ export class WebGLRendererObject implements RendererObject {
         id: string,
         rendererModel: RendererModel,
         rendererMeshes: WebGLRendererMesh[],
-        aabb: any,
-        layerId?: string
+        aabb: any
     }) {
         this.id = params.id;
         this.rendererModel = params.rendererModel;
@@ -51,7 +50,6 @@ export class WebGLRendererObject implements RendererObject {
         this.#colorizeUpdated = false;
         this.#opacityUpdated = false;
 
-        this.layerId = params.layerId || null;
         for (let i = 0, len = this.rendererMeshes.length; i < len; i++) {  // TODO: tidier way? Refactor?
             this.rendererMeshes[i].setRendererObject(this);
         }

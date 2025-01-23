@@ -1,5 +1,5 @@
 /**
- * Setup hints.
+ * View setup hints.
  */
 export interface BCFViewSetupHints {
 

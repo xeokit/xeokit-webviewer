@@ -325,10 +325,8 @@ export class WebGLRenderer implements Renderer {
      * The WebGLRenderer will then begin rendering each {@link scene!SceneModel | SceneModel} previously or subsequently
      * created with {@link scene!Scene.createModel | Scene.createModel}, for the new View.
      *
-     * You can only attach as many Views as indicated in {@link  @xeokit/core!Capabilities.maxViews | Capabilities.maxViews}, as returned by
-     * {@link webglrenderer!WebGLRenderer.getCapabilities | Renderer.getCapabilities}.
-     *
-     * You must attach a View before you can attach a SceneModel.
+     * You can only attach as many Views as indicated in {@link  core!Capabilities.maxViews | Capabilities.maxViews}, as returned by
+     * {@link WebGLRenderer.getCapabilities | WebGLRenderer.getCapabilities}.
      *
      * @internal
      * @param view The View to attach.

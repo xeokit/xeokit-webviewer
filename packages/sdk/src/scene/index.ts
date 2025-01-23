@@ -48,12 +48,24 @@
  *
  * <br>
  *
- * ## Creating a Scene
+ * ## Import Modules
+ *
+ * First we'll import the modules we'll need:
  *
  * ````javascript
  * import {Scene} from "@xeokit/sdk/scene";
  * import {TrianglesPrimitive, LinearEncoding, LinearFilter, ClampToEdgeWrapping} from "@xeokit/sdk/constants";
+ * import {Viewer} from "@xeokit/sdk/viewer";
+ * import {WebGLRenderer} from "@xeokit/sdk/webglrenderer";
+ * import {CameraControl} from "@xeokit/sdk/cameracontrol";
+ * ````
+ * <br>
  *
+ * ## Creating a Scene
+ *
+ * Next, we'll create a {@link Scene | Scene}:
+ *
+ * ````javascript
  * const theScene = new Scene();
  * ````
  *
@@ -75,10 +87,6 @@
  * anything, we would typically use Scene without a Viewer.
  *
  * ````javascript
- * import {Viewer} from "@xeokit/sdk/viewer";
- * import {WebGLRenderer} from "@xeokit/sdk/webglrenderer";
- * import {CameraControl} from "@xeokit/sdk/cameracontrol";
- *
  * const myViewer = new Viewer({
  *     id: "myViewer",
  *     scene,
@@ -103,7 +111,7 @@
  *
  * ## Building a SceneModel
  *
- * In the example below, we'll create a {@link SceneModel | SceneModel} that will model the simple table object
+ * Next, we'll create a {@link SceneModel | SceneModel} that will model the simple table object
  * shown in the image above. Our SceneModel will contain five
  * {@link SceneObject | SceneObjects}, five {@link SceneMesh | SceneMeshes},
  * one {@link SceneGeometry | SceneGeometry} and one {@link SceneTexture | SceneTexture}.
@@ -478,6 +486,7 @@ export * from "./SceneTexture";
 export * from "./SceneTextureSet";
 export * from "./SceneGeometry";
 export * from "./SceneMesh";
+export * from "./SceneTile";
 
 export * from "./RendererGeometry";
 export * from "./RendererMesh";

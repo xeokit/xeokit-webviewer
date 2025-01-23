@@ -9,7 +9,7 @@ import type {Data} from "./Data";
  * * Created with {@link DataModel.createObject | DataModel.createObject}
  * * Stored in {@link Data.objects | Data.objects}, {@link Data.rootObjects | Data.rootObjects}, {@link Data.objectsByType | Data.objectsByType}, {@link DataModel.objects | Data.objects}, {@link DataModel.rootObjects | Data.rootObjects}
  *
- * See {@link data | @xeokit/sdk/data}   for usage.
+ * See {@link data | @xeokit/sdk/data}  for usage.
  */
 export class DataObject {
 

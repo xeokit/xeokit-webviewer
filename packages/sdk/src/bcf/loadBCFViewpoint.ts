@@ -1,7 +1,6 @@
 import type {LoadBCFViewpointParams} from "./LoadBCFViewpointParams";
 import {addVec3, createVec3, negateVec3, subVec3} from "../matrix";
-import {View} from "../viewer";
-import {Data, DataObject} from "../data";
+import {DataObject} from "../data";
 import {OrthoProjectionType, PerspectiveProjectionType} from "../constants";
 import {FloatArrayParam} from "../math";
 import {IfcOpeningElement, IfcSpace} from "../ifctypes";
@@ -10,25 +9,26 @@ import {BCFVector} from "./BCFVector";
 import {BCFComponent} from "./BCFComponent";
 
 const tempVec3 = createVec3();
-
+const tempVec3a = createVec3();
+const tempVec3b = createVec3();
+const tempVec3c = createVec3();
 
 /**
  * Loads a {@link BCFViewpoint | BCFViewpoint} into a {@link viewer!View | View}.
  *
- * See {@link "bcf" | @xeokit/bcf} for usage.
+ * See {@link bcf | @xeokit/sdk/bcf} for usage.
  *
- * @param params BCF viewpoint loading paremeters.
+ * @param params BCF viewpoint loading parameters.
  */
 export function loadBCFViewpoint(params: LoadBCFViewpointParams): void {
 
-    const includeViewLayers = params.includeLayerIds ? new Set(params.includeLayerIds) : null;
-    const excludeViewLayers = params.excludeLayerIds ? new Set(params.excludeLayerIds) : null;
+    const includeViewLayers = params.includeViewLayerIds ? new Set(params.includeViewLayerIds) : null;
+    const excludeViewLayers = params.excludeViewLayerIds ? new Set(params.excludeViewLayerIds) : null;
 
     const view = params.view;
     const data = params.data;
     const camera = view.camera;
     const rayCast = (!!params.rayCast);
-    const immediate = (params.immediate !== false);
     const reset = (params.reset !== false);
     //const realWorldOffset = scene.realWorldOffset;
     const realWorldOffset = createVec3();
@@ -37,10 +37,10 @@ export function loadBCFViewpoint(params: LoadBCFViewpointParams): void {
 
     view.clearSectionPlanes();
 
-    if (bcfViewpoint.clipping_planes && bcfViewpoint.clipping_planes.length > 0) {
-        bcfViewpoint.clipping_planes.forEach(function (e) {
-            let pos = xyzObjectToArray(e.location, tempVec3);
-            let dir = xyzObjectToArray(e.direction, tempVec3);
+    if (bcfViewpoint.clipping_planes) {
+        bcfViewpoint.clipping_planes.forEach((e) => {
+            let pos = xyzObjectToArray(e.location, tempVec3a);
+            let dir = xyzObjectToArray(e.direction, tempVec3b);
             if (reverseClippingPlanes) {
                 negateVec3(dir);
             }
@@ -52,202 +52,251 @@ export function loadBCFViewpoint(params: LoadBCFViewpointParams): void {
             view.createSectionPlane({pos, dir});
         });
     }
-    /*
-        scene.clearLines();
 
-        if (bcfViewpoint.lines && bcfViewpoint.lines.length > 0) {
-            const positions = [];
-            const indices = [];
-            let i = 0;
-            bcfViewpoint.lines.forEach((e) => {
-                if (!e.start_point) {
-                    return;
-                }
-                if (!e.end_point) {
-                    return;
-                }
-                positions.push(e.start_point.x);
-                positions.push(e.start_point.y);
-                positions.push(e.start_point.z);
-                positions.push(e.end_point.x);
-                positions.push(e.end_point.y);
-                positions.push(e.end_point.z);
-                indices.push(i++);
-                indices.push(i++);
-            });
-            new LineSet(scene, {
-                positions,
-                indices,
-                clippable: false,
-                collidable: true
-            });
-        }
+    // scene.clearLines();
 
-        scene.clearBitmaps();
+    if (bcfViewpoint.lines ) {
+        const positions = [];
+        const indices = [];
+        let i = 0;
+        bcfViewpoint.lines.forEach((e) => {
+            if (!e.start_point) {
+                return;
+            }
+            if (!e.end_point) {
+                return;
+            }
+            positions.push(e.start_point.x);
+            positions.push(e.start_point.y);
+            positions.push(e.start_point.z);
+            positions.push(e.end_point.x);
+            positions.push(e.end_point.y);
+            positions.push(e.end_point.z);
+            indices.push(i++);
+            indices.push(i++);
+        });
+        // new LineSet(scene, {
+        //     positions,
+        //     indices,
+        //     clippable: false,
+        //     collidable: true
+        // });
+    }
 
-        if (bcfViewpoint.bitmaps && bcfViewpoint.bitmaps.length > 0) {
-            bcfViewpoint.bitmaps.forEach(function (e) {
-                const bitmap_type = e.bitmap_type || "jpg"; // "jpg" | "png"
-                const bitmap_data = e.bitmap_data; // base64
-                let location = xyzObjectToArray(e.location, tempVec3a);
-                let normal = xyzObjectToArray(e.normal, tempVec3b);
-                let up = xyzObjectToArray(e.up, tempVec3c);
-                let height = e.height || 1;
-                if (!bitmap_type) {
-                    return;
-                }
-                if (!bitmap_data) {
-                    return;
-                }
-                if (!location) {
-                    return;
-                }
-                if (!normal) {
-                    return;
-                }
-                if (!up) {
-                    return;
-                }
-                if (camera.yUp) {
-                    location = ZToY(location);
-                    normal = ZToY(normal);
-                    up = ZToY(up);
-                }
-                new Bitmap(scene, {
-                    src: bitmap_data,
-                    type: bitmap_type,
-                    pos: location,
-                    normal: normal,
-                    up: up,
-                    clippable: false,
-                    collidable: true,
-                    height
-                });
-            });
-        }
-    */
+    // scene.clearBitmaps();
 
-    ///////////////////////////////////////////
-    // TODO
-    // Filter on layers
-    ///////////////////////////////////////////
-
-    if (reset) {
-        view.setObjectsXRayed(view.xrayedObjectIds, false);
-        view.setObjectsHighlighted(view.highlightedObjectIds, false);
-        view.setObjectsSelected(view.selectedObjectIds, false);
+    if (bcfViewpoint.bitmaps) {
+        bcfViewpoint.bitmaps.forEach(e =>{
+            const bitmap_type = e.bitmap_type || "jpg"; // "jpg" | "png"
+            const bitmap_data = e.bitmap_data; // base64
+            let location = xyzObjectToArray(e.location, tempVec3a);
+            let normal = xyzObjectToArray(e.normal, tempVec3b);
+            let up = xyzObjectToArray(e.up, tempVec3c);
+            let height = e.height || 1;
+            if (!bitmap_type) {
+                return;
+            }
+            if (!bitmap_data) {
+                return;
+            }
+            if (!location) {
+                return;
+            }
+            if (!normal) {
+                return;
+            }
+            if (!up) {
+                return;
+            }
+            if (camera.yUp) {
+                location = ZToY(location);
+                normal = ZToY(normal);
+                up = ZToY(up);
+            }
+            // new Bitmap(scene, {
+            //     src: bitmap_data,
+            //     type: bitmap_type,
+            //     pos: location,
+            //     normal: normal,
+            //     up: up,
+            //     clippable: false,
+            //     collidable: true,
+            //     height
+            // });
+        });
     }
 
     function filterViewObject(viewObject) {
         return !viewObject.layer ||
             ((!includeViewLayers || includeViewLayers.has(viewObject.layer.id)) &&
-            (!excludeViewLayers || !excludeViewLayers.has(viewObject.layer.id)));
+                (!excludeViewLayers || !excludeViewLayers.has(viewObject.layer.id)));
+    }
+
+    function withFilteredViewLayers(callback) {
+        for (let layerId in view.layers) {
+            if (excludeViewLayers && excludeViewLayers.has(layerId)) {
+                continue;
+            }
+            if (includeViewLayers && !includeViewLayers.has(layerId)) {
+                continue;
+            }
+            callback(view.layers[layerId]);
+        }
+    }
+
+    function withViewObjectsOfType(type, callback) {
+        const dataObjects = data.objectsByType[type];
+        for (let dataObjectId in dataObjects) {
+            const viewObject = view.objects[dataObjectId];
+            if (viewObject && filterViewObject(viewObject)) {
+                callback(viewObject);
+            }
+        }
+    }
+
+    function withBCFComponent(component: BCFComponent, callback) {
+
+        if (component.authoring_tool_id && component.originating_system === params.originatingSystem) {
+            const id = component.authoring_tool_id;
+            const viewObject = view.objects[id];
+            if (viewObject) {
+                if (filterViewObject(viewObject)) {
+                    callback(viewObject);
+                }
+                return
+            }
+            if (params.updateCompositeObjects) {
+                const dataObject = data.objects[id];
+                if (dataObject) {
+                    data.searchObjects({ // Updated aggregated IFC elements
+                        startObjectId: dataObject.id,
+                        includeStart: true,
+                        includeRelated: [BasicAggregation],
+                        resultCallback: (dataObject: DataObject): boolean => {
+                            const viewObject = view.objects[dataObject.id];
+                            if (viewObject) {
+                                if (filterViewObject(viewObject)) {
+                                    callback(viewObject);
+                                }
+                            }
+                            return false;
+                        }
+                    });
+                    return;
+                }
+            }
+        }
+
+        if (component.ifc_guid) {
+            const originalSystemId = component.ifc_guid;
+            const viewObject = view.objects[originalSystemId];
+            if (viewObject) {
+                callback(viewObject);
+                return;
+            }
+            if (params.updateCompositeObjects) {
+                const dataObject = data.objects[originalSystemId];
+                if (dataObject) {
+                    data.searchObjects({
+                        startObjectId: dataObject.id,
+                        includeStart: true,
+                        includeRelated: [BasicAggregation],
+                        resultCallback: (dataObject: DataObject): boolean => {
+                            const viewObject = view.objects[dataObject.id];
+                            if (viewObject) {
+                                if (filterViewObject(viewObject)) {
+                                    callback(viewObject);
+                                }
+                            }
+                            return false;
+                        }
+                    });
+                    return;
+                }
+            }
+        }
+    }
+
+    if (reset) {
+        withFilteredViewLayers(viewLayer => {
+            viewLayer.setObjectsXRayed(viewLayer.xrayedObjectIds, false);
+            viewLayer.setObjectsHighlighted(viewLayer.highlightedObjectIds, false);
+            viewLayer.setObjectsSelected(viewLayer.selectedObjectIds, false);
+        });
     }
 
     if (bcfViewpoint.components) {
         if (bcfViewpoint.components.visibility) {
             if (!bcfViewpoint.components.visibility.default_visibility) {
-                view.setObjectsVisible(view.objectIds, false);
+                withFilteredViewLayers(viewLayer => {
+                    viewLayer.setObjectsVisible(viewLayer.objectIds, false);
+                });
                 if (bcfViewpoint.components.visibility.exceptions) {
                     bcfViewpoint.components.visibility.exceptions.forEach(
                         component =>
-                            withBCFComponent(data, view, params, component,
-                                (viewObject) => {
-                                    if (filterViewObject(viewObject)) {
-                                        viewObject.visible = true;
-                                    }
+                            withBCFComponent(component,
+                                viewObject => {
+                                    viewObject.visible = true;
                                 }));
                 }
             } else {
-                view.setObjectsVisible(view.objectIds, true);
+                withFilteredViewLayers(viewLayer => {
+                    viewLayer.setObjectsVisible(viewLayer.objectIds, true);
+                });
                 if (bcfViewpoint.components.visibility.exceptions) {
                     bcfViewpoint.components.visibility.exceptions.forEach(
-                        component => withBCFComponent(data, view, params, component,
-                            (viewObject) => {
-                                if (filterViewObject(viewObject)) {
-                                    viewObject.visible = false;
-                                }
+                        component => withBCFComponent(component,
+                            viewObject => {
+                                viewObject.visible = false;
                             }));
                 }
             }
             const view_setup_hints = bcfViewpoint.components.visibility.view_setup_hints;
             if (view_setup_hints) {
                 if (view_setup_hints.spaces_visible === false) { // Hide IfcSpaces
-                    data.searchObjects({
-                        includeObjects: [IfcSpace],
-                        resultCallback: (dataObject: DataObject): boolean => {
-                            const viewObject = view.objects[dataObject.id];
-                            if (viewObject && filterViewObject(viewObject)) {
-                                viewObject.visible = false;
-                            }
-                            return false;
-                        }
+                    withViewObjectsOfType(IfcSpace, viewObject => {
+                        viewObject.visible = false;
                     });
                 }
                 if (view_setup_hints.spaces_translucent !== undefined) { // X-ray IfcSpaces
-                    data.searchObjects({
-                        includeObjects: [IfcSpace],
-                        resultCallback: (dataObject: DataObject): boolean => {
-                            const viewObject = view.objects[dataObject.id];
-                            if (viewObject && filterViewObject(viewObject)) {
-                                viewObject.xrayed = true;
-                            }
-                            return false;
-                        }
+                    withViewObjectsOfType(IfcSpace, viewObject => {
+                        viewObject.xrayed = true;
                     });
                 }
                 if (view_setup_hints.space_boundaries_visible !== undefined) {
                     // TODO
                 }
                 if (view_setup_hints.openings_visible === false) { // Hide IfcOpeningElements
-                    data.searchObjects({
-                        includeObjects: [IfcOpeningElement],
-                        resultCallback: (dataObject: DataObject): boolean => {
-                            const viewObject = view.objects[dataObject.id];
-                            if (viewObject && filterViewObject(viewObject)) {
-                                viewObject.visible = false;
-                            }
-                            return false;
-                        }
+                    withViewObjectsOfType(IfcOpeningElement, viewObject => {
+                        viewObject.visible = false;
                     });
                 }
                 if (view_setup_hints.space_boundaries_translucent !== undefined) {
                     // TODO
                 }
-                if (view_setup_hints.openings_translucent !== undefined) { // // X-ray IfcOpeningElements
-                    data.searchObjects({
-                        includeObjects: [IfcOpeningElement],
-                        resultCallback: (dataObject: DataObject): boolean => {
-                            const viewObject = view.objects[dataObject.id];
-                            if (viewObject && filterViewObject(viewObject)) {
-                                viewObject.xrayed = true;
-                            }
-                            return false;
-                        }
+                if (view_setup_hints.openings_translucent !== undefined) { // X-ray IfcOpeningElements
+                    withViewObjectsOfType(IfcOpeningElement, viewObject => {
+                        viewObject.xrayed = true;
                     });
                 }
             }
         }
-
         if (bcfViewpoint.components.selection) {
-            view.setObjectsSelected(view.selectedObjectIds, false);
+            withFilteredViewLayers(viewLayer => {
+                viewLayer.setObjectsSelected(viewLayer.selectedObjectIds, false);
+            });
             bcfViewpoint.components.selection.forEach(
-                component => withBCFComponent(data, view, params, component,
-                    (viewObject) => {
-                        if (filterViewObject(viewObject)) {
-                            viewObject.selected = true;
-                        }
+                component => withBCFComponent(component,
+                    viewObject => {
+                        viewObject.selected = true;
                     }));
-
         }
         if (bcfViewpoint.components.translucency) {
             view.setObjectsXRayed(view.xrayedObjectIds, false);
             bcfViewpoint.components.translucency.forEach(
-                component => withBCFComponent(data, view, params, component,
-                    (viewObject) => {
-                        if (filterViewObject(viewObject)) {
-                            viewObject.xrayed = true;
-                        }
+                component => withBCFComponent(component,
+                    viewObject => {
+                        viewObject.xrayed = true;
                     }));
         }
         if (bcfViewpoint.components.coloring) {
@@ -269,8 +318,8 @@ export function loadBCFViewpoint(params: LoadBCFViewpointParams): void {
                     parseInt(color.substring(4, 6), 16) / 256
                 ];
                 coloring.components.map(component =>
-                    withBCFComponent(data, view, params, component,
-                        (viewObject) => {
+                    withBCFComponent(component,
+                        viewObject => {
                             viewObject.colorize = colorize;
                             if (alphaDefined) {
                                 viewObject.opacity = alpha;
@@ -285,33 +334,25 @@ export function loadBCFViewpoint(params: LoadBCFViewpointParams): void {
         let look;
         let up;
         let projection;
-
         if (bcfViewpoint.perspective_camera) {
-            eye = xyzObjectToArray(bcfViewpoint.perspective_camera.camera_view_point, tempVec3);
-            look = xyzObjectToArray(bcfViewpoint.perspective_camera.camera_direction, tempVec3);
-            up = xyzObjectToArray(bcfViewpoint.perspective_camera.camera_up_vector, tempVec3);
-
+            eye = xyzObjectToArray(bcfViewpoint.perspective_camera.camera_view_point, tempVec3a);
+            look = xyzObjectToArray(bcfViewpoint.perspective_camera.camera_direction, tempVec3b);
+            up = xyzObjectToArray(bcfViewpoint.perspective_camera.camera_up_vector, tempVec3c);
             camera.perspectiveProjection.fov = bcfViewpoint.perspective_camera.field_of_view;
-
             projection = PerspectiveProjectionType;
         } else {
-            eye = xyzObjectToArray(bcfViewpoint.orthogonal_camera.camera_view_point, tempVec3);
-            look = xyzObjectToArray(bcfViewpoint.orthogonal_camera.camera_direction, tempVec3);
-            up = xyzObjectToArray(bcfViewpoint.orthogonal_camera.camera_up_vector, tempVec3);
-
+            eye = xyzObjectToArray(bcfViewpoint.orthogonal_camera.camera_view_point, tempVec3a);
+            look = xyzObjectToArray(bcfViewpoint.orthogonal_camera.camera_direction, tempVec3b);
+            up = xyzObjectToArray(bcfViewpoint.orthogonal_camera.camera_up_vector, tempVec3c);
             camera.orthoProjection.scale = bcfViewpoint.orthogonal_camera.view_to_world_scale;
-
             projection = OrthoProjectionType;
         }
-
         subVec3(eye, realWorldOffset);
-
         if (camera.yUp) {
             eye = ZToY(eye);
             look = ZToY(look);
             up = ZToY(up);
         }
-
         if (rayCast) {
             const hit = view.pick({
                 pickSurface: true,  // <<------ This causes picking to find the intersection point on the viewObject
@@ -322,124 +363,25 @@ export function loadBCFViewpoint(params: LoadBCFViewpointParams): void {
         } else {
             look = addVec3(eye, look, tempVec3);
         }
-
-        if (immediate) {
-            camera.eye = eye;
-            camera.look = look;
-            camera.up = up;
-            camera.projectionType = projection;
-        }
+        camera.eye = eye;
+        camera.look = look;
+        camera.up = up;
+        camera.projectionType = projection;
     }
 }
 
-
-function withBCFComponent(data: Data, view: View, params: LoadBCFViewpointParams, component: BCFComponent, callback) {
-
-
-    if (component.authoring_tool_id && component.originating_system === params.originatingSystem) {
-
-        const id = component.authoring_tool_id;
-        const viewObject = view.objects[id];
-
-        if (viewObject) {
-            callback(viewObject);
-            return
-        }
-
-        if (params.updateCompositeObjects) {
-            const dataObject = data.objects[id];
-            if (dataObject) {
-                data.searchObjects({ // Updated aggregated IFC elements
-                    startObjectId: dataObject.id,
-                    includeStart: true,
-                    includeRelated: [BasicAggregation],
-                    resultCallback: (dataObject: DataObject): boolean => {
-                        const viewObject = view.objects[dataObject.id];
-                        if (viewObject) {
-                            callback(viewObject);
-                        }
-                        return false;
-                    }
-                });
-                return;
-            }
-        }
-    }
-
-    if (component.ifc_guid) {
-
-        const originalSystemId = component.ifc_guid;
-        const viewObject = view.objects[originalSystemId];
-
-        if (viewObject) {
-            callback(viewObject);
-            return;
-        }
-
-        if (params.updateCompositeObjects) {
-            const dataObject = data.objects[originalSystemId];
-            if (dataObject) {
-                data.searchObjects({
-                    startObjectId: dataObject.id,
-                    includeStart: true,
-                    includeRelated: [BasicAggregation],
-                    resultCallback: (dataObject: DataObject): boolean => {
-                        const viewObject = view.objects[dataObject.id];
-                        if (viewObject) {
-                            callback(viewObject);
-                        }
-                        return false;
-                    }
-                });
-                return;
-            }
-        }
-
-        // Object.keys(scene.models).forEach((modelId) => {
-        //
-        //     const id = globalizeObjectId(modelId, originalSystemId);
-        //     const viewObject = scene.objects[id];
-        //
-        //     if (viewObject) {
-        //         callback(viewObject);
-        //         return;
-        //     }
-        //
-        //     if (params.updateCompositeObjects) {
-        //         const dataObject = data.objects[id];
-        //         if (dataObject) {
-        //             scene.withObjects(viewer.metaScene.getObjectIDsInSubtree(id), callback);
-        //
-        //         }
-        //     }
-        // });
-    }
-}
 
 function globalizeObjectId(modelId: string, objectId: string): string {
     return (modelId + "#" + objectId)
 }
 
 function xyzObjectToArray(xyz: BCFVector, arry: FloatArrayParam): FloatArrayParam {
-    arry = new Float64Array(3);
     arry[0] = xyz.x;
     arry[1] = xyz.y;
     arry[2] = xyz.z;
     return arry;
 }
 
-function YToZ(vec: FloatArrayParam): FloatArrayParam {
-    return new Float64Array([vec[0], -vec[2], vec[1]]);
-}
-
 function ZToY(vec: FloatArrayParam): FloatArrayParam {
     return new Float64Array([vec[0], vec[2], -vec[1]]);
-}
-
-function colorizeToRGB(color: FloatArrayParam): string {
-    let rgb = "";
-    rgb += Math.round(color[0] * 255).toString(16).padStart(2, "0");
-    rgb += Math.round(color[1] * 255).toString(16).padStart(2, "0");
-    rgb += Math.round(color[2] * 255).toString(16).padStart(2, "0");
-    return rgb;
 }

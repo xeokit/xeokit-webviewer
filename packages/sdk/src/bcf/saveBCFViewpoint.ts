@@ -1,6 +1,6 @@
 import type {BCFViewpoint} from "./BCFViewpoint";
 import type {SaveBCFViewpointParams} from "./SaveBCFViewpointParams";
-import {addVec3, createVec3, normalizeVec3, subVec3} from "../matrix";
+import {addVec3, createVec3, negateVec3, normalizeVec3, subVec3} from "../matrix";
 import {FloatArrayParam} from "../math";
 import {OrthoProjectionType} from "../constants";
 import {ViewObject} from "../viewer";
@@ -8,15 +8,15 @@ import {ViewObject} from "../viewer";
 /**
  * Saves a {@link viewer!View | View} to a {@link BCFViewpoint | BCFViewpoint}.
  *
- * See {@link "bcf" | @xeokit/bcf} for usage.
+ * See {@link bcf | @xeokit/sdk/bcf} for usage.
  *
- * @param params BCF saving parameers.
+ * @param params BCF saving parameters.
  * @returns The BCF viewpoint.
  */
 export function saveBCFViewpoint(params: SaveBCFViewpointParams): BCFViewpoint {
 
-    const includeViewLayers = params.includeLayerIds ? new Set(params.includeLayerIds) : null;
-    const excludeViewLayers = params.excludeLayerIds ? new Set(params.excludeLayerIds) : null;
+    const includeViewLayers = params.includeViewLayerIds ? new Set(params.includeViewLayerIds) : null;
+    const excludeViewLayers = params.excludeViewLayerIds ? new Set(params.excludeViewLayerIds) : null;
 
     const view = params.view;
     const camera = view.camera;
@@ -34,6 +34,34 @@ export function saveBCFViewpoint(params: SaveBCFViewpointParams): BCFViewpoint {
         lookDirection = YToZ(lookDirection);
         eye = YToZ(eye);
         up = YToZ(up);
+    }
+
+    function filterViewObject(viewObject) {
+        return !viewObject.layer ||
+            ((!includeViewLayers || includeViewLayers.has(viewObject.layer.id)) &&
+                (!excludeViewLayers || !excludeViewLayers.has(viewObject.layer.id)));
+    }
+
+    function createBCFComponents( objectIds) {
+        const view = params.view;
+        const components = [];
+        for (let i = 0, len = objectIds.length; i < len; i++) {
+            const objectId = objectIds[i];
+            const viewObject = view.objects[objectId];
+            if (viewObject) {
+                if (filterViewObject(viewObject)) {
+                    const component: any = {
+                        ifc_guid: viewObject.originalSystemId,
+                        originating_system: params.originatingSystem
+                    };
+                    if (viewObject.originalSystemId !== objectId) {
+                        component.authoring_tool_id = objectId;
+                    }
+                    components.push(component);
+                }
+            }
+        }
+        return components;
     }
 
     const camera_view_point = xyzArrayToObject(addVec3(eye, realWorldOffset));
@@ -56,37 +84,33 @@ export function saveBCFViewpoint(params: SaveBCFViewpointParams): BCFViewpoint {
 
     // Section planes
 
-    // const sectionPlanes = view.sectionPlanes;
-    // for (let id in sectionPlanes) {
-    //     if (sectionPlanes.hasOwnProperty(id)) {
-    //         let sectionPlane = sectionPlanes[id];
-    //         if (!sectionPlane.active) {
-    //             continue;
-    //         }
-    //         let location = sectionPlane.pos;
-    //
-    //         let direction;
-    //         if (reverseClippingPlanes) {
-    //             direction = negateVec3(sectionPlane.dir, createVec3());
-    //         } else {
-    //             direction = sectionPlane.dir;
-    //         }
-    //
-    //         if (camera.yUp) {
-    //             // BCF is Z up
-    //             location = YToZ(location);
-    //             direction = YToZ(direction);
-    //         }
-    //         addVec3(location, realWorldOffset);
-    //
-    //         location = xyzArrayToObject(location);
-    //         direction = xyzArrayToObject(direction);
-    //         if (!bcfViewpoint.clipping_planes) {
-    //             bcfViewpoint.clipping_planes = [];
-    //         }
-    //         bcfViewpoint.clipping_planes.push({location, direction});
-    //     }
-    // }
+    const sectionPlanes = view.sectionPlanes;
+    for (let id in sectionPlanes) {
+        if (sectionPlanes.hasOwnProperty(id)) {
+            let sectionPlane = sectionPlanes[id];
+            if (!sectionPlane.active) {
+                continue;
+            }
+            let location = sectionPlane.pos;
+            let direction;
+            if (reverseClippingPlanes) {
+                direction = negateVec3(sectionPlane.dir, createVec3());
+            } else {
+                direction = sectionPlane.dir;
+            }
+            if (camera.yUp) { // BCF is Z up
+                location = YToZ(location);
+                direction = YToZ(direction);
+            }
+            addVec3(location, realWorldOffset);
+            location = xyzArrayToObject(location);
+            direction = xyzArrayToObject(direction);
+            if (!bcfViewpoint.clipping_planes) {
+                bcfViewpoint.clipping_planes = [];
+            }
+            bcfViewpoint.clipping_planes.push({location, direction});
+        }
+    }
 
     // Lines
 
@@ -169,19 +193,11 @@ export function saveBCFViewpoint(params: SaveBCFViewpointParams): BCFViewpoint {
     const colorizedObjectIds = new Set(view.colorizedObjectIds);
 
     const coloringMap = Object.values(view.objects)
+
         .filter(viewObject =>
+            !viewObject.layer || ((!includeViewLayers || includeViewLayers.has(viewObject.layer.id)) && (!excludeViewLayers || !excludeViewLayers.has(viewObject.layer.id)))
+            && (opacityObjectIds.has(viewObject.id) || colorizedObjectIds.has(viewObject.id) || xrayedObjectIds.has(viewObject.id)))
 
-            /////////////////////////////////
-        // TODO filter visible, highlioghted, selected x-rayed etc
-        ///////////////////////////////////////////////////////
-
-            !viewObject.layer ||
-            ((!includeViewLayers || includeViewLayers.has(viewObject.layer.id)) &&
-                (!excludeViewLayers || !excludeViewLayers.has(viewObject.layer.id)))
-
-            && opacityObjectIds.has(viewObject.id)
-            || colorizedObjectIds.has(viewObject.id)
-            || xrayedObjectIds.has(viewObject.id))
         .reduce((coloringMap, viewObject: ViewObject) => {
 
             let color = colorizeToRGB(viewObject.colorize);
@@ -234,16 +250,16 @@ export function saveBCFViewpoint(params: SaveBCFViewpointParams): BCFViewpoint {
     const selectedObjectIds = view.selectedObjectIds;
 
     if (params.defaultInvisible || visibleObjectIds.length < invisibleObjectIds.length) {
-        bcfViewpoint.components.visibility.exceptions = createBCFComponents(params, visibleObjectIds);
+        bcfViewpoint.components.visibility.exceptions = createBCFComponents( visibleObjectIds);
         bcfViewpoint.components.visibility.default_visibility = false;
     } else {
-        bcfViewpoint.components.visibility.exceptions = createBCFComponents(params, invisibleObjectIds);
+        bcfViewpoint.components.visibility.exceptions = createBCFComponents( invisibleObjectIds);
         bcfViewpoint.components.visibility.default_visibility = true;
     }
 
-    bcfViewpoint.components.selection = createBCFComponents(params, selectedObjectIds);
+    bcfViewpoint.components.selection = createBCFComponents( selectedObjectIds);
 
-    bcfViewpoint.components.translucency = createBCFComponents(params, view.xrayedObjectIds);
+    bcfViewpoint.components.translucency = createBCFComponents(view.xrayedObjectIds);
 
     if (params.snapshot !== false) {
         bcfViewpoint.snapshot = {
@@ -253,31 +269,6 @@ export function saveBCFViewpoint(params: SaveBCFViewpointParams): BCFViewpoint {
     }
 
     return bcfViewpoint;
-}
-
-function createBCFComponents(params: SaveBCFViewpointParams, objectIds) {
-    const view = params.view;
-    const components = [];
-    for (let i = 0, len = objectIds.length; i < len; i++) {
-        const objectId = objectIds[i];
-        const viewObject = view.objects[objectId];
-        if (viewObject) {
-            const component: any = {
-                ifc_guid: viewObject.originalSystemId,
-                originating_system: params.originatingSystem
-            };
-            if (viewObject.originalSystemId !== objectId) {
-                component.authoring_tool_id = objectId;
-            }
-            components.push(component);
-        }
-    }
-    return components;
-}
-
-
-function globalizeObjectId(modelId: string, objectId: string): string {
-    return (modelId + "#" + objectId)
 }
 
 function xyzArrayToObject(arr: FloatArrayParam): any {
@@ -298,12 +289,4 @@ function colorizeToRGB(color) {
     rgb += Math.round(color[1] * 255).toString(16).padStart(2, "0");
     rgb += Math.round(color[2] * 255).toString(16).padStart(2, "0");
     return rgb;
-}
-
-function convertListToMap(strings) {
-    const resultMap = new Map();
-    strings.forEach((str) => {
-        resultMap.set(str, true);
-    });
-    return resultMap;
 }

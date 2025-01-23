@@ -92,7 +92,7 @@ export class ViewObject {
 
         this.#rendererObject.setVisible(this.layer.view.viewIndex, this.#state.visible);
 
-       // this.#rendererObject.initFlags(this.layer.view.viewIndex, this.#state);
+        // this.#rendererObject.initFlags(this.layer.view.viewIndex, this.#state);
 
         this.layer.objectVisibilityUpdated(this, this.#state.visible, true);
 
@@ -258,8 +258,8 @@ export class ViewObject {
     /**
      * Gets if this ViewObject is clippable.
      *
-     * * Clipping is done by the {@link SectionPlane}s in {@link ViewLayer.sectionPlanes}.
-     * * Use {@link ViewLayer.setObjectsClippable} to batch-update the clippable state of ViewObjects.
+     * * Clipping is done by the {@link SectionPlane | SectionPlanes} in {@link View.sectionPlanes | View.sectionPlanes}.
+     * * Use {@link View.setObjectsClippable | View.setObjectsClippable} or {@link ViewLayer.setObjectsClippable | ViewLayer.setObjectsClippable} to batch-update the clippable state of multiple ViewObjects.
      */
     get clippable(): boolean {
         return this.#state.clippable;
@@ -268,8 +268,8 @@ export class ViewObject {
     /**
      * Sets if this ViewObject is clippable.
      *
-     * * Clipping is done by the {@link SectionPlane}s in {@link ViewLayer.sectionPlanes}.
-     * * Use {@link ViewLayer.setObjectsClippable} to batch-update the clippable state of ViewObjects.
+     * * Clipping is done by the {@link SectionPlane | SectionPlanes} in {@link View.sectionPlanes | View.sectionPlanes}.
+     * * Use {@link View.setObjectsClippable | View.setObjectsClippable} or {@link ViewLayer.setObjectsClippable | ViewLayer.setObjectsClippable} to batch-update the clippable state of multiple ViewObjects.
      */
     set clippable(clippable: boolean) {
         if (clippable === this.#state.clippable) {
@@ -285,10 +285,6 @@ export class ViewObject {
 
     /**
      * Gets if this ViewObject is included in boundary calculations.
-     *
-     * * When ````true````, the 3D World boundaries returned by {@link ViewLayer.aabb} will include this ViewObject's boundary.
-     * * The ViewObject's 3D boundary is held in {@link scene!SceneObject.aabb}.
-     * * Use {@link ViewLayer.setObjectsCollidable} to batch-update the collidable state of ViewObjects.
      */
     get collidable(): boolean {
         return this.#state.collidable;
@@ -296,19 +292,15 @@ export class ViewObject {
 
     /**
      * Sets if this ViewObject included in boundary calculations.
-     *
-     * * When ````true````, the 3D World boundaries returned by {@link ViewLayer.aabb} will include this ViewObject's boundary.
-     * * The ViewObject's 3D boundary is held in {@link scene!SceneObject.aabb}.
-     * * Use {@link ViewLayer.setObjectsCollidable} to batch-update the collidable state of ViewObjects.
      */
     set collidable(collidable: boolean) {
         if (collidable === this.#state.collidable) {
             return;
         }
-        const result = this.#rendererObject.setCollidable(this.layer.view.viewIndex, collidable);
-        if (result instanceof SDKError) {
-            throw result;
-        }
+        // const result = this.#rendererObject.setCollidable(this.layer.view.viewIndex, collidable);
+        // if (result instanceof SDKError) {
+        //     throw result;
+        // }
         this.#state.collidable = collidable;
         // this._setAABBDirty();
         // this.layer._aabbDirty = true;

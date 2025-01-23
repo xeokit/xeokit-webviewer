@@ -5,7 +5,7 @@ import {TrianglesPrimitive} from "../constants";
 
 
 /**
- * Creates a torus-shaped {@link scene!SceneGeometry}.
+ * Creates a torus-shaped {@link scene!SceneGeometry | SceneGeometry}.
  *
  * ## Usage
  *
@@ -14,14 +14,14 @@ import {TrianglesPrimitive} from "../constants";
  * ````
  *
  * @param cfg Configs
- * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
+ * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry | SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
  * @param [cfg.center] 3D point indicating the center position.
  * @param [cfg.radius=1] The overall radius.
  * @param [cfg.tube=0.3] The tube radius.
  * @param [cfg.radialSegments=32] The number of radial segments.
  * @param [cfg.tubeSegments=24] The number of tubular segments.
  * @param [cfg.arc=Math.PI*0.5] The length of the arc in radians, where Math.PI*2 is a closed torus.
- * @returns {GeometryArrays} Configuration for a {@link scene!SceneGeometry} subtype.
+ * @returns {GeometryArrays} Configuration for a {@link scene!SceneGeometry | SceneGeometry} subtype.
  */
 export function buildTorusGeometry(cfg: {
     tube?: number;

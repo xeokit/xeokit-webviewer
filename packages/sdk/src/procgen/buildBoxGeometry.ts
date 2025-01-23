@@ -8,7 +8,7 @@ import {SDKError} from "../core";
  *
  * ## Usage
  *
- * Creating a {@link scene!SceneMesh} with a box-shaped {@link scene!SceneGeometry}:
+ * Creating a {@link scene!SceneMesh | SceneMesh} with a box-shaped {@link scene!SceneGeometry | SceneGeometry}:
  *
  * ````javascript
  * TODO

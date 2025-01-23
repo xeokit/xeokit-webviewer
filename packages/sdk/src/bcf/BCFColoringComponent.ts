@@ -6,12 +6,12 @@ import {BCFComponent} from "./BCFComponent";
 export interface BCFColoringComponent {
 
     /**
-     * The components in this
+     * The BCF components to colorize.
      */
     components: BCFComponent[];
 
     /**
-     * TODO
+     * RGBA color to apply, encoded as a string.
      */
     color: string;
 

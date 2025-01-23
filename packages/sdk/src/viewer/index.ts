@@ -11,62 +11,59 @@
  *
  * # Features
  *
- * * Use a {@link Viewer | Viewer} to interactively explore a {@link scene!Scene | Scene} across all major browsers, including mobile platforms.
+ * - **Interactive Exploration**
+ *   Use a {@link Viewer | Viewer} to explore a {@link scene!Scene | Scene} interactively across all major browsers, including mobile platforms.
  *
- * * **Pluggable Renderer** - The Viewer employs a customizable {@link Renderer | Renderer} strategy, enabling compatibility with various
- * browser graphics APIs. In this documentation, we utilize the {@link webglrenderer!WebGLRenderer | WebGLRenderer}, which configures
- * the Viewer to render using WebGL.
+ * - **Customizable Renderer**
+ *   The Viewer supports a pluggable {@link Renderer | Renderer} strategy, ensuring compatibility with various browser graphics APIs. This documentation features the {@link webglrenderer!WebGLRenderer | WebGLRenderer}, which configures the Viewer to use WebGL for rendering.
  *
- * * **Scene Models** - The Viewer includes a {@link scene!Scene | Scene} that contains the geometry and materials for models. The Scene
- * acts as a container for {@link scene!SceneModel | SceneModels}, {@link scene!SceneObject | SceneObjects},
- * {@link scene!SceneMesh | SceneMeshes}, and {@link scene!SceneGeometry | SceneGeometries}. It can be programmatically
- * constructed, as well as imported from or exported to various file formats.
+ * - **Scene Models**
+ *   The Viewer includes a {@link scene!Scene | Scene} containing the geometry and materials of models. The Scene serves as a container for {@link scene!SceneModel | SceneModels}, {@link scene!SceneObject | SceneObjects}, {@link scene!SceneMesh | SceneMeshes}, and {@link scene!SceneGeometry | SceneGeometries}. It can be constructed programmatically or imported/exported in various file formats.
  *
- * * **Full-Precision** - The Viewer supports accurate rendering of models that depend on large double-precision World coordinates.
+ * - **High Precision**
+ *   The Viewer enables accurate rendering of models that use large double-precision World coordinates, eliminating the need to center distant models to prevent rounding jitter during viewing.
  *
- * * **Multiple Views** - The Viewer can support multiple {@link View | Views}, each providing an independent perspective of the
- * Scene within its own HTML canvas. Each View maintains its own camera position, projection settings, lighting configuration,
- * and object states (e.g., visibility, highlighting, X-ray, colorization).
+ * - **Multiple Views**
+ *   The Viewer can manage multiple {@link View | Views}, each offering an independent perspective of the Scene within its own HTML canvas. Each View maintains unique camera positions, projection settings, lighting configurations, and object states (e.g., visibility, highlighting, X-ray, or colorization).
  *
- * * **View Layers** - Views in the Viewer can organize objects into {@link ViewLayer | ViewLayers}, which act as bins to group
- * objects based on their role within the View. These layers make it easier to apply updates (e.g., toggling visibility,
- * selection, highlighting, or slicing) to specific groups of objects.
+ * - **View Layers**
+ *   Objects in a View can be organized into {@link ViewLayer | ViewLayers}, grouping them by role. This feature simplifies updates such as toggling visibility, selection, highlighting, or slicing for specific object groups.
  *
- * * **Data Models** - The Viewer can optionally integrate with semantic {@link data!Data | Data}, which is represented as an
- * entity-relationship graph. This graph provides an API for programmatically creating and searching data models. The Data
- * contains {@link data!DataModel | DataModels}, {@link data!DataObject | DataObjects}, {@link data!PropertySet | PropertySets},
- * and {@link data!Relationship | Relationships}. To attach semantic data to a {@link scene!SceneModel | SceneModel}, a
- * corresponding DataModel with the same ID can be created. Similarly, to attach data to specific SceneObjects, matching
- * DataObjects with the same IDs can be used.
+ * - **Semantic Data Models**
+ *   The Viewer can integrate semantic {@link data!Data | Data}, represented as an entity-relationship graph. This allows for programmatic creation and querying of data models, including {@link data!DataModel | DataModels}, {@link data!DataObject | DataObjects}, {@link data!PropertySet | PropertySets}, and {@link data!Relationship | Relationships}. Semantic data can be linked to SceneModels and SceneObjects using corresponding IDs.
  *
- * * **BCF Interoperability** - When viewing BIM models, use {@link bcf!saveBCFViewpoint | saveViewpoint} and {@link bcf!loadBCFViewpoint | loadViewpoint} to share snapshots
- * of the Viewer’s state with other BIM viewers. These snapshots are encoded in the Building Collaboration Format (BCF), an
- * open file format designed to facilitate data exchange and collaboration on 3D models and building information.
+ * - **BCF Interoperability**
+ *   For BIM models, use {@link bcf!saveBCFViewpoint | saveBCFViewpoint} and {@link bcf!loadBCFViewpoint | loadBCFViewpoint} to share Viewer snapshots encoded as {@link bcf!BCFViewpoint | BCFViewpoints} in the Building Collaboration Format (BCF). This open format facilitates data exchange and collaboration on 3D models.
  *
- * * **Custom Slicing Planes** - Create unlimited {@link SectionPlane | SectionPlanes} within each View to slice through models and expose internal structures.
- * SectionPlanes can be dynamically repositioned either programmatically or through user input.
+ * - **Custom Slicing Planes**
+ *   Create unlimited {@link SectionPlane | SectionPlanes} in each View to slice through models and reveal internal structures. SectionPlanes can be adjusted dynamically through code or user interaction.
  *
- * * **Highlight, Select, Colorize, X-Ray** - A View's objects can be dynamically highlighted, selected, colorized, or X-rayed. Highlighted
- * or selected objects emit a glowing effect. Colorized objects temporarily adopt a new color, while X-rayed objects appear translucent.
+ * - **Object Interaction**
+ *   Dynamically highlight, select, colorize, or X-ray objects in a View. Highlights and selections add a glowing effect, colorized objects adopt temporary colors, and X-rayed objects appear translucent.
  *
- * * **Dynamic Resolution Scaling** - The resolution of a View's canvas can be adjusted dynamically. This technique is particularly
- * useful for temporarily lowering the resolution while the View's camera is in motion, then restoring it once the camera comes to a stop.
+ * - **Dynamic Resolution Scaling**
+ *   Adjust the resolution of a View’s canvas dynamically, lowering it during camera movement and restoring it upon stopping to optimize performance.
  *
- * * **Ambient Shadows (SAO)** - A View has a scalable ambient obscurance effect, {@link SAO}, which enhances 3D model visualization by darkening
- * areas with limited ambient light exposure. This effect adds depth and realism, improving the clarity of spatial
- * relationships and fine details.
+ * - **Ambient Shadows (SAO)**
+ *   Apply scalable ambient occlusion effects ({@link SAO}) to enhance 3D visualization by darkening areas with limited ambient light. This adds depth and highlights spatial relationships.
  *
- * * **Edge Enhancement** - A View includes an edge enhancement effect, {@link Edges}, that improves the visualization of 3D triangle meshes by automatically rendering
- * lines along their edges. It highlights edges shared by a single triangle or by two non-coplanar triangles.
+ * - **Edge Enhancement**
+ *   Automatically highlight 3D triangle mesh edges with {@link Edges}, emphasizing shared edges and non-coplanar triangle boundaries.
  *
- * * **Dynamic Lighting** - Each View can have unlimited number of {@link DirLight | DirLights}, {@link PointLight | PointLights}
- * and {@link AmbientLight | AmbientLights}. These light sources can be dynamically repositioned programmatically.
+ * - **Dynamic Lighting**
+ *   Add unlimited light sources such as {@link DirLight | DirLights}, {@link PointLight | PointLights}, and {@link AmbientLight | AmbientLights}, and adjust their positions programmatically.
  *
- * * **Object Picking**
+ * - **Configuration Management**
+ *   Save and restore the runtime settings of a {@link Viewer | Viewer} using {@link Viewer.toParams | Viewer.toParams} and {@link Viewer.fromParams | Viewer.fromParams}. This allows sharing configurations between Viewer instances, facilitating issue reproduction and enabling control systems within applications.
  *
- * * **Canvas Snapshot**
+ * - **Object Picking**
+ *   Pick objects in a View using 2D canvas coordinates or a 3D ray. Select entire ViewObjects or specific 3D points on their surfaces.
  *
- * * **Perspective and Orthographic Projections**
+ * - **Canvas Snapshots**
+ *   Capture bitmap snapshots of a View's canvas, with adjustable resolution.
+ *
+ * - **Projection Options**
+ *   Each View supports orthographic, perspective and custom projections.
  *
  * <br>
  *
@@ -501,7 +498,7 @@
  * ````javascript
  * const bcfViewpoint = saveBCFViewpoint({
  *     view,
- *     excludeLayerIds: ["myEnviromentViewLayer"]
+ *     excludeViewLayerIds: ["myEnviromentViewLayer"]
  * });
  * ````
  *
@@ -518,7 +515,7 @@
  * loadBCFViewpoint({
  *      bcfViewpoint
  *      view,
- *      excludeLayerIds: ["myEnvironmentViewLayer"]
+ *      excludeViewLayerIds: ["myEnvironmentViewLayer"]
  * });
  * ````
  *

@@ -2,22 +2,22 @@ import {BCFViewSetupHints} from "./BCFViewSetupHints";
 import {BCFComponent} from "./BCFComponent";
 
 /**
- * TODO
+ * BCF visibility component.
  */
 export interface BCFVisibilityComponent {
 
     /**
-     * TODO
+     * View setup hints.
      */
     view_setup_hints: BCFViewSetupHints;
 
     /**
-     * TODO
+     * If true: Shows all components, and hides the exceptions. If false: Hide all components and show exceptions.
      */
     default_visibility: boolean,
 
     /**
-     * TODO
+     * Components to show/hide determined by default_visibility.
      */
     exceptions: BCFComponent[],
 }

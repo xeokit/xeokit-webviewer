@@ -30,7 +30,7 @@ export class Scene extends Component {
     public readonly objects: { [key: string]: SceneObject };
 
     /**
-     * The {@link SceneTile | Tiles} in this Scene
+     * The {@link SceneTile | SceneTiles} in this Scene.
      */
     public readonly tiles: { [key: string]: SceneTile };
 
@@ -56,7 +56,7 @@ export class Scene extends Component {
     public readonly  onTileCreated:  EventEmitter<Scene, SceneTile>;
 
     /**
-     * Emits an event each time a {@link SceneTile | SceneTile} is destroyed in this Scene.
+     * Emits an event each time a {@link SceneTile} is destroyed in this Scene.
      *
      * @event
      */
@@ -251,7 +251,7 @@ export class Scene extends Component {
      * @returns *{@link core!SDKError | SDKError}*
      * * This Scene has already been destroyed.
      */
-    destroy(): void | SDKError {
+    destroy(): void {
         this.clear();
         this.onModelCreated.clear();
         this.onModelDestroyed.clear();

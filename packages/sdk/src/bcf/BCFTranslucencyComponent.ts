@@ -2,22 +2,22 @@ import {BCFViewSetupHints} from "./BCFViewSetupHints";
 import {BCFComponent} from "./BCFComponent";
 
 /**
- * TODO
+ * BCF translucency components.
  */
 export interface BCFTranslucencyComponent {
 
     /**
-     * TODO
+     * Hints about the setup of the viewer.
      */
     view_setup_hints: BCFViewSetupHints;
 
     /**
-     * TODO
+     * If true: X-rays all components, and un-X-rays the exceptions. If false: Un-X-ray all components and X-ray exceptions.
      */
-    default_translucency: boolean,
+    default_translucency: boolean;
 
     /**
-     * TODO
+     * Components to apply/remove X-ray, as determined by default_translucency.
      */
-    exceptions: BCFComponent[]
+    exceptions: BCFComponent[];
 }

@@ -1579,7 +1579,7 @@ const letters = {
 };
 
 /**
- * Creates wireframe vector text {@link scene!SceneGeometry}.
+ * Creates wireframe vector text {@link scene!SceneGeometry | SceneGeometry}.
  *
  * ## Usage
 
@@ -1593,7 +1593,7 @@ const letters = {
  * @param [cfg.origin] 3D point indicating the top left corner.
  * @param [cfg.size=1] Size of each character.
  * @param [cfg.text=""] The text.
- * @returns {Object} Configuration for a {@link scene!SceneGeometry} subtype.
+ * @returns {Object} Configuration for a {@link scene!SceneGeometry | SceneGeometry} subtype.
  */
 export function buildVectorTextGeometry(cfg: {
     size: number;

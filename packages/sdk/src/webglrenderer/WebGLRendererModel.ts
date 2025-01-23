@@ -119,7 +119,6 @@ export class WebGLRendererModel extends Component implements RendererModel {
         edgeThreshold?: number;
         textureTranscoder: TextureTranscoder;
         qualityRender?: boolean;
-        layerId?: string;
     }) {
 
         super(params.viewer);
@@ -185,8 +184,6 @@ export class WebGLRendererModel extends Component implements RendererModel {
 
         this.qualityRender = (params.qualityRender !== false);
 
-        this.#layerId = params.layerId;
-
         // this.#onCameraViewMatrix = this.#view.camera.onViewMatrix.subscribe((camera: Camera, viewMatrix: FloatArrayParam) => {
         //     this.#viewMatrixDirty = true;
         // });
@@ -212,6 +209,7 @@ export class WebGLRendererModel extends Component implements RendererModel {
     }
 
     #attachSceneModel(sceneModel: SceneModel): void {
+
         const textures = sceneModel.textures;
         const geometries = sceneModel.geometries;
         const meshes = sceneModel.meshes;
@@ -461,7 +459,7 @@ export class WebGLRendererModel extends Component implements RendererModel {
                     this.error(`Primitive type not supported: ${sceneGeometry.primitive}`);
                     return;
             }
-        } else {
+        } else { // !instancing
             switch (sceneGeometry.primitive) {
                 case TrianglesPrimitive:
                 case SolidPrimitive:
@@ -539,8 +537,7 @@ export class WebGLRendererModel extends Component implements RendererModel {
             id: objectId,
             rendererModel: this,
             rendererMeshes,
-            aabb: sceneObject.aabb,
-            layerId: this.#layerId
+            aabb: sceneObject.aabb
         });
         this.rendererObjectsList.push(rendererObject);
         this.rendererObjects[objectId] = rendererObject; // <RendererObject>

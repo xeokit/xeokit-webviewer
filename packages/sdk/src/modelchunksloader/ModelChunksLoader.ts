@@ -5,7 +5,7 @@ import {ModelChunksManifestParams} from "../core";
 /**
  * Loads a SceneModel and/or DataModel from a set of chunk files.
  *
- * See {@link "modelchunksloader" | @xeokit/sdk/modelchunksloader} for usage.
+ * See {@link modelchunksloader | @xeokit/sdk/modelchunksloader} for usage.
  *
  * @param params
  */
@@ -41,7 +41,8 @@ export class ModelChunksLoader {
     /**
      * Loads the geometry and data models listed in a ModelChunksManifestParams into a SceneModel and DataModel.
      *
-     * Loading can be interrupted at any time by calling {@link @modelchunksloader/ModelChunksLoader.cancel | ModelChunksLoader.cancel()}.
+     * Loading can be interrupted at any time by calling {@link modelchunksloader/ModelChunksLoader.cancel | ModelChunksLoader.cancel}.
+     *
      * @param params
      * @returns {Promise} Resolves when all models have been loaded.
      */

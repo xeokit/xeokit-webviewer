@@ -274,7 +274,7 @@ class View extends Component {
     /**
      * Emits an event each time a {@link ViewLayer} is created in this View.
      *
-     * Layers are created explicitly with {@link View.createLayer}, or implicitly with {@link View.createModel} and {@link scene!CreateSceneModelParams.layerId}.
+     * Layers are created explicitly with {@link View.createLayer}, or implicitly with {@link scene!SceneModel.createObject | SceneModel.createObject} and {@link scene!SceneObjectParams.layerId | SceneObjectParams.layerId}.
      *
      * @event
      */
@@ -1718,9 +1718,9 @@ class View extends Component {
     }
 
     #destroyViewLayers() {
-        const viewLayers = this.layers;
-        for (let id in viewLayers) {
-            const viewLayer = viewLayers[id];
+        const layers = this.layers;
+        for (let id in layers) {
+            const viewLayer = layers[id];
             viewLayer.destroy();
         }
     }

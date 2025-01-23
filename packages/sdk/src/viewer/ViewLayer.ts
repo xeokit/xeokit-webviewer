@@ -322,12 +322,12 @@ class ViewLayer extends Component {
     /**
      * Map of the all {@link ViewObject | ViewObjects} in this ViewLayer.
      *
-     * These are the ViewObjects for which {@link ViewObject.layerId | ViewObject.layerId} has the same value as {@link ViewLayer.id}.
+     * These are the ViewObjects for which {@link scene!SceneObject.layerId | SceneObject.layerId} has the same value as the {@link ViewLayer.id | ViewLayer.id}.
      *
      * Each {@link ViewObject} is mapped here by {@link ViewObject.id}.
      *
      * The ViewLayer automatically ensures that there is a {@link ViewObject} here for
-     * each {@link RendererObject} in the {@link Viewer | Viewer}
+     * each {@link scene!RendererObject} in the {@link Viewer | Viewer}
      */
     readonly objects: { [key: string]: ViewObject };
 

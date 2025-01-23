@@ -13,7 +13,10 @@ import {BCFComponents} from "./BCFComponents";
  * problem description, location, and proposed solutions. It is used to facilitate communication and collaboration among
  * project stakeholders in BIM workflows.
  *
- * Conforms to <a href="https://github.com/buildingSMART/BCF-API">BCF Version 2.1</a>.
+ * * Conforms to <a href="https://github.com/buildingSMART/BCF-API">BCF Version 2.1</a>.
+ * * Returned by {@link saveBCFViewpoint | saveBCFViewpoint}
+ * * Passed to {@link loadBCFViewpoint | loadBCFViewpoint}
+ * * Located at {@link LoadBCFViewpointParams.bcfViewpoint | LoadBCFViewpointParams.bcfViewpoint}
  *
  * See {@link bcf | @xeokit/sdk/bcf} for usage.
  *

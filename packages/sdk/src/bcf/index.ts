@@ -27,15 +27,15 @@
  *
  * <br>
  *
- * ## Installation
+ * # Installation
  *
  * ````bash
- * npm install @xeokit/bcf
+ * npm install @xeokit/sdk
  * ````
  *
- * ## Usage
+ * # Usage
  *
- * ### Saving and Loading a View as BCF
+ * ## Saving and Loading a View as BCF
  *
  * In this example we'll set up a xeokit Viewer in a web browser, load a BIM model into it, and then demonstrate how we
  * can save and load bookmarks of our Viewer state as BCF viewpoints, using the model.
@@ -45,29 +45,29 @@
  * * create a {@link scene!Scene | Scene} and a {@link data!Data | Data},
  * * initialize a Viewer with the Scene and a {@link webglrenderer!WebGLRenderer | WebGLRenderer},
  * * create a new {@link viewer!View | View}, {@link scene!SceneModel | SceneModel} and {@link data!DataModel | DataModel},
- * * load a [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) file using the {@link xkt!loadXKT | loadXKT} function, and
- * * build the Scene and Data models, rendering the 3D model in the web browser.
+ * * load a XKT file into the SceneModel and DataModel, using {@link xkt!loadXKT | loadXKT}, and
+ * * build the SceneModel and DataModel, causing the model to appear in the View.
  *
  * ````javascript
- * import {Scene} from "@xeokit/scene";
- * import {Data} from "@xeoki/data";
- * import {Viewer} from "@xeokit/viewer";
- * import {WebGLRenderer} from "@xeokit/webglrenderer";
- * import {loadXKT} from "@xeokit/xkt";
- * import {saveBCFViewpoint, loadBCFViewpoint} from "@xeokit/bcf";
- * import * as ifcTypes from "@xeokit/ifctypes";
+ * import {Scene} from "@xeokit/sdk/scene";
+ * import {Data} from "@xeoki/sdk/data";
+ * import {Viewer} from "@xeokit/sdk/viewer";
+ * import {WebGLRenderer} from "@xeokit/sdk/webglrenderer";
+ * import {loadXKT} from "@xeokit/sdk/xkt";
+ * import {saveBCFViewpoint, loadBCFViewpoint} from "@xeokit/sdk/bcf";
+ * import * as ifcTypes from "@xeokit/sdk/ifctypes";
  *
  * const scene = new Scene();
  * const data = new Data();
  *
  * const viewer = new Viewer({
  *      scene,
- *      renderers: new WebGLRenderer()
+ *      renderer: new WebGLRenderer()
  * });
  *
  * const view = viewer.createView({
  *     id: "myView",
- *     canvasId: "myCanvas"
+ *     elementId: "myCanvas"
  * });
  *
  * const sceneModel = scene.createModel({
@@ -79,7 +79,7 @@
  * });
  *
  * fetch("myModel.xkt").then(response => {
- *     response.arrayBuffer().then(data => {
+ *     response.arrayBuffer().then(fileData => {
  *
  *          loadXKT({ data, sceneModel, dataModel });
  *
@@ -89,7 +89,7 @@
  * });
  * ````
  *
- * When our [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) has loaded, that call to {@link scene!SceneModel.build | SceneModel.build} will finalize our SceneModel
+ * When our XKT has loaded, our call to {@link scene!SceneModel.build | SceneModel.build} will finalize our SceneModel
  * and cause it to immediately appear in the View's canvas.
  *
  * That call will also trigger {@link scene!SceneModel.onBuilt | SceneModel.onBuilt} and
@@ -113,7 +113,7 @@
  *
  *     view.setObjectsXRayed(["myObject1", "myObject", ...], true);
  *
- *     const bcfViewpoint = saveBCFViewpoint({
+ *     const bcfViewpoint = saveBCFViewpoint({ // BCFViewpointParams
  *         view: view
  *     });
  *
@@ -124,31 +124,31 @@
  * the {@link BCFViewpoint | BCFViewpoint} back into the {@link viewer!View | View}:
  *
  * ````javascript
- * loadBCFViewpoint({
- *     bcfViewpoint,
+ * loadBCFViewpoint({   // SaveBCFViewpointParams
+ *     bcfViewpoint,    // BCFViewpointParams
  *     view
  * });
  * ````
  *
- * ### Saving and Loading a ViewLayer as BCF
+ * ## Saving and Loading a ViewLayer as BCF
  *
- * As before, let's create a Viewer with a View and a SceneModel.
+ * As before, let's create a {@link viewer!Viewer | Viewer} with a {@link viewer!View | View} and a {@link scene!SceneModel | SceneModel}.
  *
  * This time, we'll add two {@link viewer!ViewLayer | ViewLayers} to our View, and we'll associate our SceneModel with one of those
  * ViewLayers. ViewLayers allow us to partition our ViewObjects into bins, so that we can conveniently focus certain operations (eg. import/export
  * BCF) only on the relevant ViewObjects.
  *
  * ````javascript
- * import {Scene} from "@xeokit/scene";
- * import {Data} from "@xeoki/data";
- * import {Viewer} from "@xeokit/viewer";
- * import {WebGLRenderer} from "@xeokit/webglrenderer";
- * import {loadBCFViewpoint} from "@xeokit/bcf";
+ * import {Scene} from "@xeokit/sdk/scene";
+ * import {Data} from "@xeoki/sdk/data";
+ * import {Viewer} from "@xeokit/sdk/viewer";
+ * import {WebGLRenderer} from "@xeokit/sdk/webglrenderer";
+ * import {loadBCFViewpoint} from "@xeokit/sdk/bcf";
  *
  * const viewer = new Viewer({
  *     id: "myViewer",
  *     scene,
- *     renderers: new WebGLRenderer({
+ *     renderer: new WebGLRenderer({
  *         //...
  *     })
  * });
@@ -197,11 +197,12 @@
  * });
  * ````
  *
- * Use {@link loadBCFViewpoint | loadBCFViewpoint} to load the {@link BCFViewpoint | BCFViewpoint} back into the {@link viewer!ViewLayer | ViewLayer}:
+ * Use {@link loadBCFViewpoint | loadBCFViewpoint} to load the {@link BCFViewpoint | BCFViewpoint} back into
+ * the {@link viewer!ViewLayer | ViewLayer}:
  *
  * ````javascript
- * loadBCFViewpoint({
- *     bcfViewpoint,
+ * loadBCFViewpoint({ // LoadBCFViewpointParams
+ *     bcfViewpoint,  // BCFViewpointParams
  *     view,
  *     includeViewLayerIds: ["foreground"],
  *     excludeViewLayerIds: ["background"]

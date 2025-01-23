@@ -1,17 +1,17 @@
 import {BCFComponent} from "./BCFComponent";
 
 /**
- * TODO
+ * BCF selection component.
  */
 export interface BCFSelectionComponent {
 
     /**
-     * TODO
+     * If true: Selects all components, and unselects the exceptions. If false: Unselect all components and select exceptions.
      */
     default_selection: boolean,
 
     /**
-     * TODO
+     * Components to select/unselect determined by default_selection.
      */
     exceptions: BCFComponent[]
 }

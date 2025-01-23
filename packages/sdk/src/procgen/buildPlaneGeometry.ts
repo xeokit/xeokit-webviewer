@@ -2,11 +2,11 @@ import * as utils from "../utils";
 import type {GeometryArrays} from "./GeometryArrays";
 
 /**
- * Creates a plane-shaped {@link scene!SceneGeometry}.
+ * Creates a plane-shaped {@link scene!SceneGeometry | SceneGeometry}.
  *
  * ## Usage
  *
- * Creating a {@link scene!SceneMesh} with a plane-shaped {@link scene!SceneGeometry}:
+ * Creating a {@link scene!SceneMesh | SceneMesh} with a plane-shaped {@link scene!SceneGeometry | SceneGeometry}:
  *
  * ````javascript
 * TODO
@@ -14,12 +14,12 @@ import type {GeometryArrays} from "./GeometryArrays";
  *
  * @param cfg Configs
  * @param [cfg.center]  3D point indicating the center position.
- * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
+ * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry | SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
  * @param [cfg.xSize=1] Dimension on the X-axis.
  * @param [cfg.zSize=1] Dimension on the Z-axis.
  * @param [cfg.xSegments=1] Number of segments on the X-axis.
  * @param [cfg.zSegments=1] Number of segments on the Z-axis.
- * @returns {Object} Configuration for a {@link scene!SceneGeometry} subtype.
+ * @returns {Object} Configuration for a {@link scene!SceneGeometry | SceneGeometry} subtype.
  */
 export function buildPlaneGeometry(cfg = {
     xSize: 0,
