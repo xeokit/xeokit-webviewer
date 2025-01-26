@@ -30,6 +30,10 @@ export class SceneObject {
 
     /**
      * Optional layer ID for this SceneObject.
+     *
+     * When the {@link Scene} is attached to a {@link view!Viewer | View}, this will identify an optional {@link view!ViewLayer | ViewLayer}
+     * to assign the object to. ViewLayers allow users to group and segregate object based on their roles or aspects in a scene,
+     * simplifying interaction and focusing operations on specific object groups.
      */
     public readonly layerId?: string;
 

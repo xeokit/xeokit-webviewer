@@ -20,7 +20,7 @@ import {PickResult} from "./PickResult";
  *
  * const myViewer = new Viewer({
  *     id: "myViewer",
- *     renderers: new WebGLRenderer({ }) // Or WebGPURenderer, MockRenderer etc.
+ *     renderer: new WebGLRenderer({ }) // Or WebGPURenderer, MockRenderer etc.
  * });
  * ````
  */

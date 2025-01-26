@@ -7,6 +7,8 @@ import {SAOParams} from "./SAOParams";
  * Configures Scalable Ambient Obscurance (SAO) for a {@link View}.
  *
  * * Located at {@link View.sao}.
+ * * View will apply SAO when {@link View.renderMode | View.renderMode} is set to one of the values
+ * specified in {@link SAO.renderModes}.
  *
  * See {@link viewer | @xeokit/sdk/viewer} for usage info.
  */
@@ -52,7 +54,9 @@ export class SAO extends Component {
     }
 
     /**
-     * Sets which rendering modes in which to render edges.
+     * Sets which rendering modes in which to apply SAO.
+     *
+     * The {@link View} will apply SAO whenever {@link View.renderMode} has been set one of these values.
      *
      * Default value is [{@link constants!QualityRender | QualityRender}].
      */
@@ -62,12 +66,9 @@ export class SAO extends Component {
     }
 
     /**
-     * Gets which rendering modes in which to render SAO.
+     * Gets which rendering modes in which to apply SAO.
      *
-     * Supported rendering modes are:
-     *
-     * * {@link constants!FastRender | FastRender} - Fast rendering mode for smooth interactivity.
-     * * {@link constants!QualityRender | QualityRender} - Quality rendering mode for maximum image fidelity.
+     * The {@link View} will apply SAO whenever {@link View.renderMode} has been set one of these values.
      *
      * Default value is [{@link constants!QualityRender | QualityRender}].
      */

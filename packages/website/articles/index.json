@@ -109,6 +109,20 @@
       ],
       "thumbnail": "tableSceneModel.png"
     },
+    "shareBCF": {
+      "title": "View a BCF Viewpoint of a BIM Model",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneTransform",
+        "SceneObject",
+        "Viewer",
+        "Geometry",
+        "BCF",
+        "XGF"
+      ]
+    },
     "techWhitePaper": {
       "title": "Technical White Paper: xeokit SDK for 3D BIM and AEC Visualization",
       "description": "This white paper outlines how xeokit addresses critical challenges in BIM data visualization, enhances workflow efficiency, and supports scalable, web-based deployments.",
@@ -128,6 +142,27 @@
         "Geometry",
         "glTF"
       ]
+    },
+    "viewXGF": {
+      "title": "View an XGF model in a web page",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneTransform",
+        "SceneObject",
+        "Viewer",
+        "Geometry",
+        "XGF"
+      ]
+    },
+    "viewerGetJSON": {
+      "title": "Saving a Viewer's Configuration to JSON",
+      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
+      "tags": [
+        "Viewer",
+        "ViewerParams"
+      ]
     }
   },
   "tagsToArticlesMap": {
@@ -142,7 +177,9 @@
       "sceneModelBuildBox",
       "sceneModelBuildGeometries",
       "sceneModelBuildTable",
-      "viewGLTF"
+      "shareBCF",
+      "viewGLTF",
+      "viewXGF"
     ],
     "SceneModel": [
       "foo",
@@ -153,7 +190,9 @@
       "sceneModelBuildBox",
       "sceneModelBuildGeometries",
       "sceneModelBuildTable",
-      "viewGLTF"
+      "shareBCF",
+      "viewGLTF",
+      "viewXGF"
     ],
     "SceneObject": [
       "foo",
@@ -162,7 +201,9 @@
       "sceneModelBuildBox",
       "sceneModelBuildGeometries",
       "sceneModelBuildTable",
-      "viewGLTF"
+      "shareBCF",
+      "viewGLTF",
+      "viewXGF"
     ],
     "Viewer": [
       "foo",
@@ -173,7 +214,10 @@
       "sceneModelBuildBox",
       "sceneModelBuildGeometries",
       "sceneModelBuildTable",
-      "viewGLTF"
+      "shareBCF",
+      "viewGLTF",
+      "viewXGF",
+      "viewerGetJSON"
     ],
     "Geometry": [
       "foo",
@@ -182,7 +226,9 @@
       "sceneModelBuildBox",
       "sceneModelBuildGeometries",
       "sceneModelBuildTable",
-      "viewGLTF"
+      "shareBCF",
+      "viewGLTF",
+      "viewXGF"
     ],
     "DataModel": [
       "ifc2gltf",
@@ -207,7 +253,9 @@
       "ifc2gltf"
     ],
     "XGF": [
-      "ifc2gltf2xgf"
+      "ifc2gltf2xgf",
+      "shareBCF",
+      "viewXGF"
     ],
     "loadXGF": [
       "ifc2gltf2xgf"
@@ -225,10 +273,18 @@
       "sceneModelAndDataModelBuildTable",
       "sceneModelBuildGeometries",
       "sceneModelBuildTable",
-      "viewGLTF"
+      "shareBCF",
+      "viewGLTF",
+      "viewXGF"
     ],
     "SceneGeometry": [
       "sceneModelBuildGeometries"
+    ],
+    "BCF": [
+      "shareBCF"
+    ],
+    "ViewerParams": [
+      "viewerGetJSON"
     ]
   }
 }

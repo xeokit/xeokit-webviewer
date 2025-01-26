@@ -54,7 +54,7 @@
  *
  * const myViewer = new Viewer({
  *     id: "myViewer",
- *     renderers: new WebGLRenderer({ // Optional
+ *     renderer: new WebGLRenderer({ // Optional
  *          textureTranscoder: new KTX2TextureTranscoder({
  *              transcoderPath: "./../dist/basis/" // Optional, path to BasisU transcoder module
  *          })
@@ -100,7 +100,7 @@
  *
  * const myViewer = new Viewer({
  *     id: "myViewer",
- *     renderers: new WebGLRenderer({ // Optional
+ *     renderer: new WebGLRenderer({ // Optional
  *          textureTranscoder: new KTX2TextureTranscoder({ // Optional
  *              transcoderPath: "./../dist/basis/" // Optional, path to BasisU transcoder module
  *          })
@@ -176,7 +176,7 @@
  *
  * const myViewer = new Viewer({
  *     id: "myViewer",
- *     renderers: new WebGLRenderer({ // Optional
+ *     renderer: new WebGLRenderer({ // Optional
  *          textureTranscoder: new KTX2TextureTranscoder({ // Optional
  *              transcoderPath: "./../dist/basis/" // Optional, path to BasisU transcoder module
  *          })

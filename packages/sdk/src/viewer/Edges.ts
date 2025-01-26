@@ -6,9 +6,13 @@ import {EdgesParams} from "./EdgesParams";
 
 
 /**
- * Configures the appearance of {@link ViewObject | ViewObjects} when their edges are emphasised.
+ * Configures edge enhancement effect for a {@link View}.
  *
  * * Located at {@link View.edges}.
+ * * View will apply edge enhancement when {@link View.renderMode | View.renderMode} is set to one of the values
+ * specified in {@link Edges.renderModes}.
+ *
+ * See {@link viewer | @xeokit/sdk/viewer} for usage info.
  */
 class Edges extends Component {
 
@@ -45,7 +49,9 @@ class Edges extends Component {
     }
 
     /**
-     * Sets which rendering modes in which to render edges.
+     * Sets which rendering modes in which to show edges on {@link ViewObject | ViewObjects}.
+     *
+     * The {@link View} will show edges whenever {@link View.renderMode} has been set one of these values.
      *
      * Default value is [{@link constants!QualityRender | QualityRender}].
      */
@@ -55,7 +61,9 @@ class Edges extends Component {
     }
 
     /**
-     * Gets which rendering modes in which to render edges.
+     * Gets which rendering modes in which to show edges on {@link ViewObject | ViewObjects}.
+     *
+     * The {@link View} will show edges whenever {@link View.renderMode} has been set one of these values.
      *
      * Default value is [{@link constants!QualityRender | QualityRender}].
      */

@@ -9,16 +9,23 @@
  *
  * ---
  *
+ * The {@link Viewer | Viewer} is a tool for interactive 3D scene exploration, compatible with major browsers and mobile platforms. It
+ * supports precise rendering with double-precision coordinates, multiple views with independent configurations, and integration of
+ * semantic data models.
+ *
+ * Key features include dynamic slicing, object interaction, ambient occlusion, edge highlighting, BIM and BCF support, and
+ * flexible rendering and lighting options, making it suitable for diverse technical applications.
+ *
  * # Features
  *
  * - **Interactive Exploration**
- *   Use a {@link Viewer | Viewer} to explore a {@link scene!Scene | Scene} interactively across all major browsers, including mobile platforms.
+ *   Use a {@link Viewer | Viewer} to explore a 3D {@link scene!Scene | Scene} interactively across all major browsers, including mobile platforms.
  *
  * - **Customizable Renderer**
  *   The Viewer supports a pluggable {@link Renderer | Renderer} strategy, ensuring compatibility with various browser graphics APIs. This documentation features the {@link webglrenderer!WebGLRenderer | WebGLRenderer}, which configures the Viewer to use WebGL for rendering.
  *
  * - **Scene Models**
- *   The Viewer includes a {@link scene!Scene | Scene} containing the geometry and materials of models. The Scene serves as a container for {@link scene!SceneModel | SceneModels}, {@link scene!SceneObject | SceneObjects}, {@link scene!SceneMesh | SceneMeshes}, and {@link scene!SceneGeometry | SceneGeometries}. It can be constructed programmatically or imported/exported in various file formats.
+ *   The Viewer is attached to a {@link scene!Scene | Scene} containing the geometry and materials of models. The Scene serves as a container for {@link scene!SceneModel | SceneModels}, {@link scene!SceneObject | SceneObjects}, {@link scene!SceneMesh | SceneMeshes}, and {@link scene!SceneGeometry | SceneGeometries}. It can be constructed programmatically or imported/exported in various file formats.
  *
  * - **High Precision**
  *   The Viewer enables accurate rendering of models that use large double-precision World coordinates, eliminating the need to center distant models to prevent rounding jitter during viewing.
@@ -65,6 +72,9 @@
  * - **Projection Options**
  *   Each View supports orthographic, perspective and custom projections.
  *
+ *   **Render Modes**
+ *   TODO
+ *
  * <br>
  *
  * [![](https://mermaid.ink/img/pako:eNqNVU1v4jAQ_SuRT7srQKRAgKjiQqXdA6iI7oe0ysVJpsWtY2cdhy2l_Pd1_JEmkK7KJWbemzdj541zRAlPAYUoobgobgh-EDiLWEoEJJJw5q22EdOY95PAXxDeMWKe-QlgKQgQJlAkwMAs94pZmGUiAEuoUj99NpGInZqKTi_BbI9tEo8fVXWngDMQ2Kwpedi5eGEa3FDMwIYoPoBoFV5VEVfZhO4aeW1kValXoVaDWsJ1SdKODv-UmBJ52OrjOMu-1cTz9D0pSEzBbYQqClhop5rQ23SBZ6EasOuEUy7Ii01MKMlzXOvkJHl6-4dxHDd6WepTdH3AATx7ZJw_mVWZWxnBH80RNdKbh-ZEcl54VkXZpfleb4jQZ-mYFeyoegstF2ytjTT7-hrHhRQ4kYtFg_ML4q-rFrG5t7KQPNvUfbuyGZaCPDd3UVm0RpXvaafhtBnWFVz7gwIWLWdoKc35rzWMljGBE4tLQlP3JwW1W3641L40jsIjZoYwQn6E-v2Ffm7rMewA78xUmkcNfLGAKfIurPdnUbN-V-G8tMKrUGivgmp9AZrcsD6wt5imtLZgucosuYACmCw8wrxv39er-uborKGnN3QXQx2J0HAw-EA7rbNc2pvoopDze-jupwtGc34iZoWa2hvVX16R9t34rZA73omcuz9i9Zxcv_b7Z6MTeiTLKWTVCXYxNz8-RF3z5OkdYvO-WXKm3F2PiP4waCO34NbL8M3LQD2kGBkmqfo26fQIyZ2qEaFQLVO4xyVVPlFqiopLye8OLEHhPaYF9FCZp2ru7OesjkJKJBdr-8GrHj2UY4bCI3pGoT-dD4JgOJv644nvj-ejWQ8dUDgKZoPRfDjxx1fB_Go6np166IVzpTocTILJVGGjSTAMRrPxSMv91qAUJZz-AZsUb1U?type=png)](https://mermaid.live/edit#pako:eNqNVU1v4jAQ_SuRT7srQKRAgKjiQqXdA6iI7oe0ysVJpsWtY2cdhy2l_Pd1_JEmkK7KJWbemzdj541zRAlPAYUoobgobgh-EDiLWEoEJJJw5q22EdOY95PAXxDeMWKe-QlgKQgQJlAkwMAs94pZmGUiAEuoUj99NpGInZqKTi_BbI9tEo8fVXWngDMQ2Kwpedi5eGEa3FDMwIYoPoBoFV5VEVfZhO4aeW1kValXoVaDWsJ1SdKODv-UmBJ52OrjOMu-1cTz9D0pSEzBbYQqClhop5rQ23SBZ6EasOuEUy7Ii01MKMlzXOvkJHl6-4dxHDd6WepTdH3AATx7ZJw_mVWZWxnBH80RNdKbh-ZEcl54VkXZpfleb4jQZ-mYFeyoegstF2ytjTT7-hrHhRQ4kYtFg_ML4q-rFrG5t7KQPNvUfbuyGZaCPDd3UVm0RpXvaafhtBnWFVz7gwIWLWdoKc35rzWMljGBE4tLQlP3JwW1W3641L40jsIjZoYwQn6E-v2Ffm7rMewA78xUmkcNfLGAKfIurPdnUbN-V-G8tMKrUGivgmp9AZrcsD6wt5imtLZgucosuYACmCw8wrxv39er-uborKGnN3QXQx2J0HAw-EA7rbNc2pvoopDze-jupwtGc34iZoWa2hvVX16R9t34rZA73omcuz9i9Zxcv_b7Z6MTeiTLKWTVCXYxNz8-RF3z5OkdYvO-WXKm3F2PiP4waCO34NbL8M3LQD2kGBkmqfo26fQIyZ2qEaFQLVO4xyVVPlFqiopLye8OLEHhPaYF9FCZp2ru7OesjkJKJBdr-8GrHj2UY4bCI3pGoT-dD4JgOJv644nvj-ejWQ8dUDgKZoPRfDjxx1fB_Go6np166IVzpTocTILJVGGjSTAMRrPxSMv91qAUJZz-AZsUb1U)
@@ -79,9 +89,7 @@
  *
  * # Usage
  *
- * <br>
- *
- *  In JavaScript, import the modules:
+ *  In JavaScript, import the modules we'll need:
  *
  * ````javascript
  * import {Scene} from "@xeokit/sdk/scene";
@@ -92,11 +100,21 @@
  * import {CameraControl} from "@xeokit/sdk/cameracontrol";
  * import {loadXGF} from "@xeokit/sdk/xgf";
  * import {saveBCFViewpoint, loadBCFViewpoint} from "@xeokit/sdk/bcf";
+ *
+ * import {
+ *     CustomProjectionType,
+ *     FrustumProjectionType,
+ *     OrthoProjectionType,
+ *     PerspectiveProjectionType,
+ *     LinearEncoding,
+ *     LinearFilter,
+ *     TrianglesPrimitive
+ * } from "@xeokit/sdk/constants";
  * ````
  *
  * <br>
  *
- * ## Create a Scene
+ * ## Creating a Scene
  *
  * Create a {@link scene!Scene | Scene} to hold our model geometry and materials.
  *
@@ -106,18 +124,18 @@
  *
  * <br>
  *
- * ## Create a Viewer
+ * ## Creating a Viewer
  *
  * Create a {@link Viewer | Viewer} to view our Scene.
  *
  * Our Viewer gets a {@link webglrenderer!WebGLRenderer | WebGLRenderer}, which adapts it to use the browser's WebGL graphics API.
- * We'll also equip our WebGLRenderer with a {@link ktx2!KTX2TextureTranscoder | KTX2TextureTranscoder} so we that we can view compressed textures.
+ * We'll also equip our WebGLRenderer with a {@link ktx2!KTX2TextureTranscoder | KTX2TextureTranscoder}, in case we need to view compressed textures.
  *
  * ````javascript
  * const myViewer = new Viewer({
  *     id: "myViewer",
  *     scene,
- *     renderers: new WebGLRenderer({
+ *     renderer: new WebGLRenderer({
  *          textureTranscoder: new KTX2TextureTranscoder({  // Optional, this is the default
  *              transcoderPath: "./../dist/basis/" // Optional, defaults to CDN
  *          })
@@ -127,7 +145,7 @@
  *
  * <br>
  *
- * ## Create a View
+ * ## Creating a View
  *
  * A Viewer draws its output to one or more {@link View | Views}. Each View is an independent and interactive view of the Scene,
  * with its own canvas, {@link Camera | Camera}, object visual states etc.
@@ -139,17 +157,54 @@
  *     id: "myView",
  *     elementId: "myView1"
  * });
+ * ````
  *
- * view1.camera.eye = [-3.933, 2.855, 27.018];
- * view1.camera.look = [4.400, 3.724, 8.899];
- * view1.camera.up = [-0.018, 0.999, 0.039];
+ * ## Positioning the Camera
+ *
+ * Each {@link View} has a {@link Camera} which controls the viewpoint and projection.
+ *
+ * We can dynamically move the Camera:
+ *
+ * ````javascript
+ * view1.camera.eye = [-3.93, 2.85, 27.01];
+ * view1.camera.look = [4.40, 3.72, 8.89];
+ * view1.camera.up = [-0.01, 0.99, 0.03];
  * ````
  *
  * <br>
  *
- * ## Add a CameraControl
+ * ## Configuring the World Coordinate Axis
  *
- * Add a {@link cameracontrol!CameraControl | CameraControl} to the View, to control the View's Camera with mouse and
+ * TODO
+ *
+ * <br>
+ *
+ * ## Configuring the Camera Projection
+ *
+ * Each {@link Camera} has a {@link PerspectiveProjection}, a {@link FrustumProjection},
+ * an {@link OrthoProjection}, and a {@link CustomProjection}.
+ *
+ * These can be dynamically configured:
+ *
+ * ````javascript
+ * view1.perspectiveProjection.fov = 60.0;
+ * view1.frustumProjection.fov = 60.0;
+ * view1.orthoProjection.scale = 1.0;
+ * view1.customProjection.matrix = [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1];
+ * ````
+ *
+ * Switch a Camera between projection types like this:
+ *
+ * ````javascript
+ * view1.projectionType = OrthoProjectionType;
+ * view1.projectionType = PerspectiveProjectionType;
+ * ````
+ *
+ * <br>
+ *
+ * ## Adding a CameraControl
+ *
+ * Add a {@link cameracontrol!CameraControl | CameraControl} to the View, to control its Camera with mouse and
  * touch input:
  *
  * ````javascript
@@ -160,14 +215,14 @@
  *
  * <br>
  *
- * ## Create a SceneModel
+ * ## Creating a SceneModel
  *
  * Our {@link scene!Scene | Scene } is a container for model geometry and materials.
  *
- * Within the Scene, we'll create a {@link scene!SceneModel | SceneModel} that contains a couple
- * of textured {@link scene!SceneModel | SceneObjects}. As soon as we've
- * called {@link scene!SceneModel.build | SceneModel.build}, two
- * new 3D objects appear in the View's canvas.
+ * Within the Scene, we'll create a {@link scene!SceneModel | SceneModel} that contains three
+ * textured {@link scene!SceneModel | SceneObjects}. As soon as we've
+ * called {@link scene!SceneModel.build | SceneModel.build}, three
+ * new objects will appear in the View's canvas to represent them.
  *
  * ````javascript
  * const sceneModel = scene.createModel();
@@ -204,6 +259,12 @@
  *     textureSetId: "myTextureSet"
  * });
  *
+ * sceneModel.createLayerMesh({
+ *     id: "myMesh3",
+ *     geometryId: "myGeometry",
+ *     textureSetId: "myTextureSet"
+ * });
+ *
  * sceneModel.createObject({
  *     id: "myObject1",
  *     meshIds: ["myMesh1"]
@@ -214,22 +275,29 @@
  *     meshIds: ["myMesh2"]
  * });
  *
+ * sceneModel.createObject({
+ *     id: "myObject3",
+ *     meshIds: ["myMesh3"]
+ * });
+ *
  * sceneModel.build();
  * ````
  *
  * <br>
  *
- * ## Show and Hide Objects
+ * ## Showing and Hiding Objects
  *
- * Having created our Scene, Viewer, View and SceneModel, we now have a couple of objects showing in our View.
+ * Having created our Scene, Viewer, View and SceneModel, we now have three objects showing in our View.
  *
- * Hide one of the objects in the View's canvas:
+ * The objects are represented by {@link ViewObject | ViewObjects}, which are stored in {@link View.objects | View.objects}.
+ *
+ * Use {@link View.setObjectsVisible | View.setObjectsVisible} to hide one of the objects:
  *
  * ````javascript
  * view1.setObjectsVisible(["myObject1"], false);
  * ````
  *
- * Another way to hide the object:
+ * We can also set {@link ViewObject.visible | ViewObject.visible} directly:
  *
  * ````javascript
  * view1.objects["myObject1"].visible = false;
@@ -241,26 +309,187 @@
  * view1.objects["myObject1"].visible = true;
  * ````
  *
- * <br>
- *
- * ## Highlight, Select and X-Ray Objects
- *
- * The functions for highlighting, selecting, colorizing and X-raying objects work the same as when hiding and
- * showing them.
- *
- * Let's highlight the first object in our View:
+ * Get the IDs of all visible ViewObjects:
  *
  * ````javascript
- * view1.objects["myObject1"].highlighted = true;
- *
- * view1.highlightMaterial.fillColor=[0,1,0];
+ * const visibleObjectIds = view1.visibleObjectIds;
  * ````
  *
  * <br>
  *
- * ## Create Additional Views
+ * ## Highlighting, Selecting and X-Raying Objects
  *
- * A Viewer can have an unlimited number of Views, each providing an independent view of the Scene in a separate
+ * The methods for highlighting, selecting and X-raying objects work the same as when hiding and
+ * showing them. Colorize is a little bit different, so we'll look at it separately.
+ *
+ * ````javascript
+ * view1.setObjectsHighlighted(["myObject1"], true);
+ * view1.setObjectsSelected(["myObject2"], true);
+ * view1.setObjectsXRayed(["myObject3"], true);
+ * ````
+ *
+ * We can also set the  {@link ViewObject.highlighted | ViewObject.highlighted}, {@link ViewObject.selected | ViewObject.selected}
+ * and {@link ViewObject.xrayed | ViewObject.xrayed} properties directly:
+ *
+ * ````javascript
+ * view1.objects["myObject1"].highlighted = true;
+ * view1.objects["myObject2"].selected = true;
+ * view1.objects["myObject3"].xrayed = true;
+ * ````
+ *
+ * We can configure the appearance of these effects via the {@link EmphasisMaterial | EmphasisMaterials} components at
+ * {@link View.highlightMaterial | View.highlightMaterial}, {@link View.selectedMaterial | View.selectedMaterial} and
+ * {@link View.xrayMaterial | View.xrayMaterial}.
+ *
+ * <br>
+ *
+ * ## Colorizing Objects
+ *
+ * To colorize an object, we set an RGB color value on it.
+ *
+ * Let's colorize the first object in our {@link View}, setting it red:
+ *
+ * ````javascript
+ * view1.setObjectsColorized(["myObject1"], [1,0,0]);
+ * ````
+ *
+ * We can also set the {@link ViewObject.colorize | ViewObject.colorize} property directly:
+ *
+ * ````javascript
+ * view1.objects["myObject1"].colorize = [1,0,0];
+ * ````
+ *
+ * To un-colorize it, just set the property back to null:
+ *
+ * ````javascript
+ * view1.objects["myObject1"].colorize = null;
+ * ````
+ *
+ * Use {@link View.setObjectsColorized | View.setObjectsColorized} to batch-colorize and uncolorize objects:
+ *
+ * ````javascript
+ * view1.setObjectsColorized(["myObject1", "myObject2"], [1,0,0]);
+ * view1.setObjectsColorized(view1.colorizedObjectIds, null);
+ * ````
+ *
+ * The {@link View.colorizedObjectIds | View.colorizedObjectIds} property contains the IDs of all ViewObjects currently colorized in the View:
+ *
+ * ````javascript
+ * const colorizedObjectIds = view1.colorizedObjectIds;
+ * ````
+ *
+ * <br>
+ *
+ * ## Query Boundaries of Objects
+ *
+ * TODO
+ *
+ * <br>
+ *
+ * ## Slicing Objects
+ *
+ * Create unlimited {@link SectionPlane | SectionPlanes} in each View to slice
+ * through models and reveal internal structures. SectionPlanes can be adjusted
+ * dynamically through code or user interaction.
+ *
+ * Let's create a SectionPlane that slices away half of our Scene:
+ *
+ * ````javascript
+ * view1.createSectionPlane({
+ *      id: "sectionPlane1",
+ *      pos: [0,0,0],
+ *      dir: [-1,-1,-1]
+ * });
+ * ````
+ *
+ * We can also dynamically animate SectionPlanes:
+ *
+ * ````javascript
+ * const sectionPlane1 = view1.sectionPlanes["sectionPlane1"];
+ *
+ * sctionPlane1.dir = [-1,-1, 1];
+ * sctionPlane1.pos = [1,0,0];
+ * ````
+ *
+ * TODO: Masking which ViewObjects are clippable
+ *
+ * To destroy SectionPlanes individually:
+ *
+ * ````javascript
+ * sectionPlane1.destroy();
+ * ````
+ *
+ * To destroy all SectionPlanes:
+ *
+ * ````javascript
+ * view1.clearSectionPlanes();
+ * ````
+ *
+ * <br>
+ *
+ * ## Customize Lighting
+ *
+ * Customize lighting for a {@link View} by adding custom {@link DirLight | DirLights},
+ * {@link PointLight | PointLights} and {@link AmbientLight | AmbientLights}.
+ *
+ * ````javascript
+ * ciew1.clearLights();
+ *
+ * view1.createDirLight({ // DirLight
+ *      id: "dirLight1",
+ *      dir: [-1,-1,-1],
+ *      color: [0.9,0.9,0.9],
+ *      intensity: 0.9
+ * });
+ *
+ * view1.createPointLight({ // PointLight
+ *      id: "pointLight1",
+ *      pos: [-100,10,-100],
+ *      color: [0.9,0.9,1.0],
+ *      intensity: 1.0,
+ *      constantAttenuation: 0.8,
+ *      linearAttenuation: 0.9,
+ *      quadraticAttenuation: 0.9
+ * });
+ *
+ * view1.createAmbientLight({ // AmbientLight
+ *      id: "ambientLight1",
+ *      color: [0.5,0.5,0.6],
+ *      intensity: 0.7
+ * });
+ * ````
+ *
+ * We can dynamically animate our lights:
+ *
+ * ````javascript
+ * const dirLight1 = view1.lights["dirLight1"];
+ * const pointLight1 = view1.lights["pointLight1"];
+ * const ambientLight1 = view1.lights["ambientLight1"];
+ *
+ * dirLight1.dir = [1, -1, 1];
+ * pointLight1.pos = [1,0,0];
+ * ambientLight1.intensity = 0.4;
+ * ````
+ *
+ * To destroy each light individually:
+ *
+ * ````javascript
+ * dirLight1.destroy();
+ * pointLight1.destroy();
+ * ambientLight1.destroy();
+ * ````
+ *
+ * To destroy all lights:
+ *
+ * ````javascript
+ * view1.clearLights();
+ * ````
+ *
+ * <br>
+ *
+ * ## Creating Additional Views
+ *
+ * A {@link Viewer} can have an unlimited number of {@link View}, each providing an independent view of the Scene in a separate
  * HTML canvas. Each View can have a completely different viewpoint, projection, and configuration of which objects
  * are visible, x-rayed, highlighted etc.
  *
@@ -285,32 +514,6 @@
  *
  * To show an independent view of {@link scene!SceneModel | SceneObjects}, a View
  * proxies them with {@link ViewObject | ViewObjects}, which represent and control their appearance within the View's canvas.
- *
- * <br>
- *
- * ## Slice Objects
- *
- * Each View can have an unlimited number of interactive {@link SectionPlane | SectionPlanes}, with which we can use to slice open objects
- * to view interior structures.
- *
- * Create a couple of SectionPlanes within our second View, to slice through one of our
- * objects, then adjust the direction of one of the SectionPlanes:
- *
- * ````javascript
- * const mySlice1 = view2.createSlice({
- *     id: "mySlice1",
- *     pos: [0,0,0],
- *     dir: [-1,-1,-1]
- * });
- *
- * const mySlice2 = view2.createSlice({
- *     id: "mySlice2",
- *     pos: [0,0,0],
- *     dir: [1,1,.5]
- * });
- *
- * mySlice1.dir = [1,1,1];
- * ````
  *
  * <br>
  *
@@ -355,7 +558,7 @@
  * environmentViewLayer.setObjectsVisible(environmentLayer.objectIds, false);
  * ````
  *
- * ## Loading SceneModels
+ * ## Loading SceneModels from Files
  *
  * We can view additional models by creating SceneModels and loading files into them.
  *
@@ -393,7 +596,7 @@
  *
  * <br>
  *
- * ## Saving SceneModels
+ * ## Saving SceneModels to Files
  *
  * We can save the SceneModels in our Scene to a variety of formats.
  *
@@ -424,7 +627,7 @@
  *
  * <br>
  *
- * ## Render Modes
+ * ## Rendering Modes
  *
  * A View allows us to define various rendering modes and specify the rendering effects for each mode. When a View
  * is set to a particular rendering mode, it activates only the effects configured for that mode.
@@ -488,7 +691,17 @@
  * });
  * ````
  *
- * ## Saving BCF
+ * <br>
+ *
+ * ## Picking
+ *
+ * TODO
+ *
+ * ## Tick Events
+ *
+ * <br>
+ *
+ * ## Saving and Loading BCF Viewpoints
  *
  * Let's use {@link bcf!saveBCFViewpoint | saveBCFViewpoint} to save the visual state of our View to a BCF
  * viewpoint. The viewpoint is a {@link bcf!BCFViewpoint | BCFViewpoint}, which can serialize directly to JSON.
@@ -501,10 +714,6 @@
  *     excludeViewLayerIds: ["myEnviromentViewLayer"]
  * });
  * ````
- *
- * <br>
- *
- * ## Loading BCF
  *
  * Let's now use {@link bcf!loadBCFViewpoint | loadBCFViewpoint} to reload that BCF viewpoint back into our View.
  *
@@ -521,18 +730,67 @@
  *
  * <br>
  *
- * ## Serializing Viewer Configuration
+ * ## Saving and Loading Viewer Configurations
  *
- * Let's now use {@link viewer!Viewer.toParams | Viewer.toParams} to serialize the configuration of our Viewer to JSON.
+ * In xeokit, everything is data-driven, including the Viewer's configuration.
+ *
+ * You can use {@link viewer!Viewer.toParams | Viewer.toParams} to serialize the current configuration of a Viewer into a {@link ViewerParams} object, which can then be saved as JSON.
  *
  * ````javascript
  * const viewerParams = viewer.toParams();
  * ````
  *
- * Let's now use {@link viewer!Viewer.toParams | Viewer.toParams} to serialize the configuration of our Viewer to JSON.
+ * Now let's create a second Viewer and configure it using {@link viewer!Viewer.fromParams | Viewer.fromParams} with the previously serialized
+ * ViewerParams. This allows the second Viewer to replicate the exact configuration of the first, including copies of Views, Cameras,
+ * SectionPlanes, HighlightMaterials, Lights, and other components.
  *
  * ````javascript
- * const viewer2 = new Viewer(viewerParams);
+ * const viewer2 = new Viewer({
+ *     id: "myViewer2",
+ *     scene: new Scene(), // Must have own Scene
+ *     renderer: new WebGLRenderer() // Must have own WebGLRenderer
+ * });
+ *
+ * viewer2.fromParams(viewerParams);
+ * ````
+ *
+ * A ViewerParams object contains parameter objects for various components within a Viewer, such as Views, Lights, Cameras, ViewLayers, and more. If the components do
+ * not already exist, `Viewer.fromParams` will create and configure them. If the components already exist, then `Viewer.fromParams` will simply
+ * update their configuration.
+ *
+ * Individual components can also be configured directly using their respective parameter types. For example, to copy a
+ * {@link ViewParams} object between two Views:
+ *
+ * ````javascript
+ * const viewParams = viewer.views["myView"].toParams();
+ *
+ * viewer2.views["myView"].fromParams(viewParams);
+ * ````
+ *
+ * Since all fields in a parameter object are optional, the `fromParams()` methods will only configure the relevant component (and its child components) based on the fields present in the parameter object.
+ *
+ * To go deeper, let's copy a {@link CameraParams} object between the Cameras of two Views:
+ *
+ * ````javascript
+ * const cameraParams = viewer.views["myView"].camera.toParams();
+ *
+ * viewer2.views["myView"].camera.fromParams(cameraParams);
+ * ````
+ *
+ * Delving further, let's exchange a {@link PerspectiveProjectionParams} object between the {@link PerspectiveProjection | PerspectiveProjections} of two Cameras:
+ *
+ * ````javascript
+ * const perspectiveProjectionParams = viewer.views["myView"].camera.perspective.toParams();
+ *
+ * viewer2.views["myView"].camera.perspective.fromParams(perspectiveProjectionParams);
+ * ````
+ *
+ * We can even transfer configurations for rendering effects, such as X-Ray mode:
+ *
+ * ````javascript
+ * const xrayMaterialParams = viewer.views["myView"].xrayMaterial.toParams();
+ *
+ * viewer2.views["myView"].xrayMaterial.fromParams(xrayMaterialParams);
  * ````
  *
  * @module viewer

@@ -7,6 +7,7 @@ import {LinesPrimitive, TrianglesPrimitive} from "../constants";
  * into {@link viewer!Viewer | Viewer} that's configured with a {@link webglrenderer!WebGLRenderer | WebGLRenderer}.
  *
  * @param sceneModel
+ * @private
  */
 export function createSceneModelStreamParams(sceneModel: SceneModel) {
 

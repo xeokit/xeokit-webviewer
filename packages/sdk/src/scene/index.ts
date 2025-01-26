@@ -90,7 +90,7 @@
  * const myViewer = new Viewer({
  *     id: "myViewer",
  *     scene,
- *     renderers: new WebGLRenderer({})
+ *     renderer: new WebGLRenderer({})
  * });
  *
  * const view1 = myViewer.createView({

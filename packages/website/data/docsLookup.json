@@ -4919,6 +4919,10 @@
     "path": "/api-docs#/docs/api/interfaces/scene.SceneTextureSetParams.html",
     "kind": "interface"
   },
+  "SceneTile": {
+    "path": "/api-docs#/docs/api/classes/scene.SceneTile.html",
+    "kind": "class"
+  },
   "scheduler": {
     "path": "/api-docs#/docs/api/variables/viewer.scheduler.html",
     "kind": "variable"

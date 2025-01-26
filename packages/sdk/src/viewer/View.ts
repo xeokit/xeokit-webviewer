@@ -760,31 +760,18 @@ class View extends Component {
     /**
      * Sets which rendering mode this View is in.
      *
-     * Supported rendering modes are:
-     *
-     * * {@link constants!FastRender | FastRender} - Fast rendering mode for smooth interactivity.
-     * * {@link constants!QualityRender | QualityRender} - Quality rendering mode for maximum image fidelity.
-     *
      * Default value is {@link constants!QualityRender | QualityRender}.
      *
-     * @param renderMode The rendering mode
-     * @returns *{@link core!SDKError | SDKError}*
-     * * Rendering mode not supported.
+     * Setting a View's rendering mode will activate whatever effects (eg. SAO, edges, canas scaling) are configured to
+     * be active in that mode, while deactivating all other effects.
      */
-    setRenderMode(renderMode: number): SDKError | void {
-        if (renderMode !== QualityRender && renderMode !== FastRender) {
-            return new SDKError(`Failed to set render mode for View - unsupported mode - supported modes are FastRender and QualityRender`);
-        }
+    set renderMode(renderMode: number) {
         this.#renderMode = renderMode;
+        this.redraw();
     }
 
     /**
      * Gets which rendering mode this View is in.
-     *
-     * Supported rendering modes are:
-     *
-     * * {@link constants!FastRender | FastRender} - Fast rendering mode for smooth interactivity.
-     * * {@link constants!QualityRender | QualityRender} - Quality rendering mode for maximum image fidelity.
      *
      * Default value is {@link constants!QualityRender | QualityRender}.
      */
@@ -1128,7 +1115,7 @@ class View extends Component {
     }
 
     /**
-     * Destroys the {@link SectionPlane}s in this View.
+     * Destroys the {@link SectionPlane | SectionPlanes} in this View.
      */
     clearSectionPlanes(): void {
         const objectIds = Object.keys(this.sectionPlanes);
@@ -1186,7 +1173,7 @@ class View extends Component {
     }
 
     /**
-     * Destroys the light sources in this View.
+     * Destroys the {@link DirLight | DirLights}, {@link PointLight | PointLights} and {@link AmbientLight | AmbientLights} in this View.
      */
     clearLights(): void {
         const lightIds = Object.keys(this.lights);

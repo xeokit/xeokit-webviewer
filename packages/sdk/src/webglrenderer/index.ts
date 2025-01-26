@@ -36,7 +36,7 @@
  * const myViewer = new Viewer({
  *     id: "myViewer",
  *     scene: new Scene(),
- *     renderers: new WebGLRenderer({ // Mandatory
+ *     renderer: new WebGLRenderer({ // Mandatory
  *          textureTranscoder: new KTX2TextureTranscoder({ // Optional
  *              transcoderPath: "./../dist/basis/" // <------ Path to BasisU transcoder module
  *          })
@@ -49,4 +49,3 @@
  * @module webglrenderer
  */
 export {WebGLRenderer} from "./WebGLRenderer";
-export {createSceneModelStreamParams} from "./createSceneModelStreamParams";

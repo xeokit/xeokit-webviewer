@@ -35,7 +35,7 @@
  * ````javascript
  * const myViewer = new Viewer({
  *     id: "myViewer",
- *     renderers: new WebGLRenderer({ })
+ *     renderer: new WebGLRenderer({ })
  * });
  * ````
  *

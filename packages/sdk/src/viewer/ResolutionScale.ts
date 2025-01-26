@@ -43,9 +43,15 @@ import {ResolutionScaleParams} from "./ResolutionScaleParams";
 // }
 
 /**
- * Configures the appearance of {@link ViewObject | ViewObjects} when canvas resolution scaling is applied.
+ * Configures canvas resolution scaling for a {@link View}.
  *
  * * Located at {@link View.resolutionScale}.
+ * * Resolution scaling reduces the pixel resolution of a View's canvas to improve its frame
+ * rate, typically applied temporarily during camera movement to enhance responsiveness.
+ * * View will apply resulotion scaling when {@link View.renderMode | View.renderMode} is set to one of the values
+ * specified in {@link ResolutionScale.renderModes}.
+ *
+ * See {@link viewer | @xeokit/sdk/viewer} for usage info.
  */
 export class ResolutionScale extends Component {
 
