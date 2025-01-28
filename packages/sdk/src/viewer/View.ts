@@ -1241,7 +1241,7 @@ class View extends Component {
      * - Updates {@link ViewObject.visible} on the Objects with the given IDs.
      * - Updates {@link View.visibleObjects} and {@link View.numVisibleObjects}.
      *
-     * @param {String[]} objectIds Array of {@link ViewObject.id} values.
+     * @param {string[]} objectIds Array of {@link ViewObject.id} values.
      * @param visible Whether or not to cull.
      * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
@@ -1258,7 +1258,7 @@ class View extends Component {
      *
      * Updates {@link ViewObject.collidable} on the Objects with the given IDs.
      *
-     * @param {String[]} objectIds Array of {@link ViewObject.id} values.
+     * @param {string[]} objectIds Array of {@link ViewObject.id} values.
      * @param collidable Whether or not to cull.
      * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
@@ -1275,7 +1275,7 @@ class View extends Component {
      *
      * Updates {@link ViewObject.culled} on the Objects with the given IDs.
      *
-     * @param {String[]} objectIds Array of {@link ViewObject.id} values.
+     * @param {string[]} objectIds Array of {@link ViewObject.id} values.
      * @param culled Whether or not to cull.
      * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
@@ -1385,7 +1385,7 @@ class View extends Component {
      * - Updates {@link ViewObject.pickable} on the Objects with the given IDs.
      * - Enables or disables the ability to pick the given Objects with {@link View.pick}.
      *
-     * @param {String[]} objectIds Array of {@link ViewObject.id} values.
+     * @param {string[]} objectIds Array of {@link ViewObject.id} values.
      * @param pickable Whether or not to set pickable.
      * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */
@@ -1405,7 +1405,7 @@ class View extends Component {
      * - Updates {@link ViewObject.clippable} on the Objects with the given IDs.
      * - Enables or disables the ability to clip the given Objects with {@link SectionPlane}.
      *
-     * @param {String[]} objectIds Array of {@link ViewObject.id} values.
+     * @param objectIds Array of {@link ViewObject.id} values.
      * @param clippable Whether or not to set clippable.
      * @returns True if any {@link ViewObject | ViewObjects} were updated, else false if all updates were redundant and not applied.
      */

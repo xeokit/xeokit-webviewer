@@ -334,7 +334,7 @@ export class SceneModel extends Component {
      * const textureAgain = sceneModel.textures["myColorTexture"];
      * ````
      *
-     * See {@link scene | @xeokit/sdk/scene}   for more usage info.
+     * See {@link scene | @xeokit/sdk/scene} for more usage info.
      *
      * @param textureParams - SceneTexture creation parameters.
      * @returns *{@link SceneTexture}*

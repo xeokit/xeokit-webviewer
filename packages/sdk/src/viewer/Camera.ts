@@ -49,14 +49,12 @@ const eyeLookVecNorm = createVec3();
 const eyeLookOffset = createVec3();
 const offsetEye = createVec3();
 
-
 /**
  * Controls the viewpoint and projection for a {@link View}.
  *
- * * Located at {@link View.camera}
- * * Views are located at {@link Viewer.views}
- * * Controls camera viewing and projection transforms
+ * * Located at {@link View.camera | View.camera}
  * * Provides methods to pan, zoom and orbit
+ * * Orbit and first-person modes
  * * Dynamically configurable World-space axis
  * * Has {@link PerspectiveProjection}, {@link OrthoProjection} and {@link FrustumProjection} and {@link CustomProjection}, which you can dynamically switch between
  * * Switchable gimbal lock

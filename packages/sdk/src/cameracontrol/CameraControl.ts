@@ -1,4 +1,3 @@
-
 import {PickResult, View} from "../viewer";
 import {createVec2} from "../matrix";
 import {PickController} from "./PickController";
@@ -39,9 +38,8 @@ import {
     KEY_Z
 } from "./keycodes";
 import {CameraFlightAnimation} from "../cameraflight";
-
-
-
+import {CameraControlParams} from "./CameraControlParams";
+import {FloatArrayParam} from "../math";
 
 const DEFAULT_SNAP_PICK_RADIUS = 30;
 const DEFAULT_SNAP_VERTEX = true;
@@ -51,34 +49,6 @@ const DEFAULT_SNAP_EDGE = true;
  *
  */
 class HoverEvent {
-}
-
-/**
- *
- */
-export interface CameraControlParams {
-    mouseWheelDollyRate?: number;
-    keyboardDollyRate?: number;
-    panInertia?: number;
-    dollyMinSpeed?: number;
-    dollyProximityThreshold?: number;
-    dollyInertia?: number;
-    touchDollyRate?: number;
-    dragRotationRate?: number;
-    keyboardRotationRate?: number;
-    touchPanRate?: number;
-    keyboardPanRate?: number;
-    rotationInertia?: number;
-    followPointer?: boolean;
-    active?: boolean;
-    panRightClick?: boolean;
-    keyMap?: any;
-    keyboardLayout?: any;
-    constrainVertical?: boolean;
-    planView?: boolean;
-    navMode?: number;
-    doublePickFlyTo?: boolean;
-    keyboardEnabled?: boolean;
 }
 
 /**
@@ -511,127 +481,91 @@ export class CameraControl extends Component {
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static PAN_LEFT = 0;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static PAN_RIGHT = 1;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static PAN_UP = 2;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static PAN_DOWN = 3;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static PAN_FORWARDS = 4;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static PAN_BACKWARDS = 5;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static ROTATE_X_POS = 6;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static ROTATE_X_NEG = 7;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static ROTATE_Y_POS = 8;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static ROTATE_Y_NEG = 9;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static DOLLY_FORWARDS = 10;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static DOLLY_BACKWARDS = 11;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static AXIS_VIEW_RIGHT = 12;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static AXIS_VIEW_BACK = 13;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static AXIS_VIEW_LEFT = 14;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static AXIS_VIEW_FRONT = 15;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static AXIS_VIEW_TOP = 16;
 
     /**
      * Identifies the XX action.
-     *
-     * @type {Number}
      */
     static AXIS_VIEW_BOTTOM = 17;
 
@@ -999,7 +933,7 @@ export class CameraControl extends Component {
      * @param {{Number:Number}|String} value Either a set of new key mappings, or a string to select a keyboard layout,
      * which causes ````CameraControl```` to use the default key mappings for that layout.
      */
-    set keyMap(value: string) {
+    set keyMap(value: {Number:Number}|string) {
         value = value || "qwerty";
         if (isString(value)) {
             const keyMap = {};
@@ -1061,8 +995,6 @@ export class CameraControl extends Component {
 
     /**
      * Gets custom mappings of keys to {@link CameraControl} actions.
-     *
-     * @returns {{Number:Number}} Current key mappings.
      */
     get keyMap() {
         return this.#keyMap ;
@@ -1095,8 +1027,6 @@ export class CameraControl extends Component {
      * Sets the HTMl element to represent the pivot point when {@link CameraControl#followPointer} is true.
      *
      * See class comments for an example.
-     *
-     * @param {HTMLElement} element HTML element representing the pivot point.
      */
     set pivotElement(element: HTMLElement) {
         this.#controllers.pivotController.setPivotElement(element);
@@ -1108,8 +1038,6 @@ export class CameraControl extends Component {
      * When inactive, the ````CameraControl```` will not react to input.
      *
      * Default is ````true````.
-     *
-     * @param {Boolean} value Set ````true```` to activate this ````CameraControl````.
      */
     set active(value: boolean) {
         value = value !== false;
@@ -1125,7 +1053,7 @@ export class CameraControl extends Component {
      *
      * Default is ````true````.
      *
-     * @returns {Boolean} Returns ````true```` if this ````CameraControl```` is active.
+     * @returns Returns ````true```` if this ````CameraControl```` is active.
      */
     get active() : boolean{
         return this.#configs.active;
@@ -1133,8 +1061,6 @@ export class CameraControl extends Component {
 
     /**
      * Sets whether the pointer snap to vertex.
-     *
-     * @param {boolean} snapToVertex
      */
     set snapToVertex(snapToVertex: boolean) {
         this.#configs.snapToVertex = !!snapToVertex;
@@ -1142,8 +1068,6 @@ export class CameraControl extends Component {
 
     /**
      * Gets whether the pointer snap to vertex.
-     *
-     * @returns {boolean}
      */
     get snapToVertex() : boolean{
         return this.#configs.snapToVertex;
@@ -1151,8 +1075,6 @@ export class CameraControl extends Component {
 
     /**
      * Sets whether the pointer snap to edge.
-     *
-     * @param {boolean} snapToEdge
      */
     set snapToEdge(snapToEdge: boolean) {
         this.#configs.snapToEdge = !!snapToEdge;
@@ -1160,8 +1082,6 @@ export class CameraControl extends Component {
 
     /**
      * Gets whether the pointer snap to edge.
-     *
-     * @returns {boolean}
      */
     get snapToEdge(): boolean {
         return this.#configs.snapToEdge;
@@ -1172,8 +1092,6 @@ export class CameraControl extends Component {
      * within which the pointer snaps to the nearest vertex or the nearest edge.
      *
      * Default value is 30 pixels.
-     *
-     * @param {Number} snapRadius The snap radius.
      */
     set snapRadius(snapRadius: number) {
         snapRadius = snapRadius || DEFAULT_SNAP_PICK_RADIUS;
@@ -1182,8 +1100,6 @@ export class CameraControl extends Component {
 
     /**
      * Gets the current snap radius.
-     *
-     * @returns {Number} The snap radius.
      */
     get snapRadius() : number{
         return this.#configs.snapRadius;
@@ -1191,8 +1107,6 @@ export class CameraControl extends Component {
 
     /**
      * If `true`, the keyboard shortcuts are enabled ONLY if the mouse is over the canvas.
-     *
-     * @param {boolean} value
      */
     set keyboardEnabledOnlyIfMouseover(value: boolean) {
         this.#configs.keyboardEnabledOnlyIfMouseover = !!value;
@@ -1200,8 +1114,6 @@ export class CameraControl extends Component {
 
     /**
      * Gets whether the keyboard shortcuts are enabled ONLY if the mouse is over the canvas or ALWAYS.
-     *
-     * @returns {boolean}
      */
     get keyboardEnabledOnlyIfMouseover() : boolean{
         return this.#configs.keyboardEnabledOnlyIfMouseover;
@@ -1216,7 +1128,7 @@ export class CameraControl extends Component {
      * * {@link constants!FirstPersonNavigationMode} - rotation is about the current eye position,
      * * {@link constants!PlanViewNavigationMode} - rotation is disabled.
      *
-     * @returns {number} The navigation mode: OrbitNavigationMode, FirstPersonNavigationMode or PlanViewNavigationMode.
+     * @returns The navigation mode: OrbitNavigationMode, FirstPersonNavigationMode or PlanViewNavigationMode.
      */
     get navMode(): number {
         return this.#configs.navMode;
@@ -1258,9 +1170,9 @@ export class CameraControl extends Component {
      * Disabling mouse and touch input on ````CameraControl```` is useful when we want to temporarily use mouse or
      * touch input to interact with some other 3D control, without disturbing the {@link viewer!Camera}.
      *
-     * @param {Boolean} value Set ````true```` to enable mouse and touch input.
+     * @param value Set ````true```` to enable mouse and touch input.
      */
-    set pointerEnabled(value) {
+    set pointerEnabled(value: boolean) {
         this._reset();
         this.#configs.pointerEnabled = !!value;
     }
@@ -1272,7 +1184,6 @@ export class CameraControl extends Component {
                 handler.reset();
             }
         }
-
         this.#updates.panDeltaX = 0;
         this.#updates.panDeltaY = 0;
         this.#updates.rotateDeltaX = 0;
@@ -1288,9 +1199,9 @@ export class CameraControl extends Component {
      * Disabling mouse and touch input on ````CameraControl```` is desirable when we want to temporarily use mouse or
      * touch input to interact with some other 3D control, without interfering with the {@link viewer!Camera}.
      *
-     * @returns {Boolean} Returns ````true```` if mouse and touch input is enabled.
+     * @returns Returns ````true```` if mouse and touch input is enabled.
      */
-    get pointerEnabled() {
+    get pointerEnabled() :boolean {
         return this.#configs.pointerEnabled;
     }
 
@@ -1307,9 +1218,9 @@ export class CameraControl extends Component {
      *
      * See class comments for more info.
      *
-     * @param {Boolean} value Set ````true```` to enable the Camera to follow the pointer.
+     * @param value Set ````true```` to enable the Camera to follow the pointer.
      */
-    set followPointer(value) {
+    set followPointer(value:boolean) {
         this.#configs.followPointer = (value !== false);
     }
 
@@ -1326,9 +1237,9 @@ export class CameraControl extends Component {
      *
      * See class comments for more info.
      *
-     * @returns {Boolean} Returns ````true```` if the Camera follows the pointer.
+     * @returns Returns ````true```` if the Camera follows the pointer.
      */
-    get followPointer() {
+    get followPointer() :boolean{
         return this.#configs.followPointer;
     }
 
@@ -1337,9 +1248,9 @@ export class CameraControl extends Component {
      *
      * Only applies when {@link CameraControl#followPointer} is ````true````.
      *
-     * @param {Number[]} worldPos The new World-space 3D target position.
+     * @param worldPos The new World-space 3D target position.
      */
-    set pivotPos(worldPos) {
+    set pivotPos(worldPos:FloatArrayParam) {
         this.#controllers.pivotController.setPivotPos(worldPos);
     }
 
@@ -1348,123 +1259,10 @@ export class CameraControl extends Component {
      *
      * Only applies when {@link CameraControl#followPointer} is ````true````.
      *
-     * @return {Number[]} worldPos The current World-space 3D pivot position.
+     * @return  worldPos The current World-space 3D pivot position.
      */
-    get pivotPos() {
+    get pivotPos():FloatArrayParam {
         return this.#controllers.pivotController.getPivotPos();
-    }
-
-    /**
-     * @deprecated
-     * @param {Boolean} value Set ````true```` to enable dolly-to-pointer behaviour.
-     */
-    set dollyToPointer(value) {
-        this.warn("dollyToPointer property is deprecated - replaced with followPointer");
-        this.followPointer = value;
-    }
-
-    /**
-     * @deprecated
-     * @returns {Boolean} Returns ````true```` if dolly-to-pointer behaviour is enabled.
-     */
-    get dollyToPointer() {
-        this.warn("dollyToPointer property is deprecated - replaced with followPointer");
-        return this.followPointer;
-    }
-
-    /**
-     * @deprecated
-     * @param {Boolean} value Set ````true```` to enable dolly-to-pointer behaviour.
-     */
-    set panToPointer(value) {
-        this.warn("panToPointer property is deprecated - replaced with followPointer");
-    }
-
-    /**
-     * @deprecated
-     * @returns {Boolean} Returns ````true```` if dolly-to-pointer behaviour is enabled.
-     */
-    get panToPointer() {
-        this.warn("panToPointer property is deprecated - replaced with followPointer");
-        return false;
-    }
-
-    /**
-     * Sets whether this ````CameraControl```` is in plan-view mode.
-     *
-     * When in plan-view mode, rotation is disabled.
-     *
-     * Default is ````false````.
-     *
-     * Deprecated - use {@link CameraControl#navMode} instead.
-     *
-     * @param {Boolean} value Set ````true```` to enable plan-view mode.
-     * @deprecated
-     */
-    set planView(value) {
-        this.#configs.planView = !!value;
-        this.#configs.firstPerson = false;
-        if (this.#configs.planView) {
-            this.#controllers.pivotController.hidePivot();
-            this.#controllers.pivotController.endPivot();
-        }
-        this.warn("planView property is deprecated - replaced with navMode");
-    }
-
-    /**
-     * Gets whether this ````CameraControl```` is in plan-view mode.
-     *
-     * When in plan-view mode, rotation is disabled.
-     *
-     * Default is ````false````.
-     *
-     * Deprecated - use {@link CameraControl#navMode} instead.
-     *
-     * @returns {Boolean} Returns ````true```` if plan-view mode is enabled.
-     * @deprecated
-     */
-    get planView() {
-        this.warn("planView property is deprecated - replaced with navMode");
-        return this.#configs.planView;
-    }
-
-    /**
-     * Sets whether this ````CameraControl```` is in first-person mode.
-     *
-     * In "first person" mode (disabled by default) the look position rotates about the eye position. Otherwise,  {@link viewer!Camera#eye} rotates about {@link viewer!Camera#look}.
-     *
-     * Default is ````false````.
-     *
-     * Deprecated - use {@link CameraControl#navMode} instead.
-     *
-     * @param {Boolean} value Set ````true```` to enable first-person mode.
-     * @deprecated
-     */
-    set firstPerson(value) {
-        this.warn("firstPerson property is deprecated - replaced with navMode");
-        this.#configs.firstPerson = !!value;
-        this.#configs.planView = false;
-        if (this.#configs.firstPerson) {
-            this.#controllers.pivotController.hidePivot();
-            this.#controllers.pivotController.endPivot();
-        }
-    }
-
-    /**
-     * Gets whether this ````CameraControl```` is in first-person mode.
-     *
-     * In "first person" mode (disabled by default) the look position rotates about the eye position. Otherwise,  {@link viewer!Camera#eye} rotates about {@link viewer!Camera#look}.
-     *
-     * Default is ````false````.
-     *
-     * Deprecated - use {@link CameraControl#navMode} instead.
-     *
-     * @returns {Boolean} Returns ````true```` if first-person mode is enabled.
-     * @deprecated
-     */
-    get firstPerson() {
-        this.warn("firstPerson property is deprecated - replaced with navMode");
-        return this.#configs.firstPerson;
     }
 
     /**
@@ -1476,9 +1274,9 @@ export class CameraControl extends Component {
      *
      * Default is ````false````.
      *
-     * @param {Boolean} value Set ````true```` to vertically constrain the Camera.
+     * @param value Set ````true```` to vertically constrain the Camera.
      */
-    set constrainVertical(value) {
+    set constrainVertical(value:boolean) {
         this.#configs.constrainVertical = !!value;
     }
 
@@ -1491,9 +1289,9 @@ export class CameraControl extends Component {
      *
      * Default is ````false````.
      *
-     * @returns {Boolean} ````true```` when Camera is vertically constrained.
+     * @returns ````true```` when Camera is vertically constrained.
      */
-    get constrainVertical() {
+    get constrainVertical():boolean {
         return this.#configs.constrainVertical;
     }
 
@@ -1502,9 +1300,9 @@ export class CameraControl extends Component {
      *
      * Default is ````false````.
      *
-     * @param {Boolean} value Set ````true```` to enable double-pick-fly-to mode.
+     * @param value Set ````true```` to enable double-pick-fly-to mode.
      */
-    set doublePickFlyTo(value) {
+    set doublePickFlyTo(value:boolean) {
         this.#configs.doublePickFlyTo = value !== false;
     }
 
@@ -1513,9 +1311,9 @@ export class CameraControl extends Component {
      *
      * Default is ````false````.
      *
-     * @returns {Boolean} Returns ````true```` when double-pick-fly-to mode is enabled.
+     * @returns Returns ````true```` when double-pick-fly-to mode is enabled.
      */
-    get doublePickFlyTo() {
+    get doublePickFlyTo() :boolean{
         return this.#configs.doublePickFlyTo;
     }
 
@@ -1524,9 +1322,9 @@ export class CameraControl extends Component {
      *
      * Default is ````true````.
      *
-     * @param {Boolean} value Set ````false```` to disable pan on right-click.
+     * @param value Set ````false```` to disable pan on right-click.
      */
-    set panRightClick(value) {
+    set panRightClick(value:boolean) {
         this.#configs.panRightClick = value !== false;
     }
 
@@ -1535,9 +1333,9 @@ export class CameraControl extends Component {
      *
      * Default is ````true````.
      *
-     * @returns {Boolean} Returns ````false```` when pan on right-click is disabled.
+     * @returns Returns ````false```` when pan on right-click is disabled.
      */
-    get panRightClick() {
+    get panRightClick() :boolean{
         return this.#configs.panRightClick;
     }
 
@@ -1555,9 +1353,9 @@ export class CameraControl extends Component {
      *
      * Does not apply when {@link CameraControl#navMode} is ````"planView"````, which disallows rotation.
      *
-     * @param {Number} rotationInertia New inertial factor.
+     * @param rotationInertia New inertial factor.
      */
-    set rotationInertia(rotationInertia) {
+    set rotationInertia(rotationInertia:number) {
         this.#configs.rotationInertia = (rotationInertia !== undefined && rotationInertia !== null) ? rotationInertia : 0.0;
     }
 
@@ -1568,9 +1366,9 @@ export class CameraControl extends Component {
      *
      * Does not apply when {@link CameraControl#navMode} is ````"planView"````, which disallows rotation.
      *
-     * @returns {Number} The inertia factor.
+     * @returns The inertia factor.
      */
-    get rotationInertia() {
+    get rotationInertia() :number{
         return this.#configs.rotationInertia;
     }
 
@@ -1587,9 +1385,9 @@ export class CameraControl extends Component {
      *
      * Unlike dollying when {@link followPointer} is ````true````, panning does not follow the pointer.
      *
-     * @param {Number} keyboardPanRate The new keyboard pan rate.
+     * @param keyboardPanRate The new keyboard pan rate.
      */
-    set keyboardPanRate(keyboardPanRate) {
+    set keyboardPanRate(keyboardPanRate:number) {
         this.#configs.keyboardPanRate = (keyboardPanRate !== null && keyboardPanRate !== undefined) ? keyboardPanRate : 5.0;
     }
 
@@ -1597,9 +1395,9 @@ export class CameraControl extends Component {
     /**
      * Sets how fast the camera pans on touch panning
      *
-     * @param {Number} touchPanRate The new touch pan rate.
+     * @param touchPanRate The new touch pan rate.
      */
-    set touchPanRate(touchPanRate) {
+    set touchPanRate(touchPanRate:number) {
         this.#configs.touchPanRate = (touchPanRate !== null && touchPanRate !== undefined) ? touchPanRate : 1.0;
     }
 
@@ -1608,9 +1406,9 @@ export class CameraControl extends Component {
      *
      * Default is ````1.0````.
      *
-     * @returns {Number} The current touch pan rate.
+     * @returns The current touch pan rate.
      */
-    get touchPanRate() {
+    get touchPanRate():number {
         return this.#configs.touchPanRate;
     }
 
@@ -1619,9 +1417,9 @@ export class CameraControl extends Component {
      *
      * Default is ````5.0````.
      *
-     * @returns {Number} The current keyboard pan rate.
+     * @returns The current keyboard pan rate.
      */
-    get keyboardPanRate() {
+    get keyboardPanRate() :number{
         return this.#configs.keyboardPanRate;
     }
 
@@ -1632,9 +1430,9 @@ export class CameraControl extends Component {
      * a rotation key is depressed. See the ````CameraControl```` class documentation for which keys control
      * rotation/orbit.
      *
-     * @param {Number} keyboardRotationRate The new keyboard rotation rate.
+     * @param keyboardRotationRate The new keyboard rotation rate.
      */
-    set keyboardRotationRate(keyboardRotationRate) {
+    set keyboardRotationRate(keyboardRotationRate:number) {
         this.#configs.keyboardRotationRate = (keyboardRotationRate !== null && keyboardRotationRate !== undefined) ? keyboardRotationRate : 90.0;
     }
 
@@ -1643,9 +1441,9 @@ export class CameraControl extends Component {
      *
      * Default is ````90.0````.
      *
-     * @returns {Number} The current keyboard rotation rate.
+     * @returns The current keyboard rotation rate.
      */
-    get keyboardRotationRate() {
+    get keyboardRotationRate() :number{
         return this.#configs.keyboardRotationRate;
     }
 
@@ -1663,9 +1461,9 @@ export class CameraControl extends Component {
      *
      * Default is ````360.0````.
      *
-     * @param {Number} dragRotationRate The new drag rotation rate.
+     * @param dragRotationRate The new drag rotation rate.
      */
-    set dragRotationRate(dragRotationRate) {
+    set dragRotationRate(dragRotationRate:number) {
         this.#configs.dragRotationRate = (dragRotationRate !== null && dragRotationRate !== undefined) ? dragRotationRate : 360.0;
     }
 
@@ -1674,9 +1472,9 @@ export class CameraControl extends Component {
      *
      * Default is ````360.0````.
      *
-     * @returns {Number} The current drag rotation rate.
+     * @returns The current drag rotation rate.
      */
-    get dragRotationRate() {
+    get dragRotationRate():number {
         return this.#configs.dragRotationRate;
     }
 
@@ -1686,9 +1484,9 @@ export class CameraControl extends Component {
      * Default is ````15.0````, to dolly the {@link viewer!Camera} ````15.0```` World-space units per second while we hold down
      * the ````+```` and ````-```` keys.
      *
-     * @param {Number} keyboardDollyRate The new keyboard dolly rate.
+     * @param keyboardDollyRate The new keyboard dolly rate.
      */
-    set keyboardDollyRate(keyboardDollyRate) {
+    set keyboardDollyRate(keyboardDollyRate:number) {
         this.#configs.keyboardDollyRate = (keyboardDollyRate !== null && keyboardDollyRate !== undefined) ? keyboardDollyRate : 15.0;
     }
 
@@ -1697,9 +1495,9 @@ export class CameraControl extends Component {
      *
      * Default is ````15.0````.
      *
-     * @returns {Number} The current keyboard dolly rate.
+     * @returns The current keyboard dolly rate.
      */
-    get keyboardDollyRate() {
+    get keyboardDollyRate() :number{
         return this.#configs.keyboardDollyRate;
     }
 
@@ -1708,9 +1506,9 @@ export class CameraControl extends Component {
      *
      * Default is ````0.2````
      *
-     * @param {Number} touchDollyRate The new touch dolly rate.
+     * @param touchDollyRate The new touch dolly rate.
      */
-    set touchDollyRate(touchDollyRate) {
+    set touchDollyRate(touchDollyRate:number) {
         this.#configs.touchDollyRate = (touchDollyRate !== null && touchDollyRate !== undefined) ? touchDollyRate : 0.2;
     }
 
@@ -1719,9 +1517,9 @@ export class CameraControl extends Component {
      *
      * Default is ````0.2````.
      *
-     * @returns {Number} The current touch dolly rate.
+     * @returns The current touch dolly rate.
      */
-    get touchDollyRate() {
+    get touchDollyRate() :number{
         return this.#configs.touchDollyRate;
     }
 
@@ -1731,9 +1529,9 @@ export class CameraControl extends Component {
      * Default is ````100.0````, to dolly the {@link viewer!Camera} ````10.0```` World-space units per second as we spin
      * the mouse wheel.
      *
-     * @param {Number} mouseWheelDollyRate The new mouse wheel dolly rate.
+     * @param mouseWheelDollyRate The new mouse wheel dolly rate.
      */
-    set mouseWheelDollyRate(mouseWheelDollyRate) {
+    set mouseWheelDollyRate(mouseWheelDollyRate:number) {
         this.#configs.mouseWheelDollyRate = (mouseWheelDollyRate !== null && mouseWheelDollyRate !== undefined) ? mouseWheelDollyRate : 100.0;
     }
 
@@ -1742,9 +1540,9 @@ export class CameraControl extends Component {
      *
      * Default is ````100.0````.
      *
-     * @returns {Number} The current mouseWheel dolly rate.
+     * @returns The current mouseWheel dolly rate.
      */
-    get mouseWheelDollyRate() {
+    get mouseWheelDollyRate() :number{
         return this.#configs.mouseWheelDollyRate;
     }
 
@@ -1763,9 +1561,9 @@ export class CameraControl extends Component {
      *
      * Default is ````0````.
      *
-     * @param {Number} dollyInertia New dolly inertia factor.
+     * @param dollyInertia New dolly inertia factor.
      */
-    set dollyInertia(dollyInertia) {
+    set dollyInertia(dollyInertia:number) {
         this.#configs.dollyInertia = (dollyInertia !== undefined && dollyInertia !== null) ? dollyInertia : 0;
     }
 
@@ -1774,9 +1572,9 @@ export class CameraControl extends Component {
      *
      * Default is ````0````.
      *
-     * @returns {Number} The current dolly inertia factor.
+     * @returns The current dolly inertia factor.
      */
-    get dollyInertia() {
+    get dollyInertia() :number{
         return this.#configs.dollyInertia;
     }
 
@@ -1785,9 +1583,9 @@ export class CameraControl extends Component {
      *
      * Default is ````35.0````.
      *
-     * @param {Number} dollyProximityThreshold New dolly proximity threshold.
+     * @param dollyProximityThreshold New dolly proximity threshold.
      */
-    set dollyProximityThreshold(dollyProximityThreshold) {
+    set dollyProximityThreshold(dollyProximityThreshold:number) {
         this.#configs.dollyProximityThreshold = (dollyProximityThreshold !== undefined && dollyProximityThreshold !== null) ? dollyProximityThreshold : 35.0;
     }
 
@@ -1796,9 +1594,9 @@ export class CameraControl extends Component {
      *
      * Default is ````35.0````.
      *
-     * @returns {Number} The current dolly proximity threshold.
+     * @returns The current dolly proximity threshold.
      */
-    get dollyProximityThreshold() {
+    get dollyProximityThreshold() :number{
         return this.#configs.dollyProximityThreshold;
     }
 
@@ -1807,9 +1605,9 @@ export class CameraControl extends Component {
      *
      * Default is ````0.04````.
      *
-     * @param {Number} dollyMinSpeed New dolly minimum speed.
+     * @param dollyMinSpeed New dolly minimum speed.
      */
-    set dollyMinSpeed(dollyMinSpeed) {
+    set dollyMinSpeed(dollyMinSpeed:number) {
         this.#configs.dollyMinSpeed = (dollyMinSpeed !== undefined && dollyMinSpeed !== null) ? dollyMinSpeed : 0.04;
     }
 
@@ -1818,9 +1616,9 @@ export class CameraControl extends Component {
      *
      * Default is ````0.04````.
      *
-     * @returns {Number} The current minimum dolly speed.
+     * @returns The current minimum dolly speed.
      */
-    get dollyMinSpeed() {
+    get dollyMinSpeed() :number{
         return this.#configs.dollyMinSpeed;
     }
 
@@ -1839,9 +1637,9 @@ export class CameraControl extends Component {
      *
      * Default is ````0.5````.
      *
-     * @param {Number} panInertia New pan inertia factor.
+     * @param panInertia New pan inertia factor.
      */
-    set panInertia(panInertia) {
+    set panInertia(panInertia:number) {
         this.#configs.panInertia = (panInertia !== undefined && panInertia !== null) ? panInertia : 0.5;
     }
 
@@ -1850,55 +1648,18 @@ export class CameraControl extends Component {
      *
      * Default is ````0.5````.
      *
-     * @returns {Number} The current pan inertia factor.
+     * @returns The current pan inertia factor.
      */
-    get panInertia() {
+    get panInertia() :number{
         return this.#configs.panInertia;
-    }
-
-    /**
-     * Sets the keyboard layout.
-     *
-     * Supported layouts are:
-     *
-     * * ````"qwerty"```` (default)
-     * * ````"azerty"````
-     *
-     * @deprecated
-     * @param {String} value Selects the keyboard layout.
-     */
-    set keyboardLayout(value) {
-        // this.warn("keyboardLayout property is deprecated - use keyMap property instead");
-        value = value || "qwerty";
-        if (value !== "qwerty" && value !== "azerty") {
-            this.error("Unsupported value for keyboardLayout - defaulting to 'qwerty'");
-            value = "qwerty";
-        }
-        this.#configs.keyboardLayout = value;
-        this.keyMap = this.#configs.keyboardLayout;
-    }
-
-    /**
-     * Gets the keyboard layout.
-     *
-     * Supported layouts are:
-     *
-     * * ````"qwerty"```` (default)
-     * * ````"azerty"````
-     *
-     * @deprecated
-     * @returns {String} The current keyboard layout.
-     */
-    get keyboardLayout() {
-        return this.#configs.keyboardLayout;
     }
 
     /**
      * Sets a sphere as the representation of the pivot position.
      *
-     * @param {Object} [cfg] Sphere configuration.
-     * @param {String} [cfg.size=1] Optional size factor of the sphere. Defaults to 1.
-     * @param {String} [cfg.material=PhongMaterial] Optional size factor of the sphere. Defaults to a red opaque material.
+     * @param [cfg] Sphere configuration.
+     * @param [cfg.size=1] Optional size factor of the sphere. Defaults to 1.
+     * @param [cfg.material=PhongMaterial] Optional size factor of the sphere. Defaults to a red opaque material.
      */
     enablePivotSphere(cfg = {}) {
         this.#controllers.pivotController.enablePivotSphere(cfg);
@@ -1906,7 +1667,6 @@ export class CameraControl extends Component {
 
     /**
      * Remove the sphere as the representation of the pivot position.
-     *
      */
     disablePivotSphere() {
         this.#controllers.pivotController.disablePivotSphere();
@@ -1922,9 +1682,9 @@ export class CameraControl extends Component {
      *
      * Default is ````false````.
      *
-     * @param {Boolean} enabled Set ````true```` to pivot by default about the selected point on the virtual sphere, or ````false```` to pivot by default about {@link viewer!Camera#look}.
+     * @param enabled Set ````true```` to pivot by default about the selected point on the virtual sphere, or ````false```` to pivot by default about {@link viewer!Camera#look}.
      */
-    set smartPivot(enabled) {
+    set smartPivot(enabled: boolean) {
         this.#configs.smartPivot = (enabled !== false);
     }
 
@@ -1938,9 +1698,9 @@ export class CameraControl extends Component {
      *
      * Default is ````false````.
      *
-     * @returns {Boolean} Returns ````true```` when pivoting by default about the selected point on the virtual sphere, or ````false```` when pivoting by default about {@link viewer!Camera#look}.
+     * @returns Returns ````true```` when pivoting by default about the selected point on the virtual sphere, or ````false```` when pivoting by default about {@link viewer!Camera#look}.
      */
-    get smartPivot() {
+    get smartPivot() :boolean{
         return this.#configs.smartPivot;
     }
 
@@ -1951,9 +1711,9 @@ export class CameraControl extends Component {
      *
      * Default is ````250````
      *
-     * @param {Number} value New double click time frame.
+     * @param value New double click time frame.
      */
-    set doubleClickTimeFrame(value) {
+    set doubleClickTimeFrame(value:number) {
         this.#configs.doubleClickTimeFrame = (value !== undefined && value !== null) ? value : 250;
     }
 
@@ -1962,9 +1722,9 @@ export class CameraControl extends Component {
      *
      * Default is ````250````
      *
-     * @returns {Number} Current double click time frame.
+     * @returns Current double click time frame.
      */
-    get doubleClickTimeFrame() {
+    get doubleClickTimeFrame() :number{
         return this.#configs.doubleClickTimeFrame;
     }
 

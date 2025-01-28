@@ -98,3 +98,4 @@
  * @module cameracontrol
  */
 export * from "./CameraControl";
+export {CameraControlParams} from "./CameraControlParams";

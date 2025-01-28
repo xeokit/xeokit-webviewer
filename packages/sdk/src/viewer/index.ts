@@ -73,7 +73,10 @@
  *   Each View supports orthographic, perspective and custom projections.
  *
  *   **Render Modes**
- *   TODO
+ *   Each View allows us to define multiple custom rendering modes and configure specific effects for each mode. When a View
+ *   is set to a particular mode, the associated effects for that mode are applied. For example, we can configure a
+ *   View to apply enhanced edges and ambient shadows in {@link constants!QualityRender | QualityRender} mode, while
+ *   enabling only resolution scaling in {@link constants!FastRender | FastRender} mode.
  *
  * <br>
  *
@@ -173,12 +176,6 @@
  *
  * <br>
  *
- * ## Configuring the World Coordinate Axis
- *
- * TODO
- *
- * <br>
- *
  * ## Configuring the Camera Projection
  *
  * Each {@link Camera} has a {@link PerspectiveProjection}, a {@link FrustumProjection},
@@ -215,9 +212,43 @@
  *
  * <br>
  *
+ * ## Configuring the 3D World Coordinate Axis
+ *
+ * Different domains use varying 3D world coordinate conventions. For instance, BIM applications often use the +Z axis
+ * as "up," while others use +Y.
+ *
+ * Each {@link View} allows dynamic configuration of its {@link Camera} to align with these World-space coordinate
+ * systems. This will affect the way that {@link cameracontrol!CameraControl} behaves, if attached.
+ *
+ * To set the +Y axis as "up," +X as "right," and -Z as "forward" (common in some modeling software):
+ *
+ * ````javascript
+ * view1.camera.worldAxis = [
+ *     1, 0, 0, // Right
+ *     0, 1, 0, // Up
+ *     0, 0,-1  // Forward
+ * ];
+ * ````
+ *
+ * Here, the ground lies in the X-Z plane, and vertical movement aligns with the Y axis.
+ *
+ * To set the +Z axis as "up," +X as "right," and -Y as "forward" (common in most CAD and BIM viewers):
+ *
+ * ````javascript
+ * view1.camera.worldAxis = [
+ *     1, 0, 0, // Right
+ *     0, 0, 1, // Up
+ *     0,-1, 0  // Forward
+ * ];
+ * ````
+ *
+ * In this configuration, the ground lies in the X-Y plane, and vertical movement aligns with the Z axis.
+ *
+ * <br>
+ *
  * ## Creating a SceneModel
  *
- * Our {@link scene!Scene | Scene } is a container for model geometry and materials.
+ * Our {@link scene!Scene | Scene} is a container for model geometry and materials.
  *
  * Within the Scene, we'll create a {@link scene!SceneModel | SceneModel} that contains three
  * textured {@link scene!SceneModel | SceneObjects}. As soon as we've
@@ -282,6 +313,32 @@
  *
  * sceneModel.build();
  * ````
+ *
+ * ### Reducing Memory Usage
+ *
+ * When building a SceneModel, the Viewer loads all geometry data into the {@link scene!Renderer | Renderer} (e.g., a {@link webglrenderer!WebGLRenderer | WebGLRenderer}).
+ *
+ * By default, the SceneModel retains this geometry data in {@link scene!SceneGeometry | SceneGeometry} components for tasks like runtime querying and file saving. If this data isn't needed, you can configure the SceneModel to discard it, reducing memory usage.
+ *
+ * ````javascript
+ * const sceneModel = scene.createModel({
+ *  retained: false // Default is true
+ * });
+ *
+ * // ...build the SceneModel...
+ *
+ * sceneModel.build(); // Discards geometry
+ *
+ * const sceneObject = sceneModel.objects["object1"]; // SceneObject
+ * const sceneMesh = sceneModel.meshes["myMesh"]; // SceneMesh
+ * const geometry = sceneMesh.geometry; // null
+ *
+ * // geometry is null
+ * ````
+ *
+ * After calling `SceneModel.build`, the `geometry` property of each contained `SceneObject` becomes `null`. Normally, this property would hold a `SceneGeometry` instance if geometry were retained.
+ *
+ * The geometry remains fully viewable and functional but is no longer accessible from JavaScript memory, as it is stored solely on the GPU.
  *
  * <br>
  *
@@ -365,14 +422,15 @@
  * view1.objects["myObject1"].colorize = null;
  * ````
  *
- * Use {@link View.setObjectsColorized | View.setObjectsColorized} to batch-colorize and uncolorize objects:
+ * Use {@link View.setObjectsColorized | View.setObjectsColorized} to batch-colorize and un-colorize objects:
  *
  * ````javascript
  * view1.setObjectsColorized(["myObject1", "myObject2"], [1,0,0]);
  * view1.setObjectsColorized(view1.colorizedObjectIds, null);
  * ````
  *
- * The {@link View.colorizedObjectIds | View.colorizedObjectIds} property contains the IDs of all ViewObjects currently colorized in the View:
+ * The {@link View.colorizedObjectIds | View.colorizedObjectIds} property contains the IDs of all ViewObjects currently
+ * colorized in the View:
  *
  * ````javascript
  * const colorizedObjectIds = view1.colorizedObjectIds;
@@ -380,112 +438,130 @@
  *
  * <br>
  *
- * ## Query Boundaries of Objects
+ * ## Object Boundary Queries
  *
- * TODO
+ * A View monitors the 3D world-space boundaries of objects, allowing efficient runtime queries for tasks such as
+ * collision detection, visibility culling, and camera navigation.
+ *
+ * You can access an object's boundary at any time:
+ *
+ * ````javascript
+ * const viewObject1 = view1.objects["myObject1"]; // ViewObject
+ *
+ * const aabb1 = viewObject1.aabb; // [xmin, ymin, zmin, xmax, ymax, zmax]
+ * ````
  *
  * <br>
  *
  * ## Slicing Objects
  *
- * Create unlimited {@link SectionPlane | SectionPlanes} in each View to slice
- * through models and reveal internal structures. SectionPlanes can be adjusted
- * dynamically through code or user interaction.
+ * Each View can include an unlimited number of {@link SectionPlane | SectionPlanes}, allowing you to slice through models and
+ * reveal internal structures. SectionPlanes can be adjusted dynamically using code or the Scene allows us through user interaction.
  *
- * Let's create a SectionPlane that slices away half of our Scene:
+ * Here’s how to create a SectionPlane that slices away half of the Scene:
  *
- * ````javascript
+ * ```javascript
  * view1.createSectionPlane({
- *      id: "sectionPlane1",
- *      pos: [0,0,0],
- *      dir: [-1,-1,-1]
+ *     id: "sectionPlane1",
+ *     pos: [0, 0, 0],
+ *     dir: [-1, -1, -1]
  * });
- * ````
+ * ```
  *
- * We can also dynamically animate SectionPlanes:
+ * SectionPlanes can also be animated dynamically:
  *
- * ````javascript
+ * ```javascript
  * const sectionPlane1 = view1.sectionPlanes["sectionPlane1"];
  *
- * sctionPlane1.dir = [-1,-1, 1];
- * sctionPlane1.pos = [1,0,0];
- * ````
+ * sectionPlane1.dir = [-1, -1, 1];
+ * sectionPlane1.pos = [1, 0, 0];
+ * ```
  *
- * TODO: Masking which ViewObjects are clippable
+ * To remove SectionPlanes, you can destroy them individually:
  *
- * To destroy SectionPlanes individually:
- *
- * ````javascript
+ * ```javascript
  * sectionPlane1.destroy();
- * ````
+ * ```
  *
- * To destroy all SectionPlanes:
+ * Or clear all SectionPlanes at once:
  *
- * ````javascript
+ * ```javascript
  * view1.clearSectionPlanes();
- * ````
+ * ```
  *
- * <br>
+ * If specific objects need to remain unaffected by SectionPlanes, you can make them unclippable. For example:
+ *
+ * ```javascript
+ * view1.setObjectsClippable(["myObject1"], false);
+ * ```
+ *
+ * Alternatively, you can directly set the {@link ViewObject.clippable | ViewObject.clippable} property:
+ *
+ * ```javascript
+ * view1.objects["myObject1"].clippable = false;
+ * ```
  *
  * ## Customize Lighting
  *
- * Customize lighting for a {@link View} by adding custom {@link DirLight | DirLights},
- * {@link PointLight | PointLights} and {@link AmbientLight | AmbientLights}.
+ * Enhance the lighting of a {@link View} by adding custom {@link DirLight | DirLights}, {@link PointLight | PointLights},
+ * and {@link AmbientLight | AmbientLights}.
  *
- * ````javascript
- * ciew1.clearLights();
+ * Here's how to set up different types of lights:
+ *
+ * ```javascript
+ * view1.clearLights();
  *
  * view1.createDirLight({ // DirLight
- *      id: "dirLight1",
- *      dir: [-1,-1,-1],
- *      color: [0.9,0.9,0.9],
- *      intensity: 0.9
+ *   id: "dirLight1",
+ *   dir: [-1, -1, -1],
+ *   color: [0.9, 0.9, 0.9],
+ *   intensity: 0.9
  * });
  *
  * view1.createPointLight({ // PointLight
- *      id: "pointLight1",
- *      pos: [-100,10,-100],
- *      color: [0.9,0.9,1.0],
- *      intensity: 1.0,
- *      constantAttenuation: 0.8,
- *      linearAttenuation: 0.9,
- *      quadraticAttenuation: 0.9
+ *   id: "pointLight1",
+ *   pos: [-100, 10, -100],
+ *   color: [0.9, 0.9, 1.0],
+ *   intensity: 1.0,
+ *   constantAttenuation: 0.8,
+ *   linearAttenuation: 0.9,
+ *   quadraticAttenuation: 0.9
  * });
  *
  * view1.createAmbientLight({ // AmbientLight
- *      id: "ambientLight1",
- *      color: [0.5,0.5,0.6],
- *      intensity: 0.7
+ *   id: "ambientLight1",
+ *   color: [0.5, 0.5, 0.6],
+ *   intensity: 0.7
  * });
- * ````
+ * ```
  *
- * We can dynamically animate our lights:
+ * You can also dynamically animate the properties of these lights:
  *
- * ````javascript
+ * ```javascript
  * const dirLight1 = view1.lights["dirLight1"];
  * const pointLight1 = view1.lights["pointLight1"];
  * const ambientLight1 = view1.lights["ambientLight1"];
  *
  * dirLight1.dir = [1, -1, 1];
- * pointLight1.pos = [1,0,0];
+ * pointLight1.pos = [1, 0, 0];
  * ambientLight1.intensity = 0.4;
- * ````
+ * ```
  *
- * To destroy each light individually:
+ * To remove individual lights:
  *
- * ````javascript
+ * ```javascript
  * dirLight1.destroy();
  * pointLight1.destroy();
  * ambientLight1.destroy();
- * ````
+ * ```
  *
- * To destroy all lights:
+ * Or clear all lights at once:
  *
- * ````javascript
+ * ```javascript
  * view1.clearLights();
- * ````
+ * ```
  *
- * <br>
+ *  <br>
  *
  * ## Creating Additional Views
  *
@@ -532,7 +608,7 @@
  *
  * ````javascript
  * const environmentViewLayer = view.createLayer({
- *     id: "myEnviromentViewLayer"
+ *     id: "myEnvironmentViewLayer"
  * });
  * ````
  *
@@ -541,7 +617,7 @@
  * ````javascript
  * const skyboxSceneModel = myVScene.createModel({
  *      id: "mySkyBox",
- *      layerId: "myEnviromentViewLayer"
+ *      layerId: "myEnvironmentViewLayer"
  * });
  *
  * skyboxSceneModel.createObject({
@@ -629,67 +705,42 @@
  *
  * ## Rendering Modes
  *
- * A View allows us to define various rendering modes and specify the rendering effects for each mode. When a View
- * is set to a particular rendering mode, it activates only the effects configured for that mode.
+ * A View allows us to define multiple rendering modes and configure specific effects for each mode. When a View is set
+ * to a particular mode, the associated effects for that mode are applied.
  *
- * Let's configure our View to apply enhanced edges and ambient
- * shadows when in {@link constants!QualityRender | QualityRender} mode, and only apply resolution scaling
- * in {@link constants!FastRender | FastRender} mode.
+ * For example, we can configure a View to apply enhanced edges and ambient shadows
+ * in {@link constants!QualityRender | QualityRender} mode, while enabling only resolution
+ * scaling in {@link constants!FastRender | FastRender} mode.
  *
- * ````javascript
- * import {FastRender, QualityRender} from "@xeokit/sdk/constants";
+ * ```javascript
+ * import { FastRender, QualityRender } from "@xeokit/sdk/constants";
  *
  * myView.edges.renderModes = [QualityRender];
  * myView.sao.renderModes = [QualityRender];
  * myView.resolutionScale.renderModes = [FastRender];
- *````
+ * ```
  *
- * Initially we'll set the View in FastRender mode.
+ * Initially, we'll set the View to FastRender mode:
  *
- * ````javascript
+ * ```javascript
  * myView.renderMode = FastRender;
- * ````
+ * ```
  *
- * Now, whenever we want to render the View with full resoltion, edge enhancement and ambient shadows, we just switch
- * it over to QualityRender mode.
+ * To render the View with full resolution, edge enhancements, and ambient shadows, simply switch to QualityRender mode:
  *
- * ````javascript
+ * ```javascript
  * myView.renderMode = QualityRender;
- * ````
+ * ```
  *
- * Switch it back to FastRender mode whenever we want to enable canvas scaling, and disable edges and ambient shadows
- * for smoother interaction.
+ * Switch back to FastRender mode to enable resolution scaling and disable edges and ambient shadows for
+ * smoother interaction:
  *
- * ````javascript
+ * ```javascript
  * myView.renderMode = FastRender;
- * ````
+ * ```
  *
- * In this documentation, we use the two bundled constants, QualityRender and FastRender, to identify two
- * rendering modes. However, the number of supported modes is actually unlimited, and we can use our own constants
- * to identify them if we want.
- *
- * <br>
- *
- * ## Slicing with Section Planes
- *
- * We can create an unlimited number of {@link SectionPlane | SectionPlanes}, to slice parts
- * off our model and reveal inner structures:
- *
- * ````javascript
- * // Create a SectionPlane on negative diagonal
- * const sectionPlane1 = new SectionPlane(viewer.scene, {
- *     pos: [1.0, 1.0, 1.0],
- *     dir: [-1.0, -1.0, -1.0],
- *     active: true
- * }),
- *
- * // Create a SectionPlane on positive diagonal
- * const sectionPlane2 = new SectionPlane(viewer.scene, {
- *     pos: [-1.0, -1.0, -1.0],
- *     dir: [1.0, 1.0, 1.0],
- *     active: true
- * });
- * ````
+ * This example uses the pre-defined constants `QualityRender` and `FastRender` to demonstrate rendering modes. However,
+ * the number of rendering modes is not limited—you can define your own constants to create additional modes as needed.
  *
  * <br>
  *
@@ -703,46 +754,48 @@
  *
  * ## Saving and Loading BCF Viewpoints
  *
- * Let's use {@link bcf!saveBCFViewpoint | saveBCFViewpoint} to save the visual state of our View to a BCF
- * viewpoint. The viewpoint is a {@link bcf!BCFViewpoint | BCFViewpoint}, which can serialize directly to JSON.
+ * Building Collaboration Format (BCF) is a file format designed to facilitate communication and collaboration in Building
+ * Information Modeling (BIM) projects. It enables the exchange of issues and viewpoints between various tools and platforms.
  *
- * We'll also exclude the states of the ViewObjects in the skybox/environment ViewLayer from being saved in the viewpoint.
+ * Using {@link bcf!saveBCFViewpoint | saveBCFViewpoint}, we can capture the current visual state of a View and save it
+ * as a {@link bcf!BCFViewpoint | BCFViewpoint}, which can be easily serialized to JSON.
  *
- * ````javascript
+ * In this example, we’ll exclude the states of the ViewObjects in the skybox or environment ViewLayer when saving the viewpoint:
+ *
+ * ```javascript
  * const bcfViewpoint = saveBCFViewpoint({
- *     view,
- *     excludeViewLayerIds: ["myEnviromentViewLayer"]
+ *    view,
+ *    excludeViewLayerIds: ["myEnvironmentViewLayer"]
  * });
- * ````
+ * ```
  *
- * Let's now use {@link bcf!loadBCFViewpoint | loadBCFViewpoint} to reload that BCF viewpoint back into our View.
+ * To reload the saved BCF viewpoint back into the View, we use {@link bcf!loadBCFViewpoint | loadBCFViewpoint}. Even
+ * though the skybox or environment ViewObject states weren’t saved, this example demonstrates how to filter them out
+ * to ensure they are not loaded:
  *
- * Even though no skybox/environment ViewObject states were saved in this viewpoint, we'll pretend they were, and demonstrate
- * how we can filter them out and prevent them from loading.
- *
- * ````javascript
+ * ```javascript
  * loadBCFViewpoint({
- *      bcfViewpoint
- *      view,
- *      excludeViewLayerIds: ["myEnvironmentViewLayer"]
+ *    bcfViewpoint,
+ *    view,
+ *    excludeViewLayerIds: ["myEnvironmentViewLayer"]
  * });
- * ````
- *
+ * ```
  * <br>
  *
  * ## Saving and Loading Viewer Configurations
  *
  * In xeokit, everything is data-driven, including the Viewer's configuration.
  *
- * You can use {@link viewer!Viewer.toParams | Viewer.toParams} to serialize the current configuration of a Viewer into a {@link ViewerParams} object, which can then be saved as JSON.
+ * You can use {@link viewer!Viewer.toParams | Viewer.toParams} to serialize the current configuration of a Viewer
+ * into a {@link ViewerParams} object, which can then be saved as JSON.
  *
  * ````javascript
  * const viewerParams = viewer.toParams();
  * ````
  *
- * Now let's create a second Viewer and configure it using {@link viewer!Viewer.fromParams | Viewer.fromParams} with the previously serialized
- * ViewerParams. This allows the second Viewer to replicate the exact configuration of the first, including copies of Views, Cameras,
- * SectionPlanes, HighlightMaterials, Lights, and other components.
+ * Now let's create a second Viewer and configure it using {@link viewer!Viewer.fromParams | Viewer.fromParams} with the
+ * previously serialized ViewerParams. This allows the second Viewer to replicate the exact configuration of the first,
+ * including copies of Views, Cameras, SectionPlanes, HighlightMaterials, Lights, and other components.
  *
  * ````javascript
  * const viewer2 = new Viewer({
