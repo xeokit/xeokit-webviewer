@@ -101,7 +101,7 @@
  * import {KTX2TextureTranscoder} from "@xeokit/sdk/ktx2";
  * import {TrianglesPrimitive, LinearEncoding, LinearFilter} from "@xeokit/sdk/constants";
  * import {CameraControl} from "@xeokit/sdk/cameracontrol";
- * import {loadXGF} from "@xeokit/sdk/xgf";
+ * import {loadDotBIM} from "@xeokit/sdk/dotbim";
  * import {saveBCFViewpoint, loadBCFViewpoint} from "@xeokit/sdk/bcf";
  *
  * import {

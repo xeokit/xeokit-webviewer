@@ -505,3 +505,13 @@ export const StaticDraw = 700000;
  *  Indicates scene content that changes frequently.
  */
 export const DynamicDraw = 700001;
+
+/**
+ *  QWERTY keyboard layout.
+ */
+export const QWERTYLayout = 800001;
+
+/**
+ *  AZERTY keyboard layout.
+ */
+export const AZERTYLayout = 800002;
