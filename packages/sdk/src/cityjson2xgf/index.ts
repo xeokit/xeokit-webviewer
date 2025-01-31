@@ -1,75 +1,85 @@
 /**
- * <img  style="padding:0px; padding-top:30px; padding-bottom:10px; height:130px;" src="/docs/assets/xeokit_logo_mesh.png"/>
+ * <img style="padding:0px; padding-top:30px; padding-bottom:10px; height:130px;" src="/docs/assets/xeokit_logo_mesh.png"/>
  *
- * # xeokit CityJSON -> XGF Converter
- *
- * ---
- *
- * ***CLI tools to convert CityJSON models into xeokit's compact [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) geometry format.***
+ * # xeokit CityJSON → XGF Converter
  *
  * ---
  *
- * * Converts CityJSON files to XGF, xeokit's compact format for large models.
- * * Optionally creates an additional JSON file containing a data model that expresses the CityJSON model's object hierarchy.
- * * Backward support for all XGF versions.
- * * XGF does not contain textures - only geometry and color.
+ * **Command-line tools for converting CityJSON models into xeokit's optimized [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) format.**
  *
- * # Installation
+ * ---
  *
- * ````bash
+ * ## Features
+ * - Converts CityJSON files into XGF, xeokit's compact geometry format for large-scale models.
+ * - Optionally generates a JSON file containing a data model that preserves the CityJSON model's object hierarchy.
+ * - Supports all versions of XGF for backward compatibility.
+ * - XGF contains only geometry and color—textures are not included.
+ *
+ * ---
+ *
+ * ## Installation
+ *
+ * ```bash
  * npm install @xeokit/sdk
- * ````
+ * ```
  *
- * # Usage
+ * ---
  *
- * ## Converting a CityJSON file
+ * ## Usage
  *
- * Use the `gltf2xgf` CLI tool to convert a single CityJSON file into a single XGF file, plus an optional JSON file containing
- * a simple DataModel derived from the CityJSON `scene` `node` hierarchy.
+ * ### Converting a CityJSON File to XGF
  *
- * ````bash
- * node gltf2xgf.js -h
- * Usage: gltf2xgf [options]
+ * Use the `cityjson2xgf` CLI tool to convert a CityJSON file into an XGF file.
+ * Optionally, generate a JSON file containing a structured representation of the CityJSON model's hierarchy.
  *
- * CLI to convert CityJSON files into xeokit's compact XGF format
+ * ```bash
+ * node cityjson2xgf.js -h
+ * Usage: cityjson2xgf [options]
+ *
+ * CLI tool to convert CityJSON files into xeokit's compact XGF format.
  *
  * Options:
- *   -v, --version            output the version number
- *   -i, --source [file]      path to source CityJSON file
- *   -s, --scenemodel [file]  path to target XGF file
- *   -d, --datamodel [file]   path to target JSON data model file, extracted from CityJSON scene hierarchy (optional)
- *   -f, --format [number]    target XGF version - supported XGF version is 1, default is 1
- *   -h, --help               display help for command
- * ````
+ *   -v, --version            Output the version number
+ *   -i, --source [file]      Path to the source CityJSON file
+ *   -s, --scenemodel [file]  Path to the target XGF file
+ *   -d, --datamodel [file]   Path to the optional JSON data model file, extracted from the CityJSON hierarchy
+ *   -f, --format [number]    Target XGF version (default: 1, supported versions: 1)
+ *   -h, --help               Display help information
+ * ```
  *
- * The example below converts a CityJSON file to XGF. The XGF objects will have geometries and material colors
- * parsed from the CityJSON. The XGF file can then be loaded into a xeokit {@link scene!SceneModel | SceneModel}
- * using the {@link xgf!loadXGF | loadXGF()} function. We recommend converting CityJSON for best performance.
+ * ### Example: Converting CityJSON to XGF
  *
- * ````bash
- * node gltf2xgf -i duplex.glb -s duplex.xgf
- * ````
+ * The following command converts a CityJSON file into an XGF file.
+ * The XGF format retains the geometry and material colors from the CityJSON file.
+ * Once converted, the XGF file can be loaded into a xeokit {@link scene!SceneModel | SceneModel}
+ * using the {@link xgf!loadXGF | loadXGF()} function for optimized visualization.
  *
- * ## Converting a CityJSON file and extracting scene hierarchy
+ * ```bash
+ * node cityjson2xgf -i duplex.json -s duplex.xgf
+ * ```
  *
- * In the next example, we'll convert a CityJSON file to XGF, while also creating a JSON file that defines
- * a simple data model that expresses the hierarchy of the objects within the CityJSON model. The JSON file can
- * then be loaded into a xeokit {@link data!DataModel | DataModel}
+ * ### Example: Extracting Scene Hierarchy
+ *
+ * This example converts a CityJSON file to XGF and also generates a JSON file
+ * that represents the CityJSON model's object hierarchy.
+ * The JSON file can then be loaded into a xeokit {@link data!DataModel | DataModel}
  * using {@link data!Data.createModel | Data.createModel()}.
  *
- * ````bash
- * node cityjson2xgf -i duplex.json -s duplex.xgf -d duplex.json
- * ````
+ * ```bash
+ * node cityjson2xgf -i duplex.json -s duplex.xgf -d duplex_hierarchy.json
+ * ```
  *
- * ## Converting a CityJSON file to a specific XGF version
+ * ### Example: Converting to a Specific XGF Version
  *
- * In our previous examples, we converted to the latest version of XGF by default. In the next example, we'll convert a
- *  CityJSON file to a specific version of XGF. The XGF format is expected to evolve in the future, so this feature
- * ensures backward-compatibility.
+ * By default, CityJSON files are converted to the latest XGF version.
+ * If you need to generate an XGF file compatible with a specific version,
+ * you can specify the format version using the `-f` flag.
  *
- * ````bash
- * cityjson2xgf -i duplex.json -s duplex.xgf -f 1
- * ````
+ * ```bash
+ * node cityjson2xgf -i duplex.json -s duplex.xgf -f 1
+ * ```
+ *
+ * ---
  *
  * @module cityjson2xgf
  */

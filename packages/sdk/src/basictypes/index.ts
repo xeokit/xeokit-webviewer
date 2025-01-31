@@ -3,42 +3,41 @@
  *
  * # xeokit Basic Semantic Data Types
  *
- * * Defines numeric constants for a basic set of entity and relationship types.
- * * Use with {@link data | data}  to assign basic types to {@link data!DataObject | DataObjects}
- * and {@link data!Relationship | Relationships} and treat them as elements of a basic entity-relationship graph.
- * * Use with {@link treeview | treeview} , to configure the appearance and behaviour of
- * {@link treeview!TreeView | TreeViews} for navigating basic element hierachies.
+ * This module defines numeric constants representing a basic set of entity and relationship types.
  *
- *  # Installation
+ * ## Key Features
+ * - Assigns fundamental types to {@link data!DataObject | DataObjects} and {@link data!Relationship | Relationships},
+ *   treating them as elements within an entity-relationship graph.
+ * - Integrates with {@link treeview | treeview} to configure the appearance and behavior of
+ *   {@link treeview!TreeView | TreeViews} for navigating basic hierarchical structures.
  *
- * ````bash
+ * ## Installation
+ * ```bash
  * npm install @xeokit/sdk
- * ````
+ * ```
  *
- * # Usage
- *
- * ````javascript
- * import {BasicEntity, BasicAggregation} from "@xeokit/sdk/basctypes";
- *
- * //...
- * ````
+ * ## Usage
+ * ```javascript
+ * import { BasicEntity, BasicAggregation } from "@xeokit/sdk/basictypes";
+ * ```
  *
  * @module basictypes
  */
 
 /**
- * A generic entity.
+ * Represents a generic entity.
+ * Used as a fundamental building block within an entity-relationship graph.
  */
 export const BasicEntity = 1000;
 
 /**
- * A generic aggregation relationship between two generic entities.
+ * Represents a generic aggregation relationship between two entities.
+ * Used to define hierarchical or compositional relationships between entities.
  */
 export const BasicAggregation = 1001;
 
-
 /**
- * Map of names for all basic entity types.
+ * Maps numeric type codes to their corresponding entity type names.
  */
 export const typeNames: { [key: number]: string } = {
     [BasicEntity]: "BasicEntity",
@@ -46,7 +45,7 @@ export const typeNames: { [key: number]: string } = {
 };
 
 /**
- * Map of type codes for all basic entity type names.
+ * Maps entity type names to their corresponding numeric type codes.
  */
 export const typeCodes: { [key: string]: number } = {
     "BasicEntity": BasicEntity,

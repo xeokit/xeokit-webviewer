@@ -4,210 +4,195 @@
  * # xeokit CityJSON 1.1.3 Data Types
  *
  * * Defines numeric constants for the set of [CityJSON](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#cityjson) 1.1.3 entity and relationship types.
- * * Use with {@link data | data}  to assign CityJSON types to {@link data!DataObject | DataObjects}
- * and {@link data!Relationship | Relationships} and treat them as elements of a basic entity-relationship graph.
- * * Use with {@link "treeview" | treeview} , to configure the appearance and behaviour of
- * {@link treeview!TreeView | TreeViews} for navigating CityJSON objects.
+ * * Use with {@link data | data} to assign CityJSON types to {@link data!DataObject | DataObjects}
+ *   and {@link data!Relationship | Relationships} and treat them as elements of a basic entity-relationship graph.
+ * * Use with {@link "treeview" | treeview} to configure the appearance and behavior of
+ *   {@link treeview!TreeView | TreeViews} for navigating CityJSON objects.
  *
  * # Installation
  *
- * ````bash
+ * ```bash
  * npm install @xeokit/sdk
- * ````
+ * ```
  *
  * # Usage
  *
- * ````javascript
- * import {BasicEntity, BasicAggregation} from "@xeokit/sdk/basctypes";
+ * ```javascript
+ * import { BasicEntity, BasicAggregation } from "@xeokit/sdk/basctypes";
  *
  * //...
- * ````
+ * ```
  *
  * @module cityjsontypes_1_1_3
  */
 
 /**
- * A generic aggregation relationship between two generic entities.
+ * A generic aggregation relationship between two generic CityJSON entities.
  */
 export const BasicAggregation = 2001;
 
 /**
- * This CityObject type represents a bridge, which can have attributes such as the length, height, and type of bridge.
+ * This CityJSON type represents a bridge, which can have attributes such as length, height, and type of bridge.
  */
 export const Bridge = 2000;
 
 /**
- * This CityJSON object represents a physical or functional subdivision of a Bridge.
+ * This CityJSON type represents a physical or functional subdivision of a bridge.
  */
 export const BridgePart = 2001;
 
 /**
- * This CityJSON type represents a permanent part of a Bridge (inside and/or outside) which does not have the significance of a
- * BridgePart. In contrast to BridgeConstructiveElements, a BridgeInstallation is not essential from a structural point of view.
- * Examples are stairs, antennas or railways.
+ * This CityJSON type represents a permanent part of a bridge (inside and/or outside) that does not have the significance of a BridgePart.
+ * In contrast to BridgeConstructiveElements, a BridgeInstallation is not essential from a structural point of view.
+ * Examples include stairs, antennas, or railways.
  */
 export const BridgeInstallation = 2002;
 
 /**
- * This CityJSON type represents an element of a bridge which is essential from a structural point of view. Examples are pylons,
- * anchorages, slabs, beams.
+ * This CityJSON type represents an essential structural element of a bridge. Examples include pylons, anchorages, slabs, and beams.
  */
 export const BridgeConstructiveElement = 2003;
 
 /**
- * This CityJSON type represents  a space within a Bridge or BridgePart intended for human occupancy (e.g. a place of work or
- * recreation) and/or containment (storage) of animals or things. A BridgeRoom is bounded physically and/or virtually (e.g. by
- * ClosureSurfaces or GenericSurfaces).
+ * This CityJSON type represents a space within a bridge or bridge part intended for human occupancy (e.g., a workplace or recreational space)
+ * or for storing animals or objects. It is bounded physically and/or virtually (e.g., by ClosureSurfaces or GenericSurfaces).
  */
 export const BridgeRoom = 2004;
 
 /**
- * This CityJSON type represents equipment for occupant use, usually not fixed to the bridge. [cf. ISO 6707-1]
+ * This CityJSON type represents equipment for occupant use within a bridge, usually not fixed to the structure. [cf. ISO 6707-1]
  */
 export const BridgeFurniture = 2005;
 
 /**
- *  This CityObject type represents a building, which can contain one or more "BuildingPart" objects. The Building object can
- *  have attributes such as the building height, number of floors, and the year of construction.
+ * This CityJSON type represents a building, which can contain one or more "BuildingPart" objects. A building can have attributes
+ * such as height, number of floors, and year of construction.
  */
 export const Building = 2006;
 
 /**
- * This CityObject type represents a part of a building, such as a wing or a tower. Building parts can have attributes such
- * as the building part height and the material used in its construction.
+ * This CityJSON type represents a part of a building, such as a wing or a tower. Building parts can have attributes such as height and material used.
  */
 export const BuildingPart = 2007;
 
 /**
- * This CityJSON type represents a permanent part of a Building (inside and/or outside) which has not the significance of a
- * BuildingPart. Examples are stairs, antennas, balconies or small roofs.
+ * This CityJSON type represents a permanent part of a building (inside and/or outside) that does not have the significance of a BuildingPart.
+ * Examples include stairs, antennas, balconies, or small roofs.
  */
 export const BuildingInstallation = 2008;
 
 /**
- * This CityJSON type represents an element of a Building which is essential from a structural point of view. Examples are walls,
- * slabs, staircases, beams.
+ * This CityJSON type represents an essential structural element of a building. Examples include walls, slabs, staircases, and beams.
  */
 export const BuildingConstructiveElement = 2009;
 
 /**
- * This CityJSON type represents equipment for occupant use, usually not fixed to the building. [cf. ISO 6707-1]
+ * This CityJSON type represents equipment for occupant use within a building, usually not fixed to the structure. [cf. ISO 6707-1]
  */
 export const BuildingFurniture = 2010;
 
 /**
- * This CityJSON type represents  a horizontal section of a Building. BuildingStorey are not always defined according to the
- * building structure, but can also be defined according to logical considerations.
+ * This CityJSON type represents a horizontal section of a building. Building storeys are sometimes defined by logical considerations rather than structural elements.
  */
 export const BuildingStorey = 2011;
 
 /**
- * This CityJSON type represents a space within a Building or BuildingPart intended for human occupancy (e.g. a place of work or recreation)
- * and/or containment of animals or things. A BuildingRoom is bounded physically and/or virtually (e.g. by ClosureSurfaces or GenericSurfaces).
+ * This CityJSON type represents a space within a building or building part intended for human occupancy or storage. It is bounded physically and/or virtually.
  */
 export const BuildingRoom = 2012;
 
 /**
- * This CityJSON type represents a logical subdivision of a Building. BuildingUnits are formed according to some homogeneous
- * property like function, ownership, management, or accessibility. They may be separately sold, rented out, inherited, managed, etc.
+ * This CityJSON type represents a logical subdivision of a building, often defined by function, ownership, management, or accessibility.
  */
 export const BuildingUnit = 2013;
 
 /**
- * This CityObject type represents outdoor furniture, such as benches, trash cans, and street lamps. CityFurniture objects can
- * have attributes such as the type of furniture and its location.
+ * This CityJSON type represents various types of city furniture, such as benches, trash cans, and street lamps.
  */
 export const CityFurniture = 2014;
 
 /**
- * This CityObject type represents a group of other CityObjects. CityObjectGroup objects can have attributes such as the name
- * of the group and the CityObjects it contains.
+ * This CityJSON type represents a group of other CityObjects. A CityObjectGroup can have attributes such as a name and a list of contained objects.
  */
 export const CityObjectGroup = 2015;
 
 /**
- * This CityObject type represents the land use of a particular area, such as residential, commercial, or industrial. LandUse
- * objects can have attributes such as the name of the land use and the area it covers.
+ * This CityJSON type represents the land use of a particular area, such as residential, commercial, or industrial zones.
  */
 export const LandUse = 2016;
 
 /**
- * this CityObject type represents an unclassified, generic element of construction.
+ * This CityJSON type represents an unclassified, generic element of construction.
  */
 export const OtherConstruction = 2017;
 
 /**
- * This CityObject type represents vegetation, such as trees, bushes, and grass. PlantCover objects can have attributes such
- * as the type of vegetation and its location.
+ * This CityJSON type represents vegetation, such as trees, bushes, and grass.
  */
 export const PlantCover = 2018;
 
 /**
- * This CityObject type represents individual vegetation objects, e.g. trees or bushes.
+ * This CityJSON type represents individual vegetation objects, such as trees or bushes.
  */
 export const SolitaryVegetationObject = 2019;
 
 /**
- * This CityJSON type represents a terrain component as a triangulated irregular network.
+ * This CityJSON type represents a terrain component modeled as a triangulated irregular network (TIN).
  */
 export const TINRelief = 2020;
 
-
+/**
+ * This CityJSON type represents a transportation square, which can include plazas and other large paved areas.
+ */
 export const TransportationSquare = 2021;
 
 /**
- * This CityObject type represents a railway, which can have attributes such as the type of railway and the tracks' location.
+ * This CityJSON type represents a railway, which can have attributes such as track type and location.
  */
 export const Railway = 2022;
 
 /**
- * This CityObject type represents a road, which can have attributes such as the road type and the road's location.
+ * This CityJSON type represents a road, which can have attributes such as type and location.
  */
 export const Road = 2023;
 
 /**
- * This CityObject type  is used to represent any type of underground or underwater structure designed for passage or transportation,
- * such as a subway or water tunnel. It is defined by its geometry and other attributes.
+ * This CityJSON type represents a tunnel, including underground and underwater passages for transportation or other purposes.
  */
 export const Tunnel = 2024;
 
 /**
- * This CityObject type represents a physical or functional subdivision of a Tunnel. It would be considered a Tunnel, if it were
- * not part of a collection of other TunnelParts.
+ * This CityJSON type represents a subdivision of a tunnel, defined as part of a larger tunnel system.
  */
 export const TunnelPart = 2025;
 
 /**
- * This CityObject type represents  a permanent part of a Tunnel (inside and/or outside) which does not have the significance of a
- * TunnelPart. In contrast to TunnelConstructiveElement, a TunnelInstallation is not essential from a structural point of view. Examples
- * are stairs, antennas or railings.
+ * This CityJSON type represents a permanent installation within a tunnel, which is not structurally significant.
  */
 export const TunnelInstallation = 2026;
 
 /**
- * This CityObject type represents an element of a Tunnel which is essential from a structural point of view. Examples are walls, slabs, beams.
+ * This CityJSON type represents a structural component of a tunnel, such as walls or beams.
  */
 export const TunnelConstructiveElement = 2027;
 
 /**
- * This CityObject type represents a hollow space within a Tunnel.
+ * This CityJSON type represents a hollow space within a tunnel.
  */
 export const TunnelHollowSpace = 2028;
 
 /**
- * This CityObject type represents equipment for occupant use, usually not fixed to the tunnel. [cf. ISO 6707-1]
+ * This CityJSON type represents furniture or equipment within a tunnel, usually not fixed to the structure.
  */
 export const TunnelFurniture = 2029;
 
 /**
- * This CityObject type represents a body of water, such as a river, lake, or ocean. It is defined by its geometry and other attributes,
- * and can be used to model and analyze hydrological features.
+ * This CityJSON type represents a body of water, such as a river, lake, or ocean.
  */
 export const WaterBody = 2030;
 
 /**
- * This CityObject type  is used to represent a natural or man-made channel that carries water, such as a river, canal, or stormwater drain.
- * It is defined by its geometry and other attributes, and can be used to model and analyze hydrological features.
+ * This CityJSON type represents a waterway, including rivers, canals, or stormwater drains.
  */
 export const Waterway = 2031;
 

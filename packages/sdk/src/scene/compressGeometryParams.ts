@@ -5,7 +5,6 @@ import {compressRGBColors, quantizePositions3} from "../compression";
 import {buildEdgeIndices} from "./buildEdgeIndices";
 import type {SceneGeometryParams} from "./SceneGeometryParams";
 import type {SceneGeometryCompressedParams} from "./SceneGeometryCompressedParams";
-import {worldToRTCPositions} from "../rtc";
 
 const rtcCenter = createVec3();
 
