@@ -1,64 +1,77 @@
 /**
-
- * <img  style="padding:0px; padding-top:30px; padding-bottom:10px; height:130px;" src="/docs/assets/xeokit_logo_mesh.png"/>
+ * <img style="padding: 30px 0 10px; height: 130px;" src="/docs/assets/xeokit_logo_mesh.png"/>
  *
- * # xeokit LAS/LAZ -> XGF Converter
- *
- * ---
- *
- * ***CLI tools to convert LAS/LAZ models into xeokit's compact [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) geometry format.***
+ * # xeokit LAS/LAZ → XGF Converter
  *
  * ---
  *
- * * Converts a LAS/LAZ file to an XGF geometry file, along with an optional JSON file containing the IFC data model.
- * * Backward support for all XGF versions.
- * * XGF does not contain textures - only geometry and color.
+ * **Command-line tools to convert LAS/LAZ models into xeokit's compact [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) geometry format.**
  *
- * # Installation
+ * ---
  *
- * ````bash
+ * ### Features:
+ * - Converts a LAS/LAZ file to an XGF geometry file, with an optional JSON file containing the data model.
+ * - Supports all XGF versions for backward compatibility.
+ * - XGF contains only geometry and color—no textures.
+ *
+ * ---
+ *
+ * ## Installation
+ *
+ * ```bash
  * npm install @xeokit/sdk
- * ````
+ * ```
  *
- * # Usage
+ * ---
  *
- * ## Converting a LAS/LAZ file
+ * ## Usage
  *
- * Use the `las2xgf` CLI tool to convert a single LAS/LAZ file into a single XGF file, plus an optional JSON file containing
- * a DataModel of IFC semantic data.
+ * ### Converting a LAS/LAZ file
  *
- * ````bash
+ * Use the `las2xgf` CLI tool to convert a LAS/LAZ file into an XGF file.
+ * You can also generate an optional JSON file containing a DataModel with semantic data.
+ *
+ * ```bash
  * node las2xgf.js -h
+ * ```
+ *
+ * **Command-line options:**
+ *
+ * ```
  * Usage: las2xgf [options]
  *
- * CLI to convert LAS/LAZ files into xeokit's compact XGF format
+ * CLI to convert LAS/LAZ files into xeokit's compact XGF format.
  *
  * Options:
  *   -v, --version            output the version number
  *   -i, --source [file]      path to source LAS/LAZ file
  *   -s, --scenemodel [file]  path to target XGF file
- *   -d, --datamodel [file]   path to target JSON IFC data model file, extracted from LAS/LAZ (optional)
+ *   -d, --datamodel [file]   path to target JSON data model file, extracted from LAS/LAZ (optional)
  *   -f, --format [number]    target XGF version - supported XGF version is 1, default is 1
  *   -h, --help               display help for command
  * ````
  *
- * The example below converts a LAS/LAZ file to an XGF file and a JSON data model file. The XGF file can then be loaded into a
- * {@link scene!SceneModel | SceneModel} using {@link xgf!loadXGF | loadXGF()}. The JSON file can be
- * loaded into a {@link data!DataModel | DataModel} using {@link data!loadDataModel | loadDataModel()}.
+ * **Example: Convert a LAS/LAZ file to XGF with JSON data model**
  *
- * ````bash
+ * ```bash
  * node las2xgf -i model.laz -s model.xgf -d model.json
- * ````
+ * ```
  *
- * ## Converting a LAS/LAZ file to a target XGF version
+ * The resulting XGF file can be loaded into a {@link scene!SceneModel | SceneModel} using {@link xgf!loadXGF | loadXGF()}.
+ * The JSON file can be loaded into a {@link data!DataModel | DataModel} using {@link data!loadDataModel | loadDataModel()}.
  *
- * In our previous examples, we converted to the latest version of XGF by default. In the next example, we'll convert a
- * binary LAS/LAZ file to a specific version of XGF. The XGF format is expected to evolve in the future, so this feature
- * ensures backward-compatibility.
+ * ---
  *
- * ````bash
- * las2xgf -i modal.laz -s model.xgf -f 1
- * ````
+ * ## Converting to a Specific XGF Version
+ *
+ * By default, conversions target the latest XGF version.
+ * To ensure backward compatibility, specify a target XGF version using the `-f` option.
+ *
+ * ```bash
+ * node las2xgf -i model.laz -s model.xgf -f 1
+ * ```
+ *
+ * ---
  *
  * @module las2xgf
  */

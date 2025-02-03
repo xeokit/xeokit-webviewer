@@ -3,7 +3,7 @@
  *
  * # Spline Curve Math Functions
  *
- * This module provides various mathematical functions for spline curves, including Bezier and Catmull-Rom interpolation methods.
+ * This module provides various mathematical functions for spline curves, including Bézier and Catmull-Rom interpolation methods.
  * These functions are useful for generating and manipulating smooth curves in 3D and 2D space.
  *
  * ## Installation
@@ -16,7 +16,9 @@
  *
  * ## Usage
  *
- * Import the relevant functions from the module:
+ * We'll demonstrate a selection of curve functions provided by this module.
+ *
+ * Import the functions:
  *
  * ```javascript
  * import {
@@ -27,32 +29,50 @@
  *   b2,
  *   b3
  * } from "@xeokit/sdk/curves";
+ * ```
  *
- * // Example 1: Quadratic Bézier curve tangent at a given parameter
+ * ### Quadratic Bézier curve tangent at a given parameter
+ *
+ * ```javascript
  * const t = 0.5; // Parameter t (0 ≤ t ≤ 1)
  * const p0 = 0, p1 = 10, p2 = 20; // Control points
  * const tangentQuad = tangentQuadraticBezier(t, p0, p1, p2);
  * console.log("Quadratic Bézier curve tangent:", tangentQuad);
+ * ```
  *
- * // Example 2: Cubic Bézier curve tangent at a given parameter
+ * ### Cubic Bézier curve tangent at a given parameter
+ *
+ * ```javascript
  * const p3 = 30; // Fourth control point
  * const tangentCubic = tangentQuadraticBezier3(t, p0, p1, p2, p3);
  * console.log("Cubic Bézier curve tangent:", tangentCubic);
+ * ```
  *
- * // Example 3: Spline curve tangent at a given parameter
+* ### Spline curve tangent at a given parameter
+*
+ * ````javascript
  * const tangentSplineValue = tangentSpline(t);
  * console.log("Spline curve tangent:", tangentSplineValue);
+ * ````
  *
- * // Example 4: Catmull-Rom interpolation at a given parameter
+ * ### Catmull-Rom interpolation at a given parameter
+ *
+ * ```javascript
  * const p4 = 40; // Additional control point for Catmull-Rom
  * const interpolatedValue = catmullRomInterpolate(p0, p1, p2, p3, t);
  * console.log("Catmull-Rom interpolation result:", interpolatedValue);
+ * ```
  *
- * // Example 5: Quadratic Bézier curve result at a given parameter
+ * ### Quadratic Bézier curve result at a given parameter
+ *
+ * ```javascript
  * const quadBezierResult = b2(t, p0, p1, p2);
  * console.log("Quadratic Bézier curve result:", quadBezierResult);
+ * ```
  *
- * // Example 6: Cubic Bézier curve result at a given parameter
+ * ### Cubic Bézier curve result at a given parameter
+ *
+ * ```javascript
  * const cubicBezierResult = b3(t, p0, p1, p2, p3);
  * console.log("Cubic Bézier curve result:", cubicBezierResult);
  * ```
@@ -124,9 +144,9 @@ export function catmullRomInterpolate(p0: number, p1: number, p2: number, p3: nu
     return (2 * p1 - 2 * p2 + v0 + v1) * t3 + (-3 * p1 + 3 * p2 - 2 * v0 - v1) * t2 + v0 * t + p1;
 }
 
-// Bezier Curve Formulas from http://en.wikipedia.org/wiki/B%C3%A9zier_curve
+// Bézier Curve Formulas from http://en.wikipedia.org/wiki/B%C3%A9zier_curve
 
-// Quad Bezier Functions
+// Quad Bézier Functions
 
 /**
  * Computes the quadratic Bézier curve function b2p0.

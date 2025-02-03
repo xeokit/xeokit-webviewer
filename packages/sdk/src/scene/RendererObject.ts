@@ -1,193 +1,146 @@
-
-import type {FloatArrayParam} from "../math";
-import type {SDKError} from "../core";
-import {RendererModel} from "./RendererModel";
-
+import type { FloatArrayParam } from "../math";
+import type { SDKError } from "../core";
+import { RendererModel } from "./RendererModel";
 
 /**
  * Interface through which a {@link viewer!ViewObject | ViewObject} controls the appearance of
  * a {@link SceneObject | SceneObject} in a {@link viewer!Viewer | Viewer}.
  *
- * When a {@link Scene | Scene} is attached to a {@link viewer!Viewer | Viewer}, the Viewer
- * attaches a RendererObject to each of the Scene's {@link SceneObject | SceneObjects}, to provide
- * an interface through which the Viewer's {@link viewer!ViewObject | ViewObject} can control the appearance of
- * the SceneObject within a {@link viewer!View | View}.
+ * While a {@link Scene | Scene} is attached to a {@link viewer!Viewer | Viewer}, the Viewer
+ * attaches a RendererObject to {@link SceneObject.rendererObject | SceneObject.rendererObject} on
+ * each of the Scene's {@link SceneObject | SceneObjects}, to provide an interface through which
+ * the Viewer's {@link viewer!ViewObject | ViewObjects} can control the appearance of the SceneObjects
+ * within their respective {@link viewer!View | Views}.
  *
  * Internally, the Viewer's {@link viewer!Renderer} attaches these
  * to {@link SceneObject.rendererObject | SceneObject.rendererObject} and
  * {@link viewer!ViewObject.rendererObject | ViewObject.rendererObject}. When we update properties
- * like {@link viewer!ViewObject.visible | ViewObject.visible}, this interface will upload those
- * updates into the {@link viewer!Renderer}.
+ * like {@link viewer!ViewObject.visible | ViewObject.visible}, the ViewObject will upload those
+ * updates through this interface into the {@link viewer!Renderer}.
+ *
+ * When a View
  *
  * @internal
  */
 export interface RendererObject {
 
     /**
-     * Unique ID of this RendererObject.
-     * @internal
+     * Unique identifier for this RendererObject.
      */
     readonly id: string;
 
     /**
-     * The {@link RendererModel | RendererModel} that contains this RendererObject.
-     * @internal
+     * The {@link RendererModel | RendererModel} containing this RendererObject.
      */
     readonly rendererModel: RendererModel;
 
     /**
-     * The axis-aligned World-space 3D boundary of this RendererObject.
-     * @internal
+     * The axis-aligned world-space 3D boundary of this RendererObject.
      */
     readonly aabb: FloatArrayParam;
 
     /**
-     * The ID of a {@link viewer!ViewLayer | ViewLayer} for the {@link viewer!ViewObject} to exclusively appear in.
-     * @internal
+     * The ID of a {@link viewer!ViewLayer | ViewLayer} in which the {@link viewer!ViewObject} exclusively appears.
      */
     readonly layerId: string | null;
 
     /**
-     * Sets the visibility of the {@link viewer!ViewObject} in the given {@link viewer!View | View}.
+     * Controls the visibility of the {@link viewer!ViewObject} in a specific {@link viewer!View | View}.
      *
-     * @internal
-     * @param viewHandle Handle to the {@link viewer!View | View}, which was returned by {@link viewer!Renderer.attachView | Renderer.attachView}.
-     * @param visible Whether to make the {@link viewer!ViewObject} visible.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No {@link viewer!View | View} found in the Renderer for the given handle.
+     * @param viewIndex - Index of the View. Matches {@link viewer!View.viewIndex | View.viewIndex} for an attached View.
+     * @param visible - Whether the {@link viewer!ViewObject} should be visible.
+     * @returns *void* - Success.
+     * @returns *{@link core!SDKError | SDKError}* - If no corresponding {@link viewer!View | View} is found.
      */
-    setVisible(viewHandle: number, visible: boolean): void | SDKError;
+    setVisible(viewIndex: number, visible: boolean): void | SDKError;
 
     /**
-     * Sets whether the {@link viewer!ViewObject} appears highlighted in the given {@link viewer!View | View}.
+     * Toggles the highlighted state of the {@link viewer!ViewObject} in a specified {@link viewer!View | View}.
      *
-     * @internal
-     * @param viewHandle Handle to the {@link viewer!View | View}, which was returned by {@link viewer!Renderer.attachView | Renderer.attachView}.
-     * @param highlighted Whether to make the {@link viewer!ViewObject} highlighted.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No {@link viewer!View | View} found in the Renderer for the given handle.
+     * @param viewIndex - Index of the View.
+     * @param highlighted - Whether to highlight the {@link viewer!ViewObject}.
+     * @returns *void* - Success.
+     * @returns *{@link core!SDKError | SDKError}* - If no corresponding {@link viewer!View | View} is found.
      */
-    setHighlighted(viewHandle: number, highlighted: boolean): void | SDKError;
+    setHighlighted(viewIndex: number, highlighted: boolean): void | SDKError;
 
     /**
-     * Sets whether the {@link viewer!ViewObject} appears X-rayed in the given {@link viewer!View | View}.
+     * Sets whether the {@link viewer!ViewObject} should appear X-rayed in a given {@link viewer!View | View}.
      *
-     * @internal
-     * @param viewHandle Handle to the {@link viewer!View | View}, which was returned by {@link viewer!Renderer.attachView | Renderer.attachView}.
-     * @param xrayed Whether to make the {@link viewer!ViewObject} X-rayed.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No {@link viewer!View | View} found in the Renderer for the given handle.
+     * @param viewIndex - Index of the View.
+     * @param xrayed - Whether to apply the X-ray effect.
+     * @returns *void* - Success.
+     * @returns *{@link core!SDKError | SDKError}* - If no corresponding {@link viewer!View | View} is found.
      */
-    setXRayed(viewHandle: number, xrayed: boolean): void | SDKError;
+    setXRayed(viewIndex: number, xrayed: boolean): void | SDKError;
 
     /**
-     * Sets whether the {@link viewer!ViewObject} appears selected in the given {@link viewer!View | View}.
+     * Marks the {@link viewer!ViewObject} as selected within a given {@link viewer!View | View}.
      *
-     * @internal
-     * @param viewHandle Handle to the {@link viewer!View | View}, which was returned by {@link viewer!Renderer.attachView | Renderer.attachView}.
-     * @param selected Whether to make the {@link viewer!ViewObject} selected.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No {@link viewer!View | View} found in the Renderer for the given handle.
+     * @param viewIndex - Index of the View.
+     * @param selected - Whether the object should be selected.
+     * @returns *void* - Success.
+     * @returns *{@link core!SDKError | SDKError}* - If no corresponding {@link viewer!View | View} is found.
      */
-    setSelected(viewHandle: number, selected: boolean): void | SDKError;
+    setSelected(viewIndex: number, selected: boolean): void | SDKError;
 
     /**
-     * Sets whether the {@link viewer!ViewObject} is visually culled from the given {@link viewer!View | View}.
+     * Controls whether the {@link viewer!ViewObject} should be culled (hidden) from a specific {@link viewer!View | View}.
      *
-     * @internal
-     * @param viewHandle Handle to the {@link viewer!View | View}, which was returned by {@link viewer!Renderer.attachView | Renderer.attachView}.
-     * @param culled Whether to cull the {@link viewer!ViewObject} in the {@link viewer!View | View}.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No {@link viewer!View | View} found in the Renderer for the given handle.
+     * @param viewIndex - Index of the View.
+     * @param culled - Whether to cull the object.
+     * @returns *void* - Success.
+     * @returns *{@link core!SDKError | SDKError}* - If no corresponding {@link viewer!View | View} is found.
      */
-    setCulled(viewHandle: number, culled: boolean): void | SDKError;
+    setCulled(viewIndex: number, culled: boolean): void | SDKError;
 
     /**
-     * Sets whether section plane clipping is applied to the {@link viewer!ViewObject} in the given {@link viewer!View | View}.
+     * Sets whether section plane clipping is applied to the {@link viewer!ViewObject} in a given {@link viewer!View | View}.
      *
-     * @internal
-     * @param viewHandle Handle to the {@link viewer!View | View}, which was returned by {@link viewer!Renderer.attachView | Renderer.attachView}.
-     * @param clippable Whether to make the {@link viewer!ViewObject} in the {@link viewer!View | View} clippable.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No {@link viewer!View | View} found in the Renderer for the given handle.
+     * @param viewIndex - Index of the View.
+     * @param clippable - Whether clipping should be applied.
+     * @returns *void* - Success.
+     * @returns *{@link core!SDKError | SDKError}* - If no corresponding {@link viewer!View | View} is found.
      */
-    setClippable(viewHandle: number, clippable: boolean): void | SDKError;
+    setClippable(viewIndex: number, clippable: boolean): void | SDKError;
 
     /**
-     * Sets whether the {@link viewer!ViewObject} is included in boundary calculations/collisions in the given {@link viewer!View | View}.
+     * Determines whether the {@link viewer!ViewObject} participates in boundary calculations and collisions.
      *
-     * @internal
-     * @param viewHandle Handle to the {@link viewer!View | View}, which was returned by {@link viewer!Renderer.attachView | Renderer.attachView}.
-     * @param collidable Whether to make the {@link viewer!ViewObject} in the {@link viewer!View | View} collidable.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No {@link viewer!View | View} found in the Renderer for the given handle.
+     * @param viewIndex - Index of the View.
+     * @param collidable - Whether the object should be collidable.
+     * @returns *void* - Success.
+     * @returns *{@link core!SDKError | SDKError}* - If no corresponding {@link viewer!View | View} is found.
      */
-    setCollidable(viewHandle: number, collidable: boolean): void | SDKError;
+    setCollidable(viewIndex: number, collidable: boolean): void | SDKError;
 
     /**
-     * Sets whether the {@link viewer!ViewObject} is pickable in the given {@link viewer!View | View}.
+     * Determines whether the {@link viewer!ViewObject} can be picked within a given {@link viewer!View | View}.
      *
-     * @internal
-     * @param viewHandle Handle to the {@link viewer!View | View}, which was returned by {@link viewer!Renderer.attachView | Renderer.attachView}.
-     * @param pickable Whether to make the {@link viewer!ViewObject} in the {@link viewer!View | View} pickable.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No {@link viewer!View | View} found in the Renderer for the given handle.
+     * @param viewIndex - Index of the View.
+     * @param pickable - Whether the object should be pickable.
+     * @returns *void* - Success.
+     * @returns *{@link core!SDKError | SDKError}* - If no corresponding {@link viewer!View | View} is found.
      */
-    setPickable(viewHandle: number, pickable: boolean): void | SDKError;
+    setPickable(viewIndex: number, pickable: boolean): void | SDKError;
 
     /**
-     * Colorizes the {@link viewer!ViewObject} in the given {@link viewer!View | View}.
+     * Applies a color to the {@link viewer!ViewObject} in a given {@link viewer!View | View}.
      *
-     * @internal
-     * @param viewHandle Handle to the {@link viewer!View | View}, which was returned by {@link viewer!Renderer.attachView | Renderer.attachView}.
-     * @param color Color to set the {@link viewer!ViewObject} in the {@link viewer!View | View} to.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No {@link viewer!View | View} found in the Renderer for the given handle.
+     * @param viewIndex - Index of the View.
+     * @param color - The color to apply.
+     * @returns *void* - Success.
+     * @returns *{@link core!SDKError | SDKError}* - If no corresponding {@link viewer!View | View} is found.
      */
-    setColorize(viewHandle: number, color?: FloatArrayParam): void | SDKError;
+    setColorize(viewIndex: number, color?: FloatArrayParam): void | SDKError;
 
     /**
-     * Sets the opacity of the {@link viewer!ViewObject} in the given {@link viewer!View | View}.
+     * Adjusts the opacity of the {@link viewer!ViewObject} in a given {@link viewer!View | View}.
      *
-     * @internal
-     * @param viewHandle Handle to the {@link viewer!View | View}, which was returned by {@link viewer!Renderer.attachView | Renderer.attachView}.
-     * @param opacity Opacity to set the {@link viewer!ViewObject} in the {@link viewer!View | View} to.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No {@link viewer!View | View} found in the Renderer for the given handle.
+     * @param viewIndex - Index of the View.
+     * @param opacity - The opacity level to set.
+     * @returns *void* - Success.
+     * @returns *{@link core!SDKError | SDKError}* - If no corresponding {@link viewer!View | View} is found.
      */
-    setOpacity(viewHandle: number, opacity?: number): void | SDKError;
-
-    /**
-     * Sets a translation to apply to the {@link viewer!ViewObject} in the given {@link viewer!View | View}.
-     *
-     * @internal
-     * @param viewHandle Handle to the {@link viewer!View | View}, which was returned by {@link viewer!Renderer.attachView | Renderer.attachView}.
-     * @param offset Offset to apply to the {@link viewer!ViewObject} in the {@link viewer!View | View}.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No {@link viewer!View | View} found in the Renderer for the given handle.
-     */
-    setOffset(viewHandle: number, offset: FloatArrayParam): void | SDKError;
+    setOpacity(viewIndex: number, opacity?: number): void | SDKError;
 }
-

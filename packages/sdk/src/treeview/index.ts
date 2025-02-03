@@ -5,43 +5,44 @@
  *
  * # xeokit Tree View UI
  *
- * * {@link treeview!TreeView | TreeView}
- * * Fast HTML tree view to navigate federated models in a {@link viewer!Viewer | Viewer}
- * * Use with a {@link viewer!View | View} and a semantic {@link data!Data | Data} model
- * * Supports Industry Foundation Classes ([IFC](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ifc))
- * * Supports any schema expressable as ER graph with aggregation relationships
+ * ## Overview
+ * * {@link treeview!TreeView | TreeView} - A fast and interactive HTML-based tree view.
+ * * Enables seamless navigation of federated models in a {@link viewer!Viewer | Viewer}.
+ * * Designed to work with a {@link viewer!View | View} and a semantic {@link data!Data | Data} model.
+ * * Supports Industry Foundation Classes ([IFC](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ifc)).
+ * * Compatible with any schema structured as an ER graph with aggregation relationships.
  *
- * # Installation
+ * ## Installation
  *
- * ````bash
+ * ```bash
  * npm install @xeokit/sdk
- * ````
+ * ```
  *
- * # Usage
+ * ## Usage
  *
- * Import the modules we need:
+ * ### Import Required Modules
  *
- * ````javascript
- * import {Viewer} from "@xeokit/sdk/viewer";
- * import {WebGLRenderer} from "@xeokit/sdk/webglrenderer";
- * import {Data} from "@xeokit/sdk/data";
+ * ```javascript
+ * import { Viewer } from "@xeokit/sdk/viewer";
+ * import { WebGLRenderer } from "@xeokit/sdk/webglrenderer";
+ * import { Data } from "@xeokit/sdk/data";
  * import * as ifcTypes from "@xeokit/sdk/ifctypes";
- * import {TreeView} from "@xeokit/sdk/treeview";
- * import {loadXGF} from "@xeokit/sdk/xgf";
- * ````
+ * import { TreeView } from "@xeokit/sdk/treeview";
+ * import { loadXGF } from "@xeokit/sdk/xgf";
+ * ```
  *
- * Create a {@link viewer!Viewer | Viewer}, configured with a {@link webglrenderer!WebGLRenderer | WebGLRenderer}:
+ * ### Initialize a Viewer with a WebGL Renderer
  *
- * ````javascript
+ * ```javascript
  * const myViewer = new Viewer({
  *     id: "myViewer",
- *     renderer: new WebGLRenderer({ })
+ *     renderer: new WebGLRenderer({})
  * });
- * ````
+ * ```
  *
- * Create a {@link viewer!View} and position the {@link viewer!Camera | Camera}:
+ * ### Create a View and Set Up the Camera
  *
- * ````javascript
+ * ```javascript
  * const view1 = myViewer.createView({
  *     id: "myView",
  *     canvasId: "myView1"
@@ -52,47 +53,41 @@
  * view1.camera.up = [-0.018, 0.999, 0.039];
  *
  * const data = new Data();
- * ````
+ * ```
  *
- * Create a {@link treeview!TreeView}:
+ * ### Create and Configure a TreeView
  *
- * ````javascript
+ * ```javascript
  * const treeView = new TreeView({
- *
  *     view: myView,
  *     data: myData,
- *
  *     containerElement: document.getElementById("myTreeViewContainer"),
- *
  *     hierarchy: TreeView.GroupsHierarchy,
  *     linkType: ifcTypes.IfcRelAggregates,
  *     groupTypes: [ifcTypes.IfcBuilding, ifcTypes.IfcBuildingStorey]
  * });
+ * ```
  *
- * const sceneModel = new SceneModel(); // SceneModel implements SceneModel
+ * ### Load a Model and Add it to the Viewer
  *
- * const dataModel = data.createModel({
- *     id: "myModel"
- * });
+ * ```javascript
+ * const sceneModel = new SceneModel();
+ * const dataModel = data.createModel({ id: "myModel" });
  *
  * fetch("myModel.xgf").then(response => {
- *
  *     response.arrayBuffer().then(data => {
- *
- *          loadXGF({ data, sceneModel, dataModel });
- *
- *          sceneModel.build();
- *          dataModel.build();
- *
- *          myViewer.scene.addModel({ id: "myModel", sceneModel });
+ *         loadXGF({ data, sceneModel, dataModel });
+ *         sceneModel.build();
+ *         dataModel.build();
+ *         myViewer.scene.addModel({ id: "myModel", sceneModel });
  *     });
  * });
- * ````
+ * ```
  *
  * @module treeview
  */
 export * from "./TreeView";
-export {TreeViewParams} from "./TreeViewParams";
-export {TreeViewNode} from "./TreeViewNode";
-export {TreeViewNodeContextMenuEvent} from "./TreeViewNodeContextMenuEvent";
-export {TreeViewNodeTitleClickedEvent} from "./TreeViewNodeTitleClickedEvent";
+export { TreeViewParams } from "./TreeViewParams";
+export { TreeViewNode } from "./TreeViewNode";
+export { TreeViewNodeContextMenuEvent } from "./TreeViewNodeContextMenuEvent";
+export { TreeViewNodeTitleClickedEvent } from "./TreeViewNodeTitleClickedEvent";

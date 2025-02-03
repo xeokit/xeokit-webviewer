@@ -1,45 +1,48 @@
 /**
- * Parameters for a {@link DataObject}.
+ * Parameters for creating a {@link DataObject | DataObject}.
  *
- * * Passed to  {@link DataModel.createObject | DataModel.createObject}
- * * Located at {@link DataModelParams.objects | DataModelParams.objects}
+ * - Passed to {@link DataModel.createObject | DataModel.createObject}.
+ * - Located at {@link DataModelParams.objects | DataModelParams.objects}.
  *
- * See {@link data | @xeokit/sdk/data}   for usage.
+ * For detailed usage, refer to {@link data | @xeokit/sdk/data}.
  */
 export interface DataObjectParams {
 
     /**
-     * Globally-unique ID for the {@link DataObject | DataObject}.
+     * A globally unique ID for the {@link DataObject | DataObject}.
      *
-     * DataObjects are stored by ID in {@link Data.objects | Data.objects}, {@link Data.rootObjects | Data.rootObjects}, {@link Data.objectsByType | Data.objectsByType}, {@link DataModel.objects | Data.objects}, {@link DataModel.rootObjects | Data.rootObjects}.
+     * DataObjects are stored by ID in several collections, including {@link Data.objects | Data.objects},
+     * {@link Data.rootObjects | Data.rootObjects}, {@link Data.objectsByType | Data.objectsByType},
+     * {@link DataModel.objects | DataModel.objects}, and {@link DataModel.rootObjects | DataModel.rootObjects}.
      *
-     * See {@link scene | @xeokit/sdk/scene}   for usage.
+     * For further details, see {@link scene | @xeokit/sdk/scene}.
      */
     id: string;
 
     /**
-     * ID of this DataObject within the originating system, is any. Defaults to the value of
-     * {@link DataObject.id | DataObject.id}.
+     * The ID of this DataObject in the originating system, if available.
+     *
+     * Defaults to the value of {@link DataObject.id | DataObject.id} if not provided.
      */
     originalSystemId?: string;
 
     /**
-     * The {@link DataObject | DataObject} type.
+     * The type of the {@link DataObject | DataObject}.
      */
     type: number;
 
     /**
-     * Human-readable name for the DataObject.
+     * A human-readable name for the DataObject.
      */
     name: string;
 
     /**
-     * Human-readable description for the DataObject.
+     * A human-readable description of the DataObject.
      */
     description?: string;
 
     /**
-     * IDs of associated{@link PropertySet | PropertySets}, if any.
+     * A list of IDs for associated {@link PropertySet | PropertySets}, if applicable.
      */
     propertySetIds?: string[];
 }

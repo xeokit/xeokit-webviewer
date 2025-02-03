@@ -5,18 +5,18 @@
  *
  * ---
  *
- * ***Import and export the open, free and simple .BIM model file format***
+ * ***Import and export the open, free, and simple .BIM model file format***
  *
  * ---
  *
- * The xeokit SDK allows us to import 3D models from [.BIM](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#dotbim), a JSON-based
+ * The xeokit SDK enables the import of 3D models from the [.BIM](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#dotbim) format, a JSON-based
  * file format specifically designed for lightweight, user-friendly, and human-readable storage and sharing of 3D BIM models.
  *
- * .BIM is an open-source and minimalist file format for BIM that's built to be easy to read and write. Essentially, .BIM
- * is a transfer format that contains triangulated meshes with a dictionary of information attached to them.
+ * .BIM is an open-source, minimalist file format for BIM, created to be simple to read and write. It serves as a transfer format that contains triangulated meshes
+ * with an associated dictionary of information.
  *
- * To import a .BIM model into xeokit, simply use the {@link loadDotBIM} function, which will load the file into both
- * a {@link scene!SceneModel | SceneModel} and a {@link data!DataModel | DataModel}.
+ * To import a .BIM model into xeokit, use the {@link loadDotBIM} function, which will load the file into both a {@link scene!SceneModel | SceneModel}
+ * and a {@link data!DataModel | DataModel}.
  *
  * <br>
  *
@@ -26,30 +26,39 @@
  *
  * ## Installation
  *
+ * To install the xeokit SDK, run:
+ *
  * ````bash
  * npm install @xeokit/sdk
  * ````
  *
  * ## Usage
  *
- * In the example below, we will create a {@link viewer!Viewer | Viewer} with
- * a {@link webglrenderer!WebGLRenderer | WebGLRenderer}  and a {@link scene!Scene | Scene}, which holds model geometry and materials.
+ * In the example below, we create a {@link viewer!Viewer | Viewer} with
+ * a {@link webglrenderer!WebGLRenderer | WebGLRenderer} and a {@link scene!Scene | Scene}, which holds model geometry and materials.
  *
- * We'll also create a {@link data!Data | Data}, which will hold semantic data for our model.
+ * Additionally, we create a {@link data!Data | Data}, which holds the semantic data for our model.
  *
- * On our Viewer, we will create a single {@link viewer!View | View} to render it to a canvas element on the page. We will
- * also attach a {@link cameracontrol!CameraControl | CameraControl} to our View, allowing us to control its camera with mouse and touch input.
+ * We set up a {@link viewer!View | View} to render the model on a canvas element on the page and attach a {@link cameracontrol!CameraControl | CameraControl}
+ * to manage the camera using mouse and touch input.
  *
- * Within the Scene, we will create a {@link scene!SceneModel | SceneModel} to hold model geometry and materials. Within Data, we will
- * create a {@link data!DataModel | DataModel} to hold semantic IFC data, which includes IFC elements and property sets.
+ * The Scene contains a {@link scene!SceneModel | SceneModel} for model geometry and materials, while the Data holds a {@link data!DataModel | DataModel}
+ * for IFC elements and property sets.
  *
- * We will then use
- * {@link dotbim!loadDotBIM | loadDotBIM} to load a .BIM file into our SceneModel and DataModel.
+ * We then use {@link dotbim!loadDotBIM | loadDotBIM} to load a .BIM file into the SceneModel and DataModel.
  *
- * The {@link core!SDKError | SDKError} class will be used to handle any errors that may occur during this process.
+ * The {@link core!SDKError | SDKError} class is used to handle errors during this process.
+ *
+ * Example:
  *
  * ````javascript
- * import {SDKError, Scene, WebGLRenderer, Viewer, CameraControl, loadDotBIM} from "@xeokit/sdk/dotbim";
+ * import {SDKError} from "@xeokit/sdk/core";
+ * import {Scene} from "@xeokit/sdk/scene";
+ * import {Data} from "@xeokit/sdk/data";
+ * import {WebGLRenderer} from "@xeokit/sdk/webglrenderer";
+ * import {Viewer} from "@xeokit/sdk/viewer";
+ * import {CameraControl} from "@xeokit/sdk/cameracontrol";
+ * import {loadDotBIM} from "@xeokit/sdk/dotbim";
  *
  * const scene = new Scene();
  * const data = new Data();
@@ -64,7 +73,7 @@
  *
  * const view = viewer.createView({
  *     id: "myView",
- *     elementId: "myCanvas" // << Ensure that this HTMLElement exists in the page
+ *     elementId: "myCanvas" // Ensure this HTMLElement exists in the page
  * });
  *
  * view.camera.eye = [1841982.93, 10.03, -5173286.74];
@@ -112,8 +121,7 @@
  *
  * ````
  *
- * Using {@link dotbim!saveDotBIM | saveDotBIM} to export the {@link scene!SceneModel | SceneModel} and
- * {@link data!DataModel | DataModel} back to a .BIM file:
+ * To export the {@link scene!SceneModel | SceneModel} and {@link data!DataModel | DataModel} back to a .BIM file, use {@link dotbim!saveDotBIM | saveDotBIM}:
  *
  * ````javascript
  * const dotBIMJSON = saveXGF({

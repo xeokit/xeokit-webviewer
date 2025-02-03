@@ -1,33 +1,45 @@
 import * as utils from "../utils";
-import type {GeometryArrays} from "./GeometryArrays";
+import type { GeometryArrays } from "./GeometryArrays";
 
 /**
  * Creates a plane-shaped {@link scene!SceneGeometry | SceneGeometry}.
+ *
+ * This function generates a plane geometry with configurable dimensions and segments. The plane is created by defining a grid of vertices
+ * with associated normals and UV coordinates, and creating the indices to connect them in a grid-like fashion. The plane is then returned
+ * as a geometry that can be used to create a mesh in the scene.
  *
  * ## Usage
  *
  * Creating a {@link scene!SceneMesh | SceneMesh} with a plane-shaped {@link scene!SceneGeometry | SceneGeometry}:
  *
  * ````javascript
-* TODO
+ * const planeGeometry = buildPlaneGeometry({
+ *     xSize: 10,              // Width of the plane
+ *     zSize: 10,              // Depth of the plane
+ *     xSegments: 10,          // Number of segments along the X-axis
+ *     zSegments: 10,          // Number of segments along the Z-axis
+ *     center: [0, 0, 0]       // Center position of the plane in 3D space
+ * });
  * ````
  *
- * @param cfg Configs
- * @param [cfg.center]  3D point indicating the center position.
+ * @param cfg Configuration for the plane geometry.
+ * @param [cfg.center=[0, 0, 0]] The 3D point indicating the center of the plane.
  * @param [cfg.id] Optional ID for the {@link scene!SceneGeometry | SceneGeometry}, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
- * @param [cfg.xSize=1] Dimension on the X-axis.
- * @param [cfg.zSize=1] Dimension on the Z-axis.
- * @param [cfg.xSegments=1] Number of segments on the X-axis.
- * @param [cfg.zSegments=1] Number of segments on the Z-axis.
- * @returns {Object} Configuration for a {@link scene!SceneGeometry | SceneGeometry} subtype.
+ * @param [cfg.xSize=1] The width of the plane along the X-axis. Default is `1`.
+ * @param [cfg.zSize=1] The depth of the plane along the Z-axis. Default is `1`.
+ * @param [cfg.xSegments=1] The number of segments along the X-axis. Default is `1`.
+ * @param [cfg.zSegments=1] The number of segments along the Z-axis. Default is `1`.
+ * @returns {GeometryArrays} The geometry arrays for the plane, including positions, normals, UVs, and indices.
+ *
+ * @throws {SDKError} If any of the size or segment parameters are negative, the function automatically inverts the values and logs a warning.
  */
 export function buildPlaneGeometry(cfg = {
     xSize: 0,
     zSize: 0,
     xSegments: 1,
+    zSegments: 1,
     center: [0, 0, 0]
-
-}): GeometryArrays  {
+}): GeometryArrays {
 
     let xSize = cfg.xSize || 1;
     if (xSize < 0) {
@@ -50,7 +62,7 @@ export function buildPlaneGeometry(cfg = {
         xSegments = 1;
     }
 
-    let zSegments = cfg.xSegments || 1;
+    let zSegments = cfg.zSegments || 1;
     if (zSegments < 0) {
         console.error("negative zSegments not allowed - will invert");
         zSegments *= -1;
@@ -91,6 +103,7 @@ export function buildPlaneGeometry(cfg = {
     let c;
     let d;
 
+    // Create the grid of vertices, normals, and UVs
     for (iz = 0; iz < planeZ1; iz++) {
 
         const z = iz * segmentHeight - halfHeight;
@@ -115,6 +128,7 @@ export function buildPlaneGeometry(cfg = {
 
     offset = 0;
 
+    // Create the indices for the plane's faces
     const indices = new ((positions.length / 3) > 65535 ? Uint32Array : Uint16Array)(planeX * planeZ * 6);
 
     for (iz = 0; iz < planeZ; iz++) {

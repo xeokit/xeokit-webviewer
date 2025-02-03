@@ -1482,7 +1482,7 @@ class View extends Component {
      * @returns {@link PickResult}
      * * Picking attempt completed.
      */
-    pick(pickParams: PickParams, pickResult?: PickResult): PickResult | null {
+    pick(pickParams: PickParams, pickResult?: PickResult): PickResult | null | SDKError {
         return this.viewer.renderer.pick(this.viewIndex, pickParams, pickResult);
     }
 

@@ -1,84 +1,90 @@
-import type {DataObject} from "./DataObject";
+import type { DataObject } from "./DataObject";
 
 /**
- * Parameters for finding {@link DataObject | DataObjects} with {@link Data.searchObjects | Data.searchObjects}.
+ * Parameters for searching {@link DataObject | DataObjects} using {@link Data.searchObjects | Data.searchObjects}.
  *
- * These parameters configure the way that {@link Data.searchObjects | Data.searchObjects} performs its depth-first
- * search to find our {@link DataObject | DataObjects}.
+ * These parameters configure the depth-first search performed by {@link Data.searchObjects | Data.searchObjects}
+ * to locate {@link DataObject | DataObjects}.
  *
- * See {@link data | @xeokit/sdk/data}   for usage.
+ * For detailed usage, refer to {@link data | @xeokit/sdk/data}.
  */
 export interface SearchParams {
 
     /**
-     * ID of the DataObject to start traversal at.
+     * The ID of the {@link DataObject | DataObject} to start the traversal from.
      *
-     * Overridden by {@link SearchParams.startObject}.
-     * */
+     * This is overridden by {@link SearchParams.startObject}.
+     */
     startObjectId?: string;
 
     /**
-     * The {@link DataObject | DataObject} to start traversal at.
+     * The {@link DataObject | DataObject} to start the traversal from.
      *
-     * Overrides {@link SearchParams.startObjectId}.
+     * This overrides {@link SearchParams.startObjectId}.
      */
-    startObject?:DataObject;
+    startObject?: DataObject;
 
     /**
-     * Indicates whether to include the {@link SearchParams.startObjectId} or {@link SearchParams.startObject} in search results.
+     * Indicates whether to include the starting {@link SearchParams.startObjectId} or {@link SearchParams.startObject}
+     * in the search results.
      *
-     * Default is true.
+     * The default is `true`.
      */
-    includeStart?:boolean;
+    includeStart?: boolean;
 
     /**
-     * Which {@link DataObject | DataObject} types to exclusively include in search results.
+     * The types of {@link DataObject | DataObjects} to exclusively include in the search results.
      */
     includeObjects?: number[];
 
     /**
-     * Which {@link DataObject | DataObject} types to never include in search results.
+     * The types of {@link DataObject | DataObjects} to exclude from the search results.
      */
     excludeObjects?: number[];
 
     /**
-     * Which {@link Relationship | Relationship} types to exclusively follow in each {@link DataObject.relating | DataObject.relating}.
+     * The types of {@link Relationship | Relationships} to exclusively follow in each
+     * {@link DataObject.relating | DataObject.relating} during the search.
      */
     includeRelating?: number[];
 
     /**
-     * Which {@link Relationship | Relationship} types to never follow in each {@link DataObject.related | DataObject.related}.
+     * The types of {@link Relationship | Relationships} to exclude from being followed in each
+     * {@link DataObject.related | DataObject.related} during the search.
      */
     excludeRelating?: number[];
 
     /**
-     * Which {@link Relationship | Relationship} types to exclusively follow in each {@link DataObject.related | DataObject.related}.
+     * The types of {@link Relationship | Relationships} to exclusively follow in each
+     * {@link DataObject.related | DataObject.related} during the search.
      */
     includeRelated?: number[];
 
     /**
-     * Which {@link Relationship | Relationship} types to never follow in each {@link DataObject.relating | DataObject.relating}.
+     * The types of {@link Relationship | Relationships} to exclude from being followed in each
+     * {@link DataObject.relating | DataObject.relating} during the search.
      */
     excludeRelated?: number[];
 
     /**
-     * Collects the search results in a list of {@link DataObject | DataObject} IDs.
+     * Collects the search results as a list of {@link DataObject | DataObject} IDs.
      *
-     * This is mutually exclusive with {@link SearchParams.resultObjects} and {@link SearchParams.resultCallback}.
+     * This option is mutually exclusive with {@link SearchParams.resultObjects} and {@link SearchParams.resultCallback}.
      */
     resultObjectIds?: string[];
 
     /**
-     * Collects the search results in a list of {@link DataObject | DataObjects}.
+     * Collects the search results as a list of {@link DataObject | DataObjects}.
      *
-     * This is mutually exclusive with {@link SearchParams.resultObjectIds} and {@link SearchParams.resultCallback}.
+     * This option is mutually exclusive with {@link SearchParams.resultObjectIds} and {@link SearchParams.resultCallback}.
      */
     resultObjects?: DataObject[];
 
     /**
-     * Collects the search results via a callback that's executed on each matching {@link DataObject | DataObject}.
+     * Collects the search results via a callback function that is executed for each matching
+     * {@link DataObject | DataObject}.
      *
-     * This is mutually exclusive with {@link SearchParams.resultObjects} and {@link SearchParams.resultObjectIds}.
+     * This option is mutually exclusive with {@link SearchParams.resultObjects} and {@link SearchParams.resultObjectIds}.
      */
     resultCallback?: (dataObject: DataObject) => boolean;
 }

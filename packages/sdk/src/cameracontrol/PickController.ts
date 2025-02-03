@@ -120,7 +120,7 @@ class PickController {
                 snapToVertex: this.#configs.snapToVertex,
                 snapToEdge: this.#configs.snapToEdge,
             });
-            if (snapPickResult && (snapPickResult.snappedToEdge || snapPickResult.snappedToVertex)) {
+            if (snapPickResult instanceof PickResult && (snapPickResult.snappedToEdge || snapPickResult.snappedToVertex)) {
                 this.snapPickResult = snapPickResult;
                 this.snappedOrPicked = true;
                 this.#needFireEvents++;
@@ -164,11 +164,12 @@ class PickController {
         }
 
         if (this.schedulePickSurface || (this.scheduleSnapOrPick && !this.snapPickResult)) {
-            this.pickResult = this.#view.pick({
+            const pickResult = this.#view.pick({
                 pickSurface: true,
                 pickSurfaceNormal: false,
                 canvasPos: this.pickCursorPos
             });
+            this.pickResult = pickResult instanceof PickResult ? pickResult : null;
             if (this.pickResult) {
                 this.picked = true;
                 if (this.scheduleSnapOrPick) {
@@ -183,11 +184,10 @@ class PickController {
             }
 
         } else { // schedulePickEntity == true
-
-            this.pickResult = this.#view.pick({
+            const pickResult = this.#view.pick({
                 canvasPos: this.pickCursorPos
             });
-
+            this.pickResult = pickResult instanceof PickResult ? pickResult : null;
             if (this.pickResult) {
                 this.picked = true;
                 this.pickedSurface = false;

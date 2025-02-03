@@ -5,7 +5,7 @@
  *
  * ---
  *
- * **Easily import and visualize 3D urban models from the CityJSON format**
+ * **Import and visualize 3D urban models from the CityJSON format**
  *
  * ---
  *

@@ -92,6 +92,8 @@
  * - **First-Person Mode**: Allows free movement as if walking through the scene.
  * - **Plan-View Mode**: Maintains a top-down perspective while allowing panning and zooming.
  *
+ * <br>
+ *
  * ## Orbit Mode
  * To activate orbit mode:
  *
@@ -134,6 +136,8 @@
  *
  * `CameraControl` triggers events when interacting with {@link viewer!ViewObject | ViewObjects} using a mouse or touch input.
  *
+ * <br>
+ *
  * ## Usage
  *
  * To subscribe to an event:
@@ -149,6 +153,8 @@
  * ```javascript
  * cameraControl.onHover.unsub(onHoverSub);
  * ```
+ *
+ * <br>
  *
  * ## Event List
  *

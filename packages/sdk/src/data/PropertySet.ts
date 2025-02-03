@@ -1,24 +1,25 @@
-import {Property} from "./Property";
-import type {DataModel} from "./DataModel";
-import type {PropertySetParams} from "./PropertySetParams";
+import { Property } from "./Property";
+import type { DataModel } from "./DataModel";
+import type { PropertySetParams } from "./PropertySetParams";
 
 /**
- * A set of {@link Property | Properties} in a {@link DataModel | DataModel}.
+ * Represents a set of {@link Property | Properties} within a {@link DataModel | DataModel}.
  *
- * * Created with {@link DataModel.createPropertySet | DataModel.createPropertySet}
- * * Stored in {@link Data.propertySets | Data.propertySets} and {@link DataModel.propertySets | Data.propertySets}
+ * This set is:
+ * * Created using {@link DataModel.createPropertySet | DataModel.createPropertySet}.
+ * * Stored in {@link Data.propertySets | Data.propertySets} and {@link DataModel.propertySets | DataModel.propertySets}.
  *
- * See {@link data | @xeokit/sdk/data}   for usage.
+ * For detailed usage, refer to {@link data | @xeokit/sdk/data}.
  */
 export class PropertySet {
 
     /**
-     * The DataModels to which this PropertySet belongs.
+     * The {@link DataModel | DataModels} that this PropertySet belongs to.
      */
     public readonly models: DataModel[];
 
     /**
-     * Unique ID.
+     * The unique identifier for this PropertySet.
      *
      * PropertySet instances are registered by this ID in {@link Data.propertySets | Data.propertySets}
      * and {@link DataModel.propertySets | DataModel.propertySets}.
@@ -26,27 +27,30 @@ export class PropertySet {
     public readonly id: string;
 
     /**
-     * ID of the corresponding object within the originating system, if any.
+     * The ID of the corresponding object in the originating system, if applicable.
      */
     public readonly originalSystemId?: string;
 
     /**
-     * Human-readable name of this PropertySet.
+     * The human-readable name of this PropertySet.
      */
     public readonly name: string;
 
     /**
-     * Type of this PropertySet.
+     * The type of this PropertySet.
      */
     public readonly type: string;
 
     /**
-     * Properties within this PropertySet.
+     * The collection of {@link Property | Properties} within this PropertySet.
      */
     public readonly properties: Property[];
 
     /**
-     * @private
+     * Constructs a new PropertySet.
+     *
+     * @param dataModel - The DataModel to which this PropertySet belongs.
+     * @param propertySetCfg - Configuration parameters to initialize the PropertySet.
      */
     constructor(
         dataModel: DataModel,

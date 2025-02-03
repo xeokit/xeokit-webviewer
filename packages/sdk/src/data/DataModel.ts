@@ -12,18 +12,19 @@ import type {PropertyParams} from "./PropertyParams";
 import {DataModelContentParams} from "./DataModelContentParams";
 
 /**
+ * Represents an entity-relationship data model.
  *
- * An entity-relationship data model.
+ * This model is:
+ * * Created using {@link Data.createModel | Data.createModel}.
+ * * Stored in {@link Data.models | Data.models}.
+ * * Composed of {@link DataObject | DataObjects}, {@link Relationship | Relationships}, {@link PropertySet | PropertySets}, and {@link Property | Properties}.
+ * * Capable of importing and exporting various file formats.
+ * * Supports traversal and search of the data structure.
+ * * Can be built programmatically.
  *
- * * Created with {@link Data.createModel | Data.createModel}
- * * Stored in {@link Data.models | Data.models}
- * * Contains {@link DataObject | DataObjects}, {@link Relationship | Relationships}, {@link PropertySet | PropertySets} and {@link Property | Properties}
- * * Import and export various file formats
- * * Traverse and search
- * * Build programmatically
- *
- * See {@link data | @xeokit/sdk/data} for usage.
+ * For detailed usage, refer to {@link data | @xeokit/sdk/data}.
  */
+
 export class DataModel extends Component {
 
     /**
@@ -175,53 +176,53 @@ export class DataModel extends Component {
     }
 
     /**
-     * Creates a new {@link PropertySet | PropertySet}.
+     * Creates a new {@link PropertySet | PropertySet} and registers it within the DataModel and Data.
      *
-     * * Stores the new PropertySet in {@link DataModel.propertySets | DataModel.propertySets}
-     * and {@link Data.propertySets | Data.propertySets}.
-     * * Note that PropertySet IDs are globally unique. PropertySet instances are automatically reused and shared among DataModels
-     * when IDs given to {@link DataModel.createPropertySet | DataModel.createPropertySet} match existing PropertySet
-     * instances in the same Data.
+     * - The new PropertySet is stored in {@link DataModel.propertySets | DataModel.propertySets} and
+     *   {@link Data.propertySets | Data.propertySets}.
+     * - PropertySet IDs are globally unique. If a PropertySet with the given ID already exists in the same Data,
+     *   it will be reused and shared across DataModels instead of creating a duplicate.
+     * - A PropertySet ID **must be unique within a single DataModel** but can be shared between multiple DataModels.
      *
-     * ### Usage
+     * ### Usage Example
      *
-     * ````javascript
-     *  const propertySet = dataModel.createPropertySet({
-     *      id: "myPropertySet",
-     *      name: "My properties",
-     *      properties: [{
-     *          name: "Weight",
-     *          value: 5,
-     *          type: "",
-     *          valueType: "",
-     *          description: "Weight of a thing"
-     *      }, {
-     *          name: "Height",
-     *          value: 12,
-     *          type: "",
-     *          valueType: "",
-     *          description: "Height of a thing"
-     *      }]
+     * ```javascript
+     * const propertySet = dataModel.createPropertySet({
+     *     id: "myPropertySet",
+     *     name: "My properties",
+     *     properties: [
+     *         {
+     *             name: "Weight",
+     *             value: 5,
+     *             type: "",
+     *             valueType: "",
+     *             description: "Weight of a thing"
+     *         },
+     *         {
+     *             name: "Height",
+     *             value: 12,
+     *             type: "",
+     *             valueType: "",
+     *             description: "Height of a thing"
+     *         }
+     *     ]
      * });
      *
      * if (propertySet instanceof SDKError) {
      *     console.error(propertySet.message);
      * } else {
-     *     // Success
+     *     // PropertySet successfully created
      * }
-     * ````
+     * ```
      *
-     * See {@link data | @xeokit/sdk/data}   for more usage info.
+     * See {@link data | @xeokit/sdk/data} for more details.
      *
-     * @param propertySetCfg - PropertySet creation parameters.
-     * @returns *{@link PropertySet}*
-     * * On success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * If this DataModel has already been built.
-     * * If this DataModel has already been destroyed.
-     * * A PropertySet of the given ID was already created for this DataModel. While it's OK
-     * for multiple DataModels to *share* PropertySets with duplicate IDs between them, it's not permitted to
-     * create duplicate PropertySets within the same DataModel.
+     * @param propertySetCfg - Configuration parameters for the new PropertySet.
+     * @returns {@link PropertySet} on success.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - The DataModel has already been built.
+     * - The DataModel has been destroyed.
+     * - A PropertySet with the same ID already exists within this DataModel.
      */
     createPropertySet(propertySetCfg: PropertySetParams): PropertySet | SDKError {
         if (this.destroyed) {
@@ -246,20 +247,21 @@ export class DataModel extends Component {
     }
 
     /**
-     * Creates a new {@link DataObject | DataObject}.
+     * Creates a new {@link DataObject | DataObject} and registers it within the DataModel and Data.
      *
-     * * Stores the new {@link DataObject | DataObject} in {@link DataModel.objects | DataModel.objects} and {@link Data.objects | Data.objects}.
-     * * Fires an event via {@link Data.onObjectCreated | Data.onObjectCreated}.
-     * * Note that DataObject IDs are globally unique. DataObject instances are automatically reused and shared among DataModels when
-     * IDs given to {@link DataModel.createObject | DataModel.createObject} match existing DataObject instances in the same
-     * Data. This feature is part of how xeokit supports [*federated data models*](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#federated-models).
+     * - The new DataObject is stored in {@link DataModel.objects | DataModel.objects} and
+     *   {@link Data.objects | Data.objects}.
+     * - Triggers an event via {@link Data.onObjectCreated | Data.onObjectCreated}.
+     * - DataObject IDs are **globally unique**. If a DataObject with the given ID already exists in the same Data,
+     *   it will be reused and shared across DataModels rather than creating a duplicate.
+     * - This behavior enables xeokit to support [*federated data models*](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#federated-models).
      *
-     * ### Usage
+     * ### Usage Example
      *
-     * ````javascript
+     * ```javascript
      * const myDataObject = dataModel.createObject({
      *     id: "myDataObject",
-     *     type: BasicEntity,     // @xeokit/basictypes!basicTypes
+     *     type: BasicEntity, // @xeokit/basictypes!basicTypes
      *     name: "My Object",
      *     propertySetIds: ["myPropertySet"]
      * });
@@ -273,28 +275,24 @@ export class DataModel extends Component {
      *
      * if (myDataObject instanceof SDKError) {
      *     console.error(myDataObject.message);
-     *
      * } else if (myDataObject2 instanceof SDKError) {
      *     console.error(myDataObject2.message);
-     *
-     * } else { // Success
+     * } else {
+     *     // Success
      *     const gotMyDataObject = dataModel.objects["myDataObject"];
      *     const gotMyDataObjectAgain = data.objects["myDataObject"];
      * }
-     * ````
+     * ```
      *
-     * See {@link data | @xeokit/sdk/data}   for more usage info.
+     * See {@link data | @xeokit/sdk/data} for more details.
      *
-     * @param dataObjectParams - DataObject creation parameters.
-     * @returns *{@link DataObject}*
-     * * On success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * If this DataModel has already been built.
-     * * If this DataModel has already been destroyed.
-     * * A DataObject of the given ID was already created in this DataModel. While it's OK
-     * for multiple DataModels to *share* DataObjects with duplicate IDs between them, we're not permitted to
-     * create duplicate DataObjects within the same DataModel.
-     * * A specified PropertySet could not be found.
+     * @param dataObjectParams - Configuration parameters for the new DataObject.
+     * @returns {@link DataObject} on success.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - The DataModel has already been built.
+     * - The DataModel has been destroyed.
+     * - A DataObject with the same ID already exists within this DataModel.
+     * - A specified PropertySet could not be found.
      */
     createObject(dataObjectParams: DataObjectParams): DataObject | SDKError {
         if (this.destroyed) {
@@ -368,45 +366,43 @@ export class DataModel extends Component {
     /**
      * Creates a new {@link Relationship | Relationship} between two existing {@link DataObject | DataObjects}.
      *
-     * * A Relationship involves a *relating* DataObject and a *related* DataObject.
-     * * The *relating* and *related* DataObjects can exist within different DataModels,
-     * as long as the DataModels both exist in the same {@link Data}. This feature is part of
-     * how xeokit supports the viewing of [*federated models*](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#federated-models).
-     * * The new Relationship will be stored in
+     * - A Relationship consists of a *relating* DataObject and a *related* DataObject.
+     * - The *relating* and *related* DataObjects can belong to different DataModels, provided both DataModels exist
+     *   within the same {@link Data}. This enables xeokit to support [*federated models*](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#federated-models).
+     * - The created Relationship is stored in:
      *   - {@link DataModel.relationships | DataModel.relationships},
      *   - {@link DataObject.related | DataObject.related} on the *relating* DataObject, and
      *   - {@link DataObject.relating | DataObject.relating} on the *related* DataObject.
      *
-     * ### Usage
+     * ### Usage Example
      *
-     * ````javascript
+     * ```javascript
      * const myRelationship = dataModel.createRelationship({
-     *     type: BasicAggregation,            // @xeokit/basictypes!basicTypes
+     *     type: BasicAggregation,  // @xeokit/basictypes!basicTypes
      *     relatingObjectId: "myDataObject",
      *     relatedObjectId: "myDataObject2"
      * });
      *
      * if (myRelationship instanceof SDKError) {
      *     console.error(myRelationship.message);
-     *
-     * } else { // Success
+     * } else {
+     *     // Success
      *     const myDataObject = dataModel.objects["myDataObject"];
      *     const myDataObject2 = dataModel.objects["myDataObject2"];
      *
      *     const gotMyRelationship = myDataObject.related[BasicAggregation][0];
      *     const gotMyRelationshipAgain = myDataObject2.relating[BasicAggregation][0];
      * }
-     * ````
+     * ```
      *
-     * See {@link data | @xeokit/sdk/data}   for more usage info.
+     * See {@link data | @xeokit/sdk/data} for more details.
      *
-     * @param relationshipParams - Relationship creation parameters.
-     * @returns *{@link Relationship | Relationship}*
-     * * On success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * If this DataModel has already been built or destroyed.
-     * * The *relating* DataObject was not found in the {@link Data} that contains this DataModel.
-     * * The *related* DataObject was not found in the Data that contains this DataModel.
+     * @param relationshipParams - Configuration parameters for the new Relationship.
+     * @returns {@link Relationship} on success.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - The DataModel has already been built or destroyed.
+     * - The *relating* DataObject does not exist in the {@link Data} containing this DataModel.
+     * - The *related* DataObject does not exist in the {@link Data} containing this DataModel.
      */
     createRelationship(relationshipParams: RelationshipParams): Relationship | SDKError {
         if (this.destroyed) {
@@ -437,21 +433,24 @@ export class DataModel extends Component {
     }
 
     /**
-     * Finalizes this DataModel, readying it for use.
+     * Finalizes this DataModel, making it ready for use.
      *
-     * * Fires an event via {@link DataModel.onBuilt | DataModel.onBuilt} and {@link Data.onModelCreated | DataModel.onCreated}, to indicate to subscribers that
-     * the DataModel is complete and ready to use.
-     * * Sets {@link DataModel.built | DataModel.built} ````true````.
-     * * You can only call this method once on a DataModel.
-     * * Once built, no more components can be created in a DataModel.
+     * - Triggers the following events to notify subscribers:
+     *   - {@link DataModel.onBuilt | DataModel.onBuilt}
+     *   - {@link Data.onModelCreated | Data.onModelCreated}
+     * - Sets {@link DataModel.built | DataModel.built} to `true`.
+     * - Can only be called once per DataModel.
+     * - Once built, no additional components can be created within this DataModel.
      *
-     * ````javascript
-     * dataModel.onBuilt.subscribe(()=>{
-     *     // Our DataModel is built and ready to use
+     * ### Usage Example
+     *
+     * ```javascript
+     * dataModel.onBuilt.subscribe(() => {
+     *     // The DataModel is built and ready for use
      * });
      *
-     * data.onModelCreated.subscribe((dataModel)=>{
-     *     // Another way to subscribe to DataModel readiness
+     * data.onModelCreated.subscribe((dataModel) => {
+     *     // Another way to listen for DataModel readiness
      * });
      *
      * const result = dataModel.build();
@@ -461,12 +460,13 @@ export class DataModel extends Component {
      * } else {
      *     // Success
      * }
-     * ````
+     * ```
      *
-     * See {@link data | @xeokit/sdk/data}   for usage.
+     * See {@link data | @xeokit/sdk/data} for more details.
      *
-     * @throws *{@link core!SDKError | SDKError}*
-     * * If DataModel has already been built or destroyed.
+     * @throws {@link core!SDKError | SDKError} if:
+     * - The DataModel has already been built.
+     * - The DataModel has been destroyed.
      */
     build(): Promise<DataModel> {
         return new Promise<DataModel>((resolve) => {
@@ -483,19 +483,21 @@ export class DataModel extends Component {
     }
 
     /**
-     * Adds components from the given DataModelParams.
+     * Adds components from the specified `DataModelParams` to the data model.
      *
-     * See {@link data | @xeokit/sdk/data}   for usage.
+     * For detailed usage, refer to {@link data | @xeokit/sdk/data}.
      *
-     * @param dataModelParams
-     * @returns *void*
-     * * On success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * If this DataModel has already been built.
-     * * If this DataModel has already been destroyed.
-     * * A duplicate PropertySet was already created for this DataModel.
-     * * A duplicate DataObject was already created in this DataModel.
-     * * DataObjects were not found for a Relationship.
+     * @param dataModelParams - The parameters to configure and populate the data model.
+     *
+     * @returns `void`
+     * * If the operation is successful.
+     *
+     * @returns {@link core!SDKError | SDKError}
+     * * If the data model has already been built.
+     * * If the data model has already been destroyed.
+     * * If a duplicate `PropertySet` was already created for the data model.
+     * * If a duplicate `DataObject` already exists in the data model.
+     * * If the necessary `DataObjects` were not found for a relationship.
      */
     fromParams(dataModelParams: DataModelContentParams): void | SDKError {
         if (this.destroyed) {
@@ -591,17 +593,20 @@ export class DataModel extends Component {
     /**
      * Destroys this DataModel.
      *
-     * * Fires an event via {@link DataModel.onDestroyed | DataModel.onDestroyed} and {@link Data.onModelDestroyed | Data.onModelDestroyed}.
-     * * You can only call this method once on a DataModel.
-     * * Once destroyed, no more components can be created in a DataModel.
-     * * Does not matter if the DataModel has not yet been built.
+     * This method performs the following actions:
+     * * Fires an event via {@link DataModel.onDestroyed | DataModel.onDestroyed} and
+     * {@link Data.onModelDestroyed | Data.onModelDestroyed}.
+     * * Can only be called once on a DataModel.
+     * * After destruction, no more components can be created in the DataModel.
+     * * It is safe to call this method even if the DataModel has not yet been built.
      *
-     * See {@link data | @xeokit/sdk/data}   for usage.
+     * For detailed usage, refer to {@link data | @xeokit/sdk/data}.
      *
-     * @returns *void*
-     * * On success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * If this DataModel has already been destroyed.
+     * @returns `void`
+     * * If the operation is successful.
+     *
+     * @returns {@link core!SDKError | SDKError}
+     * * If the DataModel has already been destroyed.
      */
     destroy(): void | SDKError {
         if (this.destroyed) {

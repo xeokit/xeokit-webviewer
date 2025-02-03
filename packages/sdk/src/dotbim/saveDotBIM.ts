@@ -10,18 +10,24 @@ const tempVec3b = createVec3();
 
 /**
  * Exports a {@link scene!SceneModel | SceneModel} and/or a {@link data!DataModel | DataModel} to a JSON object
- * containing .BIM file data.
+ * containing the corresponding .BIM file data.
  *
- * See {@link dotbim | @xeokit/sdk/dotbim} for usage.
+ * This function allows you to export the data from both a SceneModel and a DataModel into a unified .BIM file format,
+ * represented as a JSON object, for further usage or storage.
  *
- * @param params
- * @param params.model - The SceneModel to export to .BIM.
- * @param params.dataModel - The DataModel to export to .BIM.
- * @returns The .BIM file data in an JSON object.
- * @returns {@link core!SDKError | SDKError} If the SceneModel has already been destroyed.
- * @returns {@link core!SDKError | SDKError} If the SceneModel has not yet been built.
- * @returns {@link core!SDKError | SDKError} If the DataModel has already been destroyed.
- * @returns {@link core!SDKError | SDKError} If the DataModel has not yet been built.
+ * For further usage, refer to {@link dotbim | @xeokit/sdk/dotbim}.
+ *
+ * @param params - The parameters required for exporting the models to .BIM format.
+ * @param params.model - The {@link scene!SceneModel | SceneModel} to export to .BIM format.
+ * @param params.dataModel - The {@link data!DataModel | DataModel} to export to .BIM format.
+ *
+ * @returns A JSON object representing the exported .BIM file data.
+ *
+ * @throws {@link core!SDKError | SDKError}
+ * - If the {@link scene!SceneModel | SceneModel} has already been destroyed.
+ * - If the {@link scene!SceneModel | SceneModel} has not yet been built.
+ * - If the {@link data!DataModel | DataModel} has already been destroyed.
+ * - If the {@link data!DataModel | DataModel} has not yet been built.
  */
 export function saveDotBIM(params: {
     sceneModel: SceneModel,

@@ -1,342 +1,293 @@
-import type {View} from "./View";
-import type {Viewer} from "./Viewer";
-import type {Capabilities} from "../core";
-import type {SDKError} from "../core";
-import type {RendererObject} from "../scene";
-import type {SceneModel} from "../scene";
-import {PickParams} from "./PickParams";
-import {PickResult} from "./PickResult";
+import type { View } from "./View";
+import type { Viewer } from "./Viewer";
+import type { Capabilities } from "../core";
+import type { SDKError } from "../core";
+import type { RendererObject } from "../scene";
+import type { SceneModel } from "../scene";
+import { PickParams } from "./PickParams";
+import { PickResult } from "./PickResult";
 
 /**
- * Defines the contract for the rendering strategy used internally within a {@link Viewer | Viewer}.
+ * Interface defining the rendering strategy used internally by a {@link Viewer | Viewer}.
  *
- * A Viewer uses an implementation of this internally to allocate and render geometry and materials using an
- * available browser 3D graphics API, such as WebGL or WebGPU.
+ * A Viewer integrates with an implementation of this interface to manage and render geometry
+ * and materials using a supported browser 3D graphics API, such as WebGL or WebGPU.
  *
- * ## Usage
+ * ## Example Usage
  *
- * ````javascript
- * import {Viewer} from "@xeokit/sdk/viewer";
+ * ```javascript
+ * import { Viewer } from "@xeokit/sdk/viewer";
  *
  * const myViewer = new Viewer({
  *     id: "myViewer",
- *     renderer: new WebGLRenderer({ }) // Or WebGPURenderer, MockRenderer etc.
+ *     renderer: new WebGLRenderer({ }) // Or WebGPURenderer, MockRenderer, etc.
  * });
- * ````
+ * ```
+ *
+ * @internal
  */
 export interface Renderer {
 
     /**
-     * The Viewer this Renderer is currently attached to.
-     */
-    get viewer(): Viewer;
-
-    /**
-     * Interfaces through which each {@link ViewObject | ViewObject} shows/hides/highlights/selects/xrays/colorizes
-     * its {@link scene!SceneObject | SceneObject} within the {@link Renderer | Renderer} that's
-     * configured on its {@link Viewer | Viewer}.
+     * Retrieves the rendering capabilities of this Renderer.
      *
      * @internal
-     */
-    rendererObjects: { [key: string]: RendererObject }
-
-    /**
-     * TODO
-     */
-
-    //  rendererModels: { [key: string]: RendererModel };
-
-    /**
-     * Initializes this Renderer by attaching a {@link Viewer | Viewer}.
-     *
-     * @internal
-     * @param viewer Viewer to attach.
-     * @returns *void*
-     * * Viewer successfully attached.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * A Viewer is already attached to this Renderer.
-     * * The given Viewer is already attached to another Renderer.
-     */
-    attachViewer(viewer: Viewer): void | SDKError;
-
-    /**
-     * Detaches the {@link Viewer | Viewer} that is currently attached, if any.
-     *
-     * @internal
-     * @returns *void*
-     * * Viewer successfully detached.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No Viewer is currently attached to this Renderer.
-     */
-    detachViewer(): SDKError | void;
-
-    /**
-     * Gets the capabilities of this Renderer.
-     *
-     * @param capabilities Returns the capabilities of this WebGLRenderer.
-     * @internal
+     * @param capabilities An object to store the retrieved capabilities.
      */
     getCapabilities(capabilities: Capabilities): void;
 
     /**
-     * Gets whether this Renderer supports SAO.
+     * Checks if Screen Space Ambient Occlusion (SAO) is supported by this Renderer.
+     *
      * @internal
+     * @returns `boolean` indicating SAO support.
      */
     getSAOSupported(): boolean;
 
     /**
+     * The Viewer instance currently attached to this Renderer.
+     * @internal
+     */
+    get viewer(): Viewer;
+
+    /**
+     * Collection of renderer objects that control visibility, highlighting, selection,
+     * X-ray effects, and color adjustments for {@link scene!SceneObject | SceneObjects}
+     * within this Renderer.
+     * @internal
+     */
+    rendererObjects: { [key: string]: RendererObject };
+
+    /**
+     * Attaches a {@link Viewer | Viewer} to this Renderer.
+     *
+     * @param viewer The Viewer instance to attach.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - A Viewer is already attached.
+     * - The given Viewer is attached to another Renderer.
+     * @internal
+     */
+    attachViewer(viewer: Viewer): void | SDKError;
+
+    /**
+     * Detaches the currently attached {@link Viewer | Viewer}, if any.
+     *
+     * @internal
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if no Viewer is attached.
+     */
+    detachViewer(): SDKError | void;
+
+    /**
      * Attaches a {@link View} to this Renderer.
      *
-     * The Renderer will then begin rendering each {@link scene!SceneModel | SceneModel} previously or subsequently
-     * created with {@link scene!Scene.createModel | Scene.createModel} , for the new View.
-     *
-     * You can only attach as many Views as indicated in {@link  core!Capabilities.maxViews | Capabilities.maxViews}, as returned by
-     * {@link Renderer.getCapabilities | Renderer.getCapabilities}.
-     *
-     * You must attach a View before you can attach a SceneModel.
+     * This enables rendering of all previously or subsequently created
+     * {@link scene!SceneModel | SceneModels} for the new View.
      *
      * @internal
      * @param view The View to attach.
-     * @returns *void*
-     * * Handle to the View within this Renderer. Use this handle to update Renderer state for the View.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No Viewer is attached to this Renderer.
-     * * Caller attempted to attach too many Views.
-     * * The WebGLRenderer failed to initialize for the new View.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No Viewer is attached.
+     * - Too many Views are attached.
+     * - Renderer initialization for the View fails.
      */
     attachView(view: View): SDKError | void;
 
     /**
-     * Detaches the given {@link View} from this Renderer.
+     * Detaches the specified {@link View} from this Renderer.
      *
-     * The Renderer will then cease rendering for that View.
+     * Rendering for this View will cease.
      *
      * @internal
      * @param view The View to detach.
-     * @returns *void*
-     * * View successfully detached.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No Viewer is attached to this Renderer.
-     * * View is not currently attachedto this Renderer.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No Viewer is attached.
+     * - The View is not currently attached.
      */
     detachView(view: View): SDKError | void;
 
     /**
      * Attaches a {@link scene!SceneModel | SceneModel} to this Renderer.
      *
-     * This method attaches various hooks to the elements within the SceneModel, through which they can
-     * upload state updates to the Renderer.
+     * This method establishes rendering hooks for the SceneModel’s elements,
+     * allowing real-time state updates.
      *
-     * * Sets a {@link scene!RendererModel} on {@link scene!SceneModel.rendererModel | SceneModel.rendererModel}
-     * * Sets a {@link scene!RendererObject} on each {@link scene!SceneObject.rendererObject | SceneObject.rendererObject}
-     * * Sets a {@link scene!RendererMesh} on each {@link scene!SceneMesh.rendererMesh | SceneMesh.rendererMesh}
-     * * Sets a {@link scene!RendererTextureSet} on each {@link scene!SceneTextureSet.rendererTextureSet | SceneTextureSet.rendererTextureSet}
-     * * Sets a {@link scene!RendererTexture} on each {@link scene!SceneTexture.rendererTexture | SceneTexture.rendererTexture}
-     *
-     * Then, when we make any state updates to those components, they will upload the updates into the Renderer.
-     *
-     * You must first attach a View with {@link Renderer.attachView | Renderer.attachView} before you can attach a SceneModel.
-     *
-     * @param sceneModel
      * @internal
-     * @returns *void*
-     * * SceneModel successfully attached.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * SceneModel already attached to this Renderer, or to another Renderer.
+     * @param sceneModel The SceneModel to attach.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View is attached.
+     * - The SceneModel is already attached to this or another Renderer.
      */
     attachSceneModel(sceneModel: SceneModel): void | SDKError;
 
     /**
-     * Detaches a {@link scene!SceneModel | SceneModel} from this Renderer.
+     * Detaches the specified {@link scene!SceneModel | SceneModel} from this Renderer.
      *
-     * Detaches and destroys the {@link scene!RendererModel}, {@link scene!RendererObject} and
-     * {@link scene!RendererMesh},
-     * {@link scene!RendererTexture} instances that were attached in {@link Renderer.attachSceneModel}.
+     * Cleans up associated rendering resources.
      *
      * @internal
-     * @param sceneModel The SceneModel
-     * @returns *void*
-     * * SceneModel successfully detached.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * The SceneModel is not attached to this Renderer.
+     * @param sceneModel The SceneModel to detach.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View is attached.
+     * - The SceneModel is not attached to this Renderer.
      */
     detachSceneModel(sceneModel: SceneModel): void | SDKError;
 
     /**
-     * Enable/disable rendering of transparent objects for the given View.
+     * Toggles the rendering of transparent objects for a specified View.
      *
-     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
-     * @param enabled Whether to enable or disable transparent objects for the View.
      * @internal
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * Can't find a View attached to this Renderer with the given handle.
+     * @param viewIndex The View index. This matches {@link viewer!View.viewIndex | View.viewIndex} on a View that is currently attached to this Renderer.
+     * @param enabled Determines whether transparency is enabled.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View with the given index is attached.
      */
     setTransparentEnabled(viewIndex: number, enabled: boolean): void | SDKError;
 
     /**
-     * Enable/disable edge enhancement for the given View.
+     * Enables or disables edge enhancement for the specified attached View.
      *
-     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
-     * @param enabled Whether to enable or disable edges for the View.
      * @internal
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * Can't find a View attached to this Renderer with the given handle.
+     * @param viewIndex The View index. This matches {@link viewer!View.viewIndex | View.viewIndex} on a View that is currently attached to this Renderer.
+     * @param enabled Whether to enable edge enhancement.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View with the given index is attached.
      */
     setEdgesEnabled(viewIndex: number, enabled: boolean): void | SDKError;
 
     /**
-     * Enable/disable scaleable ambient obscurrance SAO for the given View.
+     * Enables or disables Screen Space Ambient Occlusion (SAO) for the specified attached View.
      *
-     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
-     * @param enabled Whether to enable or disable SAO for the View.
      * @internal
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * Can't find a View attached to this Renderer with the given handle.
+     * @param viewIndex The View index. This matches {@link viewer!View.viewIndex | View.viewIndex} on a View that is currently attached to this Renderer.
+     * @param enabled Whether to enable SAO.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View with the given index is attached.
      */
     setSAOEnabled(viewIndex: number, enabled: boolean): void | SDKError;
 
     /**
-     * Enable/disable physically-based rendering (PBR) for the given View.
+     * Enables or disables Physically-Based Rendering (PBR) for the specified attached View.
      *
-     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
-     * @param enabled Whether to enable or disable PBR for the View.
      * @internal
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * Can't find a View attached to this Renderer with the given handle.
+     * @param viewIndex The View index. This matches {@link viewer!View.viewIndex | View.viewIndex} on a View that is currently attached to this Renderer.
+     * @param enabled Whether to enable PBR.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View with the given index is attached.
      */
     setPBREnabled(viewIndex: number, enabled: boolean): void | SDKError;
 
     /**
-     * Indicates that the renderers needs to render a new frame for the given View.
+     * Requests a new frame to be rendered for the given View.
      *
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * Can't find a View attached to this Renderer with the given handle.
+     * @param viewIndex The View index. This matches {@link viewer!View.viewIndex | View.viewIndex} on a View that is currently attached to this Renderer.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View with the given index is attached.
      */
     setImageDirty(viewIndex?: number): void | SDKError;
 
     /**
-     * Clears the renderer for the given view.
+     * Clears the Renderer for the specified View.
      *
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * Can't find a View attached to this Renderer with the given handle.
+     * @param viewIndex The View index. This matches {@link viewer!View.viewIndex | View.viewIndex} on a View that is currently attached to this Renderer.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View with the given index is attached.
      */
     clear(viewIndex: number): void | SDKError;
 
     /**
-     * Triggers a rebuild of the shaders within this Renderer for the given View.
+     * Triggers a shader rebuild for the specified View.
+     *
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
-     * @returns *void*
-     * * Success.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * Can't find a View attached to this Renderer with the given handle.
+     * @param viewIndex The View index. This matches {@link viewer!View.viewIndex | View.viewIndex} on a View that is currently attached to this Renderer.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View with the given index is attached.
      */
     setNeedsRebuild(viewIndex: number): void | SDKError;
 
     /**
-     * Gets if a new frame needs to be rendered for the given View.
+     * Checks if a new frame needs to be rendered for the specified attached View.
+     *
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
-     * @returns *boolean*
-     * * True if a new frame needs to be rendered for the View.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * Can't find a View attached to this Renderer with the given handle.
+     * @param viewIndex The View index. This matches {@link viewer!View.viewIndex | View.viewIndex} on a View that is currently attached to this Renderer.
+     * @returns `boolean` indicating if rendering is required.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View with the given index is attached.
      */
     getNeedsRender(viewIndex: number): SDKError | boolean;
 
     /**
-     * Renders a frame for a View.
+     * Renders a frame for the specified View.
      *
-     * @param params Rendering params.
-     * @param [params.force=false] True to force a render, else only render if needed.
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
-     * @returns *{@link core!SDKError | SDKError}*
-     * * No View is currently attached to this Renderer.
-     * * Can't find a View attached to this Renderer with the given handle.
+     * @param viewIndex The View index. This matches {@link viewer!View.viewIndex | View.viewIndex} on a View that is currently attached to this Renderer.
+     * @param params Rendering parameters.
+     * @returns `void` if successful.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View with the given index is attached.
      */
-    render(viewIndex: number, params: { force?: boolean; }): void | SDKError;
+    render(viewIndex: number, params: { force?: boolean }): void | SDKError;
 
     /**
-     * Picks a ViewerObject within a View.
+     * Performs object picking within a View.
      *
-     * @param viewIndex Handle to the View, returned earlier by {@link Renderer.attachView | Renderer.attachView}.
      * @internal
-     * @param viewIndex Handle to the View, returned earlier by {@xeokit/Renderer.attachView | Renderer.attachView}.
+     * @param viewIndex The View index. This matches {@link viewer!View.viewIndex | View.viewIndex} on a View that is currently attached to this Renderer.
      * @param pickParams Picking parameters.
-     * @param pickResult Picking results, when caller wants to manage them externally.
-     * @throws {@link core!SDKError | SDKError}
-     * * No View is currently attached to this Renderer.
-     * * Can't find a View attached to this Renderer with the given handle.
-     * * Illegal picking parameters given.
-     * @returns {@link PickResult}
-     * * Picking attempt completed.
+     * @param pickResult Optional pre-allocated PickResult.
+     * @returns A {@link PickResult} or if object successfully picked.
+     * @returns null if nothing picked.
+     * @returns {@link core!SDKError | SDKError} if:
+     * - No View with the given index is attached.
      */
-    pick(viewIndex: number, pickParams: PickParams, pickResult?: PickResult):  PickResult | null;
+    pick(viewIndex: number, pickParams: PickParams, pickResult?: PickResult): PickResult | null | SDKError;
 
     /**
-     * Enters snapshot mode for the given View.
+     * Begins snapshot mode for the given View.
      *
-     * @param viewIndex
-     * @param params
+     * @internal
+     * @param viewIndex The View index. This matches {@link viewer!View.viewIndex | View.viewIndex} on a View that is currently attached to this Renderer.
+     * @param params Snapshot configuration.
      */
-    beginSnapshot(viewIndex: number, params?: {
-        width: number,
-        height: number
-    });
+    beginSnapshot(viewIndex: number, params?: { width: number, height: number });
 
     /**
-     * When in snapshot mode, renders a frame of the current Scene state to the snapshot canvas.
+     * Renders a snapshot frame of the current scene state.
+     * @internal
      */
     renderSnapshot();
 
     /**
-     * When in snapshot mode, gets an image of the snapshot canvas.
+     * Retrieves an image of the snapshot canvas as a data URI.
      *
-     * @returns {String} The image data URI.
+     * @internal
+     * @returns The image data URI.
      */
     readSnapshot(params): string;
 
     /**
-     * Returns an HTMLCanvas containing an image of the snapshot canvas.
+     * Returns an HTMLCanvasElement containing a snapshot image.
      *
-     * - The HTMLCanvas has a CanvasRenderingContext2D.
-     * - Expects the caller to draw more things on the HTMLCanvas (annotations etc).
-     *
-     * @returns {HTMLCanvasElement}
+     * @returns {HTMLCanvasElement} The snapshot canvas.
      */
     readSnapshotAsCanvas(params): HTMLCanvasElement;
 
     /**
-     * Exits snapshot mode.
-     *
-     * Switches rendering back to the main canvas.
+     * Ends snapshot mode and restores normal rendering.
      */
     endSnapshot();
 }

@@ -74,7 +74,7 @@ const pickTemps = {
 };
 
 /**
- * A WebGL-based rendering strategy for a {@link viewer!Viewer | Viewer}.
+ * A WebGL-based rendering strategy for a Viewer.
  *
  * See {@link "webglrenderer" | @xeokit/webglrenderer} for usage.
  */

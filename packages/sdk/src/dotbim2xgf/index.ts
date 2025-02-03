@@ -1,19 +1,21 @@
 /**
- * <img  style="padding:0px; padding-top:30px; padding-bottom:10px; height:130px;" src="/docs/assets/xeokit_logo_mesh.png"/>
+ * <img style="padding:0px; padding-top:30px; padding-bottom:10px; height:130px;" src="/docs/assets/xeokit_logo_mesh.png"/>
  *
- * # xeokit .BIM -> XGF Converter
- *
- * ---
- *
- * ***CLI tools to convert .BIM models into xeokit's compact [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) geometry format.***
+ * # xeokit .BIM to XGF Converter
  *
  * ---
  *
- * * Converts a .BIM file to an XGF geometry file, along with an optional JSON file containing the IFC data model.
- * * Backward support for all XGF versions.
- * * XGF does not contain textures - only geometry and color.
+ * ***CLI tools for converting .BIM models into xeokit's compact XGF geometry format.***
+ *
+ * ---
+ *
+ * * Converts a .BIM file to an XGF geometry file, with an optional JSON file containing the IFC data model.
+ * * Fully compatible with all XGF versions.
+ * * XGF files contain only geometry and color—textures are not included.
  *
  * # Installation
+ *
+ * To install the xeokit SDK, run:
  *
  * ````bash
  * npm install @xeokit/sdk
@@ -21,39 +23,39 @@
  *
  * # Usage
  *
- * ## Converting a .BIM file
+ * ## Converting a .BIM File
  *
- * Use the `dotbim2xgf` CLI tool to convert a single .BIM file into a single XGF file, plus an optional JSON file containing
- * a DataModel of IFC semantic data.
+ * Use the `dotbim2xgf` CLI tool to convert a single .BIM file into a single XGF file, with an optional JSON file containing
+ * the IFC semantic data model.
  *
  * ````bash
  * node dotbim2xgf.js -h
  * Usage: dotbim2xgf [options]
  *
- * CLI to convert .BIM files into xeokit's compact XGF format
+ * CLI tool to convert .BIM files into xeokit's compact XGF format.
  *
  * Options:
- *   -v, --version            output the version number
- *   -i, --source [file]      path to source .BIM file
- *   -s, --scenemodel [file]  path to target XGF file
- *   -d, --datamodel [file]   path to target JSON IFC data model file, extracted from .BIM (optional)
- *   -f, --format [number]    target XGF version - supported XGF version is 1, default is 1
- *   -h, --help               display help for command
+ *   -v, --version            Output the version number.
+ *   -i, --source [file]      Path to the source .BIM file.
+ *   -s, --scenemodel [file]  Path to the target XGF file.
+ *   -d, --datamodel [file]   Path to the target JSON IFC data model file (optional).
+ *   -f, --format [number]    Target XGF version. Supported versions: 1. Default is 1.
+ *   -h, --help               Display help for command.
  * ````
  *
- * The example below converts a .BIM file to an XGF file and a JSON data model file. The XGF file can then be loaded into a
- * {@link scene!SceneModel | SceneModel} using {@link xgf!loadXGF | loadXGF()}. The JSON file can be
- * loaded into a {@link data!DataModel | DataModel} using {@link data!loadDataModel | loadDataModel()}.
+ * The example below demonstrates converting a .BIM file into an XGF file and a JSON data model file. The XGF file can
+ * then be loaded into a {@link scene!SceneModel | SceneModel} using {@link xgf!loadXGF | loadXGF()}. The JSON file can
+ * be loaded into a {@link data!DataModel | DataModel} using {@link data!loadDataModel | loadDataModel()}.
  *
  * ````bash
  * node dotbim2xgf -i model.bim -s model.xgf -d model.json
  * ````
  *
- * ## Converting a .BIM file to a target XGF version
+ * ## Converting a .BIM File to a Specific XGF Version
  *
- * In our previous examples, we converted to the latest version of XGF by default. In the next example, we'll convert a
- * binary .BIM file to a specific version of XGF. The XGF format is expected to evolve in the future, so this feature
- * ensures backward-compatibility.
+ * In the previous example, we converted to the latest version of XGF by default. In the next example, we will convert a
+ * binary .BIM file to a specific version of XGF. This feature ensures backward compatibility as the XGF format may evolve
+ * in the future.
  *
  * ````bash
  * dotbim2xgf -i duplex.glb -s duplex.xgf -f 1

@@ -160,7 +160,7 @@ export class Data extends Component {
     /**
      * Gets the {@link DataObject.id}s of the {@link DataObject | DataObjects} that have the given {@link DataObject.type}.
      *
-     * See {@link data | @xeokit/sdk/data}   for usage.
+     * See {@link data | @xeokit/sdk/data} for usage.
      *
      * @param type The type.
      * @returns {string[]}
@@ -270,7 +270,7 @@ export class Data extends Component {
     /**
      * Destroys all contained {@link DataModel | DataModels}.
      *
-     * * Fires {@link Data.onModelDestroyed | Data.onModelDestroyed} and {@link DataModel.onDestroyed | DataModel.onDestroyed}
+     * Fires {@link Data.onModelDestroyed | Data.onModelDestroyed} and {@link DataModel.onDestroyed | DataModel.onDestroyed}
      * for each existing DataModel in this Data.
      *
      * See {@link data | @xeokit/sdk/data}   for usage.

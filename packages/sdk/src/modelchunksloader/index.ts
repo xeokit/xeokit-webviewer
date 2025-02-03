@@ -5,110 +5,114 @@
  *
  * ---
  *
- * ***Loads multi-part models into SceneModels and DataModels***
+ * ***Batch-load multi-part models into SceneModels and DataModels***
+ *
+ * The `ModelChunksLoader` helps load large, multi-part models by grouping them into chunks and loading them into both
+ * `SceneModels` and `DataModels` in a seamless process. This is particularly useful when dealing with models that are
+ * too large to load as a single file, enabling efficient chunk-based loading and handling.
  *
  * ---
  *
- *  * # Installation
+ * # Installation
+ *
+ * To install the `@xeokit/sdk` package, use the following npm command:
  *
  * ````bash
  * npm install @xeokit/sdk
  * ````
  *
+ * ---
+ *
  * # Usage
  *
- * Use a {@link modelchunksloader!ModelChunksLoader | ModelChunksLoader} to batch-load the files listed in a
- * {@link core!ModelChunksManifestParams | ModelChunksManifestParams} into a
- * {@link scene!SceneModel | SceneModel} and/or {@link data!DataModel | DataModel}.
+ * The `ModelChunksLoader` allows you to batch-load the files listed in a `ModelChunksManifestParams` into both
+ * `SceneModel` and/or `DataModel`. The `ModelChunksManifestParams` is typically provided as a JSON file, which contains
+ * the necessary file lists and metadata for the chunks.
  *
- * We'll provide our ModelChunksManifestParams in a JSON file named `modelChunksManifest.json`, the contents of which are shown below.
+ * Here’s an example of a `modelChunksManifest.json` file:
  *
  * ````json
  * {
- *     sceneModelMIMEType: "arraybuffer",
- *     sceneModelFiles: [
+ *     "sceneModelMIMEType": "arraybuffer",
+ *     "sceneModelFiles": [
  *         "model.xgf",
- *         "model2.xgf"
+ *         "model2.xgf",
  *         "model3.xgf"
  *     ],
- *     dataModelFiles: [
+ *     "dataModelFiles": [
  *         "model.json",
- *         "model2.json"
+ *         "model2.json",
  *         "model3.json"
  *     ]
  * }
  * ````
  *
- * In this file, `sceneModelFiles` contains a list of {@link "xgf" | XGF} files, and `dataModelFiles`
- * contains a list of {@link metamodel!MetaModelParams | ModelModelParams} files.
+ * In this manifest:
+ * - `sceneModelFiles` lists the XGF model files.
+ * - `dataModelFiles` lists the MetaModel JSON files.
  *
- * We can now load this file into a {@link scene!SceneModel | SceneModel} and
- * {@link data!DataModel | DataModel}, using {@link xgf!loadXGF | loadXGF},
- * {@link data!loadDataModel | loadDataModel} and {@link modelchunksloader!ModelChunksLoader | ModelChunksLoader}:
+ * With this manifest, we can use the `ModelChunksLoader` to load both `SceneModel` and `DataModel` as follows:
  *
- * ````
- * import {Scene} from "@xeokit/sdk/scene}";
- * import {Data} from "@xeokit/sdk/data}";
- * import {ModelChunksLoader} from "@xeokit/sdk/modelchunksloader}";
- * import {loadXGF} from "@xeokit/sdk/xgf}";
- * import {loadDataModel} from "@xeokit/sdk/data}";
+ * ```ts
+ * import {Scene} from "@xeokit/sdk/scene";
+ * import {Data} from "@xeokit/sdk/data";
+ * import {ModelChunksLoader} from "@xeokit/sdk/modelchunksloader";
+ * import {loadXGF} from "@xeokit/sdk/xgf";
+ * import {loadDataModel} from "@xeokit/sdk/data";
  * import {SDKError} from "@xeokit/sdk/core";
  * import {WebGLRenderer} from "@xeokit/sdk/webglrenderer";
  * import {Viewer} from "@xeokit/sdk/viewer";
  * import {CameraControl} from "@xeokit/sdk/cameracontrol";
  *
+ * // Initialize scene, data, and viewer
  * const scene = new Scene();
  * const data = new Data();
- *
  * const renderer = new WebGLRenderer({});
- *
  * const viewer = new Viewer({
  *     id: "myViewer",
  *     scene,
  *     renderer
  * });
- *
  * const view = viewer.createView({
  *     id: "myView",
  *     elementId: "myCanvas"
  * });
  *
- * view.camera.eye = [0,0,-100];
- * view.camera.look = [0,0,0];
- * view.camera.up = [0.0, 1.0, 0.0];
- *
+ * // Camera setup
+ * view.camera.eye = [0, 0, -100];
+ * view.camera.look = [0, 0, 0];
+ * view.camera.up = [0, 1, 0];
  * new CameraControl(view, {});
  *
- * const sceneModel = scene.createModel({
- *     id: "myModel"
- * });
+ * // Create SceneModel and DataModel
+ * const sceneModel = scene.createModel({ id: "myModel" });
+ * const dataModel = data.createModel({ id: "myModel" });
  *
- * const dataModel = data.createModel({
- *     id: "myModel"
- * });
- *
+ * // Initialize ModelChunksLoader
  * const modelChunksLoader = new ModelChunksLoader({
  *     sceneModelLoader: loadXGF,
  *     dataModelLoader: loadDataModel
  * });
  *
+ * // Load the model chunks manifest and process the files
  * fetch(`modelChunksManifest.json`).then(response => {
- *      response
- *      .json()
- *      .then(modelChunksManifest => {
- *
- *          modelChunksLoader.load({
- *              modelChunksManifest,
- *              baseDir: ".",
- *              sceneModel,
- *              dataModel
- *
- *        }).then(() =>{
- *              sceneModel.build();
- *              dataModel.build();
- *        });
- *    });
+ *     response.json().then(modelChunksManifest => {
+ *         modelChunksLoader.load({
+ *             modelChunksManifest,
+ *             baseDir: ".",
+ *             sceneModel,
+ *             dataModel
+ *         }).then(() => {
+ *             sceneModel.build();
+ *             dataModel.build();
+ *         }).catch((error) => {
+ *             console.error("Error loading model chunks:", error);
+ *         });
+ *     });
+ * });
  * ````
+ *
+ * ---
  *
  * @module modelchunksloader
  */

@@ -1,31 +1,41 @@
 /**
- * <img style="padding-top:20px; padding-bottom: 10px;" src="/docs/assets/ifc_logo.png"/>
+ * <img style="padding-top:20px; padding-bottom:10px;" src="/docs/assets/ifc_logo.png"/>
  *
  * # xeokit IFC Data Types
  *
- * * Defines numeric constants for [IFC](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ifc) entity and relationship types.
- * * Use with {@link data | data}  to assign IFC types to {@link data!DataObject | DataObjects} and
- * {@link data!Relationship | Relationships} and treat them as IFC elements.
- * * Use with {@link treeview | treeview}  to configure the appearance and behaviour of
- * {@link treeview!TreeView | TreeViews} for navigating IFC element hierachies.
+ * ---
+ *
+ * ***Defines numeric constants for [IFC](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ifc) entity and relationship types.***
+ *
+ * ---
+ *
+ * * Use with {@link data | data} to assign IFC types to {@link data!DataObject | DataObjects} and
+ *   {@link data!Relationship | Relationships}, allowing them to be treated as IFC elements.
+ * * Integrates with {@link treeview | treeview} to configure the appearance and behavior of
+ *   {@link treeview!TreeView | TreeViews} for navigating IFC element hierarchies.
  * * Supports IFC versions 2x3 and 4.
  *
  * ## Installation
+ *
+ * Install the xeokit SDK by running:
  *
  * ````bash
  * npm install @xeokit/sdk
  * ````
  *
- * # Usage
+ * ## Usage
+ *
+ * Import IFC entity types and use them within your application:
  *
  * ````javascript
- * import {IfcWallStandardCase, IfcArbitraryClosedProfileDef} from "@xeokit/sdk/ifctypes";
+ * import { IfcWallStandardCase, IfcArbitraryClosedProfileDef } from "@xeokit/sdk/ifctypes";
  *
- * //...
+ * // Example usage...
  * ````
  *
  * @module ifctypes
  */
+
 
 /**
  * A request is the act or instance of asking for something, such as a request for information, bid submission, or performance of work.

@@ -1,20 +1,22 @@
 /**
- * <img  style="padding:0px; padding-top:30px; padding-bottom:10px; height:130px;" src="/docs/assets/xeokit_logo_mesh.png"/>
+ * <img style="padding:0px; padding-top:30px; padding-bottom:10px; height:130px;" src="/docs/assets/xeokit_logo_mesh.png"/>
  *
  * # xeokit glTF -> XGF Converter
  *
  * ---
  *
- * ***CLI tools to convert glTF models into xeokit's compact [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) geometry format.***
+ * ***CLI tools for converting glTF models into xeokit's compact XGF geometry format.***
  *
  * ---
  *
- * * Converts glTF files to XGF, xeokit's compact binary format for large models.
- * * Optionally creates an additional JSON file containing a data model that expresses the glTF scene hierarchy.
- * * Backward support for all XGF versions.
- * * XGF does not contain textures - only geometry and color.
+ * * Converts glTF files to XGF, xeokit's efficient binary format for large models.
+ * * Optionally generates a JSON file containing a data model that represents the glTF scene hierarchy.
+ * * Backward compatibility for all XGF versions.
+ * * XGF format contains only geometry and color data; textures are not supported.
  *
  * # Installation
+ *
+ * Install the xeokit SDK by running:
  *
  * ````bash
  * npm install @xeokit/sdk
@@ -24,48 +26,47 @@
  *
  * ## Converting a glTF file
  *
- * Use the `gltf2xgf` CLI tool to convert a single glTF file into a single XGF file, plus an optional JSON file containing
- * a simple DataModel derived from the glTF `scene` `node` hierarchy.
+ * Use the `gltf2xgf` CLI tool to convert a single glTF file into an XGF file, along with an optional JSON file containing
+ * a simple DataModel derived from the glTF `scene` and `node` hierarchy.
  *
  * ````bash
  * node gltf2xgf.js -h
  * Usage: gltf2xgf [options]
  *
- * CLI to convert glTF files into xeokit's compact XGF format
+ * CLI tool to convert glTF files into xeokit's compact XGF format.
  *
  * Options:
  *   -v, --version            output the version number
  *   -i, --source [file]      path to source glTF file
  *   -s, --scenemodel [file]  path to target XGF file
- *   -d, --datamodel [file]   path to target JSON data model file, extracted from glTF scene hierarchy (optional)
- *   -f, --format [number]    target XGF version - supported XGF version is 1, default is 1
- *   -h, --help               display help for command
+ *   -d, --datamodel [file]   path to target JSON data model file, derived from the glTF scene hierarchy (optional)
+ *   -f, --format [number]    target XGF version (default is 1; supported version is 1)
+ *   -h, --help               display help for the command
  * ````
  *
- * The example below converts a binary glTF file to XGF. The XGF objects will have geometries and material colors
- * parsed from the glTF. The XGF file can then be loaded into a xeokit {@link scene!SceneModel | SceneModel}
- * using the {@link xgf!loadXGF | loadXGF()} function. We recommend converting binary glTF for best performance.
+ * The example below converts a binary glTF file to XGF. The resulting XGF objects will contain geometry and material color
+ * data parsed from the glTF file. The XGF file can then be loaded into a xeokit {@link scene!SceneModel | SceneModel}
+ * using the {@link xgf!loadXGF | loadXGF()} function. For optimal performance, it is recommended to convert binary glTF files.
  *
  * ````bash
  * node gltf2xgf -i duplex.glb -s duplex.xgf
  * ````
  *
- * ## Converting a glTF file and extracting scene hierarchy
+ * ## Converting a glTF file and extracting the scene hierarchy
  *
- * In the next example, we'll convert a binary glTF file to XGF, while also creating a JSON file that defines
- * a simple data model that expresses the hierarchy of the `nodes` within the glTF `scene`. The JSON file can
- * then be loaded into a xeokit {@link data!DataModel | DataModel}
- * using {@link data!Data.createModel | Data.createModel()}.
+ * In the next example, we convert a binary glTF file to XGF, while also generating a JSON file that defines a simple data model
+ * expressing the hierarchy of the `nodes` within the glTF `scene`. The JSON file can then be loaded into a xeokit
+ * {@link data!DataModel | DataModel} using {@link data!Data.createModel | Data.createModel()}.
  *
  * ````bash
  * node gltf2xgf -i duplex.glb -s duplex.xgf -d duplex.json
  * ````
  *
- * ## Converting a glTF file to a target XGF version
+ * ## Converting a glTF file to a specific XGF version
  *
- * In our previous examples, we converted to the latest version of XGF by default. In the next example, we'll convert a
- * binary glTF file to a specific version of XGF. The XGF format is expected to evolve in the future, so this feature
- * ensures backward-compatibility.
+ * In the previous examples, we converted the glTF file to the latest version of XGF by default. In this example, we convert
+ * the binary glTF file to a specific version of XGF. The XGF format is expected to evolve over time, and this feature ensures
+ * backward compatibility.
  *
  * ````bash
  * gltf2xgf -i duplex.glb -s duplex.xgf -f 1

@@ -1,49 +1,50 @@
-import {DataModelContentParams} from "./DataModelContentParams";
+import { DataModelContentParams } from "./DataModelContentParams";
 
 /**
- * Parameters for a {@link DataModel}.
+ * Parameters used to define a {@link DataModel}.
  *
- * * Returned by {@link DataModel.toParams | DataModel.toParams}
- * * Passed to {@link DataModel.fromParams | DataModel.fromParams} and {@link Data.createModel | Data.createModel}
+ * These parameters are:
+ * * Returned by {@link DataModel.toParams | DataModel.toParams}.
+ * * Passed to {@link DataModel.fromParams | DataModel.fromParams} and {@link Data.createModel | Data.createModel}.
  *
- * See {@link data | @xeokit/sdk/data} for usage.
+ * For detailed usage, refer to {@link data | @xeokit/sdk/data}.
  */
 export interface DataModelParams extends DataModelContentParams {
 
     /**
-     * Unique ID of the data model.
+     * The unique identifier for the data model.
      *
      * The DataModel is stored in {@link Data.models | Data.models} under this ID.
      */
     id: string;
 
     /**
-     * The project ID, if available.
+     * The project ID associated with the data model, if available.
      */
     projectId?: string | number;
 
     /**
-     * The data model model ID, if available.
+     * The revision ID of the data model, if available.
      */
     revisionId?: string | number;
 
     /**
-     * The data model author, if available.
+     * The author of the data model, if available.
      */
     author?: string;
 
     /**
-     * The date that the data model was created on, if available.
+     * The creation date of the data model, if available.
      */
     createdAt?: string;
 
     /**
-     * The application that created the data model, if known.
+     * The application used to create the data model, if known.
      */
     creatingApplication?: string;
 
     /**
-     * The data model schema version, if available.
+     * The schema version of the data model, if available.
      */
     schema?: string;
 }

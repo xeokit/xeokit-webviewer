@@ -1579,72 +1579,103 @@ const letters = {
 };
 
 /**
- * Creates wireframe vector text {@link scene!SceneGeometry | SceneGeometry}.
+ * Creates wireframe vector text as a {@link scene!SceneGeometry | SceneGeometry}.
+ *
+ * This function generates the geometry data for rendering text as a wireframe. Each character is represented as a series of lines, with the position of each vertex specified in 3D space. The text is provided as input, and the function constructs the wireframe representation for each character. The resulting geometry can be used for rendering text in 3D environments.
  *
  * ## Usage
-
- * ````javascript
  *
+ * To create wireframe vector text geometry, simply call the function and pass the appropriate configuration object. For example:
+ *
+ * ```javascript
+ * const textGeometry = buildVectorTextGeometry({
+ *     size: 2,
+ *     origin: [0, 0, 0],
+ *     text: "Hello, World!"
+ * });
+ * ```
+ *
+ * This creates a wireframe mesh for the text "Hello, World!" with each character sized at 2 units, centered at the origin.
+ *
+ * ## Parameters:
+ * @param cfg Configuration object for generating the text geometry.
+ * @param [cfg.id] Optional ID, unique among all components in the parent {@link scene!Scene | Scene}. If omitted, an ID is generated automatically.
+ * @param [cfg.center] A 3D point (array of 3 numbers) indicating the center position of the geometry. If omitted, the default is [0, 0, 0].
+ * @param [cfg.origin] A 3D point (array of 3 numbers) indicating the top-left corner of the text in the 3D space. This sets the initial position for the first character of the text.
+ * @param [cfg.size=1] The size of each character in the text. Default is 1.
+ * @param [cfg.text=""] The text string to display. It can include multiple lines (using `\n`).
+ *
+ * ## Returns:
+ * Returns a {@link scene!SceneGeometry | SceneGeometry} object with the wireframe representation of the provided text, including the necessary positions, indices, and primitive type for rendering.
+ *
+ * ## Example:
+ * ````javascript
+ * const textGeometry = buildVectorTextGeometry({
+ *     size: 1.5,
+ *     origin: [0, 0, 0],
+ *     text: "Sample Text"
+ * });
  * ````
  *
- * @param cfg Configs
- * @param [cfg.id] Optional ID, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
- * @param [cfg.center]  3D point indicating the center position.
- * @param [cfg.origin] 3D point indicating the top left corner.
- * @param [cfg.size=1] Size of each character.
- * @param [cfg.text=""] The text.
- * @returns {Object} Configuration for a {@link scene!SceneGeometry | SceneGeometry} subtype.
+ * ## Notes:
+ * - The function assumes that the characters are defined in a pre-existing `letters` object, where each character is mapped to its wireframe geometry (points and width).
+ * - The geometry is created by breaking down each character into a series of points, connecting those points with lines to form the wireframe.
+ * - The `size` parameter scales the text, and the `mag` constant adjusts the scaling factor for the points' positions.
+ *
+ * @returns {GeometryArrays} The geometry data for the wireframe vector text.
  */
 export function buildVectorTextGeometry(cfg: {
     size: number;
     origin: number[];
-    text: string
+    text: string;
 } = {
     origin: [0, 0, 0],
     size: 1,
     text: ""
-}): GeometryArrays  {
+}): GeometryArrays {
 
-    var origin = cfg.origin || [0, 0, 0];
-    var xOrigin = origin[0];
-    var yOrigin = origin[1];
-    var zOrigin = origin[2];
-    var size = cfg.size || 1;
+    const origin = cfg.origin || [0, 0, 0];
+    const xOrigin = origin[0];
+    const yOrigin = origin[1];
+    const zOrigin = origin[2];
+    const size = cfg.size || 1;
 
-    var positions = [];
-    var indices = [];
-    var text = cfg.text;
+    const positions: number[] = [];
+    const indices: number[] = [];
+    let text = cfg.text;
+
+    // Convert numeric text to string if needed
     if (utils.isNumeric(text)) {
         text = "" + text;
     }
-    var lines = (text || "").split("\n");
-    var countVerts = 0;
-    var y = 0;
-    var x;
-    var str;
-    var len;
-    var c;
-    var mag = 1.0 / 25.0;
-    var penUp;
-    var p1;
-    var p2;
-    var needLine;
-    var pointsLen;
-    var a;
 
-    for (var iLine = 0; iLine < lines.length; iLine++) {
+    const lines = (text || "").split("\n");
+    let countVerts = 0;
+    let y = 0;
+    let x;
+    let str;
+    let len;
+    let c;
+    const mag = 1.0 / 25.0;
+    let penUp;
+    let p1;
+    let p2;
+    let needLine;
+    let pointsLen;
+    let a;
 
+    for (let iLine = 0; iLine < lines.length; iLine++) {
         x = 0;
         str = lines[iLine];
         len = str.length;
 
-        for (var i = 0; i < len; i++) {
-
-            // @ts-ignore
+        for (let i = 0; i < len; i++) {
+            // @ts-ignore - letters object mapping each character to its geometry
             c = letters[str.charAt(i)];
 
             if (c === '\n') {
-                //alert("newline");
+                // Newline handling (not needed here as split("\n") already handles line breaks)
+                continue;
             }
 
             if (!c) {
@@ -1658,7 +1689,7 @@ export function buildVectorTextGeometry(cfg: {
 
             pointsLen = c.points.length;
 
-            for (var j = 0; j < pointsLen; j++) {
+            for (let j = 0; j < pointsLen; j++) {
                 a = c.points[j];
 
                 if (a[0] === -1 && a[1] === -1) {
@@ -1667,6 +1698,7 @@ export function buildVectorTextGeometry(cfg: {
                     continue;
                 }
 
+                // Calculate the position of the current point
                 positions.push((x + (a[0] * size) * mag) + xOrigin);
                 positions.push((y + (a[1] * size) * mag) + yOrigin);
                 positions.push(0 + zOrigin);
@@ -1683,7 +1715,6 @@ export function buildVectorTextGeometry(cfg: {
 
                 if (penUp) {
                     penUp = false;
-
                 } else {
                     indices.push(p1);
                     indices.push(p2);
@@ -1692,13 +1723,13 @@ export function buildVectorTextGeometry(cfg: {
                 needLine = true;
             }
             x += c.width * mag * size;
-
         }
-        y -= 35 * mag * size;
+
+        y -= 35 * mag * size;  // Vertical spacing for each line of text
     }
 
     return utils.apply(cfg, {
-        primitive: LinesPrimitive,
+        primitive: LinesPrimitive, // The geometry is constructed as wireframe lines
         positions: positions,
         indices: indices
     });

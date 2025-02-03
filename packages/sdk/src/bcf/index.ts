@@ -5,13 +5,13 @@
  *
  * ---
  *
- * ***Easily exchange BCF viewpoints with other BIM software to enhance collaboration and communication.***
+ * ***Exchange BCF viewpoints with other BIM software to enhance collaboration and communication.***
  *
  * ---
  *
- * The xeokit SDK provides support for seamless interoperability with other BIM software through the exchange of
+ * The xeokit SDK provides support for interoperability with other BIM software through the exchange of
  * [BCF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#bcf) (Building Collaboration Format) Viewpoints,
- * an open standard that allows exchanging bookmarks of Viewer states.
+ * an open standard that allows exchanging bookmarks of 3D Viewer states.
  *
  * ## Understanding BCF Viewpoints
  * A *BCF viewpoint* captures a snapshot of an issue within a building project. It includes:
@@ -45,8 +45,8 @@
  * ### Saving and Loading a View as BCF
  *
  * This example demonstrates how to:
- * - Set up a xeokit Viewer
- * - Load a BIM model
+ * - Set up a xeokit {@link viewer!Viewer | Viewer}
+ * - Load a BIM model from XKT format
  * - Save and load BCF viewpoints to bookmark Viewer states
  *
  * ```javascript
@@ -84,6 +84,7 @@
  *
  * ```javascript
  * sceneModel.onBuilt.one(() => {
+ *
  *     view.camera.eye = [0, 0, -33];
  *     view.camera.look = [0, 0, 0];
  *     view.camera.up = [0, 0, 1];
@@ -108,7 +109,7 @@
  *
  * ### Saving and Loading a ViewLayer as BCF
  *
- * ViewLayers allow selective export of ViewObjects. In this example:
+ * {@link viewer!ViewLayer | ViewLayers} allow selective export of {@link viewer!ViewObject | ViewObjects}. In this example:
  * - **Two ViewLayers** (`foreground` and `background`) are created.
  * - **Only the foreground layer** is exported.
  *

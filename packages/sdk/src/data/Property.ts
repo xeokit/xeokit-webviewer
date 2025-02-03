@@ -2,14 +2,14 @@ import type {PropertySet} from "./PropertySet";
 import type {PropertyParams} from "./PropertyParams";
 
 /**
- * A property in a {@link PropertySet | PropertySet}.
+ * Represents a property in a {@link PropertySet | PropertySet}.
  *
- * See {@link data | @xeokit/sdk/data}   for usage.
+ * For detailed usage, refer to {@link data | @xeokit/sdk/data}.
  */
 export class Property {
 
     /**
-     * The PropertySet to which this Property belongs.
+     * The {@link PropertySet | PropertySet} to which this Property belongs.
      */
     public readonly propertySet: PropertySet;
 
@@ -24,17 +24,17 @@ export class Property {
     public readonly value: any;
 
     /**
-     * The type of this property.
+     * The type of this property (e.g., string, number, etc.).
      */
     public readonly type?: string | number;
 
     /**
-     * The type of this property's value.
+     * The type of this property's value (e.g., string, integer, etc.).
      */
     public readonly valueType?: string | number;
 
     /**
-     * Informative text to explain the property.
+     * An informative description to explain the purpose or details of the property.
      */
     public readonly description?: string;
 
@@ -47,8 +47,8 @@ export class Property {
         propertyCfg: PropertyParams) {
         this.propertySet = propertySet;
         this.name = propertyCfg.name;
-        this.type = propertyCfg.type
-        this.value = propertyCfg.value
+        this.type = propertyCfg.type;
+        this.value = propertyCfg.value;
         this.valueType = propertyCfg.valueType;
         this.description = propertyCfg.description;
     }

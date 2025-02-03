@@ -1,34 +1,38 @@
 /**
- * Parameters for a {@link Property}.
+ * Parameters for creating a {@link Property | Property}.
  *
- * Located at {@link PropertySetParams.properties | PropertySetParams.properties}
+ * These parameters are used when creating {@link Property | Properties} within a {@link PropertySet | PropertySet}.
  *
- * See {@link data | @xeokit/sdk/data}   for usage.
+ * For detailed usage, refer to {@link data | @xeokit/sdk/data}.
  */
 export interface PropertyParams {
 
     /**
-     * Name of the {@link Property}.
+     * The name of the {@link Property | Property}.
      */
     name: string;
 
     /**
-     * Value of the {@link Property}.
+     * The value of the {@link Property | Property}.
+     * This can be any type of data depending on the property.
      */
     value: any;
 
     /**
-     * Type of the {@link Property}.
+     * The type of the {@link Property | Property}.
+     * This could specify the general data type, such as `string`, `number`, etc.
      */
     type?: string;
 
     /**
-     * Value type of the {@link Property}.
+     * The type of the {@link Property | Property}'s value.
+     * This specifies the value's data type, which can be different from the property's type.
      */
     valueType?: string | number;
 
     /**
-     * Description of the {@link Property}.
+     * A description of the {@link Property | Property}.
+     * This is typically used for providing additional context or clarification about the property.
      */
     description?: string;
 }

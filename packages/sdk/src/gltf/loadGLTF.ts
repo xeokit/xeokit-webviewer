@@ -41,22 +41,30 @@ interface ParsingContext {
  * Loads glTF file data into a {@link scene!SceneModel | SceneModel} and/or
  * a {@link data!DataModel | DataModel}.
  *
- * * Expects {@link scene!SceneModel.built | SceneModel.built} and {@link scene!SceneModel.destroyed | SceneModel.destroyed} to be ````false````
- * * Does not call {@link scene!SceneModel.build | SceneModel.build} - we call that ourselves, when we have finished building the SceneModel
+ * This function allows you to load geometry and material color data from a glTF file
+ * into the {@link scene!SceneModel | SceneModel}, while basic semantic data is
+ * loaded into the {@link data!DataModel | DataModel}. For glTF, this will create a
+ * basic aggregation hierarchy (see {@link basictypes | @xeokit/sdk/basictypes}).
+ *
+ * **Important:**
+ * - Expects {@link scene!SceneModel.built | SceneModel.built} and
+ *   {@link scene!SceneModel.destroyed | SceneModel.destroyed} to be `false`.
+ * - Does not invoke {@link scene!SceneModel.build | SceneModel.build}, which is done separately after the SceneModel has been fully loaded.
  *
  * See {@link gltf | @xeokit/sdk/gltf} for usage.
  *
- * @param params - Loading parameters.
- * @param params.fileData - glTF file data
- * @param params.sceneModel - SceneModel to load geometry and material colors into.
- * @param params.dataModel - DataModel to load basic semantic data into. For glTF, this will create a basic aggregation hierarchy (see {@link basictypes | @xeokit/sdk/basictypes}).
- * @returns {Promise} Resolves when glTF has been loaded.
- * @returns {Promise} Resolves when glTF has been loaded into the SceneModel and/or DataModel.
- * @throws *{@link core!SDKError | SDKError}*
- * * If the SceneModel has already been destroyed.
- * * If the SceneModel has already been built.
- * * If the DataModel has already been destroyed.
- * * If the DataModel has already been built.
+ * @param params - The parameters required for loading glTF file data.
+ * @param params.fileData - The glTF file data to load into the models.
+ * @param params.sceneModel - The {@link scene!SceneModel | SceneModel} to load geometry and material color data into.
+ * @param params.dataModel - The {@link data!DataModel | DataModel} to load basic semantic data into. This creates a basic aggregation hierarchy for glTF files.
+ *
+ * @returns {Promise} Resolves when the glTF data has been successfully loaded into the SceneModel and/or DataModel.
+ *
+ * @throws {@link core!SDKError | SDKError}
+ * - If the {@link scene!SceneModel | SceneModel} has already been destroyed.
+ * - If the {@link scene!SceneModel | SceneModel} has already been built.
+ * - If the {@link data!DataModel | DataModel} has already been destroyed.
+ * - If the {@link data!DataModel | DataModel} has already been built.
  */
 export function loadGLTF(params: {
     fileData: any,

@@ -1,22 +1,20 @@
 import type {RendererObject} from "./RendererObject";
 
 /**
- *  Internal interface through which a {@link Scene | Scene} can load content updates into a renderers.
+ *  Internal interface through which a {@link SceneModel | SceneModel} can load content updates
+ *  into a {@link viewer!Viewer | Viewer's} {@link viewer!Renderer | Renderer}.
  *
- *  An instance of this class is set on {@link SceneModel.rendererModel | SceneModel.rendererModel} when
- *  the {@link SceneModel | SceneModel} has been added to a {@link viewer!Viewer | Viewer}.
+ *  While a Scene is attached to a Viewer, an instance of this class is set
+ *  on {@link SceneModel.rendererModel | SceneModel.rendererModel} of each of the
+ *  Scene's SceneModels.
  *
  * @internal
  */
 export interface RendererModel {
 
     /**
-     * Interface through which each of the SceneModel's {@link SceneObject | SceneObjects} loads attribute
-     * updates (geometry, colors etc) into a {@link viewer!Viewer | Viewer's} {@link viewer!Renderer | Renderer}.
-     *
-     *  This is defined when the owner {@link SceneModel | SceneModel} has been added to a {@link viewer!Viewer | Viewer}.
-     *
-     * @internal
+     * Interfaces through which {@link viewer!ViewObject | ViewObjects} control the appearance of
+     * their {@link SceneObject | SceneObjects} in a {@link viewer!Viewer | Viewer}.
      */
     rendererObjects: { [key:string]: RendererObject};
 }

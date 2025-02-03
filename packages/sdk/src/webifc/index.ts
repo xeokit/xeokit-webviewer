@@ -9,13 +9,9 @@
  *
  * ---
  *
- * The xeokit SDK can import 3D building models from  Industry Foundation Classes ([IFC](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ifc)) files,
- * a standard file format used in the field of Building Information Modeling (BIM) to exchange information between
- * different software applications used in the construction and building industries.
+ * The xeokit SDK provides functionality to import 3D building models from Industry Foundation Classes ([IFC](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#ifc)) files, which are commonly used in the field of Building Information Modeling (BIM). IFC files facilitate the exchange of information between different software applications used in the construction and building industries.
  *
- * To import a medium-sized IFC model into xeokit, use the {@link webifc!loadWebIFC | loadWebIFC} function, which will load the file into
- * a {@link scene!SceneModel | SceneModel} and a {@link data!DataModel | DataModel}. Internally, loadWebIFC
- * uses the [web-ifc](https://github.com/IFCjs/web-ifc) API to parse geometry and data from the IFC file.
+ * The {@link webifc!loadWebIFC | loadWebIFC} function can be used to import medium-sized IFC models into xeokit. This function loads the IFC file data into both a {@link scene!SceneModel | SceneModel} (which holds the model's geometry and materials) and a {@link data!DataModel | DataModel} (which holds the model's semantic data). The `loadWebIFC` function internally leverages the [web-ifc](https://github.com/IFCjs/web-ifc) API to parse geometry and data from the IFC file.
  *
  * <br>
  *
@@ -25,31 +21,25 @@
  *
  * ## Installation
  *
+ * To install the xeokit SDK, use the following npm command:
+ *
  * ````bash
  * npm install @xeokit/sdk
  * ````
  *
- * ## Usage
+ * ## Usage Example
  *
- * The example below shows how to use {@link webifc!loadWebIFC | loadWebIFC} in context.
+ * The example below demonstrates how to use {@link webifc!loadWebIFC | loadWebIFC} in the xeokit context.
  *
- * In this example, we will create a {@link viewer!Viewer | Viewer} with
- * a {@link webglrenderer!WebGLRenderer | WebGLRenderer}  and a {@link scene!Scene | Scene}, which holds model geometry
- * and materials. We'll also create a {@link data!Data | Data}, which will hold semantic data for our model.
+ * This example sets up a {@link viewer!Viewer | Viewer} using a {@link webglrenderer!WebGLRenderer | WebGLRenderer} and a {@link scene!Scene | Scene} to hold the model's geometry and materials. We also create a {@link data!Data | Data} instance to store the model's semantic data.
  *
- * On our Viewer, we will create a single {@link viewer!View | View} to render it to a canvas element on the page. We will
- * also attach a {@link cameracontrol!CameraControl | CameraControl} to our View, allowing us to control its camera with mouse and touch input.
+ * In the Viewer, we create a {@link viewer!View | View} to render the model to an HTML canvas, and attach a {@link cameracontrol!CameraControl | CameraControl} to allow mouse and touch input for camera control.
  *
- * Within the Scene, we will create a {@link scene!SceneModel | SceneModel} to hold model geometry and materials. Within Data, we will
- * create a {@link data!DataModel | DataModel} to hold semantic IFC data, which includes IFC elements and property sets.
+ * The Scene will include a {@link scene!SceneModel | SceneModel} for geometry and materials, and the Data will include a {@link data!DataModel | DataModel} to hold the IFC elements and property sets.
  *
- * We will then use
- * {@link webifc!loadWebIFC | loadWebIFC} to load an IFC file into our SceneModel and DataModel. Before we do that, however,
- * we need to successfully instantiate and initialize the WebIFC API, which we pass into loadWebIFC.
+ * Before using {@link webifc!loadWebIFC | loadWebIFC}, we initialize the WebIFC API, which is then passed into the `loadWebIFC` function. The example also demonstrates error handling using the {@link core!SDKError | SDKError} class.
  *
- * The {@link core!SDKError | SDKError} class will be used to handle any errors that may occur during this process.
- *
- * * [Run this example]()
+ * Example JavaScript code:
  *
  * ````javascript
  * import {SDKError} from "@xeokit/core";
@@ -73,7 +63,7 @@
  *
  * const view = viewer.createView({
  *     id: "myView",
- *     elementId: "myCanvas" // << Ensure that this HTMLElement exists in the page
+ *     elementId: "myCanvas" // Ensure this HTMLElement exists in the page
  * });
  *
  * view.camera.eye = [1841982.93, 10.03, -5173286.74];
@@ -83,52 +73,37 @@
  * new CameraControl(view, {});
  *
  * const ifcAPI = new WebIFC.IfcAPI();
- *
  * ifcAPI.SetWasmPath("https://cdn.jsdelivr.net/npm/web-ifc@0.0.51/");
  *
  * ifcAPI.Init().then(() => {
  *
- *     const sceneModel = scene.createModel({
- *         id: "myModel"
- *     });
- *
- *     const dataModel = data.createModel({
- *         id: "myModel"
- *     });
+ *     const sceneModel = scene.createModel({ id: "myModel" });
+ *     const dataModel = data.createModel({ id: "myModel" });
  *
  *     fetch("model.ifc").then(response => {
- *
  *         response.arrayBuffer().then(fileData => {
- *
  *             loadWebIFC({
  *                 ifcAPI,
  *                 fileData,
  *                 sceneModel,
  *                 dataModel
  *             }).then(() => {
- *
  *                 sceneModel.build();
  *                 dataModel.build();
- *
  *             }).catch(err => {
- *
  *                 sceneModel.destroy();
  *                 dataModel.destroy();
- *
  *                 console.error(`Error loading IFC file with WebIFC: ${err}`);
  *             });
- *
  *         }).catch(err => {
- *              console.error(`Error creating ArrayBuffer from fetch response: ${err}`);
+ *             console.error(`Error creating ArrayBuffer from fetch response: ${err}`);
  *         });
- *
- *      }).catch(err => {
- *          console.error(`Error fetching IFC file: ${err}`);
- *      });
- *
- *  }).catch(err => {
- *      console.error(`Error initializing WebIFC.IfcAPI: ${err}`);
- *  });
+ *     }).catch(err => {
+ *         console.error(`Error fetching IFC file: ${err}`);
+ *     });
+ * }).catch(err => {
+ *     console.error(`Error initializing WebIFC.IfcAPI: ${err}`);
+ * });
  * ````
  *
  * @module webifc

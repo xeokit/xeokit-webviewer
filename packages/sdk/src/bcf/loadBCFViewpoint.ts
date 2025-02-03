@@ -7,6 +7,7 @@ import {IfcOpeningElement, IfcSpace} from "../ifctypes";
 import {BasicAggregation} from "../basictypes";
 import {BCFVector} from "./BCFVector";
 import {BCFComponent} from "./BCFComponent";
+import {PickResult} from "../viewer";
 
 const tempVec3 = createVec3();
 const tempVec3a = createVec3();
@@ -359,7 +360,7 @@ export function loadBCFViewpoint(params: LoadBCFViewpointParams): void {
                 rayOrigin: eye,
                 rayDirection: look
             });
-            look = (hit ? hit.worldPos : addVec3(eye, look, tempVec3));
+            look = (hit instanceof PickResult ? hit.worldPos : addVec3(eye, look, tempVec3));
         } else {
             look = addVec3(eye, look, tempVec3);
         }

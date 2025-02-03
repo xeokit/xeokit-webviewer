@@ -20,18 +20,19 @@
  * ````javascript
  * import {buildBoxGeometry} from "@xeokit/sdk/procgen";
  *
- * const geometryArrays = buildBoxGeometry({
- *     center: [0,0,0],
- *     xSize: 1,  // Half-size on each axis
+ * const boxGeometry = buildBoxGeometry({
+ *     center: [0, 0, 0],
+ *     xSize: 1,
  *     ySize: 1,
  *     zSize: 1
  * });
- * ````
+ * ```
+ * ---
  *
  * @module procgen
  */
 export * from "./buildBoxGeometry";
-export * from "./buildGridGeometry"
+export * from "./buildGridGeometry";
 export * from "./buildBoxLinesGeometry";
 export * from "./buildCylinderGeometry";
 export * from "./buildSphereGeometry";

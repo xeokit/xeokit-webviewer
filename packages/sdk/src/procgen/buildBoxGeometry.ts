@@ -1,26 +1,35 @@
 import * as utils from "../utils";
-import type {GeometryArrays} from "./GeometryArrays";
-import {TrianglesPrimitive} from "../constants";
-import {SDKError} from "../core";
+import type { GeometryArrays } from "./GeometryArrays";
+import { TrianglesPrimitive } from "../constants";
+import { SDKError } from "../core";
 
 /**
  * Creates box-shaped geometry arrays.
  *
+ * This function generates the geometry arrays required for a box mesh with configurable sizes along each axis.
+ * It provides vertex positions, UV coordinates, and indices to define the box's geometry. You can adjust the box's
+ * size along the X, Y, and Z axes and also specify its center position in 3D space.
+ *
  * ## Usage
  *
- * Creating a {@link scene!SceneMesh | SceneMesh} with a box-shaped {@link scene!SceneGeometry | SceneGeometry}:
- *
  * ````javascript
- * TODO
+ * const boxGeometry = buildBoxGeometry({
+ *     center: [0, 0, 0],   // Center of the box
+ *     xSize: 2,            // Half-size along the X-axis
+ *     ySize: 1,            // Half-size along the Y-axis
+ *     zSize: 1.5           // Half-size along the Z-axis
+ * });
  * ````
  *
- * @param cfg Configs
+ * @param cfg Configurations for the box geometry.
  * @param [cfg.id] Optional ID, unique among all components in the parent {@link scene!Scene | Scene}, generated automatically when omitted.
- * @param [cfg.center]  3D point indicating the center position.
- * @param [cfg.xSize=1.0]  Half-size on the X-axis.
- * @param [cfg.ySize=1.0]  Half-size on the Y-axis.
- * @param [cfg.zSize=1.0]  Half-size on the Z-axis.
- * @returns {Object} GeometryArrays arrays.
+ * @param [cfg.center=[0,0,0]] The center of the box in 3D space, default is the origin `[0, 0, 0]`.
+ * @param [cfg.xSize=1.0] Half-size of the box along the X-axis. The default value is `1.0`.
+ * @param [cfg.ySize=1.0] Half-size of the box along the Y-axis. The default value is `1.0`.
+ * @param [cfg.zSize=1.0] Half-size of the box along the Z-axis. The default value is `1.0`.
+ * @returns {GeometryArrays | SDKError} Returns the geometry arrays for the box or an {@link SDKError} if the input sizes are invalid.
+ *
+ * @throws {SDKError} If any of the sizes (`xSize`, `ySize`, or `zSize`) are negative, an error is thrown.
  */
 export function buildBoxGeometry(cfg: {
     center?: number[],
@@ -66,7 +75,7 @@ export function buildBoxGeometry(cfg: {
         primitive: TrianglesPrimitive,
 
         // The vertices - eight for our cube, each
-        // one spanning three array elements for X,Y and Z
+        // one spanning three array elements for X, Y, and Z
         positions: [
 
             // v0-v1-v2-v3 front
@@ -106,7 +115,7 @@ export function buildBoxGeometry(cfg: {
             xmax, ymax, zmin
         ],
 
-        // UV coords
+        // UV coordinates for each vertex
         uv: [
 
             // v0-v1-v2-v3 front
@@ -146,38 +155,21 @@ export function buildBoxGeometry(cfg: {
             0, 0
         ],
 
-        // Indices - these organise the
-        // positions and uv texture coordinates
-        // into geometric primitives in accordance
-        // with the "primitive" parameter,
-        // in this case a set of three indices
-        // for each triangle.
-        //
-        // Note that each triangle is specified
-        // in counter-clockwise winding order.
-        //
-        // You can specify them in clockwise
-        // order if you configure the Modes
-        // node's frontFace flag as "cw", instead of
-        // the default "ccw".
+        // Indices that organize vertices into geometric primitives (triangles)
+        // The triangles are specified in counter-clockwise winding order
         indices: [
             0, 1, 2,
-            0, 2, 3,
-            // front
+            0, 2, 3, // front
             4, 5, 6,
-            4, 6, 7,
-            // right
+            4, 6, 7, // right
             8, 9, 10,
-            8, 10, 11,
-            // top
+            8, 10, 11, // top
             12, 13, 14,
-            12, 14, 15,
-            // left
+            12, 14, 15, // left
             16, 17, 18,
-            16, 18, 19,
-            // bottom
+            16, 18, 19, // bottom
             20, 21, 22,
-            20, 22, 23
+            20, 22, 23 // back
         ]
     });
 }

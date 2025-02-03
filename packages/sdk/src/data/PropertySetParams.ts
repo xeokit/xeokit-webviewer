@@ -1,34 +1,35 @@
-import type {PropertyParams} from "./PropertyParams";
+import type { PropertyParams } from "./PropertyParams";
 
 /**
- * Parameters for a {@link PropertySet}.
+ * Parameters used to define a {@link PropertySet | PropertySet}.
  *
- * * Passed to  {@link DataModel.createPropertySet | DataModel.createPropertySet}
- * * Located at {@link DataModelParams.propertySets | DataModelParams.propertySets}
+ * These parameters are:
+ * * Passed to {@link DataModel.createPropertySet | DataModel.createPropertySet}.
+ * * Located at {@link DataModelParams.propertySets | DataModelParams.propertySets}.
  *
- * See {@link data | @xeokit/sdk/data}   for usage.
+ * For detailed usage, refer to {@link data | @xeokit/sdk/data}.
  */
 export interface PropertySetParams {
 
     /**
-     * Unique ID of the PropertySet.
+     * The unique identifier for the PropertySet.
      *
-     * PropertySets are stored by ID in {@link Data.propertySets | Data.propertySets} and {@link DataModel.propertySets | DataModel.propertySets}.
+     * PropertySets are stored by this ID in {@link Data.propertySets | Data.propertySets} and {@link DataModel.propertySets | DataModel.propertySets}.
      */
     id: string;
 
     /**
-     * Human-readable name of the PropertySet.
+     * The human-readable name of the PropertySet.
      */
     name: string;
 
     /**
-     * Type of each PropertySet.
+     * The type of this PropertySet.
      */
     type: string;
 
     /**
-     * The {@link Property | Properties} within the PropertySet.
+     * The collection of {@link Property | Properties} within the PropertySet.
      */
     properties: PropertyParams[];
 }

@@ -1,38 +1,46 @@
-import type {DataObject} from "./DataObject";
+import type { DataObject } from "./DataObject";
 
 /**
- * A relationship between two {@link DataObject | DataObjects}.
+ * Represents a relationship between two {@link DataObject | DataObjects}.
  *
- * See {@link data | @xeokit/sdk/data}   for usage.
+ * This class defines the connection between two objects in a data model, which can be of any type
+ * that identifies the relationship. This relationship is stored within the related and relating
+ * attributes of the {@link DataObject | DataObject}.
+ *
+ * For detailed usage, refer to {@link data | @xeokit/sdk/data}.
  */
 export class Relationship {
 
     /**
      * The type of this Relationship.
      *
-     * This can be any value that identifies the Relationship type within your DataModel.
+     * This value uniquely identifies the relationship type within your DataModel.
      */
     readonly type: number;
 
     /**
-     * The relating {@link DataObject | DataObject} in this Relationship.
+     * The {@link DataObject | DataObject} that is the source of this Relationship.
      *
-     * This Relationship will be stored by {@link DataObject.type | DataObject.type}
-     * in the DataObject's {@link DataObject.related | DataObject.related} attribute.
+     * This Relationship will be stored in the {@link DataObject.related | DataObject.related} attribute
+     * of the relating DataObject.
      */
     readonly relatingObject: DataObject;
 
     /**
-     * The related {@link DataObject | DataObject} in this Relationship.
+     * The {@link DataObject | DataObject} that is the target of this Relationship.
      *
-     * This Relationship will be stored by {@link DataObject.type | DataObject.type} in
-     * the DataObject's {@link DataObject.relating | DataObject.relating} attribute.
+     * This Relationship will be stored in the {@link DataObject.relating | DataObject.relating} attribute
+     * of the related DataObject.
      */
     readonly relatedObject: DataObject;
 
     /**
+     * Constructs a new Relationship between two {@link DataObject | DataObjects}.
+     *
      * @private
-     * @ignore
+     * @param type - The type of relationship.
+     * @param relatingObject - The source DataObject in the relationship.
+     * @param relatedObject - The target DataObject in the relationship.
      */
     constructor(type: number, relatingObject: DataObject, relatedObject: DataObject) {
         this.type = type;
