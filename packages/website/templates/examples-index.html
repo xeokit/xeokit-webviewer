@@ -19,12 +19,14 @@
     <script src="./../libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <title></title>
-    <link href='./../../css/index.css' rel='stylesheet' type='text/css'>
+    <link href='./../css/index.css' rel='stylesheet' type='text/css'>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
     <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent" href="../../">@xeokit/sdk</a>/<a class="navbar-brand" href="./index.html">Examples</a></span>
-    @@include('./navbar-pulldown.html')
+    @@include('./navbar-pulldown.html', {
+        root: "./../"
+    });
 </nav>
 <!--<header class="bg-black home-header bg-black">-->
 <!--    <div class="container h-75">-->

@@ -1,6 +1,6 @@
 {
-  "ABB3ToOBB3": {
-    "path": "/api-docs#/docs/api/functions/boundaries.ABB3ToOBB3.html",
+  "AABB3ToOBB3": {
+    "path": "/api-docs#/docs/api/functions/boundaries.AABB3ToOBB3.html",
     "kind": "function"
   },
   "addVec3": {
@@ -50,6 +50,10 @@
   "applyIf": {
     "path": "/api-docs#/docs/api/functions/utils.applyIf.html",
     "kind": "function"
+  },
+  "AZERTYLayout": {
+    "path": "/api-docs#/docs/api/variables/constants.AZERTYLayout.html",
+    "kind": "variable"
   },
   "b2": {
     "path": "/api-docs#/docs/api/functions/curves.b2.html",
@@ -319,10 +323,6 @@
     "path": "/api-docs#/docs/api/functions/boundaries.collapseAABB3.html",
     "kind": "function"
   },
-  "collapseAABB3Int16": {
-    "path": "/api-docs#/docs/api/functions/boundaries.collapseAABB3Int16.html",
-    "kind": "function"
-  },
   "compareMat4": {
     "path": "/api-docs#/docs/api/functions/matrix.compareMat4.html",
     "kind": "function"
@@ -457,10 +457,6 @@
   },
   "createRTCViewMat": {
     "path": "/api-docs#/docs/api/functions/rtc.createRTCViewMat.html",
-    "kind": "function"
-  },
-  "createSceneModelStreamParams": {
-    "path": "/api-docs#/docs/api/functions/webglrenderer.createSceneModelStreamParams.html",
     "kind": "function"
   },
   "createSceneObjectPrimsKdTree3": {
@@ -775,10 +771,6 @@
     "path": "/api-docs#/docs/api/interfaces/scene.GeometryView.html",
     "kind": "interface"
   },
-  "getAABB2Center": {
-    "path": "/api-docs#/docs/api/functions/boundaries.getAABB2Center.html",
-    "kind": "function"
-  },
   "getAABB3Area": {
     "path": "/api-docs#/docs/api/functions/boundaries.getAABB3Area.html",
     "kind": "function"
@@ -788,8 +780,8 @@
     "kind": "function"
   },
   "getAABB3Diag": {
-    "path": "/api-docs#/docs/api/variables/boundaries.getAABB3Diag.html",
-    "kind": "variable"
+    "path": "/api-docs#/docs/api/functions/boundaries.getAABB3Diag.html",
+    "kind": "function"
   },
   "getAABB3DiagPoint": {
     "path": "/api-docs#/docs/api/functions/boundaries.getAABB3DiagPoint.html",
@@ -4111,6 +4103,402 @@
     "path": "/api-docs#/docs/api/classes/kdtree2.KdVertex2.html",
     "kind": "class"
   },
+  "KEY_A": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_A.html",
+    "kind": "variable"
+  },
+  "KEY_ADD": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_ADD.html",
+    "kind": "variable"
+  },
+  "KEY_ALT": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_ALT.html",
+    "kind": "variable"
+  },
+  "KEY_B": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_B.html",
+    "kind": "variable"
+  },
+  "KEY_BACK_SLASH": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_BACK_SLASH.html",
+    "kind": "variable"
+  },
+  "KEY_BACKSPACE": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_BACKSPACE.html",
+    "kind": "variable"
+  },
+  "KEY_C": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_C.html",
+    "kind": "variable"
+  },
+  "KEY_CAPS_LOCK": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_CAPS_LOCK.html",
+    "kind": "variable"
+  },
+  "KEY_CLOSE_BRACKET": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_CLOSE_BRACKET.html",
+    "kind": "variable"
+  },
+  "KEY_COMMA": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_COMMA.html",
+    "kind": "variable"
+  },
+  "KEY_CTRL": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_CTRL.html",
+    "kind": "variable"
+  },
+  "KEY_D": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_D.html",
+    "kind": "variable"
+  },
+  "KEY_DASH": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_DASH.html",
+    "kind": "variable"
+  },
+  "KEY_DECIMAL_POINT": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_DECIMAL_POINT.html",
+    "kind": "variable"
+  },
+  "KEY_DELETE": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_DELETE.html",
+    "kind": "variable"
+  },
+  "KEY_DIVIDE": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_DIVIDE.html",
+    "kind": "variable"
+  },
+  "KEY_DOWN_ARROW": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_DOWN_ARROW.html",
+    "kind": "variable"
+  },
+  "KEY_E": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_E.html",
+    "kind": "variable"
+  },
+  "KEY_END": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_END.html",
+    "kind": "variable"
+  },
+  "KEY_ENTER": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_ENTER.html",
+    "kind": "variable"
+  },
+  "KEY_EQUAL_SIGN": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_EQUAL_SIGN.html",
+    "kind": "variable"
+  },
+  "KEY_ESCAPE": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_ESCAPE.html",
+    "kind": "variable"
+  },
+  "KEY_F": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F.html",
+    "kind": "variable"
+  },
+  "KEY_F1": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F1.html",
+    "kind": "variable"
+  },
+  "KEY_F10": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F10.html",
+    "kind": "variable"
+  },
+  "KEY_F11": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F11.html",
+    "kind": "variable"
+  },
+  "KEY_F12": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F12.html",
+    "kind": "variable"
+  },
+  "KEY_F2": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F2.html",
+    "kind": "variable"
+  },
+  "KEY_F3": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F3.html",
+    "kind": "variable"
+  },
+  "KEY_F4": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F4.html",
+    "kind": "variable"
+  },
+  "KEY_F5": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F5.html",
+    "kind": "variable"
+  },
+  "KEY_F6": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F6.html",
+    "kind": "variable"
+  },
+  "KEY_F7": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F7.html",
+    "kind": "variable"
+  },
+  "KEY_F8": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F8.html",
+    "kind": "variable"
+  },
+  "KEY_F9": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_F9.html",
+    "kind": "variable"
+  },
+  "KEY_FORWARD_SLASH": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_FORWARD_SLASH.html",
+    "kind": "variable"
+  },
+  "KEY_G": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_G.html",
+    "kind": "variable"
+  },
+  "KEY_GRAVE_ACCENT": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_GRAVE_ACCENT.html",
+    "kind": "variable"
+  },
+  "KEY_H": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_H.html",
+    "kind": "variable"
+  },
+  "KEY_HOME": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_HOME.html",
+    "kind": "variable"
+  },
+  "KEY_I": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_I.html",
+    "kind": "variable"
+  },
+  "KEY_INSERT": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_INSERT.html",
+    "kind": "variable"
+  },
+  "KEY_J": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_J.html",
+    "kind": "variable"
+  },
+  "KEY_K": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_K.html",
+    "kind": "variable"
+  },
+  "KEY_L": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_L.html",
+    "kind": "variable"
+  },
+  "KEY_LEFT_ARROW": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_LEFT_ARROW.html",
+    "kind": "variable"
+  },
+  "KEY_LEFT_WINDOW": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_LEFT_WINDOW.html",
+    "kind": "variable"
+  },
+  "KEY_M": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_M.html",
+    "kind": "variable"
+  },
+  "KEY_MULTIPLY": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_MULTIPLY.html",
+    "kind": "variable"
+  },
+  "KEY_N": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_N.html",
+    "kind": "variable"
+  },
+  "KEY_NUM_0": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUM_0.html",
+    "kind": "variable"
+  },
+  "KEY_NUM_1": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUM_1.html",
+    "kind": "variable"
+  },
+  "KEY_NUM_2": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUM_2.html",
+    "kind": "variable"
+  },
+  "KEY_NUM_3": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUM_3.html",
+    "kind": "variable"
+  },
+  "KEY_NUM_4": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUM_4.html",
+    "kind": "variable"
+  },
+  "KEY_NUM_5": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUM_5.html",
+    "kind": "variable"
+  },
+  "KEY_NUM_6": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUM_6.html",
+    "kind": "variable"
+  },
+  "KEY_NUM_7": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUM_7.html",
+    "kind": "variable"
+  },
+  "KEY_NUM_8": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUM_8.html",
+    "kind": "variable"
+  },
+  "KEY_NUM_9": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUM_9.html",
+    "kind": "variable"
+  },
+  "KEY_NUM_LOCK": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUM_LOCK.html",
+    "kind": "variable"
+  },
+  "KEY_NUMPAD_0": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUMPAD_0.html",
+    "kind": "variable"
+  },
+  "KEY_NUMPAD_1": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUMPAD_1.html",
+    "kind": "variable"
+  },
+  "KEY_NUMPAD_2": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUMPAD_2.html",
+    "kind": "variable"
+  },
+  "KEY_NUMPAD_3": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUMPAD_3.html",
+    "kind": "variable"
+  },
+  "KEY_NUMPAD_4": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUMPAD_4.html",
+    "kind": "variable"
+  },
+  "KEY_NUMPAD_5": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUMPAD_5.html",
+    "kind": "variable"
+  },
+  "KEY_NUMPAD_6": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUMPAD_6.html",
+    "kind": "variable"
+  },
+  "KEY_NUMPAD_7": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUMPAD_7.html",
+    "kind": "variable"
+  },
+  "KEY_NUMPAD_8": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUMPAD_8.html",
+    "kind": "variable"
+  },
+  "KEY_NUMPAD_9": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_NUMPAD_9.html",
+    "kind": "variable"
+  },
+  "KEY_O": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_O.html",
+    "kind": "variable"
+  },
+  "KEY_OPEN_BRACKET": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_OPEN_BRACKET.html",
+    "kind": "variable"
+  },
+  "KEY_P": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_P.html",
+    "kind": "variable"
+  },
+  "KEY_PAGE_DOWN": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_PAGE_DOWN.html",
+    "kind": "variable"
+  },
+  "KEY_PAGE_UP": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_PAGE_UP.html",
+    "kind": "variable"
+  },
+  "KEY_PAUSE_BREAK": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_PAUSE_BREAK.html",
+    "kind": "variable"
+  },
+  "KEY_PERIOD": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_PERIOD.html",
+    "kind": "variable"
+  },
+  "KEY_Q": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_Q.html",
+    "kind": "variable"
+  },
+  "KEY_R": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_R.html",
+    "kind": "variable"
+  },
+  "KEY_RIGHT_ARROW": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_RIGHT_ARROW.html",
+    "kind": "variable"
+  },
+  "KEY_RIGHT_WINDOW": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_RIGHT_WINDOW.html",
+    "kind": "variable"
+  },
+  "KEY_S": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_S.html",
+    "kind": "variable"
+  },
+  "KEY_SCROLL_LOCK": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_SCROLL_LOCK.html",
+    "kind": "variable"
+  },
+  "KEY_SELECT_KEY": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_SELECT_KEY.html",
+    "kind": "variable"
+  },
+  "KEY_SEMI_COLON": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_SEMI_COLON.html",
+    "kind": "variable"
+  },
+  "KEY_SHIFT": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_SHIFT.html",
+    "kind": "variable"
+  },
+  "KEY_SINGLE_QUOTE": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_SINGLE_QUOTE.html",
+    "kind": "variable"
+  },
+  "KEY_SPACE": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_SPACE.html",
+    "kind": "variable"
+  },
+  "KEY_SUBTRACT": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_SUBTRACT.html",
+    "kind": "variable"
+  },
+  "KEY_T": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_T.html",
+    "kind": "variable"
+  },
+  "KEY_TAB": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_TAB.html",
+    "kind": "variable"
+  },
+  "KEY_U": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_U.html",
+    "kind": "variable"
+  },
+  "KEY_UP_ARROW": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_UP_ARROW.html",
+    "kind": "variable"
+  },
+  "KEY_V": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_V.html",
+    "kind": "variable"
+  },
+  "KEY_W": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_W.html",
+    "kind": "variable"
+  },
+  "KEY_X": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_X.html",
+    "kind": "variable"
+  },
+  "KEY_Y": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_Y.html",
+    "kind": "variable"
+  },
+  "KEY_Z": {
+    "path": "/api-docs#/docs/api/variables/cameracontrol.KEY_Z.html",
+    "kind": "variable"
+  },
   "KTX2TextureTranscoder": {
     "path": "/api-docs#/docs/api/classes/ktx2.KTX2TextureTranscoder.html",
     "kind": "class"
@@ -4411,6 +4799,14 @@
     "path": "/api-docs#/docs/api/functions/boundaries.OBB3ToAABB3.html",
     "kind": "function"
   },
+  "octEncodeNormal": {
+    "path": "/api-docs#/docs/api/functions/compression.octEncodeNormal.html",
+    "kind": "function"
+  },
+  "octEncodeVec3": {
+    "path": "/api-docs#/docs/api/functions/compression.octEncodeVec3.html",
+    "kind": "function"
+  },
   "OrbitNavigationMode": {
     "path": "/api-docs#/docs/api/variables/constants.OrbitNavigationMode.html",
     "kind": "variable"
@@ -4539,6 +4935,14 @@
     "path": "/api-docs#/docs/api/variables/constants.QualityRender.html",
     "kind": "variable"
   },
+  "quantizePositions3": {
+    "path": "/api-docs#/docs/api/functions/compression.quantizePositions3.html",
+    "kind": "function"
+  },
+  "quantizePositions3AndCreateMat4": {
+    "path": "/api-docs#/docs/api/functions/compression.quantizePositions3AndCreateMat4.html",
+    "kind": "function"
+  },
   "quatToAngleAxis": {
     "path": "/api-docs#/docs/api/functions/matrix.quatToAngleAxis.html",
     "kind": "function"
@@ -4558,6 +4962,10 @@
   "Queue": {
     "path": "/api-docs#/docs/api/classes/utils.Queue.html",
     "kind": "class"
+  },
+  "QWERTYLayout": {
+    "path": "/api-docs#/docs/api/variables/constants.QWERTYLayout.html",
+    "kind": "variable"
   },
   "RADTODEG": {
     "path": "/api-docs#/docs/api/variables/math.RADTODEG.html",
@@ -5039,12 +5447,12 @@
     "path": "/api-docs#/docs/api/variables/constants.SurfacePrimitive.html",
     "kind": "variable"
   },
-  "tangentQuadraticBézier": {
-    "path": "/api-docs#/docs/api/functions/curves.tangentQuadraticBézier.html",
+  "tangentQuadraticBezier": {
+    "path": "/api-docs#/docs/api/functions/curves.tangentQuadraticBezier.html",
     "kind": "function"
   },
-  "tangentQuadraticBézier3": {
-    "path": "/api-docs#/docs/api/functions/curves.tangentQuadraticBézier3.html",
+  "tangentQuadraticBezier3": {
+    "path": "/api-docs#/docs/api/functions/curves.tangentQuadraticBezier3.html",
     "kind": "function"
   },
   "tangentSpline": {
@@ -5078,6 +5486,10 @@
   "TINRelief": {
     "path": "/api-docs#/docs/api/variables/cityjsontypes_1_1_3.TINRelief.html",
     "kind": "variable"
+  },
+  "transformAndOctEncodeNormals": {
+    "path": "/api-docs#/docs/api/functions/compression.transformAndOctEncodeNormals.html",
+    "kind": "function"
   },
   "transformOBB3": {
     "path": "/api-docs#/docs/api/functions/boundaries.transformOBB3.html",
