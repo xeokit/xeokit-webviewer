@@ -198,7 +198,7 @@
                 id: "demoModel"
             });
 
-            fetch("../../../data/models/Duplex/json/scenemodel.json").then(response => {
+            fetch("../../models/models/Duplex/json/scenemodel.json").then(response => {
                 response.json().then(fileData => {
                     sceneModel.fromParams(fileData);
                     sceneModel.build();
