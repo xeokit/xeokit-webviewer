@@ -182,7 +182,7 @@
     // This SceneModel will appear in ViewLayer "viewLayer1"
     //-----------------------------------------------------------------------------------------
 
-    fetch("../../models/xgf/MAP.xgf").then(response => {
+    fetch("../../models/MAP/ifc2gltf2xgf/model.xgf").then(response => {
         response.arrayBuffer().then(fileData => {
             const sceneModel = scene.createModel({
                 id: "demoModel",
@@ -202,7 +202,7 @@
     // This SceneModel will appear in ViewLayer "viewLayer2"
     //-----------------------------------------------------------------------------------------
 
-    fetch("../../models/gltf/HousePlan.glb").then(response => {
+    fetch("../../models/HousePlan/gltf/model.glb").then(response => {
         response.arrayBuffer().then(fileData => {
             const sceneModel = scene.createModel({
                 id: "demoModel2",
