@@ -43,15 +43,15 @@ export class DemoHelper {
                 this.statusContainer.appendChild(descElement);
             }
 
-            fetch("./../../../articles/index.json").then(response => {
+            fetch("../../articles/index.json").then(response => {
                 response.json().then(articlesIndex => {
 
                     this.articlesIndex = articlesIndex;
 
-                    fetch("./../../../data/docsLinks.json").then(response => {
+                    fetch("../../data/docsLinks.json").then(response => {
                         response.json().then(docsLinks => {
 
-                            fetch("./../../../data/docsLookup.json").then(response => {
+                            fetch("../../data/docsLookup.json").then(response => {
                                 response.json().then(docsLookup => {
 
                                     DOCS_LOOKUP = {...docsLookup, ...docsLinks};
