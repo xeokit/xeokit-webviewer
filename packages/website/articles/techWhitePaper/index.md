@@ -81,13 +81,14 @@ simultaneously, and the viewer allows for the creation of separate canvases, fea
 annotations,
 and other elements, to display multiple views of our models.
 
-| Modules                                                                                             | Description                                          |
-|-----------------------------------------------------------------------------------------------------|------------------------------------------------------|
-| [`@xeokit/sdk/viewer`](https://xeokit.github.io/sdk/docs/modules/_xeokit_viewer.html)               | Browser-based model viewer                           |
-| [`@xeokit/sdk/cameracontrol`](https://xeokit.github.io/sdk/docs/modules/_xeokit_cameracontrol.html) | Interactive camera control for a viewer                     |
-| [`@xeokit/sdk/webglrenderer`](https://xeokit.github.io/sdk/docs/modules/_xeokit_webglrenderer.html) | WebGL rendering strategy for a viewer       |
-| [`@xeokit/sdk/treeview`](https://xeokit.github.io/sdk/docs/modules/_xeokit_treeview.html)           | HTML tree view widget for a Viewer                          |
-| [`@xeokit/sdk/locale`](https://xeokit.github.io/sdk/docs/modules/_xeokit_locale.html)               | Localization service for a viewer                         |
+| Modules                                                                                                            | Description                                 |
+|--------------------------------------------------------------------------------------------------------------------|---------------------------------------------|
+| [`@xeokit/sdk/viewer`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/viewer.html___)            | Browser-based model Viewer                  |
+| [`@xeokit/sdk/cameracontrol`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/cameracontrol.html) | Interactive camera control for a Viewer     |
+| [`@xeokit/sdk/cameraflight`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/cameraflight.html)   | Animates a camera to view specified targets |
+| [`@xeokit/sdk/webglrenderer`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/webglrenderer.html) | WebGL rendering strategy for a Viewer       |
+| [`@xeokit/sdk/treeview`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/treeview.html)           | HTML tree view widget for a Viewer          |
+| [`@xeokit/sdk/locale`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/locale.html)               | Localization service for a Viewer           |
 
 [![](https://mermaid.ink/img/pako:eNqNVUtv2kAQ_ivWntoKUEyMAQtxIVJ7ADWCPqTKl7U9CZssu-7apnEI_737dGweVX3xeuabb97rA0p5BihCKcVFcUfwo8C7mGVEQFoSzrzlOmZa5_0g8AeEd4iZZx4BLAMBwgiKFBiY414iC3NMBeASlOmHj0YSs2Ob0fGlmO2xNeLJk_TuGPAOBDZnSh63Tl6YAO8pZmBFFNcgOo6XSuI8G9GmZdfVLBW7EnUC1BQuSpJdiPB3hSkp67Uux4n1Vw08Nd-TgiQUXCJUQsCqtjIInaYTvAgZgD2nnHJBXq1hSkme44YnJ-nz-xfGSdKKZaGr6OKAGjxbMs6fzanKLY3gT6ZELfN20RxJzgvPsshxaff1jghdS4dUagfVKXSmYG3HSKNnM5wUpcBpOZ-3MD8h-bzsALWyCU_NnvO2kwNNL06S7vJKqZvGU8Ci03JNpTH_7LnhMt11ZElFaOY-MpBp8Pqc-3widCJmu2Lkx6jfn-v3utmvC8qNWTfzahSfrMI4uarW-VmtOV9lOHUt9UoU2R1X5zOlsY2agr3LNKSTgsXKKcgFFMDKwiPM-_JttWyuhIs-9FpGbuMbSYxuBoP_CKdTy4W9Ys4cuUGO3MVzhmgvhmpjM6Ozt37_ZGwjj-xyCjuV5CXk_fcr0PYKLziTc9UMp75r9Qh11J0y-KYMqIckYodJJq97bR6jcit9xCiSxwwecEVlhySbhOKq5JuapSgqRQU9VOWZHHj7g0DRA6aFlEJGSi5W9heiXj2UY4aiA3pB0TD0B74_HvnhcHI7DcPpqIdqKR4Oguk4HAVTfzwMJ7ejYw-9ci5ZbwaTYRgE4XAajCfBKBhNNd0vrVRxHP8CUYMzSw?type=png)](https://mermaid.live/edit#pako:eNqNVUtv2kAQ_ivWntoKUEyMAQtxIVJ7ADWCPqTKl7U9CZssu-7apnEI_737dGweVX3xeuabb97rA0p5BihCKcVFcUfwo8C7mGVEQFoSzrzlOmZa5_0g8AeEd4iZZx4BLAMBwgiKFBiY414iC3NMBeASlOmHj0YSs2Ob0fGlmO2xNeLJk_TuGPAOBDZnSh63Tl6YAO8pZmBFFNcgOo6XSuI8G9GmZdfVLBW7EnUC1BQuSpJdiPB3hSkp67Uux4n1Vw08Nd-TgiQUXCJUQsCqtjIInaYTvAgZgD2nnHJBXq1hSkme44YnJ-nz-xfGSdKKZaGr6OKAGjxbMs6fzanKLY3gT6ZELfN20RxJzgvPsshxaff1jghdS4dUagfVKXSmYG3HSKNnM5wUpcBpOZ-3MD8h-bzsALWyCU_NnvO2kwNNL06S7vJKqZvGU8Ci03JNpTH_7LnhMt11ZElFaOY-MpBp8Pqc-3widCJmu2Lkx6jfn-v3utmvC8qNWTfzahSfrMI4uarW-VmtOV9lOHUt9UoU2R1X5zOlsY2agr3LNKSTgsXKKcgFFMDKwiPM-_JttWyuhIs-9FpGbuMbSYxuBoP_CKdTy4W9Ys4cuUGO3MVzhmgvhmpjM6Ozt37_ZGwjj-xyCjuV5CXk_fcr0PYKLziTc9UMp75r9Qh11J0y-KYMqIckYodJJq97bR6jcit9xCiSxwwecEVlhySbhOKq5JuapSgqRQU9VOWZHHj7g0DRA6aFlEJGSi5W9heiXj2UY4aiA3pB0TD0B74_HvnhcHI7DcPpqIdqKR4Oguk4HAVTfzwMJ7ejYw-9ci5ZbwaTYRgE4XAajCfBKBhNNd0vrVRxHP8CUYMzSw)
 
@@ -101,7 +102,7 @@ SDK's model viewer.
 
 | Modules                                                                             | Description                                                           |
 |-------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
-| [`@xeokit/sdk/scene`](https://xeokit.github.io/sdk/docs/modules/_xeokit_scene.html) | Contains model geometric representations (geometries, materials etc.) |
+| [`@xeokit/sdk/scene`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/scene.html) | Contains model geometric representations (geometries, materials etc.) |
 
 [![](https://mermaid.ink/img/pako:eNqNVE1vozAQ_StoTrsVjSDNlpTrVuplo5WanlZcXHuaeAUY2aZKNsp_38FAYz5SlYvxm-c3n_YJuBIIKfCcGfMo2U6zIiuF1MitVGXw6zkrA_c5RrDlWOKpxxyukVnckEz-7fvAkCPTQ6hoWMZH1Otf8vQBnWe8OWnPpRSX_9HxxgWaPfrADlWBVssBaPFga41btDOoB7XJ_XZe_FS6pMnXFH1qHR6nlpdW_6qBwvFtr7XMhQ8INFYrT3iuXG2wgxb5FRtXaCTRpBRcKTZXudKXrVb1bl-i8cpFebN8CKmKcWmPHodRMw6Xfdcfj3FpzpUgu3LNxznPJbFP0-poo1RyyZ_7LCcMxXleG7okEwsW0hj5jiPDKLJ-Tq7FVWlZSEsyHqSMbK6leUSuiopG1WxG5azfPzF-nP_ZEVAMTs7Bkl4DPpmXfutGLsggzuDm9pbWxeImA-_iDogOucJu5_YrujPMFprym3HuiW60PQaZn0az5w3LQGpF3FEzZ9RevLntaf0KIRSoCyYFPbau4RnYPRaYQUq_At9YndsMsvJMVFZbtT2WHFKrawyhrgS9Et3zDOkbyw2hKKRVetM94M0SQsVKSE9wgDS-_7FIkiheP8SrVXJ3v74L4QhpdA7hn1KkEi-i9ltGyXL5ECVrd_yPM7Z-3RXv_J3_A-vIyXI?type=png)](https://mermaid.live/edit#pako:eNqNVE1vozAQ_StoTrsVjSDNlpTrVuplo5WanlZcXHuaeAUY2aZKNsp_38FAYz5SlYvxm-c3n_YJuBIIKfCcGfMo2U6zIiuF1MitVGXw6zkrA_c5RrDlWOKpxxyukVnckEz-7fvAkCPTQ6hoWMZH1Otf8vQBnWe8OWnPpRSX_9HxxgWaPfrADlWBVssBaPFga41btDOoB7XJ_XZe_FS6pMnXFH1qHR6nlpdW_6qBwvFtr7XMhQ8INFYrT3iuXG2wgxb5FRtXaCTRpBRcKTZXudKXrVb1bl-i8cpFebN8CKmKcWmPHodRMw6Xfdcfj3FpzpUgu3LNxznPJbFP0-poo1RyyZ_7LCcMxXleG7okEwsW0hj5jiPDKLJ-Tq7FVWlZSEsyHqSMbK6leUSuiopG1WxG5azfPzF-nP_ZEVAMTs7Bkl4DPpmXfutGLsggzuDm9pbWxeImA-_iDogOucJu5_YrujPMFprym3HuiW60PQaZn0az5w3LQGpF3FEzZ9RevLntaf0KIRSoCyYFPbau4RnYPRaYQUq_At9YndsMsvJMVFZbtT2WHFKrawyhrgS9Et3zDOkbyw2hKKRVetM94M0SQsVKSE9wgDS-_7FIkiheP8SrVXJ3v74L4QhpdA7hn1KkEi-i9ltGyXL5ECVrd_yPM7Z-3RXv_J3_A-vIyXI)
 
@@ -115,7 +116,7 @@ and content navigation within the SDK's model viewer.
 
 | Modules                                                                           | Description                                                                  |
 |-----------------------------------------------------------------------------------|------------------------------------------------------------------------------|
-| [`@xeokit/sdk/data`](https://xeokit.github.io/sdk/docs/modules/_xeokit_data.html) | Entity-relationship graph that contains model semantic data.                 |
+| [`@xeokit/sdk/data`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/data.html) | Entity-relationship graph that contains model semantic data.                 |
 
 [![](https://mermaid.ink/img/pako:eNqNVMFunDAU_BX0Tu1qgxaW9QLnHBOlSm4VFwc7WVeAkTFV6Wr_vcZmu89A0nIBzxvPmzdGPkMpGYccyop23b2g74rWRcOE4qUWsgkenosmsI9lBPdU0_MVcrjiVPNHI1N9-epVOk5VeXp6_WG0ulmtrExxhtWjRudB0m32sFbJlis9vHC_cP2-LB1bd9i2YGixbLLewk3q5sHWHf7MKzpG1p1Eu6x-uyni4msvKoYBxjut5HCDVqZxDrxT8OYJ9NByvF4bZ6aL_CFhLDuJCP4viQAJNLRGTn7SqkdLbHOmhcPEev5kyrKadxfIDOfMh_92GCMMCogK2NzdmXcYbgq4_SaYZoF1ri_-seaS5xDD3kzsnWOjI_hA9hPWwuk61cvVCl7JN2f5eqz_v3WePPKxzOhanMiwhZqrmgpmLiV78AXoEzd_EeTmk_E32le6gKK5GCrttXwZmhJyrXq-hb5lpv10jUH-RqvOoC1tID_DL8hjEoVRdDxEJE73GSHZYQuDgeMwyY7kkGTRMSbp_nDZwm8pjcIuTGOSJGS_yxKSpjvD50xoqR6na3N82Q7fLX-0cfkD0IeHkg?type=png)](https://mermaid.live/edit#pako:eNqNVMFunDAU_BX0Tu1qgxaW9QLnHBOlSm4VFwc7WVeAkTFV6Wr_vcZmu89A0nIBzxvPmzdGPkMpGYccyop23b2g74rWRcOE4qUWsgkenosmsI9lBPdU0_MVcrjiVPNHI1N9-epVOk5VeXp6_WG0ulmtrExxhtWjRudB0m32sFbJlis9vHC_cP2-LB1bd9i2YGixbLLewk3q5sHWHf7MKzpG1p1Eu6x-uyni4msvKoYBxjut5HCDVqZxDrxT8OYJ9NByvF4bZ6aL_CFhLDuJCP4viQAJNLRGTn7SqkdLbHOmhcPEev5kyrKadxfIDOfMh_92GCMMCogK2NzdmXcYbgq4_SaYZoF1ri_-seaS5xDD3kzsnWOjI_hA9hPWwuk61cvVCl7JN2f5eqz_v3WePPKxzOhanMiwhZqrmgpmLiV78AXoEzd_EeTmk_E32le6gKK5GCrttXwZmhJyrXq-hb5lpv10jUH-RqvOoC1tID_DL8hjEoVRdDxEJE73GSHZYQuDgeMwyY7kkGTRMSbp_nDZwm8pjcIuTGOSJGS_yxKSpjvD50xoqR6na3N82Q7fLX-0cfkD0IeHkg)
 
@@ -127,12 +128,12 @@ various file formats into the viewer.
 
 | Modules                                                                                   | Description                  |
 |-------------------------------------------------------------------------------------------|------------------------------|
-| [`@xeokit/sdk/xgf`](https://xeokit.github.io/sdk/docs/modules/_xeokit_xgf.html)           | Import and export XKT files  |
-| [`@xeokit/sdk/gltf`](https://xeokit.github.io/sdk/docs/modules/_xeokit_gltf.html)         | Import glTF files            |
-| [`@xeokit/sdk/las`](https://xeokit.github.io/sdk/docs/modules/_xeokit_las.html)           | Import LAS pointcloud scans  |
-| [`@xeokit/sdk/cityjson`](https://xeokit.github.io/sdk/docs/modules/_xeokit_cityjson.html) | Import CityJSON files        |
-| [`@xeokit/sdk/webifc`](https://xeokit.github.io/sdk/docs/modules/_xeokit_webifc.html)     | Import IFC files             |
-| [`@xeokit/sdk/dotbim`](https://xeokit.github.io/sdk/docs/modules/_xeokit_dotbim.html)     | Import and export .BIM files |
+| [`@xeokit/sdk/xgf`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/xgf.html)           | Import and export XKT files  |
+| [`@xeokit/sdk/gltf`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/gltf.html)         | Import glTF files            |
+| [`@xeokit/sdk/las`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/las.html)           | Import LAS pointcloud scans  |
+| [`@xeokit/sdk/cityjson`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/cityjson.html) | Import CityJSON files        |
+| [`@xeokit/sdk/webifc`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/webifc.html)     | Import IFC files             |
+| [`@xeokit/sdk/dotbim`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/dotbim.html)     | Import and export .BIM files |
 
 ## 2.5. xeokit BCF Support
 
@@ -142,7 +143,7 @@ These functions can be used to develop applications that facilitate collaboratio
 
 | Modules                                                                         | Description                                          |
 |---------------------------------------------------------------------------------|------------------------------------------------------|
-| [`@xeokit/sdk/bcf`](https://xeokit.github.io/sdk/docs/modules/_xeokit_bcf.html) | Load and save BCF                    |
+| [`@xeokit/sdk/bcf`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/bcf.html) | Load and save BCF                    |
 
 ## 2.6. xeokit Collision Detection
 
@@ -157,32 +158,31 @@ Intended applications for our collision library include:
 
 | Modules                                                                                           | Description                                                    |
 |---------------------------------------------------------------------------------------------------|----------------------------------------------------------------|
-| [`@xeokit/sdk/kdtree2`](https://xeokit.github.io/sdk/docs/modules/_xeokit_collision_kdtree2.html) | Searches and collision tests with 2D k-d trees and boundaries  |
-| [`@xeokit/sdk/kdtree3`](https://xeokit.github.io/sdk/docs/modules/_xeokit_collision_kdtree3.html) | Ssearches and collision tests with 3D k-d trees and boundaries |
-| [`@xeokit/sdk/pick`](https://xeokit.github.io/sdk/docs/modules/_xeokit_collision_pick.html)       | Select objects and primitives using rays and boundaries        |
+| [`@xeokit/sdk/kdtree2`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/kdtree2.html) | Searches and collision tests with 2D k-d trees and boundaries  |
+| [`@xeokit/sdk/kdtree3`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/kdtree3.html) | Ssearches and collision tests with 3D k-d trees and boundaries |
+| [`@xeokit/sdk/pick`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/pick.html)       | Select objects and primitives using rays and boundaries        |
 
 ## 2.7. xeokit Utility Libraries
 
 The SDK's internal and lower-level functionalities are mostly available as utility libraries with complete
 documentation.
 
-| Modules                                                                                  | Description                                          |
-|------------------------------------------------------------------------------------------|------------------------------------------------------|
-| [`@xeokit/sdk/components`](./docs/modules/_xeokit_core_components.html)                  | Basic component types used throughout the xeokit SDK |
-| [`@xeokit/sdk/constants`](https://xeokit.github.io/sdk/docs/modules/_xeokit_core_constants.html) | Constants used throughout the xeokit SDK             |
-| [`@xeokit/sdk/utils`](https://xeokit.github.io/sdk/docs/modules/_xeokit_core_utils.html) | Core utilities used throughout the xeokit SDK        |
-| [`@xeokit/sdk/basictypes`](/docs/api/modules/basictypes.html)                            | Basic semantic data type constants  |
-| [`@xeokit/sdk/ifctypes`](https://xeokit.github.io/sdk/docs/modules/_xeokit_datatypes_ifcTypes.html) | IFC data type constants  |
-| [`@xeokit/sdk/math/math`](https://xeokit.github.io/sdk/docs/modules/_xeokit_math_math.html) | General math definitions and constants               |
-| [`@xeokit/sdk/boundaries`](https://xeokit.github.io/sdk/docs/modules/_xeokit_math_boundaries.html) | Boundaries math library                              |
-| [`@xeokit/sdk/compression`](https://xeokit.github.io/sdk/docs/modules/_xeokit_math_compression.html) | SceneGeometry de/compression utilities library            |
-| [`@xeokit/sdk/curves`](https://xeokit.github.io/sdk/docs/modules/_xeokit_math_curves.html) | Spline curves math library                           |
-| [`@xeokit/sdk/geometry`](https://xeokit.github.io/sdk/docs/modules/_xeokit_math_geometry.html) | SceneMesh generation functions                            |
-| [`@xeokit/sdk/matrix`](https://xeokit.github.io/sdk/docs/modules/_xeokit_math_matrix.html) | Matrix and vector math utilities library             |
-| [`@xeokit/sdk/rtc`](https://xeokit.github.io/sdk/docs/modules/_xeokit_math_rtc.html)     | Relative-to-center (RTC) coordinates math library    |
-| [`@xeokit/sdk/webglutils`](https://xeokit.github.io/sdk/docs/modules/_xeokit_webglutils.html) | WebGL utilities library        |
-| [`@xeokit/sdk/geometry`](https://xeokit.github.io/sdk/docs/modules/_xeokit_procgen_geometry.html) | SceneGeometry generation functions                     |
-| [`@xeokit/sdk/ktx2`](https://xeokit.github.io/sdk/docs/modules/_xeokit_ktx2.html)        | Compressed texture support              |
+| Modules                                                                                            | Description                                          |
+|----------------------------------------------------------------------------------------------------|------------------------------------------------------|
+| [`@xeokit/sdk/components`](./docs/modules/core.html)                            | Basic component types used throughout the xeokit SDK |
+| [`@xeokit/sdk/constants`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/constants.html) | Constants used throughout the xeokit SDK             |
+| [`@xeokit/sdk/utils`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/utils.html)     | Core utilities used throughout the xeokit SDK        |
+| [`@xeokit/sdk/basictypes`](/docs/api/modules/basictypes.html)                                      | Basic semantic data type constants                   |
+| [`@xeokit/sdk/ifctypes`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/ifcTypes.html) | IFC data type constants                              |
+| [`@xeokit/sdk/math/math`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/math.html)  | General math definitions and constants               |
+| [`@xeokit/sdk/boundaries`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/boundaries.html) | Boundaries math library                              |
+| [`@xeokit/sdk/compression`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/compression.html) | SceneGeometry de/compression utilities library       |
+| [`@xeokit/sdk/curves`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/curves.html)   | Spline curves math library                           |
+| [`@xeokit/sdk/procgen`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/procgen.html) | Geometry generation functions                        |
+| [`@xeokit/sdk/matrix`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/matrix.html)   | Matrix and vector math utilities library             |
+| [`@xeokit/sdk/rtc`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/rtc.html)         | Relative-to-center (RTC) coordinates math library    |
+| [`@xeokit/sdk/webglutils`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/webglutils.html) | WebGL utilities library                              |
+| [`@xeokit/sdk/ktx2`](https://xeokit.github.io/sdk/api-docs.html#sdk/docs/api/modules/ktx2.html)       | Compressed texture support                           |
 
 # 3. xeokit Usage Examples
 
