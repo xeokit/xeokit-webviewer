@@ -12,6 +12,8 @@ const puppeteer = require('puppeteer');
 const express = require('express');
 const app = express();
 
+//const base = "http://localhost:8080";
+const base = "https://xeokit.github.io/sdk/";
 
 const markDownParser = markdownit({
     html: true,
@@ -140,6 +142,10 @@ function buildPages(baseDir) {
                                     replace({
                                         patterns: [
                                             {
+                                                match: 'base',
+                                                replacement: base
+                                            },
+                                            {
                                                 match: 'title',
                                                 replacement: articleJSON.title
                                             },
@@ -169,29 +175,79 @@ function buildPages(baseDir) {
         });
 
         gulp.src(["./templates/examples-index.html"])
+            .pipe(
+                replace({
+                    patterns: [
+                        {
+                            match: 'base',
+                            replacement: base
+                        }
+                    ]
+                })
+            )
             .pipe(fileinclude({}))
             .pipe(rename("index.html"))
             .pipe(gulp.dest(`./examples/`))
             .on('end', function () {});
 
         gulp.src(["./templates/models-index.html"])
+            .pipe(
+                replace({
+                    patterns: [
+                        {
+                            match: 'base',
+                            replacement: base
+                        }
+                    ]
+                })
+            )
             .pipe(fileinclude({}))
             .pipe(rename("index.html"))
             .pipe(gulp.dest(`./models/`))
             .on('end', function () {});
 
         gulp.src(["./templates/article-index.html"])
+            .pipe(
+                replace({
+                    patterns: [
+                        {
+                            match: 'base',
+                            replacement: base
+                        }
+                    ]
+                })
+            )
             .pipe(fileinclude({}))
             .pipe(rename("index.html"))
             .pipe(gulp.dest(`./articles/`))
             .on('end', function () {});
 
         gulp.src(["./templates/index.html"])
+            .pipe(
+                replace({
+                    patterns: [
+                        {
+                            match: 'base',
+                            replacement: base
+                        }
+                    ]
+                })
+            )
             .pipe(fileinclude({}))
             .pipe(gulp.dest(`./`))
             .on('end', function () {});
 
         gulp.src(["./templates/api-docs.html"])
+            .pipe(
+                replace({
+                    patterns: [
+                        {
+                            match: 'base',
+                            replacement: base
+                        }
+                    ]
+                })
+            )
             .pipe(fileinclude({}))
             .pipe(gulp.dest(`./`))
             .on('end', function () {});

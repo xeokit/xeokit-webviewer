@@ -34,10 +34,10 @@ function buildExamplesIndex(params) {
 
 // Index
 
-    // let div = document.createElement('h2');
-    // div.textContent = "Sections";
-    //
-    // container.appendChild(div);
+    let div = document.createElement('h2');
+    div.textContent = "Categories";
+
+    container.appendChild(div);
     container.appendChild(document.createElement('hr'));
 
     const categoryLookup = {};

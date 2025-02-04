@@ -9,22 +9,22 @@
 
     <title>xeokit - 3D Web Programming Toolkit for BIM and Engineering Visualization</title>
 
-    <link href="./../libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="./../css/business-frontpage.css" rel="stylesheet">
+    <link href="@@base/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="@@base/css/business-frontpage.css" rel="stylesheet">
 
     <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-    <script src="./../libs/jquery/jquery.min.js"></script>
-    <script src="./../libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="@@base/libs/jquery/jquery.min.js"></script>
+    <script src="@@base/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <title></title>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
-    <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent" href="./../">@xeokit/sdk</a>/<a class="navbar-brand" href="./index.html">Articles</a></span>
+    <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent" href="@@base">@xeokit/sdk</a>/<a class="navbar-brand" href="./index.html">Articles</a></span>
     @@include('./navbar-pulldown.html', {
-    root: "./.."
+        root: "@@base"
     });
 </nav>
 <header class="bg-black home-header bg-black">
@@ -50,7 +50,7 @@
     </div>
 </section>
 @@include('./footer.html', {
-root: "./.."
+    root: "@@base"
 })
 </body>
 <script>
@@ -72,7 +72,7 @@ root: "./.."
         return {tagList, tagMap};
     }
 
-    fetch("./index.json").then(response => {
+    fetch("@@base/articles/index.json").then(response => {
         response.json().then(index => {
             const {tagList} = getTagMap(index);
             const html = [`
