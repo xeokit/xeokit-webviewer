@@ -81,7 +81,7 @@
                 <iframe class="embed-responsive-item " style=" height:100vh" id="viewer" src="./../examples/default.html"></iframe>
                 </div>
                 <div class="slideout-sidebar">
-                    <div id="index"><h1>Run an SDK example</h1></div>
+                    <div id="index"><h1>Run an example</h1></div>
                 </div>
             </div>
         </div>
@@ -157,7 +157,7 @@
 
 <script type="module">
 
-    import {buildExamplesIndex} from "../../js/buildExamplesIndex.js";
+    import {buildExamplesIndex} from "./../js/buildExamplesIndex.js";
 
     fetch("./index.json").then(response => {
         response.json().then(index => {
