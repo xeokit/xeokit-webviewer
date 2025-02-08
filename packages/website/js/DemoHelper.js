@@ -35,11 +35,11 @@ export class DemoHelper {
             document.body.appendChild(script);
         }
 
-        document.addEventListener("DOMContentLoaded", function() {
+     //   document.addEventListener("DOMContentLoaded", function() {
         loadCSS("https://unpkg.com/tippy.js@6/themes/light-border.css");
         loadJS("https://unpkg.com/@popperjs/core@2");
         loadJS("https://unpkg.com/tippy.js@6");
-         });
+    //     });
 
         this.viewer = cfg.viewer;
         this.data = cfg.data;
@@ -294,6 +294,7 @@ export class DemoHelper {
             if (window.tippy) {
                 window.tippy('.doc-link', {
                     content(reference) {
+
                         const id = reference.getAttribute('data-template')
                         const container = document.createElement('div')
                         const linkedTemplate = document.getElementById(id)
@@ -310,6 +311,7 @@ export class DemoHelper {
                     hideOnClick: false,
                     // interactive: true,
                     inertia: true,
+                    zIndex: 100000000
                 });
                 clearInterval(interval);
             }
