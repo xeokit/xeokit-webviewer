@@ -12,8 +12,8 @@ const puppeteer = require('puppeteer');
 const express = require('express');
 const app = express();
 
-const base = "http://localhost:8080";
-//const base = "https://xeokit.github.io/sdk/";
+//const base = "http://localhost:8080";
+const base = "https://xeokit.github.io/sdk/";
 
 const markDownParser = markdownit({
     html: true,
