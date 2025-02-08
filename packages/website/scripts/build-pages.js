@@ -12,8 +12,8 @@ const puppeteer = require('puppeteer');
 const express = require('express');
 const app = express();
 
-//const base = "http://localhost:8080";
-const base = "https://xeokit.github.io/sdk/";
+const base = "http://localhost:8080";
+//const base = "https://xeokit.github.io/sdk/";
 
 const markDownParser = markdownit({
     html: true,
@@ -124,7 +124,11 @@ function buildPages(baseDir) {
                         const md = fs.readFileSync(mdIndexPath, 'utf8');
                         const mdIndexPath2 = path.join(subDirPath, 'content.html');
 
-                        fs.copyFileSync("./templates/article.html", templateIndexPath);
+                        if (articleJSON.bannerImage) {
+                            fs.copyFileSync("./templates/article-with-banner.html", templateIndexPath);
+                        } else {
+                            fs.copyFileSync("./templates/article.html", templateIndexPath);
+                        }
 
                         (async function convertMarkdownToHtml() {
                             const html = wrapWordsWithLinks(await markDownParser.render(md), DOCS_LOOKUP);
@@ -142,6 +146,10 @@ function buildPages(baseDir) {
                                     replace({
                                         patterns: [
                                             {
+                                                match: 'bannerImage',
+                                                replacement: articleJSON.bannerImage ? `${base}/articles/${articleId}/${articleJSON.bannerImage}` : ""
+                                            },
+                                            {
                                                 match: 'base',
                                                 replacement: base
                                             },
@@ -152,6 +160,10 @@ function buildPages(baseDir) {
                                             {
                                                 match: 'subtitle',
                                                 replacement: articleJSON.subtitle || ""
+                                            },
+                                            {
+                                                match: 'articleId',
+                                                replacement: articleId
                                             }
                                         ]
                                     })
@@ -188,7 +200,8 @@ function buildPages(baseDir) {
             .pipe(fileinclude({}))
             .pipe(rename("index.html"))
             .pipe(gulp.dest(`./examples/`))
-            .on('end', function () {});
+            .on('end', function () {
+            });
 
         gulp.src(["./templates/models-index.html"])
             .pipe(
@@ -204,7 +217,8 @@ function buildPages(baseDir) {
             .pipe(fileinclude({}))
             .pipe(rename("index.html"))
             .pipe(gulp.dest(`./models/`))
-            .on('end', function () {});
+            .on('end', function () {
+            });
 
         gulp.src(["./templates/article-index.html"])
             .pipe(
@@ -220,7 +234,8 @@ function buildPages(baseDir) {
             .pipe(fileinclude({}))
             .pipe(rename("index.html"))
             .pipe(gulp.dest(`./articles/`))
-            .on('end', function () {});
+            .on('end', function () {
+            });
 
         gulp.src(["./templates/index.html"])
             .pipe(
@@ -235,7 +250,8 @@ function buildPages(baseDir) {
             )
             .pipe(fileinclude({}))
             .pipe(gulp.dest(`./`))
-            .on('end', function () {});
+            .on('end', function () {
+            });
 
         gulp.src(["./templates/api-docs.html"])
             .pipe(
@@ -250,7 +266,8 @@ function buildPages(baseDir) {
             )
             .pipe(fileinclude({}))
             .pipe(gulp.dest(`./`))
-            .on('end', function () {});
+            .on('end', function () {
+            });
 
     } catch (err) {
         console.error(`Error reading directory: ${err}`);
@@ -276,16 +293,22 @@ async function listImageFiles(directory) {
 }
 
 function wrapWordsWithLinks(text, wordMap) {
-
+    function capitalizeFirstLetter(str) {
+        if (!str) return str;
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
     Object.keys(wordMap).forEach(function (key) {
-        const regex = new RegExp(`\\b${key}s?\\b`, 'g');
+        const expr = `doc:${key}`;
+        const regex = new RegExp(`\\b${expr}?\\b`, 'g');
         text = text.replace(regex, (match) => {
             const entry = wordMap[key];
             const path = entry.path || "";
-            // const kind = entry.kind || "";
-            return /s$/i.test(match)
-                ? `<a href="${path}" target="_parent">${key}</a>s`
-                : `<a href="${path}" target="_parent">${key}</a>`;
+            return `<a class="doc-link" data-template="${key}_template"  href="${path}" target="_parent">${key}</a>
+            <template class="doc-link-tooltip" id="${key}_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / ${entry.namespace} / ${key} /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">${capitalizeFirstLetter(entry.kind)} ${key}</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">${entry.summary}</p>
+            </template>`;
         });
     });
     return text;

@@ -34,10 +34,10 @@ Then create an HTML page in `index.html` that contains a canvas element:
 Then create JavaScript in `index.js` to make a spinning box in the canvas. 
 
 1. Import the modules we need.
-2. Create a Viewer with a WebGLRenderer and a Scene.
-3. In the Viewer, create a View that draws to the canvas.
-4. Position the View's Camera to look at the center of the 3D coordinate system (default).
-5. In the Scene, create a SceneModel that contains a SceneObject, a SceneMesh, and a SceneGeometry that defines the shape of the box.
+2. Create a doc:Viewer with a doc:WebGLRenderer and a doc:Scene.
+3. In the Viewer, create a doc:View that draws to the canvas.
+4. Position the View's doc:Camera to look at the center of the 3D coordinate system (default).
+5. In the Scene, create a doc:SceneModel that contains a doc:SceneObject, a doc:SceneMesh, and a doc:SceneGeometry that defines the shape of the box.
 6. Build the SceneModel. This causes the SceneMode's objects to appear in the View's canvas.
 7. Update the visibility and highlight status of the object.
 8. Orbit the Camera by one degree on each Viewer "tick" event. This will continually orbit the model.

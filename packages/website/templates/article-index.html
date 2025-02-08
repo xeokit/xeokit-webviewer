@@ -88,13 +88,13 @@
 
             for (let articleId in index.articles) {
                 const article = index.articles[articleId];
-                html.push(`<div class="col-sm-4  mb-5"><a href="./${articleId}" class="card-link">
+                html.push(`<div class="col-sm-4  mb-5">
                 <div class="card">
                     <img class="card-img-top thumbnail"
                          src="./${articleId}/_thumbnail.jpg"
                          alt="Thumbnail 2">
                     <div class="card-body">
-                        <h4 class="card-title">${article.title}</h4>
+                        <a href="./${articleId}" class="card-link"><h4 class="card-title">${article.title}</h4></a>
                         <p class="card-text"> ${article.description || ""}</p>
                     </div>`);
                 if (article.tags) {
@@ -104,7 +104,7 @@
                     }
                     html.push(`</div>`);
                 }
-                html.push(`</div></a></div>`);
+                html.push(`</div></div>`);
             }
             document.getElementById(`content`).innerHTML = html.join("\n");
         });

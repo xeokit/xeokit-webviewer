@@ -27,11 +27,9 @@ export const DEFAULT_SAVED_XGF_VERSION: number = Math.max(...SAVED_XGF_VERSIONS)
  * @param params.sceneModel - The SceneModel to export to XGF.
  * @param params.xgfVersion - The XGF format version to write. Must be one of the values in {@link xgf!SAVED_XGF_VERSIONS | SAVED_XGF_VERSIONS}. Defaults to the value of {@link xgf!DEFAULT_SAVED_XGF_VERSION | DEFAULT_SAVED_XGF_VERSION}.
  * @returns The [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) file data in an ArrayBuffer.
- *
- * TODO
- *
  * @returns {@link core!SDKError | SDKError} If the SceneModel has already been destroyed.
  * @returns {@link core!SDKError | SDKError} If the SceneModel has not yet been built.
+ * @returns {@link core!SDKError | SDKError} Unsupported XGF version (fix by upgrading @xeokit/sdk).
  */
 export function saveXGF(params: {
     sceneModel: SceneModel,

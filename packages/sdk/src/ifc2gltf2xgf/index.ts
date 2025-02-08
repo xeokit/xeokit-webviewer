@@ -5,7 +5,7 @@
  *
  * ---
  *
- * **CLI tools for converting glTF models into xeokit's compact [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) geometry format.**
+ * **CLI tool for converting glTF models into xeokit's compact [XGF](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xgf) geometry format.**
  *
  * ---
  *

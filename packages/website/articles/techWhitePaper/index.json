@@ -1,5 +1,5 @@
 {
-    "title": "Technical White Paper: xeokit SDK for 3D BIM and AEC Visualization",
-    "description": "This white paper outlines how xeokit addresses critical challenges in BIM data visualization, enhances workflow efficiency, and supports scalable, web-based deployments.",
+    "title": "An Overview of the xeokit SDK",
+    "description": "This article provides a starting point for learning about the xeokit SDK.",
     "tags": ["whitepaper"]
 }

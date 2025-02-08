@@ -9,14 +9,14 @@
 
 <title>xeokit SDK 3 - 3D Web Programming Toolkit for BIM and Engineering Visualization</title>
 
-<link href="https://xeokit.github.io/sdk//libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://xeokit.github.io/sdk//css/business-frontpage.css" rel="stylesheet">
+<link href="http://localhost:8080/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://localhost:8080/css/business-frontpage.css" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-<script src="https://xeokit.github.io/sdk//libs/jquery/jquery.min.js"></script>
-<script src="https://xeokit.github.io/sdk//libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="http://localhost:8080/libs/jquery/jquery.min.js"></script>
+<script src="http://localhost:8080/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
@@ -24,30 +24,48 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/html.min.js"></script>
 
+
+
     <title></title>
+    <style>
+        .tippy-box[data-theme~='light-border'] {
+            background-color: #ffff66;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #666666;
+        }
+
+        .tippy-box[data-theme~='light-border'][data-placement^='bottom'] > .tippy-arrow::before {
+            border-top-color: white;
+            background-color: #ffff66;
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light-border.css"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
-    <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent" href="https://xeokit.github.io/sdk/">@xeokit/sdk</a>/<a class="navbar-brand" href="https://xeokit.github.io/sdk//articles/index.html">Articles</a></span>
+    <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent"
+                                                                                                  href="http://localhost:8080">@xeokit/sdk</a>/<a
+        class="navbar-brand" href="http://localhost:8080/articles/index.html">Articles</a></span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//index.html?foo=0">Home</a>
+            <a class="nav-link" href="http://localhost:8080/index.html?foo=0">Home</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//examples/index.html">Examples</a>
+            <a class="nav-link" href="http://localhost:8080/examples/index.html">Examples</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//models/index.html">Models</a>
+            <a class="nav-link" href="http://localhost:8080/models/index.html">Models</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//articles/index.html">Articles</a>
+            <a class="nav-link" href="http://localhost:8080/articles/index.html">Articles</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//api-docs.html">API Docs</a>
+            <a class="nav-link" href="http://localhost:8080/api-docs.html">API Docs</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="https://github.com/xeokit/sdk">GitHub</a>
@@ -62,55 +80,85 @@
 </div>
 
 </nav>
-<header class="bg-black home-header bg-black">
+<header class="bg-black home-header bg-black" style="background-image:url(http://localhost:8080/articles/ifc2gltf/banner.png)">
     <div class="container h-75">
-        <!--                <div class="row h-100 align-items-center">-->
-        <!--                    <div class="col-lg-12">-->
-        <!--                        <h1 class="text-white mt-5 mb-2">ifc2gltf - IFC Model Import Pipeline</h1>-->
-        <!--                        <p class="lead mb-5 text-white"></p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
+
+        <!--                        <div class="row h-100 align-items-center">-->
+        <!--                            <div class="col-lg-12">-->
+        <!--                                <h1 class="text-white mt-5 mb-2">Importing an IFC Model into xeokit via glTF</h1>-->
+        <!--                                <p class="lead mb-5 text-white"></p>-->
+        <!--                            </div>-->
+        <!--                        </div>-->
+
+
     </div>
 </header>
 <section id="intro" class="main-section">
     <div class="container">
         <div class="row testimonial-row">
-            <div class="col-lg-12">
+            <div class="col-lg-6">
                 <h5><a href="../index.html">&lt;&lt;&nbsp;Articles</a></h5>
             </div>
-            <div class="col-lg-12">
-                <h1>ifc2gltf - IFC Model Import Pipeline</h1>
+            <div class="col-lg-6">
+                <h5><a href="../index.html">Importing a glTF Model into xeokit via LAS &gt;&gt;</a></h5>
+                <h5><a href="../index.html">Importing a glTF Model into xeokit via LAS &gt;&gt;</a></h5>
             </div>
         </div>
         <div class="row testimonial-row">
             <div class="col-lg-12">
-                <p>In this tutorial we'll view an IFC model in a xeokit <a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>, after first converted it to
-glTF and JSON metadata files for more efficient loading.</p>
-<p>While converting and loading our model, we'll split the IFC file into multiple glTF and metadata files, for the <a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
-to load as a batch. This improves memory stability while converting and loading, because it enables the converter and
-<a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a> to allocate and deallocate memory in smaller, more recoverable increments.</p>
-<p><a href="./../../examples/#SceneModel_build_table/index.html"><img src="screenshot.png" alt=""></a></p>
-<ul>
-<li><em><a href="./../../examples/#SceneModel_build_table/index.html">Run this example</a></em></li>
-</ul>
+                <h1>Importing an IFC Model into xeokit via glTF</h1>
+            </div>
+        </div>
+        <div class="row testimonial-row">
+            <div class="col-lg-12">
+                <h2>Introduction</h2>
 <hr>
+<p>In this tutorial, we'll load an IFC 4.3 model into a xeokit <a class="doc-link" data-template="Viewer_template"  href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
+            <template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">The xeokit SDK's Browser-based model viewer.</p>
+            </template>. To optimize performance, we'll first
+convert the IFC model to glTF and metamodel JSON files. The import process consists of two steps:</p>
+<ol>
+<li>Use <code>ifc2gltf</code> to convert IFC into glTF and JSON metadata.</li>
+<li>Use <code><a class="doc-link" data-template="loadGLTF_template"  href="/api-docs#/docs/api/functions/gltf.loadGLTF.html" target="_parent">loadGLTF</a>
+            <template class="doc-link-tooltip" id="loadGLTF_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / gltf / loadGLTF /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadGLTF</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads glTF file data into a SceneModel and/or
+a DataModel.</p>
+            </template></code> to load the glTF and JSON metadata into a xeokit Viewer on a webpage.</li>
+</ol>
+<p>This process splits the model into multiple files, improving memory stability in the converter tools and
+Viewer by allowing incremental loading and deallocation.</p>
+<h2>Example IFC Model</h2>
+<hr>
+<p>In this tutorial, we'll import and view the Karhumaki Bridge model (source: <a href="http://drumbeat.cs.hut.fi/ifc/"><code>http://drumbeat.cs.hut.fi/ifc/</code></a>). Below is the final result— the model
+loaded in a Viewer from XGF and JSON data model files. In the following steps, we'll walk through the process
+of achieving this.</p>
+<ul>
+<li><em><a href="https://xeokit.github.io/sdk//models/index.html#viewModel.html?modelId=KarhumakiBridge&amp;pipelineId=ifc2gltf">Run this example</a></em></li>
+</ul>
+<p><a href="https://xeokit.github.io/sdk//models/index.html#viewModel.html?modelId=KarhumakiBridge&amp;pipelineId=ifc2gltf"><img src="karhumaki.png" alt=""></a></p>
 <br>
-<h2>Converting IFC into glTF and Metadata Files</h2>
-<p>The first step is to convert our IFC file into a set of glTF geometry and JSON metadata files. For this tutorial, we'll use the Karhumaki <a href="/api-docs#/docs/api/variables/cityjsontypes_1_1_3.Bridge.html" target="_parent">Bridge</a> IFC model
-from <a href="http://drumbeat.cs.hut.fi/ifc/"><code>http://drumbeat.cs.hut.fi/ifc/</code></a>.</p>
-<p>We'll use the <a href="https://www.notion.so/Converting-IFC-to-XKT-using-ifc2gltfcxconverter-a2e0005d00dc4f22b648f1237bc3245d?pvs=21"><code>ifc2gltfcxconverter</code></a>
-CLI tool to do the conversion:</p>
-<pre><code class="hljs">ifc2gltfcxconverter -i Karhumaki-<a href="/api-docs#/docs/api/variables/cityjsontypes_1_1_3.Bridge.html" target="_parent">Bridge</a>.ifc -o model.glb -m model.json -s 100
+<h2>Step 1. Convert IFC into glTF and Metadata Files</h2>
+<hr>
+<p>The first step is to convert our IFC file into a set of intermediate glTF geometry and JSON metadata files. We'll use
+the <a href=""><code>ifc2gltf</code></a>
+CLI tool to do this conversion step:</p>
+<pre><code class="hljs">ifc2gltfcxconverter -i Karhumaki-Bridge.ifc -o model.glb -m model.json -s 100
 </code></pre>
 <p>The parameters we provided the tool are:</p>
 <ul>
 <li><code>-i</code> specifies the IFC file to convert</li>
 <li><code>-o</code> specifies the name to prefix on each output glTF file</li>
-<li><code>-m</code> specifies the name to prefix on each JSON metadata file</li>
+<li><code>-m</code> specifies the name to prefix on each JSON metamodel file</li>
 <li><code>-s</code> specifies the maximum number of megabytes in each glTF file - smaller value means more output files, lower value
 means less files</li>
 </ul>
-<p>The files output by <code><a href="" target="_parent">ifc2gltf</a></code> are:</p>
+<p>The files output by <code>ifc2gltf</code> are listed below. Each of the JSON files follows the schema defined
+by MetaModelParams, which is xeokit's legacy format for semantic model data.</p>
 <pre><code class="hljs">.
 ├── model.glb.manifest.json
 ├── model_1.glb
@@ -134,9 +182,9 @@ means less files</li>
 ├── model.glb
 └── model.json
 </code></pre>
-<p>The <code>model.glb.manifest.json</code> manifest looks like this:</p>
+<p>The <code>model.glb.manifest.json</code> manifest looks like below. This manifest follows the schema defined by Ifc2gltfManifestParams.</p>
 <pre><code class="hljs"><span class="hljs-punctuation">{</span>
-    <span class="hljs-attr">&quot;inputFile&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Karhumaki-<a href="/api-docs#/docs/api/variables/cityjsontypes_1_1_3.Bridge.html" target="_parent">Bridge</a>.ifc&quot;</span><span class="hljs-punctuation">,</span>
+    <span class="hljs-attr">&quot;inputFile&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;Karhumaki-Bridge.ifc&quot;</span><span class="hljs-punctuation">,</span>
     <span class="hljs-attr">&quot;converterApplication&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;ifc2gltfcxconverter&quot;</span><span class="hljs-punctuation">,</span>
     <span class="hljs-attr">&quot;converterApplicationVersion&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2.8.6&quot;</span><span class="hljs-punctuation">,</span>
     <span class="hljs-attr">&quot;conversionDate&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;2023-09-08 03:01:39&quot;</span><span class="hljs-punctuation">,</span>
@@ -167,8 +215,13 @@ means less files</li>
 <span class="hljs-punctuation">}</span>
 </code></pre>
 <br>
-<h2>Viewing the glTF and Metadata Files</h2>
-<p>Now we'll create a Web page containing a xeokit <a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a> that views our converted model.</p>
+<h2>Step 2. View the glTF and Metadata Files</h2>
+<p>Now we'll create a Web page containing a xeokit <a class="doc-link" data-template="Viewer_template"  href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
+            <template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">The xeokit SDK's Browser-based model viewer.</p>
+            </template> that views our converted model.</p>
 <p>First install the npm modules we need:</p>
 <pre><code class="hljs">npm install @xeokit/scene
 npm install @xeokit/data
@@ -192,42 +245,110 @@ npm install @xeokit/cameracontrol
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./index.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-<p>Then create JavaScript in <code>index.js</code> to create the <a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a> and view our converted model.</p>
+<p>Then create JavaScript in <code>index.js</code> to create the <a class="doc-link" data-template="Viewer_template"  href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
+            <template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">The xeokit SDK's Browser-based model viewer.</p>
+            </template> and view our converted model.</p>
 <p>The steps in the JavaScript are as follows:</p>
 <ol>
 <li>Import the packages we need.</li>
-<li>Create a <a href="/api-docs#/docs/api/classes/data.Data.html" target="_parent">Data</a> to hold the IFC semantic data.</li>
-<li>Create a <a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a> with a <a href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a>, a <a href="/api-docs#/docs/api/classes/webglrenderer.WebGLRenderer.html" target="_parent">WebGLRenderer</a> and one <a href="/api-docs#/docs/api/classes/viewer.View.html" target="_parent">View</a>.</li>
-<li>Attach a <a href="/api-docs#/docs/api/classes/cameracontrol.CameraControl.html" target="_parent">CameraControl</a> to the <a href="/api-docs#/docs/api/classes/viewer.View.html" target="_parent">View</a> so that we can interact with it using mouse and touch.</li>
-<li>Create a <a href="/api-docs#/docs/api/classes/scene.SceneModel.html" target="_parent">SceneModel</a> in the <a href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a>.</li>
-<li>Create a <a href="/api-docs#/docs/api/classes/data.DataModel.html" target="_parent">DataModel</a> in the <a href="/api-docs#/docs/api/classes/data.Data.html" target="_parent">Data</a>.</li>
-<li>Create a <a href="/api-docs#/docs/api/classes/modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a>, configured to use <a href="/api-docs#/docs/api/functions/gltf.loadGLTF.html" target="_parent">loadGLTF</a> load each glTF chunk, and <a href="/api-docs#/docs/api/functions/metamodel.loadMetaModel.html" target="_parent">loadMetaModel</a> to load each JSON metadata file.</li>
+<li>Create a <a class="doc-link" data-template="Data_template"  href="/api-docs#/docs/api/classes/data.Data.html" target="_parent">Data</a>
+            <template class="doc-link-tooltip" id="Data_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / Data /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Data</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">A federated entity-relationship semantic data model.</p>
+            </template> to hold the IFC semantic data.</li>
+<li>Create a <a class="doc-link" data-template="Viewer_template"  href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
+            <template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">The xeokit SDK's Browser-based model viewer.</p>
+            </template> with a <a class="doc-link" data-template="Scene_template"  href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a>
+            <template class="doc-link-tooltip" id="Scene_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / Scene /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Scene</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Container of model geometry and materials.</p>
+            </template>, a <a class="doc-link" data-template="WebGLRenderer_template"  href="/api-docs#/docs/api/classes/webglrenderer.WebGLRenderer.html" target="_parent">WebGLRenderer</a>
+            <template class="doc-link-tooltip" id="WebGLRenderer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / webglrenderer / WebGLRenderer /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class WebGLRenderer</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">A WebGL-based rendering strategy for a Viewer.</p>
+            </template> and one <a class="doc-link" data-template="View_template"  href="/api-docs#/docs/api/classes/viewer.View.html" target="_parent">View</a>
+            <template class="doc-link-tooltip" id="View_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / View /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class View</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">An independent view within a Viewer, with its own Canvas, Camera and object visual states.</p>
+            </template>.</li>
+<li>Attach a <a class="doc-link" data-template="CameraControl_template"  href="/api-docs#/docs/api/classes/cameracontrol.CameraControl.html" target="_parent">CameraControl</a>
+            <template class="doc-link-tooltip" id="CameraControl_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / cameracontrol / CameraControl /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class CameraControl</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Mouse and touch controller for a Viewer's Camera.</p>
+            </template> to the View so that we can interact with it using mouse and touch.</li>
+<li>Create a <a class="doc-link" data-template="SceneModel_template"  href="/api-docs#/docs/api/classes/scene.SceneModel.html" target="_parent">SceneModel</a>
+            <template class="doc-link-tooltip" id="SceneModel_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / SceneModel /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class SceneModel</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Contains a model's geometry and materials
+
+* Created with Scene.</p>
+            </template> in the Scene.</li>
+<li>Create a <a class="doc-link" data-template="DataModel_template"  href="/api-docs#/docs/api/classes/data.DataModel.html" target="_parent">DataModel</a>
+            <template class="doc-link-tooltip" id="DataModel_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / DataModel /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class DataModel</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Represents an entity-relationship data model.</p>
+            </template> in the Data.</li>
+<li>Create a <a class="doc-link" data-template="ModelChunksLoader_template"  href="/api-docs#/docs/api/classes/modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a>
+            <template class="doc-link-tooltip" id="ModelChunksLoader_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / modelchunksloader / ModelChunksLoader /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class ModelChunksLoader</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads a SceneModel and/or DataModel from a set of chunk files.</p>
+            </template>, configured to use <a class="doc-link" data-template="loadGLTF_template"  href="/api-docs#/docs/api/functions/gltf.loadGLTF.html" target="_parent">loadGLTF</a>
+            <template class="doc-link-tooltip" id="loadGLTF_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / gltf / loadGLTF /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadGLTF</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads glTF file data into a SceneModel and/or
+a DataModel.</p>
+            </template> load each glTF chunk, and <a class="doc-link" data-template="loadMetaModel_template"  href="/api-docs#/docs/api/functions/metamodel.loadMetaModel.html" target="_parent">loadMetaModel</a>
+            <template class="doc-link-tooltip" id="loadMetaModel_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / metamodel / loadMetaModel /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadMetaModel</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads a legacy xeokit metamodel JSON representation into a DataModel.</p>
+            </template> to load each JSON metadata file.</li>
 <li>Load our <code>model.glb.manifest.json</code> manifest.</li>
-<li>Use <a href="/api-docs#/docs/api/classes/modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a> to load the files listed in the manifest into our <a href="/api-docs#/docs/api/classes/scene.SceneModel.html" target="_parent">SceneModel</a> and <a href="/api-docs#/docs/api/classes/data.DataModel.html" target="_parent">DataModel</a>.</li>
-<li>Build the <a href="/api-docs#/docs/api/classes/scene.SceneModel.html" target="_parent">SceneModel</a> and <a href="/api-docs#/docs/api/classes/data.DataModel.html" target="_parent">DataModel</a>. The IFC model then appears in the <a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>.</li>
+<li>Use <a class="doc-link" data-template="ModelChunksLoader_template"  href="/api-docs#/docs/api/classes/modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a>
+            <template class="doc-link-tooltip" id="ModelChunksLoader_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / modelchunksloader / ModelChunksLoader /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class ModelChunksLoader</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads a SceneModel and/or DataModel from a set of chunk files.</p>
+            </template> to load the files listed in the manifest into our SceneModel and DataModel.</li>
+<li>Build the SceneModel and DataModel. The IFC model then appears in the Viewer.</li>
 </ol>
 <pre><code class="hljs"> <span class="hljs-comment">// 1.</span>
 
-<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/scene}&quot;</span>;
-<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/data.Data.html" target="_parent">Data</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/data}&quot;</span>;
-<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/modelchunksloader}&quot;</span>;
-<span class="hljs-keyword">import</span> {<a href="/api-docs#/docs/api/functions/gltf.loadGLTF.html" target="_parent">loadGLTF</a>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/gltf}&quot;</span>;
-<span class="hljs-keyword">import</span> {<a href="/api-docs#/docs/api/functions/metamodel.loadMetaModel.html" target="_parent">loadMetaModel</a>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/metamodel}&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">Scene</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/scene}&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">Data</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/data}&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">ModelChunksLoader</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/modelchunksloader}&quot;</span>;
+<span class="hljs-keyword">import</span> {loadGLTF} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/gltf}&quot;</span>;
+<span class="hljs-keyword">import</span> {loadMetaModel} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/metamodel}&quot;</span>;
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">Web</span>GLRenderer} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/webglrenderer&quot;</span>;
-<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/viewer&quot;</span>;
-<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/cameracontrol.CameraControl.html" target="_parent">CameraControl</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/cameracontrol&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">Viewer</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/viewer&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">CameraControl</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/cameracontrol&quot;</span>;
 
 <span class="hljs-comment">// 2. </span>
 
-<span class="hljs-keyword">const</span> data = <span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/data.Data.html" target="_parent">Data</a></span>();
+<span class="hljs-keyword">const</span> data = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Data</span>();
 
 <span class="hljs-comment">// 3.</span>
 
-<span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a></span>();
+<span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scene</span>();
 
 <span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Web</span>GLRenderer({});
 
-<span class="hljs-keyword">const</span> viewer = <span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a></span>({
+<span class="hljs-keyword">const</span> viewer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;myViewer&quot;</span>,
     scene,
     renderer
@@ -244,7 +365,7 @@ view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</s
 
 <span class="hljs-comment">// 4. </span>
 
-<span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/cameracontrol.CameraControl.html" target="_parent">CameraControl</a></span>(view, {});
+<span class="hljs-keyword">new</span> <span class="hljs-title class_">CameraControl</span>(view, {});
 
 <span class="hljs-comment">// 5.</span>
 
@@ -260,9 +381,9 @@ view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</s
 
 <span class="hljs-comment">// 7.</span>
 
-<span class="hljs-keyword">const</span> modelChunksLoader = <span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a></span>({
-    <span class="hljs-attr">sceneModelLoader</span>: <a href="/api-docs#/docs/api/functions/gltf.loadGLTF.html" target="_parent">loadGLTF</a>,
-    <span class="hljs-attr">dataModelLoader</span>: <a href="/api-docs#/docs/api/functions/metamodel.loadMetaModel.html" target="_parent">loadMetaModel</a>
+<span class="hljs-keyword">const</span> modelChunksLoader = <span class="hljs-keyword">new</span> <span class="hljs-title class_">ModelChunksLoader</span>({
+    <span class="hljs-attr">sceneModelLoader</span>: loadGLTF,
+    <span class="hljs-attr">dataModelLoader</span>: loadMetaModel
 });
 
 <span class="hljs-comment">//  8.</span>
@@ -288,7 +409,7 @@ view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</s
                     sceneModel.<span class="hljs-title function_">build</span>();
                     dataModel.<span class="hljs-title function_">build</span>(); 
                     
-                    <span class="hljs-comment">// The Karhumaki <a href="/api-docs#/docs/api/variables/cityjsontypes_1_1_3.Bridge.html" target="_parent">Bridge</a> model now appears in our <a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>.</span>
+                    <span class="hljs-comment">// The Karhumaki Bridge model now appears in our Viewer.</span>
                 });
             });
     });
@@ -304,7 +425,7 @@ view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</s
             <div class="col-md-4 col-sm-12 mb-3  text-left">
                 <h2>xeokit SDK</h2>
                 <p>Powering Engineering Graphics on the Web</p>
-                <img src="https://xeokit.github.io/sdk//images/xeokitLogoAlphaBG.png">
+                <img src="http://localhost:8080/images/xeokitLogoAlphaBG.png">
             </div>
             <div class="col-md-8 col-sm-12">
 
@@ -312,11 +433,11 @@ view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</s
                     <h5 class="mb-4 font-weight-bold text-uppercase ">Learn</h5>
                     <ul class="list-group">
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
-                            href="https://xeokit.github.io/sdk//examples">Examples</a></li>
+                            href="http://localhost:8080/examples">Examples</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
-                            href="https://xeokit.github.io/sdk//articles">Tutorials</a></li>
+                            href="http://localhost:8080/articles">Tutorials</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
-                            href="https://xeokit.github.io/sdk//api-docs.html">API Docs</a></li>
+                            href="http://localhost:8080/api-docs.html">API Docs</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
                             href="">Pricing</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
@@ -365,4 +486,32 @@ view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</s
 </footer>
 
 </body>
+<!-- Include Popper.js (required by Tippy) -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<!-- Include Tippy.js -->
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script>
+    // Initialize tooltips
+    tippy('.doc-link', {
+        content(reference) {
+            const id = reference.getAttribute('data-template')
+            const container = document.createElement('div')
+            const linkedTemplate = document.getElementById(id)
+            const node = document.importNode(linkedTemplate.content, true)
+            container.appendChild(node)
+            return container
+        },
+        placement: 'bottom',
+        // arrow: true,
+         animation: 'scale',
+        theme: 'light-border',
+           duration: [200, 150],
+        //duration 1000,
+        trigger: 'mouseenter focus',
+        hideOnClick: false,
+        inertia: true,
+    });
+
+
+</script>
 </html>

@@ -1,25 +1,36 @@
-In this tutorial we'll view an IFC model in a xeokit Viewer, after first converted it to 
-glTF and JSON metadata files for more efficient loading. 
-
-While converting and loading our model, we'll split the IFC file into multiple glTF and metadata files, for the Viewer 
-to load as a batch. This improves memory stability while converting and loading, because it enables the converter and 
-Viewer to allocate and deallocate memory in smaller, more recoverable increments. 
-
-[![](screenshot.png)](./../../examples/#SceneModel_build_table/index.html)
-
-* *[Run this example](./../../examples/#SceneModel_build_table/index.html)*
+## Introduction
 
 ---
 
+In this tutorial, we'll load an IFC 4.3 model into a xeokit doc:Viewer. To optimize performance, we'll first
+convert the IFC model to glTF and metamodel JSON files. The import process consists of two steps:
+1. Use `ifc2gltf` to convert IFC into glTF and JSON metadata.
+3. Use `doc:loadGLTF` to load the glTF and JSON metadata into a xeokit Viewer on a webpage.
+
+This process splits the model into multiple files, improving memory stability in the converter tools and
+Viewer by allowing incremental loading and deallocation.
+
+## Example IFC Model
+
+---
+
+In this tutorial, we'll import and view the Karhumaki Bridge model (source: [`http://drumbeat.cs.hut.fi/ifc/`](http://drumbeat.cs.hut.fi/ifc/)). Below is the final result— the model
+loaded in a Viewer from XGF and JSON data model files. In the following steps, we'll walk through the process
+of achieving this.
+
+* *[Run this example](https://xeokit.github.io/sdk//models/index.html#viewModel.html?modelId=KarhumakiBridge&pipelineId=ifc2gltf)*
+
+[![](karhumaki.png)](https://xeokit.github.io/sdk//models/index.html#viewModel.html?modelId=KarhumakiBridge&pipelineId=ifc2gltf)
+
 <br>
 
-## Converting IFC into glTF and Metadata Files
+## Step 1. Convert IFC into glTF and Metadata Files
 
-The first step is to convert our IFC file into a set of glTF geometry and JSON metadata files. For this tutorial, we'll use the Karhumaki Bridge IFC model
-from [`http://drumbeat.cs.hut.fi/ifc/`](http://drumbeat.cs.hut.fi/ifc/).
+---
 
-We'll use the [`ifc2gltfcxconverter`](https://www.notion.so/Converting-IFC-to-XKT-using-ifc2gltfcxconverter-a2e0005d00dc4f22b648f1237bc3245d?pvs=21)
-CLI tool to do the conversion:
+The first step is to convert our IFC file into a set of intermediate glTF geometry and JSON metadata files. We'll use
+the [`ifc2gltf`]()
+CLI tool to do this conversion step:
 
 ```bash
 ifc2gltfcxconverter -i Karhumaki-Bridge.ifc -o model.glb -m model.json -s 100
@@ -29,11 +40,12 @@ The parameters we provided the tool are:
 
 - `-i` specifies the IFC file to convert
 - `-o` specifies the name to prefix on each output glTF file
-- `-m` specifies the name to prefix on each JSON metadata file
+- `-m` specifies the name to prefix on each JSON metamodel file
 - `-s` specifies the maximum number of megabytes in each glTF file - smaller value means more output files, lower value
   means less files
 
-The files output by `ifc2gltf` are:
+The files output by `ifc2gltf` are listed below. Each of the JSON files follows the schema defined
+by MetaModelParams, which is xeokit's legacy format for semantic model data.
 
 ```bash
 .
@@ -60,7 +72,7 @@ The files output by `ifc2gltf` are:
 └── model.json
 ```
 
-The `model.glb.manifest.json` manifest looks like this:
+The `model.glb.manifest.json` manifest looks like below. This manifest follows the schema defined by Ifc2gltfManifestParams.
 
 ```json
 {
@@ -97,9 +109,9 @@ The `model.glb.manifest.json` manifest looks like this:
 
 <br>
 
-## Viewing the glTF and Metadata Files
+## Step 2. View the glTF and Metadata Files
 
-Now we'll create a Web page containing a xeokit Viewer that views our converted model.
+Now we'll create a Web page containing a xeokit doc:Viewer that views our converted model.
 
 First install the npm modules we need:
 
@@ -130,19 +142,19 @@ Then create an HTML page in `index.html` that contains a canvas element:
 </html>
 ````
 
-Then create JavaScript in `index.js` to create the Viewer and view our converted model.
+Then create JavaScript in `index.js` to create the doc:Viewer and view our converted model.
 
 The steps in the JavaScript are as follows:
 
 1. Import the packages we need.
-2. Create a Data to hold the IFC semantic data.
-3. Create a Viewer with a Scene, a WebGLRenderer and one View.
-4. Attach a CameraControl to the View so that we can interact with it using mouse and touch.
-5. Create a SceneModel in the Scene.
-6. Create a DataModel in the Data.
-7. Create a ModelChunksLoader, configured to use loadGLTF load each glTF chunk, and loadMetaModel to load each JSON metadata file.
+2. Create a doc:Data to hold the IFC semantic data.
+3. Create a doc:Viewer with a doc:Scene, a doc:WebGLRenderer and one doc:View.
+4. Attach a doc:CameraControl to the View so that we can interact with it using mouse and touch.
+5. Create a doc:SceneModel in the Scene.
+6. Create a doc:DataModel in the Data.
+7. Create a doc:ModelChunksLoader, configured to use doc:loadGLTF load each glTF chunk, and doc:loadMetaModel to load each JSON metadata file.
 8. Load our `model.glb.manifest.json` manifest.
-9. Use ModelChunksLoader to load the files listed in the manifest into our SceneModel and DataModel.
+9. Use doc:ModelChunksLoader to load the files listed in the manifest into our SceneModel and DataModel.
 10. Build the SceneModel and DataModel. The IFC model then appears in the Viewer.
 
 ```javascript

@@ -501,6 +501,8 @@
  * view1.objects["myObject1"].clippable = false;
  * ```
  *
+ * <br>
+ *
  * ## Customize Lighting
  *
  * Enhance the lighting of a {@link View} by adding custom {@link DirLight | DirLights}, {@link PointLight | PointLights},

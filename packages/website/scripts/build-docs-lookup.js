@@ -9,12 +9,31 @@ function buildDocsLookup(docsDir) {
 
     const index = new Map();
 
+    function getSummary(node) {
+        if (node.signatures) {
+            node = node.signatures[0];
+        }
+        if (!node.comment || !node.comment.summary || node.comment.summary.length === 0) {
+            return "";
+        }
+        const summary = [];
+        const nodeSummary = node.comment.summary;
+        for (let i =0, len = nodeSummary.length; i < len; i++) {
+            const text = nodeSummary[i].text;
+            if (text) {
+                summary.push(text);
+            }
+        }
+        return summary.join("").split('.')[0] + "."; // Extract part before first period
+    }
+
     const parseChildren = (namespace, node) => {
         const children = node.children;
         if (children) {
             for (let child of children) {
                 const kind = child.kind;
                 const entry = {
+                    summary:"",
                     path: null,
                     kind: null
                 };
@@ -50,6 +69,8 @@ function buildDocsLookup(docsDir) {
                     default:
                         console.log(`kind not handled: ${kind}`)
                 }
+                entry.namespace = namespace;
+                entry.summary = getSummary(child);
                 index.set(child.name, entry);
             }
         }

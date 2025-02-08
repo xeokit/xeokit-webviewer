@@ -28,7 +28,7 @@ body {
 }
 
 .info-container {
-    background-color: whitesmoke;
+    background-color: #ffffff;
 
     height: 100%;
     top: 10px;
@@ -400,3 +400,16 @@ code{
 
 
 
+
+a.doc-link  {
+    text-decoration: indianred;
+    border:1px solid #dddddd;
+    border-radius:2px;
+    margin:0px;
+    padding-top: 1px;
+    padding-bottom: 0px;
+    padding-left:4px;
+    padding-right:4px;
+    background:#f3f3f3;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}

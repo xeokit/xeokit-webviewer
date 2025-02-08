@@ -183,7 +183,7 @@
  *          console.error(theTextureSet.message);
  *      }
  *
- *      const redLegMesh = sceneModel.createLayerMesh({
+ *      const redLegMesh = sceneModel.createMesh({
  *          id: "redLegMesh",
  *          geometryId: "boxGeometry",
  *          position: [-4, -6, -4],
@@ -197,7 +197,7 @@
  *          console.error(redLegMesh.message);
  *      }
  *
- *      const greenLegMesh = sceneModel.createLayerMesh({
+ *      const greenLegMesh = sceneModel.createMesh({
  *          id: "greenLegMesh",
  *          geometryId: "boxGeometry",
  *          position: [4, -6, -4],
@@ -207,7 +207,7 @@
  *          textureSetId: "theTextureSet"
  *      });
  *
- *      const blueLegMesh = sceneModel.createLayerMesh({
+ *      const blueLegMesh = sceneModel.createMesh({
  *          id: "blueLegMesh",
  *          geometryId: "boxGeometry",
  *          position: [4, -6, 4],
@@ -217,7 +217,7 @@
  *          textureSetId: "theTextureSet"
  *      });
  *
- *      const yellowLegMesh = sceneModel.createLayerMesh({
+ *      const yellowLegMesh = sceneModel.createMesh({
  *          id: "yellowLegMesh",
  *          geometryId: "boxGeometry",
  *          position: [-4, -6, 4],
@@ -227,7 +227,7 @@
  *          textureSetId: "theTextureSet"
  *      });
  *
- *      const tableTopMesh = sceneModel.createLayerMesh({
+ *      const tableTopMesh = sceneModel.createMesh({
  *          id: "tableTopMesh",
  *          geometryId: "boxGeometry",
  *          position: [0, -3, 0],

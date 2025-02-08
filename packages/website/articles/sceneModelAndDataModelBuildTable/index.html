@@ -9,14 +9,14 @@
 
 <title>xeokit SDK 3 - 3D Web Programming Toolkit for BIM and Engineering Visualization</title>
 
-<link href="https://xeokit.github.io/sdk//libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://xeokit.github.io/sdk//css/business-frontpage.css" rel="stylesheet">
+<link href="http://localhost:8080/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://localhost:8080/css/business-frontpage.css" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-<script src="https://xeokit.github.io/sdk//libs/jquery/jquery.min.js"></script>
-<script src="https://xeokit.github.io/sdk//libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="http://localhost:8080/libs/jquery/jquery.min.js"></script>
+<script src="http://localhost:8080/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
@@ -24,30 +24,52 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/javascript.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/html.min.js"></script>
 
+
+
     <title></title>
+    <style>
+        .tippy-box[data-theme~='custom'] {
+            background-color: white;
+            color: #333;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border: 1px solid #eee;
+        }
+
+        .tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {
+            border-top-color: white;
+        }
+
+        .tippy-box[data-theme~='custom'] .tippy-arrow::before {
+            transform: scale(0.75);
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"/>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light-border.css"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
-    <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent" href="https://xeokit.github.io/sdk/">@xeokit/sdk</a>/<a class="navbar-brand" href="https://xeokit.github.io/sdk//articles/index.html">Articles</a></span>
+    <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent"
+                                                                                                  href="http://localhost:8080">@xeokit/sdk</a>/<a
+        class="navbar-brand" href="http://localhost:8080/articles/index.html">Articles</a></span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//index.html?foo=0">Home</a>
+            <a class="nav-link" href="http://localhost:8080/index.html?foo=0">Home</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//examples/index.html">Examples</a>
+            <a class="nav-link" href="http://localhost:8080/examples/index.html">Examples</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//models/index.html">Models</a>
+            <a class="nav-link" href="http://localhost:8080/models/index.html">Models</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//articles/index.html">Articles</a>
+            <a class="nav-link" href="http://localhost:8080/articles/index.html">Articles</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//api-docs.html">API Docs</a>
+            <a class="nav-link" href="http://localhost:8080/api-docs.html">API Docs</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="https://github.com/xeokit/sdk">GitHub</a>
@@ -62,16 +84,6 @@
 </div>
 
 </nav>
-<header class="bg-black home-header bg-black">
-    <div class="container h-75">
-        <!--                <div class="row h-100 align-items-center">-->
-        <!--                    <div class="col-lg-12">-->
-        <!--                        <h1 class="text-white mt-5 mb-2">Build and View a Model with Semantic Data</h1>-->
-        <!--                        <p class="lead mb-5 text-white"></p>-->
-        <!--                    </div>-->
-        <!--                </div>-->
-    </div>
-</header>
 <section id="intro" class="main-section">
     <div class="container">
         <div class="row testimonial-row">
@@ -110,15 +122,15 @@ npm install @xeokit/core/constants
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
 <p>Then create JavaScript in <code>index.js</code> to build and view our model.</p>
-<pre><code class="hljs"><span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/scene&quot;</span>;
-<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/api-docs#/docs/api/variables/constants.TrianglesPrimitive.html" target="_parent">TrianglesPrimitive</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/constants&quot;</span>;
-<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/viewer&quot;</span>;
+<pre><code class="hljs"><span class="hljs-keyword">import</span> {<span class="hljs-title class_">Scene</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/scene&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">TrianglesPrimitive</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/constants&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">Viewer</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/viewer&quot;</span>;
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">Web</span>GLRenderer} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/webglrenderer&quot;</span>;
-<span class="hljs-keyword">import</span> {<span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/cameracontrol.CameraControl.html" target="_parent">CameraControl</a></span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/cameracontrol&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">CameraControl</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/cameracontrol&quot;</span>;
 
-<span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a></span>();
+<span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scene</span>();
 
-<span class="hljs-keyword">const</span> viewer = <span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a></span>({
+<span class="hljs-keyword">const</span> viewer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;demoViewer&quot;</span>,
     scene,
     <span class="hljs-attr">renderer</span>: <span class="hljs-keyword">new</span> <span class="hljs-title class_">Web</span>GLRenderer({})
@@ -133,7 +145,7 @@ view.<span class="hljs-property">camera</span>.<span class="hljs-property">eye</
 view.<span class="hljs-property">camera</span>.<span class="hljs-property">look</span> = [<span class="hljs-number">0</span>, -<span class="hljs-number">5</span>, <span class="hljs-number">0</span>];
 view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>];
 
-<span class="hljs-keyword">new</span> <span class="hljs-title class_"><a href="/api-docs#/docs/api/classes/cameracontrol.CameraControl.html" target="_parent">CameraControl</a></span>(view);
+<span class="hljs-keyword">new</span> <span class="hljs-title class_">CameraControl</span>(view);
 
 <span class="hljs-keyword">const</span> sceneModel = scene.<span class="hljs-title function_">createModel</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;demoModel&quot;</span>
@@ -141,7 +153,7 @@ view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</s
 
 sceneModel.<span class="hljs-title function_">createGeometry</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;demoBoxGeometry&quot;</span>,
-    <span class="hljs-attr">primitive</span>: xeokit.<span class="hljs-property">constants</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/constants.TrianglesPrimitive.html" target="_parent">TrianglesPrimitive</a></span>,
+    <span class="hljs-attr">primitive</span>: xeokit.<span class="hljs-property">constants</span>.<span class="hljs-property">TrianglesPrimitive</span>,
     <span class="hljs-attr">positions</span>: [
         <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>,
         -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>,
@@ -160,7 +172,7 @@ sceneModel.<span class="hljs-title function_">createGeometry</span>({
 sceneModel.<span class="hljs-title function_">createMesh</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;redLegMesh&quot;</span>,
     <span class="hljs-attr">geometryId</span>: <span class="hljs-string">&quot;demoBoxGeometry&quot;</span>,
-    <span class="hljs-attr">matrix</span>: xeokit.<span class="hljs-property">scene</span>.<span class="hljs-title function_"><a href="/api-docs#/docs/api/functions/scene.buildMat4.html" target="_parent">buildMat4</a></span>({
+    <span class="hljs-attr">matrix</span>: xeokit.<span class="hljs-property">scene</span>.<span class="hljs-title function_">buildMat4</span>({
         <span class="hljs-attr">position</span>: [-<span class="hljs-number">4</span>, -<span class="hljs-number">6</span>, -<span class="hljs-number">4</span>],
         <span class="hljs-attr">scale</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>]
     }),
@@ -175,7 +187,7 @@ sceneModel.<span class="hljs-title function_">createObject</span>({
 sceneModel.<span class="hljs-title function_">createMesh</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;greenLegMesh&quot;</span>,
     <span class="hljs-attr">geometryId</span>: <span class="hljs-string">&quot;demoBoxGeometry&quot;</span>,
-    <span class="hljs-attr">matrix</span>: xeokit.<span class="hljs-property">scene</span>.<span class="hljs-title function_"><a href="/api-docs#/docs/api/functions/scene.buildMat4.html" target="_parent">buildMat4</a></span>({
+    <span class="hljs-attr">matrix</span>: xeokit.<span class="hljs-property">scene</span>.<span class="hljs-title function_">buildMat4</span>({
         <span class="hljs-attr">position</span>: [<span class="hljs-number">4</span>, -<span class="hljs-number">6</span>, -<span class="hljs-number">4</span>],
         <span class="hljs-attr">scale</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>]
     }),
@@ -190,7 +202,7 @@ sceneModel.<span class="hljs-title function_">createObject</span>({
 sceneModel.<span class="hljs-title function_">createMesh</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;blueLegMesh&quot;</span>,
     <span class="hljs-attr">geometryId</span>: <span class="hljs-string">&quot;demoBoxGeometry&quot;</span>,
-    <span class="hljs-attr">matrix</span>: xeokit.<span class="hljs-property">scene</span>.<span class="hljs-title function_"><a href="/api-docs#/docs/api/functions/scene.buildMat4.html" target="_parent">buildMat4</a></span>({
+    <span class="hljs-attr">matrix</span>: xeokit.<span class="hljs-property">scene</span>.<span class="hljs-title function_">buildMat4</span>({
         <span class="hljs-attr">position</span>: [<span class="hljs-number">4</span>, -<span class="hljs-number">6</span>, <span class="hljs-number">4</span>],
         <span class="hljs-attr">scale</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>]
     }),
@@ -205,7 +217,7 @@ sceneModel.<span class="hljs-title function_">createObject</span>({
 sceneModel.<span class="hljs-title function_">createMesh</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;yellowLegMesh&quot;</span>,
     <span class="hljs-attr">geometryId</span>: <span class="hljs-string">&quot;demoBoxGeometry&quot;</span>,
-    <span class="hljs-attr">matrix</span>: xeokit.<span class="hljs-property">scene</span>.<span class="hljs-title function_"><a href="/api-docs#/docs/api/functions/scene.buildMat4.html" target="_parent">buildMat4</a></span>({
+    <span class="hljs-attr">matrix</span>: xeokit.<span class="hljs-property">scene</span>.<span class="hljs-title function_">buildMat4</span>({
         <span class="hljs-attr">position</span>: [-<span class="hljs-number">4</span>, -<span class="hljs-number">6</span>, <span class="hljs-number">4</span>],
         <span class="hljs-attr">scale</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">1</span>]
     }),
@@ -220,7 +232,7 @@ sceneModel.<span class="hljs-title function_">createObject</span>({
 sceneModel.<span class="hljs-title function_">createMesh</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;purpleTableTopMesh&quot;</span>,
     <span class="hljs-attr">geometryId</span>: <span class="hljs-string">&quot;demoBoxGeometry&quot;</span>,
-    <span class="hljs-attr">matrix</span>: xeokit.<span class="hljs-property">scene</span>.<span class="hljs-title function_"><a href="/api-docs#/docs/api/functions/scene.buildMat4.html" target="_parent">buildMat4</a></span>({
+    <span class="hljs-attr">matrix</span>: xeokit.<span class="hljs-property">scene</span>.<span class="hljs-title function_">buildMat4</span>({
         <span class="hljs-attr">position</span>: [<span class="hljs-number">0</span>, -<span class="hljs-number">3</span>, <span class="hljs-number">0</span>],
         <span class="hljs-attr">scale</span>: [<span class="hljs-number">6</span>, <span class="hljs-number">0.5</span>, <span class="hljs-number">6</span>]
     }),
@@ -242,7 +254,7 @@ dataModel.<span class="hljs-title function_">createPropertySet</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;tablePropertySet&quot;</span>,
     <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Table properties&quot;</span>,
     <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;&quot;</span>,
-    <span class="hljs-attr">properties</span>: [ <span class="hljs-comment">// <a href="/api-docs#/docs/api/classes/data.Property.html" target="_parent">Property</a>[]</span>
+    <span class="hljs-attr">properties</span>: [ <span class="hljs-comment">// Property[]</span>
         {
             <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Weight&quot;</span>,
             <span class="hljs-attr">value</span>: <span class="hljs-number">5</span>,
@@ -264,7 +276,7 @@ dataModel.<span class="hljs-title function_">createPropertySet</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;tableTopPropertySet&quot;</span>,
     <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Table Top properties&quot;</span>,
     <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;&quot;</span>,
-    <span class="hljs-attr">properties</span>: [ <span class="hljs-comment">// <a href="/api-docs#/docs/api/classes/data.Property.html" target="_parent">Property</a>[]</span>
+    <span class="hljs-attr">properties</span>: [ <span class="hljs-comment">// Property[]</span>
         {
             <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Weight&quot;</span>,
             <span class="hljs-attr">value</span>: <span class="hljs-number">10</span>,
@@ -306,7 +318,7 @@ dataModel.<span class="hljs-title function_">createPropertySet</span>({
 
 dataModel.<span class="hljs-title function_">createObject</span>({ 
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;table&quot;</span>,
-    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/basictypes.BasicEntity.html" target="_parent">BasicEntity</a></span>,
+    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property">BasicEntity</span>,
     <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Table&quot;</span>,
     <span class="hljs-attr">propertySetIds</span>: [<span class="hljs-string">&quot;tablePropertySet&quot;</span>]
 });
@@ -314,64 +326,64 @@ dataModel.<span class="hljs-title function_">createObject</span>({
 dataModel.<span class="hljs-title function_">createObject</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;redLeg&quot;</span>,
     <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Red table Leg&quot;</span>,
-    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/basictypes.BasicEntity.html" target="_parent">BasicEntity</a></span>,
+    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property">BasicEntity</span>,
     <span class="hljs-attr">propertySetIds</span>: [<span class="hljs-string">&quot;tableLegPropertySet&quot;</span>]
 });
 
 dataModel.<span class="hljs-title function_">createObject</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;greenLeg&quot;</span>,
     <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Green table leg&quot;</span>,
-    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/basictypes.BasicEntity.html" target="_parent">BasicEntity</a></span>,
+    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property">BasicEntity</span>,
     <span class="hljs-attr">propertySetIds</span>: [<span class="hljs-string">&quot;tableLegPropertySet&quot;</span>]
 });
 
 dataModel.<span class="hljs-title function_">createObject</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;blueLeg&quot;</span>,
     <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Blue table leg&quot;</span>,
-    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/basictypes.BasicEntity.html" target="_parent">BasicEntity</a></span>,
+    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property">BasicEntity</span>,
     <span class="hljs-attr">propertySetIds</span>: [<span class="hljs-string">&quot;tableLegPropertySet&quot;</span>]
 });
 
 dataModel.<span class="hljs-title function_">createObject</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;yellowLeg&quot;</span>,
     <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Yellow table leg&quot;</span>,
-    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/basictypes.BasicEntity.html" target="_parent">BasicEntity</a></span>,
+    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property">BasicEntity</span>,
     <span class="hljs-attr">propertySetIds</span>: [<span class="hljs-string">&quot;tableLegPropertySet&quot;</span>]
 });
 
 dataModel.<span class="hljs-title function_">createObject</span>({
     <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;tableTop&quot;</span>,
     <span class="hljs-attr">name</span>: <span class="hljs-string">&quot;Purple table top&quot;</span>,
-    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/basictypes.BasicEntity.html" target="_parent">BasicEntity</a></span>,
+    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property">BasicEntity</span>,
     <span class="hljs-attr">propertySetIds</span>: [<span class="hljs-string">&quot;tableTopPropertySet&quot;</span>]
 });
 
 dataModel.<span class="hljs-title function_">createRelationship</span>({
-    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/cityjsontypes_1_1_3.BasicAggregation.html" target="_parent">BasicAggregation</a></span>,
+    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property">BasicAggregation</span>,
     <span class="hljs-attr">relatingObjectId</span>: <span class="hljs-string">&quot;table&quot;</span>,
     <span class="hljs-attr">relatedObjectId</span>: <span class="hljs-string">&quot;tableTop&quot;</span>
 });
 
 dataModel.<span class="hljs-title function_">createRelationship</span>({
-    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/cityjsontypes_1_1_3.BasicAggregation.html" target="_parent">BasicAggregation</a></span>,
+    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property">BasicAggregation</span>,
     <span class="hljs-attr">relatingObjectId</span>: <span class="hljs-string">&quot;tableTop&quot;</span>,
     <span class="hljs-attr">relatedObjectId</span>: <span class="hljs-string">&quot;redLeg&quot;</span>
 });
 
 dataModel.<span class="hljs-title function_">createRelationship</span>({
-    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/cityjsontypes_1_1_3.BasicAggregation.html" target="_parent">BasicAggregation</a></span>,
+    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property">BasicAggregation</span>,
     <span class="hljs-attr">relatingObjectId</span>: <span class="hljs-string">&quot;tableTop&quot;</span>,
     <span class="hljs-attr">relatedObjectId</span>: <span class="hljs-string">&quot;greenLeg&quot;</span>
 });
 
 dataModel.<span class="hljs-title function_">createRelationship</span>({
-    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/cityjsontypes_1_1_3.BasicAggregation.html" target="_parent">BasicAggregation</a></span>,
+    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property">BasicAggregation</span>,
     <span class="hljs-attr">relatingObjectId</span>: <span class="hljs-string">&quot;tableTop&quot;</span>,
     <span class="hljs-attr">relatedObjectId</span>: <span class="hljs-string">&quot;blueLeg&quot;</span>
 });
 
 dataModel.<span class="hljs-title function_">createRelationship</span>({
-    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property"><a href="/api-docs#/docs/api/variables/cityjsontypes_1_1_3.BasicAggregation.html" target="_parent">BasicAggregation</a></span>,
+    <span class="hljs-attr">type</span>: xeokit.<span class="hljs-property">basictypes</span>.<span class="hljs-property">BasicAggregation</span>,
     <span class="hljs-attr">relatingObjectId</span>: <span class="hljs-string">&quot;tableTop&quot;</span>,
     <span class="hljs-attr">relatedObjectId</span>: <span class="hljs-string">&quot;yellowLeg&quot;</span>
 });
@@ -389,7 +401,7 @@ dataModel.<span class="hljs-title function_">build</span>();
             <div class="col-md-4 col-sm-12 mb-3  text-left">
                 <h2>xeokit SDK</h2>
                 <p>Powering Engineering Graphics on the Web</p>
-                <img src="https://xeokit.github.io/sdk//images/xeokitLogoAlphaBG.png">
+                <img src="http://localhost:8080/images/xeokitLogoAlphaBG.png">
             </div>
             <div class="col-md-8 col-sm-12">
 
@@ -397,11 +409,11 @@ dataModel.<span class="hljs-title function_">build</span>();
                     <h5 class="mb-4 font-weight-bold text-uppercase ">Learn</h5>
                     <ul class="list-group">
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
-                            href="https://xeokit.github.io/sdk//examples">Examples</a></li>
+                            href="http://localhost:8080/examples">Examples</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
-                            href="https://xeokit.github.io/sdk//articles">Tutorials</a></li>
+                            href="http://localhost:8080/articles">Tutorials</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
-                            href="https://xeokit.github.io/sdk//api-docs.html">API Docs</a></li>
+                            href="http://localhost:8080/api-docs.html">API Docs</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
                             href="">Pricing</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
@@ -450,4 +462,31 @@ dataModel.<span class="hljs-title function_">build</span>();
 </footer>
 
 </body>
+<!-- Include Popper.js (required by Tippy) -->
+<script src="https://unpkg.com/@popperjs/core@2"></script>
+<!-- Include Tippy.js -->
+<script src="https://unpkg.com/tippy.js@6"></script>
+<script>
+    // Initialize tooltips
+    tippy('.doc-link', {
+        content(reference) {
+            const id = reference.getAttribute('data-template')
+            const container = document.createElement('div')
+            const linkedTemplate = document.getElementById(id)
+            const node = document.importNode(linkedTemplate.content, true)
+            container.appendChild(node)
+            return container
+        },
+        // placement: 'top-end',
+        // arrow: true,
+        // animation: 'scale',
+        theme: 'light-border',
+        //   duration: [200, 150],
+        trigger: 'mouseenter focus',
+        hideOnClick: false,
+        // interactive: true,
+        inertia: true,
+    });
+</script>
+
 </html>

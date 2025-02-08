@@ -1,24 +1,35 @@
-In this tutorial we'll view an IFC model in a xeokit Viewer, after first converted it to 
-XGF and JSON metadata files for efficient loading. 
-
-While converting and loading our model, we'll split the IFC file into multiple XGF and metadata files, for the Viewer 
-to load as a batch. This improves memory stability while converting and loading, because it enables the converter and 
-Viewer to allocate and deallocate memory in smaller, more recoverable increments. 
-
-[![](screenshot.png)](./../../examples/#SceneModel_build_table/index.html)
-
-* *[Run this example](./../../examples/#SceneModel_build_table/index.html)*
+## Introduction 
 
 ---
 
+In this tutorial, we'll load an IFC 4.3 model into a xeokit doc:Viewer. To optimize performance, we'll first 
+convert the IFC model to XGF, xeokit's native compressed format. The import process consists of three steps:
+1. Use `ifc2gltf` to convert the IFC into glTF and JSON metadata (*intermediate format*).
+2. Use `ifc2gltf2xkt` to convert the glTF and JSON into XGF and a JSON data model (*final format*).
+3. Use `doc:loadXGF` to load the XGF and JSON data model into a xeokit Viewer on a webpage.
+
+This process splits the model into multiple files, improving memory stability in the converter tools and 
+Viewer by allowing incremental loading and deallocation.
+
+## Example IFC Model
+---
+
+In this tutorial, we'll import and view the Karhumaki Bridge model (source: [`http://drumbeat.cs.hut.fi/ifc/`](http://drumbeat.cs.hut.fi/ifc/)). Below is the final result— the model 
+loaded in a Viewer from XGF and JSON data model files. In the following steps, we'll walk through the process 
+of achieving this.
+
+* *[Run this example](https://xeokit.github.io/sdk//models/index.html#viewModel.html?modelId=KarhumakiBridge&pipelineId=ifc2gltf2xgf)*
+
+[![](karhumaki.png)](https://xeokit.github.io/sdk//models/index.html#viewModel.html?modelId=KarhumakiBridge&pipelineId=ifc2gltf2xgf)
+
 <br>
 
-## Step 1. Converting IFC into glTF and Metadata Files
+## Step 1. Convert IFC into glTF and Metadata Files
 
-The first step is to convert our IFC file into a set of intermediate glTF geometry and JSON metadata files. For this tutorial, we'll use the Karhumaki Bridge IFC model
-from [`http://drumbeat.cs.hut.fi/ifc/`](http://drumbeat.cs.hut.fi/ifc/).
+---
 
-We'll use the [`ifc2gltfcxconverter`](https://www.notion.so/Converting-IFC-to-XKT-using-ifc2gltfcxconverter-a2e0005d00dc4f22b648f1237bc3245d?pvs=21)
+The first step is to convert our IFC file into a set of intermediate glTF geometry and JSON metadata files. We'll use 
+the [`ifc2gltf`]()
 CLI tool to do this conversion step:
 
 ```bash
@@ -29,11 +40,12 @@ The parameters we provided the tool are:
 
 - `-i` specifies the IFC file to convert
 - `-o` specifies the name to prefix on each output glTF file
-- `-m` specifies the name to prefix on each JSON metadata file
+- `-m` specifies the name to prefix on each JSON metamodel file
 - `-s` specifies the maximum number of megabytes in each glTF file - smaller value means more output files, lower value
   means less files
 
-The files output by `ifc2gltf` are:
+The files output by `ifc2gltf` are listed below. Each of the JSON files follows the schema defined
+by MetaModelParams, which is xeokit's legacy format for semantic model data.
 
 ```bash
 .
@@ -60,7 +72,7 @@ The files output by `ifc2gltf` are:
 └── model.json
 ```
 
-The `model.glb.manifest.json` manifest looks like this:
+The `model.glb.manifest.json` manifest looks like below. This manifest follows the schema defined by Ifc2gltfManifestParams. 
 
 ```json
 {
@@ -97,9 +109,92 @@ The `model.glb.manifest.json` manifest looks like this:
 
 <br>
 
-## Step 3. Viewing the XGF and Metadata Files
+## Step 2. Convert glTF and Metadata to XGF and Datamodel Files
 
-Now we'll create a Web page containing a xeokit Viewer that views our converted model.
+---
+
+The next step is to convert our set of intermediate glTF geometry and JSON metamodel files into the final set of XGF and data model files. 
+
+We'll use the [`ifc2gltf2xgf`]()
+CLI tool to do this conversion step:
+
+```bash
+node ifc2gltf2xgf -i model.glb.manifest.json -o model.xgf.manifest.json
+```
+
+The parameters we provided the tool are:
+
+- `-i` specifies the glTF+Metadata manifest file to convert
+- `-o` specifies the XGF+DataModel manifest file to output
+
+The files output by `ifc2gltf2xgf` are listed below. Each of the JSON files follows the schema defined
+by doc:DataModelParams, which is xeokit's new and more expressive *entity-relationship graph* format for semantic model data.
+
+```bash
+.
+├── model.xgf.manifest.json
+├── model_1.xgf
+├── model_1.datamodel.json
+├── model_2.xgf
+├── model_2.datamodel.json
+├── model_3.xgf
+├── model_3.datamodel.json
+├── model_4.xgf
+├── model_4.datamodel.json
+├── model_5.xgf
+├── model_5.datamodel.json
+├── model_6.xgf
+├── model_6.datamodel.json
+├── model_7.xgf
+├── model_7.datamodel.json
+├── model_8.xgf
+├── model_8.datamodel.json
+├── model_9.xgf
+├── model_9.datamodel.json
+├── model.xgf
+└── model.datamodel.json
+```
+
+The `model.xgf.manifest.json` manifest looks like below. This manifest follows the schema defined by doc:ModelChunksManifestParams.
+
+```json
+
+{
+    "sceneModelMIMEType": "arraybuffer",
+    "sceneModelFiles": [
+        "model.xgf",
+        "model_1.xgf",
+        "model_2.xgf",
+        "model_3.xgf",
+        "model_4.xgf",
+        "model_5.xgf",
+        "model_6.xgf",
+        "model_7.xgf",
+        "model_8.xgf",
+        "model_9.xgf"
+    ],
+    "dataModelFiles": [
+        "model.datamodel.json",
+        "model_1.datamodel.json",
+        "model_2.datamodel.json",
+        "model_3.datamodel.json",
+        "model_4.datamodel.json",
+        "model_5.datamodel.json",
+        "model_6.datamodel.json",
+        "model_7.datamodel.json",
+        "model_8.datamodel.json",
+        "model_9.datamodel.json"
+    ]
+}
+```
+
+<br>
+
+## Step 3. View the XGF and Datamodel Files
+
+---
+
+Now we'll create a Web page containing a xeokit doc:Viewer that views our converted model.
 
 First install the npm modules we need:
 
@@ -120,7 +215,7 @@ Then create an HTML page in `index.html` that contains a canvas element:
 <!DOCTYPE html>
 <html>
 <head>
-    <title>xeokit Spinning Box</title>
+    <title>xeokit XGF model, imported from IFC</title>
 </head>
 <body>
 <canvas id="myView1"></canvas>
@@ -134,14 +229,14 @@ Then create JavaScript in `index.js` to create the Viewer and view our converted
 The steps in the JavaScript are as follows:
 
 1. Import the packages we need.
-2. Create a Data to hold the IFC semantic data.
-3. Create a Viewer with a Scene, a WebGLRenderer and one View.
-4. Attach a CameraControl to the View so that we can interact with it using mouse and touch.
-5. Create a SceneModel in the Scene.
-6. Create a DataModel in the Data.
-7. Create a ModelChunksLoader, configured to use loadXGF load each XGF chunk, and loadDataModel to load each JSON data model file.
+2. Create a doc:Data to hold the IFC semantic data.
+3. Create a doc:Viewer with a doc:Scene, a doc:WebGLRenderer and one doc:View.
+4. Attach a doc:CameraControl to the View so that we can interact with it using mouse and touch.
+5. Create a doc:SceneModel in the Scene.
+6. Create a doc:DataModel in the Data.
+7. Create a doc:ModelChunksLoader, configured to use doc:loadXGF load each XGF chunk, and doc:loadDataModel to load each JSON data model file.
 8. Load our `model.xgf.manifest.json` manifest.
-9. Use ModelChunksLoader to load the files listed in the manifest into our SceneModel and DataModel.
+9. Use doc:ModelChunksLoader to load the files listed in the manifest into our SceneModel and DataModel.
 10. Build the SceneModel and DataModel. The IFC model then appears in the Viewer.
 
 ```javascript
@@ -199,13 +294,13 @@ const dataModel = data.createModel({
 // 7.
 
 const modelChunksLoader = new ModelChunksLoader({
-    sceneModelLoader: loadGLTF,
+    sceneModelLoader: loadXGF,
     dataModelLoader: loadMetaModel
 });
 
 //  8.
 
-fetch(`model.glb.manifest.json`)
+fetch(`model.xgf.manifest.json`)
     .then(response => {
         response
             .json()
@@ -219,7 +314,7 @@ fetch(`model.glb.manifest.json`)
                     sceneModel,
                     dataModel
 
-                }).then(() => { // glTF and JSON files loaded
+                }).then(() => { // XGF and DataModel JSON files loaded
                     
                     // 10.
                     

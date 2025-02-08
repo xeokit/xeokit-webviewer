@@ -7,20 +7,9 @@
         "whitepaper"
       ]
     },
-    "foo": {
-      "title": "Foo",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "tags": [
-        "Beginner",
-        "SceneModel",
-        "SceneObject",
-        "Viewer",
-        "Geometry"
-      ]
-    },
     "ifc2gltf": {
-      "title": "ifc2gltf - IFC Model Import Pipeline",
-      "description": "How to view an IFC model in a xeokit Viewer, after first converted it to glTF and JSON metadata files for smoother loading.",
+      "title": "Importing an IFC Model into xeokit via glTF",
+      "description": "How to convert an IFC model to glTF and then view in a xeokit web Viewer.",
       "tags": [
         "SceneModel",
         "DataModel",
@@ -30,11 +19,16 @@
         "ModelChunksLoader",
         "loadGLTF",
         "loadMetaModel"
+      ],
+      "bannerImage": "banner.png",
+      "thumbnail": "thumb.png",
+      "relatedArticles": [
+        "ifc2gltf2xgf"
       ]
     },
     "ifc2gltf2xgf": {
-      "title": "ifc2gltf2xgf - Optimized IFC Model Import Pipeline",
-      "description": "How to view an IFC model in a xeokit Viewer, after first converted it to XGF and JSON metadata files for even smoother loading.",
+      "title": "Importing an IFC Model into xeokit via XGF",
+      "description": "How to convert an IFC model to XGF format and then view it in a xeokit web Viewer. <br><br>Compared to glTF, XGF offers faster loading speed for some AEC models.",
       "tags": [
         "SceneModel",
         "DataModel",
@@ -46,17 +40,11 @@
         "loadDataModel",
         "ifc2gltf",
         "ifc2gltf2xkt"
-      ]
-    },
-    "intro": {
-      "title": "xeokit SDK Overview",
-      "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-      "tags": [
-        "Beginner",
-        "SceneModel",
-        "SceneObject",
-        "Viewer",
-        "Geometry"
+      ],
+      "bannerImage": "banner.png",
+      "thumbnail": "thumb.png",
+      "relatedArticles": [
+        "ifc2gltf"
       ]
     },
     "sceneModelAndDataModelBuildTable": {
@@ -124,8 +112,8 @@
       ]
     },
     "techWhitePaper": {
-      "title": "Technical White Paper: xeokit SDK for 3D BIM and AEC Visualization",
-      "description": "This white paper outlines how xeokit addresses critical challenges in BIM data visualization, enhances workflow efficiency, and supports scalable, web-based deployments.",
+      "title": "An Overview of the xeokit SDK",
+      "description": "This article provides a starting point for learning about the xeokit SDK.",
       "tags": [
         "whitepaper"
       ]
@@ -163,6 +151,17 @@
         "Viewer",
         "ViewerParams"
       ]
+    },
+    "xeokitOverview": {
+      "title": "xeokit SDK Modules",
+      "description": "An overview of the modules within the xeokit SDK, including scene and data representation, web viewer, model import, export and conversion tools, and various utility libraries.",
+      "tags": [
+        "Beginner",
+        "SceneModel",
+        "SceneObject",
+        "Viewer",
+        "Geometry"
+      ]
     }
   },
   "tagsToArticlesMap": {
@@ -170,46 +169,9 @@
       "execWhitePaper",
       "techWhitePaper"
     ],
-    "Beginner": [
-      "foo",
-      "intro",
-      "sceneModelAndDataModelBuildTable",
-      "sceneModelBuildBox",
-      "sceneModelBuildGeometries",
-      "sceneModelBuildTable",
-      "shareBCF",
-      "viewGLTF",
-      "viewXGF"
-    ],
     "SceneModel": [
-      "foo",
       "ifc2gltf",
       "ifc2gltf2xgf",
-      "intro",
-      "sceneModelAndDataModelBuildTable",
-      "sceneModelBuildBox",
-      "sceneModelBuildGeometries",
-      "sceneModelBuildTable",
-      "shareBCF",
-      "viewGLTF",
-      "viewXGF"
-    ],
-    "SceneObject": [
-      "foo",
-      "intro",
-      "sceneModelAndDataModelBuildTable",
-      "sceneModelBuildBox",
-      "sceneModelBuildGeometries",
-      "sceneModelBuildTable",
-      "shareBCF",
-      "viewGLTF",
-      "viewXGF"
-    ],
-    "Viewer": [
-      "foo",
-      "ifc2gltf",
-      "ifc2gltf2xgf",
-      "intro",
       "sceneModelAndDataModelBuildTable",
       "sceneModelBuildBox",
       "sceneModelBuildGeometries",
@@ -217,22 +179,24 @@
       "shareBCF",
       "viewGLTF",
       "viewXGF",
-      "viewerGetJSON"
+      "xeokitOverview"
     ],
-    "Geometry": [
-      "foo",
-      "intro",
+    "DataModel": [
+      "ifc2gltf",
+      "ifc2gltf2xgf"
+    ],
+    "Viewer": [
+      "ifc2gltf",
+      "ifc2gltf2xgf",
       "sceneModelAndDataModelBuildTable",
       "sceneModelBuildBox",
       "sceneModelBuildGeometries",
       "sceneModelBuildTable",
       "shareBCF",
       "viewGLTF",
-      "viewXGF"
-    ],
-    "DataModel": [
-      "ifc2gltf",
-      "ifc2gltf2xgf"
+      "viewXGF",
+      "viewerGetJSON",
+      "xeokitOverview"
     ],
     "glTF": [
       "ifc2gltf",
@@ -269,6 +233,16 @@
     "ifc2gltf2xkt": [
       "ifc2gltf2xgf"
     ],
+    "Beginner": [
+      "sceneModelAndDataModelBuildTable",
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable",
+      "shareBCF",
+      "viewGLTF",
+      "viewXGF",
+      "xeokitOverview"
+    ],
     "SceneTransform": [
       "sceneModelAndDataModelBuildTable",
       "sceneModelBuildGeometries",
@@ -276,6 +250,26 @@
       "shareBCF",
       "viewGLTF",
       "viewXGF"
+    ],
+    "SceneObject": [
+      "sceneModelAndDataModelBuildTable",
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable",
+      "shareBCF",
+      "viewGLTF",
+      "viewXGF",
+      "xeokitOverview"
+    ],
+    "Geometry": [
+      "sceneModelAndDataModelBuildTable",
+      "sceneModelBuildBox",
+      "sceneModelBuildGeometries",
+      "sceneModelBuildTable",
+      "shareBCF",
+      "viewGLTF",
+      "viewXGF",
+      "xeokitOverview"
     ],
     "SceneGeometry": [
       "sceneModelBuildGeometries"

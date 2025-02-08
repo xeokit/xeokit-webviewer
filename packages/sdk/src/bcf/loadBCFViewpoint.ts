@@ -1,6 +1,6 @@
 import type {LoadBCFViewpointParams} from "./LoadBCFViewpointParams";
 import {addVec3, createVec3, negateVec3, subVec3} from "../matrix";
-import {DataObject} from "../data";
+import {DataObject, searchObjects} from "../data";
 import {OrthoProjectionType, PerspectiveProjectionType} from "../constants";
 import {FloatArrayParam} from "../math";
 import {IfcOpeningElement, IfcSpace} from "../ifctypes";
@@ -169,7 +169,7 @@ export function loadBCFViewpoint(params: LoadBCFViewpointParams): void {
             if (params.updateCompositeObjects) {
                 const dataObject = data.objects[id];
                 if (dataObject) {
-                    data.searchObjects({ // Updated aggregated IFC elements
+                    searchObjects(data, { // Updated aggregated IFC elements
                         startObjectId: dataObject.id,
                         includeStart: true,
                         includeRelated: [BasicAggregation],
@@ -198,7 +198,7 @@ export function loadBCFViewpoint(params: LoadBCFViewpointParams): void {
             if (params.updateCompositeObjects) {
                 const dataObject = data.objects[originalSystemId];
                 if (dataObject) {
-                    data.searchObjects({
+                    searchObjects(data, {
                         startObjectId: dataObject.id,
                         includeStart: true,
                         includeRelated: [BasicAggregation],

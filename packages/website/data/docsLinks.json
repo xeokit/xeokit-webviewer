@@ -1,8 +1,47 @@
  {
 
     "WebIFC": "https://github.com/ThatOpen",
-    "ifc2gltf": "",
-    "ifc2gltf2xgf": "",
+
+     "_.BIM": {
+         "path": "",
+         "kind": "format"
+     },
+
+     "XKT": {
+         "path": "",
+         "kind": "format"
+     },
+
+     "_glTF": {
+         "path": "",
+         "kind": "format"
+     },
+
+     "XGF": {
+         "path": "",
+         "kind": "format"
+     },
+
+     "_LAS": {
+         "path": "",
+         "kind": "format"
+     },
+
+     "_CityJSON": {
+         "path": "",
+         "kind": "format"
+     },
+
+     "_IFC": {
+         "path": "",
+         "kind": "format"
+     },
+
+     "_BCF": {
+         "path": "",
+         "kind": "format"
+     },
+
      "@xeokit\/sdk\/xgf": {
          "path": "",
          "kind": "interface"

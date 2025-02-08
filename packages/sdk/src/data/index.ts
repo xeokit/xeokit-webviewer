@@ -32,7 +32,7 @@
  * such as {@link Data.createModel | Data.createModel}, {@link DataModel.createObject | DataModel.createObject},
  * {@link DataModel.createPropertySet | DataModel.createPropertySet}, and
  * {@link DataModel.createRelationship | DataModel.createRelationship} can be employed.
- * DataObjects can be queried using the {@link Data.searchObjects | Data.searchObjects} method, and
+ * DataObjects can be queried using the {@link searchObjects | searchObjects} function, and
  * semantic data can be attached to model representations by
  * using it alongside SceneModel.
  *
@@ -69,7 +69,7 @@
  *
  * It's worth noting that in a real-world scenario, we would likely use a more complex set of data types, such as
  * {@link "ifctypes" | @xeokit/ifctypes}. However, we cannot mix different sets of data types within our {@link Data | Data},
- * as traversals of the DataObjects with {@link Data.searchObjects | Data.searchObjects } must be
+ * as traversals of the DataObjects with {@link searchObjects | searchObjects } must be
  * guided uniformly by the same set of types across all the DataObjects and Relationships in the graph.
  *
  * To create our DataModel, we will use the following code, which creates a new Data object and then
@@ -216,7 +216,7 @@
  *
  * ````javascript
  * import {SDKError} from "@xeokit/sdk/core";
- * import {Data} from "@xeokit/sdk/data";
+ * import {Data, searchObjects} from "@xeokit/sdk/data";
  * import * as basicTypes from "@xeokit/sdk/basictypes/basicTypes";
  *
  * const data = new Data();
@@ -372,7 +372,7 @@
  *
  * ## Reading DataObjects
  *
- * With our {@link DataModel | DataModel} built, we'll now use the {@link Data.searchObjects | Data.searchObjects} method to
+ * With our {@link DataModel | DataModel} built, we'll now use the {@link searchObjects | searchObjects} method to
  * traverse it to fetch the IDs of the {@link DataObject | DataObjects} we find on that path.
  *
  * One example of where we use this method is to query the aggregation hierarchy of the DataObjects for building
@@ -381,7 +381,7 @@
  * ````javascript
  * const resultObjectIds = [];
  *
- * data.searchObjects({
+ * searchObjects(data, {
  *     startObjectId: "table",
  *     includeObjects: [basicTypes.BasicEntity],
  *     includeRelated: [basicTypes.BasicAggregation],
@@ -503,4 +503,5 @@ export * from "./DataObjectParams";
 export * from "./PropertyParams";
 export * from "./PropertySetParams";
 export * from "./SearchParams";
+export * from "./searchObjects";
 export * from "./loadDataModel";

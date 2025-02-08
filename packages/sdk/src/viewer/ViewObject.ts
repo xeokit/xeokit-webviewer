@@ -11,7 +11,7 @@ import {SDKError} from "../core";
  * * Proxies a {@link scene!SceneObject | SceneObject} and controls its visual state in the View.
  * * Stored in {@link View.objects | View.objects} and {@link ViewLayer.objects | ViewLayer.objects}.
  * * Viewer automatically creates one of these in each {@link View | View} whenever a {@link scene!SceneModel | SceneObject} is created.
- * * {@link scene!SceneObject.layerId | SceneObject.layerId} optionally specifies a {@link ViewLayer | ViewLayers} to put the ViewObject in.
+ * * {@link scene!SceneObject.layerId | SceneObject.layerId} optionally specifies a {@link ViewLayer | ViewLayer} to put the ViewObject in.
  *
  * ## Overview
  *

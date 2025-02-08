@@ -1,3 +1,5 @@
+import {clearInterval} from "timers";
+
 let DOCS_LOOKUP;
 
 export class DemoHelper {
@@ -17,6 +19,27 @@ export class DemoHelper {
                 document.body.appendChild(div);
             }
         }
+
+        function loadCSS(filename) {
+            let link = document.createElement("link");
+            link.rel = "stylesheet";
+            link.type = "text/css";
+            link.href = filename;
+            document.head.appendChild(link);
+        }
+
+        function loadJS(filename) {
+            let script = document.createElement("script");
+            script.type = "text/javascript";
+            script.src = filename;
+            document.body.appendChild(script);
+        }
+
+        // document.addEventListener("DOMContentLoaded", function() {
+        loadCSS("https://unpkg.com/tippy.js@6/themes/light-border.css");
+        loadJS("https://unpkg.com/@popperjs/core@2");
+        loadJS("https://unpkg.com/tippy.js@6");
+        //  });
 
         this.viewer = cfg.viewer;
         this.data = cfg.data;
@@ -157,7 +180,7 @@ export class DemoHelper {
     logViewerSource() {
         const viewSourceElement = document.createElement('div');
         viewSourceElement.className = 'status-message';
-        viewSourceElement.innerHTML = `<ul><li><a target="_parent" href='https://github.com/xeokit/sdk/blob/develop/packages/website/models/viewModel.html'>Viewer source code</a></li></ul>`;
+        viewSourceElement.innerHTML = `<ul><li><a target="_parent" href='https://github.com/xeokit/sdk/blob/develop/packages/website/models/viewModel.html'>Source code of viewer</a></li></ul>`;
         this.statusContainer.appendChild(viewSourceElement);
     }
 
@@ -265,6 +288,32 @@ export class DemoHelper {
         // div.id = "demoLoaded";
         //  div.innerText = JSON.stringify(pageStats);
         // document.body.appendChild(div);
+
+        // Make tooltips
+        const interval = setInterval(() => {
+            if (window.tippy) {
+                window.tippy('.doc-link', {
+                    content(reference) {
+                        const id = reference.getAttribute('data-template')
+                        const container = document.createElement('div')
+                        const linkedTemplate = document.getElementById(id)
+                        const node = document.importNode(linkedTemplate.content, true)
+                        container.appendChild(node)
+                        return container
+                    },
+                    // placement: 'top-end',
+                    // arrow: true,
+                    // animation: 'scale',
+                    theme: 'light-border',
+                    //   duration: [200, 150],
+                    trigger: 'mouseenter focus',
+                    hideOnClick: false,
+                    // interactive: true,
+                    inertia: true,
+                });
+                clearInterval(interval);
+            }
+        }, 200);
     }
 }
 
@@ -286,13 +335,23 @@ function truncateUntilSubstring(str, substring) {
 }
 
 function wrapWordsWithLinks(text, wordMap) {
+    function capitalizeFirstLetter(str) {
+        if (!str) return str;
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    }
+
     Object.keys(wordMap).forEach(function (key) {
-        const regex = new RegExp(`\\b${key}s?\\b`, 'g');
+        const expr = `${key}`;
+        const regex = new RegExp(`\\b${expr}?\\b`, 'g');
         text = text.replace(regex, (match) => {
             const entry = wordMap[key];
             const path = entry.path || "";
-            const kind = entry.kind || "";
-            return `<a href="${path}" target="_parent">${key}</a>`;
+            return `<a class="doc-link" data-template="${key}_template"  href="${path}" target="_parent">${key}</a>
+            <template id="${key}_template">
+                <p style="font-weight: lighter; color: grey;  font-size: smaller; padding-top:0">@xeokit/sdk / ${entry.namespace} / ${key} </p>
+                <p style="font-weight: bold; font-size: larger; margin: 0; padding-top:0">${capitalizeFirstLetter(entry.kind)} ${key}</p>
+                <p style="font-weight: normal; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">${entry.summary}</p>
+            </template>`;
         });
     });
     return text;
