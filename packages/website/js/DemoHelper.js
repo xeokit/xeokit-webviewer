@@ -1,4 +1,4 @@
-import {clearInterval} from "timers";
+
 
 let DOCS_LOOKUP;
 
@@ -35,11 +35,11 @@ export class DemoHelper {
             document.body.appendChild(script);
         }
 
-        // document.addEventListener("DOMContentLoaded", function() {
+        document.addEventListener("DOMContentLoaded", function() {
         loadCSS("https://unpkg.com/tippy.js@6/themes/light-border.css");
         loadJS("https://unpkg.com/@popperjs/core@2");
         loadJS("https://unpkg.com/tippy.js@6");
-        //  });
+         });
 
         this.viewer = cfg.viewer;
         this.data = cfg.data;
