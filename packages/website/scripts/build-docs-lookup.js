@@ -1,3 +1,7 @@
+//
+// Creates a lookup table of info for all API types (class, functions, constants etc.) in ./data/docsLookup.json
+//
+
 const fs = require('fs');
 const path = require('path');
 

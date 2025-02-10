@@ -1,5 +1,6 @@
 {
-    "title": "xeokit SDK Modules",
+    "title": "xeokit SDK Overview",
     "description": "An overview of the modules within the xeokit SDK, including scene and data representation, web viewer, model import, export and conversion tools, and various utility libraries.",
-    "tags": ["Beginner", "SceneModel", "SceneObject", "Viewer", "Geometry"]
+    "tags": [ "SceneModel", "SceneObject", "Viewer", "Geometry"],
+    "bannerImage": "img.png"
 }

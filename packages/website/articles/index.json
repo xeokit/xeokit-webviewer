@@ -1,12 +1,5 @@
 {
   "articles": {
-    "execWhitePaper": {
-      "title": "Executive White Paper: xeokit SDK for 3D BIM and AEC Visualization",
-      "description": "This white paper outlines how xeokit addresses critical challenges in BIM data visualization, enhances workflow efficiency, and supports scalable, web-based deployments.",
-      "tags": [
-        "whitepaper"
-      ]
-    },
     "ifc2gltf": {
       "title": "Importing an IFC Model into xeokit via glTF",
       "description": "How to convert an IFC model to glTF and then view in a xeokit web Viewer.",
@@ -152,23 +145,27 @@
         "ViewerParams"
       ]
     },
+    "whitepaper": {
+      "title": "xeokit SDK for 3D BIM and AEC Visualization",
+      "description": "This white paper outlines how xeokit addresses critical challenges in BIM data visualization, enhances workflow efficiency, and supports scalable, web-based deployments.",
+      "tags": [
+        "whitepaper"
+      ],
+      "bannerImage": "img.png"
+    },
     "xeokitOverview": {
-      "title": "xeokit SDK Modules",
+      "title": "xeokit SDK Overview",
       "description": "An overview of the modules within the xeokit SDK, including scene and data representation, web viewer, model import, export and conversion tools, and various utility libraries.",
       "tags": [
-        "Beginner",
         "SceneModel",
         "SceneObject",
         "Viewer",
         "Geometry"
-      ]
+      ],
+      "bannerImage": "img.png"
     }
   },
   "tagsToArticlesMap": {
-    "whitepaper": [
-      "execWhitePaper",
-      "techWhitePaper"
-    ],
     "SceneModel": [
       "ifc2gltf",
       "ifc2gltf2xgf",
@@ -240,8 +237,7 @@
       "sceneModelBuildTable",
       "shareBCF",
       "viewGLTF",
-      "viewXGF",
-      "xeokitOverview"
+      "viewXGF"
     ],
     "SceneTransform": [
       "sceneModelAndDataModelBuildTable",
@@ -276,6 +272,10 @@
     ],
     "BCF": [
       "shareBCF"
+    ],
+    "whitepaper": [
+      "techWhitePaper",
+      "whitepaper"
     ],
     "ViewerParams": [
       "viewerGetJSON"

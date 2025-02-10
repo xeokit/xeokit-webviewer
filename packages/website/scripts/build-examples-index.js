@@ -1,7 +1,11 @@
+//
+// Creates the examples index file ./examples/index.json
+//
+
 const fs = require('fs');
 const path = require('path');
 
-function readIndexFilesFromSubdirs(baseDir) {
+function buildExamplesIndex(baseDir) {
     const index = {
         pages: {}
     };
@@ -42,6 +46,6 @@ function readIndexFilesFromSubdirs(baseDir) {
 }
 
 const baseDirectory = './examples/';
-const index = readIndexFilesFromSubdirs(baseDirectory);
+const index = buildExamplesIndex(baseDirectory);
 
 fs.writeFileSync("./examples/index.json", JSON.stringify(index, null, 2), 'utf8');

@@ -6,14 +6,10 @@ Let's use xeokit to show a spinning 3D box in a web page.
 
 * *[Run this example](/packages/demos/examples/viewer/#SceneModel_build_table/index.html)*
 
-First install the npm modules we need:
+First install the npm module we need:
 
 ````bash
-npm install @xeokit/scene
-npm install @xeokit/viewer
-npm install @xeokit/cameracontrol
-npm install @xeokit/webglrenderer
-npm install @xeokit/core/constants
+npm install @xeokit/sdk
 ````
 
 Then create an HTML page in `index.html` that contains a canvas element:
