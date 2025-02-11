@@ -7,7 +7,6 @@ const path = require('path');
 
 function buildExamplesIndex(baseDir) {
     const index = {
-        pages: {}
     };
 
     try {
@@ -24,7 +23,7 @@ function buildExamplesIndex(baseDir) {
                         const jsonData = JSON.parse(data);
                         jsonData.id = file;
                         jsonData.type = "example";
-                        index.pages[file] = jsonData;
+                        index[file] = jsonData;
                         if (jsonData.template) {
                             //console.log(`Using template: ./templates/${jsonData.template}`);
                             fs.cpSync(`./templates/${jsonData.template}.html`, `${subDirPath}/index.html`);

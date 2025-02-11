@@ -9,14 +9,14 @@
 
 <title>xeokit SDK 3 - 3D Web Programming Toolkit for BIM and Engineering Visualization</title>
 
-<link href="https://xeokit.github.io/sdk//libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="https://xeokit.github.io/sdk//css/business-frontpage.css" rel="stylesheet">
+<link href="http://localhost:8080/libs/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<link href="http://localhost:8080/css/business-frontpage.css" rel="stylesheet">
 
 <link href="https://fonts.googleapis.com/css?family=Rubik" rel="stylesheet">
 <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
-<script src="https://xeokit.github.io/sdk//libs/jquery/jquery.min.js"></script>
-<script src="https://xeokit.github.io/sdk//libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="http://localhost:8080/libs/jquery/jquery.min.js"></script>
+<script src="http://localhost:8080/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/default.min.css">
@@ -45,27 +45,27 @@
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
     <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent"
-                                                                                                  href="https://xeokit.github.io/sdk/">@xeokit/sdk</a>/<a
-        class="navbar-brand" href="https://xeokit.github.io/sdk//articles/index.html">Articles</a></span>
+                                                                                                  href="http://localhost:8080">@xeokit/sdk</a>/<a
+        class="navbar-brand" href="http://localhost:8080/articles/index.html">Articles</a></span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="navbarResponsive">
     <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//index.html?foo=0">Home</a>
+            <a class="nav-link" href="http://localhost:8080/index.html?foo=0">Home</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//examples/index.html">Examples</a>
+            <a class="nav-link" href="http://localhost:8080/examples/index.html">Examples</a>
         </li>
         <li class="nav-item dropdown">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//models/index.html">Models</a>
+            <a class="nav-link" href="http://localhost:8080/models/index.html">Models</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//articles/index.html">Articles</a>
+            <a class="nav-link" href="http://localhost:8080/articles/index.html">Articles</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="https://xeokit.github.io/sdk//api-docs.html">API Docs</a>
+            <a class="nav-link" href="http://localhost:8080/api-docs.html">API Docs</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="https://github.com/xeokit/sdk">GitHub</a>
@@ -80,7 +80,7 @@
 </div>
 
 </nav>
-<header class="bg-black home-header bg-black" style="background-image:url(https://xeokit.github.io/sdk//articles/xeokitOverview/img.png)">
+<header class="bg-black home-header bg-black" style="background-image:url(http://localhost:8080/articles/xeokitOverview/img.png)">
     <div class="container h-75">
 
         <!--                        <div class="row h-100 align-items-center">-->
@@ -111,103 +111,171 @@
         </div>
         <div class="row testimonial-row">
             <div class="col-lg-12">
-                <h2>Contents</h2>
+                <!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
 <ul>
 <li><a href="#1-introduction">1. Introduction</a></li>
 <li><a href="#2-resource-links">2. Resource Links</a></li>
-<li><a href="#3-xeokit-sdk-features">3. xeokit SDK Features</a></li>
-<li><a href="#4-xeokit-sdk-modules">4. xeokit SDK Modules</a>
+<li><a href="#3-use-cases">3. Use Cases</a>
 <ul>
-<li><a href="#41-xeokit-scene">4.1. xeokit Scene</a></li>
-<li><a href="#43-xeokit-data">4.3. xeokit Data</a></li>
-<li><a href="#42-xeokit-viewer">4.2 xeokit Viewer</a></li>
-<li><a href="#43-xeokit-model-importers-and-exporters">4.3. xeokit Model Importers and Exporters</a></li>
-<li><a href="#44-xeokit-model-converters">4.4. xeokit Model Converters</a></li>
-<li><a href="#45-xeokit-bcf-support">4.5. xeokit BCF Support</a></li>
-<li><a href="#46-xeokit-collision-detection">4.6. xeokit Collision Detection</a></li>
-<li><a href="#47-xeokit-utility-libraries">4.7. xeokit Utility Libraries</a></li>
+<li><a href="#31-bim-model-visualization">3.1. BIM Model Visualization</a></li>
+<li><a href="#32-web-based-bim-collaboration">3.2. Web-Based BIM Collaboration</a></li>
+<li><a href="#33-gis-and-lidar-integration">3.3. GIS and LiDAR Integration</a></li>
+<li><a href="#34-interactive-model-analysis">3.4. Interactive Model Analysis</a></li>
+<li><a href="#35-web-based-digital-twin-applications">3.5. Web-Based Digital Twin Applications</a></li>
+<li><a href="#36-aec-model-conversion-and-processing">3.6. AEC Model Conversion and Processing</a></li>
+<li><a href="#37-custom-web-based-3d-applications">3.7. Custom Web-Based 3D Applications</a></li>
 </ul>
 </li>
-<li><a href="#5-xeokit-usage-examples">5. xeokit Usage Examples</a>
+<li><a href="#4-features">4. Features</a></li>
+<li><a href="#5-modules">5. Modules</a>
 <ul>
-<li><a href="#51-visualize-a-gltf-model">5.1. Visualize a glTF Model</a></li>
+<li><a href="#51-scene">5.1. Scene</a></li>
+<li><a href="#53-data">5.3. Data</a></li>
+<li><a href="#52-viewer">5.2 Viewer</a></li>
+<li><a href="#53-model-importers-and-exporters">5.3. Model Importers and Exporters</a></li>
+<li><a href="#54-model-converters">5.4. Model Converters</a></li>
+<li><a href="#55-bcf-support">5.5. BCF Support</a></li>
+<li><a href="#56-collision-detection">5.6. Collision Detection</a></li>
+<li><a href="#57-utility-libraries">5.7. Utility Libraries</a></li>
+</ul>
+</li>
+<li><a href="#6-usage-examples">6. Usage Examples</a>
+<ul>
+<li><a href="#61-visualize-a-gltf-model">6.1. Visualize a glTF Model</a></li>
 </ul>
 </li>
 </ul>
+<!-- TOC end -->
+<!-- TOC --><a name="1-introduction"></a>
 <h2>1. Introduction</h2>
-<hr>
-<p>The xeokit SDK is an open-source toolkit for real-time 3D visualization in web-based architecture, engineering,
-and construction (AEC) applications. It enables interactive exploration of large 3D models with double-precision
-coordinates to prevent floating-point errors.</p>
-<p>The SDK's <a class="doc-link" data-template="Viewer_template"  href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
-            <template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">The xeokit SDK's Browser-based model viewer.</p>
-            </template> provides a flexible rendering engine supporting multiple views, object interaction, and
-lighting configurations. The <a class="doc-link" data-template="Scene_template"  href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a>
-            <template class="doc-link-tooltip" id="Scene_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / Scene /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Scene</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Container of model geometry and materials.</p>
-            </template> module organizes 3D geometry, materials, and model structures, while the
-<a class="doc-link" data-template="Data_template"  href="/api-docs#/docs/api/classes/data.Data.html" target="_parent">Data</a>
-            <template class="doc-link-tooltip" id="Data_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / Data /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Data</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">A federated entity-relationship semantic data model.</p>
-            </template> module integrates semantic metadata for querying and analysis.</p>
-<p>Key features include slicing, ambient occlusion, edge enhancement, BIM and BCF interoperability, configurable
-render modes, and object picking. Performance optimizations, such as adaptive resolution scaling and custom
-rendering pipelines, support smooth interaction with complex models.</p>
-<p>This article provides an introduction to the SDK’s architecture, rendering techniques, and applications in
-web-based 3D visualization.</p>
-<br>
+<p>The <strong>xeokit SDK</strong> is an open-source toolkit designed for real-time 3D visualization in web-based <strong>Architecture,
+Engineering, and Construction (AEC)</strong>
+applications. It enables smooth interaction with large 3D models using <strong>double-precision coordinates</strong>, preventing
+floating-point errors.</p>
+<p>The SDK features a powerful rendering engine through the <strong>Viewer module</strong>, which supports multiple views, object
+interaction, and customizable
+lighting. The <strong>Scene module</strong> manages 3D geometry, materials, and model structures, while the <strong>Data module</strong>
+integrates semantic metadata for
+querying and analysis.</p>
+<p>This document introduces the SDK’s architecture, rendering techniques, and its applications in web-based 3D
+visualization.</p>
+<!-- TOC --><a name="2-resource-links"></a>
 <h2>2. Resource Links</h2>
-<hr>
+<p>Below are essential resources to help you get started with xeokit SDK:</p>
 <ul>
-<li><a href="../../examples/index.html"><strong>Live examples</strong></a> - Run live examples that demonstrate SDK features.</li>
-<li><a href="../../models/index.html"><strong>Model viewer</strong></a> - View a set of test models in a xeokit Viewer, imported from all supported AEC
-formats. These models demonstrate all of xeokit's conversion tools and loaders.</li>
-<li><a href="https://github.com/xeokit/sdk"><strong>Source code</strong></a> - The SDK is open source and the AGPL3 license. All the source code is hosted at GitHub.</li>
-<li><a href="../../api-docs.html"><strong>API documentation</strong></a> - API documentation generated by TypeDoc.</li>
-<li><a href="../../articles/index.html"><strong>Articles</strong></a> - A repository of articles about the SDK, mainly tutorials.</li>
-<li><a href="https://github.com/xeokit/sdk/releases"><strong>Releases</strong></a></li>
-<li><a href="https://www.npmjs.com/package/@xeokit/sdk"><strong>NPM</strong></a></li>
+<li><a href="../../examples/index.html"><strong>Live Examples</strong></a> – Interactive demos showcasing SDK features.</li>
+<li><a href="../../models/index.html"><strong>Model Viewer</strong></a> – Explore test models imported from various AEC formats.</li>
+<li><a href="https://github.com/xeokit/sdk"><strong>Source Code</strong></a> – Open-source repository under the AGPL3 license.</li>
+<li><a href="../../api-docs.html"><strong>API Documentation</strong></a> – Comprehensive API reference generated with TypeDoc.</li>
+<li><a href="../../articles/index.html"><strong>Articles &amp; Tutorials</strong></a> – Guides on using the SDK effectively.</li>
+<li><a href="https://github.com/xeokit/sdk/releases"><strong>Releases</strong></a> – Latest SDK updates and version history.</li>
+<li><a href="https://www.npmjs.com/package/@xeokit/sdk"><strong>NPM Package</strong></a> – Install the SDK via NPM.</li>
+</ul>
+<!-- TOC --><a name="3-use-cases"></a>
+<h2>3. Use Cases</h2>
+<p>The xeokit SDK supports various <strong>AEC industry use cases</strong>, including:</p>
+<!-- TOC --><a name="31-bim-model-visualization"></a>
+<h5><strong>3.1. BIM Model Visualization</strong></h5>
+<ul>
+<li>Load and view <strong>IFC, glTF, and other 3D formats</strong> directly in a web browser.</li>
+<li>Efficiently visualize <strong>large-scale BIM models</strong> with optimized rendering.</li>
+<li>Overlay and compare <strong>federated models</strong> for coordination.</li>
+</ul>
+<!-- TOC --><a name="32-web-based-bim-collaboration"></a>
+<h5><strong>3.2. Web-Based BIM Collaboration</strong></h5>
+<ul>
+<li>Support <strong>BCF (BIM Collaboration Format)</strong> for issue tracking and annotations.</li>
+<li>Enable <strong>real-time collaboration</strong> through shared 3D views.</li>
+<li>Manage <strong>object properties and metadata</strong> with the <strong>Data module</strong>.</li>
+</ul>
+<!-- TOC --><a name="33-gis-and-lidar-integration"></a>
+<h5><strong>3.3. GIS and LiDAR Integration</strong></h5>
+<ul>
+<li>Visualize models using <strong>double-precision coordinates</strong> for precise geospatial alignment.</li>
+<li>Overlay <strong>AEC models with point clouds</strong> (LAS/LAZ format support).</li>
+<li>Enable <strong>large-scale infrastructure visualization</strong> with high accuracy.</li>
+</ul>
+<!-- TOC --><a name="34-interactive-model-analysis"></a>
+<h5><strong>3.4. Interactive Model Analysis</strong></h5>
+<ul>
+<li>Perform <strong>sectioning, slicing, and x-ray views</strong> for in-depth inspection.</li>
+<li>Apply <strong>custom materials and rendering effects</strong> for enhanced visualization.</li>
+<li>Use <strong>collision detection</strong> to verify model integrity.</li>
+</ul>
+<!-- TOC --><a name="35-web-based-digital-twin-applications"></a>
+<h5><strong>3.5. Web-Based Digital Twin Applications</strong></h5>
+<ul>
+<li>Integrate <strong>real-time IoT data</strong> with BIM models for facility management.</li>
+<li>Enable <strong>historical and predictive visualization</strong> for asset maintenance.</li>
+<li>Provide <strong>interactive dashboards</strong> with embedded 3D model viewers.</li>
+</ul>
+<!-- TOC --><a name="36-aec-model-conversion-and-processing"></a>
+<h5><strong>3.6. AEC Model Conversion and Processing</strong></h5>
+<ul>
+<li>Convert between <strong>BIM formats</strong> using built-in importers/exporters.</li>
+<li>Pre-convert models into <strong><a class="doc-link" data-template="XKT_template"  href="https://xeokit.github.io/sdk//api-docs.html#/sdk//docs/api/modules/xkt.html___" target="_parent">XKT</a>
+            <template class="doc-link-tooltip" id="XKT_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / undefined / XKT /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Format XKT</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">undefined</p>
+            </template>/<a class="doc-link" data-template="XGF_template"  href="https://xeokit.github.io/sdk//api-docs.html#/sdk//docs/api/modules/xgf.html___" target="_parent">XGF</a>
+            <template class="doc-link-tooltip" id="XGF_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / undefined / XGF /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Format XGF</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">undefined</p>
+            </template> format</strong> for optimized loading.</li>
+<li>Process <strong>semantic relationships</strong> for structured data queries.</li>
+</ul>
+<!-- TOC --><a name="37-custom-web-based-3d-applications"></a>
+<h5><strong>3.7. Custom Web-Based 3D Applications</strong></h5>
+<ul>
+<li>Develop <strong>custom visualization tools</strong> using the xeokit Viewer.</li>
+<li>Embed <strong>high-performance 3D models</strong> in web dashboards.</li>
+<li>Create <strong>multi-view 3D interfaces</strong> for enhanced usability.</li>
+</ul>
+<!-- TOC --><a name="4-features"></a>
+<h2>4. Features</h2>
+<ul>
+<li><strong>Advanced AEC Graphics Toolkit</strong> – Tools for building, loading, converting, saving, viewing, and interacting with 3D
+models.</li>
+<li><strong>Multi-Model Viewing</strong> – Display multiple federated models simultaneously.</li>
+<li><strong>Support for Multiple Formats</strong> – IFC, glTF, LAS/LAZ, CityJSON, XKT, XGF, .BIM, and more.</li>
+<li><strong>Multi-Canvas Support</strong> – Display models in multiple canvases with independent settings.</li>
+<li><strong>Double-Precision Coordinates</strong> – Accurately position and align geospatial models.</li>
+<li><strong>Optimized Loading</strong> – Pre-convert large models to <a class="doc-link" data-template="XGF_template"  href="https://xeokit.github.io/sdk//api-docs.html#/sdk//docs/api/modules/xgf.html___" target="_parent">XGF</a>
+            <template class="doc-link-tooltip" id="XGF_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / undefined / XGF /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Format XGF</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">undefined</p>
+            </template> format for faster performance.</li>
+<li><strong>High-Performance Rendering</strong> – Built specifically for complex AEC models.</li>
+<li><strong>Interactive Effects</strong> – Slice, x-ray, highlight, and select objects.</li>
+<li><strong>BCF Collaboration</strong> - Iteroperate with other BIM software through exchange of BCF viewpoints.</li>
+<li><strong>Natively TypeScript</strong> – Strongly-typed components with clear API contracts.</li>
+</ul>
+<!-- TOC --><a name="5-modules"></a>
+<h2>5. Modules</h2>
+<p>The xeokit SDK follows modular design principles, ensuring flexibility and scalability across web and Node.js
+environments.
+It adheres to <a href="https://en.wikipedia.org/wiki/Separation_of_concerns"><em>Separation of Concerns</em></a>,
+<a href="https://en.wikipedia.org/wiki/Single-responsibility_principle"><em>Single Responsibility</em></a>, and
+the <a href="https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle"><em>Open-Closed Principle</em></a>, providing a
+structured toolkit that supports diverse AEC workflows.</p>
+<p>The SDK modules fall into these categories, which we'll explore in the sections below:</p>
+<ul>
+<li><strong>Scene</strong> – Manages 3D model objects, compatible with Node.js and browsers.</li>
+<li><strong>Data</strong> – Provides a searchable entity-relationship data model.</li>
+<li><strong>Viewer</strong> – Enables interactive model visualization in web applications.</li>
+<li><strong>Importers</strong> – Loads supported AECO formats into the Scene and Data modules.</li>
+<li><strong>Exporters</strong> – Saves Scene and Data in supported AECO formats.</li>
+<li><strong>Converters</strong> – CLI tools for model format conversions.</li>
+<li><strong>BCF Support</strong> – BCF interoperation with other BIM software.</li>
+<li><strong>Collision Detection</strong> – Collision detection utilities.</li>
+<li><strong>Utilities</strong> – Low-level 3D graphics functions, math operations, and additional tools.</li>
 </ul>
 <br>
-<h2>3. xeokit SDK Features</h2>
-<ul>
-<li><strong>Graphics Programming Toolkit for AEC</strong> - A complete 3D programming toolkit for building, loading, converting, saving, viewing and interacting with 3D building models.</li>
-<li><strong>View Multiple Models</strong> - View multiple models alongside each other. View federated models.</li>
-<li><strong>View Multiple AEC Formats</strong> - View IFC, glTF, LAS/LAZ, CityJSON, XKT, XGF, .BIM and more.</li>
-<li><strong>Multiple Canvases</strong> - View models in multiple canvases, each with their own object visibilities, effects etc.</li>
-<li><strong>Double-Precision Coordinates</strong> - View models in the Global coordinate system. View distantly-placed models without
-needing to center them to avoid jitter. Automatically aligns globally-positioned building models
-and LiDAR scans.</li>
-<li><strong>Fast Loading</strong> - Option to pre-convert large AEC models to xeokit's native XGF format, for optimized loading.</li>
-<li><strong>Efficient Rendering</strong> - A 3D engine build specially for viewing complex AEC models.</li>
-<li><strong>Emphasis Effects</strong> - Slice, X-ray, highlight, select etc.</li>
-<li><strong>Natively TypeScript</strong> - Robust components with clearly defined contracts.</li>
-</ul>
-<h2>4. xeokit SDK Modules</h2>
-<hr>
-<p>The <strong>xeokit SDK</strong> offers a comprehensive set of modules for managing, visualizing, and
-converting 3D AECO models in both web and Node.js environments. Designed with <strong>Separation of Concerns</strong>,
-<strong>Single Responsibility</strong>, and the <strong>Open-Closed Principle</strong>, the SDK provides a flexible toolkit of
-components that applications can leverage to support a wide range of use cases.</p>
-<p>The SDK is organized into the following module categories:</p>
-<ul>
-<li><strong>Scene</strong> – A container for 3D model objects, compatible with both Node.js and browsers.</li>
-<li><strong>Data</strong> – A searchable entity-relationship data model.</li>
-<li><strong>Viewer</strong> – Attaches to a Scene for interactive viewing in the browser.</li>
-<li><strong>Importers</strong> – Load supported AECO model formats into Scene and Data.</li>
-<li><strong>Exporters</strong> – Save Scene and Data in supported AECO formats.</li>
-<li><strong>Converters</strong> – CLI tools for converting between AECO model formats.</li>
-<li><strong>Utilities</strong> – Low-level functions and classes for 3D graphics, math, and more.</li>
-</ul>
-<br>
-<h3>4.1. xeokit Scene</h3>
+<!-- TOC --><a name="51-scene"></a>
+<h3>5.1. Scene</h3>
 <p>The SDK represents models in a scene graph, implemented by the <a class="doc-link" data-template="Scene_template"  href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a>
             <template class="doc-link-tooltip" id="Scene_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
                 <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / Scene /</p>
@@ -235,18 +303,20 @@ SDK's model viewer. Note that the scene is viewer-agnostic.</p>
 </table>
 <p><a href="https://mermaid.live/edit#pako:eNqNVE1vozAQ_StoTrsVjSDNlpTrVuplo5WanlZcXHuaeAUY2aZKNsp_38FAYz5SlYvxm-c3n_YJuBIIKfCcGfMo2U6zIiuF1MitVGXw6zkrA_c5RrDlWOKpxxyukVnckEz-7fvAkCPTQ6hoWMZH1Otf8vQBnWe8OWnPpRSX_9HxxgWaPfrADlWBVssBaPFga41btDOoB7XJ_XZe_FS6pMnXFH1qHR6nlpdW_6qBwvFtr7XMhQ8INFYrT3iuXG2wgxb5FRtXaCTRpBRcKTZXudKXrVb1bl-i8cpFebN8CKmKcWmPHodRMw6Xfdcfj3FpzpUgu3LNxznPJbFP0-poo1RyyZ_7LCcMxXleG7okEwsW0hj5jiPDKLJ-Tq7FVWlZSEsyHqSMbK6leUSuiopG1WxG5azfPzF-nP_ZEVAMTs7Bkl4DPpmXfutGLsggzuDm9pbWxeImA-_iDogOucJu5_YrujPMFprym3HuiW60PQaZn0az5w3LQGpF3FEzZ9RevLntaf0KIRSoCyYFPbau4RnYPRaYQUq_At9YndsMsvJMVFZbtT2WHFKrawyhrgS9Et3zDOkbyw2hKKRVetM94M0SQsVKSE9wgDS-_7FIkiheP8SrVXJ3v74L4QhpdA7hn1KkEi-i9ltGyXL5ECVrd_yPM7Z-3RXv_J3_A-vIyXI"><img src="https://mermaid.ink/img/pako:eNqNVE1vozAQ_StoTrsVjSDNlpTrVuplo5WanlZcXHuaeAUY2aZKNsp_38FAYz5SlYvxm-c3n_YJuBIIKfCcGfMo2U6zIiuF1MitVGXw6zkrA_c5RrDlWOKpxxyukVnckEz-7fvAkCPTQ6hoWMZH1Otf8vQBnWe8OWnPpRSX_9HxxgWaPfrADlWBVssBaPFga41btDOoB7XJ_XZe_FS6pMnXFH1qHR6nlpdW_6qBwvFtr7XMhQ8INFYrT3iuXG2wgxb5FRtXaCTRpBRcKTZXudKXrVb1bl-i8cpFebN8CKmKcWmPHodRMw6Xfdcfj3FpzpUgu3LNxznPJbFP0-poo1RyyZ_7LCcMxXleG7okEwsW0hj5jiPDKLJ-Tq7FVWlZSEsyHqSMbK6leUSuiopG1WxG5azfPzF-nP_ZEVAMTs7Bkl4DPpmXfutGLsggzuDm9pbWxeImA-_iDogOucJu5_YrujPMFprym3HuiW60PQaZn0az5w3LQGpF3FEzZ9RevLntaf0KIRSoCyYFPbau4RnYPRaYQUq_At9YndsMsvJMVFZbtT2WHFKrawyhrgS9Et3zDOkbyw2hKKRVetM94M0SQsVKSE9wgDS-_7FIkiheP8SrVXJ3v74L4QhpdA7hn1KkEi-i9ltGyXL5ECVrd_yPM7Z-3RXv_J3_A-vIyXI?type=png" alt=""></a></p>
 <br>
-<h3>4.3. xeokit Data</h3>
+<!-- TOC --><a name="53-data"></a>
+<h3>5.3. Data</h3>
 <p>The SDK employs a generic entity-relationship data graph, implemented by the <a class="doc-link" data-template="Data_template"  href="/api-docs#/docs/api/classes/data.Data.html" target="_parent">Data</a>
             <template class="doc-link-tooltip" id="Data_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
                 <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / Data /</p>
                 <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Data</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">A federated entity-relationship semantic data model.</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Container of model semantic data.</p>
             </template> class, to manage model semantics,
 which includes entities, properties,
 and
 relationships. This data graph is compatible with both the browser and NodeJS and facilitates model generation, format
 conversion,
-and content navigation within the SDK's model viewer.</p>
+and content navigation within the SDK's model viewer. Note that the data graph is agnostic of both the viewer and
+the scene.</p>
 <table>
 <thead>
 <tr>
@@ -263,12 +333,13 @@ and content navigation within the SDK's model viewer.</p>
 </table>
 <p><a href="https://mermaid.live/edit#pako:eNqNVMFunDAU_BX0Tu1qgxaW9QLnHBOlSm4VFwc7WVeAkTFV6Wr_vcZmu89A0nIBzxvPmzdGPkMpGYccyop23b2g74rWRcOE4qUWsgkenosmsI9lBPdU0_MVcrjiVPNHI1N9-epVOk5VeXp6_WG0ulmtrExxhtWjRudB0m32sFbJlis9vHC_cP2-LB1bd9i2YGixbLLewk3q5sHWHf7MKzpG1p1Eu6x-uyni4msvKoYBxjut5HCDVqZxDrxT8OYJ9NByvF4bZ6aL_CFhLDuJCP4viQAJNLRGTn7SqkdLbHOmhcPEev5kyrKadxfIDOfMh_92GCMMCogK2NzdmXcYbgq4_SaYZoF1ri_-seaS5xDD3kzsnWOjI_hA9hPWwuk61cvVCl7JN2f5eqz_v3WePPKxzOhanMiwhZqrmgpmLiV78AXoEzd_EeTmk_E32le6gKK5GCrttXwZmhJyrXq-hb5lpv10jUH-RqvOoC1tID_DL8hjEoVRdDxEJE73GSHZYQuDgeMwyY7kkGTRMSbp_nDZwm8pjcIuTGOSJGS_yxKSpjvD50xoqR6na3N82Q7fLX-0cfkD0IeHkg"><img src="https://mermaid.ink/img/pako:eNqNVMFunDAU_BX0Tu1qgxaW9QLnHBOlSm4VFwc7WVeAkTFV6Wr_vcZmu89A0nIBzxvPmzdGPkMpGYccyop23b2g74rWRcOE4qUWsgkenosmsI9lBPdU0_MVcrjiVPNHI1N9-epVOk5VeXp6_WG0ulmtrExxhtWjRudB0m32sFbJlis9vHC_cP2-LB1bd9i2YGixbLLewk3q5sHWHf7MKzpG1p1Eu6x-uyni4msvKoYBxjut5HCDVqZxDrxT8OYJ9NByvF4bZ6aL_CFhLDuJCP4viQAJNLRGTn7SqkdLbHOmhcPEev5kyrKadxfIDOfMh_92GCMMCogK2NzdmXcYbgq4_SaYZoF1ri_-seaS5xDD3kzsnWOjI_hA9hPWwuk61cvVCl7JN2f5eqz_v3WePPKxzOhanMiwhZqrmgpmLiV78AXoEzd_EeTmk_E32le6gKK5GCrttXwZmhJyrXq-hb5lpv10jUH-RqvOoC1tID_DL8hjEoVRdDxEJE73GSHZYQuDgeMwyY7kkGTRMSbp_nDZwm8pjcIuTGOSJGS_yxKSpjvD50xoqR6na3N82Q7fLX-0cfkD0IeHkg?type=png" alt=""></a></p>
 <br>
-<h3>4.2 xeokit Viewer</h3>
+<!-- TOC --><a name="52-viewer"></a>
+<h3>5.2 Viewer</h3>
 <p>The SDK features a high-performance 3D web viewer, implemented by the <a class="doc-link" data-template="Viewer_template"  href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
             <template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
                 <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
                 <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">The xeokit SDK's Browser-based model viewer.</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">3D model viewer.</p>
             </template> class, for viewing scene models in the
 browser. With
 a pluggable renderer strategy, it can be adapted to any browser graphics API, including WebGL and WebGPU. The viewer
@@ -312,7 +383,8 @@ such as lights, section planes, and annotations, providing flexible multi-view m
 </table>
 <p><a href="https://mermaid.live/edit#pako:eNqNVUtv2kAQ_ivWntoKUEyMAQtxIVJ7ADWCPqTKl7U9CZssu-7apnEI_737dGweVX3xeuabb97rA0p5BihCKcVFcUfwo8C7mGVEQFoSzrzlOmZa5_0g8AeEd4iZZx4BLAMBwgiKFBiY414iC3NMBeASlOmHj0YSs2Ob0fGlmO2xNeLJk_TuGPAOBDZnSh63Tl6YAO8pZmBFFNcgOo6XSuI8G9GmZdfVLBW7EnUC1BQuSpJdiPB3hSkp67Uux4n1Vw08Nd-TgiQUXCJUQsCqtjIInaYTvAgZgD2nnHJBXq1hSkme44YnJ-nz-xfGSdKKZaGr6OKAGjxbMs6fzanKLY3gT6ZELfN20RxJzgvPsshxaff1jghdS4dUagfVKXSmYG3HSKNnM5wUpcBpOZ-3MD8h-bzsALWyCU_NnvO2kwNNL06S7vJKqZvGU8Ci03JNpTH_7LnhMt11ZElFaOY-MpBp8Pqc-3widCJmu2Lkx6jfn-v3utmvC8qNWTfzahSfrMI4uarW-VmtOV9lOHUt9UoU2R1X5zOlsY2agr3LNKSTgsXKKcgFFMDKwiPM-_JttWyuhIs-9FpGbuMbSYxuBoP_CKdTy4W9Ys4cuUGO3MVzhmgvhmpjM6Ozt37_ZGwjj-xyCjuV5CXk_fcr0PYKLziTc9UMp75r9Qh11J0y-KYMqIckYodJJq97bR6jcit9xCiSxwwecEVlhySbhOKq5JuapSgqRQU9VOWZHHj7g0DRA6aFlEJGSi5W9heiXj2UY4aiA3pB0TD0B74_HvnhcHI7DcPpqIdqKR4Oguk4HAVTfzwMJ7ejYw-9ci5ZbwaTYRgE4XAajCfBKBhNNd0vrVRxHP8CUYMzSw"><img src="https://mermaid.ink/img/pako:eNqNVUtv2kAQ_ivWntoKUEyMAQtxIVJ7ADWCPqTKl7U9CZssu-7apnEI_737dGweVX3xeuabb97rA0p5BihCKcVFcUfwo8C7mGVEQFoSzrzlOmZa5_0g8AeEd4iZZx4BLAMBwgiKFBiY414iC3NMBeASlOmHj0YSs2Ob0fGlmO2xNeLJk_TuGPAOBDZnSh63Tl6YAO8pZmBFFNcgOo6XSuI8G9GmZdfVLBW7EnUC1BQuSpJdiPB3hSkp67Uux4n1Vw08Nd-TgiQUXCJUQsCqtjIInaYTvAgZgD2nnHJBXq1hSkme44YnJ-nz-xfGSdKKZaGr6OKAGjxbMs6fzanKLY3gT6ZELfN20RxJzgvPsshxaff1jghdS4dUagfVKXSmYG3HSKNnM5wUpcBpOZ-3MD8h-bzsALWyCU_NnvO2kwNNL06S7vJKqZvGU8Ci03JNpTH_7LnhMt11ZElFaOY-MpBp8Pqc-3widCJmu2Lkx6jfn-v3utmvC8qNWTfzahSfrMI4uarW-VmtOV9lOHUt9UoU2R1X5zOlsY2agr3LNKSTgsXKKcgFFMDKwiPM-_JttWyuhIs-9FpGbuMbSYxuBoP_CKdTy4W9Ys4cuUGO3MVzhmgvhmpjM6Ozt37_ZGwjj-xyCjuV5CXk_fcr0PYKLziTc9UMp75r9Qh11J0y-KYMqIckYodJJq97bR6jcit9xCiSxwwecEVlhySbhOKq5JuapSgqRQU9VOWZHHj7g0DRA6aFlEJGSi5W9heiXj2UY4aiA3pB0TD0B74_HvnhcHI7DcPpqIdqKR4Oguk4HAVTfzwMJ7ejYw-9ci5ZbwaTYRgE4XAajCfBKBhNNd0vrVRxHP8CUYMzSw?type=png" alt=""></a></p>
 <br>
-<h3>4.3. xeokit Model Importers and Exporters</h3>
+<!-- TOC --><a name="53-model-importers-and-exporters"></a>
+<h3>5.3. Model Importers and Exporters</h3>
 <p>The SDK provides functions for importing and exporting its model representations and semantics as industry-standard
 AECO file formats. These functions can be used in NodeJS scripts for file format conversion or in the browser to load
 various file formats into the web viewer.</p>
@@ -351,7 +423,8 @@ various file formats into the web viewer.</p>
 </tbody>
 </table>
 <br>
-<h3>4.4. xeokit Model Converters</h3>
+<!-- TOC --><a name="54-model-converters"></a>
+<h3>5.4. Model Converters</h3>
 <p>The SDK provides CLI tools to convert various model formats into the SDK's own optimized format, XGF, which can then
 be loaded efficiently into the web viewer.</p>
 <table>
@@ -389,7 +462,8 @@ be loaded efficiently into the web viewer.</p>
 </tbody>
 </table>
 <br>
-<h3>4.5. xeokit BCF Support</h3>
+<!-- TOC --><a name="55-bcf-support"></a>
+<h3>5.5. BCF Support</h3>
 <p>The SDK offers functions for sharing bookmarks of web viewer state with other BIM software as industry-standard BCF
 Viewpoints. These functions can be used to develop applications that facilitate collaboration on construction projects.</p>
 <table>
@@ -407,7 +481,8 @@ Viewpoints. These functions can be used to develop applications that facilitate 
 </tbody>
 </table>
 <br>
-<h3>4.6. xeokit Collision Detection</h3>
+<!-- TOC --><a name="56-collision-detection"></a>
+<h3>5.6. Collision Detection</h3>
 <p>The SDK provides collision detection utilities that can be used to build various acceleration and selection mechanisms.
 Intended
 applications for our collision library include 3D frustum culling, ray-picking, marquee box selection and more.</p>
@@ -434,7 +509,8 @@ applications for our collision library include 3D frustum culling, ray-picking, 
 </tbody>
 </table>
 <br>
-<h3>4.7. xeokit Utility Libraries</h3>
+<!-- TOC --><a name="57-utility-libraries"></a>
+<h3>5.7. Utility Libraries</h3>
 <p>The SDK's internal and lower-level functionalities are mostly available as utility libraries with complete
 documentation.</p>
 <table>
@@ -503,13 +579,114 @@ documentation.</p>
 </tr>
 </tbody>
 </table>
-<h2>5. xeokit Usage Examples</h2>
+<!-- TOC --><a name="6-usage-examples"></a>
+<h2>6. Usage Examples</h2>
 <hr>
-<h3>5.1. Visualize a glTF Model</h3>
-<p><a href="/packages/demos/examples/viewer/#SceneModel_build_table/index.html"><img src="holterTower.png" alt=""></a></p>
-<ul>
-<li><em><a href="/packages/demos/examples/viewer/#SceneModel_build_table/index.html">Run this example</a></em></li>
-</ul>
+<!-- TOC --><a name="61-visualize-a-gltf-model"></a>
+<h3>6.1. View a .BIM model and hide all IfcSpaces</h3>
+<p><iframe src="../../examples/SceneModel_build_table" style="width:100%; height:600px; min-height=200px !important;"></iframe><br></p>
+<hr>
+<pre><code class="hljs"><span class="hljs-meta">&lt;!doctype <span class="hljs-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;utf-8&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;IE=edge,chrome=1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>xeokit Example<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">link</span> <span class="hljs-attr">href</span>=<span class="hljs-string">&quot;http://localhost:8080/css/articleStyle.css&quot;</span> <span class="hljs-attr">rel</span>=<span class="hljs-string">&quot;stylesheet&quot;</span>/&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;checkbox&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;info-button&quot;</span> <span class="hljs-attr">checked</span>/&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;info-button&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;info-button&quot;</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">i</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;fa fa-3x fa-info-circle&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">i</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;demoCanvas&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;slideout-sidebar&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;info-container&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;info-container&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./index.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+
+</code></pre>
+<pre><code class="hljs"><span class="hljs-keyword">import</span> * <span class="hljs-keyword">as</span> xeokit <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../../js/xeokit-demo-bundle.js&quot;</span>;
+
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">DemoHelper</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;../../js/DemoHelper.js&quot;</span>;
+
+<span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> xeokit.<span class="hljs-property">scene</span>.<span class="hljs-title class_">Scene</span>();
+
+<span class="hljs-keyword">const</span> renderer = <span class="hljs-keyword">new</span> xeokit.<span class="hljs-property">webglrenderer</span>.<span class="hljs-title class_">Web</span>GLRenderer({});
+
+<span class="hljs-keyword">const</span> viewer = <span class="hljs-keyword">new</span> xeokit.<span class="hljs-property">viewer</span>.<span class="hljs-title class_">Viewer</span>({
+    <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;demoViewer&quot;</span>,
+    scene,
+    renderer
+});
+
+<span class="hljs-keyword">const</span> demoHelper = <span class="hljs-keyword">new</span> <span class="hljs-title class_">DemoHelper</span>({
+    viewer
+});
+
+demoHelper.<span class="hljs-title function_">init</span>()
+    .<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+
+        <span class="hljs-keyword">const</span> view = viewer.<span class="hljs-title function_">createView</span>({
+            <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;demoView&quot;</span>,
+            <span class="hljs-attr">elementId</span>: <span class="hljs-string">&quot;demoCanvas&quot;</span>
+        });
+
+        view.<span class="hljs-property">camera</span>.<span class="hljs-property">eye</span> = [<span class="hljs-number">3</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>]; <span class="hljs-comment">// Default is [0,0,10]</span>
+        view.<span class="hljs-property">camera</span>.<span class="hljs-property">look</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>]; <span class="hljs-comment">// Default</span>
+        view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>]; <span class="hljs-comment">// Default</span>
+
+        <span class="hljs-keyword">new</span> xeokit.<span class="hljs-property">cameracontrol</span>.<span class="hljs-title class_">CameraControl</span>(view);
+
+        <span class="hljs-keyword">const</span> sceneModel = scene.<span class="hljs-title function_">createModel</span>({
+            <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;demoModel&quot;</span>
+        });
+
+        sceneModel.<span class="hljs-title function_">createGeometryCompressed</span>({
+            <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;boxGeometry&quot;</span>,
+            <span class="hljs-attr">primitive</span>: xeokit.<span class="hljs-property">constants</span>.<span class="hljs-property">TrianglesPrimitive</span>,
+            <span class="hljs-attr">aabb</span>: [-<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, -<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>],
+            <span class="hljs-attr">positionsCompressed</span>: [
+                <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>,
+                <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>,
+                <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>,
+                <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>,
+                <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>,
+                <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">65525</span>, <span class="hljs-number">0</span>
+            ],
+            <span class="hljs-attr">indices</span>: [
+                <span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">0</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">4</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>, <span class="hljs-number">9</span>, <span class="hljs-number">10</span>, <span class="hljs-number">8</span>, <span class="hljs-number">10</span>, <span class="hljs-number">11</span>, <span class="hljs-number">12</span>, <span class="hljs-number">13</span>,
+                <span class="hljs-number">14</span>, <span class="hljs-number">12</span>, <span class="hljs-number">14</span>, <span class="hljs-number">15</span>, <span class="hljs-number">16</span>, <span class="hljs-number">17</span>, <span class="hljs-number">18</span>, <span class="hljs-number">16</span>, <span class="hljs-number">18</span>, <span class="hljs-number">19</span>, <span class="hljs-number">20</span>, <span class="hljs-number">21</span>, <span class="hljs-number">22</span>, <span class="hljs-number">20</span>, <span class="hljs-number">22</span>, <span class="hljs-number">23</span>
+            ],
+            <span class="hljs-attr">edgeIndices</span>: [
+                <span class="hljs-number">8</span>, <span class="hljs-number">12</span>, <span class="hljs-number">12</span>, <span class="hljs-number">19</span>, <span class="hljs-number">19</span>, <span class="hljs-number">18</span>, <span class="hljs-number">8</span>, <span class="hljs-number">18</span>, <span class="hljs-number">18</span>, <span class="hljs-number">20</span>, <span class="hljs-number">20</span>, <span class="hljs-number">23</span>,
+                <span class="hljs-number">8</span>, <span class="hljs-number">23</span>, <span class="hljs-number">23</span>, <span class="hljs-number">22</span>, <span class="hljs-number">12</span>, <span class="hljs-number">22</span>, <span class="hljs-number">22</span>, <span class="hljs-number">21</span>, <span class="hljs-number">19</span>, <span class="hljs-number">21</span>, <span class="hljs-number">20</span>, <span class="hljs-number">21</span>
+            ]
+        });
+
+        sceneModel.<span class="hljs-title function_">createMesh</span>({
+            <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;boxMesh&quot;</span>,
+            <span class="hljs-attr">geometryId</span>: <span class="hljs-string">&quot;boxGeometry&quot;</span>,
+            <span class="hljs-attr">position</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], <span class="hljs-comment">// Default</span>
+            <span class="hljs-attr">scale</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>], <span class="hljs-comment">// Default</span>
+            <span class="hljs-attr">rotation</span>: [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>], <span class="hljs-comment">// Default</span>
+            <span class="hljs-attr">color</span>: [<span class="hljs-number">1</span>, <span class="hljs-number">1.0</span>, <span class="hljs-number">1.0</span>] <span class="hljs-comment">// Default</span>
+        });
+
+        sceneModel.<span class="hljs-title function_">createObject</span>({
+            <span class="hljs-attr">id</span>: <span class="hljs-string">&quot;boxObject&quot;</span>,
+            <span class="hljs-attr">meshIds</span>: [<span class="hljs-string">&quot;boxMesh&quot;</span>]
+        });
+
+        sceneModel.<span class="hljs-title function_">build</span>();
+
+        demoHelper.<span class="hljs-title function_">finished</span>();
+    });
+
+</code></pre>
+<p><br>* [<a href=''>Source</a>]<br></p>
 <p>First install the npm module:</p>
 <pre><code class="hljs">npm install @xeokit/sdk
 </code></pre>
@@ -517,7 +694,7 @@ documentation.</p>
 <pre><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>xeokit glTF Model Viewer<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>xeokit .BIM Model Viewer<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">canvas</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;myView1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">canvas</span>&gt;</span>
@@ -525,25 +702,31 @@ documentation.</p>
 <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./index.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
-<p>Then create JavaScript in <code>index.js</code> to view a glTF model in the canvas.</p>
+<p>Then create JavaScript in <code>index.js</code> to view a .BIM model in the canvas.</p>
 <ol>
 <li>Import the modules we need.</li>
 <li>Create a <a class="doc-link" data-template="Viewer_template"  href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
             <template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
                 <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
                 <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">The xeokit SDK's Browser-based model viewer.</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">3D model viewer.</p>
             </template> with a <a class="doc-link" data-template="WebGLRenderer_template"  href="/api-docs#/docs/api/classes/webglrenderer.WebGLRenderer.html" target="_parent">WebGLRenderer</a>
             <template class="doc-link-tooltip" id="WebGLRenderer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
                 <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / webglrenderer / WebGLRenderer /</p>
                 <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class WebGLRenderer</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">A WebGL-based rendering strategy for a Viewer.</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">WebGL rendering strategy for a Viewer.</p>
             </template> and a <a class="doc-link" data-template="Scene_template"  href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a>
             <template class="doc-link-tooltip" id="Scene_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
                 <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / Scene /</p>
                 <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Scene</p>
                 <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Container of model geometry and materials.</p>
             </template>.</li>
+<li>Create a <a class="doc-link" data-template="Data_template"  href="/api-docs#/docs/api/classes/data.Data.html" target="_parent">Data</a>
+            <template class="doc-link-tooltip" id="Data_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / Data /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Data</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Container of model semantic data.</p>
+            </template> to hold model semantics.</li>
 <li>In the Viewer, create a <a class="doc-link" data-template="View_template"  href="/api-docs#/docs/api/classes/viewer.View.html" target="_parent">View</a>
             <template class="doc-link-tooltip" id="View_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
                 <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / View /</p>
@@ -560,26 +743,51 @@ documentation.</p>
             <template class="doc-link-tooltip" id="SceneModel_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
                 <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / SceneModel /</p>
                 <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class SceneModel</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Contains a model's geometry and materials
-
-* Created with Scene.</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Contains a model's geometry and materials.</p>
             </template> in the Scene.</li>
-<li>Use <a class="doc-link" data-template="loadGLTF_template"  href="/api-docs#/docs/api/functions/gltf.loadGLTF.html" target="_parent">loadGLTF</a>
-            <template class="doc-link-tooltip" id="loadGLTF_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / gltf / loadGLTF /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadGLTF</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads glTF file data into a SceneModel and/or
-a DataModel.</p>
-            </template> to load a glTF building model into the SceneModel.</li>
-<li>Build the SceneModel. This causes the SceneMode's objects to appear in the View's canvas.</li>
-<li>Update the visibility and highlight status of an object in the model.</li>
-<li>Orbit the Camera by one degree on each Viewer &quot;tick&quot; event. This will continually orbit the model.</li>
+<li>Create a <a class="doc-link" data-template="DataModel_template"  href="/api-docs#/docs/api/classes/data.DataModel.html" target="_parent">DataModel</a>
+            <template class="doc-link-tooltip" id="DataModel_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / DataModel /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class DataModel</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Contains a model's semantic data, as an entity-relationship graph.</p>
+            </template> in the Data.</li>
+<li>Use <a class="doc-link" data-template="loadDotBIM_template"  href="/api-docs#/docs/api/functions/dotbim.loadDotBIM.html" target="_parent">loadDotBIM</a>
+            <template class="doc-link-tooltip" id="loadDotBIM_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / dotbim / loadDotBIM /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadDotBIM</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads a .</p>
+            </template> to load a .BIM building model into the SceneModel and DataModel.</li>
+<li>Build the SceneModel and the DataModel. The SceneModel's objects will then appear in the View's canvas.</li>
+<li>Get all the <a class="doc-link" data-template="DataObject_template"  href="/api-docs#/docs/api/classes/data.DataObject.html" target="_parent">DataObject</a>
+            <template class="doc-link-tooltip" id="DataObject_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / DataObject /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class DataObject</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">An object within a DataModel.</p>
+            </template> instances in Data that represent <a class="doc-link" data-template="IfcSpace_template"  href="/api-docs#/docs/api/variables/ifctypes.IfcSpace.html" target="_parent">IfcSpace</a>
+            <template class="doc-link-tooltip" id="IfcSpace_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / ifctypes / IfcSpace /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Variable IfcSpace</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">A space represents an area or volume bounded actually or theoretically.</p>
+            </template> elements in the model.</li>
+<li>For each of those DataObjects, get the corresponding <a class="doc-link" data-template="SceneObject_template"  href="/api-docs#/docs/api/classes/scene.SceneObject.html" target="_parent">SceneObject</a>
+            <template class="doc-link-tooltip" id="SceneObject_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / SceneObject /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class SceneObject</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">An object within a SceneModel.</p>
+            </template> and <a class="doc-link" data-template="ViewObject_template"  href="/api-docs#/docs/api/classes/viewer.ViewObject.html" target="_parent">ViewObject</a>
+            <template class="doc-link-tooltip" id="ViewObject_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / ViewObject /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class ViewObject</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">An object within a View.</p>
+            </template>.</li>
+<li>Set those ViewObjects invisible, to ensure that we can see the model objects that are within each IfcSpace.</li>
 </ol>
 <pre><code class="hljs"><span class="hljs-comment">// 1.</span>
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">Scene</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/sdk/scene&quot;</span>;
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">Viewer</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/sdk/viewer&quot;</span>;
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">Web</span>GLRenderer} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/sdk/webglrenderer&quot;</span>;
-<span class="hljs-keyword">import</span> {loadGLTF} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/sdk/gltf&quot;</span>;
+<span class="hljs-keyword">import</span> {loadDotBIM} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/sdk/dotbim&quot;</span>;
+<span class="hljs-keyword">import</span> {<span class="hljs-title class_">IfcSpace</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/sdk/ifctypes&quot;</span>;
 
 <span class="hljs-comment">// 2.</span>
 <span class="hljs-keyword">const</span> scene = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Scene</span>();
@@ -587,31 +795,48 @@ a DataModel.</p>
 <span class="hljs-keyword">const</span> viewer = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Viewer</span>({scene, renderer});
 
 <span class="hljs-comment">// 3.</span>
-<span class="hljs-keyword">const</span> view = myViewer.<span class="hljs-title function_">createView</span>({<span class="hljs-attr">id</span>: <span class="hljs-string">&quot;myView&quot;</span>, <span class="hljs-attr">canvasId</span>: <span class="hljs-string">&quot;myView1&quot;</span>});
+<span class="hljs-keyword">const</span> data = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Data</span>();
 
 <span class="hljs-comment">// 4.</span>
+<span class="hljs-keyword">const</span> view = myViewer.<span class="hljs-title function_">createView</span>({<span class="hljs-attr">id</span>: <span class="hljs-string">&quot;myView&quot;</span>, <span class="hljs-attr">canvasId</span>: <span class="hljs-string">&quot;myView1&quot;</span>});
+
+<span class="hljs-comment">// 5.</span>
 view.<span class="hljs-property">camera</span>.<span class="hljs-property">eye</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>]; <span class="hljs-comment">// Looking down the -Z axis</span>
 view.<span class="hljs-property">camera</span>.<span class="hljs-property">look</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">0</span>];
 view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</span> = [<span class="hljs-number">0</span>, <span class="hljs-number">1</span>, <span class="hljs-number">0</span>];
 
-<span class="hljs-comment">// 5.</span>
-<span class="hljs-keyword">const</span> sceneModel = scene.<span class="hljs-title function_">createModel</span>();
-
 <span class="hljs-comment">// 6.</span>
-<span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;myModel.glb&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
-    response.<span class="hljs-title function_">arrayBuffer</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">fileData</span> =&gt;</span> {
-        <span class="hljs-title function_">loadGLTF</span>({fileData, sceneModel}).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+<span class="hljs-keyword">const</span> sceneModel = scene.<span class="hljs-title function_">createModel</span>({<span class="hljs-attr">id</span>: <span class="hljs-string">&quot;myModel&quot;</span>});
 
-            <span class="hljs-comment">// 7.</span>
+<span class="hljs-comment">// 7.</span>
+<span class="hljs-keyword">const</span> dataModel = data.<span class="hljs-title function_">createModel</span>({<span class="hljs-attr">id</span>: <span class="hljs-string">&quot;myModel&quot;</span>});
+
+<span class="hljs-comment">// 8.</span>
+<span class="hljs-title function_">fetch</span>(<span class="hljs-string">&quot;myModel.bim&quot;</span>).<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
+    response.<span class="hljs-title function_">json</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">fileData</span> =&gt;</span> {
+
+        <span class="hljs-title function_">loadDotBIM</span>({fileData, sceneModel, dataModel}).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+
+            <span class="hljs-comment">// 9.</span>
             sceneModel.<span class="hljs-title function_">build</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
+                dataModel.<span class="hljs-title function_">build</span>().<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> {
 
-                <span class="hljs-comment">// 8.</span>
-                view.<span class="hljs-property">objects</span>[<span class="hljs-string">&quot;2hExBg8jj4NRG6zzE$aSi6&quot;</span>].<span class="hljs-property">visible</span> = <span class="hljs-literal">true</span>;
-                view.<span class="hljs-property">objects</span>[<span class="hljs-string">&quot;2hExBg8jj4NRG6zzE$aSi6&quot;</span>].<span class="hljs-property">highlighted</span> = <span class="hljs-literal">false</span>;  <span class="hljs-comment">// etc.</span>
+                    <span class="hljs-comment">// 10.</span>
+                    <span class="hljs-keyword">const</span> dataObjects = data.<span class="hljs-property">objectsByType</span>[<span class="hljs-title class_">IfcSpace</span>];
+                    <span class="hljs-keyword">if</span> (dataObjects) {
+                        dataObjects.<span class="hljs-title function_">forEach</span>(<span class="hljs-function">(<span class="hljs-params">[objectId, dataObject]</span>) =&gt;</span> {
 
-                <span class="hljs-comment">// 9.</span>
-                viewer.<span class="hljs-property">onTick</span>.<span class="hljs-title function_">subscribe</span>(<span class="hljs-function">() =&gt;</span> {
-                    view.<span class="hljs-property">camera</span>.<span class="hljs-title function_">orbitYaw</span>(<span class="hljs-number">1.0</span>);
+                            <span class="hljs-keyword">const</span> sceneObject = scene.<span class="hljs-property">objects</span>[objectId]; <span class="hljs-comment">// SceneObject</span>
+                            <span class="hljs-keyword">const</span> viewObject = view.<span class="hljs-property">objects</span>[objectId]; <span class="hljs-comment">// ViewObject</span>
+
+                            <span class="hljs-comment">// Note: </span>
+                            <span class="hljs-comment">// dataObject.id === sceneObject.id === viewObject.id</span>
+                            <span class="hljs-comment">// dataObject.type === IfcSpace</span>
+
+                            <span class="hljs-comment">// 11.</span>
+                            viewObject.<span class="hljs-property">visible</span> = <span class="hljs-literal">false</span>;
+                        });
+                    }
                 });
             });
         });
@@ -629,7 +854,7 @@ view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</s
             <div class="col-md-4 col-sm-12 mb-3  text-left">
                 <h2>xeokit SDK</h2>
                 <p>Powering Engineering Graphics on the Web</p>
-                <img src="https://xeokit.github.io/sdk//images/xeokitLogoAlphaBG.png">
+                <img src="http://localhost:8080/images/xeokitLogoAlphaBG.png">
             </div>
             <div class="col-md-8 col-sm-12">
 
@@ -637,11 +862,11 @@ view.<span class="hljs-property">camera</span>.<span class="hljs-property">up</s
                     <h5 class="mb-4 font-weight-bold text-uppercase ">Learn</h5>
                     <ul class="list-group">
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
-                            href="https://xeokit.github.io/sdk//examples">Examples</a></li>
+                            href="http://localhost:8080/examples">Examples</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
-                            href="https://xeokit.github.io/sdk//articles">Tutorials</a></li>
+                            href="http://localhost:8080/articles">Tutorials</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2 "><a
-                            href="https://xeokit.github.io/sdk//api-docs.html">API Docs</a></li>
+                            href="http://localhost:8080/api-docs.html">API Docs</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a
                             href="">Pricing</a></li>
                         <li class="list-group-item bg-transparent border-0 p-0 mb-2"><a

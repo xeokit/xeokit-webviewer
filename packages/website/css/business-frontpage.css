@@ -986,9 +986,9 @@ h4 {
 
 iframe {
     width: 100%;
-    min-height: 100vh;
     height: auto;
-    border: none;
+    border: 1px solid black;
+    /*border: none;*/
     display: block;
     overflow: hidden; /* Prevents scrollbar flashing */
 }

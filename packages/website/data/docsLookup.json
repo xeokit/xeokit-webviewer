@@ -762,13 +762,13 @@
     "namespace": "constants"
   },
   "Data": {
-    "summary": "A federated entity-relationship semantic data model.",
+    "summary": "Container of model semantic data.",
     "path": "/api-docs#/docs/api/classes/data.Data.html",
     "kind": "class",
     "namespace": "data"
   },
   "DataModel": {
-    "summary": "Represents an entity-relationship data model.",
+    "summary": "Contains a model's semantic data, as an entity-relationship graph.",
     "path": "/api-docs#/docs/api/classes/data.DataModel.html",
     "kind": "class",
     "namespace": "data"
@@ -786,7 +786,7 @@
     "namespace": "data"
   },
   "DataObject": {
-    "summary": "Represents an object within a DataModel.",
+    "summary": "An object within a DataModel.",
     "path": "/api-docs#/docs/api/classes/data.DataObject.html",
     "kind": "class",
     "namespace": "data"
@@ -7908,7 +7908,7 @@
     "namespace": "scene"
   },
   "SceneModel": {
-    "summary": "Contains a model's geometry and materials\n\n* Created with Scene.",
+    "summary": "Contains a model's geometry and materials.",
     "path": "/api-docs#/docs/api/classes/scene.SceneModel.html",
     "kind": "class",
     "namespace": "scene"
@@ -7938,7 +7938,7 @@
     "namespace": "scene"
   },
   "SceneObject": {
-    "summary": "An object in a SceneModel.",
+    "summary": "An object within a SceneModel.",
     "path": "/api-docs#/docs/api/classes/scene.SceneObject.html",
     "kind": "class",
     "namespace": "scene"
@@ -8502,7 +8502,7 @@
     "namespace": "viewer"
   },
   "Viewer": {
-    "summary": "The xeokit SDK's Browser-based model viewer.",
+    "summary": "3D model viewer.",
     "path": "/api-docs#/docs/api/classes/viewer.Viewer.html",
     "kind": "class",
     "namespace": "viewer"
@@ -8550,7 +8550,7 @@
     "namespace": "cityjsontypes_1_1_3"
   },
   "WebGLRenderer": {
-    "summary": "A WebGL-based rendering strategy for a Viewer.",
+    "summary": "WebGL rendering strategy for a Viewer.",
     "path": "/api-docs#/docs/api/classes/webglrenderer.WebGLRenderer.html",
     "kind": "class",
     "namespace": "webglrenderer"

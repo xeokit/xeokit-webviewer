@@ -1,6 +1,6 @@
 function buildExamplesIndex(params) {
 
-    const pages = params.index ? (params.index.pages || {}) : {};
+    const pages = params.index ? (params.index || {}) : {};
 
     const list = document.getElementById('index');
     const iframe = document.getElementById('viewer');

@@ -20,15 +20,20 @@
 
 <script type="module">
 
-    import * as xeokit from "../../js/xeokit-demo-bundle.js";
+    // 1.
+    import {Scene} from "../../libs/@xeokit/sdk/scene/index.js";
+    import {WebGLRenderer} from "../../libs/@xeokit/sdk/webglrenderer/index.js";
+    import {Viewer} from "../../libs/@xeokit/sdk/viewer/index.js";
+    import {TrianglesPrimitive} from "../../libs/@xeokit/sdk/constants/index.js";
+    import {CameraControl} from "../../libs/@xeokit/sdk/cameracontrol/index.js";
 
     import {DemoHelper} from "../../js/DemoHelper.js";
 
-    const scene = new xeokit.scene.Scene();
+    const scene = new Scene();
 
-    const renderer = new xeokit.webglrenderer.WebGLRenderer({});
+    const renderer = new WebGLRenderer({});
 
-    const viewer = new xeokit.viewer.Viewer({
+    const viewer = new Viewer({
         id: "demoViewer",
         scene,
         renderer
@@ -51,7 +56,7 @@
             view.camera.look = [0, 0, 0]; // Default
             view.camera.up = [0, 1, 0]; // Default
 
-            new xeokit.cameracontrol.CameraControl(view);
+            new CameraControl(view);
 
             const sceneModel = scene.createModel({
                 id: "demoModel"
@@ -59,7 +64,7 @@
 
             sceneModel.createGeometry({
                 id: "boxGeometry",
-                primitive: xeokit.constants.TrianglesPrimitive,
+                primitive: TrianglesPrimitive,
 
                 // The vertices - eight for our box, each
                 // one spanning three array elements for X,Y and Z

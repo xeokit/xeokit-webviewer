@@ -12,8 +12,8 @@ const puppeteer = require('puppeteer');
 const express = require('express');
 const app = express();
 
-//const base = "http://localhost:8080";
-const base = "https://xeokit.github.io/sdk/";
+const base = "http://localhost:8080";
+//const base = "https://xeokit.github.io/sdk/";
 
 const markDownParser = markdownit({
     html: true,
@@ -44,6 +44,7 @@ function buildPages(baseDir) {
     try {
         const docsLinks = JSON.parse(fs.readFileSync("./data/docsLinks.json", "utf8"));
         const docsLookup = JSON.parse(fs.readFileSync("./data/docsLookup.json", "utf8"));
+        const examplesIndex = JSON.parse(fs.readFileSync("./examples/index.json", "utf8"));
         const DOCS_LOOKUP = {...docsLookup, ...docsLinks};
         const files = fs.readdirSync(baseDir);
 
@@ -131,7 +132,18 @@ function buildPages(baseDir) {
                         }
 
                         (async function convertMarkdownToHtml() {
-                            const html = wrapWordsWithLinks(await markDownParser.render(md), DOCS_LOOKUP);
+                            const html =
+                                parseDocLinks(
+                                    parseExampleDemoLinks(
+                                        await markDownParser.render(
+                                            parseExampleHTMLLinks(
+                                                parseExampleJavaScriptLinks(
+                                                    md,
+                                                    examplesIndex),
+                                                examplesIndex)
+                                        ),
+                                        examplesIndex),
+                                    DOCS_LOOKUP);
                             fs.writeFileSync(mdIndexPath2, html, 'utf8');
                             gulp.src([
                                 templateIndexPath
@@ -292,11 +304,7 @@ async function listImageFiles(directory) {
     }
 }
 
-function wrapWordsWithLinks(text, wordMap) {
-    function capitalizeFirstLetter(str) {
-        if (!str) return str;
-        return str.charAt(0).toUpperCase() + str.slice(1);
-    }
+function parseDocLinks(text, wordMap) {
     Object.keys(wordMap).forEach(function (key) {
         const expr = `doc:${key}`;
         const regex = new RegExp(`\\b${expr}?\\b`, 'g');
@@ -313,6 +321,68 @@ function wrapWordsWithLinks(text, wordMap) {
     });
     return text;
 }
+
+function parseExampleDemoLinks(text, examplesIndex) {
+    Object.keys(examplesIndex).forEach(function (key) {
+        const expr = `example-run:${key}`;
+        const regex = new RegExp(`\\b${expr}?\\b`, 'g');
+        text = text.replace(regex, (match) => {
+            const entry = examplesIndex[key];
+            if (!entry) {
+                return "";
+            }
+            const title = entry.title || "";
+            const summary = entry.title || "";
+            const id = entry.id || "";
+            return `<iframe src="../../examples/${key}" style="width:100%; height:600px; min-height=200px !important;"></iframe><br>`;
+        });
+    });
+    return text;
+}
+
+function parseExampleHTMLLinks(text, examplesIndex) {
+    Object.keys(examplesIndex).forEach(function (key) {
+        const expr = `example-html:${key}`;
+        const regex = new RegExp(`\\b${expr}?\\b`, 'g');
+        text = text.replace(regex, (match) => {
+            const entry = examplesIndex[key];
+            if (!entry) {
+                return "";
+            }
+            const title = entry.title || "";
+            const summary = entry.summary || "";
+            const html = fs.readFileSync(`./examples/${key}/index.html`, "utf8");
+            const id = entry.id || "";
+            return "\n````html\n" + html + "\n````\n";
+        });
+    });
+    return text;
+}
+
+function parseExampleJavaScriptLinks(text, examplesIndex) {
+    Object.keys(examplesIndex).forEach(function (key) {
+        const expr = `example-javascript:${key}`;
+        const regex = new RegExp(`\\b${expr}?\\b`, 'g');
+        text = text.replace(regex, (match) => {
+            const entry = examplesIndex[key];
+            if (!entry) {
+                return "";
+            }
+            const title = entry.title || "";
+            const summary = entry.summary || "";
+            const javascript = fs.readFileSync(`./examples/${key}/index.js`, "utf8");
+            const id = entry.id || "";
+            return "\n````javascript\n" + javascript + "\n````\n\n<br>* [<a href=''>Source</a>]<br>";
+        });
+    });
+    return text;
+}
+
+function capitalizeFirstLetter(str) {
+    if (!str) return str;
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 
 const baseDirectory = './articles';
 

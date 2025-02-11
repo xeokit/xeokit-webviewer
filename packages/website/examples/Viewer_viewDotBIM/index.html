@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>xeokit Example</title>
+    <link href="../../css/pageStyle.css" rel="stylesheet"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+</head>
+<body>
+<input type="checkbox" id="info-button" checked/>
+<label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
+<canvas id="demoCanvas"></canvas>
+
+<div class="slideout-sidebar">
+    <div id="info-container" class="info-container"></div>
+</div>
+</body>
+
+<script type="module">
+
+    import * as xeokit from "../../js/xeokit-demo-bundle.js";
+
+    import {DemoHelper} from "../../js/DemoHelper.js";
+
+    const scene = new xeokit.scene.Scene();
+
+    const renderer = new xeokit.webglrenderer.WebGLRenderer({});
+
+    const viewer = new xeokit.viewer.Viewer({
+        id: "demoViewer",
+        scene,
+        renderer
+    });
+
+    const data = new xeokit.data.Data();
+
+    const demoHelper = new DemoHelper({
+        elementId: "info-container",
+        viewer
+    });
+
+    demoHelper.init()
+        .then(() => {
+
+            const view = viewer.createView({
+                id: "demoView",
+                elementId: "demoCanvas"
+            });
+
+            view.camera.eye = [0, 0, 10]; // Default
+            view.camera.look = [0, 0, 0]; // Default
+            view.camera.up = [0, 1, 0]; // Default
+
+            new xeokit.cameracontrol.CameraControl(view);
+
+            const sceneModel = scene.createModel({id: "myModel"});
+
+            const dataModel = data.createModel({id: "myModel"});
+
+            fetch("../../../models/BlenderHouse/dotbim/model.bim").then(response => {
+                response.json().then(fileData => {
+
+                    xeokit.dotbim.loadDotBIM({fileData, sceneModel, dataModel}).then(() => {
+
+                        // 9.
+                        sceneModel.build().then(() => {
+                            dataModel.build().then(() => {
+
+                                // 10.
+                                const dataObjects = data.objectsByType[xeokit.ifctypes.IfcSpace];
+                                if (dataObjects) {
+                                    dataObjects.forEach(([objectId, dataObject]) => {
+
+                                        const sceneObject = scene.objects[objectId]; // SceneObject
+                                        const viewObject = view.objects[objectId]; // ViewObject
+
+                                        // Note:
+                                        // dataObject.id === sceneObject.id === viewObject.id
+                                        // dataObject.type === IfcSpace
+
+                                        // 11.
+                                        viewObject.visible = false;
+                                    });
+                                }
+
+                                demoHelper.finished();
+                            });
+                        });
+                    });
+                });
+            });
+        });
+
+</script>
+
+</html>
