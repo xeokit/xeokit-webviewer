@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
 <body>
-<input type="checkbox" id="info-button" checked/>
+<input type="checkbox" id="info-button"/>
 <label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
 <canvas id="demoCanvas"></canvas>
 
@@ -23,9 +23,9 @@
     import * as xeokit from "../../js/xeokit-demo-bundle.js?foo=";
     import {DemoHelper} from "../../js/DemoHelper.js";
 
-    //-----------------------------------------------------------------------------------------
+
     // Create a Viewer with a Scene and a WebGLRenderer
-    //-----------------------------------------------------------------------------------------
+
 
     const scene = new xeokit.scene.Scene();
 
@@ -46,14 +46,14 @@
         .then(() => {
 
 
-            //-----------------------------------------------------------------------------------------
+
             // Create a View
             //
             // Configure the View to automatically create ViewLayers on-demand, whenever they are
             // specified by a SceneModel's "viewLayer" configuration
             //
             // Attach a CameraControl to the View
-            //-----------------------------------------------------------------------------------------
+
 
             const view = viewer.createView({
                 id: "demoView",
@@ -69,7 +69,7 @@
 
             const cameraControl = new xeokit.cameracontrol.CameraControl(view, {});
 
-            //-----------------------------------------------------------------------------------------
+
             // Load a building model
             //
             // The building model is loaded into a SceneMode that specifies that its objects will
@@ -77,7 +77,7 @@
             //
             // The "modelLayer" ViewLayer is then created on-demand in our View, because we
             // configured the View with autoLayers: true (which is the default)
-            //-----------------------------------------------------------------------------------------
+
 
             const sceneModel = scene.createModel({
                 id: "demoModel",
@@ -92,7 +92,7 @@
                 });
             });
 
-            //-----------------------------------------------------------------------------------------
+
             // Create ground grid model
             //
             // The grid model is constructed in a SceneMode that specifies that its objects will
@@ -100,7 +100,7 @@
             //
             // The "gridLayer" ViewLayer is then created on-demand in our View, because we
             // configured the View with autoLayers: true (which is the default)
-            //-----------------------------------------------------------------------------------------
+
 
             const gridSceneModel = scene.createModel({
                 id: "demoHelperSceneModel",
@@ -133,9 +133,9 @@
 
             gridSceneModel.build();
 
-            //-----------------------------------------------------------------------------------------
+
             // Toggle the highlighting of objects in ViewLayer "gridLayer", causing them to blink
-            //-----------------------------------------------------------------------------------------
+
 
             // let toggle = true;
             // setInterval(() => {

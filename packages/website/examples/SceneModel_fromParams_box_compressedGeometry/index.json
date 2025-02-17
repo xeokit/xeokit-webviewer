@@ -2,5 +2,10 @@
   "title": "Building and viewing a box-shaped SceneModel, from JSON, using compressed geometry",
   "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromParams method to load a SceneModelParams containing compressed geometry into the SceneModel. The Viewer then draws the SceneModel in the View's canvas.",
   "id": "SceneModel_fromParams_box_compressedGeometry",
-  "type": "example"
+  "type": "example",
+  "template": "basicPage",
+  "steps": [
+    "TrianglesPrimitive (defined in @xeokit/constants)",
+    "16-bit unsigned integers"
+  ]
 }

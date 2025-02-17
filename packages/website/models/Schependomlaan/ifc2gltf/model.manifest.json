@@ -1,31 +1,32 @@
 {
-    "inputFile": "./data/models/Schependomlaan/ifc/model.ifc",
+    "inputFile": "./models/Schependomlaan/ifc/model.ifc",
     "converterApplication": "ifc2gltfcxconverter",
-    "converterApplicationVersion": "4.18",
-    "conversionDate": "2024-11-21 22:44:30",
+    "converterApplicationVersion": "4.34.4",
+    "conversionDate": "2025-02-16 19:17:40",
     "gltfOutFiles": [
-        "./data/models/Schependomlaan/ifc2gltf/model.glb"
+        "./models/Schependomlaan/ifc2gltf/model.glb"
     ],
     "metadataOutFiles": [
-        "./data/models/Schependomlaan/ifc2gltf/model.json"
+        "./models/Schependomlaan/ifc2gltf/model.json"
     ],
     "numCreatedGltfMeshes": 5978,
     "numCreatedMetaObjects": 3730,
     "numExportedPropertySetsOrElementQuantities": 0,
     "modelBoundsMax": [
-        22.964239358912128,
-        23.46500015258789,
-        13.356488722056485
+        11.982119679456064,
+        12.232500076293945,
+        7.528244366988707
     ],
     "modelBoundsMin": [
-        -1.0,
-        -1.0,
-        -1.7000000119209293
+        -11.982119679456064,
+        -12.232500076293945,
+        -7.528244366988707
     ],
     "generalMessages": [
-        "Detected IFC version: IFC4X3"
+        "Detected IFC version: IFC2X3"
     ],
     "warnings": [
+        "convertIfcPropertySetOrQuantity: not a property set or element quanity: IfcWindowPanelProperties, tag: 124051, guid: 25lwY2ERSCWudrceZV_Mg0",
         "degenerated triangle"
     ],
     "errors": []

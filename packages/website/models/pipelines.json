@@ -68,7 +68,7 @@
             "docs": "/docs/api/modules/_xeokit_gltf2xgf.html",
             "case": "<a href=\"https://en.wikipedia.org/wiki/GlTF#:~:text=glTF%20(Graphics%20Library%20Transmission%20Format,glb%20(binary).\">glTF</a> -&gt; <a href=\"/docs/api/modules/_xeokit_gltf2xgf.html\">gltf2xgf</a> -&gt; <a href=\"/docs/api/modules/_xeokit_xgf.html\">XGF</a> -&gt; <a href=\"/docs/api/modules/_xeokit_xgf.html\">loadXGF()</a>",
             "desc": "{GLB} -> gltf2xgf -> {XGF,JSON} -> loadXGF, loadDataModel -> Viewer",
-            "cmd": "node ../gltf2xgf/gltf2xgf.js -i ./models/${modelId}/gltf/model.glb -s ./models/${modelId}/gltf2xgf/model.xgf -d ./models/${modelId}/gltf2xgf/model.json -l >> ./models/${modelId}/gltf2xgf/log.txt",
+            "cmd": "node ../sdk/dist/gltf2xgf/gltf2xgf.js -i ./models/${modelId}/gltf/model.glb -s ./models/${modelId}/gltf2xgf/model.xgf -d ./models/${modelId}/gltf2xgf/model.json -l >> ./models/${modelId}/gltf2xgf/log.txt",
             "dependson": [
                 "gltf"
             ]
@@ -78,7 +78,7 @@
             "docs": "/docs/api/modules/_xeokit_las2xgf.html",
             "case": "LAS -&gt; <a href=\"https://en.wikipedia.org/wiki/LAS_file_format\">gltf2xgf</a> -&gt; <a href=\"/docs/api/modules/_xeokit_xgf.html\">XGF</a> -&gt; <a href=\"/docs/api/modules/_xeokit_xgf.html\">loadXGF()</a>",
             "desc": "{LAS/LAZ} -> las2xgf -> {XGF,JSON} -> loadXGF, loadDataModel -> Viewer",
-            "cmd": "node ../las2xgf/las2xgf.js -i ./models/${modelId}/laz/model.* -s ./models/${modelId}/las2xgf/model.xgf -d ./models/${modelId}/las2xgf/model.json -l >> ./models/${modelId}/las2xgf/log.txt",
+            "cmd": "node ../sdk/dist/las2xgf/las2xgf.js -i ./models/${modelId}/laz/model.* -s ./models/${modelId}/las2xgf/model.xgf -d ./models/${modelId}/las2xgf/model.json -l >> ./models/${modelId}/las2xgf/log.txt",
             "dependson": [
                 "laz"
             ]
@@ -87,7 +87,7 @@
             "id": "ifc2gltf",
             "case": "<a href=\"https://en.wikipedia.org/wiki/Industry_Foundation_Classes\">IFC</a> -&gt; <a href=\"/docs/api/modules/_xeokit_ifc2gltf.html\">ifc2gltf</a> -&gt; <a href=\"https://en.wikipedia.org/wiki/GlTF#:~:text=glTF%20(Graphics%20Library%20Transmission%20Format,glb%20(binary).\">glTF</a> -&gt; <a href=\"/docs/api/modules/_xeokit_gltf.html\">loadGLTF()</a>",
             "desc": "{IFC} -> ifc2gltf -> {GLB,JSON} -> ModelChunksLoader(loadGLTF, loadMetaModel) -> Viewer",
-            "cmd": "${ifc2gltfcxconverterDir}/ifc2gltfcxconverter -c ${ifc2gltfcxconverterDir}/ifc2gltfcxconverter.json -i ./models/${modelId}/ifc/model.ifc -o ./models/${modelId}/ifc2gltf/model.glb -m ./models/${modelId}/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./models/${modelId}/ifc2gltf/log.txt",
+            "cmd": "${ifc2gltfcxconverterDir}/ifc2gltfcxconverter_static -c ${ifc2gltfcxconverterDir}/ifc2gltfcxconverter.json -i ./models/${modelId}/ifc/model.ifc -o ./models/${modelId}/ifc2gltf/model.glb -m ./models/${modelId}/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./models/${modelId}/ifc2gltf/log.txt",
             "dependson": [
                 "ifc"
             ]
@@ -96,7 +96,7 @@
             "id": "ifc2gltf2xgf",
             "case": "<a href=\"https://en.wikipedia.org/wiki/Industry_Foundation_Classes\">IFC</a> -&gt; <a href=\"/docs/api/modules/_xeokit_ifc2gltf.html\">ifc2gltf</a>  -&gt; <a href=\"https://en.wikipedia.org/wiki/GlTF#:~:text=glTF%20(Graphics%20Library%20Transmission%20Format,glb%20(binary).\">glTF</a> -&gt; <a href=\"/docs/api/modules/_xeokit_ifc2gltf2xgf.html\">ifc2gltf2xgf</a> -&gt; <a href=\"/docs/api/modules/_xeokit_xgf.html\">XGF</a> -&gt; <a href=\"/docs/api/modules/_xeokit_xgf.html\">loadXGF()</a>",
             "desc": "{IFC} -> ifc2gltf -> {GLB,JSON} -> ifc2gltf2xgf -> {XGF,JSON} -> ModelChunksLoader(loadXGF, loadDataModel) -> Viewer",
-            "cmd": "node ../ifc2gltf2xgf/ifc2gltf2xgf.js -i ./models/${modelId}/ifc2gltf/model.manifest.json -o ./models/${modelId}/ifc2gltf2xgf/model.manifest.json -l >> ./models/${modelId}/ifc2gltf2xgf/log.txt",
+            "cmd": "node ../sdk/dist/ifc2gltf2xgf/ifc2gltf2xgf.js -i ./models/${modelId}/ifc2gltf/model.manifest.json -o ./models/${modelId}/ifc2gltf2xgf/model.manifest.json -l >> ./models/${modelId}/ifc2gltf2xgf/log.txt",
             "dependson": [
                 "ifc2gltf"
             ]
@@ -105,7 +105,7 @@
             "id": "webifc2xgf",
             "case": "<a href=\"https://en.wikipedia.org/wiki/Industry_Foundation_Classes\">IFC</a> -&gt; <a href=\"/docs/api/modules/_xeokit_webifc2xgf.html\">webifc2xgf</a> -&gt; <a href=\"/docs/api/modules/_xeokit_xgf.html\">loadXGF()</a>",
             "desc": "{IFC} -> webifc2xgf -> {XGF,JSON} -> (loadXGF,loadDataModel) -> Viewer",
-            "cmd": "node ../webifc2xgf/webifc2xgf.js -i ./models/${modelId}/ifc/model.ifc -s ./models/${modelId}/webifc2xgf/model.xgf -d ./models/${modelId}/webifc2xgf/model.json -l >> ./models/${modelId}/webifc2xgf/log.txt",
+            "cmd": "node ../sdk/dist/webifc2xgf/webifc2xgf.js -i ./models/${modelId}/ifc/model.ifc -s ./models/${modelId}/webifc2xgf/model.xgf -d ./models/${modelId}/webifc2xgf/model.json -l >> ./models/${modelId}/webifc2xgf/log.txt",
             "dependson": [
                 "ifc"
             ]
@@ -115,7 +115,7 @@
             "docs": "",
             "case": "<a href=\"https://dotbim.net/\">.BIM</a> -&gt; <a href=\"/docs/api/modules/_xeokit_dotbim2xgf.html\">dotbim2xgf</a> -&gt; <a href=\"/docs/api/modules/_xeokit_xgf.html\">loadXGF()</a>",
             "desc": "{.BIM} -> dotbim2xgf -> {XGF,JSON} -> (loadXGF,loadDataModel) -> Viewer",
-            "cmd": "node ../dotbim2xgf/dotbim2xgf.js -i ./models/${modelId}/dotbim/model.bim -s ./models/${modelId}/dotbim2xgf/model.xgf -d ./models/${modelId}/dotbim2xgf/model.json -l >> ./models/${modelId}/dotbim2xgf/log.txt",
+            "cmd": "node ../sdk/dist/dotbim2xgf/dotbim2xgf.js -i ./models/${modelId}/dotbim/model.bim -s ./models/${modelId}/dotbim2xgf/model.xgf -d ./models/${modelId}/dotbim2xgf/model.json -l >> ./models/${modelId}/dotbim2xgf/log.txt",
             "dependson": [
                 "dotbim"
             ]

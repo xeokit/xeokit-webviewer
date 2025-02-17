@@ -114,21 +114,16 @@
                 <h2>Introduction</h2>
 <hr>
 <p>In this tutorial, we'll load an IFC 4.3 model into a xeokit <a class="doc-link" data-template="Viewer_template"  href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
-            <template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">3D model viewer.</p>
-            </template>. To optimize performance, we'll first
+<template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">3D model viewer.</p>
+</template>. To optimize performance, we'll first
 convert the IFC model to XGF, xeokit's native compressed format. The import process consists of three steps:</p>
 <ol>
 <li>Use <code>ifc2gltf</code> to convert the IFC into glTF and JSON metadata (<em>intermediate format</em>).</li>
 <li>Use <code>ifc2gltf2xkt</code> to convert the glTF and JSON into XGF and a JSON data model (<em>final format</em>).</li>
-<li>Use <code><a class="doc-link" data-template="loadXGF_template"  href="/api-docs#/docs/api/functions/xgf.loadXGF.html" target="_parent">loadXGF</a>
-            <template class="doc-link-tooltip" id="loadXGF_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / xgf / loadXGF /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadXGF</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Imports [XGF](https://xeokit.</p>
-            </template></code> to load the XGF and JSON data model into a xeokit Viewer on a webpage.</li>
+<li>Use <code>&lt;a class=&quot;doc-link&quot; data-template=&quot;loadXGF_template&quot;  href=&quot;/api-docs#/docs/api/functions/xgf.loadXGF.html&quot; target=&quot;_parent&quot;&gt;loadXGF&lt;/a&gt;          &lt;template class=&quot;doc-link-tooltip&quot; id=&quot;loadXGF_template&quot; style=&quot;font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;&quot;&gt;              &lt;p style=&quot;font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0&quot;&gt;@xeokit/sdk / xgf / loadXGF /&lt;/p&gt;              &lt;p style=&quot;font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0&quot;&gt;Function loadXGF&lt;/p&gt;              &lt;p style=&quot;font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;&quot;&gt;Imports [XGF](https://xeokit.&lt;/p&gt;          &lt;/template&gt;</code> to load the XGF and JSON data model into a xeokit Viewer on a webpage.</li>
 </ol>
 <p>This process splits the model into multiple files, improving memory stability in the converter tools and
 Viewer by allowing incremental loading and deallocation.</p>
@@ -229,11 +224,11 @@ CLI tool to do this conversion step:</p>
 </ul>
 <p>The files output by <code>ifc2gltf2xgf</code> are listed below. Each of the JSON files follows the schema defined
 by <a class="doc-link" data-template="DataModelParams_template"  href="/api-docs#/docs/api/interfaces/data.DataModelParams.html" target="_parent">DataModelParams</a>
-            <template class="doc-link-tooltip" id="DataModelParams_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / DataModelParams /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Interface DataModelParams</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Parameters used to define a DataModel.</p>
-            </template>, which is xeokit's new and more expressive <em>entity-relationship graph</em> format for semantic model data.</p>
+<template class="doc-link-tooltip" id="DataModelParams_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / DataModelParams /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Interface DataModelParams</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Parameters used to define a DataModel.</p>
+</template>, which is xeokit's new and more expressive <em>entity-relationship graph</em> format for semantic model data.</p>
 <pre><code class="hljs">.
 ├── model.xgf.manifest.json
 ├── model_1.xgf
@@ -258,11 +253,11 @@ by <a class="doc-link" data-template="DataModelParams_template"  href="/api-docs
 └── model.datamodel.json
 </code></pre>
 <p>The <code>model.xgf.manifest.json</code> manifest looks like below. This manifest follows the schema defined by <a class="doc-link" data-template="ModelChunksManifestParams_template"  href="/api-docs#/docs/api/interfaces/core.ModelChunksManifestParams.html" target="_parent">ModelChunksManifestParams</a>
-            <template class="doc-link-tooltip" id="ModelChunksManifestParams_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / core / ModelChunksManifestParams /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Interface ModelChunksManifestParams</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;"></p>
-            </template>.</p>
+<template class="doc-link-tooltip" id="ModelChunksManifestParams_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / core / ModelChunksManifestParams /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Interface ModelChunksManifestParams</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;"></p>
+</template>.</p>
 <pre><code class="hljs">
 <span class="hljs-punctuation">{</span>
     <span class="hljs-attr">&quot;sceneModelMIMEType&quot;</span><span class="hljs-punctuation">:</span> <span class="hljs-string">&quot;arraybuffer&quot;</span><span class="hljs-punctuation">,</span>
@@ -296,11 +291,11 @@ by <a class="doc-link" data-template="DataModelParams_template"  href="/api-docs
 <h2>Step 3. View the XGF and Datamodel Files</h2>
 <hr>
 <p>Now we'll create a Web page containing a xeokit <a class="doc-link" data-template="Viewer_template"  href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
-            <template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">3D model viewer.</p>
-            </template> that views our converted model.</p>
+<template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">3D model viewer.</p>
+</template> that views our converted model.</p>
 <p>First install the npm modules we need:</p>
 <pre><code class="hljs">npm install @xeokit/scene
 npm install @xeokit/data
@@ -328,73 +323,73 @@ npm install @xeokit/cameracontrol
 <ol>
 <li>Import the packages we need.</li>
 <li>Create a <a class="doc-link" data-template="Data_template"  href="/api-docs#/docs/api/classes/data.Data.html" target="_parent">Data</a>
-            <template class="doc-link-tooltip" id="Data_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / Data /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Data</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Container of model semantic data.</p>
-            </template> to hold the IFC semantic data.</li>
+<template class="doc-link-tooltip" id="Data_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / Data /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Data</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Container of model semantic data.</p>
+</template> to hold the IFC semantic data.</li>
 <li>Create a <a class="doc-link" data-template="Viewer_template"  href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
-            <template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">3D model viewer.</p>
-            </template> with a <a class="doc-link" data-template="Scene_template"  href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a>
-            <template class="doc-link-tooltip" id="Scene_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / Scene /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Scene</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Container of model geometry and materials.</p>
-            </template>, a <a class="doc-link" data-template="WebGLRenderer_template"  href="/api-docs#/docs/api/classes/webglrenderer.WebGLRenderer.html" target="_parent">WebGLRenderer</a>
-            <template class="doc-link-tooltip" id="WebGLRenderer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / webglrenderer / WebGLRenderer /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class WebGLRenderer</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">WebGL rendering strategy for a Viewer.</p>
-            </template> and one <a class="doc-link" data-template="View_template"  href="/api-docs#/docs/api/classes/viewer.View.html" target="_parent">View</a>
-            <template class="doc-link-tooltip" id="View_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / View /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class View</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">An independent view within a Viewer, with its own Canvas, Camera and object visual states.</p>
-            </template>.</li>
+<template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">3D model viewer.</p>
+</template> with a <a class="doc-link" data-template="Scene_template"  href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a>
+<template class="doc-link-tooltip" id="Scene_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / Scene /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Scene</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Container of model geometry and materials.</p>
+</template>, a <a class="doc-link" data-template="WebGLRenderer_template"  href="/api-docs#/docs/api/classes/webglrenderer.WebGLRenderer.html" target="_parent">WebGLRenderer</a>
+<template class="doc-link-tooltip" id="WebGLRenderer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / webglrenderer / WebGLRenderer /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class WebGLRenderer</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">WebGL rendering strategy for a Viewer.</p>
+</template> and one <a class="doc-link" data-template="View_template"  href="/api-docs#/docs/api/classes/viewer.View.html" target="_parent">View</a>
+<template class="doc-link-tooltip" id="View_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / View /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class View</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">An independent view within a Viewer, with its own Canvas, Camera and object visual states.</p>
+</template>.</li>
 <li>Attach a <a class="doc-link" data-template="CameraControl_template"  href="/api-docs#/docs/api/classes/cameracontrol.CameraControl.html" target="_parent">CameraControl</a>
-            <template class="doc-link-tooltip" id="CameraControl_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / cameracontrol / CameraControl /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class CameraControl</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Mouse and touch controller for a Viewer's Camera.</p>
-            </template> to the View so that we can interact with it using mouse and touch.</li>
+<template class="doc-link-tooltip" id="CameraControl_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / cameracontrol / CameraControl /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class CameraControl</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Mouse and touch controller for a Viewer's Camera.</p>
+</template> to the View so that we can interact with it using mouse and touch.</li>
 <li>Create a <a class="doc-link" data-template="SceneModel_template"  href="/api-docs#/docs/api/classes/scene.SceneModel.html" target="_parent">SceneModel</a>
-            <template class="doc-link-tooltip" id="SceneModel_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / SceneModel /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class SceneModel</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Contains a model's geometry and materials.</p>
-            </template> in the Scene.</li>
+<template class="doc-link-tooltip" id="SceneModel_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / SceneModel /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class SceneModel</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Contains a model's geometry and materials.</p>
+</template> in the Scene.</li>
 <li>Create a <a class="doc-link" data-template="DataModel_template"  href="/api-docs#/docs/api/classes/data.DataModel.html" target="_parent">DataModel</a>
-            <template class="doc-link-tooltip" id="DataModel_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / DataModel /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class DataModel</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Contains a model's semantic data, as an entity-relationship graph.</p>
-            </template> in the Data.</li>
+<template class="doc-link-tooltip" id="DataModel_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / DataModel /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class DataModel</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Contains a model's semantic data, as an entity-relationship graph.</p>
+</template> in the Data.</li>
 <li>Create a <a class="doc-link" data-template="ModelChunksLoader_template"  href="/api-docs#/docs/api/classes/modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a>
-            <template class="doc-link-tooltip" id="ModelChunksLoader_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / modelchunksloader / ModelChunksLoader /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class ModelChunksLoader</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads a SceneModel and/or DataModel from a set of chunk files.</p>
-            </template>, configured to use <a class="doc-link" data-template="loadXGF_template"  href="/api-docs#/docs/api/functions/xgf.loadXGF.html" target="_parent">loadXGF</a>
-            <template class="doc-link-tooltip" id="loadXGF_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / xgf / loadXGF /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadXGF</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Imports [XGF](https://xeokit.</p>
-            </template> load each XGF chunk, and <a class="doc-link" data-template="loadDataModel_template"  href="/api-docs#/docs/api/functions/data.loadDataModel.html" target="_parent">loadDataModel</a>
-            <template class="doc-link-tooltip" id="loadDataModel_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / loadDataModel /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadDataModel</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads DataModelParams into a DataModel.</p>
-            </template> to load each JSON data model file.</li>
+<template class="doc-link-tooltip" id="ModelChunksLoader_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / modelchunksloader / ModelChunksLoader /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class ModelChunksLoader</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads a SceneModel and/or DataModel from a set of chunk files.</p>
+</template>, configured to use <a class="doc-link" data-template="loadXGF_template"  href="/api-docs#/docs/api/functions/xgf.loadXGF.html" target="_parent">loadXGF</a>
+<template class="doc-link-tooltip" id="loadXGF_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / xgf / loadXGF /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadXGF</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Imports [XGF](https://xeokit.</p>
+</template> load each XGF chunk, and <a class="doc-link" data-template="loadDataModel_template"  href="/api-docs#/docs/api/functions/data.loadDataModel.html" target="_parent">loadDataModel</a>
+<template class="doc-link-tooltip" id="loadDataModel_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / loadDataModel /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadDataModel</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads DataModelParams into a DataModel.</p>
+</template> to load each JSON data model file.</li>
 <li>Load our <code>model.xgf.manifest.json</code> manifest.</li>
 <li>Use <a class="doc-link" data-template="ModelChunksLoader_template"  href="/api-docs#/docs/api/classes/modelchunksloader.ModelChunksLoader.html" target="_parent">ModelChunksLoader</a>
-            <template class="doc-link-tooltip" id="ModelChunksLoader_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / modelchunksloader / ModelChunksLoader /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class ModelChunksLoader</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads a SceneModel and/or DataModel from a set of chunk files.</p>
-            </template> to load the files listed in the manifest into our SceneModel and DataModel.</li>
+<template class="doc-link-tooltip" id="ModelChunksLoader_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / modelchunksloader / ModelChunksLoader /</p>
+<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class ModelChunksLoader</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Loads a SceneModel and/or DataModel from a set of chunk files.</p>
+</template> to load the files listed in the manifest into our SceneModel and DataModel.</li>
 <li>Build the SceneModel and DataModel. The IFC model then appears in the Viewer.</li>
 </ol>
 <pre><code class="hljs"> <span class="hljs-comment">// 1.</span>

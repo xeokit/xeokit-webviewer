@@ -1,13 +1,13 @@
 {
-    "inputFile": "./data/models/IfcOpenHouse2x3/ifc/model.ifc",
+    "inputFile": "./models/IfcOpenHouse2x3/ifc/model.ifc",
     "converterApplication": "ifc2gltfcxconverter",
-    "converterApplicationVersion": "4.18",
-    "conversionDate": "2024-11-21 22:44:05",
+    "converterApplicationVersion": "4.34.4",
+    "conversionDate": "2025-02-16 19:17:32",
     "gltfOutFiles": [
-        "./data/models/IfcOpenHouse2x3/ifc2gltf/model.glb"
+        "./models/IfcOpenHouse2x3/ifc2gltf/model.glb"
     ],
     "metadataOutFiles": [
-        "./data/models/IfcOpenHouse2x3/ifc2gltf/model.json"
+        "./models/IfcOpenHouse2x3/ifc2gltf/model.json"
     ],
     "numCreatedGltfMeshes": 38,
     "numCreatedMetaObjects": 44,
@@ -15,15 +15,15 @@
     "modelBoundsMax": [
         10.0,
         10.0,
-        5.78000135421753
+        6.955000734329223
     ],
     "modelBoundsMin": [
         -10.0,
         -10.0,
-        -8.130000114440918
+        -6.955000734329223
     ],
     "generalMessages": [
-        "Detected IFC version: IFC4X3"
+        "Detected IFC version: IFC2X3"
     ],
     "warnings": [],
     "errors": []

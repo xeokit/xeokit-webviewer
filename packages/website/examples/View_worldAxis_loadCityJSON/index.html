@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
 <body>
-<input type="checkbox" id="info-button" checked/>
+<input type="checkbox" id="info-button"/>
 <label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
 <canvas id="demoCanvas"></canvas>
 
@@ -20,18 +20,18 @@
 
 <script type="module">
 
-    //-----------------------------------------------------------------------------------------
+
     // Import xeokit SDK via the JavaScript bundle that we've built for these examples
-    //-----------------------------------------------------------------------------------------
+
 
     import * as xeokit from "../../js/xeokit-demo-bundle.js";
 
     import {DemoHelper} from "../../js/DemoHelper.js";
 
 
-    //-----------------------------------------------------------------------------------------
+
     // Create a Viewer with a Scene, WebGLRenderer and one View
-    //-----------------------------------------------------------------------------------------
+
 
     const scene = new xeokit.scene.Scene();
     const data = new xeokit.data.Data();
@@ -55,9 +55,9 @@
                 elementId: "demoCanvas"
             });
 
-            //-----------------------------------------------------------------------------------------
+
             // Set the View's World-space coordinate axis to make +Z "up"
-            //-----------------------------------------------------------------------------------------
+
 
             view.camera.worldAxis = [
                 1, 0, 0, // Right +X
@@ -65,9 +65,9 @@
                 0, -1, 0  // Forward -Y
             ];
 
-            //-----------------------------------------------------------------------------------------
+
             // Arrange camera within our +Z "up" coordinate system
-            //-----------------------------------------------------------------------------------------
+
 
             view.camera.eye = [15, 10, 0];
             view.camera.look = [0, 0, 0];
@@ -75,7 +75,10 @@
 
             view.camera.orbitPitch(20);
 
-            new xeokit.cameracontrol.CameraControl(view);
+            // Add a CameraControl to interactively control the Camera with keyboard,
+        // mouse and touch input
+
+        new xeokit.cameracontrol.CameraControl(view);
 
             const cameraFlight = new xeokit.cameraflight.CameraFlightAnimation(view);
 
@@ -84,9 +87,9 @@
                 console.log(sceneModel.getJSON())
             });
 
-            //-----------------------------------------------------------------------------------------
+
             // Load CityJSON into a SceneModel
-            //-----------------------------------------------------------------------------------------
+
 
             const sceneModel = scene.createModel({
                 id: "demoModel"

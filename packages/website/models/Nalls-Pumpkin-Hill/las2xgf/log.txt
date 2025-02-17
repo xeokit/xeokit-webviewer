@@ -343,3 +343,16 @@ Reading LAS/LAZ file: ./data/models/Nalls-Pumpkin-Hill/laz/model.laz
 [las2xgf] Converted DataObjects: 2
 [las2xgf] Converted PropertySets: 0
 [las2xgf] Finished OK.
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)

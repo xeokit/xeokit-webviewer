@@ -2,5 +2,9 @@
   "title": "Building and viewing a simple SceneModel, from JSON",
   "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from SceneModelParams that contains a single triangle. The SceneModel has one SceneObject, one SceneMesh, and one SceneGeometry, which contains the triangle geometry.",
   "id": "SceneModel_fromParams_triangle",
-  "type": "example"
+  "type": "example",
+  "template": "basicPage",
+  "steps": [
+    "TrianglesPrimitive (defined in @xeokit/constants)"
+  ]
 }

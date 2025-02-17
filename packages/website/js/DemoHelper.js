@@ -1,23 +1,15 @@
-
-
 let DOCS_LOOKUP;
 
 export class DemoHelper {
 
     constructor(cfg = {}) {
 
-        let div;
-
-        if (cfg.elementId) {
-            div = document.getElementById(cfg.elementId);
-        } else {
-            div = document.getElementById("info-container");
-            if (!div) {
-                div = document.createElement('div');
-                div.id = 'info-container';
-                div.className = 'info-container';
-                document.body.appendChild(div);
-            }
+        let div = document.getElementById(cfg.elementId || "info-container");
+        if (!div) {
+            div = document.createElement('div');
+            div.id = 'info-container';
+            div.className = 'info-container';
+            document.body.appendChild(div);
         }
 
         function loadCSS(filename) {
@@ -35,11 +27,11 @@ export class DemoHelper {
             document.body.appendChild(script);
         }
 
-     //   document.addEventListener("DOMContentLoaded", function() {
+        //   document.addEventListener("DOMContentLoaded", function() {
         loadCSS("https://unpkg.com/tippy.js@6/themes/light-border.css");
         loadJS("https://unpkg.com/@popperjs/core@2");
         loadJS("https://unpkg.com/tippy.js@6");
-    //     });
+        //     });
 
         this.viewer = cfg.viewer;
         this.data = cfg.data;
@@ -316,9 +308,21 @@ export class DemoHelper {
                 clearInterval(interval);
             }
         }, 200);
+
+        const infoButton = document.getElementById("info-button");
+        if (infoButton && infoButton.checked) {
+            infoButton.click();
+        }
+
+        this.#signalFinished();
+    }
+
+    #signalFinished() {
+        const div = document.createElement("div");
+        div.id = "ExampleLoaded";
+        document.body.appendChild(div);
     }
 }
-
 
 function trunc(vec) {
     const vec2 = [];

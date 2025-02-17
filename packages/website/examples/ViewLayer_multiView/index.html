@@ -80,15 +80,15 @@
 
 <script type="module">
 
-    //-----------------------------------------------------------------------------------------
+
     // Import xeokit SDK from the JavaScript bundle that we've built for these examples
-    //-----------------------------------------------------------------------------------------
+
 
     import * as xeokit from "../../js/xeokit-demo-bundle.js";
 
-    //-----------------------------------------------------------------------------------------
+
     // Create a Viewer with a Scene and a WebGLRenderer
-    //-----------------------------------------------------------------------------------------
+
 
     const scene = new xeokit.scene.Scene();
 
@@ -100,11 +100,11 @@
         renderer
     });
 
-    //-----------------------------------------------------------------------------------------
+
     // Create View 1 - perspective projection, looking at the model from the side
     // Configure the View to not automatically create ViewLayers on-demand
     // Create two ViewLayers in the View, for model and grid
-    //-----------------------------------------------------------------------------------------
+
 
     const view1 = viewer.createView({
         id: "demoView1",
@@ -126,11 +126,11 @@
         id: "gridLayer"
     });
 
-    //-----------------------------------------------------------------------------------------
+
     // Create View 2  - orthographic, looking at the model from above
     // Configure the View to not automatically create ViewLayers on-demand
     // Create two ViewLayers in the View, for model and grid
-    //-----------------------------------------------------------------------------------------
+
 
     const view2 = viewer.createView({
         id: "demoView2",
@@ -154,11 +154,11 @@
         id: "gridLayer"
     });
 
-    //-----------------------------------------------------------------------------------------
+
     // Create View 3 - perspective projection, looking at the model from the side
     // Configure the View to not automatically create ViewLayers on-demand
     // Create one ViewLayers in the View, for model
-    //-----------------------------------------------------------------------------------------
+
 
     const view3 = viewer.createView({
         id: "demoView3",
@@ -176,22 +176,22 @@
         id: "modelLayer"
     });
 
-    //-----------------------------------------------------------------------------------------
+
     // Attach a CameraControl to each View, to control
     // its Camera with mouse and touch input
-    //-----------------------------------------------------------------------------------------
+
 
     const cameraControl1 = new xeokit.cameracontrol.CameraControl(view1, {});
     const cameraControl2 = new xeokit.cameracontrol.CameraControl(view2, {});
     const cameraControl3 = new xeokit.cameracontrol.CameraControl(view3, {});
 
-    //-----------------------------------------------------------------------------------------
+
     // Create a SceneModel containing a simple house model
     //
     // This SceneModel will appear in ViewLayer "modelLayer"
     // Since that ViewLayer is in all three Views, the SceneModel will then
     // appear in all three Views
-    //-----------------------------------------------------------------------------------------
+
 
     const sceneModel = scene.createModel({
         id: "demoModel",
@@ -206,7 +206,7 @@
         });
     });
 
-    //-----------------------------------------------------------------------------------------
+
     // Create a SceneModel that shows a grid ground plane
     //
     // This SceneModel will appear in ViewLayer "gridLayer"
@@ -214,7 +214,7 @@
     // We only created that ViewLayer in the first and second Views, so the grid will
     // only appear in those two Views. It won't appear in the third View, which does not
     // have that ViewLayer.
-    //-----------------------------------------------------------------------------------------
+
 
     const gridSceneModel = scene.createModel({
         id: "demoGridModel",

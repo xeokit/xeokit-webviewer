@@ -8,7 +8,7 @@
     <link href="../../css/pageStyle.css" rel="stylesheet"/>
 </head>
 <body>
-<input type="checkbox" id="info-button" checked/>
+<input type="checkbox" id="info-button"/>
 <label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
 <canvas id="demoCanvas"></canvas>
 </body>
@@ -17,9 +17,9 @@
 
     import * as xeokit from "../../js/xeokit-demo-bundle.js?foo=";
 
-    //-----------------------------------------------------------------------------------------
+
     // Create a Viewer with a Scene and a WebGLRenderer
-    //-----------------------------------------------------------------------------------------
+
 
     const scene = new xeokit.scene.Scene();
 
@@ -31,9 +31,9 @@
         renderer
     });
 
-    //-----------------------------------------------------------------------------------------
+
     // Create a View, attach a CameraControl
-    //-----------------------------------------------------------------------------------------
+
 
     const view = viewer.createView({
         id: "demoView",
@@ -49,9 +49,9 @@
 
     const cameraControl = new xeokit.cameracontrol.CameraControl(view, {});
 
-    //-----------------------------------------------------------------------------------------
+
     // Manually create two ViewLayers in our View
-    //-----------------------------------------------------------------------------------------
+
 
     view.createLayer({
         id: "modelLayer"
@@ -61,9 +61,9 @@
         id: "gridLayer"
     });
 
-    //-----------------------------------------------------------------------------------------
+
     // Load building model into ViewLayer "modelLayer"
-    //-----------------------------------------------------------------------------------------
+
 
     const sceneModel = scene.createModel({
         id: "demoModel",
@@ -78,9 +78,9 @@
         });
     });
 
-    //-----------------------------------------------------------------------------------------
+
     // Create ground grid model in ViewLayer "gridLayer"
-    //-----------------------------------------------------------------------------------------
+
 
     const gridSceneModel = scene.createModel({
         id: "demoHelperSceneModel",
@@ -113,9 +113,9 @@
 
     gridSceneModel.build();
 
-    //-----------------------------------------------------------------------------------------
+
     // Switch the visibility of the ground grid
-    //-----------------------------------------------------------------------------------------
+
 
     // let visibleToggle = true;
     // setInterval(() => {

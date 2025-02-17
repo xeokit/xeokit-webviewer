@@ -1,32 +1,30 @@
 {
-    "inputFile": "./data/models/MAP/ifc/model.ifc",
+    "inputFile": "./models/MAP/ifc/model.ifc",
     "converterApplication": "ifc2gltfcxconverter",
-    "converterApplicationVersion": "4.18",
-    "conversionDate": "2024-11-21 22:42:40",
+    "converterApplicationVersion": "4.34.4",
+    "conversionDate": "2025-02-16 19:17:28",
     "gltfOutFiles": [
-        "./data/models/MAP/ifc2gltf/model.glb"
+        "./models/MAP/ifc2gltf/model.glb"
     ],
     "metadataOutFiles": [
-        "./data/models/MAP/ifc2gltf/model.json"
+        "./models/MAP/ifc2gltf/model.json"
     ],
     "numCreatedGltfMeshes": 5561,
     "numCreatedMetaObjects": 2017,
     "numExportedPropertySetsOrElementQuantities": 0,
     "modelBoundsMax": [
-        1842039.2044235948,
-        5173320.663783316,
-        24.589556814745077
+        16.960543444612995,
+        18.3472657809034,
+        14.094778407372539
     ],
     "modelBoundsMin": [
-        1842005.2833367055,
-        5173283.969251754,
-        -3.6000000000000014
+        -16.960543444612995,
+        -18.3472657809034,
+        -14.094778407372539
     ],
     "generalMessages": [
-        "Detected IFC version: IFC4X3"
+        "Detected IFC version: IFC2X3"
     ],
-    "warnings": [
-        "Object with GUID 3toKckUfH2jBmd$7uhJHa7 appears several times in spatial structure"
-    ],
+    "warnings": [],
     "errors": []
 }

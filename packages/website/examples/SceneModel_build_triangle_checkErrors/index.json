@@ -2,5 +2,16 @@
   "title": "Building and viewing a SceneModel containing a 3D triangle, while checking for errors",
   "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that contains a single triangle. Check for errors after each step.",
   "id": "SceneModel_build_triangle_checkErrors",
-  "type": "example"
+  "type": "example",
+  "template": "basicPage",
+  "steps": [
+    "Default\nDefault\nDefault",
+    "Default\nDefault\nDefault\nDefault",
+    "FIXME",
+    "Default",
+    "Default",
+    "demoHelper.log(`SceneModel built`);",
+    "demoHelper.log(`SceneModel destroyed`);",
+    "Now the SceneModel appears in the View"
+  ]
 }

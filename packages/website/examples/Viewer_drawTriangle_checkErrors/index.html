@@ -9,7 +9,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
 </head>
 <body>
-<input type="checkbox" id="info-button" checked/>
+<input type="checkbox" id="info-button"/>
 <label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
 <canvas id="demoCanvas"></canvas>
 
@@ -20,16 +20,16 @@
 
 <script type="module">
 
-    //-----------------------------------------------------------------------------------------
+
     // Import xeokit SDK via the JavaScript bundle that we've built for these examples
-    //-----------------------------------------------------------------------------------------
+
 
     import * as xeokit from "../../js/xeokit-demo-bundle.js";
     import {DemoHelper} from "../../js/DemoHelper.js";
 
-    //-----------------------------------------------------------------------------------------
+
     // Create a Viewer with a Scene, WebGLRenderer and one View
-    //-----------------------------------------------------------------------------------------
+
 
     const scene = new xeokit.scene.Scene();
     const data = new xeokit.data.Data();
@@ -61,7 +61,10 @@
             view.camera.look = [0, 0, 0]; // Default
             view.camera.up = [0, 1, 0]; // Default
 
-            new xeokit.cameracontrol.CameraControl(view);
+            // Add a CameraControl to interactively control the Camera with keyboard,
+        // mouse and touch input
+
+        new xeokit.cameracontrol.CameraControl(view);
 
             const sceneModel = scene.createModel({
                 id: "demoModel"

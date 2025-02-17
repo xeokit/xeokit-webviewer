@@ -129,6 +129,12 @@
             "pipelines": [
                 "gltf"
             ]
+        },
+        {
+            "id": "Office",
+            "pipelines": [
+                "ifc"
+            ]
         }
     ]
 }

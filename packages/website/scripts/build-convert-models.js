@@ -94,7 +94,7 @@ try {
             fs.writeFileSync(`./models/${modelId}/${pipelineId}/index.md`, modelIndex.join("\n"), 'utf8');
         }
     }
-    fs.writeFileSync("convert-models.sh", script.join("\n"));
+    fs.writeFileSync("./scripts/convert-models.sh", script.join("\n"));
     process.exit(1);
 
 } catch (err) {

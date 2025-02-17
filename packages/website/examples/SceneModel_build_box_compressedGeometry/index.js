@@ -1,10 +1,22 @@
+// Import the modules we need
+
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 
 import {DemoHelper} from "../../js/DemoHelper.js";
+import {Scene} from "../../libs/@xeokit/sdk/scene";
+import {WebGLRenderer} from "../../libs/@xeokit/sdk/webglrenderer";
+import {Viewer} from "../../libs/@xeokit/sdk/viewer";
+
+// Create a Scene to hold geometry and materials
 
 const scene = new xeokit.scene.Scene();
 
+// Create a WebGLRenderer to use the browser's WebGL API for 3D graphics
+
 const renderer = new xeokit.webglrenderer.WebGLRenderer({});
+
+// Create a Viewer that views our Scene using the WebGLRenderer. Note that the
+// Scene and WebGLRenderer can only be attached to one Viewer at a time.
 
 const viewer = new xeokit.viewer.Viewer({
     id: "demoViewer",
@@ -19,16 +31,24 @@ const demoHelper = new DemoHelper({
 demoHelper.init()
     .then(() => {
 
+        // Create a View that renders to the canvas in our HTML
+
         const view = viewer.createView({
             id: "demoView",
             elementId: "demoCanvas"
         });
 
-        view.camera.eye = [3, 3, 3]; // Default is [0,0,10]
-        view.camera.look = [0, 0, 0]; // Default
-        view.camera.up = [0, 1, 0]; // Default
+        // Position the View's Camera to look at the origin of the World coordinate system
+
+        view.camera.eye = [3, 3, 3];
+        view.camera.look = [0, 0, 0];
+        view.camera.up = [0, 1, 0];
+
+        // Add a CameraControl to control the Camera
 
         new xeokit.cameracontrol.CameraControl(view);
+
+        // Create a SceneModel containing a SceneObject, a SceneMesh and a box-shaped SceneGeometry
 
         const sceneModel = scene.createModel({
             id: "demoModel"
@@ -59,16 +79,18 @@ demoHelper.init()
         sceneModel.createMesh({
             id: "boxMesh",
             geometryId: "boxGeometry",
-            position: [0, 0, 0], // Default
-            scale: [1, 1, 1], // Default
-            rotation: [0, 0, 0], // Default
-            color: [1, 1.0, 1.0] // Default
+            position: [0, 0, 0],
+            scale: [1, 1, 1],
+            rotation: [0, 0, 0],
+            color: [1, 1.0, 1.0]
         });
 
         sceneModel.createObject({
             id: "boxObject",
             meshIds: ["boxMesh"]
         });
+
+        // Build the SceneModel, causing the box to appear in the View's canvas
 
         sceneModel.build();
 

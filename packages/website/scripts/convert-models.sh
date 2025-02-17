@@ -7,7 +7,7 @@ echo [convert-models.sh] Converting 27 files...
 echo [convert-models.sh] Converting SmallHouse
 
 # dotbim2xgf
-node ../dotbim2xgf/dotbim2xgf.js -i ./data/models/SmallHouse/dotbim/model.bim -s ./data/models/SmallHouse/dotbim2xgf/model.xgf -d ./data/models/SmallHouse/dotbim2xgf/model.json -l >> ./data/models/SmallHouse/dotbim2xgf/log.txt
+node ../sdk/dist/dotbim2xgf/dotbim2xgf.js -i ./models/SmallHouse/dotbim/model.bim -s ./models/SmallHouse/dotbim2xgf/model.xgf -d ./models/SmallHouse/dotbim2xgf/model.json -l >> ./models/SmallHouse/dotbim2xgf/log.txt
 echo [convert-models.sh] Converted SmallHouse via dotbim2xgf
 echo [convert-models.sh] 1 out of 27 conversions done
 
@@ -17,7 +17,7 @@ echo [convert-models.sh] 1 out of 27 conversions done
 echo [convert-models.sh] Converting TeapotXeokitLogo
 
 # dotbim2xgf
-node ../dotbim2xgf/dotbim2xgf.js -i ./data/models/TeapotXeokitLogo/dotbim/model.bim -s ./data/models/TeapotXeokitLogo/dotbim2xgf/model.xgf -d ./data/models/TeapotXeokitLogo/dotbim2xgf/model.json -l >> ./data/models/TeapotXeokitLogo/dotbim2xgf/log.txt
+node ../sdk/dist/dotbim2xgf/dotbim2xgf.js -i ./models/TeapotXeokitLogo/dotbim/model.bim -s ./models/TeapotXeokitLogo/dotbim2xgf/model.xgf -d ./models/TeapotXeokitLogo/dotbim2xgf/model.json -l >> ./models/TeapotXeokitLogo/dotbim2xgf/log.txt
 echo [convert-models.sh] Converted TeapotXeokitLogo via dotbim2xgf
 echo [convert-models.sh] 2 out of 27 conversions done
 
@@ -27,7 +27,7 @@ echo [convert-models.sh] 2 out of 27 conversions done
 echo [convert-models.sh] Converting BlenderHouse
 
 # dotbim2xgf
-node ../dotbim2xgf/dotbim2xgf.js -i ./data/models/BlenderHouse/dotbim/model.bim -s ./data/models/BlenderHouse/dotbim2xgf/model.xgf -d ./data/models/BlenderHouse/dotbim2xgf/model.json -l >> ./data/models/BlenderHouse/dotbim2xgf/log.txt
+node ../sdk/dist/dotbim2xgf/dotbim2xgf.js -i ./models/BlenderHouse/dotbim/model.bim -s ./models/BlenderHouse/dotbim2xgf/model.xgf -d ./models/BlenderHouse/dotbim2xgf/model.json -l >> ./models/BlenderHouse/dotbim2xgf/log.txt
 echo [convert-models.sh] Converted BlenderHouse via dotbim2xgf
 echo [convert-models.sh] 3 out of 27 conversions done
 
@@ -37,22 +37,22 @@ echo [convert-models.sh] 3 out of 27 conversions done
 echo [convert-models.sh] Converting MAP
 
 # ifc2gltf
-/home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter.json -i ./data/models/MAP/ifc/model.ifc -o ./data/models/MAP/ifc2gltf/model.glb -m ./data/models/MAP/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./data/models/MAP/ifc2gltf/log.txt
+/home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter_static -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter.json -i ./models/MAP/ifc/model.ifc -o ./models/MAP/ifc2gltf/model.glb -m ./models/MAP/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./models/MAP/ifc2gltf/log.txt
 echo [convert-models.sh] Converted MAP via ifc2gltf
 echo [convert-models.sh] 4 out of 27 conversions done
 
 # ifc2gltf2xgf
-node ../ifc2gltf2xgf/ifc2gltf2xgf.js -i ./data/models/MAP/ifc2gltf/model.manifest.json -o ./data/models/MAP/ifc2gltf2xgf/model.manifest.json -l >> ./data/models/MAP/ifc2gltf2xgf/log.txt
+node ../sdk/dist/ifc2gltf2xgf/ifc2gltf2xgf.js -i ./models/MAP/ifc2gltf/model.manifest.json -o ./models/MAP/ifc2gltf2xgf/model.manifest.json -l >> ./models/MAP/ifc2gltf2xgf/log.txt
 echo [convert-models.sh] Converted MAP via ifc2gltf2xgf
 echo [convert-models.sh] 5 out of 27 conversions done
 
 # gltf2xgf
-node ../gltf2xgf/gltf2xgf.js -i ./data/models/MAP/gltf/model.glb -s ./data/models/MAP/gltf2xgf/model.xgf -d ./data/models/MAP/gltf2xgf/model.json -l >> ./data/models/MAP/gltf2xgf/log.txt
+node ../sdk/dist/gltf2xgf/gltf2xgf.js -i ./models/MAP/gltf/model.glb -s ./models/MAP/gltf2xgf/model.xgf -d ./models/MAP/gltf2xgf/model.json -l >> ./models/MAP/gltf2xgf/log.txt
 echo [convert-models.sh] Converted MAP via gltf2xgf
 echo [convert-models.sh] 6 out of 27 conversions done
 
 # webifc2xgf
-node ../webifc2xgf/webifc2xgf.js -i ./data/models/MAP/ifc/model.ifc -s ./data/models/MAP/webifc2xgf/model.xgf -d ./data/models/MAP/webifc2xgf/model.json -l >> ./data/models/MAP/webifc2xgf/log.txt
+node ../sdk/dist/webifc2xgf/webifc2xgf.js -i ./models/MAP/ifc/model.ifc -s ./models/MAP/webifc2xgf/model.xgf -d ./models/MAP/webifc2xgf/model.json -l >> ./models/MAP/webifc2xgf/log.txt
 echo [convert-models.sh] Converted MAP via webifc2xgf
 echo [convert-models.sh] 7 out of 27 conversions done
 
@@ -62,22 +62,22 @@ echo [convert-models.sh] 7 out of 27 conversions done
 echo [convert-models.sh] Converting Duplex
 
 # ifc2gltf
-/home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter.json -i ./data/models/Duplex/ifc/model.ifc -o ./data/models/Duplex/ifc2gltf/model.glb -m ./data/models/Duplex/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./data/models/Duplex/ifc2gltf/log.txt
+/home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter_static -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter.json -i ./models/Duplex/ifc/model.ifc -o ./models/Duplex/ifc2gltf/model.glb -m ./models/Duplex/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./models/Duplex/ifc2gltf/log.txt
 echo [convert-models.sh] Converted Duplex via ifc2gltf
 echo [convert-models.sh] 8 out of 27 conversions done
 
 # ifc2gltf2xgf
-node ../ifc2gltf2xgf/ifc2gltf2xgf.js -i ./data/models/Duplex/ifc2gltf/model.manifest.json -o ./data/models/Duplex/ifc2gltf2xgf/model.manifest.json -l >> ./data/models/Duplex/ifc2gltf2xgf/log.txt
+node ../sdk/dist/ifc2gltf2xgf/ifc2gltf2xgf.js -i ./models/Duplex/ifc2gltf/model.manifest.json -o ./models/Duplex/ifc2gltf2xgf/model.manifest.json -l >> ./models/Duplex/ifc2gltf2xgf/log.txt
 echo [convert-models.sh] Converted Duplex via ifc2gltf2xgf
 echo [convert-models.sh] 9 out of 27 conversions done
 
 # gltf2xgf
-node ../gltf2xgf/gltf2xgf.js -i ./data/models/Duplex/gltf/model.glb -s ./data/models/Duplex/gltf2xgf/model.xgf -d ./data/models/Duplex/gltf2xgf/model.json -l >> ./data/models/Duplex/gltf2xgf/log.txt
+node ../sdk/dist/gltf2xgf/gltf2xgf.js -i ./models/Duplex/gltf/model.glb -s ./models/Duplex/gltf2xgf/model.xgf -d ./models/Duplex/gltf2xgf/model.json -l >> ./models/Duplex/gltf2xgf/log.txt
 echo [convert-models.sh] Converted Duplex via gltf2xgf
 echo [convert-models.sh] 10 out of 27 conversions done
 
 # webifc2xgf
-node ../webifc2xgf/webifc2xgf.js -i ./data/models/Duplex/ifc/model.ifc -s ./data/models/Duplex/webifc2xgf/model.xgf -d ./data/models/Duplex/webifc2xgf/model.json -l >> ./data/models/Duplex/webifc2xgf/log.txt
+node ../sdk/dist/webifc2xgf/webifc2xgf.js -i ./models/Duplex/ifc/model.ifc -s ./models/Duplex/webifc2xgf/model.xgf -d ./models/Duplex/webifc2xgf/model.json -l >> ./models/Duplex/webifc2xgf/log.txt
 echo [convert-models.sh] Converted Duplex via webifc2xgf
 echo [convert-models.sh] 11 out of 27 conversions done
 
@@ -87,22 +87,22 @@ echo [convert-models.sh] 11 out of 27 conversions done
 echo [convert-models.sh] Converting IfcOpenHouse4
 
 # ifc2gltf
-/home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter.json -i ./data/models/IfcOpenHouse4/ifc/model.ifc -o ./data/models/IfcOpenHouse4/ifc2gltf/model.glb -m ./data/models/IfcOpenHouse4/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./data/models/IfcOpenHouse4/ifc2gltf/log.txt
+/home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter_static -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter.json -i ./models/IfcOpenHouse4/ifc/model.ifc -o ./models/IfcOpenHouse4/ifc2gltf/model.glb -m ./models/IfcOpenHouse4/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./models/IfcOpenHouse4/ifc2gltf/log.txt
 echo [convert-models.sh] Converted IfcOpenHouse4 via ifc2gltf
 echo [convert-models.sh] 12 out of 27 conversions done
 
 # ifc2gltf2xgf
-node ../ifc2gltf2xgf/ifc2gltf2xgf.js -i ./data/models/IfcOpenHouse4/ifc2gltf/model.manifest.json -o ./data/models/IfcOpenHouse4/ifc2gltf2xgf/model.manifest.json -l >> ./data/models/IfcOpenHouse4/ifc2gltf2xgf/log.txt
+node ../sdk/dist/ifc2gltf2xgf/ifc2gltf2xgf.js -i ./models/IfcOpenHouse4/ifc2gltf/model.manifest.json -o ./models/IfcOpenHouse4/ifc2gltf2xgf/model.manifest.json -l >> ./models/IfcOpenHouse4/ifc2gltf2xgf/log.txt
 echo [convert-models.sh] Converted IfcOpenHouse4 via ifc2gltf2xgf
 echo [convert-models.sh] 13 out of 27 conversions done
 
 # gltf2xgf
-node ../gltf2xgf/gltf2xgf.js -i ./data/models/IfcOpenHouse4/gltf/model.glb -s ./data/models/IfcOpenHouse4/gltf2xgf/model.xgf -d ./data/models/IfcOpenHouse4/gltf2xgf/model.json -l >> ./data/models/IfcOpenHouse4/gltf2xgf/log.txt
+node ../sdk/dist/gltf2xgf/gltf2xgf.js -i ./models/IfcOpenHouse4/gltf/model.glb -s ./models/IfcOpenHouse4/gltf2xgf/model.xgf -d ./models/IfcOpenHouse4/gltf2xgf/model.json -l >> ./models/IfcOpenHouse4/gltf2xgf/log.txt
 echo [convert-models.sh] Converted IfcOpenHouse4 via gltf2xgf
 echo [convert-models.sh] 14 out of 27 conversions done
 
 # webifc2xgf
-node ../webifc2xgf/webifc2xgf.js -i ./data/models/IfcOpenHouse4/ifc/model.ifc -s ./data/models/IfcOpenHouse4/webifc2xgf/model.xgf -d ./data/models/IfcOpenHouse4/webifc2xgf/model.json -l >> ./data/models/IfcOpenHouse4/webifc2xgf/log.txt
+node ../sdk/dist/webifc2xgf/webifc2xgf.js -i ./models/IfcOpenHouse4/ifc/model.ifc -s ./models/IfcOpenHouse4/webifc2xgf/model.xgf -d ./models/IfcOpenHouse4/webifc2xgf/model.json -l >> ./models/IfcOpenHouse4/webifc2xgf/log.txt
 echo [convert-models.sh] Converted IfcOpenHouse4 via webifc2xgf
 echo [convert-models.sh] 15 out of 27 conversions done
 
@@ -112,22 +112,22 @@ echo [convert-models.sh] 15 out of 27 conversions done
 echo [convert-models.sh] Converting IfcOpenHouse2x3
 
 # ifc2gltf
-/home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter.json -i ./data/models/IfcOpenHouse2x3/ifc/model.ifc -o ./data/models/IfcOpenHouse2x3/ifc2gltf/model.glb -m ./data/models/IfcOpenHouse2x3/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./data/models/IfcOpenHouse2x3/ifc2gltf/log.txt
+/home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter_static -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter.json -i ./models/IfcOpenHouse2x3/ifc/model.ifc -o ./models/IfcOpenHouse2x3/ifc2gltf/model.glb -m ./models/IfcOpenHouse2x3/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./models/IfcOpenHouse2x3/ifc2gltf/log.txt
 echo [convert-models.sh] Converted IfcOpenHouse2x3 via ifc2gltf
 echo [convert-models.sh] 16 out of 27 conversions done
 
 # ifc2gltf2xgf
-node ../ifc2gltf2xgf/ifc2gltf2xgf.js -i ./data/models/IfcOpenHouse2x3/ifc2gltf/model.manifest.json -o ./data/models/IfcOpenHouse2x3/ifc2gltf2xgf/model.manifest.json -l >> ./data/models/IfcOpenHouse2x3/ifc2gltf2xgf/log.txt
+node ../sdk/dist/ifc2gltf2xgf/ifc2gltf2xgf.js -i ./models/IfcOpenHouse2x3/ifc2gltf/model.manifest.json -o ./models/IfcOpenHouse2x3/ifc2gltf2xgf/model.manifest.json -l >> ./models/IfcOpenHouse2x3/ifc2gltf2xgf/log.txt
 echo [convert-models.sh] Converted IfcOpenHouse2x3 via ifc2gltf2xgf
 echo [convert-models.sh] 17 out of 27 conversions done
 
 # gltf2xgf
-node ../gltf2xgf/gltf2xgf.js -i ./data/models/IfcOpenHouse2x3/gltf/model.glb -s ./data/models/IfcOpenHouse2x3/gltf2xgf/model.xgf -d ./data/models/IfcOpenHouse2x3/gltf2xgf/model.json -l >> ./data/models/IfcOpenHouse2x3/gltf2xgf/log.txt
+node ../sdk/dist/gltf2xgf/gltf2xgf.js -i ./models/IfcOpenHouse2x3/gltf/model.glb -s ./models/IfcOpenHouse2x3/gltf2xgf/model.xgf -d ./models/IfcOpenHouse2x3/gltf2xgf/model.json -l >> ./models/IfcOpenHouse2x3/gltf2xgf/log.txt
 echo [convert-models.sh] Converted IfcOpenHouse2x3 via gltf2xgf
 echo [convert-models.sh] 18 out of 27 conversions done
 
 # webifc2xgf
-node ../webifc2xgf/webifc2xgf.js -i ./data/models/IfcOpenHouse2x3/ifc/model.ifc -s ./data/models/IfcOpenHouse2x3/webifc2xgf/model.xgf -d ./data/models/IfcOpenHouse2x3/webifc2xgf/model.json -l >> ./data/models/IfcOpenHouse2x3/webifc2xgf/log.txt
+node ../sdk/dist/webifc2xgf/webifc2xgf.js -i ./models/IfcOpenHouse2x3/ifc/model.ifc -s ./models/IfcOpenHouse2x3/webifc2xgf/model.xgf -d ./models/IfcOpenHouse2x3/webifc2xgf/model.json -l >> ./models/IfcOpenHouse2x3/webifc2xgf/log.txt
 echo [convert-models.sh] Converted IfcOpenHouse2x3 via webifc2xgf
 echo [convert-models.sh] 19 out of 27 conversions done
 
@@ -137,7 +137,7 @@ echo [convert-models.sh] 19 out of 27 conversions done
 echo [convert-models.sh] Converting Nalls-Pumpkin-Hill
 
 # las2xgf
-node ../las2xgf/las2xgf.js -i ./data/models/Nalls-Pumpkin-Hill/laz/model.* -s ./data/models/Nalls-Pumpkin-Hill/las2xgf/model.xgf -d ./data/models/Nalls-Pumpkin-Hill/las2xgf/model.json -l >> ./data/models/Nalls-Pumpkin-Hill/las2xgf/log.txt
+node ../sdk/dist/las2xgf/las2xgf.js -i ./models/Nalls-Pumpkin-Hill/laz/model.* -s ./models/Nalls-Pumpkin-Hill/las2xgf/model.xgf -d ./models/Nalls-Pumpkin-Hill/las2xgf/model.json -l >> ./models/Nalls-Pumpkin-Hill/las2xgf/log.txt
 echo [convert-models.sh] Converted Nalls-Pumpkin-Hill via las2xgf
 echo [convert-models.sh] 20 out of 27 conversions done
 
@@ -147,12 +147,12 @@ echo [convert-models.sh] 20 out of 27 conversions done
 echo [convert-models.sh] Converting KarhumakiBridge
 
 # ifc2gltf
-/home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter.json -i ./data/models/KarhumakiBridge/ifc/model.ifc -o ./data/models/KarhumakiBridge/ifc2gltf/model.glb -m ./data/models/KarhumakiBridge/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./data/models/KarhumakiBridge/ifc2gltf/log.txt
+/home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter_static -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter.json -i ./models/KarhumakiBridge/ifc/model.ifc -o ./models/KarhumakiBridge/ifc2gltf/model.glb -m ./models/KarhumakiBridge/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./models/KarhumakiBridge/ifc2gltf/log.txt
 echo [convert-models.sh] Converted KarhumakiBridge via ifc2gltf
 echo [convert-models.sh] 21 out of 27 conversions done
 
 # ifc2gltf2xgf
-node ../ifc2gltf2xgf/ifc2gltf2xgf.js -i ./data/models/KarhumakiBridge/ifc2gltf/model.manifest.json -o ./data/models/KarhumakiBridge/ifc2gltf2xgf/model.manifest.json -l >> ./data/models/KarhumakiBridge/ifc2gltf2xgf/log.txt
+node ../sdk/dist/ifc2gltf2xgf/ifc2gltf2xgf.js -i ./models/KarhumakiBridge/ifc2gltf/model.manifest.json -o ./models/KarhumakiBridge/ifc2gltf2xgf/model.manifest.json -l >> ./models/KarhumakiBridge/ifc2gltf2xgf/log.txt
 echo [convert-models.sh] Converted KarhumakiBridge via ifc2gltf2xgf
 echo [convert-models.sh] 22 out of 27 conversions done
 
@@ -162,12 +162,12 @@ echo [convert-models.sh] 22 out of 27 conversions done
 echo [convert-models.sh] Converting Schependomlaan
 
 # ifc2gltf
-/home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter.json -i ./data/models/Schependomlaan/ifc/model.ifc -o ./data/models/Schependomlaan/ifc2gltf/model.glb -m ./data/models/Schependomlaan/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./data/models/Schependomlaan/ifc2gltf/log.txt
+/home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter_static -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter.json -i ./models/Schependomlaan/ifc/model.ifc -o ./models/Schependomlaan/ifc2gltf/model.glb -m ./models/Schependomlaan/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./models/Schependomlaan/ifc2gltf/log.txt
 echo [convert-models.sh] Converted Schependomlaan via ifc2gltf
 echo [convert-models.sh] 23 out of 27 conversions done
 
 # ifc2gltf2xgf
-node ../ifc2gltf2xgf/ifc2gltf2xgf.js -i ./data/models/Schependomlaan/ifc2gltf/model.manifest.json -o ./data/models/Schependomlaan/ifc2gltf2xgf/model.manifest.json -l >> ./data/models/Schependomlaan/ifc2gltf2xgf/log.txt
+node ../sdk/dist/ifc2gltf2xgf/ifc2gltf2xgf.js -i ./models/Schependomlaan/ifc2gltf/model.manifest.json -o ./models/Schependomlaan/ifc2gltf2xgf/model.manifest.json -l >> ./models/Schependomlaan/ifc2gltf2xgf/log.txt
 echo [convert-models.sh] Converted Schependomlaan via ifc2gltf2xgf
 echo [convert-models.sh] 24 out of 27 conversions done
 
@@ -177,16 +177,16 @@ echo [convert-models.sh] 24 out of 27 conversions done
 echo [convert-models.sh] Converting RAC
 
 # ifc2gltf
-/home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_18_beta/linux//ifc2gltfcxconverter.json -i ./data/models/RAC/ifc/model.ifc -o ./data/models/RAC/ifc2gltf/model.glb -m ./data/models/RAC/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./data/models/RAC/ifc2gltf/log.txt
+/home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter_static -c /home/lindsay/xeolabs/xeokit/ifc2gltf/4_34_4_beta/linux//ifc2gltfcxconverter.json -i ./models/RAC/ifc/model.ifc -o ./models/RAC/ifc2gltf/model.glb -m ./models/RAC/ifc2gltf/model.json -s 20 -t 1000 -e 3 >> ./models/RAC/ifc2gltf/log.txt
 echo [convert-models.sh] Converted RAC via ifc2gltf
 echo [convert-models.sh] 25 out of 27 conversions done
 
 # ifc2gltf2xgf
-node ../ifc2gltf2xgf/ifc2gltf2xgf.js -i ./data/models/RAC/ifc2gltf/model.manifest.json -o ./data/models/RAC/ifc2gltf2xgf/model.manifest.json -l >> ./data/models/RAC/ifc2gltf2xgf/log.txt
+node ../sdk/dist/ifc2gltf2xgf/ifc2gltf2xgf.js -i ./models/RAC/ifc2gltf/model.manifest.json -o ./models/RAC/ifc2gltf2xgf/model.manifest.json -l >> ./models/RAC/ifc2gltf2xgf/log.txt
 echo [convert-models.sh] Converted RAC via ifc2gltf2xgf
 echo [convert-models.sh] 26 out of 27 conversions done
 
 # webifc2xgf
-node ../webifc2xgf/webifc2xgf.js -i ./data/models/RAC/ifc/model.ifc -s ./data/models/RAC/webifc2xgf/model.xgf -d ./data/models/RAC/webifc2xgf/model.json -l >> ./data/models/RAC/webifc2xgf/log.txt
+node ../sdk/dist/webifc2xgf/webifc2xgf.js -i ./models/RAC/ifc/model.ifc -s ./models/RAC/webifc2xgf/model.xgf -d ./models/RAC/webifc2xgf/model.json -l >> ./models/RAC/webifc2xgf/log.txt
 echo [convert-models.sh] Converted RAC via webifc2xgf
 echo [convert-models.sh] 27 out of 27 conversions done

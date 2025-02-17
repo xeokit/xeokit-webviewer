@@ -3,5 +3,6 @@
   "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with five SceneObjects and five SceneMeshs, which share a single SceneGeometry that contains lines primitives.",
   "template": "basicPage",
   "id": "SceneModel_build_lines",
-  "type": "example"
+  "type": "example",
+  "steps": []
 }

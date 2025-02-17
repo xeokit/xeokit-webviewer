@@ -2,12 +2,21 @@ import * as xeokit from "../../js/xeokit-demo-bundle.js";
 
 import {DemoHelper} from "../../js/DemoHelper.js";
 
+// Create a Scene to hold geometry and materials
+
 const scene = new xeokit.scene.Scene();
+
+// Create a WebGLRenderer to use the browser's WebGL API for 3D graphics
+
+const renderer = new xeokit.webglrenderer.WebGLRenderer({});
+
+// Create a Viewer that views our Scene using the WebGLRenderer. Note that the
+// Scene and WebGLRenderer can only be attached to one Viewer at a time.
 
 const viewer = new xeokit.viewer.Viewer({
     id: "demoViewer",
     scene,
-    renderer: new xeokit.webglrenderer.WebGLRenderer({})
+    renderer
 });
 
 const view = viewer.createView({
@@ -19,7 +28,10 @@ view.camera.eye = [0, -5, 20];
 view.camera.look = [0, -5, 0];
 view.camera.up = [0, 1, 0];
 
-new xeokit.cameracontrol.CameraControl(view);
+// Add a CameraControl to interactively control the Camera with keyboard,
+        // mouse and touch input
+
+        new xeokit.cameracontrol.CameraControl(view);
 
 const demoHelper = new DemoHelper({
     elementId: "info-container",
@@ -29,6 +41,8 @@ const demoHelper = new DemoHelper({
 demoHelper
     .init()
     .then(() => {
+
+        // Within the Scene, create a SceneModel to hold geometry and materials for our model
 
         const sceneModel = scene.createModel({
             id: "demoModel"

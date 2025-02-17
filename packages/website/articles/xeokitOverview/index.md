@@ -325,15 +325,11 @@ documentation.
 
 ### 6.1. View a .BIM model and hide all IfcSpaces
 
-example-run:SceneModel_build_table
+example-run:Viewer_viewDotBIM
 
----
+#### Steps
 
-example-html:SceneModel_build_box_compressedGeometry
-
-example-javascript:SceneModel_build_box_compressedGeometry
-
-First install the npm module:
+To build this example, first install the npm module:
 
 ````bash
 npm install @xeokit/sdk
@@ -341,95 +337,33 @@ npm install @xeokit/sdk
 
 Then create an HTML page in `index.html` that contains a canvas element:
 
-````html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>xeokit .BIM Model Viewer</title>
-</head>
-<body>
-<canvas id="myView1"></canvas>
-</body>
-<script type="module" src="./index.js"></script>
-</html>
-````
+example-html:Viewer_viewDotBIM
 
 Then create JavaScript in `index.js` to view a .BIM model in the canvas.
 
-1. Import the modules we need.
-2. Create a doc:Viewer with a doc:WebGLRenderer and a doc:Scene.
-3. Create a doc:Data to hold model semantics.
-4. In the Viewer, create a doc:View that draws to the canvas.
-5. Position the View's doc:Camera to look at the center of the 3D coordinate system (default).
-6. Create a doc:SceneModel in the Scene.
-7. Create a doc:DataModel in the Data.
-8. Use doc:loadDotBIM to load a .BIM building model into the SceneModel and DataModel.
-9. Build the SceneModel and the DataModel. The SceneModel's objects will then appear in the View's canvas.
-10. Get all the doc:DataObject instances in Data that represent doc:IfcSpace elements in the model.
-11. For each of those DataObjects, get the corresponding doc:SceneObject and doc:ViewObject.
-11. Set those ViewObjects invisible, to ensure that we can see the model objects that are within each IfcSpace.
+example-steps:Viewer_viewDotBIM
 
-````javascript
-// 1.
-import {Scene} from "@xeokit/sdk/scene";
-import {Viewer} from "@xeokit/sdk/viewer";
-import {WebGLRenderer} from "@xeokit/sdk/webglrenderer";
-import {loadDotBIM} from "@xeokit/sdk/dotbim";
-import {IfcSpace} from "@xeokit/sdk/ifctypes";
+example-javascript:Viewer_viewDotBIM
 
-// 2.
-const scene = new Scene();
-const renderer = new WebGLRenderer({});
-const viewer = new Viewer({scene, renderer});
 
-// 3.
-const data = new Data();
+### 6.2. Build and view a SceneModel and a DataModel
 
-// 4.
-const view = myViewer.createView({id: "myView", canvasId: "myView1"});
+example-run:SceneModel_DataModel_build_table
 
-// 5.
-view.camera.eye = [0, 0, 10]; // Looking down the -Z axis
-view.camera.look = [0, 0, 0];
-view.camera.up = [0, 1, 0];
+#### Steps
 
-// 6.
-const sceneModel = scene.createModel({id: "myModel"});
+To build this example, first install the npm module:
 
-// 7.
-const dataModel = data.createModel({id: "myModel"});
-
-// 8.
-fetch("myModel.bim").then(response => {
-    response.json().then(fileData => {
-
-        loadDotBIM({fileData, sceneModel, dataModel}).then(() => {
-
-            // 9.
-            sceneModel.build().then(() => {
-                dataModel.build().then(() => {
-
-                    // 10.
-                    const dataObjects = data.objectsByType[IfcSpace];
-                    if (dataObjects) {
-                        dataObjects.forEach(([objectId, dataObject]) => {
-
-                            const sceneObject = scene.objects[objectId]; // SceneObject
-                            const viewObject = view.objects[objectId]; // ViewObject
-
-                            // Note: 
-                            // dataObject.id === sceneObject.id === viewObject.id
-                            // dataObject.type === IfcSpace
-
-                            // 11.
-                            viewObject.visible = false;
-                        });
-                    }
-                });
-            });
-        });
-    });
-});
+````bash
+npm install @xeokit/sdk
 ````
 
+Then create an HTML page in `index.html` that contains a canvas element:
 
+example-html:SceneModel_DataModel_build_table
+
+Then create JavaScript in `index.js` to view the table model in the canvas.
+
+example-steps:SceneModel_DataModel_build_table
+
+example-javascript:SceneModel_DataModel_build_table

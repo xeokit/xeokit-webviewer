@@ -6,5 +6,14 @@
     "sceneModelBuildBox"
   ],
   "id": "SceneModel_build_box_compressedGeometry",
-  "type": "example"
+  "type": "example",
+  "steps": [
+    "Import the modules we need",
+    "Create a Viewer with a WebGLRenderer and a Scene",
+    "Create a View that renders to the canvas in our HTML",
+    "Position the View's Camera to look at the origin of the World coordinate system",
+    "Add a CameraControl to control the Camera",
+    "Create a SceneModel containing a SceneObject, a SceneMesh and a box-shaped SceneGeometry",
+    "Build the SceneModel, causing the box to appear in the View's canvas"
+  ]
 }

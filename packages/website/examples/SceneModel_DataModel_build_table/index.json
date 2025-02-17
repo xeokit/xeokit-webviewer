@@ -2,5 +2,18 @@
   "title": "Building and viewing a SceneModel and a DataModel",
   "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View, along with a Data object. In the Scene, build a simple kitchen table SceneModel containing five SceneObjects, to represent the table top and four legs. In the Data object, build a DataModel that contains five DataObjects, which attach semantic information to the SceneModel and its SceneObjects.",
   "id": "SceneModel_DataModel_build_table",
-  "type": "example"
+  "type": "example",
+  "template": "basicPage",
+  "steps": [
+    "PropertySet | SDKError",
+    "Property[]",
+    "PropertySet | SDKError",
+    "Property[]",
+    "DataObject | SDKError",
+    "void | SDKError",
+    "DataModel built OK",
+    "--------------------------------------------------------------------------------------\nBuild SceneModel, containing geometry and materials\n--------------------------------------------------------------------------------------",
+    "front\nright\ntop\nleft\nbottom",
+    "For each SceneObject in the SceneModel, a ViewObject now appears in our View"
+  ]
 }

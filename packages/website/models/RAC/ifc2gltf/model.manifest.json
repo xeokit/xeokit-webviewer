@@ -1,29 +1,29 @@
 {
-    "inputFile": "./data/models/RAC/ifc/model.ifc",
+    "inputFile": "./models/RAC/ifc/model.ifc",
     "converterApplication": "ifc2gltfcxconverter",
-    "converterApplicationVersion": "4.18",
-    "conversionDate": "2024-11-21 22:44:35",
+    "converterApplicationVersion": "4.34.4",
+    "conversionDate": "2025-02-16 19:17:42",
     "gltfOutFiles": [
-        "./data/models/RAC/ifc2gltf/model.glb"
+        "./models/RAC/ifc2gltf/model.glb"
     ],
     "metadataOutFiles": [
-        "./data/models/RAC/ifc2gltf/model.json"
+        "./models/RAC/ifc2gltf/model.json"
     ],
     "numCreatedGltfMeshes": 2098,
     "numCreatedMetaObjects": 471,
     "numExportedPropertySetsOrElementQuantities": 0,
     "modelBoundsMax": [
-        24.846649971682766,
-        16.229795557827117,
-        17.206111073970643
+        34.913638809455186,
+        46.17413883324238,
+        12.154055536985322
     ],
     "modelBoundsMin": [
-        -44.98062764722759,
-        -76.11848210865764,
-        -7.102
+        -34.913638809455186,
+        -46.17413883324238,
+        -12.154055536985322
     ],
     "generalMessages": [
-        "Detected IFC version: IFC4X3"
+        "Detected IFC version: IFC4"
     ],
     "warnings": [
         "degenerated triangle"
