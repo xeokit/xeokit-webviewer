@@ -4,7 +4,7 @@ import type { Relationship } from "./Relationship";
 import type { Data } from "./Data";
 
 /**
- * Represents an object within a {@link DataModel | DataModel}.
+ * An object within a {@link DataModel | DataModel}.
  *
  * - Created using {@link DataModel.createObject | DataModel.createObject}.
  * - Stored in {@link Data.objects | Data.objects}, {@link Data.rootObjects | Data.rootObjects},

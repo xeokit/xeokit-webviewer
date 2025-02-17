@@ -75,4 +75,4 @@
  *
  * @module las2xgf
  */
-export * from "./las2xgf";
+export * from "./las2xgf_core";

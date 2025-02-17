@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
-const {webifc2xgf, _SAVED_XGF_VERSIONS, _DEFAULT_SAVED_XGF_VERSION} = require("./dist/webifc2xgf.cjs.js");
+const {webifc2xgf, _SAVED_XGF_VERSIONS, _DEFAULT_SAVED_XGF_VERSION} = require("./webifc2xgf_core.cjs.js");
 
 const commander = require('commander');
-const npmPackage = require('./package.json');
+const npmPackage = require('./../../package.json');
 const fs = require('fs');
 const path = require("path");
 const WebIFC = require("web-ifc/web-ifc-api-node.js");

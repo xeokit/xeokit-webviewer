@@ -83,4 +83,4 @@
  *
  * @module cityjson2xgf
  */
-export * from "./cityjson2xgf";
+export * from "./cityjson2xgf_core";

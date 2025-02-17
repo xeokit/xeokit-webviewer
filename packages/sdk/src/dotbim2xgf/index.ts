@@ -63,4 +63,4 @@
  *
  * @module dotbim2xgf
  */
-export * from "./dotbim2xgf";
+export * from "./dotbim2xgf_core";

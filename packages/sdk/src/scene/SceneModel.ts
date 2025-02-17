@@ -83,7 +83,7 @@ TEXTURE_ENCODING_OPTIONS[OCCLUSION_TEXTURE] = {
 };
 
 /**
- * Contains a model's geometry and materials
+ * Contains a model's geometry and materials.
  *
  * * Created with {@link Scene.createModel | Scene.createModel}
  * * Stored in {@link Scene.models | Scene.models}

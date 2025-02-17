@@ -71,4 +71,4 @@
  *
  * @module @xeokit/webifc2xgf
  */
-export * from "./webifc2xgf";
+export * from "./webifc2xgf_core";

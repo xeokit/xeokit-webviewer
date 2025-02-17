@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const {dotbim2xgf, _SAVED_XGF_VERSIONS, _DEFAULT_SAVED_XGF_VERSION} = require("./dotbim2xgf.cjs.js");
+const {dotbim2xgf, _SAVED_XGF_VERSIONS, _DEFAULT_SAVED_XGF_VERSION} = require("./dotbim2xgf_core.cjs.js");
 
 const commander = require('commander');
 const npmPackage = require('./../../package.json');

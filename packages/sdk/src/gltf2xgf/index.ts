@@ -74,4 +74,4 @@
  *
  * @module gltf2xgf
  */
-export * from "./gltf2xgf";
+export * from "./gltf2xgf_core";

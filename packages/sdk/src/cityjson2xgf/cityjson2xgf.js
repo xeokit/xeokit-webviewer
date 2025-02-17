@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-const {cityjson2xgf, _SAVED_XGF_VERSIONS, _DEFAULT_SAVED_XGF_VERSION} = require("./cityjson2xgf.cjs.js");
+const {cityjson2xgf, _SAVED_XGF_VERSIONS, _DEFAULT_SAVED_XGF_VERSION} = require("./cityjson2xgf_core.cjs.js");
 
 const commander = require('commander');
 const npmPackage = require('./../../package.json');

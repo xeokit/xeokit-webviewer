@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import '@loaders.gl/polyfills';
+import * as polyfills from '@loaders.gl/polyfills';
 import {Data, DataModel} from "../data";
 import {Scene, SceneModel} from "../scene";
 import {SDKError} from "../core";

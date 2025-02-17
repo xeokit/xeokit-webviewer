@@ -48,7 +48,7 @@ export interface SnapshotFinishedEvent {
 }
 
 /**
- * An independent view within a {@link Viewer | Viewer}, with its own Canvas, Camera and object visual states.
+ * An independent view within a {@link Viewer | Viewer}, with its own canvas, Camera and object visual states.
  *
  * See {@link viewer | @xeokit/sdk/viewer } for usage.
  */

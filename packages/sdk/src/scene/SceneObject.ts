@@ -6,7 +6,7 @@ import {collapseAABB3,  expandAABB3} from "../boundaries";
 import {SceneObjectParams} from "./SceneObjectParams";
 
 /**
- * An object in a {@link SceneModel | SceneModel}.
+ * An object within a {@link SceneModel | SceneModel}.
  *
  * * Stored in {@link SceneModel.objects | SceneModel.objects} and {@link Scene.objects | Scene.objects}
  * * Created with {@link SceneModel.createObject | SceneModel.createObject}

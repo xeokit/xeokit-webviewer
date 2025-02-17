@@ -9,7 +9,7 @@ import {saveXGF, SAVED_XGF_VERSIONS, DEFAULT_SAVED_XGF_VERSION} from "../xgf";
 /**
  * @private
  */
-function cityjson2xgf(params: {
+function cityjson2xgf_core(params: {
     fileData: any,
     xgfVersion?: number,
     createDataModel?: boolean
@@ -75,7 +75,7 @@ function cityjson2xgf(params: {
 /**
  *
  */
-export {cityjson2xgf};
+export {cityjson2xgf_core};
 
 /**
  * @private

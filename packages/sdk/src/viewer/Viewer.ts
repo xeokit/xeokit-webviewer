@@ -13,7 +13,7 @@ import type {TickParams} from "./TickParams";
 import {ViewerParams} from "./ViewerParams";
 
 /**
- * The xeokit SDK's Browser-based model viewer.
+ * 3D model viewer.
  *
  * See {@link viewer | "@xeokit/sdk/viewer" } for usage.
  */

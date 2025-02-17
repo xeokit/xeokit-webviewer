@@ -7,21 +7,21 @@ function buildCLITool(moduleId) {
     build({
         ...{
             entryPoints: [
-                `./src/${moduleId}/${moduleId}.ts`
+                `./src/${moduleId}/${moduleId}_core.ts`
             ],
-            bundle: false,
+            bundle: true,
             minify: false
         },
         platform: 'node',
         format: 'cjs',
         target: "node10.4",
-        outfile: `./dist/${moduleId}/${moduleId}.cjs.js`,
+        outfile: `./dist/${moduleId}/${moduleId}_core.cjs.js`,
     });
     if (!fs.existsSync(`./dist/${moduleId}`)) {
         fs.mkdirSync(`./dist/${moduleId}`);
     }
     fs.copyFileSync(`./src/${moduleId}/${moduleId}.js`, `./dist/${moduleId}/${moduleId}.js`);
-    fs.copyFileSync(`./src/${moduleId}/${moduleId}.ts`, `./dist/${moduleId}/${moduleId}.ts`);
+    fs.copyFileSync(`./src/${moduleId}/${moduleId}_core.ts`, `./dist/${moduleId}/${moduleId}_core.ts`);
 }
 
 for (let moduleId of [
@@ -29,7 +29,8 @@ for (let moduleId of [
     "gltf2xgf",
     "cityjson2xgf",
     "las2xgf",
-    "ifc2gltf2xgf"
+    "ifc2gltf2xgf",
+    "webifc2xgf"
 ]) {
     buildCLITool(moduleId);
 }

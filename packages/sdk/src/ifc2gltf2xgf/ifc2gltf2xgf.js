@@ -5,7 +5,7 @@ const {
     _convertMetaModel,
     _SAVED_XGF_VERSIONS,
     _DEFAULT_SAVED_XGF_VERSION
-} = require("./ifc2gltf2xgf.cjs.js");
+} = require("./ifc2gltf2xgf_core.cjs.js");
 
 const commander = require('commander');
 const npmPackage = require('./../../package.json');

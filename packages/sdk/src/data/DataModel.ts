@@ -12,9 +12,9 @@ import type {PropertyParams} from "./PropertyParams";
 import {DataModelContentParams} from "./DataModelContentParams";
 
 /**
- * Represents an entity-relationship data model.
+ * Contains a model's semantic data, as an entity-relationship graph.
  *
- * This model is:
+ * This data model is:
  * * Created using {@link Data.createModel | Data.createModel}.
  * * Stored in {@link Data.models | Data.models}.
  * * Composed of {@link DataObject | DataObjects}, {@link Relationship | Relationships}, {@link PropertySet | PropertySets}, and {@link Property | Properties}.

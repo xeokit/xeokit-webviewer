@@ -7,7 +7,7 @@ import type {DataModelParams} from "./DataModelParams";
 import {EventDispatcher} from "strongly-typed-events";
 
 /**
- * A federated entity-relationship semantic data model.
+ * Container of model semantic data.
  *
  * A Data is a container of {@link DataModel | DataModels}, {@link DataObject | DataObjects},
  * {@link Relationship | Relationships}, {@link PropertySet | PropertySets}

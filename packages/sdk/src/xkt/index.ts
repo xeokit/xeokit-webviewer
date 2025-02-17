@@ -15,8 +15,8 @@
  * The [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) format compresses large double-precision model geometry to
  * a compact payload that loads quickly over the Web into a xeokit viewer running in the browser.
  *
- * To import a [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) model into xeokit, use the {@link loadXKT} function, which will load the file into
- * a {@link scene!SceneModel | SceneModel}.
+ * To import a [XKT](https://xeokit.github.io/sdk/docs/pages/GLOSSARY.html#xkt) model into xeokit, use the {@link loadXKT} function,
+ * which will load the file into a {@link scene!SceneModel | SceneModel}.
  *
  * Use the {@link metamodel!loadMetaModel | loadMetaModel} function to load legacy JSON metadata into a {@link data!DataModel | DataModel}.
  *
