@@ -1,19 +1,21 @@
 {
-  "title": "Build and view a box-shaped SceneModel, created with compressed geometry",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, create a SceneModel. In the SceneModel, create a box-shaped SceneGeometry from SceneGeometryCompressedParams. In the SceneModel, create a SceneMesh that references the SceneGeometry, and a SceneObject that references the SceneMesh. Build the SceneModel. The Viewer then draws the box in the View.",
-  "template": "basicPage",
-  "tutorials": [
-    "sceneModelBuildBox"
-  ],
-  "id": "SceneModel_build_box_compressedGeometry",
-  "type": "example",
-  "steps": [
-    "Import the modules we need",
-    "Create a Viewer with a WebGLRenderer and a Scene",
-    "Create a View that renders to the canvas in our HTML",
-    "Position the View's Camera to look at the origin of the World coordinate system",
-    "Add a CameraControl to control the Camera",
-    "Create a SceneModel containing a SceneObject, a SceneMesh and a box-shaped SceneGeometry",
-    "Build the SceneModel, causing the box to appear in the View's canvas"
-  ]
+    "title": "Build and view a box-shaped SceneModel, created with compressed geometry",
+    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, create a SceneModel. In the SceneModel, create a box-shaped SceneGeometry from SceneGeometryCompressedParams. In the SceneModel, create a SceneMesh that references the SceneGeometry, and a SceneObject that references the SceneMesh. Build the SceneModel. The Viewer then draws the box in the View.",
+    "template": "basicPage",
+    "visualTest": true,
+    "tutorial": true,
+    "tutorials": [
+        "sceneModelBuildBox"
+    ],
+    "id": "SceneModel_build_box_compressedGeometry",
+    "type": "example",
+    "steps": [
+        "Import the modules we need",
+        "Create a Viewer with a WebGLRenderer and a Scene",
+        "Create a View that renders to the canvas in our HTML",
+        "Position the View's Camera to look at the origin of the World coordinate system",
+        "Add a CameraControl to control the Camera",
+        "Create a SceneModel containing a SceneObject, a SceneMesh and a box-shaped SceneGeometry",
+        "Build the SceneModel, causing the box to appear in the View's canvas"
+    ]
 }

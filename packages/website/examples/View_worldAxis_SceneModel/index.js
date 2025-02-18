@@ -1,54 +1,57 @@
-// Import the SDK from a bundle built for these examples
+// Import xeokit SDK via the JavaScript bundle that we've built for these examples
+
 
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 
 import {DemoHelper} from "../../js/DemoHelper.js";
 
-// Create a Scene to hold geometry and materials
+
+// Create a Viewer with a Scene, WebGLRenderer and one View
+
 
 const scene = new xeokit.scene.Scene();
-
-// Create a WebGLRenderer to use the browser's WebGL API for 3D graphics
-
-const renderer = new xeokit.webglrenderer.WebGLRenderer({});
-
-// Create a Viewer that draws our Scene using the WebGLRenderer. Note that the
-// Scene and WebGLRenderer can only be attached to one Viewer at a time.
 
 const viewer = new xeokit.viewer.Viewer({
     id: "demoViewer",
     scene,
-    renderer
+    renderer: new xeokit.webglrenderer.WebGLRenderer({})
 });
-
-// Create a single View that renders to a canvas element in the DOM.
-
-const view = viewer.createView({
-    id: "demoView",
-    elementId: "demoCanvas"
-});
-
-// Position the View's Camera.
-
-view.camera.eye = [0, -5, 20];
-view.camera.look = [0, -5, 0];
-view.camera.up = [0, 1, 0];
-
-// Add a CameraControl to interactively control the Camera with keyboard,
-// mouse and touch input
-
-new xeokit.cameracontrol.CameraControl(view);
 
 const demoHelper = new DemoHelper({
     elementId: "info-container",
     viewer
 });
 
-demoHelper
-    .init()
+demoHelper.init()
     .then(() => {
 
-        // Within the Scene, create a SceneModel to hold geometry and materials for our model
+        const view = viewer.createView({
+            id: "demoView",
+            elementId: "demoCanvas"
+        });
+
+        // Set the View's World-space coordinate axis to make +Z "up"
+
+        view.camera.worldAxis = [
+            1, 0, 0, // Right +X
+            0, 0, 1, // Up +Z
+            0, -1, 0  // Forward -Y
+        ];
+
+        // Arrange camera within our +Z "up" coordinate system
+
+        view.camera.eye = [15, 10, 0];
+        view.camera.look = [0, 0, 0];
+        view.camera.up = [0, 0, 1];
+
+        view.camera.orbitPitch(20);
+
+        // Add a CameraControl to interactively control the Camera with keyboard,
+        // mouse and touch input
+
+        new xeokit.cameracontrol.CameraControl(view);
+
+        // Create a SceneModel to hold geometry and materials
 
         const sceneModel = scene.createModel({
             id: "demoModel"
@@ -159,28 +162,6 @@ demoHelper
 
         sceneModel.build().then(() => {
 
-            // At this point, the View will contain five ViewObjects that have the same
-            // IDs as our SceneObjects. Through these ViewObjects, we can update the
-            // appearance of our model elements in that View. We'll make the yellow leg
-            // translucent, highlight the red leg and make the tabletop green.
-
-            view.objects["yellowLeg"].opacity = 0.5;
-            view.objects["redLeg"].highlighted = true;
-            view.objects["purpleTableTop"].colorize = [0,1,0];
-
-            // We can also apply these sorts of updates in batches, to multiple
-            // ViewObjects at a time. The View remembers the IDs of whetever
-            // ViewObjects we update, so we can use such batch updates to restore the
-            // ViewObjects to their original states.
-
-            view.setObjectsOpacity(view.opacityObjectIds, 1.0);
-            view.setObjectsHighlighted(view.highlightedObjectIds, false);
-            view.setObjectsSelected(view.selectedObjectIds, false);
-
             demoHelper.finished();
-
-        }).catch((e) => {
-            demoHelper.log(`Error building SceneModel: ${e}`);
-            throw e;
         });
     });

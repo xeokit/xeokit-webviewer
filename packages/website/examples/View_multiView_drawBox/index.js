@@ -1,4 +1,7 @@
+// Import the SDK from a bundle built for these examples
+
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
+
 import {DemoHelper} from "../../js/DemoHelper.js";
 
 // Create a Scene to hold geometry and materials
@@ -50,7 +53,7 @@ demoHelper.init()
         view2.camera.look = [0, 0, 0];
         view2.camera.up = [0, 1, 0];
 
-        // Create the third View
+        // Create the third View, with default perspective projection
 
         const view3 = viewer.createView({
             id: "demoView3",

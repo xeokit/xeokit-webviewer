@@ -5,5 +5,6 @@
     "IfcOpenHouse4/ifc"
   ],
   "id": "View_multiView_loadWebIFC",
-  "type": "example"
+  "type": "example",
+    "visualTest": true
 }

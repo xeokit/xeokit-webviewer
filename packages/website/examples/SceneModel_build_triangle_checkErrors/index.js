@@ -1,7 +1,9 @@
+// Import the SDK from a bundle built for these examples
+
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 import {DemoHelper} from "../../js/DemoHelper.js";
 
-// Create a Scene to hold geometry and materials
+// Create a Scene to hold geometry and materials for our triangle
 
 const scene = new xeokit.scene.Scene();
 
@@ -25,6 +27,13 @@ const demoHelper = new DemoHelper({
 demoHelper.init()
     .then(() => {
 
+        // Add a View, which will render an independent view of the Scene within the
+        // given DOM element. If this call did not succeed, then
+        // instead of returning a View, it will return an SDKError that will indicate
+        // what failed. In this example, we'll not assume that
+        // our method calls always succeed, so we'll first check if they return an
+        // SDKError.
+
         const view = viewer.createView({
             id: "demoView",
             elementId: "demoCanvas"
@@ -34,9 +43,13 @@ demoHelper.init()
             demoHelper.log(`Error creating View: ${view.message}`);
         }
 
+        // Position the View's Camera
+
         view.camera.eye = [0, 0, 10]; // Default
         view.camera.look = [0, 0, 0]; // Default
         view.camera.up = [0, 1, 0]; // Default
+
+        // Configure the Camera's PerspectiveProjection
 
         view.camera.projectionType = xeokit.constants.PerspectiveProjectionType; // Default
         view.camera.perspectiveProjection.fov = 60; // Default
@@ -61,6 +74,8 @@ demoHelper.init()
 
         } else {
 
+            // Create a SceneGeometry that defines that shape of our triangle
+
             const geometry = sceneModel.createGeometry({
                 id: "triangleGeometry",
                 primitive: xeokit.constants.TrianglesPrimitive,
@@ -78,6 +93,9 @@ demoHelper.init()
                 demoHelper.log(`Error creating Geometry: ${geometry.message}`);
             }
 
+            // Create a SceneMesh that defines both the shape and
+            // the surface appearance of our triangle
+
             const triangleMesh = sceneModel.createMesh({
                 id: "triangleMesh",
                 geometryId: "triangleGeometry",
@@ -94,6 +112,8 @@ demoHelper.init()
                 demoHelper.log(`Error creating SceneMesh: ${triangleMesh.message}`);
             }
 
+            // Create a SceneObject that defines the triangle object itself
+
             const triangleSceneObject = sceneModel.createObject({
                 id: "triangleObject",
                 meshIds: ["triangleMesh"]
@@ -103,17 +123,16 @@ demoHelper.init()
                 demoHelper.log(`Error creating SceneObject: ${triangleSceneObject.message}`);
             }
 
-            sceneModel.onBuilt.subscribe((theSceneModel) => {
-                // demoHelper.log(`SceneModel built`);
-            });
+            // Build the SceneModel, which causes the triangle to appear in the View's canvas.
 
-            sceneModel.onDestroyed.subscribe((theSceneModel) => {
-                // demoHelper.log(`SceneModel destroyed`);
-            });
 
             sceneModel.build().then(() => {
 
-                // Now the SceneModel appears in the View
+                // At this point, the View will contain a single ViewObject that has the same
+                // ID as the SceneObject. Through the ViewObject, we can now update the
+                // appearance of the box in that View.
+
+                view.objects["triangleObject"].highlighted = true;
 
                 demoHelper.finished();
 

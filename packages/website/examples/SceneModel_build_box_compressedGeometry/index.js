@@ -24,6 +24,8 @@ const viewer = new xeokit.viewer.Viewer({
     renderer
 });
 
+// Ignore the DemoHelper
+
 const demoHelper = new DemoHelper({
     viewer
 });
@@ -90,9 +92,16 @@ demoHelper.init()
             meshIds: ["boxMesh"]
         });
 
-        // Build the SceneModel, causing the box to appear in the View's canvas
+        // Build the SceneModel, causing the red box to appear in the View's canvas.
 
         sceneModel.build();
+
+        // At this point, the View will contain a single ViewObject that has the same ID as the SceneModel. Through
+        // the ViewObject, we can update the appearance of the box in that View.
+
+        view.objects["boxObject"].highlighted = true;
+
+        // Ignore the DemoHelper
 
         demoHelper.finished();
     });

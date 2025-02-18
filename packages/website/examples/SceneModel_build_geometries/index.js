@@ -1,8 +1,11 @@
 
+// Import the SDK from a bundle built for these examples
+
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 
-import {DemoHelper} from "../../js/DemoHelper.js";
+// Ignore the DemoHelper
 
+import {DemoHelper} from "../../js/DemoHelper.js";
 
 // Create a Scene to hold geometry and materials
 
@@ -20,6 +23,8 @@ const viewer = new xeokit.viewer.Viewer({
     scene,
     renderer
 });
+
+// Ignore the DemoHelper
 
 const demoHelper = new DemoHelper({
     viewer
@@ -59,7 +64,13 @@ demoHelper
             demoHelper.logError(`Error creating SceneModel: ${sceneModel.message}`);
         } else {
 
-            // Box triangles
+            // Create a SceneMesh that represents a red box. The SceneMesh gets a
+            // box-shaped SceneGeometry, for which we use buildBoxGeometry to
+            // generate the triangle mesh positions and indices. Each SceneMesh
+            // we create in this example also has a 4x4 matrix, composed using
+            // buildMat4, to specify the modeling transformation that it applies
+            // to the SceneGeometry vertex positions to position them within the
+            // World coordinate system.
 
             const box = xeokit.procgen.buildBoxGeometry({
                 xSize: 1,
@@ -83,7 +94,9 @@ demoHelper
                 })
             });
 
-            // Box lines
+            // Create a SceneMesh that represents a blue wireframe box. The
+            // SceneMesh gets a box-shaped wireframe SceneGeometry, for which we
+            // use buildBoxLinesGeometry to generate the wire mesh positions and indices.
 
             const boxLines = xeokit.procgen.buildBoxLinesGeometry({
                 xSize: 1,
@@ -107,7 +120,9 @@ demoHelper
                 color: [0, 0, 1]
             });
 
-            // Sphere triangles
+            // Create a SceneMesh that represents a green-blue sphere. The
+            // SceneMesh gets a sphere-shaped wireframe SceneGeometry, for which we
+            // use buildSphereGeometry to generate the triangle mesh positions and indices.
 
             const sphere = xeokit.procgen.buildSphereGeometry({
                 center: [0, 0, 0],
@@ -133,7 +148,9 @@ demoHelper
                 color: [0, 0.5, 1]
             });
 
-            // Torus triangles
+            // Create a SceneMesh that represents a purple torus. The
+            // SceneMesh gets a torus-shaped wireframe SceneGeometry, for which we
+            // use buildTorusGeometry to generate the triangle mesh positions and indices.
 
             const torus = xeokit.procgen.buildTorusGeometry({
                 center: [0, 0, 0],
@@ -161,7 +178,9 @@ demoHelper
                 color: [0.7, 0, 1]
             });
 
-            // Cylinder triangles
+            // Create a SceneMesh that represents a yellow cylinder. The
+            // SceneMesh gets a cylinder-shaped triangle mesh SceneGeometry, for which we
+            // use buildTorusGeometry to generate the triangle mesh positions and indices.
 
             const cylinder = xeokit.procgen.buildCylinderGeometry({
                 center: [0, 0, 0],
@@ -190,7 +209,9 @@ demoHelper
                 color: [1, .6, 0]
             });
 
-            // Grid lines
+            // Create a SceneMesh that represents a green grid. The
+            // SceneMesh gets a grid-shaped wireframe SceneGeometry, for which we
+            // use buildTorusGeometry to generate the wireframe mesh positions and indices.
 
             const grid = xeokit.procgen.buildGridGeometry({
                 size: 10,
@@ -213,7 +234,10 @@ demoHelper
                 color: [0, 1, 0]
             });
 
-            // Text
+            // Create a SceneMesh that represents green wireframe text. The
+            // SceneMesh gets a text-shaped wireframe SceneGeometry, for which we
+            // use buildVectorTextGeometry to generate the wireframe mesh positions
+            // and indices.
 
             const text = xeokit.procgen.buildVectorTextGeometry({
                 text: "An assortment of geometry\nprogrammatically generated\nwithin a SceneModel\nusing instanced geometry",
@@ -235,7 +259,9 @@ demoHelper
                 color: [0, 1, 0]
             });
 
-            // Points
+            // Create a SceneMesh that represents a cloud of points. The
+            // SceneMesh gets a SceneGeometry that contains an array that provides
+            // the 3D of each points.
 
             const positions = [];
             const colors = [];
@@ -284,13 +310,28 @@ demoHelper
                 }),
             });
 
+            // Create a SceneObject that aggregates all of our SceneMeshes.
+
             sceneModel.createObject({
-                id: "geometries",
-                meshIds: ["boxMesh", "boxLinesMesh", "sphereMesh", "torusMesh", "cylinderMesh", "gridMesh", "textMesh", "pointsMesh"]
+                id: "geometriesObject",
+                meshIds: [
+                    "boxMesh", "boxLinesMesh", "sphereMesh",
+                    "torusMesh", "cylinderMesh", "gridMesh",
+                    "textMesh", "pointsMesh"
+                ]
             });
         }
 
-        sceneModel.build();
+        // Build the SceneModel, causing the various geometries to appear
+        // in the View's canvas.
 
-        demoHelper.finished();
+        sceneModel.build().then(()=>{
+
+            // At this point, the View will contain a single ViewObject that has the same ID as the SceneObject. Through
+            // the ViewObject, we can update the appearance of our geometries in that View.
+
+            view.objects["geometriesObject"].highlighted = true;
+
+            demoHelper.finished();
+        });
     });

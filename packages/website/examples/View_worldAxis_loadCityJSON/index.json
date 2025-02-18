@@ -5,5 +5,6 @@
     "LoD3_Railway/cityjson"
   ],
   "id": "View_worldAxis_loadCityJSON",
-  "type": "example"
+  "type": "example",
+    "visualTest": true
 }

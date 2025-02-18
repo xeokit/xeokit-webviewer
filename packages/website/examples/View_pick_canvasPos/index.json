@@ -1,0 +1,7 @@
+{
+    "title": "Picking an object with the mouse",
+    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple table-shaped model. The Viewer then draws the model in each View's canvas. Meanwhile, orbit the primary View's Camera.",
+    "id": "View_pick_canvasPos",
+    "type": "example",
+    "visualTest": false
+}

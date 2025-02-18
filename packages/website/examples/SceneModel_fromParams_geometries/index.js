@@ -1,3 +1,5 @@
+// Import the SDK from a bundle built for these examples
+
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 
 import {DemoHelper} from "../../js/DemoHelper.js";
@@ -29,11 +31,14 @@ const demoHelper = new DemoHelper({
 demoHelper.init()
     .then(() => {
 
+        // Give the Viewer a single View to render the Scene in our HTML canvas element
 
         const view = viewer.createView({
             id: "demoView",
             elementId: "demoCanvas"
         });
+
+        // Position the View's Camera
 
         view.camera.eye = [15, -5, 40];
         view.camera.look = [15, -5, 0];
@@ -44,8 +49,10 @@ demoHelper.init()
 
         new xeokit.cameracontrol.CameraControl(view);
 
-        // Within the Scene, create a SceneModel to hold geometry and materials for our model. We'll create
-        // an empty SceneModel, then populate it with JSON that conforms to the schema defined by type SceneModelParams.
+        // Within the Scene, create a SceneModel to hold geometry
+        // and materials for our model. We'll create an empty SceneModel,
+        // then populate it with JSON that conforms to the schema defined
+        // by the SceneModelParams interface.
 
         const sceneModel = scene.createModel({
             id: "demoModel"
@@ -169,20 +176,22 @@ demoHelper.init()
                     "matrix": [4, 0, 0, 0, 0, 4, 0, 0, 0, 0, 4, 0, -7, 0, 0, 1]
                 }],
                 "objects": [{
-                    "id": "geometries",
+                    "id": "geometriesObject",
                     "meshIds": ["boxMesh", "boxLinesMesh", "sphereMesh", "torusMesh", "cylinderMesh", "gridMesh", "textMesh", "pointsMesh"]
                 }]
             });
 
-            // Build the SceneModel. The View will now contain a ViewObject for each SceneObject in the SceneModel.
+            // Build the SceneModel, causing the various geometries to appear
+            // in the View's canvas.
 
-            sceneModel.build().then(() => {
+            sceneModel.build().then(()=>{
+
+                // At this point, the View will contain a single ViewObject that has the same ID as the SceneObject. Through
+                // the ViewObject, we can update the appearance of our geometries in that View.
+
+                view.objects["geometriesObject"].highlighted = true;
 
                 demoHelper.finished();
-
-            }).catch((e) => {
-                log(`Error building SceneModel: ${e}`);
-                throw e;
             });
         }
     });

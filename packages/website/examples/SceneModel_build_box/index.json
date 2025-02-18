@@ -1,29 +1,31 @@
 {
-  "title": "Build and view a box-shaped SceneModel",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that contains a SceneObject, a SceneMesh, and a SceneGeometry that defines the shape of the box.",
-  "articles": [
-    "sceneModelBuildBox"
-  ],
-  "id": "SceneModel_build_box",
-  "type": "example",
-  "template": "basicPage",
-  "steps": [
-    "1.",
-    "Default is [0,0,10]\nDefault\nDefault",
-    "The vertices - eight for our box, each\none spanning three array elements for X,Y and Z",
-    "v0-v1-v2-v3 front",
-    "v0-v3-v4-v1 right",
-    "v0-v1-v6-v1 top",
-    "v1-v6-v7-v2 left",
-    "v7-v4-v3-v2 bottom",
-    "v4-v7-v6-v1 back",
-    "Indices - these organise the\npositions coordinates\ninto geometric primitives in accordance\nwith the \"primitive\" parameter,\nin this case a set of three indices\nfor each triangle.\n\nNote that each triangle is specified\nin counter-clockwise winding order.",
-    "Front",
-    "Right",
-    "Top",
-    "Left",
-    "Bottom",
-    "Back",
-    "Default\nDefault\nDefault\nDefault"
-  ]
+    "title": "Build and view a box-shaped SceneModel",
+    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that contains a SceneObject, a SceneMesh, and a SceneGeometry that defines the shape of the box.",
+    "articles": [
+        "sceneModelBuildBox"
+    ],
+    "id": "SceneModel_build_box",
+    "type": "example",
+    "visualTest": true,
+    "tutorial": true,
+    "template": "basicPage",
+    "steps": [
+        "1.",
+        "Default is [0,0,10]\nDefault\nDefault",
+        "The vertices - eight for our box, each\none spanning three array elements for X,Y and Z",
+        "v0-v1-v2-v3 front",
+        "v0-v3-v4-v1 right",
+        "v0-v1-v6-v1 top",
+        "v1-v6-v7-v2 left",
+        "v7-v4-v3-v2 bottom",
+        "v4-v7-v6-v1 back",
+        "Indices - these organise the\npositions coordinates\ninto geometric primitives in accordance\nwith the \"primitive\" parameter,\nin this case a set of three indices\nfor each triangle.\n\nNote that each triangle is specified\nin counter-clockwise winding order.",
+        "Front",
+        "Right",
+        "Top",
+        "Left",
+        "Bottom",
+        "Back",
+        "Default\nDefault\nDefault\nDefault"
+    ]
 }

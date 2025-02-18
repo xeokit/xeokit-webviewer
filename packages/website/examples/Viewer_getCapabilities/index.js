@@ -1,13 +1,13 @@
-// Import the SDK from a bundle built for these examples
+// Import xeokit SDK via the JavaScript bundle that we've built for these examples
 
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 import {DemoHelper} from "../../js/DemoHelper.js";
 
-// Create a Scene to hold geometry and materials for our triangle
+// Create a Scene to hold geometry and materials for our model
 
 const scene = new xeokit.scene.Scene();
 
-// Create a WebGLRenderer to use the browser's WebGL API to draw the Scene
+// Create a WebGLRenderer to use the browser's WebGL API for 3D graphics
 
 const renderer = new xeokit.webglrenderer.WebGLRenderer({});
 
@@ -20,22 +20,31 @@ const viewer = new xeokit.viewer.Viewer({
     renderer
 });
 
-const demoHelper = new DemoHelper({
-    viewer
-});
-
 demoHelper.init()
     .then(() => {
 
+        const capabilities = viewer.capabilities;
+
+        demoHelper.log(`viewer.capabilities.headless = ${capabilities.headless}\n
+            viewer.capabilities.maxViews = ${capabilities.maxViews}\n
+            viewer.capabilities.dxtSupported = ${capabilities.dxtSupported}\n
+            viewer.capabilities.etc1Supported = ${capabilities.etc1Supported}\n
+            viewer.capabilities.etc2Supported = ${capabilities.etc2Supported}\n
+            viewer.capabilities.bptcSupported = ${capabilities.bptcSupported}\n
+            viewer.capabilities.astcSupported = ${capabilities.astcSupported}\n
+            viewer.capabilities.pvrtcSupported = ${capabilities.pvrtcSupported}`);
+
+        const sceneModel = scene.createModel({
+            id: "demoModel"
+        });
+
         // Add a View, which will render an independent view of the Scene within the
-        // given DOM element.
+// given DOM element.
 
         const view = viewer.createView({
             id: "demoView",
             elementId: "demoCanvas"
         });
-
-        // Position the View's Camera
 
         view.camera.eye = [0, 0, 10]; // Default
         view.camera.look = [0, 0, 0]; // Default
@@ -45,14 +54,6 @@ demoHelper.init()
         // mouse and touch input
 
         new xeokit.cameracontrol.CameraControl(view);
-
-        // Within the Scene, create a SceneModel to hold geometry and materials for our model
-
-        const sceneModel = scene.createModel({
-            id: "demoModel"
-        });
-
-        // Create a SceneGeometry that defines that shape of our triangle
 
         sceneModel.createGeometry({
             id: "triangleGeometry",
@@ -67,41 +68,21 @@ demoHelper.init()
             ]
         });
 
-        // Create a SceneMesh that defines both the shape and
-        // the surface appearance of our triangle
-
         sceneModel.createMesh({
             id: "triangleMesh",
             geometryId: "triangleGeometry",
-            matrix: [ // Default
-                1, 0, 0, 0,
-                0, 1, 0, 0,
-                0, 0, 1, 0,
-                0, 0, 0, 1
-            ]
+            position: [0, 0, 0], // Default
+            scale: [1, 1, 1], // Default
+            rotation: [0, 0, 0], // Default
+            color: [1, 1.0, 1.0] // Default
         });
-
-        // Create a SceneObject that defines the triangle object itself
 
         sceneModel.createObject({
             id: "triangleObject",
             meshIds: ["triangleMesh"]
         });
 
-        // Build the SceneModel, which causes the triangle to appear in the View's canvas.
+        sceneModel.build();
 
-        sceneModel.build().then(() => {
-
-            // At this point, the View will contain a single ViewObject that has the same
-            // ID as the SceneObject. Through the ViewObject, we can now update the
-            // appearance of the box in that View.
-
-            view.objects["triangleObject"].highlighted = true;
-
-            demoHelper.finished();
-
-        }).catch((sdkError) => {
-            demoHelper.log(`Error building SceneModel: ${sdkError.message}`);
-            throw e;
-        });
+        demoHelper.finished();
     });

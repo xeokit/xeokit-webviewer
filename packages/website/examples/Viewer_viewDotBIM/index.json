@@ -2,7 +2,8 @@
   "title": "Viewing a .BIM model and hiding IfcSpaces",
   "summary": "Create a Viewer with a WebGLRenderer and a Scene. Create a Data to hold model semantics. In the Viewer, create a View that draws to the canvas. Position the View's Camera to look at the center of the 3D coordinate system (default). Create a SceneModel in the Scene. Create a DataModel in the Data. Use loadDotBIM to load a DotBIM building model into the SceneModel and DataModel. Build the SceneModel and the DataModel. The SceneModel's objects will then appear in the View's canvas. Get all the DataObject instances in Data that represent IfcSpace elements in the model. For each of those DataObjects, get the corresponding SceneObject and ViewObject. Set those ViewObjects invisible, to ensure that we can see the model objects that are within each IfcSpace.",
   "id": "Viewer_viewDotBIM",
-  "type": "example",
+    "type": "example",
+    "visualTest": true,
   "template": "basicPage",
   "steps": [
     "Import the pre-built demo bundle",

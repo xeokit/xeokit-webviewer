@@ -1,4 +1,7 @@
+// Import the SDK from a bundle built for these examples
+
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
+
 import {DemoHelper} from "../../js/DemoHelper.js";
 
 // Create a Scene to hold model geometry and materials
@@ -121,6 +124,10 @@ demoHelper.init()
         fetch("../../models/models/Duplex/json/scenemodel.json").then(response => {
             response.json().then(fileData => {
                 sceneModel.fromParams(fileData);
+
+                // Build the SceneModel. The View will now contain a ViewObject for each
+                // SceneObject in the SceneModel.
+
                 sceneModel.build().then(() => {
                     demoHelper.finished();
                 });

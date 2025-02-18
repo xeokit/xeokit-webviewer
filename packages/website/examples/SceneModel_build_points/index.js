@@ -1,3 +1,5 @@
+// Import the modules we need
+
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 import {DemoHelper} from "../../js/DemoHelper.js";
 
@@ -18,6 +20,8 @@ const viewer = new xeokit.viewer.Viewer({
     renderer
 });
 
+// Ignore the DemoHelper
+
 const demoHelper = new DemoHelper({
     viewer
 });
@@ -25,6 +29,8 @@ const demoHelper = new DemoHelper({
 demoHelper
     .init()
     .then(() => {
+
+        // Create a single View that renders to a canvas in the page
 
         const view = viewer.createView({
             id: "demoView",
@@ -40,7 +46,7 @@ demoHelper
 
         new xeokit.cameracontrol.CameraControl(view);
 
-        // Within the Scene, create a SceneModel to hold geometry and materials for our model
+        // Within the Scene, create a SceneModel.
 
         const sceneModel = scene.createModel({
             id: "demoModel"
@@ -49,6 +55,12 @@ demoHelper
         if (sceneModel instanceof xeokit.core.SDKError) {
             demoHelper.logError(`Error creating SceneModel: ${sceneModel.message}`);
         } else {
+
+            // Within the SceneModel, create a SceneObject with a SceneMesh that
+            // instances a SceneGeometry that defines a set of 3D points. The SceneMesh
+            // has a 4x4 matrix, which we compose using buildMat4, to specify the modeling
+            // transformation that it applies to the SceneGeometry vertex positions to
+            // position them within the Viewer's World coordinate system.
 
             sceneModel.createGeometry({
                 id: "demoBoxGeometry",
@@ -66,20 +78,30 @@ demoHelper
             });
 
             sceneModel.createMesh({
-                id: "demoMesh",
-                geometryId: "demoGeometry",
-                position: [-4, -6, -4],
-                scale: [1, 1, 1],
-                rotation: [0, 0, 0],
-                color: [1, 1, 1]
+                id: "pointsMesh",
+                geometryId: "pointsGeometry",
+                xeokit.scene.buildMat4({
+                    position: [-4, -6, -4],
+                    scale: [1, 1, 1],
+                    rotation: [0, 0, 0],
+                    color: [1, 1, 1]
+                })
             });
 
             sceneModel.createObject({
-                id: "demoObject",
-                meshIds: ["demoMesh"]
+                id: "pointsObject",
+                meshIds: ["pointsMesh"]
             });
 
+            // Build the SceneModel, causing the 3D points to appear
+            // in the View's canvas.
+
             sceneModel.build().then(() => {
+
+                // At this stage, the View will contain a single ViewObject that has the same ID as the SceneObject. Through
+                // the ViewObject, we can now update the appearance of our 3D points in that View.
+
+                view.objects["pointsObject"].highlighted = true;
 
                 demoHelper.finished();
 

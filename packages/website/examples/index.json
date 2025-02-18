@@ -3,7 +3,8 @@
     "title": "Building and viewing a SceneModel and a DataModel",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View, along with a Data object. In the Scene, build a simple kitchen table SceneModel containing five SceneObjects, to represent the table top and four legs. In the Data object, build a DataModel that contains five DataObjects, which attach semantic information to the SceneModel and its SceneObjects.",
     "id": "SceneModel_DataModel_build_table",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "PropertySet | SDKError",
@@ -22,7 +23,8 @@
     "title": "Loading an IFC model from SceneModelParams and DataModelParams into a SceneModel and a DataModel",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use SceneModel's fromParams method to load a SceneModelParams. Use DataModel's fromParams method to load a DataModelParams. The Viewer then draws the IFC model in the View's canvas.",
     "id": "SceneModel_DataModel_fromParams_IfcOpenHouse4",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": []
   },
@@ -33,7 +35,8 @@
       "sceneModelBuildBox"
     ],
     "id": "SceneModel_build_box",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "1.",
@@ -63,7 +66,8 @@
       "sceneModelBuildBox"
     ],
     "id": "SceneModel_build_box_compressedGeometry",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "steps": [
       "Import the modules we need",
       "Create a Viewer with a WebGLRenderer and a Scene",
@@ -78,7 +82,8 @@
     "title": "Build and view a SceneModel containing various geometry types",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a set of SceneMeshs that each have a SceneGeometry. Each SceneGeometry represents a different type of geometric primitive supported by xeokit.",
     "id": "SceneModel_build_geometries",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "Box triangles",
@@ -96,7 +101,8 @@
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with five SceneObjects and five SceneMeshs, which share a single SceneGeometry that contains lines primitives.",
     "template": "basicPage",
     "id": "SceneModel_build_lines",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "steps": []
   },
   "SceneModel_build_points": {
@@ -104,14 +110,16 @@
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry with points primitives.",
     "id": "SceneModel_build_points",
     "template": "basicPage",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "steps": []
   },
   "SceneModel_build_table": {
     "title": "Build and view a table-shaped SceneModel",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that represents a simple kitchen table. The SceneModel then has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives.",
     "id": "SceneModel_build_table",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "front\nright\ntop\nleft\nbottom"
@@ -121,7 +129,8 @@
     "title": "Build and view a SceneModel containing a single 3D triangle",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that contains a single triangle.",
     "id": "SceneModel_build_triangle",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "Default\nDefault\nDefault",
@@ -132,7 +141,8 @@
     "title": "Building and viewing a SceneModel containing a 3D triangle, while checking for errors",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that contains a single triangle. Check for errors after each step.",
     "id": "SceneModel_build_triangle_checkErrors",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "Default\nDefault\nDefault",
@@ -149,7 +159,8 @@
     "title": "Building and viewing a box-shaped SceneModel, from JSON",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromParams method to load a SceneModelParams into the SceneModel. The Viewer then draws the SceneModel in the View's canvas.",
     "id": "SceneModel_fromParams_box",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "TrianglesPrimitive (defined in @xeokit/constants)\n64-bit floats"
@@ -159,7 +170,8 @@
     "title": "Building and viewing a box-shaped SceneModel, from JSON, using compressed geometry",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromParams method to load a SceneModelParams containing compressed geometry into the SceneModel. The Viewer then draws the SceneModel in the View's canvas.",
     "id": "SceneModel_fromParams_box_compressedGeometry",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "TrianglesPrimitive (defined in @xeokit/constants)",
@@ -170,7 +182,8 @@
     "title": "Building and viewing a SceneModel containing various geometry types, from JSON",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from a SceneModelParams, containing a set of SceneMeshs that represent various geometric primitives.",
     "id": "SceneModel_fromParams_geometries",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": []
   },
@@ -178,7 +191,8 @@
     "title": "Building and viewing a SceneModel containing various geometry types, from JSON",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from a SceneModelParams, containing a set of SceneMeshs that represent various geometric primitives.",
     "id": "SceneModel_fromParams_streamable_geometries",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": []
   },
@@ -186,7 +200,8 @@
     "title": "Building and viewing a table-shaped SceneModel, from JSON",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from SceneModelParams that represents a simple kitchen table. The SceneModel has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives.",
     "id": "SceneModel_fromParams_table",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "SceneModelParams",
@@ -199,7 +214,8 @@
     "title": "Building and viewing a simple SceneModel, from JSON",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from SceneModelParams that contains a single triangle. The SceneModel has one SceneObject, one SceneMesh, and one SceneGeometry, which contains the triangle geometry.",
     "id": "SceneModel_fromParams_triangle",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "TrianglesPrimitive (defined in @xeokit/constants)"
@@ -209,7 +225,8 @@
     "title": "Building and viewing a SceneModel, without retaining geometry in Browser memory",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a table-shaped model. Configure the SceneModel with retained: false, which causes it to not retain SceneObject, SceneMesh and SceneGeometrys in browser memory, which results in a smaller memory footprint. The Viewer then draws the model in the View's canvas, while the model's geometry and materials reside entirely in GPU memory.",
     "id": "SceneModel_retainedFalse",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "--------------------------------------------------------------------------------\nCreate a \"non-retained\" SceneModel\n\nOur SceneModel is configured with retained: false, when we build our\nSceneModel, the SceneGeometry, SceneMesh and SceneObjects we created\nwithin it will be cleared from it to save browser memory.\n\nThe Viewer will then still contain ViewObjects for the SceneModel until we\ncall SceneModel.destroy().\n--------------------------------------------------------------------------------",
@@ -349,7 +366,8 @@
     "title": "Viewing a .BIM model and hiding IfcSpaces",
     "summary": "Create a Viewer with a WebGLRenderer and a Scene. Create a Data to hold model semantics. In the Viewer, create a View that draws to the canvas. Position the View's Camera to look at the center of the 3D coordinate system (default). Create a SceneModel in the Scene. Create a DataModel in the Data. Use loadDotBIM to load a DotBIM building model into the SceneModel and DataModel. Build the SceneModel and the DataModel. The SceneModel's objects will then appear in the View's canvas. Get all the DataObject instances in Data that represent IfcSpace elements in the model. For each of those DataObjects, get the corresponding SceneObject and ViewObject. Set those ViewObjects invisible, to ensure that we can see the model objects that are within each IfcSpace.",
     "id": "Viewer_viewDotBIM",
-    "type": "example",
+      "type": "example",
+    "visualTest": true,
     "template": "basicPage",
     "steps": [
       "Import the pre-built demo bundle",

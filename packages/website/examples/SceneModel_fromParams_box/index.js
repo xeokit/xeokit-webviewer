@@ -1,3 +1,5 @@
+// Import the SDK from a bundle built for these examples
+
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 
 import {DemoHelper} from "../../js/DemoHelper.js";
@@ -48,7 +50,9 @@ demoHelper.init()
         new xeokit.cameracontrol.CameraControl(view);
 
         // Create a SceneModel to hold geometry and materials. We'll
-        // create the SceneModel in one shot from a SceneModelParams.
+        // create the SceneModel in one shot from a SceneModelParams. In this example,
+        // we create our SceneGeometry from uncompressed, double-precision floating
+        // point values.
 
         const sceneModel = scene.createModel({
             id: "demoModel",
@@ -75,7 +79,7 @@ demoHelper.init()
                 {
                     id: "boxMesh",
                     geometryId: "boxGeometry",
-                    color: [1, 1, 1, 1],
+                    color: [1, 0, 0],
                     opacity: 1
                 }
             ],
@@ -87,9 +91,17 @@ demoHelper.init()
             ]
         });
 
-        // Build the SceneModel. The View will now contain a ViewObject for each SceneObject in the SceneModel.
+        // Build the SceneModel, causing the red box to appear in the View's canvas.
 
-        sceneModel.build();
+        sceneModel.build().then(() => {
 
-        demoHelper.finished();
+            // At this point, the View will contain a single ViewObject that has the same
+            // ID as the SceneObject. Through the ViewObject, we can now update the
+            // appearance of the box in that View.
+
+            view.objects["boxObject"].highlighted = true;
+            view.setObjectsHighlighted(view.highlightedObjectIds, false);
+
+            demoHelper.finished();
+        });
     });

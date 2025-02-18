@@ -79,10 +79,21 @@ demoHelper.init()
             ]
         });
 
-        // Build the SceneModel. The View will now contain a ViewObject for each SceneObject in the SceneModel.
+        // Build the SceneModel, which causes the triangle to appear in the View's canvas.
 
-        sceneModel.build();
+        sceneModel.build().then(() => {
 
-        demoHelper.finished();
+            // At this point, the View will contain a single ViewObject that has the same
+            // ID as the SceneObject. Through the ViewObject, we can now update the
+            // appearance of the box in that View.
+
+            view.objects["triangleObject"].highlighted = true;
+
+            demoHelper.finished();
+
+        }).catch((sdkError) => {
+            demoHelper.log(`Error building SceneModel: ${sdkError.message}`);
+            throw e;
+        });
 
     });

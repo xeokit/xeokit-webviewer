@@ -141,6 +141,7 @@ demoHelper.init()
                             demoHelper.finished();
 
                         }).catch(error => {
+
                             dataModel.destroy();
                             sceneModel.destroy();
 

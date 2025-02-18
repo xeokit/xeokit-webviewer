@@ -2,7 +2,8 @@
   "title": "Loading an IFC model from SceneModelParams and DataModelParams into a SceneModel and a DataModel",
   "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use SceneModel's fromParams method to load a SceneModelParams. Use DataModel's fromParams method to load a DataModelParams. The Viewer then draws the IFC model in the View's canvas.",
   "id": "SceneModel_DataModel_fromParams_IfcOpenHouse4",
-  "type": "example",
+    "type": "example",
+    "visualTest": true,
   "template": "basicPage",
   "steps": []
 }

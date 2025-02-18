@@ -1,3 +1,5 @@
+// Import the SDK from a bundle built for these examples
+
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 import {DemoHelper} from "../../js/DemoHelper.js";
 
@@ -18,6 +20,8 @@ const viewer = new xeokit.viewer.Viewer({
     renderer
 });
 
+// Ignore the DemoHelper
+
 const demoHelper = new DemoHelper({
     viewer
 });
@@ -26,10 +30,14 @@ demoHelper
     .init()
     .then(() => {
 
+        // Create a single View that renders to a canvas
+
         const view = viewer.createView({
             id: "demoView",
             elementId: "demoCanvas"
         });
+
+        // Position the View's Camera
 
         view.camera.eye = [0, -5, 20];
         view.camera.look = [0, -5, 0];
@@ -40,7 +48,8 @@ demoHelper
 
         new xeokit.cameracontrol.CameraControl(view);
 
-        // Within the Scene, create a SceneModel to hold geometry and materials for our model
+        // Within the Scene, create a SceneModel to hold geometry and materials
+        // for our model
 
         const sceneModel = scene.createModel({
             id: "demoModel"
@@ -50,9 +59,15 @@ demoHelper
             demoHelper.logError(`Error creating SceneModel: ${sceneModel.message}`);
         } else {
 
+            // Create a SceneGeometry that defines the shape of the wireframe box
+
             sceneModel.createGeometry({
-                id: "demoBoxGeometry",
+                id: "boxGeometry",
                 primitive: xeokit.constants.LinesPrimitive,
+
+                // Define the SceneGeometry vertices - eight for our box, each
+                // one spanning three array elements for X,Y and Z
+
                 positions: [
                     -1, -1, -1,
                     -1, -1, 1,
@@ -63,6 +78,14 @@ demoHelper
                     1, 1, -1,
                     1, 1, 1
                 ],
+
+                // Define the SceneGeometry indices - these organise the
+                // positions coordinates
+                // into geometric primitives in accordance
+                // with the LinesPrimitive parameter,
+                // in this case a pair of indices
+                // for each line segment.
+
                 indices: [
                     0, 1,
                     1, 3,
@@ -79,13 +102,22 @@ demoHelper
                 ]
             });
 
+            // For each of the model's tabletop and legs,
+            // create a SceneObject that has a single SceneMesh that instances
+            // and colors the box-shaped wireframe SceneGeometry. Each SceneMesh
+            // has a 4x4 matrix, which we compose using buildMat4, to specify the
+            // modeling transformation that the SceneMesh applies to the SceneGeometry's
+            // vertex positions to position them within the World coordinate system.
+
             sceneModel.createMesh({
                 id: "redLegMesh",
-                geometryId: "demoBoxGeometry",
-                position: [-4, -6, -4],
-                scale: [1, 3, 1],
-                rotation: [0, 0, 0],
-                color: [1, 0.3, 0.3]
+                geometryId: "boxGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [-4, -6, -4],
+                    scale: [1, 3, 1],
+                    rotation: [0, 0, 0],
+                    color: [1, 0.3, 0.3]
+                }):
             });
 
             sceneModel.createObject({
@@ -95,11 +127,13 @@ demoHelper
 
             sceneModel.createMesh({
                 id: "greenLegMesh",
-                geometryId: "demoBoxGeometry",
-                position: [4, -6, -4],
-                scale: [1, 3, 1],
-                rotation: [0, 0, 0],
-                color: [0.3, 1.0, 0.3]
+                geometryId: "boxGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [4, -6, -4],
+                    scale: [1, 3, 1],
+                    rotation: [0, 0, 0],
+                    color: [0.3, 1.0, 0.3]
+                });
             });
 
             sceneModel.createObject({
@@ -109,11 +143,13 @@ demoHelper
 
             sceneModel.createMesh({
                 id: "blueLegMesh",
-                geometryId: "demoBoxGeometry",
-                position: [4, -6, 4],
-                scale: [1, 3, 1],
-                rotation: [0, 0, 0],
-                color: [0.3, 0.3, 1.0]
+                geometryId: "boxGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [4, -6, 4],
+                    scale: [1, 3, 1],
+                    rotation: [0, 0, 0],
+                    color: [0.3, 0.3, 1.0]
+                });
             });
 
             sceneModel.createObject({
@@ -123,11 +159,13 @@ demoHelper
 
             sceneModel.createMesh({
                 id: "yellowLegMesh",
-                geometryId: "demoBoxGeometry",
-                position: [-4, -6, 4],
-                scale: [1, 3, 1],
-                rotation: [0, 0, 0],
-                color: [1.0, 1.0, 0.0]
+                geometryId: "boxGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [-4, -6, 4],
+                    scale: [1, 3, 1],
+                    rotation: [0, 0, 0],
+                    color: [1.0, 1.0, 0.0]
+                });
             });
 
             sceneModel.createObject({
@@ -137,11 +175,13 @@ demoHelper
 
             sceneModel.createMesh({
                 id: "purpleTableTopMesh",
-                geometryId: "demoBoxGeometry",
-                position: [0, -3, 0],
-                scale: [6, 0.5, 6],
-                rotation: [0, 0, 0],
-                color: [1.0, 0.3, 1.0]
+                geometryId: "boxGeometry",
+                matrix: xeokit.scene.buildMat4({
+                    position: [0, -3, 0],
+                    scale: [6, 0.5, 6],
+                    rotation: [0, 0, 0],
+                    color: [1.0, 0.3, 1.0]
+                });
             });
 
             sceneModel.createObject({
@@ -149,7 +189,20 @@ demoHelper
                 meshIds: ["purpleTableTopMesh"]
             });
 
+            // Build the SceneModel, causing our wireframe kitchen table model
+            // to appear in the View's canvas.
+
             sceneModel.build().then(() => {
+
+                // At this point, the View will contain a five ViewObjects that have the
+                // same IDs as the SceneObjects in our SceneModel. Through these
+                // ViewObjects, we can update the appearance of each of our model's
+                // objects within that View.
+
+                view.objects["yellowLeg"].highlighted = true;
+                view.setObjectsHighlighted(view.highlightedObjectIds, false);
+
+                // Ignore the DemoHelper!
 
                 demoHelper.finished();
 

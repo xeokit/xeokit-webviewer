@@ -83,8 +83,9 @@ demoHelper.init()
 
         if (sceneModel instanceof xeokit.core.SDKError) {
             log(`Error creating SceneModel: ${sceneModel.message}`);
-
         }
+
+        // Create a box-shaped SceneGeometry, which we'll reuse for the tabletop and legs.
 
         sceneModel.createGeometry({
             id: "demoBoxGeometry",
@@ -104,13 +105,19 @@ demoHelper.init()
             ]
         });
 
+        // Create SceneObjects to represent the tabletop and legs. Each SceneObject
+        // gets a SceneMesh that instances the SceneGeometry, configured with a color
+        // and a 4x4 modeling transform matrix to apply to the SceneGeometry's
+        // vertex positons.
+
         sceneModel.createMesh({
             id: "redLegMesh",
             geometryId: "demoBoxGeometry",
-            position: [-4, -6, -4],
-            scale: [1, 3, 1],
-            rotation: [0, 0, 0],
-            color: [0.3, 0.3, 1.0]
+            matrix: xeokit.scene.buildMat4({
+                position: [-4, -6, -4],
+                scale: [1, 3, 1]
+            }),
+            color: [1, 0.3, 0.3]
         });
 
         sceneModel.createObject({
@@ -121,10 +128,11 @@ demoHelper.init()
         sceneModel.createMesh({
             id: "greenLegMesh",
             geometryId: "demoBoxGeometry",
-            position: [4, -6, -4],
-            scale: [1, 3, 1],
-            rotation: [0, 0, 0],
-            color: [0.3, 0.3, 1.0]
+            matrix: xeokit.scene.buildMat4({
+                position: [4, -6, -4],
+                scale: [1, 3, 1]
+            }),
+            color: [0.3, 1.0, 0.3]
         });
 
         sceneModel.createObject({
@@ -135,9 +143,10 @@ demoHelper.init()
         sceneModel.createMesh({
             id: "blueLegMesh",
             geometryId: "demoBoxGeometry",
-            position: [4, -6, 4],
-            scale: [1, 3, 1],
-            rotation: [0, 0, 0],
+            matrix: xeokit.scene.buildMat4({
+                position: [4, -6, 4],
+                scale: [1, 3, 1]
+            }),
             color: [0.3, 0.3, 1.0]
         });
 
@@ -149,10 +158,11 @@ demoHelper.init()
         sceneModel.createMesh({
             id: "yellowLegMesh",
             geometryId: "demoBoxGeometry",
-            position: [-4, -6, 4],
-            scale: [1, 3, 1],
-            rotation: [0, 0, 0],
-            color: [0.3, 0.3, 1.0]
+            matrix: xeokit.scene.buildMat4({
+                position: [-4, -6, 4],
+                scale: [1, 3, 1]
+            }),
+            color: [1.0, 1.0, 0.0]
         });
 
         sceneModel.createObject({
@@ -163,10 +173,11 @@ demoHelper.init()
         sceneModel.createMesh({
             id: "purpleTableTopMesh",
             geometryId: "demoBoxGeometry",
-            position: [0, -3, 0],
-            scale: [6, 0.5, 6],
-            rotation: [0, 0, 0],
-            color: [0.3, 0.3, 1.0]
+            matrix: xeokit.scene.buildMat4({
+                position: [0, -3, 0],
+                scale: [6, 0.5, 6]
+            }),
+            color: [1.0, 0.3, 1.0]
         });
 
         sceneModel.createObject({
@@ -174,27 +185,38 @@ demoHelper.init()
             meshIds: ["purpleTableTopMesh"]
         });
 
-        sceneModel.build();
+        // Build the SceneModel. Each of our three Views will now contain five
+        // ViewObjects corresponding to the SceneObjects in our SceneModel. Each
+        // ViewObject has the same ID as its SceneObject. Put differently, each SceneObject has
+        // three ViewObjects that have its ID, with each of the three ViewObjects
+        // residing in a different View.
 
-        viewer.views["demoView1"].objects["greenLeg"].colorize = [0.3, 1, 1];
-        viewer.views["demoView2"].objects["greenLeg"].colorize = [0.3, 1.0, 0.3];
-        viewer.views["demoView3"].objects["greenLeg"].colorize = [1, 0.3, 0.3];
+        sceneModel.build().then(() => {
 
-        viewer.views["demoView1"].objects["purpleTableTop"].colorize = [0.3, 1, 1];
-        viewer.views["demoView2"].objects["purpleTableTop"].colorize = [0.3, 1.0, 0.3];
-        viewer.views["demoView3"].objects["purpleTableTop"].colorize = [1, 0.3, 0.3];
+            // Through these ViewObjects, we can update the
+            // appearance of our model elements in that View.
 
-        viewer.onTick.subscribe(() => {
-            // view1.camera.orbitYaw(.5);
-            view3.camera.orbitYaw(-1.3);
-            // view2.camera.orbitPitch(3);
+            viewer.views["demoView1"].objects["greenLeg"].colorize = [0.3, 1, 1];
+            viewer.views["demoView2"].objects["greenLeg"].colorize = [0.3, 1.0, 0.3];
+            viewer.views["demoView3"].objects["greenLeg"].colorize = [1, 0.3, 0.3];
+
+            viewer.views["demoView1"].objects["purpleTableTop"].colorize = [0.3, 1, 1];
+            viewer.views["demoView2"].objects["purpleTableTop"].colorize = [0.3, 1.0, 0.3];
+            viewer.views["demoView3"].objects["purpleTableTop"].colorize = [1, 0.3, 0.3];
+
+            viewer.onTick.subscribe(() => {
+                // view1.camera.orbitYaw(.5);
+                view3.camera.orbitYaw(-1.3);
+                // view2.camera.orbitPitch(3);
+            });
+
+            let toggle = false;
+            setInterval(() => {
+                viewer.views["demoView1"].objects["purpleTableTop"].colorize = (toggle = !toggle) ? [0.3, 1, 1] : [1, 0.3, 0.3];
+            }, 2000);
+
+
+            demoHelper.finished();
         });
-
-        let toggle = false;
-        setInterval(() => {
-            viewer.views["demoView1"].objects["purpleTableTop"].colorize = (toggle = !toggle) ? [0.3, 1, 1] : [1, 0.3, 0.3];
-        }, 2000);
-
-
-        demoHelper.finished();
     });
+})

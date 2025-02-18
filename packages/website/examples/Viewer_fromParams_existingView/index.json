@@ -1,6 +1,7 @@
 {
-  "title": "Configuring a Viewer with ViewerParams; Updating a pre-existing View",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Configure the Viewer with the given ViewerParams, which have a ViewParams with the same ID as the View. The View then receives whatever updated properties are provided in the ViewParams.",
-  "id": "Viewer_fromParams_existingView",
-  "type": "example"
+    "title": "Configuring a Viewer with ViewerParams; Updating a pre-existing View",
+    "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Configure the Viewer with the given ViewerParams, which have a ViewParams with the same ID as the View. The View then receives whatever updated properties are provided in the ViewParams.",
+    "id": "Viewer_fromParams_existingView",
+    "type": "example",
+    "visualTest": true
 }
