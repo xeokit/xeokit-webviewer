@@ -1,3 +1,5 @@
+// Import xeokit SDK from a JS bundle built specially for these examples
+
 import {log} from "../../js/logger.js";
 
 import * as xeokit from "../../js/xeokit-demo-bundle.js?foo=";

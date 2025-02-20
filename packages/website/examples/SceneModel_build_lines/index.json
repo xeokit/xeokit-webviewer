@@ -1,10 +1,26 @@
 {
-    "title": "Build and view a SceneModel containing line geometry",
-    "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with five SceneObjects and five SceneMeshs, which share a single SceneGeometry that contains lines primitives.",
-    "template": "basicPage",
-    "visualTest": true,
-    "id": "SceneModel_build_lines",
-      "type": "example",
-    "visualTest": true,
-    "steps": []
+  "title": "Build and view a SceneModel containing line geometry",
+  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with five SceneObjects and five SceneMeshs, which share a single SceneGeometry that contains lines primitives.",
+  "template": "basicPage",
+  "visualTest": true,
+  "id": "SceneModel_build_lines",
+  "type": "example",
+  "steps": [
+    "Import the SDK from a bundle built for these examples",
+    "Create a Scene to hold geometry and materials",
+    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+    "Ignore the DemoHelper",
+    "Create a single View that renders to a canvas",
+    "Position the View's Camera",
+    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+    "Within the Scene, create a SceneModel to hold geometry and materials\nfor our model",
+    "Create a SceneGeometry that defines the shape of the wireframe box",
+    "Define the SceneGeometry vertices - eight for our box, each\none spanning three array elements for X,Y and Z",
+    "Define the SceneGeometry indices - these organise the\npositions coordinates\ninto geometric primitives in accordance\nwith the LinesPrimitive parameter,\nin this case a pair of indices\nfor each line segment.",
+    "For each of the model's tabletop and legs,\ncreate a SceneObject that has a single SceneMesh that instances\nand colors the box-shaped wireframe SceneGeometry. Each SceneMesh\nhas a 4x4 matrix, which we compose using buildMat4, to specify the\nmodeling transformation that the SceneMesh applies to the SceneGeometry's\nvertex positions to position them within the World coordinate system.",
+    "Build the SceneModel, causing our wireframe kitchen table model\nto appear in the View's canvas.",
+    "At this point, the View will contain a five ViewObjects that have the\nsame IDs as the SceneObjects in our SceneModel. Through these\nViewObjects, we can update the appearance of each of our model's\nobjects within that View.",
+    "Ignore the DemoHelper!"
+  ]
 }

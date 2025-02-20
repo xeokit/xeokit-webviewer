@@ -2,5 +2,9 @@
   "title": "Using a TreeView configured with AggregationHierarchy",
   "summary": "",
   "id": "TreeView_AggregationHierarchy",
-  "type": "example"
+  "type": "example",
+  "steps": [
+    "cdn.jsdelivr.net/npm/web-ifc@0.0.51/web-ifc-api.js\";",
+    "cdn.jsdelivr.net/npm/web-ifc@0.0.51/\");"
+  ]
 }

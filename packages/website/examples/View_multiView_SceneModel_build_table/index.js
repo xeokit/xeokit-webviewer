@@ -1,3 +1,5 @@
+// Import xeokit SDK from a JS bundle built specially for these examples
+
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 import {DemoHelper} from "../../js/DemoHelper.js";
 
@@ -26,7 +28,7 @@ const demoHelper = new DemoHelper({
 demoHelper.init()
     .then(() => {
 
-        // Create View 1 - perspective projection, looking at the model from the side
+        // Create the first View, with perspective projection, looking at the Scene from the side
 
         const view1 = viewer.createView({
             id: "demoView1",
@@ -39,7 +41,7 @@ demoHelper.init()
         view1.camera.up = [0, 1, 0];
         view1.edges.enabled = true;
 
-        // Create View 2  - orthographic, looking at the model from above
+        // Create the second View, with orthographic projection, looking at the Scene from above
 
         const view2 = viewer.createView({
             id: "demoView2",
@@ -53,7 +55,7 @@ demoHelper.init()
         view2.camera.orthoProjection.scale = 20;
         view2.camera.orbitPitch(90);
 
-        // Create View 3
+        // Create the third View, with perspective projection, looking at the Scene from the front
 
         const view3 = viewer.createView({
             id: "demoView3",
@@ -69,13 +71,13 @@ demoHelper.init()
         view3.camera.orbitPitch(20);
 
         // Attach CameraControls to the Views, to control
-        // each View independently with mouse and touch input
+        // each View independently with keyboard, mouse and touch input
 
         const cameraControl1 = new xeokit.cameracontrol.CameraControl(view1, {});
         const cameraControl2 = new xeokit.cameracontrol.CameraControl(view2, {});
         const cameraControl3 = new xeokit.cameracontrol.CameraControl(view3, {});
 
-        // Create SceneModel to hold geometry
+        // Create SceneModel to hold geometry and materials
 
         const sceneModel = scene.createModel({
             id: "demoModel"
@@ -219,4 +221,4 @@ demoHelper.init()
             demoHelper.finished();
         });
     });
-})
+

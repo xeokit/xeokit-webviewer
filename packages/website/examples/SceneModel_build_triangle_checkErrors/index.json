@@ -2,17 +2,28 @@
   "title": "Building and viewing a SceneModel containing a 3D triangle, while checking for errors",
   "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that contains a single triangle. Check for errors after each step.",
   "id": "SceneModel_build_triangle_checkErrors",
-    "type": "example",
-    "visualTest": true,
+  "type": "example",
+  "visualTest": true,
   "template": "basicPage",
   "steps": [
+    "Import the SDK from a bundle built for these examples",
+    "Create a Scene to hold geometry and materials for our triangle",
+    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+    "Add a View, which will render an independent view of the Scene within the\ngiven DOM element. If this call did not succeed, then\ninstead of returning a View, it will return an SDKError that will indicate\nwhat failed. In this example, we'll not assume that\nour method calls always succeed, so we'll first check if they return an\nSDKError.",
+    "Position the View's Camera",
     "Default\nDefault\nDefault",
+    "Configure the Camera's PerspectiveProjection",
     "Default\nDefault\nDefault\nDefault",
     "FIXME",
+    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+    "Within the Scene, create a SceneModel to hold geometry and materials for our model",
+    "Create a SceneGeometry that defines that shape of our triangle",
+    "Create a SceneMesh that defines both the shape and\nthe surface appearance of our triangle",
     "Default",
     "Default",
-    "demoHelper.log(`SceneModel built`);",
-    "demoHelper.log(`SceneModel destroyed`);",
-    "Now the SceneModel appears in the View"
+    "Create a SceneObject that defines the triangle object itself",
+    "Build the SceneModel, which causes the triangle to appear in the View's canvas.",
+    "At this point, the View will contain a single ViewObject that has the same\nID as the SceneObject. Through the ViewObject, we can now update the\nappearance of the box in that View."
   ]
 }

@@ -3,7 +3,6 @@
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 import {DemoHelper} from "../../js/DemoHelper.js";
 
-
 // Create a Scene to hold geometry and materials for our model
 
 const scene = new xeokit.scene.Scene();

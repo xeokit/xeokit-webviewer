@@ -2,5 +2,18 @@
   "title": "Creating a Viewer with manual ViewLayers",
   "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. For the View, configure autoLayers=false. In the View, create two ViewLayers; \"modelLayer\" and \"gridLayer\". In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, also create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. The View then contains two ViewsLayers, \"modelLayer\" containing the model, and \"gridLayer\" containing the grid.",
   "id": "ViewLayer_manual",
-  "type": "example"
+  "type": "example",
+  "steps": [
+    "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
+    "Create a Scene to hold geometry and materials for our model",
+    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+    "Ignore the DemoHelper",
+    "Create a View, attach a CameraControl",
+    "<<------------- Default is false",
+    "Manually create two ViewLayers in our View",
+    "Create a SceneModel and load a building model into it.\n\nThe SceneModel specifies that its SceneObject instances will\nbelong to ViewLayer \"modelLayer\".\n\nThe \"modelLayer\" ViewLayer is expected to already exist in our View, because we\nconfigured the View with autoLayers: false (true is the default).",
+    "Create another SceneModel and programmatically\nconstruct a wireframe ground plane grid.\n\nThe SceneModel specifies that its SceneObject instances will\nbelong to ViewLayer \"gridLayer\".\n\nThe \"gridLayer\" ViewLayer is expected to already exist in our View, because we\nconfigured the View with autoLayers: false (true is the default).",
+    "Highlight the ViewObjects in ViewLayer \"gridLayer\""
+  ]
 }

@@ -1,15 +1,14 @@
 // Import xeokit SDK via the JavaScript bundle that we've built for these examples
 
-
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 
 import {DemoHelper} from "../../js/DemoHelper.js";
 
-
-// Create a Viewer with a Scene, WebGLRenderer and one View
-
+// Create a Scene to hold model geometry and materials
 
 const scene = new xeokit.scene.Scene();
+
+// Create a Viewer which uses the WebGLRenderer to render the Scene
 
 const viewer = new xeokit.viewer.Viewer({
     id: "demoViewer",
@@ -25,6 +24,8 @@ const demoHelper = new DemoHelper({
 demoHelper.init()
     .then(() => {
 
+        // Create a View that renders to a canvas in the DOM
+
         const view = viewer.createView({
             id: "demoView",
             elementId: "demoCanvas"
@@ -38,7 +39,7 @@ demoHelper.init()
             0, -1, 0  // Forward -Y
         ];
 
-        // Arrange camera within our +Z "up" coordinate system
+        // Arrange the View's Camera within our +Z "up" coordinate system
 
         view.camera.eye = [15, 10, 0];
         view.camera.look = [0, 0, 0];

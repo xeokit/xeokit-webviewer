@@ -2,5 +2,11 @@
   "title": "Drawing a triangle, logging all events",
   "summary": "Create a Viewer configured with a WebGLRenderer and a Scene. Then build a SceneModel with a simple triangle geometry, while logging all events fired by the Viewer.",
   "id": "Viewer_drawTriangle_getEvents",
-  "type": "example"
+  "type": "example",
+  "steps": [
+    "viewLayer.onObjectXRayed.subscribe((viewLayer, viewObject) => {\ndemoHelper.log(`ViewObject ${viewObject.id} set xrayed = ${viewObject.xrayed ? \"true\" : \"false\"} in ViewLayer ${viewLayer.id}`);\n});",
+    "Default\nDefault\nDefault",
+    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+    "Default\nDefault\nDefault\nDefault"
+  ]
 }

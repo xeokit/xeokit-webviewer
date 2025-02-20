@@ -3,30 +3,61 @@
     "title": "Building and viewing a SceneModel and a DataModel",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View, along with a Data object. In the Scene, build a simple kitchen table SceneModel containing five SceneObjects, to represent the table top and four legs. In the Data object, build a DataModel that contains five DataObjects, which attach semantic information to the SceneModel and its SceneObjects.",
     "id": "SceneModel_DataModel_build_table",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
     "steps": [
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold geometry and materials",
+      "Create a Data to hold semantic data",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that draws our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Give the Viewer a single View to render the Scene in our HTML canvas element",
+      "Position the View's Camera",
+      "Add a CameraControl to interactively control the View's Camera with keyboard,\nmouse and touch input",
+      "Ignore this DemoHelper",
+      "Create a DataModel to hold semantic information for the\nobjects in our table model",
+      "Create some PropertySets in our DataModel",
       "PropertySet | SDKError",
       "Property[]",
       "PropertySet | SDKError",
       "Property[]",
       "DataObject | SDKError",
+      "Create Relationships to connect the DataObjects together\nso that the DataObject that represents the table assembly aggregates\nthe other five DataObjects.",
+      "Build the DataModel, making it ready for use",
       "void | SDKError",
       "DataModel built OK",
-      "--------------------------------------------------------------------------------------\nBuild SceneModel, containing geometry and materials\n--------------------------------------------------------------------------------------",
+      "Create a SceneModel to hold geometry and materials",
+      "Create a box-shaped SceneGeometry, which we'll reuse for the tabletop and legs.",
       "front\nright\ntop\nleft\nbottom",
-      "For each SceneObject in the SceneModel, a ViewObject now appears in our View"
+      "Create SceneObjects to represent the tabletop and legs. Each SceneObject\ngets a SceneMesh that instances the SceneGeometry, configured with a color\nand a 4x4 modeling transform matrix to apply to the SceneGeometry's\nvertex positons.",
+      "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel.",
+      "At this point, the View will contain five ViewObjects that have the same\nIDs as our SceneObjects. Through these ViewObjects, we can update the\nappearance of our model elements in that View. We'll make the yellow leg\ntranslucent, highlight the red leg and make the tabletop green.",
+      "We can also apply these sorts of updates in batches, to multiple\nViewObjects at a time. The View remembers the IDs of whetever\nViewObjects we update, so we can use such batch updates to restore the\nViewObjects to their original states."
     ]
   },
   "SceneModel_DataModel_fromParams_IfcOpenHouse4": {
     "title": "Loading an IFC model from SceneModelParams and DataModelParams into a SceneModel and a DataModel",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use SceneModel's fromParams method to load a SceneModelParams. Use DataModel's fromParams method to load a DataModelParams. The Viewer then draws the IFC model in the View's canvas.",
     "id": "SceneModel_DataModel_fromParams_IfcOpenHouse4",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
-    "steps": []
+    "steps": [
+      "Create a Scene to hold geometry and materials",
+      "Create a Data to hold semantic data",
+      "Create a WebGLRenderer to use the browser's WebGL graphics API for rendering",
+      "Create a Viewer that will use the WebGLRenderer to draw the Scene",
+      "Give the Viewer a single View to render the Scene in our HTML canvas element",
+      "Position the View's Camera",
+      "Add a CameraControl to interactively control the View's Camera with keyboard,\nmouse and touch input",
+      "Create a SceneModel to hold our model's geometry and materials",
+      "Ignore the DemHelper",
+      "Create a DataModel to hold semantic data for our model",
+      "Load JSON parameters into our SceneModel. The parameters follow the schema defined by SceneModelParams.",
+      "Load JSON parameters into our DataModel. The parameters follow the schema defined by DataModelParams.",
+      "Build the SceneModel and DataModel. The View will now contain a ViewObject for each SceneObject in the SceneModel."
+    ]
   },
   "SceneModel_build_box": {
     "title": "Build and view a box-shaped SceneModel",
@@ -35,212 +66,383 @@
       "sceneModelBuildBox"
     ],
     "id": "SceneModel_build_box",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
+    "tutorial": true,
     "template": "basicPage",
     "steps": [
-      "1.",
+      "Import the modules we need",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Create a single View that renders to a canvas in the page",
+      "Position the View's Camera to look at the origin of the coordinate system",
       "Default is [0,0,10]\nDefault\nDefault",
-      "The vertices - eight for our box, each\none spanning three array elements for X,Y and Z",
+      "Add a CameraControl to the View to control its Camera with mouse and touchpad input",
+      "Within the Scene, create a SceneModel to hold geometry and materials for our model",
+      "Create a SceneGeometry that defines the shape of the box",
+      "Define the SceneGeometry vertices - eight for our box, each\none spanning three array elements for X,Y and Z",
       "v0-v1-v2-v3 front",
       "v0-v3-v4-v1 right",
       "v0-v1-v6-v1 top",
       "v1-v6-v7-v2 left",
       "v7-v4-v3-v2 bottom",
       "v4-v7-v6-v1 back",
-      "Indices - these organise the\npositions coordinates\ninto geometric primitives in accordance\nwith the \"primitive\" parameter,\nin this case a set of three indices\nfor each triangle.\n\nNote that each triangle is specified\nin counter-clockwise winding order.",
+      "Define the SceneGeometry indices - these organise the\npositions coordinates\ninto geometric primitives in accordance\nwith the TrianglesPrimitive parameter,\nin this case a set of three indices\nfor each triangle. Note that each triangle is specified\nin counter-clockwise winding order.",
       "Front",
       "Right",
       "Top",
       "Left",
       "Bottom",
       "Back",
-      "Default\nDefault\nDefault\nDefault"
+      "Create a red SceneMesh that instances our SceneGeometry",
+      "Default\nDefault\nDefault\nDefault is [1,1,1]",
+      "Create a SceneObject that aggregates our SceneMesh",
+      "Build the SceneModel, causing the red box to appear in the View's canvas.",
+      "At this point, the View will contain a single ViewObject that has the same\nID as the SceneObject. Through the ViewObject, we can now update the\nappearance of the box in that View.",
+      "Ignore the DemoHelper"
     ]
   },
   "SceneModel_build_box_compressedGeometry": {
     "title": "Build and view a box-shaped SceneModel, created with compressed geometry",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, create a SceneModel. In the SceneModel, create a box-shaped SceneGeometry from SceneGeometryCompressedParams. In the SceneModel, create a SceneMesh that references the SceneGeometry, and a SceneObject that references the SceneMesh. Build the SceneModel. The Viewer then draws the box in the View.",
     "template": "basicPage",
+    "visualTest": true,
+    "tutorial": true,
     "tutorials": [
       "sceneModelBuildBox"
     ],
     "id": "SceneModel_build_box_compressedGeometry",
-      "type": "example",
-    "visualTest": true,
+    "type": "example",
     "steps": [
       "Import the modules we need",
-      "Create a Viewer with a WebGLRenderer and a Scene",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
       "Create a View that renders to the canvas in our HTML",
       "Position the View's Camera to look at the origin of the World coordinate system",
       "Add a CameraControl to control the Camera",
       "Create a SceneModel containing a SceneObject, a SceneMesh and a box-shaped SceneGeometry",
-      "Build the SceneModel, causing the box to appear in the View's canvas"
+      "Build the SceneModel, causing the red box to appear in the View's canvas.",
+      "At this point, the View will contain a single ViewObject that has the same ID as the SceneModel. Through\nthe ViewObject, we can update the appearance of the box in that View.",
+      "Ignore the DemoHelper"
     ]
   },
   "SceneModel_build_geometries": {
     "title": "Build and view a SceneModel containing various geometry types",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a set of SceneMeshs that each have a SceneGeometry. Each SceneGeometry represents a different type of geometric primitive supported by xeokit.",
     "id": "SceneModel_build_geometries",
-      "type": "example",
-    "visualTest": true,
+    "type": "example",
+    "visualTest": false,
+    "tutorial": true,
     "template": "basicPage",
     "steps": [
-      "Box triangles",
-      "Box lines",
-      "Sphere triangles",
-      "Torus triangles",
-      "Cylinder triangles",
-      "Grid lines",
-      "Text",
-      "Points"
+      "\nImport the SDK from a bundle built for these examples",
+      "Ignore the DemoHelper",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Create a single View that renders to a canvas",
+      "Position the View's Camera",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Within the Scene, create a SceneModel to hold geometry and materials for our model",
+      "Create a SceneMesh that represents a red box. The SceneMesh gets a\nbox-shaped SceneGeometry, for which we use buildBoxGeometry to\ngenerate the triangle mesh positions and indices. Each SceneMesh\nwe create in this example also has a 4x4 matrix, composed using\nbuildMat4, to specify the modeling transformation that it applies\nto the SceneGeometry vertex positions to position them within the\nWorld coordinate system.",
+      "Create a SceneMesh that represents a blue wireframe box. The\nSceneMesh gets a box-shaped wireframe SceneGeometry, for which we\nuse buildBoxLinesGeometry to generate the wire mesh positions and indices.",
+      "Create a SceneMesh that represents a green-blue sphere. The\nSceneMesh gets a sphere-shaped wireframe SceneGeometry, for which we\nuse buildSphereGeometry to generate the triangle mesh positions and indices.",
+      "Create a SceneMesh that represents a purple torus. The\nSceneMesh gets a torus-shaped wireframe SceneGeometry, for which we\nuse buildTorusGeometry to generate the triangle mesh positions and indices.",
+      "Create a SceneMesh that represents a yellow cylinder. The\nSceneMesh gets a cylinder-shaped triangle mesh SceneGeometry, for which we\nuse buildTorusGeometry to generate the triangle mesh positions and indices.",
+      "Create a SceneMesh that represents a green grid. The\nSceneMesh gets a grid-shaped wireframe SceneGeometry, for which we\nuse buildTorusGeometry to generate the wireframe mesh positions and indices.",
+      "Create a SceneMesh that represents green wireframe text. The\nSceneMesh gets a text-shaped wireframe SceneGeometry, for which we\nuse buildVectorTextGeometry to generate the wireframe mesh positions\nand indices.",
+      "Create a SceneMesh that represents a cloud of points. The\nSceneMesh gets a SceneGeometry that contains an array that provides\nthe 3D of each points.",
+      "Create a SceneObject that aggregates all of our SceneMeshes.",
+      "Build the SceneModel, causing the various geometries to appear\nin the View's canvas.",
+      "At this point, the View will contain a single ViewObject that has the same ID as the SceneObject. Through\nthe ViewObject, we can update the appearance of our geometries in that View."
     ]
   },
   "SceneModel_build_lines": {
     "title": "Build and view a SceneModel containing line geometry",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with five SceneObjects and five SceneMeshs, which share a single SceneGeometry that contains lines primitives.",
     "template": "basicPage",
-    "id": "SceneModel_build_lines",
-      "type": "example",
     "visualTest": true,
-    "steps": []
+    "id": "SceneModel_build_lines",
+    "type": "example",
+    "steps": [
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Create a single View that renders to a canvas",
+      "Position the View's Camera",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Within the Scene, create a SceneModel to hold geometry and materials\nfor our model",
+      "Create a SceneGeometry that defines the shape of the wireframe box",
+      "Define the SceneGeometry vertices - eight for our box, each\none spanning three array elements for X,Y and Z",
+      "Define the SceneGeometry indices - these organise the\npositions coordinates\ninto geometric primitives in accordance\nwith the LinesPrimitive parameter,\nin this case a pair of indices\nfor each line segment.",
+      "For each of the model's tabletop and legs,\ncreate a SceneObject that has a single SceneMesh that instances\nand colors the box-shaped wireframe SceneGeometry. Each SceneMesh\nhas a 4x4 matrix, which we compose using buildMat4, to specify the\nmodeling transformation that the SceneMesh applies to the SceneGeometry's\nvertex positions to position them within the World coordinate system.",
+      "Build the SceneModel, causing our wireframe kitchen table model\nto appear in the View's canvas.",
+      "At this point, the View will contain a five ViewObjects that have the\nsame IDs as the SceneObjects in our SceneModel. Through these\nViewObjects, we can update the appearance of each of our model's\nobjects within that View.",
+      "Ignore the DemoHelper!"
+    ]
   },
   "SceneModel_build_points": {
     "title": "Build and view a SceneModel containing points geometry",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry with points primitives.",
     "id": "SceneModel_build_points",
     "template": "basicPage",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
-    "steps": []
+    "steps": [
+      "Import the modules we need",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Create a single View that renders to a canvas in the page",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Within the Scene, create a SceneModel.",
+      "Within the SceneModel, create a SceneObject with a SceneMesh that\ninstances a SceneGeometry that defines a set of 3D points. The SceneMesh\nhas a 4x4 matrix, which we compose using buildMat4, to specify the modeling\ntransformation that it applies to the SceneGeometry vertex positions to\nposition them within the Viewer's World coordinate system.",
+      "Build the SceneModel, causing the 3D points to appear\nin the View's canvas.",
+      "At this stage, the View will contain a single ViewObject that has the same ID as the SceneObject. Through\nthe ViewObject, we can now update the appearance of our 3D points in that View."
+    ]
   },
   "SceneModel_build_table": {
     "title": "Build and view a table-shaped SceneModel",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that represents a simple kitchen table. The SceneModel then has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives.",
     "id": "SceneModel_build_table",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
     "steps": [
-      "front\nright\ntop\nleft\nbottom"
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that draws our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Create a single View that renders to a canvas element in the DOM.",
+      "Position the View's Camera.",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Within the Scene, create a SceneModel to hold geometry and materials for our model",
+      "Create a box-shaped SceneGeometry, which we'll reuse for the tabletop and legs.",
+      "front\nright\ntop\nleft\nbottom",
+      "Create SceneObjects to represent the tabletop and legs. Each SceneObject\ngets a SceneMesh that instances the SceneGeometry, configured with a color\nand a 4x4 modeling transform matrix to apply to the SceneGeometry's\nvertex positons.",
+      "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel.",
+      "At this point, the View will contain five ViewObjects that have the same\nIDs as our SceneObjects. Through these ViewObjects, we can update the\nappearance of our model elements in that View. We'll make the yellow leg\ntranslucent, highlight the red leg and make the tabletop green.",
+      "We can also apply these sorts of updates in batches, to multiple\nViewObjects at a time. The View remembers the IDs of whetever\nViewObjects we update, so we can use such batch updates to restore the\nViewObjects to their original states."
     ]
   },
   "SceneModel_build_triangle": {
     "title": "Build and view a SceneModel containing a single 3D triangle",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that contains a single triangle.",
     "id": "SceneModel_build_triangle",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
     "steps": [
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold geometry and materials for our triangle",
+      "Create a WebGLRenderer to use the browser's WebGL API to draw the Scene",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Add a View, which will render an independent view of the Scene within the\ngiven DOM element.",
+      "Position the View's Camera",
       "Default\nDefault\nDefault",
-      "Default"
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Within the Scene, create a SceneModel to hold geometry and materials for our model",
+      "Create a SceneGeometry that defines that shape of our triangle",
+      "Create a SceneMesh that defines both the shape and\nthe surface appearance of our triangle",
+      "Default",
+      "Create a SceneObject that defines the triangle object itself",
+      "Build the SceneModel, which causes the triangle to appear in the View's canvas.",
+      "At this point, the View will contain a single ViewObject that has the same\nID as the SceneObject. Through the ViewObject, we can now update the\nappearance of the box in that View."
     ]
   },
   "SceneModel_build_triangle_checkErrors": {
     "title": "Building and viewing a SceneModel containing a 3D triangle, while checking for errors",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that contains a single triangle. Check for errors after each step.",
     "id": "SceneModel_build_triangle_checkErrors",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
     "steps": [
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold geometry and materials for our triangle",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Add a View, which will render an independent view of the Scene within the\ngiven DOM element. If this call did not succeed, then\ninstead of returning a View, it will return an SDKError that will indicate\nwhat failed. In this example, we'll not assume that\nour method calls always succeed, so we'll first check if they return an\nSDKError.",
+      "Position the View's Camera",
       "Default\nDefault\nDefault",
+      "Configure the Camera's PerspectiveProjection",
       "Default\nDefault\nDefault\nDefault",
       "FIXME",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Within the Scene, create a SceneModel to hold geometry and materials for our model",
+      "Create a SceneGeometry that defines that shape of our triangle",
+      "Create a SceneMesh that defines both the shape and\nthe surface appearance of our triangle",
       "Default",
       "Default",
-      "demoHelper.log(`SceneModel built`);",
-      "demoHelper.log(`SceneModel destroyed`);",
-      "Now the SceneModel appears in the View"
+      "Create a SceneObject that defines the triangle object itself",
+      "Build the SceneModel, which causes the triangle to appear in the View's canvas.",
+      "At this point, the View will contain a single ViewObject that has the same\nID as the SceneObject. Through the ViewObject, we can now update the\nappearance of the box in that View."
     ]
   },
   "SceneModel_fromParams_box": {
     "title": "Building and viewing a box-shaped SceneModel, from JSON",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromParams method to load a SceneModelParams into the SceneModel. The Viewer then draws the SceneModel in the View's canvas.",
     "id": "SceneModel_fromParams_box",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
     "steps": [
-      "TrianglesPrimitive (defined in @xeokit/constants)\n64-bit floats"
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Give the Viewer a single View to render the Scene in our HTML canvas element",
+      "Position the View's Camera",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Create a SceneModel to hold geometry and materials. We'll\ncreate the SceneModel in one shot from a SceneModelParams. In this example,\nwe create our SceneGeometry from uncompressed, double-precision floating\npoint values.",
+      "TrianglesPrimitive (defined in @xeokit/constants)\n64-bit floats",
+      "Build the SceneModel, causing the red box to appear in the View's canvas.",
+      "At this point, the View will contain a single ViewObject that has the same\nID as the SceneObject. Through the ViewObject, we can now update the\nappearance of the box in that View."
     ]
   },
   "SceneModel_fromParams_box_compressedGeometry": {
     "title": "Building and viewing a box-shaped SceneModel, from JSON, using compressed geometry",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromParams method to load a SceneModelParams containing compressed geometry into the SceneModel. The Viewer then draws the SceneModel in the View's canvas.",
     "id": "SceneModel_fromParams_box_compressedGeometry",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
     "steps": [
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore this DemoHelper",
+      "Give the Viewer a single View to render the Scene in our HTML canvas element",
+      "Position the View's Camera",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Create a SceneModel to hold geometry and materials. We'll\ncreate the SceneModel from an argument of type SceneModelParams. In this example,\nwe create our SceneGeometry with vertex positions that are quantized\nto 16-bit integer values within the range indicated by the axis-aligned\n3D boundary specified by parameter aabb.",
       "TrianglesPrimitive (defined in @xeokit/constants)",
-      "16-bit unsigned integers"
+      "16-bit unsigned integers",
+      "Build the SceneModel, causing the red box to appear in the View's canvas.",
+      "At this point, the View will contain a single ViewObject that has the same\nID as the SceneObject. Through the ViewObject, we can now update the\nappearance of the box in that View."
     ]
   },
   "SceneModel_fromParams_geometries": {
     "title": "Building and viewing a SceneModel containing various geometry types, from JSON",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from a SceneModelParams, containing a set of SceneMeshs that represent various geometric primitives.",
     "id": "SceneModel_fromParams_geometries",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
-    "steps": []
+    "steps": [
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Give the Viewer a single View to render the Scene in our HTML canvas element",
+      "Position the View's Camera",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Within the Scene, create a SceneModel to hold geometry\nand materials for our model. We'll create an empty SceneModel,\nthen populate it with JSON that conforms to the schema defined\nby the SceneModelParams interface.",
+      "Build the SceneModel, causing the various geometries to appear\nin the View's canvas.",
+      "At this point, the View will contain a single ViewObject that has the same ID as the SceneObject. Through\nthe ViewObject, we can update the appearance of our geometries in that View."
+    ]
   },
   "SceneModel_fromParams_streamable_geometries": {
     "title": "Building and viewing a SceneModel containing various geometry types, from JSON",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from a SceneModelParams, containing a set of SceneMeshs that represent various geometric primitives.",
     "id": "SceneModel_fromParams_streamable_geometries",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
-    "steps": []
+    "steps": [
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Within the Scene, create a SceneModel to hold geometry and materials for our model"
+    ]
   },
   "SceneModel_fromParams_table": {
     "title": "Building and viewing a table-shaped SceneModel, from JSON",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from SceneModelParams that represents a simple kitchen table. The SceneModel has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives.",
     "id": "SceneModel_fromParams_table",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
     "steps": [
-      "SceneModelParams",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Give the Viewer a single View to render the Scene in our HTML canvas element",
+      "Position the View's Camera",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Within the Scene, create a SceneModel to hold geometry and materials for our model. We'll create\nan empty SceneModel, then populate it with JSON that conforms to the schema defined by type SceneModelParams.",
       "SceneModelParams",
       "v0-v1-v2-v3 front\nv0-v3-v4-v1 right\nv0-v1-v6-v1 top\nv1-v6-v7-v2 left\nv7-v4-v3-v2 bottom\nv4-v7-v6-v1 back",
-      "front\nright\ntop\nleft\nbottom"
+      "front\nright\ntop\nleft\nbottom",
+      "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel.",
+      "At this point, the View will contain five ViewObjects that have the same\nIDs as our SceneObjects. Through these ViewObjects, we can update the\nappearance of our model elements in that View. We'll make the yellow leg\ntranslucent, highlight the red leg and make the tabletop green.",
+      "We can also apply these sorts of updates in batches, to multiple\nViewObjects at a time. The View remembers the IDs of whetever\nViewObjects we update, so we can use such batch updates to restore the\nViewObjects to their original states."
     ]
   },
   "SceneModel_fromParams_triangle": {
     "title": "Building and viewing a simple SceneModel, from JSON",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from SceneModelParams that contains a single triangle. The SceneModel has one SceneObject, one SceneMesh, and one SceneGeometry, which contains the triangle geometry.",
     "id": "SceneModel_fromParams_triangle",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
     "steps": [
-      "TrianglesPrimitive (defined in @xeokit/constants)"
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Give the Viewer a single View to render the Scene in our HTML canvas element",
+      "Position the View's Camera",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "TrianglesPrimitive (defined in @xeokit/constants)",
+      "Build the SceneModel, which causes the triangle to appear in the View's canvas.",
+      "At this point, the View will contain a single ViewObject that has the same\nID as the SceneObject. Through the ViewObject, we can now update the\nappearance of the box in that View."
     ]
   },
   "SceneModel_retainedFalse": {
     "title": "Building and viewing a SceneModel, without retaining geometry in Browser memory",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a table-shaped model. Configure the SceneModel with retained: false, which causes it to not retain SceneObject, SceneMesh and SceneGeometrys in browser memory, which results in a smaller memory footprint. The Viewer then draws the model in the View's canvas, while the model's geometry and materials reside entirely in GPU memory.",
     "id": "SceneModel_retainedFalse",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
     "steps": [
-      "--------------------------------------------------------------------------------\nCreate a \"non-retained\" SceneModel\n\nOur SceneModel is configured with retained: false, when we build our\nSceneModel, the SceneGeometry, SceneMesh and SceneObjects we created\nwithin it will be cleared from it to save browser memory.\n\nThe Viewer will then still contain ViewObjects for the SceneModel until we\ncall SceneModel.destroy().\n--------------------------------------------------------------------------------",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Give the Viewer a single View to render the Scene in our HTML canvas element",
+      "Position the View's Camera",
+      "Create a \"non-retained\" SceneModel.\nOur SceneModel is configured with retained: false, so that when we build our\nSceneModel, the SceneGeometry, SceneMesh and SceneObjects we created\nwithin it will be cleared from it to save browser memory.\nThe Viewer will then still contain ViewObjects for the SceneModel until we\ncall SceneModel.destroy().",
       "<<------------- Geometry, meshes and objects are not retained",
       "front\nright\ntop\nleft\nbottom",
-      "Since our SceneModel was configured with retained: false, when we build our\nSceneModel, the SceneGeometry, SceneMesh and SceneObjects we created\nwithin it are cleared from it.",
-      "The Viewer will still contain ViewObjects for the SceneObjects until we\ncall Scene.destroy()."
+      "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel.",
+      "At this point, the View will contain five ViewObjects that have the same\nIDs as our SceneObjects.\nSince our SceneModel was configured with retained: false, when we build our\nSceneModel, the SceneGeometry, SceneMesh and SceneObjects we created\nwithin it are now cleared from it. The Viewer will still contain ViewObjects for\nthe SceneObjects until we call SceneModel.destroy().\nThrough these ViewObjects, we can update the appearance of our model elements\nin that View. We'll make the yellow leg translucent, highlight the red leg and\nmake the tabletop green.",
+      "We can also apply these sorts of updates in batches, to multiple\nViewObjects at a time. The View remembers the IDs of whetever\nViewObjects we update, so we can use such batch updates to restore the\nViewObjects to their original states."
     ]
   },
   "TreeView_AggregationHierarchy": {
     "title": "Using a TreeView configured with AggregationHierarchy",
     "summary": "",
     "id": "TreeView_AggregationHierarchy",
-    "type": "example"
+    "type": "example",
+    "steps": [
+      "cdn.jsdelivr.net/npm/web-ifc@0.0.51/web-ifc-api.js\";",
+      "cdn.jsdelivr.net/npm/web-ifc@0.0.51/\");"
+    ]
   },
   "TreeView_GroupsHierarchy": {
     "title": "Using a TreeView configured with GroupsHierarchy",
@@ -258,37 +460,151 @@
     "title": "Creating a Viewer with automatic ViewLayers",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. For the View, configure autoLayers=true. In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, also create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. The View then contains two ViewsLayers, \"modelLayer\" containing the model, and \"gridLayer\" containing the grid.",
     "id": "ViewLayer_auto",
-    "type": "example"
+    "type": "example",
+    "steps": [
+      "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
+      "Create a Scene to hold geometry and materials for our model",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Create a View, configured to automatically create ViewLayers on-demand, whenever they are\nspecified by a SceneModel's \"viewLayer\" configuration",
+      "<<------------- Default",
+      "Set the View's Camera to look at a point five meters above the\ncenter of the World coordinate system",
+      "Attach a CameraControl to the View",
+      "Create a SceneModel and use loadGLTF load a building model into it.\n\nThe SceneModel specifies that its SceneObject components will\nbelong to ViewLayer \"modelLayer\".\n\nThe \"modelLayer\" ViewLayer is then created on-demand in our View, because we\nconfigured the View with autoLayers: true (which is the default).",
+      "Create another SceneModel and programmatically\nconstruct a wireframe ground plane grid.\n\nThe SceneModel specifies that its SceneObject instances will\nbelong to ViewLayer \"gridLayer\".\n\nThe \"gridLayer\" ViewLayer is then created on-demand in our View, because we\nconfigured the View with autoLayers: true (which is the default).",
+      "Highlight the ViewObjects in ViewLayer \"gridLayer\""
+    ]
   },
   "ViewLayer_manual": {
     "title": "Creating a Viewer with manual ViewLayers",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. For the View, configure autoLayers=false. In the View, create two ViewLayers; \"modelLayer\" and \"gridLayer\". In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, also create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. The View then contains two ViewsLayers, \"modelLayer\" containing the model, and \"gridLayer\" containing the grid.",
     "id": "ViewLayer_manual",
-    "type": "example"
+    "type": "example",
+    "steps": [
+      "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
+      "Create a Scene to hold geometry and materials for our model",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Create a View, attach a CameraControl",
+      "<<------------- Default is false",
+      "Manually create two ViewLayers in our View",
+      "Create a SceneModel and load a building model into it.\n\nThe SceneModel specifies that its SceneObject instances will\nbelong to ViewLayer \"modelLayer\".\n\nThe \"modelLayer\" ViewLayer is expected to already exist in our View, because we\nconfigured the View with autoLayers: false (true is the default).",
+      "Create another SceneModel and programmatically\nconstruct a wireframe ground plane grid.\n\nThe SceneModel specifies that its SceneObject instances will\nbelong to ViewLayer \"gridLayer\".\n\nThe \"gridLayer\" ViewLayer is expected to already exist in our View, because we\nconfigured the View with autoLayers: false (true is the default).",
+      "Highlight the ViewObjects in ViewLayer \"gridLayer\""
+    ]
   },
   "ViewLayer_multiView": {
     "title": "Creating a Viewer with multiple Views and ViewLayers",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. For each View, configure autoLayers=false. In the first and second Views, create two ViewLayers; \"modelLayer\" and \"gridLayer\". In the third View, create just a \"modelLayer\" ViewLayer. In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. Thanks to the masking effect of the ViewLayers, the Viewer then draws the model in all three Views, but only draws the grid in the first and second Views.",
     "id": "ViewLayer_multiView",
-    "type": "example"
+    "type": "example",
+    "steps": [
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold model geometry and materials",
+      "Create a Data to hold semantic information about the model",
+      "Create a WebGLRenderer to use the browser's WebGL API for rendering",
+      "Create a Viewer which uses the WebGLRenderer to render the Scene",
+      "Ignore the DemoHelper",
+      "Create the first View. This View has a perspective projection, is looking at the model from the side, and is configured\nto not automatically create ViewLayers on-demand.",
+      "<<--------- Don't automatically create ViewLayers on-demand",
+      "Create two ViewLayers in the first View - \"modelLayer\" and \"gridLayer\"",
+      "Create the second View. This View has an orthographc projection, is looking at the model along a diagonal axis,\nand like the previous View, is configured to not automatically create ViewLayers on-demand.",
+      "Create two ViewLayers in the second View - \"modelLayer\" and \"gridLayer\"",
+      "Create the second View. This View has a perspective projection, is looking at the model along a diagonal axis,\nand like the previous two Views, is configured to not automatically create ViewLayers on-demand.",
+      "Create one ViewLayer in the third View - \"modelLayer\"",
+      "Attach a CameraControl to each View, to control\nits Camera with mouse and touch input",
+      "Create a SceneModel and use loadGLTF to load a house model into it.\nThis SceneModel will appear in ViewLayer \"modelLayer\".\nSince that ViewLayer is in all three Views, the SceneModel will then\nappear in all three Views.",
+      "Create another SceneModel and programmatically\nconstruct a wireframe ground plane grid.\n\nThe SceneModel specifies that its SceneObject instances will\nbelong to ViewLayer \"gridLayer\".\n\nThe \"gridLayer\" ViewLayer is expected to already exist in our View, because we\nconfigured the View with autoLayers: false (true is the default).",
+      "Highlight the ViewObjects in ViewLayer \"gridLayer\""
+    ]
+  },
+  "ViewLayer_multiView_lighting": {
+    "title": "Creating a Viewer with multiple Views and light sources",
+    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. For each View, configure autoLayers=false. In the first and second Views, create a ViewLayer with ID \"viewlayer1\". In the third View, create a ViewLayer with ID \"viewLayer2\". In the Scene, create a SceneModel assigned to \"viewLayer1\" and use loadXGF to load an XGF model into it. In the Scene, create another SceneModel assigned to \"viewLayer2\" and use loadGLTF to load a glTF model into it. Thanks to the masking effect of the ViewLayers, the Viewer then draws the XGF model in the first two Views, and the glTF model in the third View.",
+    "id": "ViewLayer_multiView_lighting",
+    "type": "example",
+    "steps": [
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold model geometry and materials",
+      "Create a Data to hold semantic information about the model",
+      "Create a WebGLRenderer to use the browser's WebGL API for rendering",
+      "Ignore the DemoHelper",
+      "Create a Viewer which uses the WebGLRenderer to render the Scene",
+      "Create the first View. This View has a perspective projection, looking at the center of the model along a diagonal axis.",
+      "Replace the first View's light sources with our own AmbientLight and DirLight instances.",
+      "Attach a CameraControl to the first View, to control the Camera with keyboard, mouse and touch input.",
+      "Create the second View. This View has a perspective projection, and is looking\nat the denter of the model from along a diagonal axis.",
+      "Add a CameraControl to the second View.",
+      "Replace the second View's light sources with our own AmbientLight and DirLight instances.",
+      "Create the third View. This View has a perspective projection, and is also looking\nat the denter of the model from along a diagonal axis.",
+      "Add a CameraControl to the third View.",
+      "Replace the third View's light sources with our own AmbientLight and DirLight instances.",
+      "Create a SceneModel and use loadGLTF load a building model into it.",
+      "Build the SceneModel.\nEach View will now contain its own ViewObject for each SceneObject in the SceneModel, illuminated\nby its own custom light sources. Via those ViewObjects, we can then control the appearance of\neach of our model objects independently in each View."
+    ]
   },
   "ViewLayer_multiView_multiModels": {
     "title": "Creating a Viewer with multiple Views and ViewLayers",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. For each View, configure autoLayers=false. In the first and second Views, create a ViewLayer with ID \"viewlayer1\". In the third View, create a ViewLayer with ID \"viewLayer2\". In the Scene, create a SceneModel assigned to \"viewLayer1\" and use loadXGF to load an XGF model into it. In the Scene, create another SceneModel assigned to \"viewLayer2\" and use loadGLTF to load a glTF model into it. Thanks to the masking effect of the ViewLayers, the Viewer then draws the XGF model in the first two Views, and the glTF model in the third View.",
     "id": "ViewLayer_multiView_multiModels",
-    "type": "example"
+    "type": "example",
+    "steps": [
+      "Import xeokit SDK from the JavaScript bundle that we've built for these examples",
+      "Create a Viewer with a Scene and a WebGLRenderer",
+      "Create View 1 - perspective projection, looking at the model from the side.\nConfigure the View to not automatically create ViewLayers on-demand.\nCreate a ViewLayer in the View for the model.",
+      "Create View 2  - orthographic, looking at the model from above.\nConfigure the View to not automatically create ViewLayers on-demand.\nCreate a ViewLayer in the View for the grid.",
+      "Create View 3 - perspective projection, looking at the model from the side.\nConfigure the View to not automatically create ViewLayers on-demand.\nCreate a ViewLayer for the model.",
+      "Create a SceneModel containing a simple house model. This SceneModel will appear in ViewLayer \"viewLayer1\".",
+      "Create another SceneModel, containing a different house model. This SceneModel will appear in ViewLayer \"viewLayer2\"."
+    ]
   },
   "View_multiView_SceneModel_build_table": {
     "title": "Building a table-shaped SceneModel in multiple Views",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple table-shaped model. The Viewer then draws the model in each View's canvas. Meanwhile, orbit the primary View's Camera.",
     "id": "View_multiView_SceneModel_build_table",
-    "type": "example"
+    "type": "example",
+    "steps": [
+      "Import xeokit SDK from a JS bundle built specially for these examples",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Create the first View, with perspective projection, looking at the Scene from the side",
+      "Create the second View, with orthographic projection, looking at the Scene from above",
+      "Create the third View, with perspective projection, looking at the Scene from the front",
+      "Attach CameraControls to the Views, to control\neach View independently with keyboard, mouse and touch input",
+      "Create SceneModel to hold geometry and materials",
+      "Create a box-shaped SceneGeometry, which we'll reuse for the tabletop and legs.",
+      "front\nright\ntop\nleft\nbottom",
+      "Create SceneObjects to represent the tabletop and legs. Each SceneObject\ngets a SceneMesh that instances the SceneGeometry, configured with a color\nand a 4x4 modeling transform matrix to apply to the SceneGeometry's\nvertex positons.",
+      "Build the SceneModel. Each of our three Views will now contain five\nViewObjects corresponding to the SceneObjects in our SceneModel. Each\nViewObject has the same ID as its SceneObject. Put differently, each SceneObject has\nthree ViewObjects that have its ID, with each of the three ViewObjects\nresiding in a different View.",
+      "Through these ViewObjects, we can update the\nappearance of our model elements in that View.",
+      "view1.camera.orbitYaw(.5);",
+      "view2.camera.orbitPitch(3);"
+    ]
   },
   "View_multiView_drawBox": {
     "title": "Building a box-shaped SceneModel in multiple Views",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple box-shaped triangle mesh. The Viewer then draws the box in each View's canvas. While this is happening, orbit each View's Camera and animate the colors of the object in the main View.",
     "id": "View_multiView_drawBox",
-    "type": "example"
+    "type": "example",
+    "visualTest": true,
+    "steps": [
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that renders our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Create the first View - perspective projection, looking at the model from the side",
+      "Create the second View - orthographic projection, looking at the model from above",
+      "Create the third View, with default perspective projection",
+      "Attach a CameraControl to each View, to control\nits Camera with mouse and touch input",
+      "Create a SceneModel to hold model geometry and materials.\nWe'l create it from a single argument of type SceneModelParams.",
+      "Build the SceneModel. The View will now contain a ViewObject for each SceneObject in the SceneModel.",
+      "The box SceneModel only contains a single SceneObject. Each View will therefore each contain a\nsingle ViewObject through which we can programmatically update the appearance of the box in that\nView. Let's colorize the box differently in each View.",
+      "Slowly orbit each View's Camera",
+      "Periodically re-colorize the box in each View"
+    ]
   },
   "View_multiView_loadWebIFC": {
     "title": "Viewing an IFC model in multiple Views",
@@ -297,19 +613,107 @@
       "IfcOpenHouse4/ifc"
     ],
     "id": "View_multiView_loadWebIFC",
-    "type": "example"
+    "type": "example",
+    "visualTest": true,
+    "steps": [
+      "Import xeokit SDK from a JS bundle built specially for these examples",
+      "Import the WebIFC API from the CDN",
+      "cdn.jsdelivr.net/npm/web-ifc@0.0.51/web-ifc-api.js\";",
+      "Ignore the DemoHelper",
+      "Create a Scene to hold model geometry and materials",
+      "Create a Data to hold model semantic data",
+      "create a WebGLRenderer to use the browser's WebGL API for rendering",
+      "Create a Viewer that will use the WebGLRenderer to draw the Scene",
+      "Ignore the DemoHelper",
+      "Create the first View, with a perspective projection, looking at the model from the side",
+      "Create the second View, with an orthographic projection, looking at the model from above",
+      "Create the third View, with a perspective projection, looking at the model from the side",
+      "Attach a CameraControls to each View, to control\nits Camera independently with keyboard, mouse and touch input",
+      "Create SceneModel to hold geometry",
+      "Create DataModel to hold semantic data",
+      "Instantiate the WebIFC API",
+      "Connect the WebIFC API to its WASM core module",
+      "cdn.jsdelivr.net/npm/web-ifc@0.0.51/\");",
+      "Initialize the WebIFC API",
+      "Use loadWebIFC, equipped with the WebIFC API, to load an IFC 4x3 model into our SceneModel and DataModel",
+      "Build the SceneModel and DataModel.\nThe View will now contain a ViewObject for each SceneObject in the SceneModel.\nVia those ViewObjects, we can then control the appearance of each of our model objects in the View.",
+      "viewer.onTick.subscribe(() => {\nview1.camera.orbitYaw(.5);\nview2.camera.orbitYaw(-1.3);\n});"
+    ]
   },
   "View_multiView_renderModes": {
     "title": "Viewing an IFC model in multiple Views, with different render modes",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views, along with a Data. In the Scene, we create a SceneModel, and in the Data we create a DataModel. Then we load JSON into the SceneModel and DataModel. The Viewer then draws the model in each View's canvas. We also set the renderMode of the first View to QualityRender and the other two Views to FastRender.",
     "id": "View_multiView_renderModes",
-    "type": "example"
+    "visualTest": true,
+    "type": "example",
+    "steps": [
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold model geometry and materials",
+      "Create a Data to hold semantic information about the model",
+      "Create a WebGLRenderer to use the browser's WebGL API for rendering",
+      "Create a Viewer which uses the WebGLRenderer to render the Scene",
+      "Ignore the DemoHelper",
+      "Create the first View. This View has a perspective projection, looking at the model from the side, and is initially\nset to render in QualityRender mode.",
+      "Add a CameraControl to the first View, to control its Camera with keyboard, mouse and touchpad input.",
+      "Configure the first View's edge enhancement and ambient shadows effects\nto apply in QualityRender mode",
+      "Create the second View. This View has an orthographc projection, looking at the model from the top, and is initially\nset to render in FastRender mode.",
+      "Add a CameraControl to the second View.",
+      "Configure the second View's edge enhancement and ambient shadows effects\nto apply only in QualityRender mode.",
+      "Create the second View. This View has a perspective projection, looking at the model from the front, and is initially\nset to render in FastRender mode.",
+      "Add a CameraControl to the third View.",
+      "Configure the third View's edge enhancement and ambient shadows effects\nto apply in QualityRender mode; they will not apply as long as the third\nView remains in FastRender mode.",
+      "Create a SceneModel to hold our model's geometry and materials",
+      "Load a model from JSON-encoded format, which has the schema defined by SceneModelParams",
+      "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel."
+    ]
+  },
+  "View_pick_canvasPos": {
+    "title": "Picking an object with the mouse",
+    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple table-shaped model. The Viewer then draws the model in each View's canvas. Meanwhile, orbit the primary View's Camera.",
+    "id": "View_pick_canvasPos",
+    "type": "example",
+    "visualTest": false,
+    "steps": [
+      "Import xeokit SDK from a JS bundle built specially for these examples",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Give the Viewer a single View to render the Scene in our HTML canvas element",
+      "Position the View's Camera",
+      "Add a CameraControl to interactively control the View's Camera with keyboard,\nmouse and touch input",
+      "Create a SceneModel to hold geometry and materials",
+      "Create a box-shaped SceneGeometry, which we'll reuse for the tabletop and legs.",
+      "front\nright\ntop\nleft\nbottom",
+      "Create SceneObjects to represent the tabletop and legs. Each SceneObject\ngets a SceneMesh that instances the SceneGeometry, configured with a color\nand a 4x4 modeling transform matrix to apply to the SceneGeometry's\nvertex positons.",
+      "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel.",
+      "At this point, the View will contain five ViewObjects that have the same\nIDs as our SceneObjects. Through these ViewObjects, we can update the\nappearance of our model elements in that View.",
+      "Finally, we'll bind a \"mousemove\" listener to the View's canvas. Whenever\nwe get the event, we'll attempt to pick the closest ViewObject that lies\nat the event's mouse coordinates within the canvas. The returned PickResult\nwill provide the results of each pick attempt.",
+      "If we succeed in picking a ViewObject, then get the ViewObject\nfrom the PickResult and highlight it.",
+      "if (!event) {\nevent = window.event;",
+      "} else {\nconst { left, top } = htmlElement.getBoundingClientRect();\ncanvasPos[0] = event.clientX - left;\ncanvasPos[1] = event.clientY - top;\n}"
+    ]
   },
   "View_worldAxis_SceneModel": {
     "title": "Viewing a SceneModel with +Z configured as up",
     "summary": "Create a Viewer configured with a WebGLRenderer, a Scene and a View. Configure the View's 3D coordinate system to use +Z as the direction of 'up'. In the Scene, build a SceneModel that represents a simple kitchen table. The Viewer then draws the SceneModel in the View.",
     "id": "View_worldAxis_SceneModel",
-    "type": "example"
+    "type": "example",
+    "visualTest": true,
+    "steps": [
+      "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
+      "Create a Scene to hold model geometry and materials",
+      "Create a Viewer which uses the WebGLRenderer to render the Scene",
+      "Create a View that renders to a canvas in the DOM",
+      "Set the View's World-space coordinate axis to make +Z \"up\"",
+      "Right +X\nUp +Z\nForward -Y",
+      "Arrange the View's Camera within our +Z \"up\" coordinate system",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Create a SceneModel to hold geometry and materials",
+      "Create a box-shaped SceneGeometry, which we'll reuse for the tabletop and legs.",
+      "front\nright\ntop\nleft\nbottom",
+      "Create SceneObjects to represent the tabletop and legs. Each SceneObject\ngets a SceneMesh that instances the SceneGeometry, configured with a color\nand a 4x4 modeling transform matrix to apply to the SceneGeometry's\nvertex positons.",
+      "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel."
+    ]
   },
   "View_worldAxis_loadCityJSON": {
     "title": "Viewing a CityJSON model with +Z configured as up direction",
@@ -318,7 +722,25 @@
       "LoD3_Railway/cityjson"
     ],
     "id": "View_worldAxis_loadCityJSON",
-    "type": "example"
+    "type": "example",
+    "visualTest": true,
+    "steps": [
+      "Import the SDK from a bundle built for these examples",
+      "Create a Scene to hold geometry and materials",
+      "Create a Data to hold semantic data",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that draws our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Give the Viewer a single View to render the Scene in our HTML canvas element",
+      "Configure the View's World-space coordinate axis to make the +Z axis \"up\"",
+      "Right +X\nUp +Z\nForward -Y",
+      "Arrange the View's Camera within our +Z \"up\" coordinate system",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Configure our View to automatically reposition its Camera\nto view the entire Scene whenever a new SceneModel is created. We'll\nuse a CameraFlightAnimation to reposition the Camera.",
+      "Create a SceneModel to hold model geometry and materials",
+      "Create a DataModel to hold IFC data for our model",
+      "Use loadCityJSON to load a CityJSON into our SceneModel and DataModel",
+      "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel."
+    ]
   },
   "Viewer_drawTriangle": {
     "title": "Building and viewing a SceneModel containing a single 3D triangle",
@@ -336,42 +758,109 @@
     "title": "Drawing a triangle, logging all events",
     "summary": "Create a Viewer configured with a WebGLRenderer and a Scene. Then build a SceneModel with a simple triangle geometry, while logging all events fired by the Viewer.",
     "id": "Viewer_drawTriangle_getEvents",
-    "type": "example"
+    "type": "example",
+    "steps": [
+      "viewLayer.onObjectXRayed.subscribe((viewLayer, viewObject) => {\ndemoHelper.log(`ViewObject ${viewObject.id} set xrayed = ${viewObject.xrayed ? \"true\" : \"false\"} in ViewLayer ${viewLayer.id}`);\n});",
+      "Default\nDefault\nDefault",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Default\nDefault\nDefault\nDefault"
+    ]
   },
   "Viewer_fromParams": {
     "title": "Configuring a Viewer with ViewerParams; Creating a new View",
     "summary": "Create a Viewer with a WebGLRenderer and a Scene, but no Views. Within the Scene, create a SceneModel that contains a single 3D triangle. Configure the Viewer with the given ViewerParams, which contains one ViewParams. The Viewer then creates itself a View using those ViewParams.",
     "id": "Viewer_fromParams",
-    "type": "example"
+    "type": "example",
+    "visualTest": true,
+    "steps": [
+      "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
+      "Create a Scene to hold geometry and materials for our model",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Configure the Viewer using the given ViewerParams object. This will\ncreate and configure a single View within the Viewer.",
+      "Add a CameraControl to interactively control the View's Camera with keyboard,\nmouse and touch input",
+      "Within the Scene, create a SceneModel to hold geometry and materials for\nour model",
+      "TrianglesPrimitive (defined in @xeokit/constants)\n64-bit floats",
+      "Build the SceneModel, causing the model to appear in the View's canvas."
+    ]
   },
   "Viewer_fromParams_existingView": {
     "title": "Configuring a Viewer with ViewerParams; Updating a pre-existing View",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Configure the Viewer with the given ViewerParams, which have a ViewParams with the same ID as the View. The View then receives whatever updated properties are provided in the ViewParams.",
     "id": "Viewer_fromParams_existingView",
-    "type": "example"
+    "type": "example",
+    "visualTest": true,
+    "steps": [
+      "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
+      "Create a Scene to hold geometry and materials for our model",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Add a View, which will render an independent view of the Scene within the\ngiven DOM element.",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Configure the Viewer using the given ViewerParams object. This will\nconfigure the View that we just created, plus various other Viewer\ncomponents and modes.",
+      "ViewerParams",
+      "ViewParams\nwill configure the \"demoView\" View we created earlier",
+      "ViewerParams",
+      "ViewParams\nwill configure the \"demoView\" View we created earlier",
+      "Add a CameraControl to interactively control the View's Camera with keyboard,\nmouse and touch input",
+      "Within the Scene, create a SceneModel to hold geometry and materials for\nour model",
+      "TrianglesPrimitive (defined in @xeokit/constants)\n64-bit floats",
+      "Build the SceneModel, causing the model to appear in the View's canvas."
+    ]
   },
   "Viewer_getCapabilities": {
     "title": "Querying Viewer capabilities",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Query the Capabilities of the Viewer.",
     "id": "Viewer_getCapabilities",
-    "type": "example"
+    "type": "example",
+    "steps": [
+      "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
+      "Create a Scene to hold geometry and materials for our model",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Request the Viewer’s Capabilities to determine the features it supports.",
+      "Add a View, which will render an independent view of the Scene within the\ngiven DOM element.",
+      "Default\nDefault\nDefault",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Create a minimal SceneModel that contains a single triangle",
+      "Build the SceneModel, which causes the triangle to appear in the View's canvas.",
+      "At this point, the View will contain a single ViewObject that has the same\nID as the SceneObject. Through the ViewObject, we can now update the\nappearance of the triangle in that View."
+    ]
   },
   "Viewer_toParams": {
     "title": "Saving a Viewer Configuration to ViewParams",
     "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Get the Viewer's current configuration as a ViewerParams. Stringify and log the ViewParams to the console. Using the ViewerParams, we can then create a second Viewer, that has exact same configuration as our first Viewer.",
     "id": "Viewer_toParams",
-    "type": "example"
+    "type": "example",
+    "steps": [
+      "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
+      "Create a Scene to hold geometry and materials for our model",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+      "Ignore the DemoHelper",
+      "Add a View, which will render an independent view of the Scene within the\ngiven DOM element.",
+      "Default\nDefault\nDefault",
+      "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+      "Create a minimal SceneModel that contains a single triangle",
+      "TrianglesPrimitive (defined in @xeokit/constants)\n64-bit floats",
+      "Build the SceneModel, which causes the triangle to appear in the View's canvas.",
+      "Serialize the Viewer's state to a JSON object of type ViewerParams."
+    ]
   },
   "Viewer_viewDotBIM": {
     "title": "Viewing a .BIM model and hiding IfcSpaces",
     "summary": "Create a Viewer with a WebGLRenderer and a Scene. Create a Data to hold model semantics. In the Viewer, create a View that draws to the canvas. Position the View's Camera to look at the center of the 3D coordinate system (default). Create a SceneModel in the Scene. Create a DataModel in the Data. Use loadDotBIM to load a DotBIM building model into the SceneModel and DataModel. Build the SceneModel and the DataModel. The SceneModel's objects will then appear in the View's canvas. Get all the DataObject instances in Data that represent IfcSpace elements in the model. For each of those DataObjects, get the corresponding SceneObject and ViewObject. Set those ViewObjects invisible, to ensure that we can see the model objects that are within each IfcSpace.",
     "id": "Viewer_viewDotBIM",
-      "type": "example",
+    "type": "example",
     "visualTest": true,
     "template": "basicPage",
     "steps": [
       "Import the pre-built demo bundle",
       "Create a Viewer with a Scene and a WebGLRenderer",
+      "Create a Scene to hold geometry and materials",
+      "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+      "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
       "Create a Data to hold semantic data",
       "Create a View",
       "Point the View's Camera at the center of the World coordinate system, looking down the -Z axis",

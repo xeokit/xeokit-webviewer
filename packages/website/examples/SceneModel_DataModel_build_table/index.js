@@ -213,12 +213,6 @@ demoHelper.init()
 
         dataModel.build(); // void | SDKError
 
-        if (buildResult instanceof xeokit.core.SDKError) {
-            console.error(buildResult.message);
-        } else {
-            // DataModel built OK
-        }
-
         // Create a SceneModel to hold geometry and materials
 
         const sceneModel = scene.createModel({

@@ -1,7 +1,23 @@
 {
-    "title": "Building a box-shaped SceneModel in multiple Views",
-    "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple box-shaped triangle mesh. The Viewer then draws the box in each View's canvas. While this is happening, orbit each View's Camera and animate the colors of the object in the main View.",
-    "id": "View_multiView_drawBox",
-    "type": "example",
-    "visualTest": true
+  "title": "Building a box-shaped SceneModel in multiple Views",
+  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple box-shaped triangle mesh. The Viewer then draws the box in each View's canvas. While this is happening, orbit each View's Camera and animate the colors of the object in the main View.",
+  "id": "View_multiView_drawBox",
+  "type": "example",
+  "visualTest": true,
+  "steps": [
+    "Import the SDK from a bundle built for these examples",
+    "Create a Scene to hold geometry and materials",
+    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+    "Create a Viewer that renders our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+    "Ignore the DemoHelper",
+    "Create the first View - perspective projection, looking at the model from the side",
+    "Create the second View - orthographic projection, looking at the model from above",
+    "Create the third View, with default perspective projection",
+    "Attach a CameraControl to each View, to control\nits Camera with mouse and touch input",
+    "Create a SceneModel to hold model geometry and materials.\nWe'l create it from a single argument of type SceneModelParams.",
+    "Build the SceneModel. The View will now contain a ViewObject for each SceneObject in the SceneModel.",
+    "The box SceneModel only contains a single SceneObject. Each View will therefore each contain a\nsingle ViewObject through which we can programmatically update the appearance of the box in that\nView. Let's colorize the box differently in each View.",
+    "Slowly orbit each View's Camera",
+    "Periodically re-colorize the box in each View"
+  ]
 }

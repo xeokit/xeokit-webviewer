@@ -3,5 +3,20 @@
   "summary": "Create a Viewer configured with a WebGLRenderer, a Scene and a View. Configure the View's 3D coordinate system to use +Z as the direction of 'up'. In the Scene, build a SceneModel that represents a simple kitchen table. The Viewer then draws the SceneModel in the View.",
   "id": "View_worldAxis_SceneModel",
   "type": "example",
-    "visualTest": true
+  "visualTest": true,
+  "steps": [
+    "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
+    "Create a Scene to hold model geometry and materials",
+    "Create a Viewer which uses the WebGLRenderer to render the Scene",
+    "Create a View that renders to a canvas in the DOM",
+    "Set the View's World-space coordinate axis to make +Z \"up\"",
+    "Right +X\nUp +Z\nForward -Y",
+    "Arrange the View's Camera within our +Z \"up\" coordinate system",
+    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
+    "Create a SceneModel to hold geometry and materials",
+    "Create a box-shaped SceneGeometry, which we'll reuse for the tabletop and legs.",
+    "front\nright\ntop\nleft\nbottom",
+    "Create SceneObjects to represent the tabletop and legs. Each SceneObject\ngets a SceneMesh that instances the SceneGeometry, configured with a color\nand a 4x4 modeling transform matrix to apply to the SceneGeometry's\nvertex positons.",
+    "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel."
+  ]
 }

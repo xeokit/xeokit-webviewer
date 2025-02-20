@@ -23,24 +23,12 @@ const viewer = new xeokit.viewer.Viewer({
 // Ignore the DemoHelper
 
 const demoHelper = new DemoHelper({
+    elementId: "info-container",
     viewer
 });
 
 demoHelper.init()
     .then(() => {
-
-        // Request the Viewer’s Capabilities to determine the features it supports.
-
-        const capabilities = viewer.capabilities;
-
-        demoHelper.log(`viewer.capabilities.headless = ${capabilities.headless}\n
-            viewer.capabilities.maxViews = ${capabilities.maxViews}\n
-            viewer.capabilities.dxtSupported = ${capabilities.dxtSupported}\n
-            viewer.capabilities.etc1Supported = ${capabilities.etc1Supported}\n
-            viewer.capabilities.etc2Supported = ${capabilities.etc2Supported}\n
-            viewer.capabilities.bptcSupported = ${capabilities.bptcSupported}\n
-            viewer.capabilities.astcSupported = ${capabilities.astcSupported}\n
-            viewer.capabilities.pvrtcSupported = ${capabilities.pvrtcSupported}`);
 
         // Add a View, which will render an independent view of the Scene within the
         // given DOM element.
@@ -63,32 +51,48 @@ demoHelper.init()
 
         const sceneModel = scene.createModel({
             id: "demoModel",
-            geometries: [{
-                id: "triangleGeometry",
-                primitive: xeokit.constants.TrianglesPrimitive,
-                positions: [0.0, 1.5, 0.0, -1.5, -1.5, 0.0, 1.5, -1.5, 0.0,],
-                indices: [0, 1, 2]
-            }],
-            meshes: [{
-                id: "triangleMesh",
-                geometryId: "triangleGeometry"
-            }],
-            objects: [{
-                id: "triangleObject",
-                meshIds: ["triangleMesh"]
-            }]
+            geometries: [
+                {
+                    id: "boxGeometry",
+                    primitive: 20002, // TrianglesPrimitive (defined in @xeokit/constants)
+                    positions: [ // 64-bit floats
+                        1.0, 1.0, 1.0, -1.0, 1.0, 1.0, -1.0, -1.0, 1.0, 1.0, -1.0, 1.0,
+                        1.0, 1.0, 1.0, 1.0, -1.0, 1.0, 1.0, -1.0, -1.0, 1.0, 1.0, -1.0,
+                        1.0, 1.0, 1.0, 1.0, 1.0, -1.0, -1.0, 1.0, -1.0, -1.0, 1.0, 1.0,
+                        -1.0, 1.0, 1.0, -1.0, 1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0,
+                        -1.0, -1.0, -1.0, 1.0, -1.0, -1.0, 1.0, -1.0, 1.0, -1.0, -1.0, 1.0,
+                        1.0, -1.0, -1.0, -1.0, -1.0, -1.0, -1.0, 1.0, -1.0, 1.0, 1.0, -1.0
+                    ],
+                    indices: [
+                        0, 1, 2, 0, 2, 3, 4, 5, 6, 4, 6, 7,
+                        8, 9, 10, 8, 10, 11, 12, 13, 14, 12, 14, 15,
+                        16, 17, 18, 16, 18, 19, 20, 21, 22, 20, 22, 23
+                    ]
+                }
+            ],
+            meshes: [
+                {
+                    id: "boxMesh",
+                    geometryId: "boxGeometry",
+                    color: [1, 1, 1, 1],
+                    opacity: 1
+                }
+            ],
+            objects: [
+                {
+                    id: "boxObject",
+                    meshIds: ["boxMesh"]
+                }
+            ]
         });
 
         // Build the SceneModel, which causes the triangle to appear in the View's canvas.
 
         sceneModel.build().then(() => {
 
-            // At this point, the View will contain a single ViewObject that has the same
-            // ID as the SceneObject. Through the ViewObject, we can now update the
-            // appearance of the triangle in that View.
+            // Serialize the Viewer's state to a JSON object of type ViewerParams.
 
-            view.objects["triangleObject"].highlighted = true;
-            view.setObjectsHighlighted(view.highlightedObjectIds, false);
+            console.log(JSON.stringify(viewer.getJSON(), null, 2));
 
             demoHelper.finished();
         });

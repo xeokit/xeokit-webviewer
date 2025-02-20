@@ -2,5 +2,18 @@
   "title": "Creating a Viewer with automatic ViewLayers",
   "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. For the View, configure autoLayers=true. In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, also create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. The View then contains two ViewsLayers, \"modelLayer\" containing the model, and \"gridLayer\" containing the grid.",
   "id": "ViewLayer_auto",
-  "type": "example"
+  "type": "example",
+  "steps": [
+    "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
+    "Create a Scene to hold geometry and materials for our model",
+    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
+    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
+    "Create a View, configured to automatically create ViewLayers on-demand, whenever they are\nspecified by a SceneModel's \"viewLayer\" configuration",
+    "<<------------- Default",
+    "Set the View's Camera to look at a point five meters above the\ncenter of the World coordinate system",
+    "Attach a CameraControl to the View",
+    "Create a SceneModel and use loadGLTF load a building model into it.\n\nThe SceneModel specifies that its SceneObject components will\nbelong to ViewLayer \"modelLayer\".\n\nThe \"modelLayer\" ViewLayer is then created on-demand in our View, because we\nconfigured the View with autoLayers: true (which is the default).",
+    "Create another SceneModel and programmatically\nconstruct a wireframe ground plane grid.\n\nThe SceneModel specifies that its SceneObject instances will\nbelong to ViewLayer \"gridLayer\".\n\nThe \"gridLayer\" ViewLayer is then created on-demand in our View, because we\nconfigured the View with autoLayers: true (which is the default).",
+    "Highlight the ViewObjects in ViewLayer \"gridLayer\""
+  ]
 }
