@@ -1,22 +1,8 @@
 {
-  "title": "Building and viewing a SceneModel, without retaining geometry in Browser memory",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a table-shaped model. Configure the SceneModel with retained: false, which causes it to not retain SceneObject, SceneMesh and SceneGeometrys in browser memory, which results in a smaller memory footprint. The Viewer then draws the model in the View's canvas, while the model's geometry and materials reside entirely in GPU memory.",
   "id": "SceneModel_retainedFalse",
-  "type": "example",
-  "visualTest": true,
-  "template": "basicPage",
-  "steps": [
-    "Create a Scene to hold geometry and materials",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Ignore the DemoHelper",
-    "Give the Viewer a single View to render the Scene in our HTML canvas element",
-    "Position the View's Camera",
-    "Create a \"non-retained\" SceneModel.\nOur SceneModel is configured with retained: false, so that when we build our\nSceneModel, the SceneGeometry, SceneMesh and SceneObjects we created\nwithin it will be cleared from it to save browser memory.\nThe Viewer will then still contain ViewObjects for the SceneModel until we\ncall SceneModel.destroy().",
-    "<<------------- Geometry, meshes and objects are not retained",
-    "front\nright\ntop\nleft\nbottom",
-    "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel.",
-    "At this point, the View will contain five ViewObjects that have the same\nIDs as our SceneObjects.\nSince our SceneModel was configured with retained: false, when we build our\nSceneModel, the SceneGeometry, SceneMesh and SceneObjects we created\nwithin it are now cleared from it. The Viewer will still contain ViewObjects for\nthe SceneObjects until we call SceneModel.destroy().\nThrough these ViewObjects, we can update the appearance of our model elements\nin that View. We'll make the yellow leg translucent, highlight the red leg and\nmake the tabletop green.",
-    "We can also apply these sorts of updates in batches, to multiple\nViewObjects at a time. The View remembers the IDs of whetever\nViewObjects we update, so we can use such batch updates to restore the\nViewObjects to their original states."
-  ]
+  "title": "Building a model without retaining geometry in Browser memory",
+  "description": "Using the xeokit SDK to build and view a model, without retaining geometry in Browser memory",
+  "isTutorial": false,
+  "isVisualTest": true,
+  "template": "basicPage"
 }

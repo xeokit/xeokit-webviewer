@@ -37,7 +37,7 @@ demoHelper.init()
 
         // Position the View's Camera
 
-        view.camera.eye = [0, 0, 10]; // Default
+        view.camera.eye = [0, 0, 7]; // Default
         view.camera.look = [0, 0, 0]; // Default
         view.camera.up = [0, 1, 0]; // Default
 

@@ -1,27 +1,7 @@
 {
-  "title": "Viewing a CityJSON model with +Z configured as up direction",
-  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene and a View. Create a Data. Within the View, configure its Camera's worldAxis to effectively make +Z the direction of 'up' within the View's 3D World coordinate system. In the Scene, create a SceneModel, and in the Data create a DataModel. Then use loadCityJSON to load a CityJSON file into the SceneModel and DataModel. The Viewer then draws the CityJSON model in the View.",
-  "models": [
-    "LoD3_Railway/cityjson"
-  ],
   "id": "View_worldAxis_loadCityJSON",
-  "type": "example",
-  "visualTest": true,
-  "steps": [
-    "Import the SDK from a bundle built for these examples",
-    "Create a Scene to hold geometry and materials",
-    "Create a Data to hold semantic data",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that draws our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Give the Viewer a single View to render the Scene in our HTML canvas element",
-    "Configure the View's World-space coordinate axis to make the +Z axis \"up\"",
-    "Right +X\nUp +Z\nForward -Y",
-    "Arrange the View's Camera within our +Z \"up\" coordinate system",
-    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
-    "Configure our View to automatically reposition its Camera\nto view the entire Scene whenever a new SceneModel is created. We'll\nuse a CameraFlightAnimation to reposition the Camera.",
-    "Create a SceneModel to hold model geometry and materials",
-    "Create a DataModel to hold IFC data for our model",
-    "Use loadCityJSON to load a CityJSON into our SceneModel and DataModel",
-    "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel."
-  ]
+  "title": "Viewing a CityJSON model with +Z configured as up direction",
+  "description": "",
+  "isTutorial": false,
+  "isVisualTest": true
 }

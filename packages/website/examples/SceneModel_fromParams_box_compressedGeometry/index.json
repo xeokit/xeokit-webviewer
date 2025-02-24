@@ -1,23 +1,8 @@
 {
-  "title": "Building and viewing a box-shaped SceneModel, from JSON, using compressed geometry",
-  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. In the Scene, create a SceneModel. Use SceneModel's fromParams method to load a SceneModelParams containing compressed geometry into the SceneModel. The Viewer then draws the SceneModel in the View's canvas.",
   "id": "SceneModel_fromParams_box_compressedGeometry",
-  "type": "example",
-  "visualTest": true,
-  "template": "basicPage",
-  "steps": [
-    "Import the SDK from a bundle built for these examples",
-    "Create a Scene to hold geometry and materials",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Ignore this DemoHelper",
-    "Give the Viewer a single View to render the Scene in our HTML canvas element",
-    "Position the View's Camera",
-    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
-    "Create a SceneModel to hold geometry and materials. We'll\ncreate the SceneModel from an argument of type SceneModelParams. In this example,\nwe create our SceneGeometry with vertex positions that are quantized\nto 16-bit integer values within the range indicated by the axis-aligned\n3D boundary specified by parameter aabb.",
-    "TrianglesPrimitive (defined in @xeokit/constants)",
-    "16-bit unsigned integers",
-    "Build the SceneModel, causing the red box to appear in the View's canvas.",
-    "At this point, the View will contain a single ViewObject that has the same\nID as the SceneObject. Through the ViewObject, we can now update the\nappearance of the box in that View."
-  ]
+  "title": "Create a 3D cube from JSON, using compressed geometry",
+  "description": "Using the xeokit SDK to create and view a box-shaped model, from JSON parameters containing compressed geometry",
+  "isTutorial": false,
+  "isVisualTest": true,
+  "template": "basicPage"
 }

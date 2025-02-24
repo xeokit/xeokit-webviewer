@@ -4,16 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>xeokit Example</title>
-    <link href="../../css/pageStyle.css" rel="stylesheet"/>
+    <title>Creating a Viewer with multiple Views and ViewLayers</title>
     <style>
-
         body {
+            background-color: black;
+            overflow: hidden;
+            margin: 0;
             user-select: none;
-            -webkit-user-drag: none;
-            -moz-user-drag: none;
-            -ms-user-drag: none;
-            user-drag: none;
         }
 
         #demoCanvas1 {
@@ -24,10 +21,10 @@
             user-drag: none;
             width: 1000px;
             height: 800px;
-            left: 20px;
-            top: 70px;
+            left: 10px;
+            top: 60px;
             position: absolute;
-            /*border: 1px solid white;*/
+            border: 1px solid black;
             padding: 0px;
             /*background: red;*/
         }
@@ -40,10 +37,10 @@
             user-drag: none;
             width: 500px;
             height: 390px;
-            left: 1030px;
-            top: 70px;
+            left: 1020px;
+            top: 60px;
             position: absolute;
-            /*border: 1px solid white;*/
+            border: 1px solid black;
             /*background: yellow;*/
             padding: 0px;
         }
@@ -56,26 +53,21 @@
             user-drag: none;
             width: 500px;
             height: 400px;
-            left: 1030px;
-            top: 470px;
+            left: 1020px;
+            top: 460px;
             position: absolute;
-            /*border: 1px solid white;*/
+            border: 1px solid black;
             padding: 0px;
             /*background: green;*/
         }
 
     </style>
+
 </head>
 <body>
-
-<!-- Virtual canvases -->
-
 <img id="demoCanvas1">
 <img id="demoCanvas2"/>
 <img id="demoCanvas3"/>
-
 </body>
-
-<script type="module" src="index.js"></script>
-
+<script type="module" src="./index.js"></script>
 </html>

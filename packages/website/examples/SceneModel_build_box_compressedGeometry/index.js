@@ -1,11 +1,9 @@
-// Import the modules we need
+// Import the SDK from a bundle built for these examples
 
 import * as xeokit from "../../js/xeokit-demo-bundle.js";
 
 import {DemoHelper} from "../../js/DemoHelper.js";
-import {Scene} from "../../libs/@xeokit/sdk/scene";
-import {WebGLRenderer} from "../../libs/@xeokit/sdk/webglrenderer";
-import {Viewer} from "../../libs/@xeokit/sdk/viewer";
+
 
 // Create a Scene to hold geometry and materials
 
@@ -42,9 +40,9 @@ demoHelper.init()
 
         // Position the View's Camera to look at the origin of the World coordinate system
 
-        view.camera.eye = [3, 3, 3];
-        view.camera.look = [0, 0, 0];
-        view.camera.up = [0, 1, 0];
+        view.camera.eye = [2, 2, 3]; // Default is [0,0,10]
+        view.camera.look = [0, 0, 0]; // Default
+        view.camera.up = [0, 1, 0]; // Default
 
         // Add a CameraControl to control the Camera
 
@@ -81,10 +79,10 @@ demoHelper.init()
         sceneModel.createMesh({
             id: "boxMesh",
             geometryId: "boxGeometry",
-            position: [0, 0, 0],
-            scale: [1, 1, 1],
-            rotation: [0, 0, 0],
-            color: [1, 1.0, 1.0]
+            position: [0, 0, 0], // Default
+            scale: [1, 1, 1], // Default
+            rotation: [0, 0, 0], // Default
+            color: [1.0, 0.0, 0.0] // Default is [1,1,1]
         });
 
         sceneModel.createObject({
@@ -94,14 +92,16 @@ demoHelper.init()
 
         // Build the SceneModel, causing the red box to appear in the View's canvas.
 
-        sceneModel.build();
+        sceneModel.build().then(()=>{
 
-        // At this point, the View will contain a single ViewObject that has the same ID as the SceneModel. Through
-        // the ViewObject, we can update the appearance of the box in that View.
+            // At this point, the View will contain a single ViewObject that has the same ID as the SceneModel. Through
+            // the ViewObject, we can update the appearance of the box in that View.
 
-        view.objects["boxObject"].highlighted = true;
+            view.objects["boxObject"].highlighted = true;
+            view.setObjectsHighlighted(view.highlightedObjectIds, false);
 
-        // Ignore the DemoHelper
+            // Ignore the DemoHelper
 
-        demoHelper.finished();
+            demoHelper.finished();
+        })
     });

@@ -1,23 +1,8 @@
 {
-  "title": "Loading an IFC model from SceneModelParams and DataModelParams into a SceneModel and a DataModel",
-  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and one View. Create a Data. In the Scene, create a SceneModel. In the Data, create a DataModel. Use SceneModel's fromParams method to load a SceneModelParams. Use DataModel's fromParams method to load a DataModelParams. The Viewer then draws the IFC model in the View's canvas.",
   "id": "SceneModel_DataModel_fromParams_IfcOpenHouse4",
-  "type": "example",
-  "visualTest": true,
-  "template": "basicPage",
-  "steps": [
-    "Create a Scene to hold geometry and materials",
-    "Create a Data to hold semantic data",
-    "Create a WebGLRenderer to use the browser's WebGL graphics API for rendering",
-    "Create a Viewer that will use the WebGLRenderer to draw the Scene",
-    "Give the Viewer a single View to render the Scene in our HTML canvas element",
-    "Position the View's Camera",
-    "Add a CameraControl to interactively control the View's Camera with keyboard,\nmouse and touch input",
-    "Create a SceneModel to hold our model's geometry and materials",
-    "Ignore the DemHelper",
-    "Create a DataModel to hold semantic data for our model",
-    "Load JSON parameters into our SceneModel. The parameters follow the schema defined by SceneModelParams.",
-    "Load JSON parameters into our DataModel. The parameters follow the schema defined by DataModelParams.",
-    "Build the SceneModel and DataModel. The View will now contain a ViewObject for each SceneObject in the SceneModel."
-  ]
+  "title": "Using xeokit SDK to view an IFC model, loaded from JSON",
+  "description": "",
+  "isTutorial": false,
+  "isVisualTest": true,
+  "template": "basicPage"
 }

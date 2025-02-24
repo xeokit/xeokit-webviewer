@@ -222,7 +222,6 @@ viewer.fromParams({              // ViewerParams
 new xeokit.cameracontrol.CameraControl(viewer.viewList[0]);
 
 const demoHelper = new DemoHelper({
-    elementId: "info-container",
     viewer
 });
 

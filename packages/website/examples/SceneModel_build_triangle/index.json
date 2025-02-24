@@ -1,25 +1,8 @@
 {
-  "title": "Build and view a SceneModel containing a single 3D triangle",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel with a SceneObject, a SceneMesh, and a SceneGeometry that contains a single triangle.",
   "id": "SceneModel_build_triangle",
-  "type": "example",
-  "visualTest": true,
-  "template": "basicPage",
-  "steps": [
-    "Import the SDK from a bundle built for these examples",
-    "Create a Scene to hold geometry and materials for our triangle",
-    "Create a WebGLRenderer to use the browser's WebGL API to draw the Scene",
-    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Add a View, which will render an independent view of the Scene within the\ngiven DOM element.",
-    "Position the View's Camera",
-    "Default\nDefault\nDefault",
-    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
-    "Within the Scene, create a SceneModel to hold geometry and materials for our model",
-    "Create a SceneGeometry that defines that shape of our triangle",
-    "Create a SceneMesh that defines both the shape and\nthe surface appearance of our triangle",
-    "Default",
-    "Create a SceneObject that defines the triangle object itself",
-    "Build the SceneModel, which causes the triangle to appear in the View's canvas.",
-    "At this point, the View will contain a single ViewObject that has the same\nID as the SceneObject. Through the ViewObject, we can now update the\nappearance of the box in that View."
-  ]
+  "title": "Creating a 3D Triangle",
+  "description": "Using xeokit SDK to create and view a single 3D triangle in the browser.",
+  "isTutorial": true,
+  "isVisualTest": true,
+  "template": "basicPage"
 }

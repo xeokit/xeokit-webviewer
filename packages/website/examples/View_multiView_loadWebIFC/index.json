@@ -1,34 +1,8 @@
 {
-  "title": "Viewing an IFC model in multiple Views",
-  "summary": "In this example, we create a Viewer configured with a WebGLRenderer, a Scene, and three Views, along with a Data. In the Scene, we create a SceneModel, and in the Data we create a DataModel. Then we use loadWebIFC to load an IFC file into the SceneModel and DataModel. The Viewer then draws the IFC model in each View's canvas.",
-  "models": [
-    "IfcOpenHouse4/ifc"
-  ],
   "id": "View_multiView_loadWebIFC",
-  "type": "example",
-  "visualTest": true,
-  "steps": [
-    "Import xeokit SDK from a JS bundle built specially for these examples",
-    "Import the WebIFC API from the CDN",
-    "cdn.jsdelivr.net/npm/web-ifc@0.0.51/web-ifc-api.js\";",
-    "Ignore the DemoHelper",
-    "Create a Scene to hold model geometry and materials",
-    "Create a Data to hold model semantic data",
-    "create a WebGLRenderer to use the browser's WebGL API for rendering",
-    "Create a Viewer that will use the WebGLRenderer to draw the Scene",
-    "Ignore the DemoHelper",
-    "Create the first View, with a perspective projection, looking at the model from the side",
-    "Create the second View, with an orthographic projection, looking at the model from above",
-    "Create the third View, with a perspective projection, looking at the model from the side",
-    "Attach a CameraControls to each View, to control\nits Camera independently with keyboard, mouse and touch input",
-    "Create SceneModel to hold geometry",
-    "Create DataModel to hold semantic data",
-    "Instantiate the WebIFC API",
-    "Connect the WebIFC API to its WASM core module",
-    "cdn.jsdelivr.net/npm/web-ifc@0.0.51/\");",
-    "Initialize the WebIFC API",
-    "Use loadWebIFC, equipped with the WebIFC API, to load an IFC 4x3 model into our SceneModel and DataModel",
-    "Build the SceneModel and DataModel.\nThe View will now contain a ViewObject for each SceneObject in the SceneModel.\nVia those ViewObjects, we can then control the appearance of each of our model objects in the View.",
-    "viewer.onTick.subscribe(() => {\nview1.camera.orbitYaw(.5);\nview2.camera.orbitYaw(-1.3);\n});"
-  ]
+  "title": "Viewing an IFC model in multiple Views",
+  "description": "Using the xeokit SDK to view an IFC file within multiple canvases in the browser",
+  "isTutorial": false,
+  "isVisualTest": true,
+  "template": "threeCanvasPage"
 }

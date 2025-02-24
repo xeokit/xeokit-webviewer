@@ -1,26 +1,8 @@
 {
-  "title": "Build and view a box-shaped SceneModel, created with compressed geometry",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, create a SceneModel. In the SceneModel, create a box-shaped SceneGeometry from SceneGeometryCompressedParams. In the SceneModel, create a SceneMesh that references the SceneGeometry, and a SceneObject that references the SceneMesh. Build the SceneModel. The Viewer then draws the box in the View.",
-  "template": "basicPage",
-  "visualTest": true,
-  "tutorial": true,
-  "tutorials": [
-    "sceneModelBuildBox"
-  ],
   "id": "SceneModel_build_box_compressedGeometry",
-  "type": "example",
-  "steps": [
-    "Import the modules we need",
-    "Create a Scene to hold geometry and materials",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Ignore the DemoHelper",
-    "Create a View that renders to the canvas in our HTML",
-    "Position the View's Camera to look at the origin of the World coordinate system",
-    "Add a CameraControl to control the Camera",
-    "Create a SceneModel containing a SceneObject, a SceneMesh and a box-shaped SceneGeometry",
-    "Build the SceneModel, causing the red box to appear in the View's canvas.",
-    "At this point, the View will contain a single ViewObject that has the same ID as the SceneModel. Through\nthe ViewObject, we can update the appearance of the box in that View.",
-    "Ignore the DemoHelper"
-  ]
+  "title": "Creating a Cube from Pre-Compressed Geometry",
+  "description": "Using the xeokit SDK to build and display a 3D cube in the browser, defined using compressed geometry data.",
+  "isTutorial": true,
+  "isVisualTest": true,
+  "template": "basicPage"
 }

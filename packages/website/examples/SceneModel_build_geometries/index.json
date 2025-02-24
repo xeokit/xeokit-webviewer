@@ -1,32 +1,8 @@
 {
-  "title": "Build and view a SceneModel containing various geometry types",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel containing a set of SceneMeshs that each have a SceneGeometry. Each SceneGeometry represents a different type of geometric primitive supported by xeokit.",
   "id": "SceneModel_build_geometries",
-  "type": "example",
-  "visualTest": false,
-  "tutorial": true,
-  "template": "basicPage",
-  "steps": [
-    "\nImport the SDK from a bundle built for these examples",
-    "Ignore the DemoHelper",
-    "Create a Scene to hold geometry and materials",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Ignore the DemoHelper",
-    "Create a single View that renders to a canvas",
-    "Position the View's Camera",
-    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
-    "Within the Scene, create a SceneModel to hold geometry and materials for our model",
-    "Create a SceneMesh that represents a red box. The SceneMesh gets a\nbox-shaped SceneGeometry, for which we use buildBoxGeometry to\ngenerate the triangle mesh positions and indices. Each SceneMesh\nwe create in this example also has a 4x4 matrix, composed using\nbuildMat4, to specify the modeling transformation that it applies\nto the SceneGeometry vertex positions to position them within the\nWorld coordinate system.",
-    "Create a SceneMesh that represents a blue wireframe box. The\nSceneMesh gets a box-shaped wireframe SceneGeometry, for which we\nuse buildBoxLinesGeometry to generate the wire mesh positions and indices.",
-    "Create a SceneMesh that represents a green-blue sphere. The\nSceneMesh gets a sphere-shaped wireframe SceneGeometry, for which we\nuse buildSphereGeometry to generate the triangle mesh positions and indices.",
-    "Create a SceneMesh that represents a purple torus. The\nSceneMesh gets a torus-shaped wireframe SceneGeometry, for which we\nuse buildTorusGeometry to generate the triangle mesh positions and indices.",
-    "Create a SceneMesh that represents a yellow cylinder. The\nSceneMesh gets a cylinder-shaped triangle mesh SceneGeometry, for which we\nuse buildTorusGeometry to generate the triangle mesh positions and indices.",
-    "Create a SceneMesh that represents a green grid. The\nSceneMesh gets a grid-shaped wireframe SceneGeometry, for which we\nuse buildTorusGeometry to generate the wireframe mesh positions and indices.",
-    "Create a SceneMesh that represents green wireframe text. The\nSceneMesh gets a text-shaped wireframe SceneGeometry, for which we\nuse buildVectorTextGeometry to generate the wireframe mesh positions\nand indices.",
-    "Create a SceneMesh that represents a cloud of points. The\nSceneMesh gets a SceneGeometry that contains an array that provides\nthe 3D of each points.",
-    "Create a SceneObject that aggregates all of our SceneMeshes.",
-    "Build the SceneModel, causing the various geometries to appear\nin the View's canvas.",
-    "At this point, the View will contain a single ViewObject that has the same ID as the SceneObject. Through\nthe ViewObject, we can update the appearance of our geometries in that View."
-  ]
+  "title": "Creating Various Geometries",
+  "description": "Using the xeokit SDK to create and view a model containing objects with various shapes, using the SDK's geometry genorator functions.",
+  "isTutorial": true,
+  "isVisualTest": false,
+  "template": "basicPage"
 }

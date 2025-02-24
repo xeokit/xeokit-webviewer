@@ -23,7 +23,6 @@ const viewer = new xeokit.viewer.Viewer({
 // Ignore the DemoHelper
 
 const demoHelper = new DemoHelper({
-    elementId: "info-container",
     viewer
 });
 

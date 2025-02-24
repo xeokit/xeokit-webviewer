@@ -1,18 +1,8 @@
 {
-  "title": "Configuring a Viewer with ViewerParams; Creating a new View",
-  "summary": "Create a Viewer with a WebGLRenderer and a Scene, but no Views. Within the Scene, create a SceneModel that contains a single 3D triangle. Configure the Viewer with the given ViewerParams, which contains one ViewParams. The Viewer then creates itself a View using those ViewParams.",
   "id": "Viewer_fromParams",
-  "type": "example",
-  "visualTest": true,
-  "steps": [
-    "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
-    "Create a Scene to hold geometry and materials for our model",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Configure the Viewer using the given ViewerParams object. This will\ncreate and configure a single View within the Viewer.",
-    "Add a CameraControl to interactively control the View's Camera with keyboard,\nmouse and touch input",
-    "Within the Scene, create a SceneModel to hold geometry and materials for\nour model",
-    "TrianglesPrimitive (defined in @xeokit/constants)\n64-bit floats",
-    "Build the SceneModel, causing the model to appear in the View's canvas."
-  ]
+  "title": "Configuring a Viewer with ViewerParams; Creating a new View",
+  "description": "",
+  "isTutorial": false,
+  "isVisualTest": true,
+  "template": "basicPage"
 }

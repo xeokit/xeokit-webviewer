@@ -1,25 +1,8 @@
 {
-  "title": "Creating a Viewer with multiple Views and ViewLayers",
-  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. For each View, configure autoLayers=false. In the first and second Views, create two ViewLayers; \"modelLayer\" and \"gridLayer\". In the third View, create just a \"modelLayer\" ViewLayer. In the Scene, create a SceneModel assigned to \"modelLayer\" and use loadGLTF to load a model into it. In the Scene, create a SceneModel assigned to \"gridLayer\" and use buildGridGeometry to build a grid helper object within it. Thanks to the masking effect of the ViewLayers, the Viewer then draws the model in all three Views, but only draws the grid in the first and second Views.",
   "id": "ViewLayer_multiView",
-  "type": "example",
-  "steps": [
-    "Import the SDK from a bundle built for these examples",
-    "Create a Scene to hold model geometry and materials",
-    "Create a Data to hold semantic information about the model",
-    "Create a WebGLRenderer to use the browser's WebGL API for rendering",
-    "Create a Viewer which uses the WebGLRenderer to render the Scene",
-    "Ignore the DemoHelper",
-    "Create the first View. This View has a perspective projection, is looking at the model from the side, and is configured\nto not automatically create ViewLayers on-demand.",
-    "<<--------- Don't automatically create ViewLayers on-demand",
-    "Create two ViewLayers in the first View - \"modelLayer\" and \"gridLayer\"",
-    "Create the second View. This View has an orthographc projection, is looking at the model along a diagonal axis,\nand like the previous View, is configured to not automatically create ViewLayers on-demand.",
-    "Create two ViewLayers in the second View - \"modelLayer\" and \"gridLayer\"",
-    "Create the second View. This View has a perspective projection, is looking at the model along a diagonal axis,\nand like the previous two Views, is configured to not automatically create ViewLayers on-demand.",
-    "Create one ViewLayer in the third View - \"modelLayer\"",
-    "Attach a CameraControl to each View, to control\nits Camera with mouse and touch input",
-    "Create a SceneModel and use loadGLTF to load a house model into it.\nThis SceneModel will appear in ViewLayer \"modelLayer\".\nSince that ViewLayer is in all three Views, the SceneModel will then\nappear in all three Views.",
-    "Create another SceneModel and programmatically\nconstruct a wireframe ground plane grid.\n\nThe SceneModel specifies that its SceneObject instances will\nbelong to ViewLayer \"gridLayer\".\n\nThe \"gridLayer\" ViewLayer is expected to already exist in our View, because we\nconfigured the View with autoLayers: false (true is the default).",
-    "Highlight the ViewObjects in ViewLayer \"gridLayer\""
-  ]
+  "title": "Creating a Viewer with multiple Views and ViewLayers",
+  "description": "",
+  "isTutorial": false,
+  "isVisualTest": false,
+  "template": "threeCanvasPage"
 }

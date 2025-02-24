@@ -1,27 +1,7 @@
 {
-  "title": "Viewing an IFC model in multiple Views, with different render modes",
-  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views, along with a Data. In the Scene, we create a SceneModel, and in the Data we create a DataModel. Then we load JSON into the SceneModel and DataModel. The Viewer then draws the model in each View's canvas. We also set the renderMode of the first View to QualityRender and the other two Views to FastRender.",
   "id": "View_multiView_renderModes",
-  "visualTest": true,
-  "type": "example",
-  "steps": [
-    "Import the SDK from a bundle built for these examples",
-    "Create a Scene to hold model geometry and materials",
-    "Create a Data to hold semantic information about the model",
-    "Create a WebGLRenderer to use the browser's WebGL API for rendering",
-    "Create a Viewer which uses the WebGLRenderer to render the Scene",
-    "Ignore the DemoHelper",
-    "Create the first View. This View has a perspective projection, looking at the model from the side, and is initially\nset to render in QualityRender mode.",
-    "Add a CameraControl to the first View, to control its Camera with keyboard, mouse and touchpad input.",
-    "Configure the first View's edge enhancement and ambient shadows effects\nto apply in QualityRender mode",
-    "Create the second View. This View has an orthographc projection, looking at the model from the top, and is initially\nset to render in FastRender mode.",
-    "Add a CameraControl to the second View.",
-    "Configure the second View's edge enhancement and ambient shadows effects\nto apply only in QualityRender mode.",
-    "Create the second View. This View has a perspective projection, looking at the model from the front, and is initially\nset to render in FastRender mode.",
-    "Add a CameraControl to the third View.",
-    "Configure the third View's edge enhancement and ambient shadows effects\nto apply in QualityRender mode; they will not apply as long as the third\nView remains in FastRender mode.",
-    "Create a SceneModel to hold our model's geometry and materials",
-    "Load a model from JSON-encoded format, which has the schema defined by SceneModelParams",
-    "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel."
-  ]
+  "title": "Viewing an IFC model in multiple Views, with different render modes",
+  "description": "Using the xeokit SDK to view an IFC model in multiple canvases, each canvas configured in its own render mode",
+  "isTutorial": false,
+  "isVisualTest": true
 }

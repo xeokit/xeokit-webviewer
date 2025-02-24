@@ -1,24 +1,8 @@
 {
-  "title": "Building a table-shaped SceneModel in multiple Views",
-  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple table-shaped model. The Viewer then draws the model in each View's canvas. Meanwhile, orbit the primary View's Camera.",
   "id": "View_multiView_SceneModel_build_table",
-  "type": "example",
-  "steps": [
-    "Import xeokit SDK from a JS bundle built specially for these examples",
-    "Create a Scene to hold geometry and materials",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Create the first View, with perspective projection, looking at the Scene from the side",
-    "Create the second View, with orthographic projection, looking at the Scene from above",
-    "Create the third View, with perspective projection, looking at the Scene from the front",
-    "Attach CameraControls to the Views, to control\neach View independently with keyboard, mouse and touch input",
-    "Create SceneModel to hold geometry and materials",
-    "Create a box-shaped SceneGeometry, which we'll reuse for the tabletop and legs.",
-    "front\nright\ntop\nleft\nbottom",
-    "Create SceneObjects to represent the tabletop and legs. Each SceneObject\ngets a SceneMesh that instances the SceneGeometry, configured with a color\nand a 4x4 modeling transform matrix to apply to the SceneGeometry's\nvertex positons.",
-    "Build the SceneModel. Each of our three Views will now contain five\nViewObjects corresponding to the SceneObjects in our SceneModel. Each\nViewObject has the same ID as its SceneObject. Put differently, each SceneObject has\nthree ViewObjects that have its ID, with each of the three ViewObjects\nresiding in a different View.",
-    "Through these ViewObjects, we can update the\nappearance of our model elements in that View.",
-    "view1.camera.orbitYaw(.5);",
-    "view2.camera.orbitPitch(3);"
-  ]
+  "title": "Building a table-shaped SceneModel in multiple Views",
+  "description": "",
+  "isTutorial": false,
+  "isVisualTest": false,
+  "template": "threeCanvasPage"
 }

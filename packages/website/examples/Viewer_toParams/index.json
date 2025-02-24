@@ -1,20 +1,8 @@
 {
-  "title": "Saving a Viewer Configuration to ViewParams",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Get the Viewer's current configuration as a ViewerParams. Stringify and log the ViewParams to the console. Using the ViewerParams, we can then create a second Viewer, that has exact same configuration as our first Viewer.",
   "id": "Viewer_toParams",
-  "type": "example",
-  "steps": [
-    "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
-    "Create a Scene to hold geometry and materials for our model",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Ignore the DemoHelper",
-    "Add a View, which will render an independent view of the Scene within the\ngiven DOM element.",
-    "Default\nDefault\nDefault",
-    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
-    "Create a minimal SceneModel that contains a single triangle",
-    "TrianglesPrimitive (defined in @xeokit/constants)\n64-bit floats",
-    "Build the SceneModel, which causes the triangle to appear in the View's canvas.",
-    "Serialize the Viewer's state to a JSON object of type ViewerParams."
-  ]
+  "title": "Saving a Viewer Configuration to ViewParams",
+  "description": "",
+  "isTutorial": false,
+  "isVisualTest": false,
+  "template": "basicPage"
 }

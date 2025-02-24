@@ -4,17 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>xeokit Example</title>
-    <link href="../../css/pageStyle.css" rel="stylesheet"/>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js"></script>
+    <title>Building a box-shaped SceneModel in multiple Views</title>
     <style>
-
         body {
+            background-color: black;
+            overflow: hidden;
+            margin: 0;
             user-select: none;
-            -webkit-user-drag: none;
-            -moz-user-drag: none;
-            -ms-user-drag: none;
-            user-drag: none;
         }
 
         #demoCanvas1 {
@@ -66,22 +62,12 @@
         }
 
     </style>
+
 </head>
 <body>
-
-<input type="checkbox" id="info-button"/>
-<label for="info-button" class="info-button"><i class="fa fa-3x fa-info-circle"></i></label>
-
 <img id="demoCanvas1">
 <img id="demoCanvas2"/>
 <img id="demoCanvas3"/>
-
-<div class="slideout-sidebar">
-    <div id="info-container" class="info-container"></div>
-</div>
-
 </body>
-
-<script type="module" src="index.js"></script>
-
+<script type="module" src="./index.js"></script>
 </html>

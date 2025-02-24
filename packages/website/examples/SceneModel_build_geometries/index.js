@@ -38,13 +38,14 @@ demoHelper
 
         const view = viewer.createView({
             id: "demoView",
-            elementId: "demoCanvas"
+            elementId: "demoCanvas",
+            canvasTransparent: true
         });
 
         // Position the View's Camera
 
-        view.camera.eye = [10, 0, 35];
-        view.camera.look = [10, 0, 0];
+        view.camera.eye = [10, 5, 20];
+        view.camera.look = [10, 5, 0];
         view.camera.up = [0, 1, 0];
 
         view.camera.orbitPitch(20);
@@ -180,7 +181,7 @@ demoHelper
 
             // Create a SceneMesh that represents a yellow cylinder. The
             // SceneMesh gets a cylinder-shaped triangle mesh SceneGeometry, for which we
-            // use buildTorusGeometry to generate the triangle mesh positions and indices.
+            // use buildCylinderGeometry to generate the triangle mesh positions and indices.
 
             const cylinder = xeokit.procgen.buildCylinderGeometry({
                 center: [0, 0, 0],
@@ -211,7 +212,7 @@ demoHelper
 
             // Create a SceneMesh that represents a green grid. The
             // SceneMesh gets a grid-shaped wireframe SceneGeometry, for which we
-            // use buildTorusGeometry to generate the wireframe mesh positions and indices.
+            // use buildGridGeometry to generate the wireframe mesh positions and indices.
 
             const grid = xeokit.procgen.buildGridGeometry({
                 size: 10,
@@ -331,6 +332,7 @@ demoHelper
             // the ViewObject, we can update the appearance of our geometries in that View.
 
             view.objects["geometriesObject"].highlighted = true;
+            view.setObjectsHighlighted(view.highlightedObjectIds, false);
 
             demoHelper.finished();
         });

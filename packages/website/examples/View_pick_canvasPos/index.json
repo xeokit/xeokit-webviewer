@@ -1,26 +1,8 @@
 {
-  "title": "Picking an object with the mouse",
-  "summary": "Create a Viewer configured with a WebGLRenderer, a Scene, and three Views. In the Scene, build a SceneModel containing a simple table-shaped model. The Viewer then draws the model in each View's canvas. Meanwhile, orbit the primary View's Camera.",
   "id": "View_pick_canvasPos",
-  "type": "example",
-  "visualTest": false,
-  "steps": [
-    "Import xeokit SDK from a JS bundle built specially for these examples",
-    "Create a Scene to hold geometry and materials",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Give the Viewer a single View to render the Scene in our HTML canvas element",
-    "Position the View's Camera",
-    "Add a CameraControl to interactively control the View's Camera with keyboard,\nmouse and touch input",
-    "Create a SceneModel to hold geometry and materials",
-    "Create a box-shaped SceneGeometry, which we'll reuse for the tabletop and legs.",
-    "front\nright\ntop\nleft\nbottom",
-    "Create SceneObjects to represent the tabletop and legs. Each SceneObject\ngets a SceneMesh that instances the SceneGeometry, configured with a color\nand a 4x4 modeling transform matrix to apply to the SceneGeometry's\nvertex positons.",
-    "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel.",
-    "At this point, the View will contain five ViewObjects that have the same\nIDs as our SceneObjects. Through these ViewObjects, we can update the\nappearance of our model elements in that View.",
-    "Finally, we'll bind a \"mousemove\" listener to the View's canvas. Whenever\nwe get the event, we'll attempt to pick the closest ViewObject that lies\nat the event's mouse coordinates within the canvas. The returned PickResult\nwill provide the results of each pick attempt.",
-    "If we succeed in picking a ViewObject, then get the ViewObject\nfrom the PickResult and highlight it.",
-    "if (!event) {\nevent = window.event;",
-    "} else {\nconst { left, top } = htmlElement.getBoundingClientRect();\ncanvasPos[0] = event.clientX - left;\ncanvasPos[1] = event.clientY - top;\n}"
-  ]
+  "title": "Picking an object with the mouse",
+  "description": "",
+  "isTutorial": false,
+  "isVisualTest": false,
+  "template": "basicPage"
 }

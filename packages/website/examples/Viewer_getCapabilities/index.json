@@ -1,20 +1,8 @@
 {
-  "title": "Querying Viewer capabilities",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene, and one View. Within the Scene, build a SceneModel that contains a single 3D triangle. Query the Capabilities of the Viewer.",
   "id": "Viewer_getCapabilities",
-  "type": "example",
-  "steps": [
-    "Import xeokit SDK via the JavaScript bundle that we've built for these examples",
-    "Create a Scene to hold geometry and materials for our model",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Ignore the DemoHelper",
-    "Request the Viewer’s Capabilities to determine the features it supports.",
-    "Add a View, which will render an independent view of the Scene within the\ngiven DOM element.",
-    "Default\nDefault\nDefault",
-    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
-    "Create a minimal SceneModel that contains a single triangle",
-    "Build the SceneModel, which causes the triangle to appear in the View's canvas.",
-    "At this point, the View will contain a single ViewObject that has the same\nID as the SceneObject. Through the ViewObject, we can now update the\nappearance of the triangle in that View."
-  ]
+  "title": "Querying Viewer capabilities",
+  "description": "",
+  "isTutorial": true,
+  "isVisualTest": false,
+  "template": "basicPage"
 }

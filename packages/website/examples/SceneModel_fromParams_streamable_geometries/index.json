@@ -1,15 +1,8 @@
 {
-  "title": "Building and viewing a SceneModel containing various geometry types, from JSON",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel from a SceneModelParams, containing a set of SceneMeshs that represent various geometric primitives.",
   "id": "SceneModel_fromParams_streamable_geometries",
-  "type": "example",
-  "visualTest": true,
-  "template": "basicPage",
-  "steps": [
-    "Create a Scene to hold geometry and materials",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that views our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
-    "Within the Scene, create a SceneModel to hold geometry and materials for our model"
-  ]
+  "title": "Using the xeokit SDK to build and view a SceneModel containing various geometry types, from JSON",
+  "description": "",
+  "isTutorial": false,
+  "isVisualTest": true,
+  "template": "basicPage"
 }

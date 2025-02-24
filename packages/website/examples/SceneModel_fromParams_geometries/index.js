@@ -190,6 +190,7 @@ demoHelper.init()
                 // the ViewObject, we can update the appearance of our geometries in that View.
 
                 view.objects["geometriesObject"].highlighted = true;
+                view.setObjectsHighlighted(view.highlightedObjectIds, false);
 
                 demoHelper.finished();
             });

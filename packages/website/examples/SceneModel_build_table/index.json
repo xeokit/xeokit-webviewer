@@ -1,24 +1,8 @@
 {
-  "title": "Build and view a table-shaped SceneModel",
-  "summary": "Create a Viewer with a WebGLRenderer, a Scene and one View. In the Scene, build a SceneModel that represents a simple kitchen table. The SceneModel then has five SceneObjects, five SceneMeshs, and one box-shaped SceneGeometry containing triangle primitives.",
   "id": "SceneModel_build_table",
-  "type": "example",
-  "visualTest": true,
-  "template": "basicPage",
-  "steps": [
-    "Import the SDK from a bundle built for these examples",
-    "Create a Scene to hold geometry and materials",
-    "Create a WebGLRenderer to use the browser's WebGL API for 3D graphics",
-    "Create a Viewer that draws our Scene using the WebGLRenderer. Note that the\nScene and WebGLRenderer can only be attached to one Viewer at a time.",
-    "Create a single View that renders to a canvas element in the DOM.",
-    "Position the View's Camera.",
-    "Add a CameraControl to interactively control the Camera with keyboard,\nmouse and touch input",
-    "Within the Scene, create a SceneModel to hold geometry and materials for our model",
-    "Create a box-shaped SceneGeometry, which we'll reuse for the tabletop and legs.",
-    "front\nright\ntop\nleft\nbottom",
-    "Create SceneObjects to represent the tabletop and legs. Each SceneObject\ngets a SceneMesh that instances the SceneGeometry, configured with a color\nand a 4x4 modeling transform matrix to apply to the SceneGeometry's\nvertex positons.",
-    "Build the SceneModel. The View will now contain a ViewObject for each\nSceneObject in the SceneModel.",
-    "At this point, the View will contain five ViewObjects that have the same\nIDs as our SceneObjects. Through these ViewObjects, we can update the\nappearance of our model elements in that View. We'll make the yellow leg\ntranslucent, highlight the red leg and make the tabletop green.",
-    "We can also apply these sorts of updates in batches, to multiple\nViewObjects at a time. The View remembers the IDs of whetever\nViewObjects we update, so we can use such batch updates to restore the\nViewObjects to their original states."
-  ]
+  "title": "Creating a 3D Model",
+  "description": "Using xeokit to create a 3D model composed of multiple objects with triangle mesh geometry.",
+  "isTutorial": true,
+  "isVisualTest": true,
+  "template": "basicPage"
 }
