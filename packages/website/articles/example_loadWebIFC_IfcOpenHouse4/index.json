@@ -1,0 +1,13 @@
+{
+  "title": "Viewing IFC using loadWebIFC",
+  "description": "How to load an IFC model directly into a xeokit web viewer, via the web-ifc API.",
+  "tags": [
+    "Tutorial",
+    "Example",
+    "IFC",
+    "WebIFC",
+    "loadWebIFC",
+    "Featured"
+  ],
+  "topic": "import.ifc"
+}
