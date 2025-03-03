@@ -2,7 +2,7 @@
     "inputFile": "./models/MAP/ifc/model.ifc",
     "converterApplication": "ifc2gltfcxconverter",
     "converterApplicationVersion": "4.34.4",
-    "conversionDate": "2025-02-16 19:17:28",
+    "conversionDate": "2025-02-27 12:54:12",
     "gltfOutFiles": [
         "./models/MAP/ifc2gltf/model.glb"
     ],
@@ -14,12 +14,12 @@
     "numExportedPropertySetsOrElementQuantities": 0,
     "modelBoundsMax": [
         16.960543444612995,
-        18.3472657809034,
+        18.34726578183472,
         14.094778407372539
     ],
     "modelBoundsMin": [
         -16.960543444612995,
-        -18.3472657809034,
+        -18.34726578183472,
         -14.094778407372539
     ],
     "generalMessages": [

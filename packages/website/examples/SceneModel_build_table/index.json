@@ -4,5 +4,14 @@
   "description": "Using xeokit to create a 3D model composed of multiple objects with triangle mesh geometry.",
   "isTutorial": true,
   "isVisualTest": true,
+  "tags": [
+    "Featured"
+  ],
+  "categories": [
+    "Modeling",
+    "Scene",
+    "Objects"
+  ],
+  "topic": "modeling.scene.object",
   "template": "basicPage"
 }

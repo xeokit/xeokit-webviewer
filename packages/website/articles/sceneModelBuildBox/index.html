@@ -102,10 +102,10 @@
 <li><em><a href="/packages/demos/examples/viewer/#SceneModel_build_table/index.html">Run this example</a></em></li>
 </ul>
 <p>First install the npm module we need:</p>
-<pre><code class="hljs">npm install @xeokit/sdk
+<pre class="code-section"><code class="hljs">npm install @xeokit/sdk
 </code></pre>
 <p>Then create an HTML page in <code>index.html</code> that contains a canvas element:</p>
-<pre><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<pre class="code-section"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>xeokit Spinning Box<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
@@ -139,7 +139,7 @@
 <template class="doc-link-tooltip" id="View_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
 <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / View /</p>
 <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class View</p>
-<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">An independent view within a Viewer, with its own Canvas, Camera and object visual states.</p>
+<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">An independent view within a Viewer, with its own canvas, Camera and object visual states.</p>
 </template> that draws to the canvas.</li>
 <li>Position the View's <a class="doc-link" data-template="Camera_template"  href="/api-docs#/docs/api/classes/viewer.Camera.html" target="_parent">Camera</a>
 <template class="doc-link-tooltip" id="Camera_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
@@ -172,7 +172,7 @@
 <li>Update the visibility and highlight status of the object.</li>
 <li>Orbit the Camera by one degree on each Viewer &quot;tick&quot; event. This will continually orbit the model.</li>
 </ol>
-<pre><code class="hljs"><span class="hljs-comment">// 1.</span>
+<pre class="code-section"><code class="hljs"><span class="hljs-comment">// 1.</span>
 
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">Scene</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/scene&quot;</span>;
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">TrianglesPrimitive</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/constants&quot;</span>;

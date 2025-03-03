@@ -616,7 +616,7 @@ export class WebGLRenderer implements Renderer {
         const gl = this.renderContext.gl;
         gl.viewport(0, 0, gl.drawingBufferWidth, gl.drawingBufferHeight);
         if (rendererView.canvasTransparent) {
-            gl.clearColor(1, 1, 1, 1);
+            gl.clearColor(0,0,0,0);
         } else {
             gl.clearColor(rendererView.view.backgroundColor[0], rendererView.view.backgroundColor[1], rendererView.view.backgroundColor[2], 1.0);
         }

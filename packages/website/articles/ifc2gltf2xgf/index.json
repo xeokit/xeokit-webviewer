@@ -1,8 +1,14 @@
 {
-    "title": "Importing an IFC Model into xeokit via XGF",
-    "description": "How to convert an IFC model to XGF format and then view it in a xeokit web Viewer. <br><br>Compared to glTF, XGF offers faster loading speed for some AEC models.",
-    "tags": ["SceneModel", "DataModel", "Viewer", "XGF", "IFC", "ModelChunksLoader", "loadXGF", "loadDataModel", "ifc2gltf", "ifc2gltf2xkt"],
-    "bannerImage": "banner.png",
+    "title": "Importing IFC using ifc2gltf2xgf",
+    "description": "How to chain the ifc2gltf and ifc2gltf2xgf CLI tools together to convert an IFC model to XGF format, and then display the XGF in a xeokit web viewer.<br><br>XGF can load certain AEC models faster than glTF. This pipeline is our most performant option for larger IFC models.",
+    "tags": [
+        "XGF",
+        "glTF",
+        "IFC",
+        "ifc2gltf",
+        "ifc2gltf2xgf",
+        "Featured"
+    ],
     "thumbnail": "thumb.png",
-    "relatedArticles": ["ifc2gltf"]
+    "topic": "import.ifc"
 }

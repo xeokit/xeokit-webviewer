@@ -34,8 +34,8 @@ const view = viewer.createView({
 
 // Position the View's Camera
 
-view.camera.eye = [0, -5, 20];
-view.camera.look = [0, -5, 0];
+view.camera.eye = [10, -2, 15];
+view.camera.look = [0, -6, 0];
 view.camera.up = [0, 1, 0];
 
 // Add a CameraControl to interactively control the View's Camera with keyboard,

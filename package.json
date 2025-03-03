@@ -12,8 +12,10 @@
         "dist": "turbo run dist --concurrency 100",
         "test": "turbo run test --concurrency 100 --continue || node scripts/test-html-report/index.mjs",
         "docs": "rimraf packages/website/docs && mkdir packages/website/docs && turbo run docs && typedoc --entryPointStrategy merge \"./packages/website/docs/json/*.json\" --tsconfig ./packages/config/tsconfig.typedoc.json",
-        "website-models": "turbo run website-models",
-        "website-docs": "turbo run website-docs",
+        "website-build-xeokit-lib": "turbo run website-build-xeokit-lib",
+        "website-convert-models": "turbo run website-convert-models",
+        "website-example-snapshots": "turbo run website-example-snapshots",
+        "website-build": "turbo run website-build",
         "_publish-packages": "turbo run build lint test && changeset version && changeset publish"
     },
     "devDependencies": {

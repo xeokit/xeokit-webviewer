@@ -18,16 +18,28 @@
                 "^dist"
             ]
         },
-        "website-models": {
+        "website-build-xeokit-lib": {
             "cache": false,
             "dependsOn": [
                 "^dist"
             ]
         },
-        "website-docs": {
+        "website-convert-models": {
             "cache": false,
-            "persistent": true,
             "dependsOn": [
+                "^website-build-xeokit-lib"
+            ]
+        },
+        "website-example-snapshots": {
+            "cache": true,
+            "dependsOn": [
+                "^website-convert-models"
+            ]
+        },
+        "website-build": {
+            "cache": false,
+            "dependsOn": [
+                "^website-example-snapshots",
                 "^docs"
             ]
         }

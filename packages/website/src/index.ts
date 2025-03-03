@@ -66,3 +66,7 @@ export * as cameraflight from "../../sdk/src/cameraflight";
 export * as bcf from "../../sdk/src/bcf";
 export * as treeview from "../../sdk/src/treeview";
 export * as contextmenu from "../../sdk/src/contextmenu";
+
+// Converters
+
+export * as ifc2gltf2xgf from "../../sdk/src/ifc2gltf2xgf";

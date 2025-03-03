@@ -8496,7 +8496,7 @@
     "namespace": "matrix"
   },
   "View": {
-    "summary": "An independent view within a Viewer, with its own Canvas, Camera and object visual states.",
+    "summary": "An independent view within a Viewer, with its own canvas, Camera and object visual states.",
     "path": "/api-docs#/docs/api/classes/viewer.View.html",
     "kind": "class",
     "namespace": "viewer"

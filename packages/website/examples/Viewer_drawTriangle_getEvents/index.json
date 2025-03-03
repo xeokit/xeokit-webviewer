@@ -4,5 +4,8 @@
   "description": "",
   "isTutorial": false,
   "isVisualTest": false,
+  "tags": [],
+  "categories": [],
+  "topic": "viewer.configuration",
   "template": "basicPage"
 }

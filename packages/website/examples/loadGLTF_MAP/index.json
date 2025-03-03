@@ -1,0 +1,17 @@
+{
+  "id": "loadGLTF_MAP",
+  "title": "Viewing glTF using loadGLTF",
+  "description": "How to load an IFC model from glTF (.glb) format directly into a xeokit web viewer.",
+  "isTutorial": true,
+  "isVisualTest": true,
+  "tags": [
+    "glTF",
+    "Featured"
+  ],
+  "categories": [
+    "Importing",
+    "glTF"
+  ],
+  "topic": "import.gltf",
+  "template": "basicPage"
+}

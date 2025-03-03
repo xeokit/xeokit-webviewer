@@ -98,13 +98,13 @@
             <div class="col-lg-12">
                 <p>Let's use xeokit to show a spinning 3D box in a web page.</p>
 <p>First install the npm modules we need:</p>
-<pre><code class="hljs">npm install @xeokit/scene
+<pre class="code-section"><code class="hljs">npm install @xeokit/scene
 npm install @xeokit/viewer
 npm install @xeokit/webglrenderer
 npm install @xeokit/core/constants
 </code></pre>
 <p>Then create an HTML page in <code>index.html</code> that contains a canvas element:</p>
-<pre><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<pre class="code-section"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>xeokit Spinning Box<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
@@ -126,7 +126,7 @@ npm install @xeokit/core/constants
 <li>Update the visibility and highlight status of the object.</li>
 <li>Orbit the Camera by one degree on each Viewer &quot;tick&quot; event. This will continually orbit the model.</li>
 </ol>
-<pre><code class="hljs"><span class="hljs-comment">// 1.</span>
+<pre class="code-section"><code class="hljs"><span class="hljs-comment">// 1.</span>
 
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">Scene</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/scene&quot;</span>;
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">TrianglesPrimitive</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/constants&quot;</span>;

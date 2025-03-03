@@ -53,7 +53,7 @@ demoHelper
         });
 
         if (sceneModel instanceof xeokit.core.SDKError) {
-            demoHelper.logError(`Error creating SceneModel: ${sceneModel.message}`);
+            console.error(`Error creating SceneModel: ${sceneModel.message}`);
         } else {
 
             // Within the SceneModel, create a SceneObject with a SceneMesh that
@@ -80,7 +80,7 @@ demoHelper
             sceneModel.createMesh({
                 id: "pointsMesh",
                 geometryId: "pointsGeometry",
-                xeokit.scene.buildMat4({
+                _matrix: xeokit.scene.buildMat4({
                     position: [-4, -6, -4],
                     scale: [1, 1, 1],
                     rotation: [0, 0, 0],
@@ -101,12 +101,12 @@ demoHelper
                 // At this stage, the View will contain a single ViewObject that has the same ID as the SceneObject. Through
                 // the ViewObject, we can now update the appearance of our 3D points in that View.
 
-                view.objects["pointsObject"].highlighted = true;
+             //   view.objects["pointsObject"].highlighted = true;
 
                 demoHelper.finished();
 
             }).catch((e) => {
-                demoHelper.logError(`Error building SceneModel: ${e}`);
+                console.error(`Error building SceneModel: ${e}`);
                 throw e;
             });
         }

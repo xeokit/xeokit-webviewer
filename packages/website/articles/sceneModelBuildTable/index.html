@@ -103,14 +103,14 @@
 </ul>
 <hr>
 <p>First install the npm modules we need:</p>
-<pre><code class="hljs">npm install @xeokit/scene
+<pre class="code-section"><code class="hljs">npm install @xeokit/scene
 npm install @xeokit/viewer
 npm install @xeokit/cameracontrol
 npm install @xeokit/webglrenderer
 npm install @xeokit/core/constants
 </code></pre>
 <p>Then create an HTML page in <code>index.html</code> that contains a canvas element:</p>
-<pre><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
+<pre class="code-section"><code class="hljs"><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-keyword">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">html</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
     <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>xeokit Spinning Box<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
@@ -122,7 +122,7 @@ npm install @xeokit/core/constants
 <span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
 </code></pre>
 <p>Then create JavaScript in <code>index.js</code> to build and view our model.</p>
-<pre><code class="hljs"><span class="hljs-keyword">import</span> {<span class="hljs-title class_">Scene</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/scene&quot;</span>;
+<pre class="code-section"><code class="hljs"><span class="hljs-keyword">import</span> {<span class="hljs-title class_">Scene</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/scene&quot;</span>;
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">TrianglesPrimitive</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/constants&quot;</span>;
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">Viewer</span>} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/viewer&quot;</span>;
 <span class="hljs-keyword">import</span> {<span class="hljs-title class_">Web</span>GLRenderer} <span class="hljs-keyword">from</span> <span class="hljs-string">&quot;@xeokit/webglrenderer&quot;</span>;

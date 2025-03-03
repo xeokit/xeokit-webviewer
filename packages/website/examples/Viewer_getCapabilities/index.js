@@ -33,7 +33,7 @@ demoHelper.init()
 
         const capabilities = viewer.capabilities;
 
-        demoHelper.log(`viewer.capabilities.headless = ${capabilities.headless}\n
+        console.log(`viewer.capabilities.headless = ${capabilities.headless}\n
             viewer.capabilities.maxViews = ${capabilities.maxViews}\n
             viewer.capabilities.dxtSupported = ${capabilities.dxtSupported}\n
             viewer.capabilities.etc1Supported = ${capabilities.etc1Supported}\n

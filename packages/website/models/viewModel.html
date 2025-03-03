@@ -193,14 +193,14 @@
                     });
 
                     demoHelper.init({
-                        index: info[pipelineId]
+                       // index: info[pipelineId]
                     }).then(() => {
 
                         //const pipeline = pipelines.pipelines[pipelineId];
 
-                        demoHelper.logViewingModel(modelId, pipelineId);
+                        // demoHelper.logViewingModel(modelId, pipelineId);
 
-                        demoHelper.logImportPipeline(pipelineId)
+                        // demoHelper.logImportPipeline(pipelineId)
 
                         scene.onModelCreated.subscribe(() => {
                             cameraFlight.jumpTo({aabb: scene.aabb});
@@ -218,7 +218,7 @@
                         const baseDir = `../../models/${modelId}/${pipelineId}`;
 
                         const onError = (err) => {
-                            demoHelper.logError(err);
+                            // demoHelper.logError(err);
                         }
 
                         const onSuccess = () => {
@@ -232,7 +232,7 @@
                             case "laz":
                                 view.camera.orbitPitch(20);
                                 view.camera.orbitYaw(20);
-                                demoHelper.logAsset(`${baseDir}/model.laz`, "LAZ")
+                                // demoHelper.logAsset(`${baseDir}/model.laz`, "LAZ")
                                 fetch(`${baseDir}/model.laz`)
                                     .then(response => {
                                         response
@@ -264,7 +264,7 @@
                             case "las":
                                 view.camera.orbitPitch(20);
                                 view.camera.orbitYaw(20);
-                                demoHelper.logAsset(`${baseDir}/model.las`, "LAS")
+                                // demoHelper.logAsset(`${baseDir}/model.las`, "LAS")
                                 fetch(`${baseDir}/model.las`)
                                     .then(response => {
                                         response
@@ -300,7 +300,7 @@
                                     0, 0, 1, // Up
                                     0, -1, 0  // Forward
                                 ];
-                                demoHelper.logAsset(`${baseDir}/model.json`, "CityJSON")
+                                // demoHelper.logAsset(`${baseDir}/model.json`, "CityJSON")
                                 fetch(`${baseDir}/model.json`)
                                     .then(response => {
                                         response
@@ -325,7 +325,7 @@
                                 ];
                                 view.camera.orbitYaw(-50);
                                 view.camera.orbitPitch(-90);
-                                demoHelper.logAsset(`${baseDir}/model.bim`, ".BIM")
+                                // demoHelper.logAsset(`${baseDir}/model.bim`, ".BIM")
                                 fetch(`${baseDir}/model.bim`)
                                     .then(response => {
                                         response
@@ -339,13 +339,13 @@
                                                     .then(onSuccess)
                                                     .catch(onError);
                                             }).catch(err => {
-                                            demoHelper.logError(err);
+                                            // demoHelper.logError(err);
                                         });
                                     }).catch(onError);
                                 break;
 
                             case "gltf":
-                                demoHelper.logAsset(`${baseDir}/model.glb`, "GLB");
+                                // demoHelper.logAsset(`${baseDir}/model.glb`, "GLB");
                                 fetch(`${baseDir}/model.glb`)
                                     .then(response => {
                                         response
@@ -363,11 +363,11 @@
                                 break;
 
                             case "ifc": {
-                                demoHelper.initWebIFC();
+                                // demoHelper.initWebIFC();
                                 const ifcAPI = new WebIFC.IfcAPI();
                                 ifcAPI.SetWasmPath("https://cdn.jsdelivr.net/npm/web-ifc@0.0.51/");
                                 ifcAPI.Init().then(() => {
-                                    demoHelper.logAsset(`${baseDir}/model.ifc`, "IFC")
+                                    // demoHelper.logAsset(`${baseDir}/model.ifc`, "IFC")
                                     fetch(`${baseDir}/model.ifc`).then(response => {
                                         response
                                             .arrayBuffer()
@@ -391,7 +391,7 @@
                                     sceneModelLoader: xeokit.gltf.loadGLTF,
                                     dataModelLoader: xeokit.metamodel.loadMetaModel
                                 });
-                                demoHelper.logAsset(`${baseDir}/model.manifest.json`, "model manifest")
+                                // demoHelper.logAsset(`${baseDir}/model.manifest.json`, "model manifest")
                                 fetch(`${baseDir}/model.manifest.json`).then(response => {
                                     response
                                         .json()
@@ -415,7 +415,7 @@
                                     sceneModelLoader: xeokit.xgf.loadXGF,
                                     dataModelLoader: xeokit.data.loadDataModel
                                 });
-                                demoHelper.logAsset(`${baseDir}/model.manifest.json`, "model manifest")
+                                // demoHelper.logAsset(`${baseDir}/model.manifest.json`, "model manifest")
                                 fetch(`${baseDir}/model.manifest.json`).then(response => {
                                     response
                                         .json()
@@ -436,14 +436,14 @@
                             case "gltf2xgf":
                             case "las2xgf":
                             case "webifc2xgf":
-                                demoHelper.logAsset(`${baseDir}/model.json`, "DataModel JSON")
+                                // demoHelper.logAsset(`${baseDir}/model.json`, "DataModel JSON")
                                 fetch(`${baseDir}/model.json`).then(
                                     response => {
                                         response
                                             .json()
                                             .then(dataModelFileData => {
                                                 dataModel.fromParams(dataModelFileData);
-                                                demoHelper.logAsset(`${baseDir}/model.xgf`, "XGF")
+                                                // demoHelper.logAsset(`${baseDir}/model.xgf`, "XGF")
                                                 fetch(`${baseDir}/model.xgf`)
                                                     .then(response => {
                                                         response
@@ -468,14 +468,14 @@
                                     0, 0, 1, // Up
                                     0, -1, 0  // Forward
                                 ];
-                                demoHelper.logAsset(`${baseDir}/model.json`, "DataModel JSON")
+                                // demoHelper.logAsset(`${baseDir}/model.json`, "DataModel JSON")
                                 fetch(`${baseDir}/model.json`).then(
                                     response => {
                                         response
                                             .json()
                                             .then(dataModelFileData => {
                                                 dataModel.fromParams(dataModelFileData);
-                                                demoHelper.logAsset(`${baseDir}/model.xgf`, "XGF")
+                                                // demoHelper.logAsset(`${baseDir}/model.xgf`, "XGF")
                                                 fetch(`${baseDir}/model.xgf`)
                                                     .then(response => {
                                                         response
@@ -494,7 +494,7 @@
                                 break;
 
                             case "json":
-                                demoHelper.logAsset(`${baseDir}/datamodel.json`, "DataModel JSON")
+                                // demoHelper.logAsset(`${baseDir}/datamodel.json`, "DataModel JSON")
                                 fetch(`${baseDir}/datamodel.json`).then(
                                     response => {
                                         response
@@ -504,7 +504,7 @@
                                                 if (result instanceof xeokit.core.SDKError) {
                                                     onError(result.message);
                                                 } else {
-                                                    demoHelper.logAsset(`${baseDir}/scenemodel.json`, "SceneModel JSON");
+                                                    // demoHelper.logAsset(`${baseDir}/scenemodel.json`, "SceneModel JSON");
                                                     fetch(`${baseDir}/scenemodel.json`)
                                                         .then(response => {
                                                             response

@@ -2,7 +2,7 @@
     "inputFile": "./models/IfcOpenHouse2x3/ifc/model.ifc",
     "converterApplication": "ifc2gltfcxconverter",
     "converterApplicationVersion": "4.34.4",
-    "conversionDate": "2025-02-16 19:17:32",
+    "conversionDate": "2025-02-27 12:55:15",
     "gltfOutFiles": [
         "./models/IfcOpenHouse2x3/ifc2gltf/model.glb"
     ],

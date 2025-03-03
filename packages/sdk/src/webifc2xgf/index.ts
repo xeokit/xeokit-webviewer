@@ -46,7 +46,7 @@
  * using {@link xgf!loadXGF | loadXGF()}.
  *
  * ````bash
- * node webifc2xgf -i duplex.ifc -o duplex.xgf
+ * node webifc2xgf -i duplex.ifc -s duplex.xgf
  * ````
  *
  * ### Converting IFC geometry and semantic data

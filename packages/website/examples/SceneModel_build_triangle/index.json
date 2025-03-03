@@ -4,5 +4,11 @@
   "description": "Using xeokit SDK to create and view a single 3D triangle in the browser.",
   "isTutorial": true,
   "isVisualTest": true,
+  "tags": [],
+  "categories": [
+    "Modeling",
+    "Scene"
+  ],
+  "topic": "modeling.scene.geometry",
   "template": "basicPage"
 }

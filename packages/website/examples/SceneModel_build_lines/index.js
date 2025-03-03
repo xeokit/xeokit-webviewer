@@ -117,7 +117,7 @@ demoHelper
                     scale: [1, 3, 1],
                     rotation: [0, 0, 0],
                     color: [1, 0.3, 0.3]
-                }):
+                })
             });
 
             sceneModel.createObject({
@@ -133,7 +133,7 @@ demoHelper
                     scale: [1, 3, 1],
                     rotation: [0, 0, 0],
                     color: [0.3, 1.0, 0.3]
-                });
+                })
             });
 
             sceneModel.createObject({
@@ -149,7 +149,7 @@ demoHelper
                     scale: [1, 3, 1],
                     rotation: [0, 0, 0],
                     color: [0.3, 0.3, 1.0]
-                });
+                })
             });
 
             sceneModel.createObject({
@@ -165,7 +165,7 @@ demoHelper
                     scale: [1, 3, 1],
                     rotation: [0, 0, 0],
                     color: [1.0, 1.0, 0.0]
-                });
+                })
             });
 
             sceneModel.createObject({
@@ -181,7 +181,7 @@ demoHelper
                     scale: [6, 0.5, 6],
                     rotation: [0, 0, 0],
                     color: [1.0, 0.3, 1.0]
-                });
+                })
             });
 
             sceneModel.createObject({
@@ -207,7 +207,7 @@ demoHelper
                 demoHelper.finished();
 
             }).catch((e) => {
-                demoHelper.logError(`Error building SceneModel: ${e}`);
+                console.error(`Error building SceneModel: ${e}`);
                 throw e;
             });
         }

@@ -49,7 +49,7 @@ demoHelper.init()
         });
 
         view2.camera.projectionType = xeokit.constants.OrthoProjectionType;
-        view2.camera.eye = [0, -5, 20];
+        view2.camera.eye = [0, -5, 25];
         view2.camera.look = [0, -5, 0];
         view2.camera.up = [0, 1, 0];
         view2.camera.orthoProjection.scale = 20;

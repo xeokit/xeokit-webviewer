@@ -2,7 +2,7 @@
     "inputFile": "./models/Duplex/ifc/model.ifc",
     "converterApplication": "ifc2gltfcxconverter",
     "converterApplicationVersion": "4.34.4",
-    "conversionDate": "2025-02-16 19:17:30",
+    "conversionDate": "2025-02-27 12:55:12",
     "gltfOutFiles": [
         "./models/Duplex/ifc2gltf/model.glb"
     ],

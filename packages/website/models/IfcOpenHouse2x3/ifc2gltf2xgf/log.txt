@@ -1386,3 +1386,23 @@ glTFFilesExist = true
 [ifc2gltf2xgf] 
 Reading glTF manifest file: ./models/IfcOpenHouse2x3/ifc2gltf/model.manifest.json
 glTFFilesExist = true
+[ifc2gltf2xgf] Converting to XGF version: 1 (default)
+[ifc2gltf2xgf] 
+Reading glTF manifest file: ./models/IfcOpenHouse2x3/ifc2gltf/model.manifest.json
+glTFFilesExist = true
+[ifc2gltf2xgf] Converting to XGF version: 1 (default)
+[ifc2gltf2xgf] 
+Reading glTF manifest file: ./models/IfcOpenHouse2x3/ifc2gltf/model.manifest.json
+glTFFilesExist = true
+[ifc2gltf2xgf] Converting to XGF version: 1 (default)
+[ifc2gltf2xgf] 
+Reading glTF manifest file: ./models/IfcOpenHouse2x3/ifc2gltf/model.manifest.json
+glTFFilesExist = true
+[ifc2gltf2xgf] Converting to XGF version: 1 (default)
+[ifc2gltf2xgf] 
+Reading glTF manifest file: ./models/IfcOpenHouse2x3/ifc2gltf/model.manifest.json
+glTFFilesExist = true
+[ifc2gltf2xgf] Converting to XGF version: 1 (default)
+[ifc2gltf2xgf] 
+Reading glTF manifest file: ./models/IfcOpenHouse2x3/ifc2gltf/model.manifest.json
+glTFFilesExist = true

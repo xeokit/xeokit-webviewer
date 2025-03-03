@@ -1,8 +1,14 @@
 {
   "id": "View_multiView_drawBox",
   "title": "Building a box-shaped SceneModel in multiple Views",
-  "description": "Using the xeokit SDK to build a box-shaped 3D model and view it within multiple canvases in the browser",
+  "description": "In this example, we'll use the xeokit SDK to build a box-shaped 3D model and view it within multiple canvases in the browser",
   "isTutorial": false,
   "isVisualTest": true,
+  "tags": [],
+  "categories": [
+    "Viewer",
+    "Views"
+  ],
+  "topic": "general",
   "template": "threeCanvasPage"
 }

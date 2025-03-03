@@ -1,5 +1,8 @@
 {
-    "title": "View a BCF Viewpoint of a BIM Model",
+    "title": "View a BCF Viewpoint",
     "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
-    "tags": ["Beginner", "SceneModel", "SceneTransform", "SceneObject", "Viewer", "Geometry", "BCF","XGF"]
+    "tags": [
+        "BCF", "Featured"
+    ],
+    "topic": "bcf"
 }

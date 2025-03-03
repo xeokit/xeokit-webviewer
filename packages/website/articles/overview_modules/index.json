@@ -1,0 +1,9 @@
+{
+    "title": "xeokit SDK Code Modules",
+    "description": "An overview of the modules within the xeokit SDK, including scene and data representation, web viewer, model import, export and conversion tools, and various utility libraries.",
+    "tags": [
+        "Featured"
+    ],
+    "bannerImage": "img.png",
+    "topic": "overview"
+}

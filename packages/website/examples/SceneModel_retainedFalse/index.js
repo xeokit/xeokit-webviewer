@@ -176,4 +176,5 @@ demoHelper.init()
             log(`Error building SceneModel: ${e}`);
             throw e;
         });
+    });
 

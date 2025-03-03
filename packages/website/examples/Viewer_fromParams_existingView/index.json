@@ -4,5 +4,11 @@
   "description": "",
   "isTutorial": false,
   "isVisualTest": true,
+  "tags": [],
+  "categories": [
+    "Viewer",
+    "Configuration"
+  ],
+  "topic": "viewer.configuration",
   "template": "basicPage"
 }

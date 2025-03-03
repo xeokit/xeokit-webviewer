@@ -4,6 +4,8 @@
  * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-business-frontpage/blob/master/LICENSE)
  */
 
+
+
 body {
     padding-top: 54px;
 }
@@ -306,7 +308,7 @@ code {
 }
 
 .card {
-    height: 100%;
+    /*height: 100%;*/
 }
 
 .tap-to-interact {
@@ -430,7 +432,7 @@ span.clients-name {
 }
 
 .testimonial-row p {
-    padding-bottom: 8px;
+    /*padding-bottom: 8px;*/
 }
 
 .testimonial-row b {
@@ -994,6 +996,7 @@ iframe {
 }
 
 a.doc-link  {
+
     text-decoration: indianred;
     /*border:1px solid #dedede;*/
     border-radius:2px;
@@ -1003,6 +1006,20 @@ a.doc-link  {
     padding-left:5px;
     padding-right:5px;
     background:#f3f3f3;
+    font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+
+span.doc-link  {
+    text-decoration: indianred;
+    /*border:1px solid #dedede;*/
+    border-radius:2px;
+    margin:-1px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-left:5px;
+    padding-right:5px;
+    background:#f6f6f6;
     font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
@@ -1025,9 +1042,21 @@ a.doc-link  {
 }
 
 .image-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
-    height: auto;
-    display: block;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the iframe */
+    z-index: 2; /* Ensure the image is on top */
+
+}
+
+.image-container iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 1;
 }
 
 .image-container .overlay {
@@ -1044,4 +1073,86 @@ a.doc-link  {
     font-family: Arial, sans-serif;
     font-size: 18px;
     text-align: center;
+}
+
+.comment-block {
+    padding-top: 15px;
+    padding-bottom:5px !important;
+}
+
+.code-section {
+    padding-top: 0;
+    padding-bottom: 5px;
+}
+
+
+.example-run-container {
+    position: relative;
+    width: 100%;
+    height: 600px;
+    margin: auto;
+    /*align-items: center;*/
+    justify-content: center;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.example-run-container iframe {
+    width: 100%;
+    height: 600px;
+    border: 0;
+    display: block;
+    padding: 0;
+    margin: 0;
+}
+
+.example-run-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    z-index: 2; /* Keep it on top */
+    transition: opacity 0.5s ease; /* Optional fade-out effect */
+    border: none;
+}
+
+.example-run-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+    z-index: 3; /* Keep it on top */
+    /*transition: opacity 0.5s ease; !* Optional fade-out effect *!*/
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /*background: radial-gradient(circle, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0) 40%);*/
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 18px;
+background-color: rgba(0,0,0,0);
+    text-align: center;
+    border: none;
+}
+
+.example-run-container .overlay .text-overlay {
+    color: white;
+    background: rgba(0, 0, 0, 1.0);
+    padding: 5px 10px;
+    display: inline-block;
+    border-radius: 5px;
+border: 1px solid white;
+}
+
+table ul {
+    padding-bottom: 0;
+    margin-bottom: 0;
+    margin-left:0;
+    padding-left: 22px;
+    margin-top:2px;
 }

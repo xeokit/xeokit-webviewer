@@ -3,5 +3,8 @@
   "title": "Using a TreeView configured with AggregationHierarchy",
   "description": "",
   "isTutorial": false,
-  "isVisualTest": false
+  "isVisualTest": false,
+  "tags": [],
+  "categories": [],
+  "topic": "general"
 }

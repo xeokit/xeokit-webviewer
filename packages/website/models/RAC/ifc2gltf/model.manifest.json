@@ -2,7 +2,7 @@
     "inputFile": "./models/RAC/ifc/model.ifc",
     "converterApplication": "ifc2gltfcxconverter",
     "converterApplicationVersion": "4.34.4",
-    "conversionDate": "2025-02-16 19:17:42",
+    "conversionDate": "2025-02-27 12:55:27",
     "gltfOutFiles": [
         "./models/RAC/ifc2gltf/model.glb"
     ],

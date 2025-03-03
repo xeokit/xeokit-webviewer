@@ -12,6 +12,13 @@ const puppeteer = require('puppeteer');
 const express = require('express');
 const app = express();
 
+const Prism = require('prismjs')
+//const DOMPurify from 'dompurify'
+require('prismjs/plugins/line-numbers/prism-line-numbers.js');
+const language = 'javascript'
+
+const grammar = Prism.languages[language]
+
 const base = "http://localhost:8080";
 //const base = "https://xeokit.github.io/sdk/";
 
@@ -26,7 +33,7 @@ const markDownParser = markdownit({
         if (lang && hljs.getLanguage(lang)) {
             try {
                 return (
-                    '<pre><code class="hljs">' +
+                    '<pre class="code-section"><code class="hljs">' +
                     hljs.highlight(str, {language: lang, ignoreIllegals: true}).value +
                     "</code></pre>"
                 );
@@ -34,16 +41,271 @@ const markDownParser = markdownit({
             }
         }
         return (
-            '<pre><code class="hljs">' +
+            '<code class="hljs">' +
             //    hljs.utils.escapeHtml(str) +
-            "</code></pre>"
+            "</code>"
         );
     }
 });
 
+
+/*----------------------------------------------------------------------------------------
+ *
+ *
+ *---------------------------------------------------------------------------------------*/
+
+function compileExamples() {
+    console.log("Compiling examples");
+
+    const baseDir = "./examples/";
+    const index = {};
+
+    try {
+
+        const files = fs.readdirSync(baseDir);
+
+        files.forEach(file => {
+
+            const exampleDirPath = path.join(baseDir, file);
+            const stats = fs.statSync(exampleDirPath);
+
+            if (stats.isDirectory()) {
+
+                const indexJSONPath = path.join(exampleDirPath, 'index.json');
+                const indexJSPath = path.join(exampleDirPath, 'index.js');
+
+                if (fs.existsSync(indexJSONPath)) {
+
+                    console.log("Compiling example:" + exampleDirPath);
+
+                    try {
+                        const exampleInfo = JSON.parse(fs.readFileSync(indexJSONPath, 'utf8'));
+
+                        exampleInfo.id = file;
+
+                        if (exampleInfo.template) {
+
+                            console.log("Compiling example template:" + exampleInfo.template);
+
+                            gulp.src([`./templates/${exampleInfo.template}.html`])
+                                .pipe(
+                                    replace({
+                                        patterns: [
+                                            {
+                                                match: 'base',
+                                                replacement: base
+                                            },
+                                            {
+                                                match: 'title',
+                                                replacement: exampleInfo.title
+                                            }
+                                        ]
+                                    })
+                                )
+                                .pipe(fileinclude({}))
+                                .pipe(rename("index.html"))
+                                .pipe(gulp.dest(`${exampleDirPath}/`))
+                                .on('end', function () {
+                                });
+
+                            fs.cpSync(`./templates/${exampleInfo.template}.html`, `${exampleDirPath}/index.html`);
+                        }
+
+                        console.log("TEST EXISTS:" + indexJSPath);
+
+                        if (fs.existsSync(indexJSPath)) {
+
+                            console.log("TEST EXISTS: YES");
+
+                            if (exampleInfo.isTutorial) {
+
+                                console.log("Creating tutorial for example: " + file);
+
+                                const articleDirPath = `./articles/example_${file}`;
+                                const exampleDirPath = `./examples/${file}`;
+                                fs.rmSync(articleDirPath, {recursive: true, force: true});
+                                fs.mkdirSync(articleDirPath, {recursive: true});
+
+                                const exampleJS = renderCodeSections(parseCodeSections(fs.readFileSync(indexJSPath, 'utf8'), null), true);
+
+                                gulp.src([`./templates/web-example-tutorial.md`])
+                                    .pipe(
+                                        replace({
+                                            patterns: [
+                                                {
+                                                    match: 'exampleId',
+                                                    replacement: exampleInfo.id
+                                                },
+                                                {
+                                                    match: 'title',
+                                                    replacement: exampleInfo.title
+                                                },
+                                                {
+                                                    match: 'description',
+                                                    replacement: exampleInfo.description
+                                                },
+                                                {
+                                                    match: 'exampleId',
+                                                    replacement: file
+                                                },
+                                                {
+                                                    match: 'base',
+                                                    replacement: base
+                                                },
+                                                {
+                                                    match: 'javascript',
+                                                    replacement: exampleJS
+                                                }
+                                            ]
+                                        })
+                                    )
+                                    .pipe(fileinclude({}))
+                                    .pipe(rename("index.md"))
+                                    .pipe(gulp.dest(articleDirPath))
+                                    .on('end', function () {
+                                    });
+
+                                const articleInfo = {
+                                    title: exampleInfo.title,
+                                    description: exampleInfo.description || "",
+                                    tags: [
+                                        "Tutorial",
+                                        "Example"
+                                    ],
+                                    topic: exampleInfo.topic || "general"
+                                };
+                                if (exampleInfo.tags) {
+                                    articleInfo.tags = articleInfo.tags.concat(exampleInfo.tags);
+                                }
+                                fs.writeFileSync(path.join(articleDirPath, 'index.json'), JSON.stringify(articleInfo, null, 2));
+                                fs.cpSync(path.join(exampleDirPath, 'index.png'), path.join(articleDirPath, 'index.png'));
+                            }
+                            const trimmedExampleInfo = {
+                                id: exampleInfo.id,
+                                title: exampleInfo.title,
+                                description: exampleInfo.description || "",
+                                isTutorial: !!exampleInfo.isTutorial,
+                                isVisualTest: !!exampleInfo.isVisualTest,
+                                tags: exampleInfo.tags || [],
+                                categories: exampleInfo.categories || [],
+                                topic: exampleInfo.topic || "general"
+                            };
+                            if (exampleInfo.template) {
+                                trimmedExampleInfo.template = exampleInfo.template;
+                            }
+                            fs.writeFileSync(indexJSONPath, JSON.stringify(trimmedExampleInfo, null, 2));
+
+                            index[exampleInfo.id] = trimmedExampleInfo;
+                        }
+                    } catch (err) {
+                        console.error(`Error reading or parsing JSON in file: ${indexJSONPath}`, err);
+                    }
+                } else {
+                    console.log(`index.json not found:  ${indexJSONPath}`);
+                }
+            }
+        });
+    } catch (err) {
+        console.error(`Error reading directory: ${err}`);
+    }
+    fs.writeFileSync("./examples/index.json", JSON.stringify(index, null, 2), 'utf8');
+}
+
+let docLinkMade = {};
+
+function parseCodeSections(code, token = "\\") {
+    docLinkMade = {}
+    const lines = code.split('\n')
+    const sections = []
+    let currentSection = {
+        comments: [],
+        code: []
+    }
+    for (let line of lines) {
+        if (line.trim().startsWith(token)) {
+            if (currentSection.code.length > 0) {
+                sections.push({...currentSection})
+                currentSection = {
+                    comments: [],
+                    code: []
+                }
+            }
+            currentSection.comments.push(line.trim().substring(token.length).trim())
+        } else if (line.length > 0) {
+            if (currentSection.comments.length > 0 && currentSection.code.length === 0) {
+                sections.push({...currentSection})
+                currentSection = {
+                    comments: [],
+                    code: []
+                }
+            }
+            currentSection.code.push(line)
+        }
+    }
+    if (currentSection.comments.length > 0 || currentSection.code.length > 0) {
+        sections.push(currentSection)
+    }
+    return sections
+}
+
+function renderCodeSections(sections, isJavaScript) {
+    let lineCount = 1;
+    return sections.map(section => {
+        const html = []
+        if (section.comments.length > 0) {
+            html.push(`<p class="comment-block">
+<span style="font-weight: bold">${lineCount++}.</span> ${parsedocsLookup(section.comments.join(' '))}</p>`)
+        }
+        if (section.code.length > 0) {
+            if (isJavaScript) {
+                html.push("\n\n````javascript\n" + section.code.join('\n') + "\n````\n")
+            } else {
+                html.push("\n\n````html\n\n" + section.code.join('\n') + "\n\n````\n")
+            }
+        }
+        return html.join('');
+    }).join('')
+}
+
+function parsedocsLookup(text) {
+    Object.keys(docsLookup).forEach(function (key) {
+        const expr = ` ${key}`;
+        const regex = new RegExp(`\\b${expr}?\\b`, 'g');
+        text = text.replace(regex, (match) => {
+            if (docLinkMade[key]) {
+                return `&nbsp;<span class="doc-link">${key}</span>`
+            }
+            docLinkMade[key] = true;
+            const entry = docsLookup[key];
+            const path = entry.path || "";
+            return `&nbsp;<a class="doc-link" data-template="${key}_template"  href="${path}" target="_parent">${key}</a>
+            <template class="doc-link-tooltip" id="${key}_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / ${entry.namespace} / ${key} /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">${capitalizeFirstLetter(entry.kind)} ${key}</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">${entry.summary}</p>
+            </template>`;
+        });
+    });
+    return text;
+}
+
+function capitalizeFirstLetter(str) {
+    if (!str) return str;
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+
+/*----------------------------------------------------------------------------------------
+ *
+ *
+ *---------------------------------------------------------------------------------------*/
+
 function compileArticles() {
 
+    console.log("Compiling articles");
+
     const baseDir = "./articles/";
+
     const index = {
         articles: {},
         tagsToArticlesMap: {}
@@ -58,15 +320,14 @@ function compileArticles() {
             const subDirPath = path.join(baseDir, file);
             const stats = fs.statSync(subDirPath);
 
-            console.log("XXXX = " + subDirPath)
             if (stats.isDirectory()) {
-
 
                 const indexPath = path.join(subDirPath, 'index.json');
                 let articleJSON;
 
                 if (fs.existsSync(indexPath)) {
                     try {
+                        console.log("Compiling article: " + articleId);
                         const data = fs.readFileSync(indexPath, 'utf8');
                         articleJSON = JSON.parse(data);
                         index.articles[file] = articleJSON;
@@ -98,7 +359,7 @@ function compileArticles() {
                                         }
                                     }
                                     if (!thumbnailPath) {
-                                        thumbnailPath = "./../images/xktWithTextures.png";
+                                        thumbnailPath = "./images/xktWithTextures.png";
                                     }
                                 } else {
                                     thumbnailPath = path.join(subDirPath, thumbnailPath);
@@ -121,12 +382,13 @@ function compileArticles() {
                         console.error(`Error reading or parsing JSON in file: ${indexPath}`, err);
                     }
                 } else {
-                    console.log(`index.json not found in ${subDirPath}`);
+                    console.log(`index.json not found: ${indexPath}`);
                 }
                 const mdIndexPath = path.join(subDirPath, 'index.md');
                 const templateIndexPath = path.join(subDirPath, 'indexTemp.html');
 
                 if (fs.existsSync(mdIndexPath)) {
+                    console.log("Compiling article markdown: " + mdIndexPath);
                     try {
                         const md = fs.readFileSync(mdIndexPath, 'utf8');
                         const mdIndexPath2 = path.join(subDirPath, 'content.html');
@@ -151,6 +413,7 @@ function compileArticles() {
                                     )
                                 );
                             fs.writeFileSync(mdIndexPath2, html, 'utf8');
+
                             gulp.src([
                                 templateIndexPath
                             ])
@@ -198,8 +461,6 @@ function compileArticles() {
                     } catch (err) {
                         console.error(`Error reading or parsing file: ${indexPath}`, err);
                     }
-                } else {
-                    console.log(`index.json not found in ${subDirPath}`);
                 }
             }
         });
@@ -221,6 +482,24 @@ function compileArticles() {
             .on('end', function () {
             });
 
+        gulp.src(["./templates/articles-toc.html"])
+            .pipe(
+                replace({
+                    patterns: [
+                        {
+                            match: 'base',
+                            replacement: base
+                        }
+                    ]
+                })
+            )
+            .pipe(fileinclude({}))
+            .pipe(rename("index-toc.html"))
+            .pipe(gulp.dest(`./articles/`))
+            .on('end', function () {
+            });
+
+
         gulp.src(["./templates/models-index.html"])
             .pipe(
                 replace({
@@ -237,6 +516,8 @@ function compileArticles() {
             .pipe(gulp.dest(`./models/`))
             .on('end', function () {
             });
+
+        console.log("Writing ./templates/article-index.html");
 
         gulp.src(["./templates/article-index.html"])
             .pipe(
@@ -291,6 +572,8 @@ function compileArticles() {
         console.error(`Error reading directory: ${err}`);
     }
 
+    console.log("Writing ./articles/index.json");
+
     fs.writeFileSync("./articles/index.json", JSON.stringify(index, null, 2), 'utf8');
 }
 
@@ -328,7 +611,7 @@ function parseDocLinks(text, prefix = true) {
     return text;
 }
 
-function parseExampleRunLinks(text) {
+function parseExampleRunLinksOLD(text) {
     Object.keys(examplesIndex).forEach(function (key) {
         const expr = `example-run:${key}`;
         const regex = new RegExp(`\\b${expr}?\\b`, 'g');
@@ -367,6 +650,56 @@ function parseExampleRunLinks(text) {
     return text;
 }
 
+
+function parseExampleRunLinks(text) {
+    Object.keys(examplesIndex).forEach(function (key) {
+        const expr = `example-run:${key}`;
+        const regex = new RegExp(`\\b${expr}?\\b`, 'g');
+        text = text.replace(regex, (match) => {
+            const entry = examplesIndex[key];
+            if (!entry) {
+                return "";
+            }
+            const exampleSrc = `../../examples/${key}/index.html`
+            return `<div id="${key}-interactivePlaceholder" class="example-run-container">
+                        <div id="${key}-overlay" class="overlay"><div id="${key}-text-overlay" class="text-overlay">Click to load</div></div>
+                        <img id="${key}-img" src="../../examples/${key}/index.png"  alt="Placeholder image"/>
+                        <iframe id="${key}-iframe"></iframe>
+                        <p><i>${entry.title}</i></p>
+                    </div>
+                    <br>
+                    <script>
+                        const placeholder = document.getElementById("${key}-interactivePlaceholder");
+                        placeholder.addEventListener('click', function() {
+                            const overlay = document.getElementById("${key}-overlay");
+                                  const textOverlay = document.getElementById("${key}-text-overlay");
+                                  textOverlay.innerText = "Loading...";
+                                  const img = document.getElementById("${key}-img");
+     const imgStyles = window.getComputedStyle(img);
+    const iframe = document.getElementById("${key}-iframe")
+    iframe.src = "${exampleSrc}";
+                            iframe.onload = () =>{
+                                const checkElement = () => {
+                                    try {
+                                        const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                                        if (iframeDoc && iframeDoc.getElementById("ExampleLoaded")) {
+                                            clearInterval(checkInterval);
+                                            img.remove();
+                                                        overlay.remove();
+                                        }
+                                    } catch (error) {
+                                        console.warn("Unable to access iframe contents (possible cross-origin issue)");
+                                    }
+                                };
+                                const checkInterval = setInterval(checkElement, 100);
+                            };
+                     });
+             </script>`;
+        });
+    });
+    return text;
+}
+
 function parseExampleSteps(text) {
     Object.keys(examplesIndex).forEach(function (key) {
         const expr = `example-steps:${key}`;
@@ -387,6 +720,16 @@ function parseExampleSteps(text) {
         });
     });
     return text;
+}
+
+function createStepsHTML(entry) {
+    const steps = entry.steps || [];
+    const stepsHtml = ["<ol>"];
+    for (let step of steps) {
+        stepsHtml.push(`<li classname='status-message'>${parseDocLinks(step.trim(), false)}.</li>`);
+    }
+    stepsHtml.push("</ol>");
+    return `${stepsHtml.join("\n")}<br>`;
 }
 
 function parseExampleHTMLLinks(text) {
@@ -415,7 +758,8 @@ function parseExampleJavaScriptLinks(text) {
                 return "";
             }
             const javascript = fs.readFileSync(`./examples/${key}/index.js`, "utf8");
-            return "\n````javascript\n" + javascript + "\n````\n\n<br>* [<a href=''>Source</a>]<br>";
+            const sections = parseCodeSections(javascript, "//")
+            return renderCodeSections(sections, true);
         });
     });
     return text;
@@ -426,102 +770,11 @@ function capitalizeFirstLetter(str) {
     return str.charAt(0).toUpperCase() + str.slice(1);
 }
 
-function compileExamples() {
-    const baseDir = "./examples/";
-    const index = {};
-    try {
-        const files = fs.readdirSync(baseDir);
-        files.forEach(file => {
-            const subDirPath = path.join(baseDir, file);
-            const stats = fs.statSync(subDirPath);
-            if (stats.isDirectory()) {
-                const indexJSONPath = path.join(subDirPath, 'index.json');
-                const indexJSPath = path.join(subDirPath, 'index.js');
-                if (fs.existsSync(indexJSONPath)) {
-                    try {
-                        const exampleInfo = JSON.parse(fs.readFileSync(indexJSONPath, 'utf8'));
-                        exampleInfo.id = file;
-                        exampleInfo.type = "example";
-                        index[file] = exampleInfo;
-                        if (exampleInfo.template) {
-                            gulp.src([`./templates/${exampleInfo.template}.html`])
-                                .pipe(
-                                    replace({
-                                        patterns: [
-                                            {
-                                                match: 'base',
-                                                replacement: base
-                                            }
-                                        ]
-                                    })
-                                )
-                                .pipe(fileinclude({}))
-                                .pipe(rename("index.html"))
-                                .pipe(gulp.dest(`${subDirPath}/`))
-                                .on('end', function () {
-                                });
-
-                            fs.cpSync(`./templates/${exampleInfo.template}.html`, `${subDirPath}/index.html`);
-                        }
-                        if (fs.existsSync(indexJSPath)) {
-                            const javascript = fs.readFileSync(indexJSPath, "utf8");
-                            const steps = extractSingleLineCommentsWithLineNumbers(javascript);
-                            if (steps && steps.length > 0) {
-                                exampleInfo.steps = steps;
-                                const javascriptStrippedComments = stripCommentText(javascript);
-                                fs.writeFileSync(path.join(subDirPath, 'index.stripped.js'), javascriptStrippedComments, 'utf8');
-                            } else {
-                                exampleInfo.steps = [];
-                            }
-                        }
-                        fs.writeFileSync(indexJSONPath, JSON.stringify(exampleInfo, null, 2), 'utf8');
-                    } catch (err) {
-                        console.error(`Error reading or parsing JSON in file: ${indexJSONPath}`, err);
-                    }
-                } else {
-                    console.log(`index.json not found in ${subDirPath}`);
-                }
-            }
-        });
-    } catch (err) {
-        console.error(`Error reading directory: ${err}`);
-    }
-    fs.writeFileSync("./examples/index.json", JSON.stringify( index, null, 2), 'utf8');
-}
-
-function extractSingleLineCommentsWithLineNumbers(sourceCode) {
-    const lines = sourceCode.split('\n'); // Split source code into lines
-    const comments = [];
-    let lastLineIdx = 0;
-    let comment = null;
-    lines.forEach((line, index) => {
-        const match = line.match(/\/\/\s*(.*)/); // Match text after //
-        if (match) {
-            if ((index - 1) === lastLineIdx) {
-                comment = (comment || "") + "\n" + match[1].trim();
-            } else {
-                if (comment) {
-                    comments.push(comment);
-                }
-                comment = match[1].trim();
-            }
-            lastLineIdx = index;
-        }
-    });
-    if (comment) {
-        comments.push(comment);
-    }
-    return comments;
-}
-
-function stripCommentText(sourceCode) {
-    return sourceCode.replace(/(\/\/\s*\d+\.).*|\/\*(\s*\d+\.).*?\*\//g, (_, singleLine, multiLine) => {
-        return singleLine ? `${singleLine.trim()}` : `/* ${multiLine.trim()} */`;
-    });
-}
-
 
 compileExamples();
 
-compileArticles();
+setTimeout(() => {
+    compileArticles();
+}, 5000)
+
 

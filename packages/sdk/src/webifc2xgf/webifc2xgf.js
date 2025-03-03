@@ -6,7 +6,7 @@ const commander = require('commander');
 const npmPackage = require('./../../package.json');
 const fs = require('fs');
 const path = require("path");
-const WebIFC = require("web-ifc/web-ifc-api-node.js");
+const WebIFCWasm = require("web-ifc"); // FIXME FIXME FIXME FIXME FIXME
 
 const program = new commander.Command();
 
@@ -85,7 +85,7 @@ try {
 
     const createDataModel = (dataModelSrc !== undefined);
 
-    const ifcAPI = new WebIFC.IfcAPI();
+    const ifcAPI = new WebIFCWasm.IfcAPI();
 
     ifcAPI.Init().then(() => {
 
@@ -140,7 +140,7 @@ try {
             process.exit(1);
         });
     }).catch(err => {
-        logError(`Failed to initialize WebIFC API - ${err}`);
+        logError(`Failed to initialize WebIFCWasm API - ${err}`);
         process.exit(-1);
     });
 

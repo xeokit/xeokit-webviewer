@@ -4,5 +4,11 @@
   "description": "",
   "isTutorial": false,
   "isVisualTest": true,
+  "tags": [],
+  "categories": [
+    "Importing",
+    "DotBIM"
+  ],
+  "topic": "import.dotbim",
   "template": "basicPage"
 }

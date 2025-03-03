@@ -2,25 +2,25 @@
 
 ---
 
-In this tutorial, we'll load an IFC 4.3 model into a xeokit doc:Viewer. To optimize performance, we'll first
-convert the IFC model to glTF and metamodel JSON files. The import process consists of two steps:
-1. Use `ifc2gltf` to convert IFC into glTF and JSON metadata.
-3. Use `doc:loadGLTF` to load the glTF and JSON metadata into a xeokit Viewer on a webpage.
+In this tutorial, we'll view an IFC 4.3 model in the browser using a xeokit doc:Viewer. To optimize performance, we'll first
+convert the IFC model to glTF and metadata JSON files. The import process consists of two steps:
 
-This process splits the model into multiple files, improving memory stability in the converter tools and
+1. Use `ifc2gltf` to convert IFC into glTF and JSON metadata files.
+2. Use `loadGLTF` to load the glTF and JSON metadata files into a xeokit Viewer on a webpage.
+
+This process also splits the model into multiple files, improving memory stability in the converter tools and
 Viewer by allowing incremental loading and deallocation.
 
 ## Example IFC Model
 
 ---
 
-In this tutorial, we'll import and view the Karhumaki Bridge model (source: [`http://drumbeat.cs.hut.fi/ifc/`](http://drumbeat.cs.hut.fi/ifc/)). Below is the final result— the model
-loaded in a Viewer from XGF and JSON data model files. In the following steps, we'll walk through the process
-of achieving this.
+For this tutorial, we'll use the Karhumaki Bridge IFC model (source: [`http://drumbeat.cs.hut.fi/ifc/`](http://drumbeat.cs.hut.fi/ifc/)). 
 
-* *[Run this example](https://xeokit.github.io/sdk//models/index.html#viewModel.html?modelId=KarhumakiBridge&pipelineId=ifc2gltf)*
+Below is the final result— the model loaded from glTF and JSON files into a xeokit Viewer. 
+In the following steps, we'll walk through the process of achieving this.
 
-[![](karhumaki.png)](https://xeokit.github.io/sdk//models/index.html#viewModel.html?modelId=KarhumakiBridge&pipelineId=ifc2gltf)
+example-run:ifc2gltf_Karhumaki
 
 <br>
 
@@ -40,7 +40,7 @@ The parameters we provided the tool are:
 
 - `-i` specifies the IFC file to convert
 - `-o` specifies the name to prefix on each output glTF file
-- `-m` specifies the name to prefix on each JSON metamodel file
+- `-m` specifies the name to prefix on each JSON metadata file
 - `-s` specifies the maximum number of megabytes in each glTF file - smaller value means more output files, lower value
   means less files
 
@@ -111,138 +111,20 @@ The `model.glb.manifest.json` manifest looks like below. This manifest follows t
 
 ## Step 2. View the glTF and Metadata Files
 
+---
+
 Now we'll create a Web page containing a xeokit doc:Viewer that views our converted model.
 
-First install the npm modules we need:
+#### HTML
 
-````bash
-npm install @xeokit/scene
-npm install @xeokit/data
-npm install @xeokit/modelchunksloader
-npm install @xeokit/gltf
-npm install @xeokit/metamodel
-npm install @xeokit/core
-npm install @xeokit/webglrenderer
-npm install @xeokit/viewer
-npm install @xeokit/cameracontrol
-````
+Create an HTML page in `index.html` that contains a canvas element:
 
-Then create an HTML page in `index.html` that contains a canvas element:
+example-html:ifc2gltf_Karhumaki
 
-````html
-<!DOCTYPE html>
-<html>
-<head>
-    <title>xeokit Spinning Box</title>
-</head>
-<body>
-<canvas id="myView1"></canvas>
-</body>
-<script type="module" src="./index.js"></script>
-</html>
-````
+#### JavaScript
 
 Then create JavaScript in `index.js` to create the doc:Viewer and view our converted model.
 
-The steps in the JavaScript are as follows:
+The steps in the JavaScript are as follows.
 
-1. Import the packages we need.
-2. Create a doc:Data to hold the IFC semantic data.
-3. Create a doc:Viewer with a doc:Scene, a doc:WebGLRenderer and one doc:View.
-4. Attach a doc:CameraControl to the View so that we can interact with it using mouse and touch.
-5. Create a doc:SceneModel in the Scene.
-6. Create a doc:DataModel in the Data.
-7. Create a doc:ModelChunksLoader, configured to use doc:loadGLTF load each glTF chunk, and doc:loadMetaModel to load each JSON metadata file.
-8. Load our `model.glb.manifest.json` manifest.
-9. Use doc:ModelChunksLoader to load the files listed in the manifest into our SceneModel and DataModel.
-10. Build the SceneModel and DataModel. The IFC model then appears in the Viewer.
-
-```javascript
- // 1.
-
-import {Scene} from "@xeokit/scene}";
-import {Data} from "@xeokit/data}";
-import {ModelChunksLoader} from "@xeokit/modelchunksloader}";
-import {loadGLTF} from "@xeokit/gltf}";
-import {loadMetaModel} from "@xeokit/metamodel}";
-import {WebGLRenderer} from "@xeokit/webglrenderer";
-import {Viewer} from "@xeokit/viewer";
-import {CameraControl} from "@xeokit/cameracontrol";
-
-// 2. 
-
-const data = new Data();
-
-// 3.
-
-const scene = new Scene();
-
-const renderer = new WebGLRenderer({});
-
-const viewer = new Viewer({
-    id: "myViewer",
-    scene,
-    renderer
-});
-
-const view = viewer.createView({
-    id: "myView",
-    elementId: "myCanvas"
-});
-
-view.camera.eye = [0, 0, -100];
-view.camera.look = [0, 0, 0];
-view.camera.up = [0.0, 1.0, 0.0];
-
-// 4. 
-
-new CameraControl(view, {});
-
-// 5.
-
-const sceneModel = scene.createModel({
-    id: "myModel"
-});
-
-// 6. 
-
-const dataModel = data.createModel({
-    id: "myModel"
-});
-
-// 7.
-
-const modelChunksLoader = new ModelChunksLoader({
-    sceneModelLoader: loadGLTF,
-    dataModelLoader: loadMetaModel
-});
-
-//  8.
-
-fetch(`model.glb.manifest.json`)
-    .then(response => {
-        response
-            .json()
-            .then(modelChunksManifest => {
-
-                // 9.
-                
-                modelChunksLoader.load({
-                    modelChunksManifest,
-                    baseDir: ".",
-                    sceneModel,
-                    dataModel
-
-                }).then(() => { // glTF and JSON files loaded
-                    
-                    // 10.
-                    
-                    sceneModel.build();
-                    dataModel.build(); 
-                    
-                    // The Karhumaki Bridge model now appears in our Viewer.
-                });
-            });
-    });
-```
-
+example-javascript:ifc2gltf_Karhumaki

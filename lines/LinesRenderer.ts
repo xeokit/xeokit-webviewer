@@ -5,14 +5,14 @@ import {AmbientLight, DirLight, PerspectiveProjection, PointLight} from "@xeokit
 import type {RenderContext} from "../RenderContext";
 import {RENDER_PASSES} from "../RENDER_PASSES";
 import {WebGLProgram, WebGLSampler} from "@xeokit/webglutils";
-import {DTXLayerRenderer} from "../LayerRenderer";
+import {XGFLayerRenderer} from "../LayerRenderer";
 
 const tempVec4 = createVec4();
 
 /**
  * @private
  */
-export abstract class LinesRenderer extends DTXLayerRenderer {
+export abstract class LinesRenderer extends XGFLayerRenderer {
 
     /**
      * Initialization error messages

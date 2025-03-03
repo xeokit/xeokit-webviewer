@@ -3,5 +3,10 @@
   "title": "Viewing a CityJSON model with +Z configured as up direction",
   "description": "",
   "isTutorial": false,
-  "isVisualTest": true
+  "isVisualTest": true,
+  "tags": [],
+  "categories": [
+    "Viewer",
+    "Views",
+  ]
 }

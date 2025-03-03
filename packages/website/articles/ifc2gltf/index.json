@@ -1,8 +1,14 @@
 {
-    "title": "Importing an IFC Model into xeokit via glTF",
-    "description": "How to convert an IFC model to glTF and then view in a xeokit web Viewer.",
-    "tags": ["SceneModel", "DataModel", "Viewer", "glTF", "IFC", "ModelChunksLoader", "loadGLTF", "loadMetaModel"],
-    "bannerImage": "banner.png",
+    "title": "Importing IFC using ifc2gltf",
+    "description": "How to use the ifc2gltf CLI tool to convert an IFC model to glTF format, and then display the glTF in a xeokit web viewer.",
+    "tags": [
+        "XGF",
+        "glTF",
+        "IFC",
+        "ifc2gltf",
+        "Featured"
+    ],
+    "_bannerImage": "banner.png",
     "thumbnail": "thumb.png",
-    "relatedArticles": ["ifc2gltf2xgf"]
+    "topic": "import.ifc"
 }

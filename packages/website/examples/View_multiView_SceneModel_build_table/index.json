@@ -1,8 +1,13 @@
 {
   "id": "View_multiView_SceneModel_build_table",
-  "title": "Building a table-shaped SceneModel in multiple Views",
+  "title": "Creating a 3D Model and Viewing it in Multiple Canvases",
   "description": "",
-  "isTutorial": false,
-  "isVisualTest": false,
+  "isTutorial": true,
+  "isVisualTest": true,
+  "tags": [
+    "Featured"
+  ],
+  "categories": [],
+  "topic": "general",
   "template": "threeCanvasPage"
 }
