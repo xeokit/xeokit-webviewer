@@ -60,7 +60,7 @@ Essential resources to help you get started with xeokit SDK:
 - [**Model Viewer**](../../models/index.html) – Explore test models from various AEC formats.
 - [**Source Code**](https://github.com/xeokit/sdk) – Open-source repository under the AGPL3 license.
 - [**API Documentation**](../../api-docs.html) – Detailed API reference generated with TypeDoc.
-- [**Articles**](../../articles/index.html) – Guides for effective SDK use.
+- [**User Guide**](../../articles/index.html) – Guides for effective SDK use.
 - [**Releases**](https://github.com/xeokit/sdk/releases) – Latest updates and version history.
 - [**NPM Package**](https://www.npmjs.com/package/@xeokit/sdk) – Install the SDK via NPM.
 

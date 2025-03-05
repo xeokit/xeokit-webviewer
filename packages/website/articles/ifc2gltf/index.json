@@ -5,8 +5,7 @@
         "XGF",
         "glTF",
         "IFC",
-        "ifc2gltf",
-        "Featured"
+        "ifc2gltf"
     ],
     "_bannerImage": "banner.png",
     "thumbnail": "thumb.png",

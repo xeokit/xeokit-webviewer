@@ -1,23 +1,18 @@
 const fs = require('fs');
 const path = require('path');
 const hljs = require('highlight.js');
-const ejs = require('ejs');
 const markdownit = require('markdown-it');
 const gulp = require('gulp');
 const fileinclude = require('gulp-file-include');
 const rename = require("gulp-rename");
 const replace = require('gulp-replace-task');
 const imageThumbnail = require('image-thumbnail');
-const puppeteer = require('puppeteer');
-const express = require('express');
-const app = express();
 
-const Prism = require('prismjs')
-//const DOMPurify from 'dompurify'
-require('prismjs/plugins/line-numbers/prism-line-numbers.js');
-const language = 'javascript'
-
-const grammar = Prism.languages[language]
+// const Prism = require('prismjs')
+// require('prismjs/plugins/line-numbers/prism-line-numbers.js');
+// const language = 'javascript'
+//
+// const grammar = Prism.languages[language]
 
 const base = "http://localhost:8080";
 //const base = "https://xeokit.github.io/sdk/";
@@ -494,7 +489,7 @@ function compileArticles() {
                 })
             )
             .pipe(fileinclude({}))
-            .pipe(rename("index-toc.html"))
+            .pipe(rename("index.html"))
             .pipe(gulp.dest(`./articles/`))
             .on('end', function () {
             });
@@ -519,22 +514,22 @@ function compileArticles() {
 
         console.log("Writing ./templates/article-index.html");
 
-        gulp.src(["./templates/article-index.html"])
-            .pipe(
-                replace({
-                    patterns: [
-                        {
-                            match: 'base',
-                            replacement: base
-                        }
-                    ]
-                })
-            )
-            .pipe(fileinclude({}))
-            .pipe(rename("index.html"))
-            .pipe(gulp.dest(`./articles/`))
-            .on('end', function () {
-            });
+        // gulp.src(["./templates/article-index.html"])
+        //     .pipe(
+        //         replace({
+        //             patterns: [
+        //                 {
+        //                     match: 'base',
+        //                     replacement: base
+        //                 }
+        //             ]
+        //         })
+        //     )
+        //     .pipe(fileinclude({}))
+        //     .pipe(rename("index.html"))
+        //     .pipe(gulp.dest(`./articles/`))
+        //     .on('end', function () {
+        //     });
 
         gulp.src(["./templates/index.html"])
             .pipe(

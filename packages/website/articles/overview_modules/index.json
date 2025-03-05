@@ -1,9 +1,9 @@
 {
-    "title": "xeokit SDK Code Modules",
-    "description": "An overview of the modules within the xeokit SDK, including scene and data representation, web viewer, model import, export and conversion tools, and various utility libraries.",
+    "title": "Modules Overview",
+    "description": "The xeokit SDK enables viewing various AEC file formats through different import pipelines. The optimal pipeline depends on the source format and file size. This guide provides recommendations for selecting the appropriate pipeline based on these factors.",
     "tags": [
         "Featured"
     ],
-    "bannerImage": "img.png",
+    "_bannerImage": "imsg.png",
     "topic": "overview"
 }

@@ -5,7 +5,7 @@
   "isTutorial": true,
   "isVisualTest": true,
   "tags": [
-    "Featured"
+    "_Featured"
   ],
   "template": "threeCanvasPage"
 }

@@ -26,33 +26,44 @@
     <span style="color: #ffffff;">
       <a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/
       <a class="navbar-parent" href="@@base">@xeokit/sdk</a>/
-      <a class="navbar-brand" href="./index.html">Articles</a>
+      <a class="navbar-brand" href="./index.html">xeokit User Guide</a>
     </span>
     @@include('./navbar-pulldown.html', { root: "@@base" });
 </nav>
-<!--<div class="jumbotron jumbotron-fluid">-->
-<!--    <div class="container">-->
-<!--&lt;!&ndash;        <h1 class="display-4">Featured Articles</h1>&ndash;&gt;-->
-<!--&lt;!&ndash;        <p class="lead">This is a modified jumbotron that occupies the entire horizontal space of its parent.</p>&ndash;&gt;-->
-<!--        <div class="row" id="featured"></div>-->
+<!--<header class="bg-black home-header bg-black">-->
+<!--    <div class="container h-75">-->
+<!--        &lt;!&ndash;        <div class="row h-100 align-items-center">&ndash;&gt;-->
+<!--        &lt;!&ndash;            <div class="col-lg-12">&ndash;&gt;-->
+<!--        &lt;!&ndash;                <h1 class="text-white mt-5 mb-2">IFC Conversion Tests</h1>&ndash;&gt;-->
+<!--        &lt;!&ndash;                <p class="lead mb-5 text-white">Check the health of our IFC file conversion tools</p>&ndash;&gt;-->
+<!--        &lt;!&ndash;            </div>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </div>&ndash;&gt;-->
 <!--    </div>-->
-<!--</div>-->
+<!--</header>-->
 <section id="intro" class="main-section alabaster">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Articles</h1>
-<hr>
-                hfsdjkj jkjhfskajh fkjhfadskjh afkhfkjh kf kjkhfh kafkh jfkh jadkh jfadsjkh afkjh adfhskj jh kjhk
-<hr>
+
             </div>
         </div>
+        <br>
         <div class="row">
-            <div class="col-md-7"  id="content">
+            <div class="col-md-7"  >
+                <h1>xeokit User Guide</h1>
+                <br>
+                <hr>
+                <h5>The xeokit SDK is an open-source toolkit for real-time 3D visualization in web-based
+                    Architecture, Engineering, and Construction (AEC) applications.</h5>
+                <h5>dajhhh dagdada j ghjgs g gshg ggghjG HJG HJGSA G HJGLAaaaaaaaaaashjgjjgk hj</h5>
 
+                <hr>
+<br>
+                <div id="content"></div>
             </div>
-            <div class="col-md-5"  id="featured">
-
+            <div class="col-md-3">
+                <br><br><br><br><br><br> <br><br><br><br><br><br>
+                <div id="featured"></div>
             </div>
         </div>
     </div>
@@ -64,21 +75,11 @@
     const topicMap = [
         {
             "id": "overview",
-            "title": "Overview",
-            "topics": [
-                {
-                    "id": "modules",
-                    "title": "Modules"
-                },
-                {
-                    "id": "pipelines",
-                    "title": "Import Pipelines"
-                }
-            ]
+            "title": "Introduction"
         },
         {
             "id": "import",
-            "title": "Importing Models",
+            "title": "Viewing Models",
             "topics": [
                 {
                     "id": "ifc",
@@ -136,7 +137,7 @@
         },
         {
             "id": "viewer",
-            "title": "Viewer",
+            "title": "Web Viewer",
             "topics": [
                 {
                     "id": "configuration",
@@ -198,9 +199,9 @@
                alt="Thumbnail">
           <div class="card-body">
             <a href="./${article.id}" class="card-link">
-              <h4 class="card-title">${article.title}</h4>
+              <p class="card-title">${article.title}</p>
             </a>
-            <p class="card-text">${article.description || ""}</p>
+           <p class="card-text">${article.description || ""}</p>
           </div>
         </div><br>
     `);
@@ -247,28 +248,35 @@
             }
         }
 
-        function buildTOCForTopics(topics, parentPath) {
-            let html = "<ul>";
+        function buildTOCForTopics(topics, parentPath, depth, countStack=[]) {
+            const isRoot = parentPath === "";
+            let html = isRoot ? "<div class=\"list-group list-group-root well\">" :"<div class=\"list-group\">";
+            countStack[depth] = 0;
             topics.forEach(topic => {
                 const currentPath = parentPath ? parentPath + "." + topic.id : topic.id;
-                html += `<li>${topic.title}`;
+                html += isRoot
+                    ? `<p class="list-group-item " style="background: lightgrey; padding-top:22px; margin-top:20px;  margin-bottom:15px; border:0;">${++countStack[depth]}.&nbsp;&nbsp;<b>${topic.title}</b></p>`
+                    : `<p class="list-group-item " style="">${countStack[depth-1]}.${++countStack[depth]}.&nbsp;&nbsp;${topic.title}</p>`;
                 if (Array.isArray(topic.topics) && topic.topics.length > 0) {
-                    html += buildTOCForTopics(topic.topics, currentPath);
+                    html += buildTOCForTopics(topic.topics, currentPath, depth+1, countStack);
                 }
                 if (topicArticleMap[currentPath]) {
-                    html += "<ul>";
+                    html += "<div class=\"list-group\">";
+                    countStack[depth+1] = 0;
                     topicArticleMap[currentPath].forEach(article => {
-                        html += `<li><a href="@@base/articles/${article.id}/index.html">${article.title}</a></li>`;
+                        html += isRoot
+                            ? `<a class="list-group-item" href="@@base/articles/${article.id}/index.html">${article.title}</a>`
+                            : `<a class="list-group-item" href="@@base/articles/${article.id}/index.html">${article.title}</a>`;
                     });
-                    html += "</ul>";
+                    html += "</div>";
                 }
-                html += "</li>";
+                //html += "</div>";
             });
-            html += "</ul>";
+            html += "</div>";
             return html;
         }
 
-        return buildTOCForTopics(topicMap, "");
+        return buildTOCForTopics(topicMap, "", 0, []);
     }
 
     fetch("@@base/articles/index.json").then(response => {

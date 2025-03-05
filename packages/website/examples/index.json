@@ -6,7 +6,7 @@
     "isTutorial": true,
     "isVisualTest": true,
     "tags": [
-      "Featured"
+      "_Featured"
     ],
     "categories": [
       "Modeling",
@@ -111,7 +111,7 @@
     "isTutorial": true,
     "isVisualTest": true,
     "tags": [
-      "Featured"
+      "_Featured"
     ],
     "categories": [
       "Modeling",
@@ -209,7 +209,7 @@
     "isTutorial": true,
     "isVisualTest": true,
     "tags": [
-      "Featured"
+      "_Featured"
     ],
     "categories": [
       "Modeling",
@@ -300,7 +300,7 @@
     "isTutorial": true,
     "isVisualTest": true,
     "tags": [
-      "Featured"
+      "_Featured"
     ],
     "categories": [],
     "topic": "general",
@@ -423,7 +423,7 @@
       "DotBIM",
       "XGF",
       "dotbim2xgf",
-      "Featured"
+      "_Featured"
     ],
     "categories": [
       "Importing",
@@ -442,7 +442,7 @@
       "IFC",
       "XGF",
       "ifc2gltf2xgf",
-      "Featured"
+      "_Featured"
     ],
     "categories": [
       "Importing",
@@ -461,7 +461,7 @@
       "IFC",
       "glTF",
       "ifc2gltf",
-      "Featured"
+      "_Featured"
     ],
     "categories": [
       "Importing",
@@ -478,7 +478,7 @@
     "isVisualTest": true,
     "tags": [
       "CityJSON",
-      "Featured"
+      "_Featured"
     ],
     "categories": [
       "Importing",
@@ -512,7 +512,7 @@
     "isVisualTest": true,
     "tags": [
       "glTF",
-      "Featured"
+      "_Featured"
     ],
     "categories": [
       "Importing",
@@ -531,7 +531,7 @@
       "IFC",
       "WebIFC",
       "loadWebIFC",
-      "Featured"
+      "_Featured"
     ],
     "categories": [
       "Importing",
@@ -550,7 +550,7 @@
       "IFC",
       "XGF",
       "webifc2xgf",
-      "Featured"
+      "_Featured"
     ],
     "categories": [
       "Importing",

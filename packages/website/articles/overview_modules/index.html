@@ -28,25 +28,29 @@
 
     <title></title>
     <style>
-        .tippy-box[data-theme~='light-border'] {
-            background-color: #ffff66;
+        .tippy-box[data-theme~='custom'] {
+            background-color: white;
             color: #333;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            border: 1px solid #666666;
+            border: 1px solid #eee;
         }
 
-        .tippy-box[data-theme~='light-border'][data-placement^='bottom'] > .tippy-arrow::before {
+        .tippy-box[data-theme~='custom'][data-placement^='top'] > .tippy-arrow::before {
             border-top-color: white;
-            background-color: #ffff66;
+        }
+
+        .tippy-box[data-theme~='custom'] .tippy-arrow::before {
+            transform: scale(0.75);
         }
     </style>
+    <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/dist/tippy.css"/>
     <link rel="stylesheet" href="https://unpkg.com/tippy.js@6/themes/light-border.css"/>
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top ">
     <span style="color: #ffffff;"><a class="navbar-home" href="http://xeolabs.com">xeolabs</a>/<a class="navbar-parent"
                                                                                                   href="http://localhost:8080">@xeokit/sdk</a>/<a
-        class="navbar-brand" href="http://localhost:8080/articles/index.html">Articles</a></span>
+        class="navbar-brand" href="http://localhost:8080/articles/index.html">User Guide</a></span>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
 </button>
@@ -62,7 +66,7 @@
             <a class="nav-link" href="http://localhost:8080/models/index.html">Models</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link" href="http://localhost:8080/articles/index.html">Articles</a>
+            <a class="nav-link" href="http://localhost:8080/articles/index.html">User Guide</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="http://localhost:8080/api-docs.html">API Docs</a>
@@ -80,58 +84,41 @@
 </div>
 
 </nav>
-<header class="bg-black home-header bg-black" style="background-image:url(http://localhost:8080/articles/overview_modules/img.png)">
-    <div class="container h-75">
-
-        <!--                        <div class="row h-100 align-items-center">-->
-        <!--                            <div class="col-lg-12">-->
-        <!--                                <h1 class="text-white mt-5 mb-2">xeokit SDK Code Modules</h1>-->
-        <!--                                <p class="lead mb-5 text-white"></p>-->
-        <!--                            </div>-->
-        <!--                        </div>-->
-
-
-    </div>
-</header>
 <section id="intro" class="main-section">
     <div class="container">
         <div class="row testimonial-row">
-            <div class="col-lg-6">
-                <h5><a href="../index.html">&lt;&lt;&nbsp;Articles</a></h5>
-            </div>
-<!--            <div class="col-lg-6">-->
-<!--                <h5><a href="../index.html">Importing a glTF Model into xeokit via LAS &gt;&gt;</a></h5>-->
-<!--                <h5><a href="../index.html">Importing a glTF Model into xeokit via LAS &gt;&gt;</a></h5>-->
-<!--            </div>-->
-        </div>
-        <div class="row testimonial-row">
             <div class="col-lg-12">
-                <h1>xeokit SDK Code Modules</h1>
+                <h5><a href="../index.html">&lt;&lt;&nbsp;User Guide</a></h5>
+            </div>
+            <div class="col-lg-12">
+                <h1>Modules Overview</h1>
             </div>
         </div>
         <div class="row testimonial-row">
             <div class="col-lg-12">
-                <h1>Table of Contents</h1>
+                <h2>Contents</h2>
+<hr>
 <ul>
-<li><a href="#introduction">Introduction</a></li>
-<li><a href="#61-scene">Scene</a></li>
-<li><a href="#62-viewer">Viewer</a></li>
-<li><a href="#63-data">Data</a></li>
-<li><a href="#64-model-importers-and-exporters">Model Importers and Exporters</a></li>
-<li><a href="#65-model-converters">Model Converters</a></li>
-<li><a href="#66-bcf-support">BCF Support</a></li>
-<li><a href="#67-collision-detection">Collision Detection</a></li>
-<li><a href="#68-utility-libraries">Utility Libraries</a></li>
+<li><a href="#introduction">1. Introduction</a></li>
+<li><a href="#scene-module">2. Scene Module</a></li>
+<li><a href="#viewer-module">3. Viewer Module</a></li>
+<li><a href="#data-module">4. Data Module</a></li>
+<li><a href="#model-importers-and-exporters">5. Model Importers and Exporters</a></li>
+<li><a href="#model-converters">6. Model Converters</a></li>
+<li><a href="#bcf-support">7. BCF Support</a></li>
+<li><a href="#collision-detection">8. Collision Detection</a></li>
+<li><a href="#utility-libraries">9. Utility Libraries</a></li>
 </ul>
-<h3>Introduction</h3>
-<p>The xeokit SDK is built with a modular design for maximum flexibility and scalability in both browser and Node.js
-environments. It follows best practices such as:</p>
+<hr>
+<br>
+<h2>1. Introduction</h2>
+<p>The xeokit SDK is built with a modular design for maximum flexibility and scalability in both browser and Node.js environments. It follows best practices such as:</p>
 <ul>
 <li><a href="https://en.wikipedia.org/wiki/Separation_of_concerns">Separation of Concerns</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Single-responsibility_principle">Single Responsibility Principle</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Open%E2%80%93closed_principle">Open-Closed Principle</a></li>
 </ul>
-<p>Main modules include:</p>
+<p>In this guide, we'll present the modules organized into these categories:</p>
 <ul>
 <li><strong>Scene</strong> – Manages 3D model objects.</li>
 <li><strong>Data</strong> – Provides a searchable entity-relationship data model.</li>
@@ -142,17 +129,9 @@ environments. It follows best practices such as:</p>
 <li><strong>Collision Detection</strong> – Utilities for frustum culling, ray-picking, etc.</li>
 <li><strong>Utilities</strong> – Core functionalities like math operations and 3D graphics.</li>
 </ul>
-<!-- 6.1. Scene -->
-<p><a name="61-scene"></a></p>
-<h3>Scene</h3>
-<p>The Scene module (<a class="doc-link" data-template="Scene_template"  href="/api-docs#/docs/api/classes/scene.Scene.html" target="_parent">Scene</a>
-<template class="doc-link-tooltip" id="Scene_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / scene / Scene /</p>
-<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Scene</p>
-<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Container of model geometry and materials.</p>
-</template>) represents the model using a scene graph that holds 3D objects, geometries, and materials.
-This scene graph is agnostic of the viewer and the scene. It works on both the browser and NodeJS platforms and can be
-used to create models, convert between model formats, and provide content for the SDK's model viewer.</p>
+<hr>
+<h2>2. Scene</h2>
+<p>The Scene module represents the model using a scene graph that holds 3D objects, geometries, and materials. This scene graph is agnostic of the viewer and the scene. It works on both the browser and Node.js platforms and can be used to create models, convert between model formats, and provide content for the SDK's model viewer.</p>
 <table>
 <thead>
 <tr>
@@ -162,26 +141,15 @@ used to create models, convert between model formats, and provide content for th
 </thead>
 <tbody>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/scene.html"><code>@xeokit/sdk/scene</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/scene.html"> @xeokit/sdk/scene </a></td>
 <td>Handles model geometries, materials, and more.</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<p><a href="https://mermaid.live/edit#pako:eNqNVE1vozAQ_StoTrsVjSDNlpTrVuplo5WanlZcXHuaeAUY2aZKNsp_38FAYz5SlYvxm-c3n_YJuBIIKfCcGfMo2U6zIiuF1MitVGXw6zkrA_c5RrDlWOKpxxyukVnckEz-7fvAkCPTQ6hoWMZH1Otf8vQBnWe8OWnPpRSX_9HxxgWaPfrADlWBVssBaPFga41btDOoB7XJ_XZe_FS6pMnXFH1qHR6nlpdW_6qBwvFtr7XMhQ8INFYrT3iuXG2wgxb5FRtXaCTRpBRcKTZXudKXrVb1bl-i8cpFebN8CKmKcWmPHodRMw6Xfdcfj3FpzpUgu3LNxznPJbFP0-poo1RyyZ_7LCcMxXleG7okEwsW0hj5jiPDKLJ-Tq7FVWlZSEsyHqSMbK6leUSuiopG1WxG5azfPzF-nP_ZEVAMTs7Bkl4DPpmXfutGLsggzuDm9pbWxeImA-_iDogOucJu5_YrujPMFprym3HuiW60PQaZn0az5w3LQGpF3FEzZ9RevLntaf0KIRSoCyYFPbau4RnYPRaYQUq_At9YndsMsvJMVFZbtT2WHFKrawyhrgS9Et3zDOkbyw2hKKRVetM94M0SQsVKSE9wgDS-_7FIkiheP8SrVXJ3v74L4QhpdA7hn1KkEi-i9ltGyXL5ECVrd_yPM7Z-3RXv_J3_A-vIyXI"><img src="https://mermaid.ink/img/pako:eNqNVE1vozAQ_StoTrsVjSDNlpTrVuplo5WanlZcXHuaeAUY2aZKNsp_38FAYz5SlYvxm-c3n_YJuBIIKfCcGfMo2U6zIiuF1MitVGXw6zkrA_c5RrDlWOKpxxyukVnckEz-7fvAkCPTQ6hoWMZH1Otf8vQBnWe8OWnPpRSX_9HxxgWaPfrADlWBVssBaPFga41btDOoB7XJ_XZe_FS6pMnXFH1qHR6nlpdW_6qBwvFtr7XMhQ8INFYrT3iuXG2wgxb5FRtXaCTRpBRcKTZXudKXrVb1bl-i8cpFebN8CKmKcWmPHodRMw6Xfdcfj3FpzpUgu3LNxznPJbFP0-poo1RyyZ_7LCcMxXleG7okEwsW0hj5jiPDKLJ-Tq7FVWlZSEsyHqSMbK6leUSuiopG1WxG5azfPzF-nP_ZEVAMTs7Bkl4DPpmXfutGLsggzuDm9pbWxeImA-_iDogOucJu5_YrujPMFprym3HuiW60PQaZn0az5w3LQGpF3FEzZ9RevLntaf0KIRSoCyYFPbau4RnYPRaYQUq_At9YndsMsvJMVFZbtT2WHFKrawyhrgS9Et3zDOkbyw2hKKRVetM94M0SQsVKSE9wgDS-_7FIkiheP8SrVXJ3v74L4QhpdA7hn1KkEi-i9ltGyXL5ECVrd_yPM7Z-3RXv_J3_A-vIyXI?type=png" alt=""></a></p>
-<!-- 6.2. Viewer -->
-<p><a name="62-viewer"></a></p>
-<h3>Viewer</h3>
-<p>The Viewer module (<a class="doc-link" data-template="Viewer_template"  href="/api-docs#/docs/api/classes/viewer.Viewer.html" target="_parent">Viewer</a>
-<template class="doc-link-tooltip" id="Viewer_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / viewer / Viewer /</p>
-<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Viewer</p>
-<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">3D model viewer.</p>
-</template>) offers a high-performance 3D viewer for browsers with a pluggable rendering strategy (
-WebGL/WebGPU). It allows for:</p>
+<p><img src="https://mermaid.ink/img/pako:eNqNVE1vozAQ_StoTrsVjSDNlpTrVuplo5WanlZcXHuaeAUY2aZKNsp_38FAYz5SlYvxm-c3n_YJuBIIKfCcGfMo2U6zIiuF1MitVGXw6zkrA_c5RrDlWOKpxxyukVnckEz-7fvAkCPTQ6hoWMZH1Otf8vQBnWe8OWnPpRSX_9HxxgWaPfrADlWBVssBaPFga41btDOoB7XJ_XZe_FS6pMnXFH1qHR6nlpdW_6qBwvFtr7XMhQ8INFYrT3iuXG2wgxb5FRtXaCTRpBRcKTZXudKXrVb1bl-i8cpFebN8CKmKcWmPHodRMw6Xfdcfj3FpzpUgu3LNxznPJbFP0-poo1RyyZ_7LCcMxXleG7okEwsW0hj5jiPDKLJ-Tq7FVWlZSEsyHqSMbK6leUSuiopG1WxG5azfPzF-nP_ZEVAMTs7Bkl4DPpmXfutGLsggzuDm9pbWxeImA-_iDogOucJu5_YrujPMFprym3HuiW60PQaZn0az5w3LQGpF3FEzZ9RevLntaf0KIRSoCyYFPbau4RnYPRaYQUq_At9YndsMsvJMVFZbtT2WHFKrawyhrgS9Et3zDOkbyw2hKKRVetM94M0SQsVKSE9wgDS-_7FIkiheP8SrVXJ3v74L4QhpdA7hn1KkEi-i9ltGyXL5ECVrd_yPM7Z-3RXv_J3_A-vIyXI" alt="Scene Module Diagram"></p>
+<hr>
+<h2>3. Viewer</h2>
+<p>The Viewer module offers a high-performance 3D viewer for browsers with a pluggable rendering strategy (WebGL/WebGPU). It allows for:</p>
 <ul>
 <li>Simultaneous visualization of multiple models.</li>
 <li>Creation of multiple canvases with customizable elements (lights, section planes, annotations).</li>
@@ -195,68 +163,37 @@ WebGL/WebGPU). It allows for:</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/viewer.html"><code>@xeokit/sdk/viewer</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/viewer.html"> @xeokit/sdk/viewer </a></td>
 <td>Main browser-based model Viewer</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/cameracontrol.html"><code>@xeokit/sdk/cameracontrol</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/cameracontrol.html"> @xeokit/sdk/cameracontrol </a></td>
 <td>Interactive camera control</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/cameraflight.html"><code>@xeokit/sdk/cameraflight</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/cameraflight.html"> @xeokit/sdk/cameraflight </a></td>
 <td>Animates camera transitions</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/webglrenderer.html"><code>@xeokit/sdk/webglrenderer</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/webglrenderer.html"> @xeokit/sdk/webglrenderer </a></td>
 <td>WebGL rendering implementation</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/treeview.html"><code>@xeokit/sdk/treeview</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/treeview.html"> @xeokit/sdk/treeview </a></td>
 <td>HTML tree widget for model hierarchy</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/locale.html"><code>@xeokit/sdk/locale</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/locale.html"> @xeokit/sdk/locale </a></td>
 <td>Localization service for Viewer</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<ul>
-<li><a href="https://mermaid.live/edit#pako:eNqNVUtv2kAQ_ivWntoKUEyMAQtxIVJ7ADWCPqTKl7U9CZssu-7apnEI_737dGweVX3xeuabb97rA0p5BihCKcVFcUfwo8C7mGVEQFoSzrzlOmZa5_0g8AeEd4iZZx4BLAMBwgiKFBiY414iC3NMBeASlOmHj0YSs2Ob0fGlmO2xNeLJk_TuGPAOBDZnSh63Tl6YAO8pZmBFFNcgOo6XSuI8G9GmZdfVLBW7EnUC1BQuSpJdiPB3hSkp67Uux4n1Vw08Nd-TgiQUXCJUQsCqtjIInaYTvAgZgD2nnHJBXq1hSkme44YnJ-nz-xfGSdKKZaGr6OKAGjxbMs6fzanKLY3gT6ZELfN20RxJzgvPsshxaff1jghdS4dUagfVKXSmYG3HSKNnM5wUpcBpOZ-3MD8h-bzsALWyCU_NnvO2kwNNL06S7vJKqZvGU8Ci03JNpTH_7LnhMt11ZElFaOY-MpBp8Pqc-3widCJmu2Lkx6jfn-v3utmvC8qNWTfzahSfrMI4uarW-VmtOV9lOHUt9UoU2R1X5zOlsY2agr3LNKSTgsXKKcgFFMDKwiPM-_JttWyuhIs-9FpGbuMbSYxuBoP_CKdTy4W9Ys4cuUGO3MVzhmgvhmpjM6Ozt37_ZGwjj-xyCjuV5CXk_fcr0PYKLziTc9UMp75r9Qh11J0y-KYMqIckYodJJq97bR6jcit9xCiSxwwecEVlhySbhOKq5JuapSgqRQU9VOWZHHj7g0DRA6aFlEJGSi5W9heiXj2UY4aiA3pB0TD0B74_HvnhcHI7DcPpqIdqKR4Oguk4HAVTfzwMJ7ejYw-9ci5ZbwaTYRgE4XAajCfBKBhNNd0vrVRxHP8CUYMzSw"><img src="https://mermaid.ink/img/pako:eNqNVUtv2kAQ_ivWntoKUEyMAQtxIVJ7ADWCPqTKl7U9CZssu-7apnEI_737dGweVX3xeuabb97rA0p5BihCKcVFcUfwo8C7mGVEQFoSzrzlOmZa5_0g8AeEd4iZZx4BLAMBwgiKFBiY414iC3NMBeASlOmHj0YSs2Ob0fGlmO2xNeLJk_TuGPAOBDZnSh63Tl6YAO8pZmBFFNcgOo6XSuI8G9GmZdfVLBW7EnUC1BQuSpJdiPB3hSkp67Uux4n1Vw08Nd-TgiQUXCJUQsCqtjIInaYTvAgZgD2nnHJBXq1hSkme44YnJ-nz-xfGSdKKZaGr6OKAGjxbMs6fzanKLY3gT6ZELfN20RxJzgvPsshxaff1jghdS4dUagfVKXSmYG3HSKNnM5wUpcBpOZ-3MD8h-bzsALWyCU_NnvO2kwNNL06S7vJKqZvGU8Ci03JNpTH_7LnhMt11ZElFaOY-MpBp8Pqc-3widCJmu2Lkx6jfn-v3utmvC8qNWTfzahSfrMI4uarW-VmtOV9lOHUt9UoU2R1X5zOlsY2agr3LNKSTgsXKKcgFFMDKwiPM-_JttWyuhIs-9FpGbuMbSYxuBoP_CKdTy4W9Ys4cuUGO3MVzhmgvhmpjM6Ozt37_ZGwjj-xyCjuV5CXk_fcr0PYKLziTc9UMp75r9Qh11J0y-KYMqIckYodJJq97bR6jcit9xCiSxwwecEVlhySbhOKq5JuapSgqRQU9VOWZHHj7g0DRA6aFlEJGSi5W9heiXj2UY4aiA3pB0TD0B74_HvnhcHI7DcPpqIdqKR4Oguk4HAVTfzwMJ7ejYw-9ci5ZbwaTYRgE4XAajCfBKBhNNd0vrVRxHP8CUYMzSw?type=png" alt=""></a></li>
-</ul>
+<p><a href="https://mermaid.live/edit#pako:eNqNVUtv2kAQ_ivWntoKUEyMAQtxIVJ7ADWCPqTKl7U9CZssu-7apnEI_737dGweVX3xeuabb97rA0p5BihCKcVFcUfwo8C7mGVEQFoSzrzlOmZa5_0g8AeEd4iZZx4BLAMBwgiKFBiY414iC3NMBeASlOmHj0YSs2Ob0fGlmO2xNeLJk_TuGPAOBDZnSh63Tl6YAO8pZmBFFNcgOo6XSuI8G9GmZdfVLBW7EnUC1BQuSpJdiPB3hSkp67Uux4n1Vw08Nd-TgiQUXCJUQsCqtjIInaYTvAgZgD2nnHJBXq1hSkme44YnJ-nz-xfGSdKKZaGr6OKAGjxbMs6fzanKLY3gT6ZELfN20RxJzgvPsshxaff1jghdS4dUagfVKXSmYG3HSKNnM5wUpcBpOZ-3MD8h-bzsALWyCU_NnvO2kwNNL06S7vJKqZvGU8Ci03JNpTH_7LnhMt11ZElFaOY-MpBp8Pqc-3widCJmu2Lkx6jfn-v3utmvC8qNWTfzahSfrMI4uarW-VmtOV9lOHUt9UoU2R1X5zOlsY2agr3LNKSTgsXKKcgFFMDKwiPM-_JttWyuhIs-9FpGbuMbSYxuBoP_CKdTy4W9Ys4cuUGO3MVzhmgvhmpjM6Ozt37_ZGwjj-xyCjuV5CXk_fcr0PYKLziTc9UMp75r9Qh11J0y-KYMqIckYodJJq97bR6jcit9xCiSxwwecEVlhySbhOKq5JuapSgqRQU9VOWZHHj7g0DRA6aFlEJGSi5W9heiXj2UY4aiA3pB0TD0B74_HvnhcHI7DcPpqIdqKR4Oguk4HAVTfzwMJ7ejYw-9ci5ZbwaTYRgE4XAajCfBKBhNNd0vrVRxHP8CUYMzSw"><img src="https://mermaid.ink/img/pako:eNqNVUtv2kAQ_ivWntoKUEyMAQtxIVJ7ADWCPqTKl7U9CZssu-7apnEI_737dGweVX3xeuabb97rA0p5BihCKcVFcUfwo8C7mGVEQFoSzrzlOmZa5_0g8AeEd4iZZx4BLAMBwgiKFBiY414iC3NMBeASlOmHj0YSs2Ob0fGlmO2xNeLJk_TuGPAOBDZnSh63Tl6YAO8pZmBFFNcgOo6XSuI8G9GmZdfVLBW7EnUC1BQuSpJdiPB3hSkp67Uux4n1Vw08Nd-TgiQUXCJUQsCqtjIInaYTvAgZgD2nnHJBXq1hSkme44YnJ-nz-xfGSdKKZaGr6OKAGjxbMs6fzanKLY3gT6ZELfN20RxJzgvPsshxaff1jghdS4dUagfVKXSmYG3HSKNnM5wUpcBpOZ-3MD8h-bzsALWyCU_NnvO2kwNNL06S7vJKqZvGU8Ci03JNpTH_7LnhMt11ZElFaOY-MpBp8Pqc-3widCJmu2Lkx6jfn-v3utmvC8qNWTfzahSfrMI4uarW-VmtOV9lOHUt9UoU2R1X5zOlsY2agr3LNKSTgsXKKcgFFMDKwiPM-_JttWyuhIs-9FpGbuMbSYxuBoP_CKdTy4W9Ys4cuUGO3MVzhmgvhmpjM6Ozt37_ZGwjj-xyCjuV5CXk_fcr0PYKLziTc9UMp75r9Qh11J0y-KYMqIckYodJJq97bR6jcit9xCiSxwwecEVlhySbhOKq5JuapSgqRQU9VOWZHHj7g0DRA6aFlEJGSi5W9heiXj2UY4aiA3pB0TD0B74_HvnhcHI7DcPpqIdqKR4Oguk4HAVTfzwMJ7ejYw-9ci5ZbwaTYRgE4XAajCfBKBhNNd0vrVRxHP8CUYMzSw?type=png" alt=""></a></p>
 <!-- 6.3. Data -->
 <p><a name="63-data"></a></p>
-<h3>Data</h3>
-<p>The Data module (<a class="doc-link" data-template="Data_template"  href="/api-docs#/docs/api/classes/data.Data.html" target="_parent">Data</a>
-<template class="doc-link-tooltip" id="Data_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-<p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / Data /</p>
-<p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class Data</p>
-<p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Container of model semantic data.</p>
-</template>) implements an entity-relationship graph to manage model semantics (entities, properties,
-relationships). It is agnostic of the viewer and scene.</p>
+<hr>
+<h2>4. Data</h2>
+<p>The Data module implements an entity-relationship graph to manage model semantics (entities, properties, relationships). It is agnostic of the viewer and scene.</p>
 <table>
 <thead>
 <tr>
@@ -266,21 +203,17 @@ relationships). It is agnostic of the viewer and scene.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/data.html"><code>@xeokit/sdk/data</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/data.html"> @xeokit/sdk/data </a></td>
 <td>Manages model semantic data</td>
-<td></td>
 </tr>
 </tbody>
 </table>
 <p><a href="https://mermaid.live/edit#pako:eNqNVMFunDAU_BX0Tu1qgxaW9QLnHBOlSm4VFwc7WVeAkTFV6Wr_vcZmu89A0nIBzxvPmzdGPkMpGYccyop23b2g74rWRcOE4qUWsgkenosmsI9lBPdU0_MVcrjiVPNHI1N9-epVOk5VeXp6_WG0ulmtrExxhtWjRudB0m32sFbJlis9vHC_cP2-LB1bd9i2YGixbLLewk3q5sHWHf7MKzpG1p1Eu6x-uyni4msvKoYBxjut5HCDVqZxDrxT8OYJ9NByvF4bZ6aL_CFhLDuJCP4viQAJNLRGTn7SqkdLbHOmhcPEev5kyrKadxfIDOfMh_92GCMMCogK2NzdmXcYbgq4_SaYZoF1ri_-seaS5xDD3kzsnWOjI_hA9hPWwuk61cvVCl7JN2f5eqz_v3WePPKxzOhanMiwhZqrmgpmLiV78AXoEzd_EeTmk_E32le6gKK5GCrttXwZmhJyrXq-hb5lpv10jUH-RqvOoC1tID_DL8hjEoVRdDxEJE73GSHZYQuDgeMwyY7kkGTRMSbp_nDZwm8pjcIuTGOSJGS_yxKSpjvD50xoqR6na3N82Q7fLX-0cfkD0IeHkg"><img src="https://mermaid.ink/img/pako:eNqNVMFunDAU_BX0Tu1qgxaW9QLnHBOlSm4VFwc7WVeAkTFV6Wr_vcZmu89A0nIBzxvPmzdGPkMpGYccyop23b2g74rWRcOE4qUWsgkenosmsI9lBPdU0_MVcrjiVPNHI1N9-epVOk5VeXp6_WG0ulmtrExxhtWjRudB0m32sFbJlis9vHC_cP2-LB1bd9i2YGixbLLewk3q5sHWHf7MKzpG1p1Eu6x-uyni4msvKoYBxjut5HCDVqZxDrxT8OYJ9NByvF4bZ6aL_CFhLDuJCP4viQAJNLRGTn7SqkdLbHOmhcPEev5kyrKadxfIDOfMh_92GCMMCogK2NzdmXcYbgq4_SaYZoF1ri_-seaS5xDD3kzsnWOjI_hA9hPWwuk61cvVCl7JN2f5eqz_v3WePPKxzOhanMiwhZqrmgpmLiV78AXoEzd_EeTmk_E32le6gKK5GCrttXwZmhJyrXq-hb5lpv10jUH-RqvOoC1tID_DL8hjEoVRdDxEJE73GSHZYQuDgeMwyY7kkGTRMSbp_nDZwm8pjcIuTGOSJGS_yxKSpjvD50xoqR6na3N82Q7fLX-0cfkD0IeHkg?type=png" alt=""></a></p>
 <!-- 6.4. Model Importers and Exporters -->
 <p><a name="64-model-importers-and-exporters"></a></p>
-<h3>Model Importers and Exporters</h3>
-<p>These functions allow you to import and export model representations and semantic data in various AECO formats, either
-in Node.js (for file conversion) or in the browser.</p>
+<hr>
+<h2>5. Model Importers and Exporters</h2>
+<p>These functions allow you to import and export model representations and semantic data in various AECO formats, either in Node.js (for file conversion) or in the browser.</p>
 <table>
 <thead>
 <tr>
@@ -290,58 +223,33 @@ in Node.js (for file conversion) or in the browser.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/xgf.html"><code>@xeokit/sdk/xgf</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/xgf.html"> @xeokit/sdk/xgf </a></td>
 <td>Handles import/export of XKT</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/dotbim.html"><code>@xeokit/sdk/dotbim</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/dotbim.html"> @xeokit/sdk/dotbim </a></td>
 <td>Handles import/export of .BIM</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/gltf.html"><code>@xeokit/sdk/gltf</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/gltf.html"> @xeokit/sdk/gltf </a></td>
 <td>Imports glTF</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/las.html"><code>@xeokit/sdk/las</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/las.html"> @xeokit/sdk/las </a></td>
 <td>Imports LAS/LAZ</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/cityjson.html"><code>@xeokit/sdk/cityjson</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/cityjson.html"> @xeokit/sdk/cityjson </a></td>
 <td>Imports CityJSON</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/webifc.html"><code>@xeokit/sdk/webifc</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/webifc.html"> @xeokit/sdk/webifc </a></td>
 <td>Imports IFC</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<!-- 6.5. Model Converters -->
-<p><a name="65-model-converters"></a></p>
-<h3>Model Converters</h3>
+<hr>
+<h2>6. Model Converters</h2>
 <p>Command-line tools to convert various model formats into the SDK’s optimized XGF format.</p>
 <table>
 <thead>
@@ -352,58 +260,33 @@ in Node.js (for file conversion) or in the browser.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/cityjson2xgf.html"><code>@xeokit/sdk/cityjson2xgf</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/cityjson2xgf.html"> @xeokit/sdk/cityjson2xgf </a></td>
 <td>Converts CityJSON to XGF</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/dotbim2xgf.html"><code>@xeokit/sdk/dotbim2xgf</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/dotbim2xgf.html"> @xeokit/sdk/dotbim2xgf </a></td>
 <td>Converts .BIM to XGF</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/gltf2xgf.html"><code>@xeokit/sdk/gltf2xgf</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/gltf2xgf.html"> @xeokit/sdk/gltf2xgf </a></td>
 <td>Converts glTF to XGF</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/ifc2gltf2xgf.html"><code>@xeokit/sdk/ifc2gltf2xgf</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/ifc2gltf2xgf.html"> @xeokit/sdk/ifc2gltf2xgf </a></td>
 <td>Converts IFC output to XGF</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/las2xgf.html"><code>@xeokit/sdk/las2xgf</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/las2xgf.html"> @xeokit/sdk/las2xgf </a></td>
 <td>Converts LAS/LAZ to XGF</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/webifc2xgf.html"><code>@xeokit/sdk/webifc2xgf</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/webifc2xgf.html"> @xeokit/sdk/webifc2xgf </a></td>
 <td>Converts IFC to XGF</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<!-- 6.6. BCF Support -->
-<p><a name="66-bcf-support"></a></p>
-<h3>BCF Support</h3>
+<hr>
+<h2>7. BCF Support</h2>
 <p>These functions allow sharing viewer state as industry-standard BCF Viewpoints for collaboration.</p>
 <table>
 <thead>
@@ -414,18 +297,13 @@ in Node.js (for file conversion) or in the browser.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/bcf.html"><code>@xeokit/sdk/bcf</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/bcf.html"> @xeokit/sdk/bcf </a></td>
 <td>Load and save BCF</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<!-- 6.7. Collision Detection -->
-<p><a name="67-collision-detection"></a></p>
-<h3>Collision Detection</h3>
+<hr>
+<h2>8. Collision Detection</h2>
 <p>Collision detection utilities support functions like frustum culling, ray-picking, and marquee selection.</p>
 <table>
 <thead>
@@ -436,34 +314,21 @@ in Node.js (for file conversion) or in the browser.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/kdtree2.html"><code>@xeokit/sdk/kdtree2</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/kdtree2.html"> @xeokit/sdk/kdtree2 </a></td>
 <td>2D k-d tree search and collision tests</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/kdtree3.html"><code>@xeokit/sdk/kdtree3</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/kdtree3.html"> @xeokit/sdk/kdtree3 </a></td>
 <td>3D k-d tree search and collision tests</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/pick.html"><code>@xeokit/sdk/pick</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/pick.html"> @xeokit/sdk/pick </a></td>
 <td>Object selection using rays and boundaries</td>
-<td></td>
 </tr>
 </tbody>
 </table>
-<!-- 6.8. Utility Libraries -->
-<p><a name="68-utility-libraries"></a></p>
-<h3>Utility Libraries</h3>
+<hr>
+<h2>9. Utility Libraries</h2>
 <p>A collection of low-level utility libraries used throughout the SDK.</p>
 <table>
 <thead>
@@ -474,111 +339,64 @@ in Node.js (for file conversion) or in the browser.</p>
 </thead>
 <tbody>
 <tr>
-<td><a href="./docs/modules/core.html"><code>@xeokit/sdk/components</code></a></td>
+<td><a href="./docs/modules/core.html"> @xeokit/sdk/components </a></td>
 <td>Core component types</td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/constants.html"><code>@xeokit/sdk/constants</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/constants.html"> @xeokit/sdk/constants </a></td>
 <td>Constants used throughout the SDK</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/utils.html"><code>@xeokit/sdk/utils</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/utils.html"> @xeokit/sdk/utils </a></td>
 <td>Core utility functions</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html"><code>@xeokit/sdk/basictypes</code></a></td>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html"> @xeokit/sdk/basictypes </a></td>
 <td>Basic semantic data type constants</td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/ifcTypes.html"><code>@xeokit/sdk/ifctypes</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/ifcTypes.html"> @xeokit/sdk/ifctypes </a></td>
 <td>IFC data type constants</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/math.html"><code>@xeokit/sdk/math/math</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/api/docs/modules/math.html"> @xeokit/sdk/math/math </a></td>
 <td>Math definitions and constants</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/boundaries.html"><code>@xeokit/sdk/boundaries</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/boundaries.html"> @xeokit/sdk/boundaries </a></td>
 <td>Boundary math functions</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/compression.html"><code>@xeokit/sdk/compression</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/api/docs/modules/compression.html"> @xeokit/sdk/compression </a></td>
 <td>Geometry compression utilities</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/curves.html"><code>@xeokit/sdk/curves</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/api/docs/modules/curves.html"> @xeokit/sdk/curves </a></td>
 <td>Spline curves math library</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/procgen.html"><code>@xeokit/sdk/procgen</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/api/docs/modules/procgen.html"> @xeokit/sdk/procgen </a></td>
 <td>Procedural geometry generation</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/matrix.html"><code>@xeokit/sdk/matrix</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/api/docs/modules/matrix.html"> @xeokit/sdk/matrix </a></td>
 <td>Matrix and vector math utilities</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/rtc.html"><code>@xeokit/sdk/rtc</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/api/docs/modules/rtc.html"> @xeokit/sdk/rtc </a></td>
 <td>Relative-to-center (RTC) coordinate math</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/webglutils.html"><code>@xeokit/sdk/webglutils</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/api/docs/modules/webglutils.html"> @xeokit/sdk/webglutils </a></td>
 <td>WebGL utility functions</td>
-<td></td>
 </tr>
 <tr>
-<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/docs/api/modules/ktx2.html"><code>@xeokit/sdk/ktx2</code></a></td>
-<td></td>
-</tr>
-<tr>
+<td><a href="https://xeokit.github.io/sdk/api-docs.html#https://xeokit.github.io/sdk/api/docs/modules/ktx2.html"> @xeokit/sdk/ktx2 </a></td>
 <td>Compressed texture support</td>
-<td></td>
 </tr>
 </tbody>
 </table>
+<hr>
 
             </div>
         </div>
@@ -666,17 +484,16 @@ in Node.js (for file conversion) or in the browser.</p>
             container.appendChild(node)
             return container
         },
-        placement: 'bottom',
+        // placement: 'top-end',
         // arrow: true,
-         animation: 'scale',
+        // animation: 'scale',
         theme: 'light-border',
-           duration: [200, 150],
-        //duration 1000,
+        //   duration: [200, 150],
         trigger: 'mouseenter focus',
         hideOnClick: false,
+        // interactive: true,
         inertia: true,
     });
-
-
 </script>
+
 </html>

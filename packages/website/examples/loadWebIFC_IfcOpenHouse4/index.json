@@ -8,7 +8,7 @@
     "IFC",
     "WebIFC",
     "loadWebIFC",
-    "Featured"
+    "_Featured"
   ],
   "categories": [
     "Importing",

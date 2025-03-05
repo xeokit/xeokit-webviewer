@@ -7,7 +7,7 @@
     "IFC",
     "WebIFC",
     "loadWebIFC",
-    "Featured"
+    "_Featured"
   ],
   "topic": "import.ifc"
 }

@@ -1156,3 +1156,50 @@ table ul {
     padding-left: 22px;
     margin-top:2px;
 }
+
+.just-padding {
+    padding: 15px;
+}
+
+.list-group.list-group-root {
+    overflow: hidden;
+    padding: 0 0 0;
+}
+
+.list-group.list-group-root .list-group {
+    margin-bottom: 0px;
+}
+
+.list-group.list-group-root .list-group-item {
+    border-radius: 0;
+    border-width: 1px 0 0 0;
+}
+
+.list-group.list-group-root > .list-group-item:first-child {
+    border-top-width: 0;
+}
+
+.list-group.list-group-root > .list-group > .list-group-item {
+    padding-left: 30px;
+}
+
+.list-group.list-group-root > .list-group > .list-group > .list-group-item {
+    padding-left: 55px;
+}
+
+.list-group.list-group-root > .list-group > .list-group > .list-group > .list-group-item {
+    padding-left: 65px;
+}
+
+.list-group.list-group-root > .list-group > .list-group > .list-group > .list-group > .list-group-item {
+    padding-left: 95px;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    padding: 0.5rem 1.0rem;
+    margin-bottom: -1px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}

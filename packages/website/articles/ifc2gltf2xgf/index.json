@@ -6,8 +6,7 @@
         "glTF",
         "IFC",
         "ifc2gltf",
-        "ifc2gltf2xgf",
-        "Featured"
+        "ifc2gltf2xgf"
     ],
     "thumbnail": "thumb.png",
     "topic": "import.ifc"

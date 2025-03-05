@@ -7,8 +7,7 @@
         "XGF",
         "IFC",
         "DotBIM",
-        "dotbim2xgf",
-        "Featured"
+        "dotbim2xgf"
       ],
       "_bannerImage": "banner.png",
       "thumbnail": "index.png",
@@ -20,7 +19,7 @@
       "tags": [
         "Tutorial",
         "Example",
-        "Featured"
+        "_Featured"
       ],
       "topic": "modeling.data"
     },
@@ -76,7 +75,7 @@
       "tags": [
         "Tutorial",
         "Example",
-        "Featured"
+        "_Featured"
       ],
       "topic": "modeling.scene.object"
     },
@@ -95,7 +94,7 @@
       "tags": [
         "Tutorial",
         "Example",
-        "Featured"
+        "_Featured"
       ],
       "topic": "modeling.scene.object"
     },
@@ -141,7 +140,7 @@
       "tags": [
         "Tutorial",
         "Example",
-        "Featured"
+        "_Featured"
       ],
       "topic": "general"
     },
@@ -151,7 +150,7 @@
       "tags": [
         "Tutorial",
         "Example",
-        "Featured"
+        "_Featured"
       ],
       "topic": "general"
     },
@@ -191,7 +190,7 @@
         "Tutorial",
         "Example",
         "CityJSON",
-        "Featured"
+        "_Featured"
       ],
       "topic": "import.cityjson"
     },
@@ -213,7 +212,7 @@
         "Tutorial",
         "Example",
         "glTF",
-        "Featured"
+        "_Featured"
       ],
       "topic": "import.gltf"
     },
@@ -226,7 +225,7 @@
         "IFC",
         "WebIFC",
         "loadWebIFC",
-        "Featured"
+        "_Featured"
       ],
       "topic": "import.ifc"
     },
@@ -237,8 +236,7 @@
         "XGF",
         "glTF",
         "IFC",
-        "ifc2gltf",
-        "Featured"
+        "ifc2gltf"
       ],
       "_bannerImage": "banner.png",
       "thumbnail": "thumb.png",
@@ -252,24 +250,14 @@
         "glTF",
         "IFC",
         "ifc2gltf",
-        "ifc2gltf2xgf",
-        "Featured"
+        "ifc2gltf2xgf"
       ],
       "thumbnail": "thumb.png",
       "topic": "import.ifc"
     },
-    "overview_modules": {
-      "title": "xeokit SDK Code Modules",
-      "description": "An overview of the modules within the xeokit SDK, including scene and data representation, web viewer, model import, export and conversion tools, and various utility libraries.",
-      "tags": [
-        "Featured"
-      ],
-      "bannerImage": "img.png",
-      "topic": "overview"
-    },
-    "pipelinesOverview": {
-      "title": "Viewing Various Model Formats with xeokit",
-      "description": "TODO TODO TODO.",
+    "overview-pipelines": {
+      "title": "Getting Started with Model Importing",
+      "description": "The xeokit SDK supports viewing various AEC file formats through multiple import pipelines. \n\nThe best pipeline to use depends on the source format and file size.\n\nThe table below outlines the recommended pipeline based on format and data size. The best way to view AEC models with xeokit depends on the source format and file size. This guide will help you select the right pipeline based on format and data size.",
       "tags": [
         "XGF",
         "IFC",
@@ -280,6 +268,15 @@
       ],
       "_bannerImage": "banner.png",
       "_thumbnail": "index.png",
+      "topic": "import"
+    },
+    "overview_modules": {
+      "title": "Modules Overview",
+      "description": "The xeokit SDK enables viewing various AEC file formats through different import pipelines. The optimal pipeline depends on the source format and file size. This guide provides recommendations for selecting the appropriate pipeline based on these factors.",
+      "tags": [
+        "Featured"
+      ],
+      "_bannerImage": "imsg.png",
       "topic": "overview"
     },
     "sceneModelBuildBox": {
@@ -323,8 +320,7 @@
       "title": "View a BCF Viewpoint",
       "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.",
       "tags": [
-        "BCF",
-        "Featured"
+        "BCF"
       ],
       "topic": "bcf"
     },
@@ -342,8 +338,7 @@
       "tags": [
         "XGF",
         "IFC",
-        "webifc2xgf",
-        "Featured"
+        "webifc2xgf"
       ],
       "_bannerImage": "banner.png",
       "thumbnail": "index.png",
@@ -375,7 +370,7 @@
       "dotbim2xgf",
       "ifc2gltf",
       "ifc2gltf2xgf",
-      "pipelinesOverview",
+      "overview-pipelines",
       "webifc2xgf"
     ],
     "IFC": [
@@ -383,34 +378,16 @@
       "example_loadWebIFC_IfcOpenHouse4",
       "ifc2gltf",
       "ifc2gltf2xgf",
-      "pipelinesOverview",
+      "overview-pipelines",
       "webifc2xgf"
     ],
     "DotBIM": [
       "dotbim2xgf",
       "example_loadDotBIM_BlenderHouse",
-      "pipelinesOverview"
+      "overview-pipelines"
     ],
     "dotbim2xgf": [
       "dotbim2xgf"
-    ],
-    "Featured": [
-      "dotbim2xgf",
-      "example_SceneModel_DataModel_build_table",
-      "example_SceneModel_build_table",
-      "example_SceneModel_fromParams_table",
-      "example_View_multiView_SceneModel_build_table",
-      "example_View_multiView_loadWebIFC",
-      "example_loadCityJSON_Railway",
-      "example_loadGLTF_MAP",
-      "example_loadWebIFC_IfcOpenHouse4",
-      "ifc2gltf",
-      "ifc2gltf2xgf",
-      "overview_modules",
-      "pipelinesOverview",
-      "shareBCF",
-      "webifc2xgf",
-      "xeokitOverview"
     ],
     "Tutorial": [
       "example_SceneModel_DataModel_build_table",
@@ -460,6 +437,16 @@
       "example_loadGLTF_MAP",
       "example_loadWebIFC_IfcOpenHouse4"
     ],
+    "_Featured": [
+      "example_SceneModel_DataModel_build_table",
+      "example_SceneModel_build_table",
+      "example_SceneModel_fromParams_table",
+      "example_View_multiView_SceneModel_build_table",
+      "example_View_multiView_loadWebIFC",
+      "example_loadCityJSON_Railway",
+      "example_loadGLTF_MAP",
+      "example_loadWebIFC_IfcOpenHouse4"
+    ],
     "SDK": [
       "example_SceneModel_build_box"
     ],
@@ -473,7 +460,7 @@
     ],
     "CityJSON": [
       "example_loadCityJSON_Railway",
-      "pipelinesOverview"
+      "overview-pipelines"
     ],
     "Importing": [
       "example_loadDotBIM_BlenderHouse"
@@ -482,7 +469,7 @@
       "example_loadGLTF_MAP",
       "ifc2gltf",
       "ifc2gltf2xgf",
-      "pipelinesOverview"
+      "overview-pipelines"
     ],
     "WebIFC": [
       "example_loadWebIFC_IfcOpenHouse4"
@@ -496,6 +483,11 @@
     ],
     "ifc2gltf2xgf": [
       "ifc2gltf2xgf"
+    ],
+    "Featured": [
+      "overview-pipelines",
+      "overview_modules",
+      "xeokitOverview"
     ],
     "Beginner": [
       "sceneModelBuildBox",
