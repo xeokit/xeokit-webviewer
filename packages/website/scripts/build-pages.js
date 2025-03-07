@@ -14,8 +14,8 @@ const imageThumbnail = require('image-thumbnail');
 //
 // const grammar = Prism.languages[language]
 
-const base = "http://localhost:8080";
-//const base = "https://xeokit.github.io/sdk/";
+//const base = "http://localhost:8080";
+const base = "https://xeokit.github.io/sdk/";
 
 const docsLinks = JSON.parse(fs.readFileSync("./data/docsLinks.json", "utf8"));
 const docsLookup = JSON.parse(fs.readFileSync("./data/docsLookup.json", "utf8"));
