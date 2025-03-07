@@ -64,7 +64,9 @@ demoHelper.init()
             id: "demoModel"
         });
 
-        // Load DataModelParams into the DataModel.
+        // Load our model's JSON-encoded IFC data into the DataModel. Our data is modeled as an
+        // entity-relationship graph that implements the DataModelParams interface and
+        // stores all the model's IFC elements, relationships and properties.
 
         fetch(`../../models/IfcOpenHouse4/webifc2xgf/model.json`)
             .then(response => {
@@ -74,8 +76,7 @@ demoHelper.init()
 
                         dataModel.fromParams(dataModelParams);
 
-                        // Use loadXKT to load the XKT file into the SceneModel.
-
+                        // Use loadXGF to load the XGF file into the SceneModel.
 
                         fetch(`../../models/IfcOpenHouse4/webifc2xgf/model.xgf`)
                             .then(response => {
@@ -89,11 +90,42 @@ demoHelper.init()
 
                                         }).then(() => { // XGF and JSON files loaded
 
-                                            // Build the SceneModel and DataModel.
+                                            // Build the SceneModel.
                                             // The IFC model now appears in our Viewer.
 
                                             sceneModel.build();
+
+                                            // Build the DataModel.
+                                            // The DataModel and the Data will then contain DataObject,
+                                            // Relationship and PropertySet components that represent the IFC data as an
+                                            // entity-relationship graph.
+
                                             dataModel.build();
+
+                                            // Using the searchObjects function, query the Data for all the
+                                            // IfcMember elements within a given IfcBuildingStorey.
+
+                                            const resultObjectIds = [];
+
+                                            const result = xeokit.data.searchObjects(data, {
+                                                startObjectId: "38aOKO8_DDkBd1FHm_lVXz",
+                                                includeObjects: [xeokit.ifctypes.IfcMember],
+                                                includeRelated: [xeokit.ifctypes.IfcRelAggregates],
+                                                resultObjectIds
+                                            });
+
+                                            // Check if the query was valid.
+
+                                            if (typeof result === xeokit.core.SDKError) {
+                                                console.error(result);
+                                                return;
+                                            }
+
+                                            // If the query succeeded, go ahead and mark whatever
+                                            // objects we found as selected. In this case, it will set the window
+                                            // frames as selected in the View.
+
+                                            view.setObjectsSelected(resultObjectIds, true);
 
                                             demoHelper.finished();
 

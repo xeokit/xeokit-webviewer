@@ -1,6 +1,6 @@
 
 ---
-##### How to load an IFC model directly into a xeokit web viewer, via the web-ifc API. 
+##### In this example, we'll show how to load an IFC model directly into a xeokit web viewer, and then use the IFC data model to set all the window frames green within a given IfcBuildingStorey. 
 ##### Click on the preview below to run the example. Scroll down to learn how it's made.
 ---
 

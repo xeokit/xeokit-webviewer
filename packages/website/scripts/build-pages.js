@@ -398,10 +398,14 @@ function compileArticles() {
                             const html =
                                 await markDownParser.render(
                                     parseDocLinks(
-                                        parseExampleRunLinks(
-                                            parseExampleHTMLLinks(
-                                                parseExampleJavaScriptLinks(
-                                                    parseExampleSteps(md)
+                                        parseExampleTitle(
+                                            parseExampleDescription(
+                                                parseExampleRunLinks(
+                                                    parseExampleHTMLLinks(
+                                                        parseExampleJavaScriptLinks(
+                                                            parseExampleSteps(md)
+                                                        )
+                                                    )
                                                 )
                                             )
                                         )
@@ -606,45 +610,35 @@ function parseDocLinks(text, prefix = true) {
     return text;
 }
 
-function parseExampleRunLinksOLD(text) {
+function parseExampleTitle(text) {
     Object.keys(examplesIndex).forEach(function (key) {
-        const expr = `example-run:${key}`;
+        const expr = `example-title:${key}`;
         const regex = new RegExp(`\\b${expr}?\\b`, 'g');
         text = text.replace(regex, (match) => {
             const entry = examplesIndex[key];
             if (!entry) {
                 return "";
             }
-            const exampleSrc = `../../examples/${key}/index.html`
-            return `<div id="${key}-interactivePlaceholder" class="image-container">
-                        <img id="${key}-img" src="../../examples/${key}/index.png" style="width:100%; height:600px;" alt="Placeholder image">
-                        <div id="${key}-overlay" class="overlay">Click to load</div>
-                    </div>
-                    <br>
-                    <script>
-                        const placeholder = document.getElementById("${key}-interactivePlaceholder");
-                        placeholder.addEventListener('click', function() {
-                            const overlay = document.getElementById("${key}-overlay");
-                            overlay.innerText = "Loading...";
-                            const iframe = document.createElement('iframe');
-                            iframe.src = "${exampleSrc}";
-                            iframe.style.width = this.clientWidth + 'px';
-                            iframe.style.height = this.clientHeight + 'px';
-                            const loadingMessage = document.createElement('div');
-                            loadingMessage.className = 'image-container';
-                            loadingMessage.innerHTML = '<div class="overlay">Loading...</div>';
-                            const img = document.getElementById("${key}-img");
-                            this.replaceChild(iframe, img);
-                            iframe.onload = function() {
-                                overlay.remove();
-                            };
-                        });
-                   </script>`;
+            return `<span>${entry.title}</span>`;
         });
     });
     return text;
 }
 
+function parseExampleDescription(text) {
+    Object.keys(examplesIndex).forEach(function (key) {
+        const expr = `example-description:${key}`;
+        const regex = new RegExp(`\\b${expr}?\\b`, 'g');
+        text = text.replace(regex, (match) => {
+            const entry = examplesIndex[key];
+            if (!entry) {
+                return "";
+            }
+            return `<p>${entry.description}</p>`;
+        });
+    });
+    return text;
+}
 
 function parseExampleRunLinks(text) {
     Object.keys(examplesIndex).forEach(function (key) {

@@ -95,6 +95,31 @@ demoHelper.init()
                                             sceneModel.build();
                                             dataModel.build();
 
+                                            // Using the searchObjects function, query the Data for all the
+                                            // IfcMember elements within a given IfcBuildingStorey.
+
+                                            const resultObjectIds = [];
+
+                                            const result = xeokit.data.searchObjects(data, {
+                                                startObjectId: "38aOKO8_DDkBd1FHm_lVXz",
+                                                includeObjects: [xeokit.ifctypes.IfcMember],
+                                                includeRelated: [xeokit.ifctypes.IfcRelAggregates],
+                                                resultObjectIds
+                                            });
+
+                                            // Check if the query was valid.
+
+                                            if (typeof result === xeokit.core.SDKError) {
+                                                console.error(result);
+                                                return;
+                                            }
+
+                                            // If the query succeeded, go ahead and mark whatever
+                                            // objects we found as selected. In this case, it will set the window
+                                            // frames as selected in the View.
+
+                                            view.setObjectsSelected(resultObjectIds, true);
+
                                             demoHelper.finished();
 
                                         }).catch(e => {

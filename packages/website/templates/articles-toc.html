@@ -30,17 +30,17 @@
     </span>
     @@include('./navbar-pulldown.html', { root: "@@base" });
 </nav>
-<!--<header class="bg-black home-header bg-black">-->
-<!--    <div class="container h-75">-->
-<!--        &lt;!&ndash;        <div class="row h-100 align-items-center">&ndash;&gt;-->
-<!--        &lt;!&ndash;            <div class="col-lg-12">&ndash;&gt;-->
-<!--        &lt;!&ndash;                <h1 class="text-white mt-5 mb-2">IFC Conversion Tests</h1>&ndash;&gt;-->
-<!--        &lt;!&ndash;                <p class="lead mb-5 text-white">Check the health of our IFC file conversion tools</p>&ndash;&gt;-->
-<!--        &lt;!&ndash;            </div>&ndash;&gt;-->
-<!--        &lt;!&ndash;        </div>&ndash;&gt;-->
-<!--    </div>-->
-<!--</header>-->
-<section id="intro" class="main-section alabaster">
+<header class="bg-black user-guide-header bg-black">
+    <div class="container h-75">
+        <!--        <div class="row h-100 align-items-center">-->
+        <!--            <div class="col-lg-12">-->
+        <!--                <h1 class="text-white mt-5 mb-2">IFC Conversion Tests</h1>-->
+        <!--                <p class="lead mb-5 text-white">Check the health of our IFC file conversion tools</p>-->
+        <!--            </div>-->
+        <!--        </div>-->
+    </div>
+</header>
+<section id="intro" class="main-section ">
     <div class="container">
         <div class="row">
             <div class="col-md-12">
@@ -49,7 +49,7 @@
         </div>
         <br>
         <div class="row">
-            <div class="col-md-7"  >
+            <div class="col-md-12">
                 <h1>xeokit User Guide</h1>
                 <br>
                 <hr>
@@ -58,13 +58,13 @@
                 <h5>dajhhh dagdada j ghjgs g gshg ggghjG HJG HJGSA G HJGLAaaaaaaaaaashjgjjgk hj</h5>
 
                 <hr>
-<br>
+                <br>
                 <div id="content"></div>
             </div>
-            <div class="col-md-3">
-                <br><br><br><br><br><br> <br><br><br><br><br><br>
-                <div id="featured"></div>
-            </div>
+            <!--            <div class="col-md-3">-->
+            <!--                <br><br><br><br><br><br> <br><br><br><br><br><br>-->
+            <!--                <div id="featured"></div>-->
+            <!--            </div>-->
         </div>
     </div>
 </section>
@@ -81,6 +81,7 @@
             "id": "import",
             "title": "Viewing Models",
             "topics": [
+                {"id": "quickstart", "title": "Quickstart"},
                 {
                     "id": "ifc",
                     "title": "IFC"
@@ -248,21 +249,21 @@
             }
         }
 
-        function buildTOCForTopics(topics, parentPath, depth, countStack=[]) {
+        function buildTOCForTopics(topics, parentPath, depth, countStack = []) {
             const isRoot = parentPath === "";
-            let html = isRoot ? "<div class=\"list-group list-group-root well\">" :"<div class=\"list-group\">";
+            let html = isRoot ? "<div class=\"list-group list-group-root well\">" : "<div class=\"list-group\">";
             countStack[depth] = 0;
             topics.forEach(topic => {
                 const currentPath = parentPath ? parentPath + "." + topic.id : topic.id;
                 html += isRoot
-                    ? `<p class="list-group-item " style="background: lightgrey; padding-top:22px; margin-top:20px;  margin-bottom:15px; border:0;">${++countStack[depth]}.&nbsp;&nbsp;<b>${topic.title}</b></p>`
-                    : `<p class="list-group-item " style="">${countStack[depth-1]}.${++countStack[depth]}.&nbsp;&nbsp;${topic.title}</p>`;
+                    ? `<p class="list-group-item " style="background: #bababa; padding-top:22px; margin-top:20px;  margin-bottom:0px; border:0;">${++countStack[depth]}.&nbsp;&nbsp;${topic.title}</p>`
+                    : `<p class="list-group-item " style="">${countStack[depth - 1]}.${++countStack[depth]}.&nbsp;&nbsp;${topic.title}</p>`;
                 if (Array.isArray(topic.topics) && topic.topics.length > 0) {
-                    html += buildTOCForTopics(topic.topics, currentPath, depth+1, countStack);
+                    html += buildTOCForTopics(topic.topics, currentPath, depth + 1, countStack);
                 }
                 if (topicArticleMap[currentPath]) {
                     html += "<div class=\"list-group\">";
-                    countStack[depth+1] = 0;
+                    countStack[depth + 1] = 0;
                     topicArticleMap[currentPath].forEach(article => {
                         html += isRoot
                             ? `<a class="list-group-item" href="@@base/articles/${article.id}/index.html">${article.title}</a>`
@@ -281,7 +282,7 @@
 
     fetch("@@base/articles/index.json").then(response => {
         response.json().then(articlesIndexJSON => {
-            document.getElementById("featured").innerHTML = generateFeaturedHTML(articlesIndexJSON);
+            //   document.getElementById("featured").innerHTML = generateFeaturedHTML(articlesIndexJSON);
             document.getElementById("content").innerHTML = generateHTMLTOC(articlesIndexJSON);
         });
     });

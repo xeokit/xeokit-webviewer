@@ -323,12 +323,12 @@ demoHelper.<span class="hljs-title function_">init</span>()
         });
 </code></pre>
 <p class="comment-block">
-<span style="font-weight: bold">12.</span> Load&nbsp;<a class="doc-link" data-template="DataModelParams_template"  href="/api-docs#/docs/api/interfaces/data.DataModelParams.html" target="_parent">DataModelParams</a>
+<span style="font-weight: bold">12.</span> Load our model's JSON-encoded IFC data into the&nbsp;<span class="doc-link">DataModel</span>. Our data is modeled as an entity-relationship graph that implements the&nbsp;<a class="doc-link" data-template="DataModelParams_template"  href="/api-docs#/docs/api/interfaces/data.DataModelParams.html" target="_parent">DataModelParams</a>
             <template class="doc-link-tooltip" id="DataModelParams_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
                 <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / DataModelParams /</p>
                 <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Interface DataModelParams</p>
                 <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Parameters used to define a DataModel.</p>
-            </template> into the&nbsp;<span class="doc-link">DataModel</span>.</p>
+            </template> interface and stores all the model's IFC elements, relationships and properties.</p>
 <pre class="code-section"><code class="hljs">        <span class="hljs-title function_">fetch</span>(<span class="hljs-string">`../../models/IfcOpenHouse4/webifc2xgf/model.json`</span>)
             .<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
                 response
@@ -337,12 +337,12 @@ demoHelper.<span class="hljs-title function_">init</span>()
                         dataModel.<span class="hljs-title function_">fromParams</span>(dataModelParams);
 </code></pre>
 <p class="comment-block">
-<span style="font-weight: bold">13.</span> Use&nbsp;<a class="doc-link" data-template="loadXKT_template"  href="/api-docs#/docs/api/functions/xkt.loadXKT.html" target="_parent">loadXKT</a>
-            <template class="doc-link-tooltip" id="loadXKT_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
-                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / xkt / loadXKT /</p>
-                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadXKT</p>
-                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Imports [XKT](https://xeokit.</p>
-            </template> to load the XKT file into the&nbsp;<span class="doc-link">SceneModel</span>.</p>
+<span style="font-weight: bold">13.</span> Use&nbsp;<a class="doc-link" data-template="loadXGF_template"  href="/api-docs#/docs/api/functions/xgf.loadXGF.html" target="_parent">loadXGF</a>
+            <template class="doc-link-tooltip" id="loadXGF_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / xgf / loadXGF /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function loadXGF</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Imports [XGF](https://xeokit.</p>
+            </template> to load the XGF file into the&nbsp;<span class="doc-link">SceneModel</span>.</p>
 <pre class="code-section"><code class="hljs">                        <span class="hljs-title function_">fetch</span>(<span class="hljs-string">`../../models/IfcOpenHouse4/webifc2xgf/model.xgf`</span>)
                             .<span class="hljs-title function_">then</span>(<span class="hljs-function"><span class="hljs-params">response</span> =&gt;</span> {
                                 response
@@ -354,9 +354,58 @@ demoHelper.<span class="hljs-title function_">init</span>()
                                         }).<span class="hljs-title function_">then</span>(<span class="hljs-function">() =&gt;</span> { <span class="hljs-comment">// XGF and JSON files loaded</span>
 </code></pre>
 <p class="comment-block">
-<span style="font-weight: bold">14.</span> Build the&nbsp;<span class="doc-link">SceneModel</span> and&nbsp;<span class="doc-link">DataModel</span>. The IFC model now appears in our&nbsp;<span class="doc-link">Viewer</span>.</p>
+<span style="font-weight: bold">14.</span> Build the&nbsp;<span class="doc-link">SceneModel</span>. The IFC model now appears in our&nbsp;<span class="doc-link">Viewer</span>.</p>
 <pre class="code-section"><code class="hljs">                                            sceneModel.<span class="hljs-title function_">build</span>();
-                                            dataModel.<span class="hljs-title function_">build</span>();
+</code></pre>
+<p class="comment-block">
+<span style="font-weight: bold">15.</span> Build the&nbsp;<span class="doc-link">DataModel</span>. The&nbsp;<span class="doc-link">DataModel</span> and the&nbsp;<span class="doc-link">Data</span> will then contain&nbsp;<a class="doc-link" data-template="DataObject_template"  href="/api-docs#/docs/api/classes/data.DataObject.html" target="_parent">DataObject</a>
+            <template class="doc-link-tooltip" id="DataObject_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / DataObject /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class DataObject</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">An object within a DataModel.</p>
+            </template>, Relationship and&nbsp;<a class="doc-link" data-template="PropertySet_template"  href="/api-docs#/docs/api/classes/data.PropertySet.html" target="_parent">PropertySet</a>
+            <template class="doc-link-tooltip" id="PropertySet_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / PropertySet /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Class PropertySet</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Represents a set of Properties within a DataModel.</p>
+            </template> components that represent the IFC data as an entity-relationship graph.</p>
+<pre class="code-section"><code class="hljs">                                            dataModel.<span class="hljs-title function_">build</span>();
+</code></pre>
+<p class="comment-block">
+<span style="font-weight: bold">16.</span> Using the&nbsp;<a class="doc-link" data-template="searchObjects_template"  href="/api-docs#/docs/api/functions/data.searchObjects.html" target="_parent">searchObjects</a>
+            <template class="doc-link-tooltip" id="searchObjects_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / searchObjects /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function searchObjects</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Finds DataObjects in a Data using a customized depth-first traversal.</p>
+            </template> function, query the&nbsp;<span class="doc-link">Data</span> for all the&nbsp;<a class="doc-link" data-template="IfcMember_template"  href="/api-docs#/docs/api/variables/ifctypes.IfcMember.html" target="_parent">IfcMember</a>
+            <template class="doc-link-tooltip" id="IfcMember_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / ifctypes / IfcMember /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Variable IfcMember</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">An IfcMember is a structural member designed to carry loads between or beyond points of support.</p>
+            </template> elements within a given&nbsp;<a class="doc-link" data-template="IfcBuildingStorey_template"  href="/api-docs#/docs/api/variables/ifctypes.IfcBuildingStorey.html" target="_parent">IfcBuildingStorey</a>
+            <template class="doc-link-tooltip" id="IfcBuildingStorey_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / ifctypes / IfcBuildingStorey /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Variable IfcBuildingStorey</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">The building storey has an elevation and typically represents a (nearly) horizontal aggregation of spaces that are vertically bound.</p>
+            </template>.</p>
+<pre class="code-section"><code class="hljs">                                            <span class="hljs-keyword">const</span> resultObjectIds = [];
+                                            <span class="hljs-keyword">const</span> result = xeokit.<span class="hljs-property">data</span>.<span class="hljs-title function_">searchObjects</span>(data, {
+                                                <span class="hljs-attr">startObjectId</span>: <span class="hljs-string">&quot;38aOKO8_DDkBd1FHm_lVXz&quot;</span>,
+                                                <span class="hljs-attr">includeObjects</span>: [xeokit.<span class="hljs-property">ifctypes</span>.<span class="hljs-property">IfcMember</span>],
+                                                <span class="hljs-attr">includeRelated</span>: [xeokit.<span class="hljs-property">ifctypes</span>.<span class="hljs-property">IfcRelAggregates</span>],
+                                                resultObjectIds
+                                            });
+</code></pre>
+<p class="comment-block">
+<span style="font-weight: bold">17.</span> Check if the query was valid.</p>
+<pre class="code-section"><code class="hljs">                                            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> result === xeokit.<span class="hljs-property">core</span>.<span class="hljs-property">SDKError</span>) {
+                                                <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(result);
+                                                <span class="hljs-keyword">return</span>;
+                                            }
+</code></pre>
+<p class="comment-block">
+<span style="font-weight: bold">18.</span> If the query succeeded, go ahead and mark whatever objects we found as selected. In this case, it will set the window frames as selected in the&nbsp;<span class="doc-link">View</span>.</p>
+<pre class="code-section"><code class="hljs">                                            view.<span class="hljs-title function_">setObjectsSelected</span>(resultObjectIds, <span class="hljs-literal">true</span>);
                                             demoHelper.<span class="hljs-title function_">finished</span>();
                                         }).<span class="hljs-title function_">catch</span>(<span class="hljs-function"><span class="hljs-params">e</span> =&gt;</span> {
                                             <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(e);

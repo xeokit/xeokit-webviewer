@@ -62,7 +62,8 @@
                 "ifc2gltf",
                 "ifc2gltf2xgf",
                 "gltf2xgf",
-                "webifc2xgf"
+                "webifc2xgf",
+                "dotbim2xgf"
             ]
         },
         {

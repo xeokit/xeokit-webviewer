@@ -1,5 +1,5 @@
-import type {DataModelParams, DataObjectParams, RelationshipParams} from "../data";
-import {IfcRelAggregates, ifcTypeCodes} from "../ifctypes";
+import type {DataModelParams, RelationshipParams} from "../data";
+import {IfcRelAggregates} from "../ifctypes";
 import {MetaModelParams} from "./MetaModelParams";
 
 /***

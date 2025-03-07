@@ -361,3 +361,5 @@ Reading LAS/LAZ file: ./data/models/Nalls-Pumpkin-Hill/laz/model.laz
 [las2xgf] Converting to XGF version: 1 (default)
 [las2xgf] Converting to XGF version: 1 (default)
 [las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)
+[las2xgf] Converting to XGF version: 1 (default)

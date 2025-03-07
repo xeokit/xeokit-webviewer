@@ -20,7 +20,7 @@ body {
 .business-header {
     height: 50vh;
     min-height: 300px;
-    background: url('../img/systemMonitor.png') center center no-repeat scroll;
+    background: url('./images/img.png') center center no-repeat scroll;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -550,7 +550,7 @@ span.clients-name {
     max-height: 600px;
 
     /*background: linear-gradient(to right,  rgba(0, 0, 0, 0.6), rgba(0,0, 0, 0.0) ), url('../img/systemMonitor.png') center center no-repeat scroll;*/
-    background: linear-gradient(to right,  rgba(0, 0, 0.0, 0.5), rgba(0,0, 0, 0.0)  ), url('../img/gltf-textured.png') center center no-repeat scroll;
+    background: linear-gradient(to right,  rgba(0, 0, 0.0, 0.5), rgba(0,0, 0, 0.0)  ), url('../img/img.png') center center no-repeat scroll;
     background-position:center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
@@ -558,6 +558,18 @@ span.clients-name {
     -o-background-size: cover;
 }
 
+
+.user-guide-header {
+    height: 100vh;
+    min-height: 600px;
+    max-height: 600px;
+    background:  url('../images/img.png') center center no-repeat scroll;
+    background-position:center center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
 
 .home-header h1 {
     font-weight: 600;
@@ -1196,10 +1208,11 @@ table ul {
 }
 
 .list-group-item {
+    font-size: 18px;
     position: relative;
     display: block;
-    padding: 0.5rem 1.0rem;
-    margin-bottom: -1px;
+    /*padding: 0.5rem 1.0rem;*/
+    padding-bottom: 5px;
     background-color: #fff;
-    border: 1px solid rgba(0, 0, 0, 0.125);
+    border: 0 solid rgba(0, 0, 0, 0.125);
 }

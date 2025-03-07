@@ -218,7 +218,7 @@
     },
     "example_loadWebIFC_IfcOpenHouse4": {
       "title": "Viewing IFC using loadWebIFC",
-      "description": "How to load an IFC model directly into a xeokit web viewer, via the web-ifc API.",
+      "description": "In this example, we'll show how to load an IFC model directly into a xeokit web viewer, and then use the IFC data model to set all the window frames green within a given IfcBuildingStorey.",
       "tags": [
         "Tutorial",
         "Example",
@@ -256,7 +256,7 @@
       "topic": "import.ifc"
     },
     "overview-pipelines": {
-      "title": "Getting Started with Model Importing",
+      "title": "Getting Started with Model Viewing",
       "description": "The xeokit SDK supports viewing various AEC file formats through multiple import pipelines. \n\nThe best pipeline to use depends on the source format and file size.\n\nThe table below outlines the recommended pipeline based on format and data size. The best way to view AEC models with xeokit depends on the source format and file size. This guide will help you select the right pipeline based on format and data size.",
       "tags": [
         "XGF",
@@ -268,7 +268,7 @@
       ],
       "_bannerImage": "banner.png",
       "_thumbnail": "index.png",
-      "topic": "import"
+      "topic": "import.quickstart"
     },
     "overview_modules": {
       "title": "Modules Overview",
@@ -348,15 +348,7 @@
       "topic": "import.ifc"
     },
     "whitepaper": {
-      "title": "xeokit SDK for 3D BIM and AEC Visualization",
-      "description": "This white paper outlines how xeokit addresses critical challenges in BIM data visualization, enhances workflow efficiency, and supports scalable, web-based deployments.",
-      "tags": [
-        "whitepaper"
-      ],
-      "bannerImage": "img.png"
-    },
-    "xeokitOverview": {
-      "title": "xeokit SDK Overview",
+      "title": "xeokit SDK: White Paper",
       "description": "An overview of the modules within the xeokit SDK, including scene and data representation, web viewer, model import, export and conversion tools, and various utility libraries.",
       "tags": [
         "Featured"
@@ -487,7 +479,7 @@
     "Featured": [
       "overview-pipelines",
       "overview_modules",
-      "xeokitOverview"
+      "whitepaper"
     ],
     "Beginner": [
       "sceneModelBuildBox",
@@ -524,9 +516,6 @@
     ],
     "webifc2xgf": [
       "webifc2xgf"
-    ],
-    "whitepaper": [
-      "whitepaper"
     ]
   }
 }

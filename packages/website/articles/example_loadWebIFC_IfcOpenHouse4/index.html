@@ -97,7 +97,7 @@
         <div class="row testimonial-row">
             <div class="col-lg-12">
                 <hr>
-<h5>How to load an IFC model directly into a xeokit web viewer, via the web-ifc API.</h5>
+<h5>In this example, we'll show how to load an IFC model directly into a xeokit web viewer, and then use the IFC data model to set all the window frames green within a given IfcBuildingStorey.</h5>
 <h5>Click on the preview below to run the example. Scroll down to learn how it's made.</h5>
 <hr>
 <br>
@@ -324,6 +324,42 @@ demoHelper.<span class="hljs-title function_">init</span>()
             </template> corresponding to each&nbsp;<span class="doc-link">SceneObject</span>, through which the appearance of the object can be controlled in the&nbsp;<span class="doc-link">View</span>.</p>
 <pre class="code-section"><code class="hljs">                        dataModel.<span class="hljs-title function_">build</span>();
                         sceneModel.<span class="hljs-title function_">build</span>();
+</code></pre>
+<p class="comment-block">
+<span style="font-weight: bold">15.</span> Using the&nbsp;<a class="doc-link" data-template="searchObjects_template"  href="/api-docs#/docs/api/functions/data.searchObjects.html" target="_parent">searchObjects</a>
+            <template class="doc-link-tooltip" id="searchObjects_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / data / searchObjects /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Function searchObjects</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">Finds DataObjects in a Data using a customized depth-first traversal.</p>
+            </template> function, query the&nbsp;<span class="doc-link">Data</span> for all the&nbsp;<a class="doc-link" data-template="IfcMember_template"  href="/api-docs#/docs/api/variables/ifctypes.IfcMember.html" target="_parent">IfcMember</a>
+            <template class="doc-link-tooltip" id="IfcMember_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / ifctypes / IfcMember /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Variable IfcMember</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">An IfcMember is a structural member designed to carry loads between or beyond points of support.</p>
+            </template> elements within a given&nbsp;<a class="doc-link" data-template="IfcBuildingStorey_template"  href="/api-docs#/docs/api/variables/ifctypes.IfcBuildingStorey.html" target="_parent">IfcBuildingStorey</a>
+            <template class="doc-link-tooltip" id="IfcBuildingStorey_template" style="font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol; font-size: 1rem; font-weight: 400; line-height: 1.5; color: #212529;">
+                <p style="font-weight: lighter; color: grey;  font-size: 0.8rem; padding-top:0">@xeokit/sdk / ifctypes / IfcBuildingStorey /</p>
+                <p style="font-weight: bold; font-size: 1.2rem; margin: 0; padding-top:0">Variable IfcBuildingStorey</p>
+                <p style="font-weight: normal; font-size: 1rem; margin-top: 5px; margin-bottom: 0; padding-top:0; padding-bottom: 0;">The building storey has an elevation and typically represents a (nearly) horizontal aggregation of spaces that are vertically bound.</p>
+            </template>.</p>
+<pre class="code-section"><code class="hljs">                        <span class="hljs-keyword">const</span> resultObjectIds = [];
+                        <span class="hljs-keyword">const</span> result = xeokit.<span class="hljs-property">data</span>.<span class="hljs-title function_">searchObjects</span>(data, {
+                            <span class="hljs-attr">startObjectId</span>: <span class="hljs-string">&quot;38aOKO8_DDkBd1FHm_lVXz&quot;</span>,
+                            <span class="hljs-attr">includeObjects</span>: [xeokit.<span class="hljs-property">ifctypes</span>.<span class="hljs-property">IfcMember</span>],
+                            <span class="hljs-attr">includeRelated</span>: [xeokit.<span class="hljs-property">ifctypes</span>.<span class="hljs-property">IfcRelAggregates</span>],
+                            resultObjectIds
+                        });
+</code></pre>
+<p class="comment-block">
+<span style="font-weight: bold">16.</span> Check if the query was valid.</p>
+<pre class="code-section"><code class="hljs">                        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">typeof</span> result === xeokit.<span class="hljs-property">core</span>.<span class="hljs-property">SDKError</span>) {
+                            <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(result);
+                            <span class="hljs-keyword">return</span>;
+                        }
+</code></pre>
+<p class="comment-block">
+<span style="font-weight: bold">17.</span> If the query succeeded, go ahead and mark whatever objects we found as selected. In this case, it will set the window frames as selected in the&nbsp;<span class="doc-link">View</span>.</p>
+<pre class="code-section"><code class="hljs">                        view.<span class="hljs-title function_">setObjectsSelected</span>(resultObjectIds, <span class="hljs-literal">true</span>);
                         demoHelper.<span class="hljs-title function_">finished</span>();
                     });
                 });
