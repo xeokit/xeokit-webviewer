@@ -8,12 +8,6 @@ const rename = require("gulp-rename");
 const replace = require('gulp-replace-task');
 const imageThumbnail = require('image-thumbnail');
 
-// const Prism = require('prismjs')
-// require('prismjs/plugins/line-numbers/prism-line-numbers.js');
-// const language = 'javascript'
-//
-// const grammar = Prism.languages[language]
-
 //const base = "http://localhost:8080";
 const base = "https://xeokit.github.io/sdk/";
 

@@ -44,6 +44,11 @@ export interface SceneGeometryParams {
     colors?: FloatArrayParam;
 
     /**
+     * Flat array of compressed intger vertex colors. This overrides the `colors` parameter.
+     */
+    colorsCompressed?: IntArrayParam;
+
+    /**
      * Flat array of primitive connectivity indices.
      *
      * Ignored for primitive type {@link constants!PointsPrimitive}, which does not need indices.

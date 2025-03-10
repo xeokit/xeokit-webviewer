@@ -145,7 +145,7 @@ export function loadLAS(params: {
                         id: geometryId,
                         primitive: PointsPrimitive,
                         positions: pointsChunks[j],
-                        colors: colorsChunks[j]
+                        colorsCompressed: colorsChunks[j]
                     });
                     if (geometry instanceof SDKError) {
                         log(`[ERROR] Failed to load point cloud: ${geometry.message}`);

@@ -216,6 +216,17 @@
       ],
       "topic": "import.gltf"
     },
+    "example_loadLAS_Pumpkin": {
+      "title": "Viewing a LAZ-encoded LiDAR scan using loadLAS",
+      "description": "How to load a LiDAR scan from LAS (.laz) format directly into a xeokit web viewer.",
+      "tags": [
+        "Tutorial",
+        "Example",
+        "LAS",
+        "_Featured"
+      ],
+      "topic": "import.las"
+    },
     "example_loadWebIFC_IfcOpenHouse4": {
       "title": "Viewing IFC using loadWebIFC",
       "description": "In this example, we'll show how to load an IFC model directly into a xeokit web viewer, and then use the IFC data model to set all the window frames green within a given IfcBuildingStorey.",
@@ -403,6 +414,7 @@
       "example_loadCityJSON_Railway",
       "example_loadDotBIM_BlenderHouse",
       "example_loadGLTF_MAP",
+      "example_loadLAS_Pumpkin",
       "example_loadWebIFC_IfcOpenHouse4"
     ],
     "Example": [
@@ -427,6 +439,7 @@
       "example_loadCityJSON_Railway",
       "example_loadDotBIM_BlenderHouse",
       "example_loadGLTF_MAP",
+      "example_loadLAS_Pumpkin",
       "example_loadWebIFC_IfcOpenHouse4"
     ],
     "_Featured": [
@@ -437,6 +450,7 @@
       "example_View_multiView_loadWebIFC",
       "example_loadCityJSON_Railway",
       "example_loadGLTF_MAP",
+      "example_loadLAS_Pumpkin",
       "example_loadWebIFC_IfcOpenHouse4"
     ],
     "SDK": [
@@ -462,6 +476,9 @@
       "ifc2gltf",
       "ifc2gltf2xgf",
       "overview-pipelines"
+    ],
+    "LAS": [
+      "example_loadLAS_Pumpkin"
     ],
     "WebIFC": [
       "example_loadWebIFC_IfcOpenHouse4"

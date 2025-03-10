@@ -7,7 +7,7 @@
     "module": "dist/index.js",
     "scripts": {
         "test": "jest --passWithNoTests",
-        "dist": "tsc; node ./scripts/build-cli-tools.js",
+        "dist": "rm -Rf tsconfig.tsbuildinfo;  tsc; node ./scripts/build-cli-tools.js",
         "lint": "eslint . --fix",
         "docs": "typedoc --json ../website/docs/json/sdk.json --options typedoc.json --validation.invalidLink false && cp -Rf ./assets ../website/docs/.",
         "_publish": "npm publish --access public"

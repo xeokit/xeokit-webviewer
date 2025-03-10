@@ -34,7 +34,7 @@ export function compressGeometryParams(geometryParams: SceneGeometryParams): Sce
             aabb,
             uvsDecompressMatrix: undefined,
             positionsCompressed,
-            colorsCompressed: geometryParams.colors ? compressRGBColors(geometryParams.colors) : null,
+            colorsCompressed: geometryParams.colorsCompressed ? geometryParams.colorsCompressed : (geometryParams.colors ? compressRGBColors(geometryParams.colors) : null),
             origin: rtcNeeded ? rtcCenter : null
         };
     }
