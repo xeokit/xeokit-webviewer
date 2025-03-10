@@ -240,6 +240,28 @@
       ],
       "topic": "import.ifc"
     },
+    "example_loadXGF_MAP": {
+      "title": "Viewing XGF using loadXGF",
+      "description": "How to load an IFC model from XGF (.glb) format directly into a xeokit web viewer.",
+      "tags": [
+        "Tutorial",
+        "Example",
+        "XGF",
+        "_Featured"
+      ],
+      "topic": "import.xgf"
+    },
+    "example_loadXKT_MAP": {
+      "title": "Viewing XKT using loadXKT",
+      "description": "How to load an IFC model from XKT (.xkt) format directly into a xeokit web viewer.",
+      "tags": [
+        "Tutorial",
+        "Example",
+        "XKT",
+        "_Featured"
+      ],
+      "topic": "import.xkt"
+    },
     "ifc2gltf": {
       "title": "Importing IFC using ifc2gltf",
       "description": "How to use the ifc2gltf CLI tool to convert an IFC model to glTF format, and then display the glTF in a xeokit web viewer.",
@@ -371,6 +393,7 @@
   "tagsToArticlesMap": {
     "XGF": [
       "dotbim2xgf",
+      "example_loadXGF_MAP",
       "ifc2gltf",
       "ifc2gltf2xgf",
       "overview-pipelines",
@@ -415,7 +438,9 @@
       "example_loadDotBIM_BlenderHouse",
       "example_loadGLTF_MAP",
       "example_loadLAS_Pumpkin",
-      "example_loadWebIFC_IfcOpenHouse4"
+      "example_loadWebIFC_IfcOpenHouse4",
+      "example_loadXGF_MAP",
+      "example_loadXKT_MAP"
     ],
     "Example": [
       "example_SceneModel_DataModel_build_table",
@@ -440,7 +465,9 @@
       "example_loadDotBIM_BlenderHouse",
       "example_loadGLTF_MAP",
       "example_loadLAS_Pumpkin",
-      "example_loadWebIFC_IfcOpenHouse4"
+      "example_loadWebIFC_IfcOpenHouse4",
+      "example_loadXGF_MAP",
+      "example_loadXKT_MAP"
     ],
     "_Featured": [
       "example_SceneModel_DataModel_build_table",
@@ -451,7 +478,9 @@
       "example_loadCityJSON_Railway",
       "example_loadGLTF_MAP",
       "example_loadLAS_Pumpkin",
-      "example_loadWebIFC_IfcOpenHouse4"
+      "example_loadWebIFC_IfcOpenHouse4",
+      "example_loadXGF_MAP",
+      "example_loadXKT_MAP"
     ],
     "SDK": [
       "example_SceneModel_build_box"
@@ -485,6 +514,9 @@
     ],
     "loadWebIFC": [
       "example_loadWebIFC_IfcOpenHouse4"
+    ],
+    "XKT": [
+      "example_loadXKT_MAP"
     ],
     "ifc2gltf": [
       "ifc2gltf",
