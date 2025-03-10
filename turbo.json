@@ -13,10 +13,7 @@
             "persistent": true
         },
         "dist": {
-            "cache": true,
-            "dependsOn": [
-                "^dist"
-            ]
+            "cache": false
         },
         "website-build-xeokit-lib": {
             "cache": false,
